@@ -1,0 +1,18 @@
+#######################################
+# Syntax Coloring Map For MPR121_JM
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+MPR121	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+readTouchInputs	KEYWORD2
+dumpregs	KEYWORD2
+mpr121_setup	KEYWORD2
+checkInterrupt	KEYWORD2
