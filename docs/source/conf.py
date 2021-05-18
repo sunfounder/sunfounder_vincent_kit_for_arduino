@@ -53,6 +53,7 @@ exclude_patterns = []
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
+<<<<<<< HEAD
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -61,3 +62,7 @@ latex_use_xindy = False
 latex_elements = {
     'preamble': '\\usepackage[UTF8]{ctex}\n',
 }
+=======
+language = 'de'
+locale_dirs = ['locale/']  # 设置本地化数据目录
+>>>>>>> 51eb130c3a3f6c44003799d1e38628b967770468
