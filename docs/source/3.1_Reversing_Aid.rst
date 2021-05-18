@@ -21,8 +21,6 @@ buzzer to make a simple ultrasonic reversing assist system.
 In this example, the wiring is shown below.
 
 .. image:: media/image264.png
-   :alt: 3.1 Reversing Aid_bb
-   :width: 500
    :align: center
 
 **Schematic Diagram**
@@ -53,3 +51,9 @@ function, refer to :ref:`1.11 Interval`
    :width: 7.92847in
    :height: 5.42361in
    :align: center
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/4bbcea82-c6cd-4658-90ce-9bcd291c58d4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0>
+
+</iframe>

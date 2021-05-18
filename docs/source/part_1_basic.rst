@@ -2,7 +2,7 @@ Part 1 Basic
 =====================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     1.1_arduino_ide
     1.2_digital_write

@@ -1,4 +1,4 @@
-Introductin
+Introduction
 ============
 
 This book, as a tutorial or a handbook, can be divided into four parts:

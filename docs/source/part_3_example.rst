@@ -1,8 +1,8 @@
-Part 3 example
+Part 3 Example
 ===============
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     3.1_Reversing_Aid
     3.2_Pedestrian_Crossing_Button

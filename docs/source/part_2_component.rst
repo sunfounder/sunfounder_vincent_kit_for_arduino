@@ -3,7 +3,7 @@ Part 2 Component
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     
     2.1_acommon_component
     2.2_led
