@@ -63,5 +63,5 @@ html_css_files = [
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-language = 'de'  # 设置新项目的语言与中文
+language = 'de'
 locale_dirs = ['locale/']  # 设置本地化数据目录
