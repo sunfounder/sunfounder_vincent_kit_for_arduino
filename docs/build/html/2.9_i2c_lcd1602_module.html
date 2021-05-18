@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.9 I2C LCD1602 Module &mdash; SunFounder Vincent Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.10 Active Buzzer" href="2.10_active_buzzer.html" />
+    <link rel="prev" title="2.8 LED Matrix Module" href="2.8_led_matrix_module.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Vincent Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_1_basic.html">Part 1 Basic</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="part_2_component.html">Part 2 Component</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.1_acommon_component.html">2.1 Common Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_led.html">2.2 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3_rgb_led.html">2.3 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_led_bar_graph.html">2.4 LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.5_7-segment_display.html">2.5 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.6_74hc595.html">2.6 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.7_4-digital_7-segment_display.html">2.7 4-Digital 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.8_led_matrix_module.html">2.8 LED Matrix Module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.9 I2C LCD1602 Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-required">Components Required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-introduction">Component Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#i2c-communication">I2C communication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fritzing-circuit">Fritzing Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phenomenon-picture">Phenomenon Picture</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.10_active_buzzer.html">2.10 Active Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.11_passive_buzzer.html">2.11 Passive Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.12_servo.html">2.12 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.13_motor.html">2.13 Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.14_stepper_motor.html">2.14 Stepper Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.15_button.html">2.15 Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.16_slide_switch.html">2.16 Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.17_tilt_switch.html">2.17 Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.18_touch_switch_module.html">2.18 Touch Switch Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.19_keypad.html">2.19 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.20_ir_receiver_module.html">2.20 IR Receiver Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.21_relay_module.html">2.21 Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.22_potentiometer.html">2.22 Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.23_joystick_module.html">2.23 Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.24_mpr121_module.html">2.24 MPR121 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.25_rotary_encoder_module.html">2.25 Rotary Encoder Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.26_photoresistor.html">2.26 Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.27_thermistor.html">2.27 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.28_sound_sensor_module.html">2.28 Sound Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.29_water_sensor_module.html">2.29 Water Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.30_ir_obstacle_avoidance_sensor.html">2.30 IR Obstacle Avoidance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.31_pir_module.html">2.31 PIR Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.32_dht11_module.html">2.32 DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.33_ultrasonic_module.html">2.33 Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.34_mpu6050_module.html">2.34 MPU6050 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.35_rfid-rc522_module.html">2.35 RFID-RC522 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part_3_example.html">Part 3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_4_appendix.html">Part 4 Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Vincent Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="part_2_component.html">Part 2 Component</a> &raquo;</li>
+        
+      <li>2.9 I2C LCD1602 Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/2.9_i2c_lcd1602_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="i2c-lcd1602-module">
+<h1>2.9 I2C LCD1602 Module<a class="headerlink" href="#i2c-lcd1602-module" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this lesson, you will learn about LCD1602. LCD1602, or 1602
+character-type liquid crystal display, a kind of dot matrix module to
+show letters, numbers, characters and so on.</p>
+</section>
+<section id="components-required">
+<h2>Components Required<a class="headerlink" href="#components-required" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/list_2.9.png" src="_images/list_2.9.png" />
+</section>
+<section id="component-introduction">
+<h2>Component Introduction<a class="headerlink" href="#component-introduction" title="Permalink to this headline">¶</a></h2>
+<p>It’s composed of 5x7 or 5x11 dot matrix positions; each position can
+display one character. There’s a dot pitch between two characters and a
+space between lines, thus separating characters and lines. The number
+1602 means on the display, 2 rows can be showed and 16 characters in
+each.</p>
+<p>As we all know, though LCD and some other displays greatly enrich the
+man-machine interaction, they share a common weakness. When they are
+connected to a controller, multiple IOs will be occupied of the
+controller which has no so many outer ports. Also it restricts other
+functions of the controller. Therefore, LCD1602 with an I2C bus is
+developed to solve the problem.</p>
+<img alt="_images/image445.png" src="_images/image445.png" />
+</section>
+<section id="i2c-communication">
+<h2>I2C communication<a class="headerlink" href="#i2c-communication" title="Permalink to this headline">¶</a></h2>
+<p>I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for
+communication between a master device (or master devices) and a single
+or multiple slave devices. I2C main controller can be used to control IO
+expander, various sensors, EEPROM, ADC/DAC and so on. All of these are
+controlled only by the two pins of host, the serial data (SDA) line and
+the serial clock line(SCL).</p>
+</section>
+<section id="fritzing-circuit">
+<h2>Fritzing Circuit<a class="headerlink" href="#fritzing-circuit" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we will get the first pin GND of LCD1602 connected to
+GND, the second pin VCC to 5V, the third pin SDA to the pin SDA 20 and
+the forth pin SCL to the pin SCL 21.</p>
+<img alt="_images/image113.png" src="_images/image113.png" />
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image446.png" src="_images/image446.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The SDA and SCL of the Mega2560 board are the pins 20 and 21.</p>
+</div>
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<p>The libraries Wire.h and LiquidCrystal_I2C.h are used in these codes, Wire.h is built in Arduino, but LiquidCrystal_I2C.h needs adding manually. Add Method: Refer to <strong>Part 4 - 4.1 Add Libraries</strong></p>
+<p><a class="reference external" href="https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library">LiquidCrystal_I2C.h</a></p>
+<p><a class="reference internal" href="part_4_appendix.html#add-libraries"><span class="std std-ref">4.1 Add Libraries</span></a></p>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/ca004845-7cd3-4fec-a85c-732a1a23c8b6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Upload the codes to the Mega2560 board, the content that you input in the serial monitor will be printed on the LCD.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>About the ASCII code and the character input in the serial monitor, please refer to Part 1-1.8 Serial Read.</p>
+</div>
+<p><a class="reference internal" href="1.8_serial_read.html#serial-read"><span class="std std-ref">1.8 Serial Read</span></a></p>
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Permalink to this headline">¶</a></h2>
+<p>By calling the library LiquidCrystal_I2C.h, you can easily drive the LCD.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;LiquidCrystal_I2C.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<p><strong>Library Functions：</strong></p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="n">LiquidCrystal_I2C</span><span class="p">(</span><span class="kr">uint8_t</span> <span class="n">lcd_Addr</span><span class="p">,</span><span class="kr">uint8_t</span> <span class="n">lcd_cols</span><span class="p">,</span><span class="kr">uint8_t</span> <span class="n">lcd_rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Creates a new instance of the LiquidCrystal_I2C class that represents a
+particular LCD attached to your Arduino board.</p>
+<p><strong>lcd_AddR</strong>: The address of the LCD defaults to 0x27.</p>
+<p><strong>lcd_cols</strong>: The LCD1602 has 16 columns.</p>
+<p><strong>lcd_rows</strong>: The LCD1602 has 2 rows.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="n">init</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Initialize the lcd.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="n">backlight</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Turn the (optional) backlight on.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="n">nobacklight</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Turn the (optional) backlight off.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">display</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Turn the LCD display on.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="n">nodisplay</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Turn the LCD display off quickly.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Clear display, set cursor position to zero.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">setCursor</span><span class="p">(</span><span class="kr">uint8_t</span> <span class="n">col</span><span class="p">,</span><span class="kr">uint8_t</span> <span class="n">row</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Set the cursor position to col,row.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">print</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">BASE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Prints text to the LCD.</p>
+<p><strong>data</strong>: The data to print (char, byte, int, long, or string).</p>
+<p><strong>BASE (optional)</strong>: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).</p>
+</section>
+<section id="phenomenon-picture">
+<h2>Phenomenon Picture<a class="headerlink" href="#phenomenon-picture" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image115.jpeg" src="_images/image115.jpeg" />
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="2.10_active_buzzer.html" class="btn btn-neutral float-right" title="2.10 Active Buzzer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2.8_led_matrix_module.html" class="btn btn-neutral float-left" title="2.8 LED Matrix Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

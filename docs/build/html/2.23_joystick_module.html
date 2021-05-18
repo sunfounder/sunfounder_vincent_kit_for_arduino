@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.23 Joystick Module &mdash; SunFounder Vincent Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.24 MPR121 Module" href="2.24_mpr121_module.html" />
+    <link rel="prev" title="2.22 Potentiometer" href="2.22_potentiometer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Vincent Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_1_basic.html">Part 1 Basic</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="part_2_component.html">Part 2 Component</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.1_acommon_component.html">2.1 Common Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_led.html">2.2 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3_rgb_led.html">2.3 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_led_bar_graph.html">2.4 LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.5_7-segment_display.html">2.5 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.6_74hc595.html">2.6 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.7_4-digital_7-segment_display.html">2.7 4-Digital 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.8_led_matrix_module.html">2.8 LED Matrix Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.9_i2c_lcd1602_module.html">2.9 I2C LCD1602 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.10_active_buzzer.html">2.10 Active Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.11_passive_buzzer.html">2.11 Passive Buzzer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.12_servo.html">2.12 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.13_motor.html">2.13 Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.14_stepper_motor.html">2.14 Stepper Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.15_button.html">2.15 Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.16_slide_switch.html">2.16 Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.17_tilt_switch.html">2.17 Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.18_touch_switch_module.html">2.18 Touch Switch Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.19_keypad.html">2.19 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.20_ir_receiver_module.html">2.20 IR Receiver Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.21_relay_module.html">2.21 Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.22_potentiometer.html">2.22 Potentiometer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.23 Joystick Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview"><strong>Overview</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-required"><strong>Components Required</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-introduction"><strong>Component Introduction</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fritzing-circuit"><strong>Fritzing Circuit</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram"><strong>Schematic Diagram</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code"><strong>Code</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phenomenon-picture"><strong>Phenomenon Picture</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.24_mpr121_module.html">2.24 MPR121 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.25_rotary_encoder_module.html">2.25 Rotary Encoder Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.26_photoresistor.html">2.26 Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.27_thermistor.html">2.27 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.28_sound_sensor_module.html">2.28 Sound Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.29_water_sensor_module.html">2.29 Water Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.30_ir_obstacle_avoidance_sensor.html">2.30 IR Obstacle Avoidance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.31_pir_module.html">2.31 PIR Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.32_dht11_module.html">2.32 DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.33_ultrasonic_module.html">2.33 Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.34_mpu6050_module.html">2.34 MPU6050 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.35_rfid-rc522_module.html">2.35 RFID-RC522 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part_3_example.html">Part 3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_4_appendix.html">Part 4 Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Vincent Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="part_2_component.html">Part 2 Component</a> &raquo;</li>
+        
+      <li>2.23 Joystick Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/2.23_joystick_module.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="joystick-module">
+<h1>2.23 Joystick Module<a class="headerlink" href="#joystick-module" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2><strong>Overview</strong><a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this lesson, you will learn something about Joystick. The basic idea
+of a joystick is to translate the movement of a stick into electronic
+information that a computer can process. It can be applied to work as
+the controller of devices, such as robot.</p>
+</section>
+<section id="components-required">
+<h2><strong>Components Required</strong><a class="headerlink" href="#components-required" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/Part_two_23.png" src="_images/Part_two_23.png" />
+</section>
+<section id="component-introduction">
+<h2><strong>Component Introduction</strong><a class="headerlink" href="#component-introduction" title="Permalink to this headline">¶</a></h2>
+<p>In order to communicate a full range of motion to the computer, a
+joystick needs to measure the stick’s position on two axes – the X-axis
+(left to right) and the Y-axis (up and down). Just as in basic geometry,
+the X-Y coordinates pinpoint the stick’s position exactly.</p>
+<p>To determine the location of the stick, the joystick control system
+simply monitors the position of each shaft. The conventional analog
+joystick design does this with two potentiometers, or variable
+resistors.</p>
+<p>The joystick also has a digital input that is actuated when the joystick
+is pressed down.</p>
+<p><a class="reference internal" href="_images/image194.png"><img alt="image194" src="_images/image194.png" style="width: 250px;" /></a><a class="reference internal" href="_images/image195.png"><img alt="image195" src="_images/image195.png" style="width: 300px;" /></a></p>
+</section>
+<section id="fritzing-circuit">
+<h2><strong>Fritzing Circuit</strong><a class="headerlink" href="#fritzing-circuit" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we get the GND of the Joystick extended to connect with
+GND, VCC with 5V, VRX with pin A0. After that, we make VRY connect with
+pin A1, SW connect with pin 8.</p>
+<a class="reference internal image-reference" href="_images/image196.png"><img alt="2.23 Joystick_bb" class="align-center" src="_images/image196.png" style="width: 5.88194in; height: 4.72014in;" /></a>
+</section>
+<section id="schematic-diagram">
+<h2><strong>Schematic Diagram</strong><a class="headerlink" href="#schematic-diagram" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/image197.png"><img alt="_images/image197.png" class="align-center" src="_images/image197.png" style="width: 5.21111in; height: 2.925in;" /></a>
+</section>
+<section id="code">
+<h2><strong>Code</strong><a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/0ce9568f-02d7-4b7e-8aef-975abb24566b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>Uploaded the codes to the Mega2560 board, you can open the serial
+monitor to see readings on the X-axis and Y-axis of Joystick, as well as
+the button status of Z-axis. The values of the X-axis and Y-axis are the
+analog values, which vary within the range「0」~「1023」. The Z-axis
+shows numerical value and the state is either 「1」 or 「0」. Refer to
+<a class="reference internal" href="1.5_analog_read.html#analog-read"><span class="std std-ref">1.5 Analog Read</span></a> and <a class="reference internal" href="1.4_digital_read.html#digital-read"><span class="std std-ref">1.4 Digital Read</span></a> to check the code
+explanation.</p>
+</section>
+<section id="phenomenon-picture">
+<h2><strong>Phenomenon Picture</strong><a class="headerlink" href="#phenomenon-picture" title="Permalink to this headline">¶</a></h2>
+<a class="reference internal image-reference" href="_images/image198.jpeg"><img alt="2.23" class="align-center" src="_images/image198.jpeg" style="width: 7.54792in; height: 5.41111in;" /></a>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="2.24_mpr121_module.html" class="btn btn-neutral float-right" title="2.24 MPR121 Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2.22_potentiometer.html" class="btn btn-neutral float-left" title="2.22 Potentiometer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

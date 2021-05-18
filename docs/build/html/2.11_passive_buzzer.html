@@ -1,0 +1,436 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>2.11 Passive Buzzer &mdash; SunFounder Vincent Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2.12 Servo" href="2.12_servo.html" />
+    <link rel="prev" title="2.10 Active Buzzer" href="2.10_active_buzzer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Vincent Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_1_basic.html">Part 1 Basic</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="part_2_component.html">Part 2 Component</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2.1_acommon_component.html">2.1 Common Component</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.2_led.html">2.2 LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.3_rgb_led.html">2.3 RGB LED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.4_led_bar_graph.html">2.4 LED Bar Graph</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.5_7-segment_display.html">2.5 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.6_74hc595.html">2.6 74HC595</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.7_4-digital_7-segment_display.html">2.7 4-Digital 7-Segment Display</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.8_led_matrix_module.html">2.8 LED Matrix Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.9_i2c_lcd1602_module.html">2.9 I2C LCD1602 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.10_active_buzzer.html">2.10 Active Buzzer</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">2.11 Passive Buzzer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-required">Components Required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#component-introduction">Component Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fritzing-circuit">Fritzing Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phenomenon-picture">Phenomenon Picture</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2.12_servo.html">2.12 Servo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.13_motor.html">2.13 Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.14_stepper_motor.html">2.14 Stepper Motor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.15_button.html">2.15 Button</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.16_slide_switch.html">2.16 Slide Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.17_tilt_switch.html">2.17 Tilt Switch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.18_touch_switch_module.html">2.18 Touch Switch Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.19_keypad.html">2.19 Keypad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.20_ir_receiver_module.html">2.20 IR Receiver Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.21_relay_module.html">2.21 Relay Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.22_potentiometer.html">2.22 Potentiometer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.23_joystick_module.html">2.23 Joystick Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.24_mpr121_module.html">2.24 MPR121 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.25_rotary_encoder_module.html">2.25 Rotary Encoder Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.26_photoresistor.html">2.26 Photoresistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.27_thermistor.html">2.27 Thermistor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.28_sound_sensor_module.html">2.28 Sound Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.29_water_sensor_module.html">2.29 Water Sensor Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.30_ir_obstacle_avoidance_sensor.html">2.30 IR Obstacle Avoidance Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.31_pir_module.html">2.31 PIR Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.32_dht11_module.html">2.32 DHT11 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.33_ultrasonic_module.html">2.33 Ultrasonic Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.34_mpu6050_module.html">2.34 MPU6050 Module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2.35_rfid-rc522_module.html">2.35 RFID-RC522 Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part_3_example.html">Part 3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_4_appendix.html">Part 4 Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Vincent Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="part_2_component.html">Part 2 Component</a> &raquo;</li>
+        
+      <li>2.11 Passive Buzzer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/2.11_passive_buzzer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="passive-buzzer">
+<h1>2.11 Passive Buzzer<a class="headerlink" href="#passive-buzzer" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In this lesson, you will get to know about passive buzzer. As a type of
+electronic buzzer with an integrated structure, passive buzzer is
+supplied by DC power, widely used in computer, alarm, electronic toy,
+telephone, timer and other electronic products or voice devices.</p>
+</section>
+<section id="components-required">
+<h2>Components Required<a class="headerlink" href="#components-required" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image451.png" src="_images/image451.png" />
+</section>
+<section id="component-introduction">
+<h2>Component Introduction<a class="headerlink" href="#component-introduction" title="Permalink to this headline">¶</a></h2>
+<p>Buzzers can be categorized as active and passive ones (see the following
+picture). Turn the buzzer so that its pins are facing up, and the buzzer
+with a green circuit board is a passive buzzer, while the one enclosed
+with a black tape is an active one.</p>
+<p>The difference between an active buzzer and a passive buzzer:</p>
+<img alt="_images/image117.png" src="_images/image117.png" />
+<img alt="_images/image447.png" src="_images/image447.png" />
+</section>
+<section id="fritzing-circuit">
+<h2>Fritzing Circuit<a class="headerlink" href="#fritzing-circuit" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image448.png" src="_images/image448.png" />
+<p>In this example, what we use to drive the buzzer is the pin 9. We get the cathode of the Buzzer to GND, and the anode to the digital pin 9.</p>
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image450.png" src="_images/image450.png" />
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/d6c0bde7-aa46-4900-9c11-0ca56832a962/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>At the time when you finish uploading the codes to the Mega2560 board, you can hear a melody containing seven notes.</p>
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Permalink to this headline">¶</a></h2>
+<p>There are two points needing your attention:</p>
+<p>①tone() &amp; noTone(): This function is used to control the sound of the passive buzzer directly and its prototype is as follows:</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">tone</span><span class="p">(</span><span class="kr">int</span> <span class="n">pin</span><span class="p">,</span> <span class="kr">unsigned</span> <span class="kr">int</span> <span class="n">frequency</span><span class="p">)</span>
+<span class="kr">void</span> <span class="nf">tone</span><span class="p">(</span><span class="kr">int</span> <span class="n">pin</span><span class="p">,</span> <span class="kr">unsigned</span> <span class="kr">int</span> <span class="n">frequency</span><span class="p">,</span> <span class="kr">unsigned</span> <span class="kr">long</span> <span class="n">duration</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Generates a square wave of the specified frequency (and 50% duty cycle) on a pin (so as to make the passive buzzer vibrate to make sound). A duration can be specified, otherwise the wave continues until a call to noTone(). The pin can be connected to a piezo buzzer or other speaker to play tones.</p>
+<p>Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to tone() will have no effect. If the tone is playing on the same pin, the call will set its frequency.</p>
+<p>Use of the tone() function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega).</p>
+<p>It is not possible to generate tones lower than 31Hz.</p>
+<p><strong>pin</strong>: The Arduino pin on which to generate the tone.</p>
+<p><strong>frequency</strong>: The frequency of the tone in hertz.</p>
+<p><strong>duration</strong>: The duration of the tone in milliseconds (optional)</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">void</span> <span class="nf">noTone</span><span class="p">(</span><span class="kr">int</span> <span class="n">pin</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Stops the generation of a square wave triggered by tone(). Has no effect if no tone is being generated.</p>
+<p><strong>pin</strong>: The Arduino pin on which to generate the tone.</p>
+<p>Having known the two functions, you may grasp the codes—the installation of the array melody[] and the array noteDurations[] is the preparation of the subsequently several times of calling of the function tone() and the changing of tone and duration in the loop for better effect of music play.</p>
+<p>②pitches.h: The code uses an extra file, <strong>pitches.h</strong>. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the tone() command was based. You may find it useful whenever you want to make musical notes.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;pitches.h&quot;</span><span class="cp"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is already a pitches.h file in this sample program. If we put it together with the main code in one folder, the successive steps of installing pitches.h can be omitted.</p>
+</div>
+<img alt="_images/image123.png" src="_images/image123.png" />
+<p>After you open the code 2.11passiveBuzzer, if you cannot open the
+pitches.h code, you can just install one manually. The steps are as
+follows:</p>
+<p>To make the pitches.h file, either click on the button just below the
+serial monitor icon and choose “New Tab”, or use Ctrl+Shift+N.</p>
+<img alt="_images/image124.png" src="_images/image124.png" />
+<p>Then paste in the following code and save it as <strong>pitches.h</strong>:</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="cm">/*****************</span>
+<span class="cm">Public Constants</span>
+<span class="cm">*****************/</span>
+<span class="cp">#define NOTE_B0  31</span>
+<span class="cp">#define NOTE_C1  33</span>
+<span class="cp">#define NOTE_CS1 35</span>
+<span class="cp">#define NOTE_D1  37</span>
+<span class="cp">#define NOTE_DS1 39</span>
+<span class="cp">#define NOTE_E1  41</span>
+<span class="cp">#define NOTE_F1  44</span>
+<span class="cp">#define NOTE_FS1 46</span>
+<span class="cp">#define NOTE_G1  49</span>
+<span class="cp">#define NOTE_GS1 52</span>
+<span class="cp">#define NOTE_A1  55</span>
+<span class="cp">#define NOTE_AS1 58</span>
+<span class="cp">#define NOTE_B1  62</span>
+<span class="cp">#define NOTE_C2  65</span>
+<span class="cp">#define NOTE_CS2 69</span>
+<span class="cp">#define NOTE_D2  73</span>
+<span class="cp">#define NOTE_DS2 78</span>
+<span class="cp">#define NOTE_E2  82</span>
+<span class="cp">#define NOTE_F2  87</span>
+<span class="cp">#define NOTE_FS2 93</span>
+<span class="cp">#define NOTE_G2  98</span>
+<span class="cp">#define NOTE_GS2 104</span>
+<span class="cp">#define NOTE_A2  110</span>
+<span class="cp">#define NOTE_AS2 117</span>
+<span class="cp">#define NOTE_B2  123</span>
+<span class="cp">#define NOTE_C3  131</span>
+<span class="cp">#define NOTE_CS3 139</span>
+<span class="cp">#define NOTE_D3  147</span>
+<span class="cp">#define NOTE_DS3 156</span>
+<span class="cp">#define NOTE_E3  165</span>
+<span class="cp">#define NOTE_F3  175</span>
+<span class="cp">#define NOTE_FS3 185</span>
+<span class="cp">#define NOTE_G3  196</span>
+<span class="cp">#define NOTE_GS3 208</span>
+<span class="cp">#define NOTE_A3  220</span>
+<span class="cp">#define NOTE_AS3 233</span>
+<span class="cp">#define NOTE_B3  247</span>
+<span class="cp">#define NOTE_C4  262</span>
+<span class="cp">#define NOTE_CS4 277</span>
+<span class="cp">#define NOTE_D4  294</span>
+<span class="cp">#define NOTE_DS4 311</span>
+<span class="cp">#define NOTE_E4  330</span>
+<span class="cp">#define NOTE_F4  349</span>
+<span class="cp">#define NOTE_FS4 370</span>
+<span class="cp">#define NOTE_G4  392</span>
+<span class="cp">#define NOTE_GS4 415</span>
+<span class="cp">#define NOTE_A4  440</span>
+<span class="cp">#define NOTE_AS4 466</span>
+<span class="cp">#define NOTE_B4  494</span>
+<span class="cp">#define NOTE_C5  523</span>
+<span class="cp">#define NOTE_CS5 554</span>
+<span class="cp">#define NOTE_D5  587</span>
+<span class="cp">#define NOTE_DS5 622</span>
+<span class="cp">#define NOTE_E5  659</span>
+<span class="cp">#define NOTE_F5  698</span>
+<span class="cp">#define NOTE_FS5 740</span>
+<span class="cp">#define NOTE_G5  784</span>
+<span class="cp">#define NOTE_GS5 831</span>
+<span class="cp">#define NOTE_A5  880</span>
+<span class="cp">#define NOTE_AS5 932</span>
+<span class="cp">#define NOTE_B5  988</span>
+<span class="cp">#define NOTE_C6  1047</span>
+<span class="cp">#define NOTE_CS6 1109</span>
+<span class="cp">#define NOTE_D6  1175</span>
+<span class="cp">#define NOTE_DS6 1245</span>
+<span class="cp">#define NOTE_E6  1319</span>
+<span class="cp">#define NOTE_F6  1397</span>
+<span class="cp">#define NOTE_FS6 1480</span>
+<span class="cp">#define NOTE_G6  1568</span>
+<span class="cp">#define NOTE_GS6 1661</span>
+<span class="cp">#define NOTE_A6  1760</span>
+<span class="cp">#define NOTE_AS6 1865</span>
+<span class="cp">#define NOTE_B6  1976</span>
+<span class="cp">#define NOTE_C7  2093</span>
+<span class="cp">#define NOTE_CS7 2217</span>
+<span class="cp">#define NOTE_D7  2349</span>
+<span class="cp">#define NOTE_DS7 2489</span>
+<span class="cp">#define NOTE_E7  2637</span>
+<span class="cp">#define NOTE_F7  2794</span>
+<span class="cp">#define NOTE_FS7 2960</span>
+<span class="cp">#define NOTE_G7  3136</span>
+<span class="cp">#define NOTE_GS7 3322</span>
+<span class="cp">#define NOTE_A7  3520</span>
+<span class="cp">#define NOTE_AS7 3729</span>
+<span class="cp">#define NOTE_B7  3951</span>
+<span class="cp">#define NOTE_C8  4186</span>
+<span class="cp">#define NOTE_CS8 4435</span>
+<span class="cp">#define NOTE_D8  4699</span>
+<span class="cp">#define NOTE_DS8 49</span>
+</pre></div>
+</div>
+</section>
+<section id="phenomenon-picture">
+<h2>Phenomenon Picture<a class="headerlink" href="#phenomenon-picture" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image125.jpeg" src="_images/image125.jpeg" />
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="2.12_servo.html" class="btn btn-neutral float-right" title="2.12 Servo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="2.10_active_buzzer.html" class="btn btn-neutral float-left" title="2.10 Active Buzzer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

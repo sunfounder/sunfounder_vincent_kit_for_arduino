@@ -1,0 +1,107 @@
+2.21 Relay Module
+====================
+
+**Overview**
+--------------
+
+In this lesson, you will learn about Relay Module.
+
+**Components Required**
+-------------------------
+
+.. image:: media/Part_two_21.png
+
+**Component Introduction**
+-----------------------------
+
+As we may know, relay is a device which is used to provide connection
+between two or more points or devices in response to the input signal
+applied. In other words, relays provide isolation between the controller
+and the device as devices may work on AC as well as on DC. However, they
+receive signals from a microcontroller which works on DC hence requiring
+a relay to bridge the gap. Relay is extremely useful when you need to
+control a large amount of current or voltage with small electrical
+signal.
+
+There are 5 parts in every relay:
+
+.. image:: media/image186.jpeg
+   :alt: tutu
+   :width: 5.29375in
+   :height: 3.05903in
+   :align: center
+
+1. **Electromagnet** – It consists of an iron core wounded by coil of
+wires. When electricity is passed through, it becomes magnetic.
+Therefore, it is called electromagnet.
+
+2. **Armature** – The movable magnetic strip is known as armature. When
+current flows through them, the coil is it energized thus producing a
+magnetic field which is used to make or break the normally open (N/O) or
+normally close (N/C) points. And the armature can be moved with direct
+current (DC) as well as alternating current (AC).
+
+3. **Spring** – When no currents flow through the coil on the
+electromagnet, the spring pulls the armature away so the circuit cannot
+be completed.
+
+4. Set of electrical **contacts** – There are two contact points:
+
+-  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+
+-  Normally close – not connected when the relay is activated, and connected when it is inactive.
+
+5. Molded frame – Relays are covered with plastic for protection.
+
+**Working of Relay**
+
+The working principle of relay is simple. When power is supplied to the
+relay, currents start flowing through the control coil; as a result, the
+electromagnet starts energizing. Then the armature is attracted to the
+coil, pulling down the moving contact together thus connecting with the
+normally open contacts. So the circuit with the load is energized. Then
+breaking the circuit would a similar case, as the moving contact will be
+pulled up to the normally closed contacts under the force of the spring.
+In this way, the switching on and off of the relay can control the state
+of a load circuit.
+
+**Fritzing Circuit**
+----------------------
+
+In this example, we use Power Supply Module to power the load，use LED
+as an example.
+
+.. image:: media/image187.png
+   :alt: 2.21 Relay Module_bb
+   :width: 7.83264in
+   :height: 5.04514in
+   :align: center
+
+**Schematic Diagram**
+----------------------
+
+.. image:: media/image188.png
+   :width: 8.39861in
+   :height: 1.75069in
+   :align: center
+
+**Code**
+----------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/d6c0bde7-aa46-4900-9c11-0ca56832a962/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Once the codes are uploaded to the Mega2560 board, you can see that the
+Relay Module controls the closing and breaking of the external circuit,
+which will change its working state a second. For detailed code
+explanation, refer to :ref:`1.2 Digital Write`.
+
+**Phenomenon Picture**
+--------------------------
+
+.. image:: media/image189.jpeg
+   :alt: 2.21
+   :width: 5.66944in
+   :height: 4.23889in
+   :align: center

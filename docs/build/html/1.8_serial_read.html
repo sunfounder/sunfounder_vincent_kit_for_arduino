@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1.8 Serial Read &mdash; SunFounder Vincent Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1.9 Digital Input Pull-Up" href="1.9_digital_input_pull-up.html" />
+    <link rel="prev" title="1.7 Analog Input Control Output" href="1.7_analog_input_control_output.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Vincent Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductin</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="part_1_basic.html">Part 1 Basic</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="1.1_arduino_ide.html">1.1 Arduino IDE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.2_digital_write.html">1.2 Digital Write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.3_analog_write.html">1.3 Analog Write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.4_digital_read.html">1.4 Digital Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.5_analog_read.html">1.5 Analog Read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.6_digital_input_control_output.html">1.6 Digital Input Control Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.7_analog_input_control_output.html">1.7 Analog Input Control Output</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">1.8 Serial Read</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-required">Components Required</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fritzing-circuit">Fritzing Circuit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#schematic-diagram">Schematic Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#code-analysis">Code Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ascii-chart">※ ASCII chart</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phenomenon-picture">Phenomenon Picture</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="1.9_digital_input_pull-up.html">1.9 Digital Input Pull-Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.10_state_change_detection.html">1.10 State Change Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1.11_interval.html">1.11 Interval</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part_2_component.html">Part 2 Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_3_example.html">Part 3 example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_4_appendix.html">Part 4 Appendix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Vincent Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="part_1_basic.html">Part 1 Basic</a> &raquo;</li>
+        
+      <li>1.8 Serial Read</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/1.8_serial_read.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="serial-read">
+<h1>1.8 Serial Read<a class="headerlink" href="#serial-read" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>In addition to reading data from the electronic components, the Mega2560
+board can read the data input in the serial port monitor, and you can
+use Serial.read() as the controller of the circuit experiment. Then we
+use LED to experiment with the Serial. Read() statement to control LED
+to turn on and off.</p>
+</section>
+<section id="components-required">
+<h2>Components Required<a class="headerlink" href="#components-required" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/list_1.8.png" src="_images/list_1.8.png" />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Refer to Part 2 to check details of hardware.</p>
+</div>
+<p><a class="reference internal" href="part_2_component.html#part-2-component"><span class="std std-ref">Part 2 Component</span></a></p>
+</section>
+<section id="fritzing-circuit">
+<h2>Fritzing Circuit<a class="headerlink" href="#fritzing-circuit" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we use digital pin 9 to drive LED. When 1 is entered in
+serial monitor, the LED lights up. When 0 is entered, the LED turns off.</p>
+<img alt="_images/image30.png" src="_images/image30.png" />
+</section>
+<section id="schematic-diagram">
+<h2>Schematic Diagram<a class="headerlink" href="#schematic-diagram" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image401.png" src="_images/image401.png" />
+</section>
+<section id="code">
+<h2>Code<a class="headerlink" href="#code" title="Permalink to this headline">¶</a></h2>
+<iframe src=https://create.arduino.cc/editor/sunfounder01/ca230e6c-c8c1-4101-87cf-25da1130f414/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe><p>After the codes are uploaded to the Mega2560 board, please turn on the serial port monitor. Typing in ”1” can make LED turn on and typing in ”0” can make it turn off.</p>
+<img alt="_images/image52.png" src="_images/image52.png" />
+</section>
+<section id="code-analysis">
+<h2>Code Analysis<a class="headerlink" href="#code-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Declare digital pin 9 as ledPin.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="kr">int</span> <span class="n">ledPin</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Serial.read() reads a single byte of ASCII value, and therefore you need to declare a int type variable, incomingByte to store the acquired data.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="kr">int</span> <span class="n">incomingByte</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Run the serial communication in setup() and set the data rate to 9600.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Set ledPin to OUTPUT mode.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="nf">pinMode</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="kr">OUTPUT</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>The state of serial port monitor is judged in loop(), and the information processing will be carried out only when the data are received.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nf">Serial</span><span class="p">.</span><span class="nf">available</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">){}</span>
+</pre></div>
+</div>
+<p>Reads the input value in the serial port monitor and stores it to the variable incomingByte.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="n">incomingByte</span> <span class="o">=</span> <span class="nf">Serial</span><span class="p">.</span><span class="nf">read</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>When the character ‘1’ is obtained, the LED is lit; when ’0’ is obtained, the LED turns off.</p>
+<div class="highlight-arduino notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="p">(</span><span class="n">incomingByte</span><span class="o">==</span><span class="sc">&#39;1&#39;</span><span class="p">){</span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="kr">HIGH</span><span class="p">);}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">incomingByte</span><span class="o">==</span><span class="sc">&#39;0&#39;</span><span class="p">){</span><span class="nf">digitalWrite</span><span class="p">(</span><span class="n">ledPin</span><span class="p">,</span><span class="kr">LOW</span><span class="p">);}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Serial.read() takes the ASCII value in single character, which means that when you input ‘1’, the obtained value is not the number ‘1’, but the character ‘1’ whose corresponding ASCII value is 49.</p>
+</div>
+</section>
+<section id="ascii-chart">
+<h2>※ ASCII chart<a class="headerlink" href="#ascii-chart" title="Permalink to this headline">¶</a></h2>
+<p>The ASCII (American Standard Code for Information Interchange) encoding
+dates to the 1960’s. It is the standard way that text is encoded
+numerically.</p>
+<p>Note that the first 32 characters (0-31) are non-printing characters,
+often called control characters. The more useful characters have been
+labeled.</p>
+<img alt="_images/image409.png" src="_images/image409.png" />
+<img alt="_images/image410.png" src="_images/image410.png" />
+</section>
+<section id="phenomenon-picture">
+<h2>Phenomenon Picture<a class="headerlink" href="#phenomenon-picture" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/image36.jpeg" src="_images/image36.jpeg" />
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="1.9_digital_input_pull-up.html" class="btn btn-neutral float-right" title="1.9 Digital Input Pull-Up" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="1.7_analog_input_control_output.html" class="btn btn-neutral float-left" title="1.7 Analog Input Control Output" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

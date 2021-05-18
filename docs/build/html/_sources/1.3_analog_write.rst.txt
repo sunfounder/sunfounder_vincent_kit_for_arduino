@@ -1,0 +1,91 @@
+1.3 Analog Write
+================
+
+Overview
+--------
+
+You can write the PWM wave to the pin by using analogWrite(). This
+method can be used to adjust the brightness of LED, change the color of
+RGB, or adjust the motor speed, etc. Here we will take LED as an example
+to get gradient brightness of LED.
+
+Components Required
+-------------------
+
+.. image:: media/list_1.3.png
+
+
+※ Pulse Width Modulation
+-------------------------
+
+.. image:: media/image402.png
+
+
+Fritzing Circuit
+----------------
+
+In this example, we use the PWM pin 9 to drive the LED. Connect one end
+of the resistor to pin 9. Connect the long pin (anode) of the LED to the
+other end of the resistor. Connect the short pin (negative, referred to
+as the cathode) of LED to GND. 
+
+.. note::
+    PWM pins of Mega2560 board are 2 -13, 44 - 46.
+
+.. image:: media/image30.png
+
+
+Schematic Diagram
+-----------------
+
+.. image:: media/image401.png
+
+
+Code
+----
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/0870c13c-2064-4d3b-9b5b-cf14d3466425/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the code to the Mega2560 board, you can see that the LED
+gradually brightens out and turns off gradually.
+
+Code Analysis
+-------------
+
+Declare pin 9 as ledPin.
+
+.. code-block:: arduino
+
+    int ledPin = 9; 
+
+analogWrite() in loop() assigns ledPin an analog value (PWM wave) between 0 and 255 to change the brightness of LED.
+
+.. code-block:: arduino
+
+    analogWrite(ledPin, value);
+
+Using a for loop, the value of analogWrite() can be changed step by step between the minimum value (0) and the maximum value (255).
+
+.. code-block:: arduino
+
+    for (int value = 0 ; value <= 255; value += 5) {
+        analogWrite(ledPin, value);
+    }
+
+In order to see the experimental phenomenon clearly, a delay(30) needs to be added to the for cycle to control the brightness change time.
+
+.. code-block:: arduino
+
+    void loop() {
+    for (int value = 0 ; value <= 255; value += 5) {
+        analogWrite(ledPin, value);
+        delay(30);
+    }
+    }
+
+Phenomenon Picture
+-------------------
+
+.. image:: media/image36.jpeg

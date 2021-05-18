@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Part 4 Appendix &mdash; SunFounder Vincent Kit  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="3.5 Access Control System" href="3.5_Access_Control_System.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SunFounder Vincent Kit
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="components_list.html">Components list</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introductin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_1_basic.html">Part 1 Basic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_2_component.html">Part 2 Component</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part_3_example.html">Part 3 example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Part 4 Appendix</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#add-libraries">4.1 Add Libraries</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-library"><strong>What is Library?</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Add libraries</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copyright-notice"><strong>Copyright Notice</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SunFounder Vincent Kit</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Part 4 Appendix</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/part_4_appendix.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="part-4-appendix">
+<h1>Part 4 Appendix<a class="headerlink" href="#part-4-appendix" title="Permalink to this headline">¶</a></h1>
+<section id="add-libraries">
+<h2>4.1 Add Libraries<a class="headerlink" href="#add-libraries" title="Permalink to this headline">¶</a></h2>
+<section id="what-is-library">
+<h3><strong>What is Library?</strong><a class="headerlink" href="#what-is-library" title="Permalink to this headline">¶</a></h3>
+<p>A library, gathering some function definitions and header files, usually
+contains two files: .h (header file, including function statement, Macro
+definition, constructor definition, etc.) and .cpp (execution file, with
+function implementation, variable definition, and so on). When you need
+to use a function in some library, you just need to add a header file
+(e.g. #include &lt;dht.h&gt;), and then call that function. This can make your
+code more concise. If you don’t want to use the library, you can also
+write that function definition directly. Though as a result, the code
+will be long and inconvenient to read.</p>
+</section>
+<section id="id1">
+<h3><strong>Add libraries</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>Some libraries are already built in the Arduino IDE, when some others
+may need to be added. So now let’s see how to add one. There are 2
+methods for that.</p>
+<p><strong>Method 1</strong></p>
+<p>Directly import the library in Arduino IDE (take Dht as an example
+below). The advantage of this method is easy to understand and operate,
+but on the other hand, only one library can be imported at a time. So it
+is inconvenient when you need to add quite a lot of libraries.</p>
+<p><strong>Step 1</strong>: Select <strong>Sketch</strong> -&gt; <strong>Include Library</strong> -&gt; <strong>Add ZIP
+Library</strong>.</p>
+<a class="reference internal image-reference" href="_images/image291.png"><img alt="_images/image291.png" class="align-center" src="_images/image291.png" style="width: 6.04167in; height: 2.46875in;" /></a>
+<p><strong>Step 2</strong>: Find <em>Library folder</em>, Click <strong>Open</strong>.</p>
+<a class="reference internal image-reference" href="_images/image292.png"><img alt="_images/image292.png" class="align-center" src="_images/image292.png" style="width: 4.94792in; height: 2.97917in;" /></a>
+<p><strong>Step 3</strong>: When you see <strong>Library added to your libraries. Check
+“Include library” menu</strong>, it means you have added the library
+successfully. Please use the same method to add other libraries then.</p>
+<a class="reference internal image-reference" href="_images/image293.png"><img alt="_images/image293.png" class="align-center" src="_images/image293.png" style="width: 5.09167in; height: 0.55625in;" /></a>
+<p><strong>Method 2</strong></p>
+<p>Directly copy the library to libraries/Arduino path. This method can
+copy all libraries and add them at a time, but the drawback is that it
+is difficult to find libraries/Arduino.</p>
+<p><strong>Step 1</strong>: Click <strong>File</strong> -&gt; <strong>Preferences</strong> and on the pop-up window
+you can see the path of the libraries folder in the text box as shown
+below.</p>
+<a class="reference internal image-reference" href="_images/image294.png"><img alt="_images/image294.png" class="align-center" src="_images/image294.png" style="width: 6.41667in; height: 2.13542in;" /></a>
+<p><strong>Step 2</strong>: Copy all Libraries in the <em>library</em> folder.</p>
+<a class="reference internal image-reference" href="_images/image295.png"><img alt="_images/image295.png" class="align-center" src="_images/image295.png" style="width: 5.52083in; height: 2.42708in;" /></a>
+<p><strong>Step 3</strong>: Go to the path above and you will see there is a <em>libraries</em>
+folder, click to open it.</p>
+<a class="reference internal image-reference" href="_images/image296.png"><img alt="_images/image296.png" class="align-center" src="_images/image296.png" style="width: 5.01042in; height: 1.46875in;" /></a>
+<p><strong>Step 4</strong>: Paste all the libraries copied before to the folder. Then
+you can see them in libraries folder.</p>
+<a class="reference internal image-reference" href="_images/image297.png"><img alt="_images/image297.png" class="align-center" src="_images/image297.png" style="width: 3.8125in; height: 1.54167in;" /></a>
+</section>
+<section id="copyright-notice">
+<h3><strong>Copyright Notice</strong><a class="headerlink" href="#copyright-notice" title="Permalink to this headline">¶</a></h3>
+<p>All contents including but not limited to texts, images, and code in
+this manual are owned by the SunFounder Company. You should only use it
+for personal study, investigation, enjoyment, or other non-commercial or
+nonprofit purposes, under the related regulations and copyrights laws,
+without infringing the legal rights of the author and relevant right
+holders. For any individual or organization that uses these for
+commercial profit without permission, the Company reserves the right to
+take legal action.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="3.5_Access_Control_System.html" class="btn btn-neutral float-left" title="3.5 Access Control System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, SunFounder.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

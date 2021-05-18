@@ -1,0 +1,83 @@
+2.23 Joystick Module
+======================
+
+**Overview**
+--------------
+
+In this lesson, you will learn something about Joystick. The basic idea
+of a joystick is to translate the movement of a stick into electronic
+information that a computer can process. It can be applied to work as
+the controller of devices, such as robot.
+
+**Components Required**
+---------------------------
+
+.. image:: media/Part_two_23.png
+
+**Component Introduction**
+---------------------------
+
+In order to communicate a full range of motion to the computer, a
+joystick needs to measure the stick's position on two axes -- the X-axis
+(left to right) and the Y-axis (up and down). Just as in basic geometry,
+the X-Y coordinates pinpoint the stick's position exactly.
+
+To determine the location of the stick, the joystick control system
+simply monitors the position of each shaft. The conventional analog
+joystick design does this with two potentiometers, or variable
+resistors.
+
+The joystick also has a digital input that is actuated when the joystick
+is pressed down.
+
+.. |image194| image:: media/image194.png
+    :width: 250
+.. |image195| image:: media/image195.png
+    :width: 300
+|image194|\ |image195|
+
+**Fritzing Circuit**
+---------------------
+
+In this example, we get the GND of the Joystick extended to connect with
+GND, VCC with 5V, VRX with pin A0. After that, we make VRY connect with
+pin A1, SW connect with pin 8.
+
+.. image:: media/image196.png
+   :alt: 2.23 Joystick_bb
+   :width: 5.88194in
+   :height: 4.72014in
+   :align: center
+
+**Schematic Diagram**
+------------------------
+
+.. image:: media/image197.png
+   :width: 5.21111in
+   :height: 2.925in
+   :align: center
+
+**Code**
+------------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/0ce9568f-02d7-4b7e-8aef-975abb24566b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Uploaded the codes to the Mega2560 board, you can open the serial
+monitor to see readings on the X-axis and Y-axis of Joystick, as well as
+the button status of Z-axis. The values of the X-axis and Y-axis are the
+analog values, which vary within the range「0」~「1023」. The Z-axis
+shows numerical value and the state is either 「1」 or 「0」. Refer to
+:ref:`1.5 Analog Read` and :ref:`1.4 Digital Read` to check the code
+explanation.
+
+
+**Phenomenon Picture**
+-------------------------
+
+.. image:: media/image198.jpeg
+   :alt: 2.23
+   :width: 7.54792in
+   :height: 5.41111in
+   :align: center

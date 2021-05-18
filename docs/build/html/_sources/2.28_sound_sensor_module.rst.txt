@@ -1,0 +1,92 @@
+2.28 Sound Sensor Module
+=========================
+
+**Overview**
+------------
+
+In this lesson, you will learn how to use a sound sensor module. The
+sound sensor module provides an easy way to detect sound and is
+generally used for detecting sound intensity.
+
+**Components Required**
+------------------------
+
+.. image:: media/Part_two_28.png
+
+**Component Introduction**
+---------------------------
+
+.. image:: media/image222.png
+   :alt: 5
+   :width: 300
+   :align: center 
+
+This module can be used for security, switch, and monitoring
+applications. Its accuracy can be easily adjusted for the convenience of
+usage.
+
+It uses a microphone which supplies the input to an amplifier, peak
+detector and buffer. When the sensor detects a sound, it processes an
+output signal voltage which is sent to a micro-controller then performs
+necessary processing.
+
+This module has two outputs:
+
+① AO: analog output, real-time output voltage signal of microphone.
+
+② DO: when the intensity of the sound reaches a certain threshold, the
+output is a high or low level signal. The threshold sensitivity can be
+achieved by adjusting the potentiometer.
+
+
+**Fritzing Circuit**
+-----------------------
+
+In this example, we can directly connect the pin of Sound
+Sensor Module to the pin of Mega 2560 Board, connect the pin「G」 of
+Sound Sensor Module to GND, the pin 「+」to 5V, AO to analog pin A0, and
+D0 to digital pin 2.
+
+.. image:: media/image223.png
+   :width: 500
+   :align: center 
+
+**Schematic Diagram**
+----------------------
+
+.. image:: media/image224.png
+   :width: 3.59514in
+   :height: 1.325in
+   :align: center 
+
+**Code**
+----------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/42164fe5-5ae0-4e26-bee8-e1f085e863e2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the code to the Mega2560 board, you can open the serial
+monitor to see the read value of the pin. When the ambient sound gets
+louder, the digital reading is 「1」 (adjust the potentiometer of the
+module to modify the threshold to trigger the high level), and the
+reading value of the analog pin will change significantly; when the
+environment is quiet, the digital reading is 「0」 and the analog
+reading changes smoothly.
+
+The range of analog reading is「0」~「1023」, but influenced by the the
+environmental condition and the characteristics of sound sensor, the
+actual reading range may be smaller than the theoretical one. If an
+oscilloscope is used, the changing of analog reading of the sound sensor
+will be more obvious.
+
+About the detail code explanation, refer to :ref:`1.5 Analog Read` and
+:ref:`1.4 Digital Read`.
+
+**Phenomenon Picture**
+------------------------
+
+.. image:: media/image225.jpeg
+   :alt: 2.28
+   :width: 6.20556in
+   :height: 4.35278in

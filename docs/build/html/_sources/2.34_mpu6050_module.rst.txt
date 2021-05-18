@@ -1,0 +1,174 @@
+2.34 MPU6050 Module
+====================
+
+**Overview**
+-------------
+
+In this lesson, you will learn how to use MPU6050. MPU-6050 is a 6-axis
+(combined 3-axis Gyroscope, 3-axis Accelerometer) motion tracking
+devices. It is often used for augmented reality and electronic image
+stabilization (EIS: Electronic Image Stabilization), optical image
+stabilization (OIS: Optical Image Stabilization), "Zero touch" gesture
+user interface.
+
+**Components Required**
+-------------------------
+
+.. image:: media/Part_two_34.png
+
+**Component Introduction**
+----------------------------
+
+Its three coordinate systems are defined as follows:
+
+.. image:: media/image250.png
+    :width: 150
+    :align: center
+
+Put MPU6050 flat on the table, assure that the face with label is upward
+and a dot on this surface is on the top left corner. Then the upright
+direction upward is the z-axis of the chip. The direction from left to
+right is regarded as the X-axis. Accordingly the direction from back to
+front is defined as the Y-axis.
+
+**Acceleration**
+
+.. image:: media/image251.png
+   :alt: EE0D5D95-15E0-4aaf-902B-7575C1F9E299
+   :align: center
+
+The accelerometer works on the principle of piezo electric effect, the
+ability of certain materials to generate an electric charge in response
+to applied mechanical stress.
+
+Here, imagine a cuboidal box, having a small ball inside it, like in the
+picture above. The walls of this box are made with piezo electric
+crystals. Whenever you tilt the box, the ball is forced to move in the
+direction of the inclination, due to gravity. The wall with which the
+ball collides, creates tiny piezo electric currents. There are totally,
+three pairs of opposite walls in a cuboid. Each pair corresponds to an
+axis in 3D space: X, Y and Z axes. Depending on the current produced
+from the piezo electric walls, we can determine the direction of
+inclination and its magnitude.
+
+We can use the MPU6050 to detect its acceleration on each coordinate
+axis (in the stationary desktop state, the Z-axis acceleration is 1
+gravity unit, and the X and Y axes are 0). If it is tilted or in a
+weightless/overweight condition, the corresponding reading will change.
+
+There are four kinds of measuring ranges that can be selected
+programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (+/-2g by default)
+corresponding to each precision. Values range from -32768 to 32767.
+
+The reading of accelerometer is converted to an acceleration value by
+mapping the reading from the reading range to the measuring range.
+
+**Acceleration = (Accelerometer axis raw data / 65536 \* full scale
+Acceleration range) g**
+
+Take the X-axis as an example, when Accelerometer X axis raw data is
+16384 and the range is selected as +/-2g:
+
+**Acceleration along the X axis = (16384 / 65536 \* 4) g=1g**
+
+**Gyroscopes**
+
+Gyroscopes work on the principle of Coriolis acceleration. Imagine that
+there is a fork like structure, that is in constant back and forth
+motion. It is held in place using piezo electric crystals. Whenever, you
+try to tilt this arrangement, the crystals experience a force in the
+direction of inclination. This is caused as a result of the inertia of
+the moving fork. The crystals thus produce a current in consensus with
+the piezo electric effect, and this current is amplified.
+
+.. image:: media/image252.png
+   :alt: 陀螺仪
+   :width: 8.64375in
+   :height: 3.41319in
+   :align: center
+
+The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500,
++/- 1000, +/- 2000 (+/-250degree/s by default) . The calculation method
+and Acceleration are basically consistent.
+
+The formula for converting the reading into angular velocity is as
+follows:
+
+**Angular velocity = (Gyroscope axis raw data / 65536 \* full scale
+Gyroscope range) °/s**
+
+The X axis, for example, the Accelerometer X axis raw data is 16384 and
+ranges + / - 250 ° / s:
+
+**Angular velocity along the X axis = (16384 / 65536 \* 500)°/s
+=125°/s**
+
+**Fritzing Circuit**
+------------------------
+
+In this example, we drive MPU6050 with IIC. We inset MPU6050
+into the breadboard; get the VCC connected to 5V, GND to GND, SCL to pin
+SCL 21, and SDA to the pin SDA 20.
+
+.. image:: media/image253.png
+   :width: 500
+   :align: center
+
+**Schematic Diagram**
+----------------------
+
+.. image:: media/image254.png
+   :width: 3.15486in
+   :height: 2.56597in
+   :align: center
+
+**Code**
+-------------
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfae41b-b651-41c2-830b-f2d9ea70efe8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the codes to the Mega2560 board, you can open the serial
+monitor to see the gravity acceleration and angular velocity of MPU6050
+in each direction.
+
+**Code Analysis**
+--------------------
+
+In the stationary desktop state, the Z-axis acceleration is 1 gravity
+unit, and the X and Y axes are 0.
+
+Before your use, you need to calibrate the module, the methods are as
+follows:
+
+1.MPU6050 modules are placed horizontally on the desktop and then you can
+fix them with clamps or adhesive tape.
+
+2.Run the sample codes to get the RAW DATA of MPU6050 when it is static.
+
+3.Add compensation according to the readings when MPU6050 is static.
+
+Take MPU6050 we use as an example, and the results of compensation are
+as follows:
+
+.. code-block:: arduino
+
+   Serial.print(AcX / 65536  * ACCELE_RANGE - 0.02); 
+   Serial.print(AcY / 65536  * ACCELE_RANGE + 0);
+   Serial.print(AcZ/65536  * ACCELE_RANGE + 0.02); 
+   Serial.print(GyX / 65536  * GYROSC_RANGE + 1.70);
+   Serial.print(GyY/65536  * GYROSC_RANGE - 1.70);
+   Serial.print(GyZ/65536*GYROSC_RANGE + 0.25);
+
+.. image:: media/Part_two_34_Code_Analysis.png
+   :align: center
+
+**Phenomenon Picture**
+------------------------
+
+.. image:: media/image257.jpeg
+   :alt: 2.34
+   :width: 7.35347in
+   :height: 4.82778in
+   :align: center

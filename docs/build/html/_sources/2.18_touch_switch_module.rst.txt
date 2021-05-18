@@ -1,0 +1,89 @@
+2.18 Touch Switch Module
+========================
+
+**Overview**
+------------
+
+In this lesson, you will learn about touch switch module. It can replace
+the traditional kinds of switch with these advantages: convenient
+operation, fine touch sense, precise control and least mechanical wear.
+
+**Components Required**
+------------------------
+
+.. image:: media/Part_two_18.png
+
+
+**Component Introduction**
+---------------------------
+
+Touch switch module works by detecting a change in capacitance due to
+influence of an external object. The touch plate is covered with
+insulating material, and the user does not come in contact with the
+electrical circuit.
+
+A capacitive touch switch has different layers—top insulating face plate
+followed by touch plate, another insulating layer and then ground plate.
+
+.. image:: media/image168.png
+    :width: 300
+    :align: center
+
+In practice, a capacitive sensor can be made on a
+double-sided PCB by regarding one side as the touch sensor and the
+opposite side as ground plate of the capacitor. When power is applied
+across these plates, the two plates get charged. In equilibrium state,
+the plates have the same voltage as the power source.
+
+The touch detector circuit has an oscillator whose frequency is
+dependent on capacitance of the touchpad. When a finger is moved close
+to the touchpad, additional capacitance causes frequency of this
+internal oscillator to change. The detector circuit tracks oscillator
+frequency at timed intervals, and when the shift crosses the threshold
+change, the circuit triggers a key-press event.
+
+.. image:: media/image169.jpeg
+    :width: 400
+    :align: center
+
+**Fritzing Circuit**
+--------------------
+
+In this example, pin 2 is used to read the signal of Touch Switch
+Module.
+
+.. image:: media/image170.png
+   :alt: 2.17 Tilt Switch_bb
+   :width: 400
+   :align: center
+
+**Schematic Diagram**
+-----------------------
+
+.. image:: media/image171.png
+   :width: 4.73819in
+   :height: 3.03681in
+   :align: center
+
+**Code**
+---------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/526e6ca9-a140-48cc-9cfb-d8bc7f32cf6d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Uploaded the codes to the Mega2560 board, you can see the readings of
+pins displaying on the serial monitor.
+
+When your finger tip touches the Touch switch module, 「1」will be
+displayed on the serial monitor; and when you remove your finger, 「0」
+will be be displayed. As for the detailed code explanation, you need to
+turn to :ref:`1.4 Digital Read`.
+
+**Phenomenon Picture**
+------------------------
+
+.. image:: media/image172.jpeg
+   :alt: 2.18
+   :width: 7.10625in
+   :height: 4.74167in

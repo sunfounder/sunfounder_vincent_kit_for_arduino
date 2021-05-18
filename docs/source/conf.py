@@ -15,12 +15,15 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 
-# -- Project information -----------------------------------------------------
+
 import sphinx_rtd_theme
 
-project = 'vincent-kit'
-copyright = '2021, sunfounder'
-author = 'sunfounder'
+
+# -- Project information -----------------------------------------------------
+
+project = 'SunFounder Vincent Kit'
+copyright = '2021, SunFounder'
+author = 'SunFounder'
 
 
 # -- General configuration ---------------------------------------------------
@@ -28,7 +31,7 @@ author = 'sunfounder'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = [
+extensions = ['sphinx.ext.autosectionlabel'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -44,24 +47,17 @@ exclude_patterns = []
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-html_theme = 'furo'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
-
-html_js_files = [
-    'https://ezblock.cc/readDocFile/topHead.js',
-]
-html_css_files = [
-    'https://ezblock.cc/readDocFile/topHead.css',
-]
-
-
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-language = 'de'  # 设置新项目的语言与中文
-locale_dirs = ['locale/']  # 设置本地化数据目录
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+
+latex_engine = 'pdflatex'
+latex_use_xindy = False
+latex_elements = {
+    'preamble': '\\usepackage[UTF8]{ctex}\n',
+}

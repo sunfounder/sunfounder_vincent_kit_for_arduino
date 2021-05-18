@@ -1,0 +1,87 @@
+1.7 Analog Input Control Output
+===============================
+
+Overview
+---------
+
+You can install an I/O system by using an analog input/ output device.
+For example, you can use potentiometer, photoresistor, water level
+sensor, etc., to control the brightness of LED, the speed of motor, and
+the like. In this lesson, potentiometer and LED are taken as examples to
+change the brightness of the LED when the potentiometer is turning.
+
+Components Required
+-------------------
+
+.. image:: media/list_1.7.png
+
+.. note::
+    Refer to Part 2 to check details of hardware.
+
+:ref:`Part 2 Component`
+
+
+Fritzing Circuit
+-----------------
+
+In this lesson, we use PWM pin 9 to drive LED. The analog pin (A0) is
+used to read the value of potentiometer. After uploading the code,
+you'll notice that the brightness of the LED changes as the
+potentiometer rotates.
+
+.. image:: media/image50.png
+
+
+Schematic Diagram
+-----------------
+
+.. image:: media/image408.png
+
+
+Code
+----
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/ab85c832-b034-40fa-a231-ef54f461f898/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+When the codes are uploaded to the Mega2560 board, you can see that the brightness of LED is changing with the turning of the knob of potentiometer.  
+
+Code Analysis
+-------------
+
+Declare the pins of LED and Button.
+
+.. code-block:: arduino
+
+    const int sensorPin = A0;    
+    const int ledPin = 9;    
+
+In setup(), set the mode of ledPin to OUTPUT.
+
+.. code-block:: arduino
+
+    pinMode(ledPin,OUTPUT);
+
+Read the readings of potentiometer in loop().
+
+.. code-block:: arduino
+
+    int sensorValue=analogRead(sensorPin);
+
+Map the potentiometer reading to the LED brightness value (0-1024 is mapped to 0-255).
+
+.. code-block:: arduino
+
+    int brightness = map(sensorValue,0,1024,0,255);
+
+Write the brightness value to LED.
+
+.. code-block:: arduino
+
+    analogWrite(ledPin,brightness);
+
+Phenomenon Picture
+------------------
+
+.. image:: media/image51.jpeg

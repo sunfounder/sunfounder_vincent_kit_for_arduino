@@ -1,0 +1,14 @@
+[0514/095411:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/095414:INFO:http_cache_transaction.cc(72)] IgnoreZeroCacheError: 0
+[0514/095445:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/105320:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/110613:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/135304:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/141840:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/141900:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/142849:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/155803:INFO:http_cache_transaction.cc(72)] IgnoreZeroCacheError: 0
+[0514/164856:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/165226:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/171613:WARNING:url_request_job_manager.cc(89)] Failed to map: weixin://resourceid/blank
+[0514/180821:ERROR:browser_gpu_channel_host_factory.cc(119)] Failed to launch GPU process.

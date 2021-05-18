@@ -1,0 +1,83 @@
+2.16 Slide Switch
+==================
+
+**Overview**
+------------
+
+In this lesson, you will get to know something about Switch. A slide
+switch, just as its name implies, is to slide the switch bar to connect
+or break the circuit, and further switch circuits. The slide switch is
+commonly used in low-voltage circuit. It has the features of flexibility
+and stability, and applies in electric instruments and electric toys
+widely.
+
+**Components Required**
+------------------------
+
+.. image:: media/Part_two_16.png
+
+**Component Introduction**
+---------------------------
+
+.. image:: media/image155.jpeg
+   :alt: Slide Switch
+   :width: 1.28889in
+   :height: 1.57847in
+   :align: center
+
+How it works: Set the middle pin as the fixed one. When you pull the
+slide to the left, the two pins on the left are connected; when you pull
+it to the right, the two pins on the right are connected. Thus, it works
+as a switch connecting or disconnecting circuits. See the figure below:
+
+.. image:: media/Part_two_16_Introduction.png
+   :align: center
+
+The circuit symbol of the slide switch is shown as below. The pin2 in
+the figure refers to the middle pin.
+
+.. image:: media/image159.png
+   :width: 200
+   :align: center
+
+**Fritzing Circuit**
+---------------------
+
+In this example, digital pin 2 is used to read the signal of Switch. In
+addition, you need to connect a 10 kΩ resistor and a 104 capacitor in
+parallel to form a RC circuit (Resistor - Capacitance circuit) which is
+set between pin 2 and GND to realize debounce that may arise from your 
+toggle of switch.
+
+.. image:: media/image160.png
+   :width: 500
+   :align: center
+
+**Schematic Diagram**
+
+.. image:: media/image161.png
+   :width: 3.34167in
+   :height: 3.10069in
+   :align: center
+
+**Code**
+---------
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/952c55eb-b08b-4c4a-8107-07a946183457/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the codes are uploaded to the Mega2560 board, you can open the
+serial monitor to check the readings of the pin. When the Switch toggles
+to the left, the serial monitor displays 「1」; when toggles to the
+right, the serial monitor displays「0」. Refer to :ref:`1.4 Digital Read` to check the code explanation.
+
+
+
+**Phenomenon Picture**
+------------------------
+
+.. image:: media/image162.jpeg
+   :alt: 2.16
+   :width: 7.06042in
+   :height: 5.35833in

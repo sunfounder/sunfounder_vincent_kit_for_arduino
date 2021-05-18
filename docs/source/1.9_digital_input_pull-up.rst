@@ -1,0 +1,77 @@
+1.9 Digital Input Pull-Up
+=========================
+
+Overview
+---------
+
+When using some switch input devices, some pull-up or pull-down
+resistors are often used to keep the level of corresponding pins at
+certain value on the condition that the device is not working. Such as
+in 1.4 Digital Read, a 10k resistor is used to make the pin be connected
+to GND under the condition that the button is not pressed down. If we
+have used a lot of switch input components and want to simplify the
+circuit, we can set the pin mode to「INPUT_PULLUP」in the code so that
+the pin reads the high level in the suspended state.
+
+Components Required
+-------------------
+
+.. image:: media/list_1.9.png
+
+
+Fritzing Circuit
+----------------
+
+In this example, we use pin 2 to read the signal of button. The internal
+pull-up in pin 2 is valid, so if the button isn’t pressed, HIGH is read
+in pin 2; when the button is pressed, LOW is read.
+
+.. image:: media/image53.png
+
+
+Schematic Diagram
+-----------------
+
+.. image:: media/image411.png
+
+
+Code
+----
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/223d1c70-2644-4b9c-9f69-74e18394631f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the codes are uploaded to the Mega2560 board, you can open the serial port monitor to view the read values of the pin. When the Button is pressed, the serial port monitor will display "0", and the "1" will be displayed when the button is released.
+
+Code Analysis
+-------------
+
+Run the serial communication in setup() and set the data rate to 9600.
+
+.. code-block:: arduino
+
+    Serial.begin(9600);
+
+Configure pin 2 as an input and enable the internal pull-up resistor.
+
+.. code-block:: arduino
+
+    pinMode(2, INPUT_PULLUP);
+
+Read the level state from the digital pin 2 by using digitalRead() statement in loop() and declare a variable to store it.
+
+.. code-block:: arduino
+
+    int buttonState = digitalRead(2);
+
+Print the values stored by variables on the serial port monitor.
+
+.. code-block:: arduino
+
+    Serial.println(buttonState);
+
+Phenomenon Picture
+------------------
+
+.. image:: media/image55.jpeg

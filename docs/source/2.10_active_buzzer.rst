@@ -1,0 +1,60 @@
+2.10 Active Buzzer
+==================
+
+Overview
+--------
+
+In this lesson, you will get to know about active buzzer. As a type of
+electronic buzzer with an integrated structure, active buzzer is
+supplied by DC power, widely used in computer, alarm, electronic toy,
+telephone, timer and other electronic products or voice devices.
+
+Components Required
+-------------------
+
+.. image:: media/list_2.10.png
+
+Component Introduction
+----------------------
+
+Buzzers can be categorized as active and passive ones (see the following
+picture). Turn the buzzer so that its pins are facing up, and the buzzer
+with a green circuit board is a passive buzzer, while the one enclosed
+with a black tape is an active one.
+
+The difference between an active buzzer and a passive buzzer:
+
+.. image:: media/image117.png
+
+
+.. image:: media/image447.png
+
+
+Fritzing Circuit
+----------------
+
+.. image:: media/image448.png
+
+In this example, we use the digital pin 9 to drive the buzzer and extend
+the cathode of the Buzzer to GND and its anode to the digital pin 9.
+
+Schematic Diagram
+-----------------
+
+.. image:: media/image450.png
+
+Code
+----
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/6452dcca-4e26-4e50-a32f-a00c8d0ace38/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+When you finish uploading the codes to the Mega2560 board, you can hear the beep—beep emitted from the buzzer. If you want to know more about the detail code explanation, please refer to **Part 1-1.2 Digital Write**.
+
+:ref:`1.2 Digital Write`
+
+Phenomenon Picture
+------------------
+
+.. image:: media/image121.jpeg

@@ -1,0 +1,64 @@
+2.30 IR Obstacle Avoidance Sensor
+===================================
+
+**Overview**
+----------------
+
+In this lesson, you will learn how to use IR Obstacle Avoidance Sensor.
+This module is commonly installed on the car and robot to judge the
+existence of the obstacles ahead. Also it is widely used in hand held
+device, water faucet and so on.
+
+**Components Required**
+------------------------
+
+.. image:: media/Part_two_30.png
+
+**Component Introduction**
+-----------------------------
+An IR Obstacle Sensor works in accordance with the infrared reflection
+principle to detect obstacles. When there is no object, the infrared
+receiver receives no signals; when there is an object ahead which blocks
+and reflects the infrared light, the infrared receiver will receive
+signals.
+
+**Fritzing Circuit**
+-------------------------
+We can directly connect the pins of IR Obstacle Sensor Module
+with the pins of Mega 2560 Board. The digital pin 2 is used to read the
+signal of IR Obstacle Avoidance Sensor Module. We get the VCC of IR
+Sensor Module connected to 5V, GND to GND, OUT to digital pin 2.
+
+.. image:: media/image231.png
+   :width: 500
+   :align: center
+
+**Schematic Diagram**
+------------------------
+
+.. image:: media/image232.png
+   :width: 2.825in
+   :height: 1.66181in
+   :align: center
+
+**Code**
+-----------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/918a1cfa-eade-48f4-b998-542765ff65cd/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Uploaded the codes to the Mega2560 board, you can see the readings of
+pins on the serial monitor. When IR Obstacle Avoidance Sensor Module
+detects there is something covering ahead, there appears 「0」on the
+serial monitor; otherwise,「1」is displayed. Refer to:ref:`1.4 Digital Read` 
+to check the detail code explanation.
+
+**Phenomenon Picture**
+-----------------------
+
+.. image:: media/image233.jpeg
+   :alt: 2.30
+   :width: 6.51806in
+   :height: 4.70556in
+   :align: center

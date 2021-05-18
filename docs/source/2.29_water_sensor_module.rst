@@ -1,0 +1,84 @@
+2.29 Water Sensor Module
+=========================
+
+**Overview**
+--------------
+
+In this lesson, you will learn how to use a water sensor module. A water
+sensor module is designed for water detection, which can be widely used
+in sensing the rainfall, water level, even the liquid leakage.
+
+**Components Required**
+--------------------------
+
+.. image:: media/Part_two_29.png
+
+**Component Introduction**
+-----------------------------
+
+.. image:: media/image226.png
+   :alt: Water Level Detection Sensor Module
+   :width: 3.91667in
+   :height: 1.50764in
+   :align: center
+
+This sensor works by having a series of exposed traces connected to
+ground. Interlaced between the grounded traces are the sense traces.
+
+The sensor traces have a weak pull-up resistor of 1 MΩ. The resistor
+will pull the sensor trace value high until a drop of water shorts the
+sensor trace to the grounded trace.
+
+This item can judge the water level through with a series of exposed
+parallel wires stitch to measure the water droplet/water size.
+
+The core part of water level sensor is an amplification circuit composed
+of a transistor and several comb-shape PCB cables. When placed in water,
+the comb-shape cable will change its resistance with the depth of the
+water and convert the depth signal into an electrical signal, and output
+analog value can directly be used in the program function, then to
+achieve the function of water level alarm.
+
+**Fritzing Circuit**
+------------------------
+
+In this example, we directly connect the pins of Water Sensor Module to
+pins of Mega 2560 Board. We use analog A0 to get the value of Water
+Sensor Module, and get the pin「S」of Water Sensor Module to A0, 「-」to
+GND, 「+」to 5V.
+
+.. image:: media/image227.png
+   :width: 500
+   :align: center
+
+**Schematic Diagram**
+-----------------------
+
+.. image:: media/image228.png
+   :width: 3.02639in
+   :height: 1.86597in
+   :align: center
+
+**Code**
+--------------
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/afccb53e-02c3-41ea-b365-c5c21c9a74b1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the code to the Mega2560 board, you can open the serial
+monitor to see the read value of the pin. As the water level rises, the
+readings increase. Readings vary within the range 「0」~「1023」, but
+influenced by the environmental condition and the characteristics of
+water level sensor, the actual reading range may be smaller than the
+theoretical range. Refer to Part 1-1.5 Analog Read to check the detail
+code explanation.
+
+**Phenomenon Picture**
+------------------------
+
+.. image:: media/image229.jpeg
+   :alt: 2.29
+   :width: 8.02708in
+   :height: 5.24792in
+   :align: center
