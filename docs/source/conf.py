@@ -13,9 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
-
-
 import sphinx_rtd_theme
 
 
@@ -53,16 +50,15 @@ exclude_patterns = []
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-<<<<<<< HEAD
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
-latex_engine = 'pdflatex'
-latex_use_xindy = False
-latex_elements = {
-    'preamble': '\\usepackage[UTF8]{ctex}\n',
-}
-=======
+
+html_js_files = [
+    'https://ezblock.cc/readDocFile/topHead.js',
+]
+html_css_files = [
+    'https://ezblock.cc/readDocFile/topHead.css',
+]
 language = 'de'
 locale_dirs = ['locale/']  # 设置本地化数据目录
->>>>>>> 51eb130c3a3f6c44003799d1e38628b967770468
