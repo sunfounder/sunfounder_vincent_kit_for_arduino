@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.18_touch_switch_module.rst:2
+msgid "2.18 Touch Switch Module"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:7
+msgid "In this lesson, you will learn about touch switch module. It can replace the traditional kinds of switch with these advantages: convenient operation, fine touch sense, precise control and least mechanical wear."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:12
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:18
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:20
+msgid "Touch switch module works by detecting a change in capacitance due to influence of an external object. The touch plate is covered with insulating material, and the user does not come in contact with the electrical circuit."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:25
+msgid "A capacitive touch switch has different layers—top insulating face plate followed by touch plate, another insulating layer and then ground plate."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:32
+msgid "In practice, a capacitive sensor can be made on a double-sided PCB by regarding one side as the touch sensor and the opposite side as ground plate of the capacitor. When power is applied across these plates, the two plates get charged. In equilibrium state, the plates have the same voltage as the power source."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:38
+msgid "The touch detector circuit has an oscillator whose frequency is dependent on capacitance of the touchpad. When a finger is moved close to the touchpad, additional capacitance causes frequency of this internal oscillator to change. The detector circuit tracks oscillator frequency at timed intervals, and when the shift crosses the threshold change, the circuit triggers a key-press event."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:50
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:52
+msgid "In this example, pin 2 is used to read the signal of Touch Switch Module."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:61
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:69
+msgid "**Code**"
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:75
+msgid "Uploaded the codes to the Mega2560 board, you can see the readings of pins displaying on the serial monitor."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:78
+msgid "When your finger tip touches the Touch switch module, 「1」will be displayed on the serial monitor; and when you remove your finger, 「0」 will be be displayed. As for the detailed code explanation, you need to turn to :ref:`1.4 Digital Read`."
+msgstr ""
+
+#: ../2.18_touch_switch_module.rst:84
+msgid "**Phenomenon Picture**"
+msgstr ""

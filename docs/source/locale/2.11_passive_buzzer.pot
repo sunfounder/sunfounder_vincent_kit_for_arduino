@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.11_passive_buzzer.rst:2
+msgid "2.11 Passive Buzzer"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:7
+msgid "In this lesson, you will get to know about passive buzzer. As a type of electronic buzzer with an integrated structure, passive buzzer is supplied by DC power, widely used in computer, alarm, electronic toy, telephone, timer and other electronic products or voice devices."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:13
+msgid "Components Required"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:19
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:21
+msgid "Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:26
+msgid "The difference between an active buzzer and a passive buzzer:"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:35
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:39
+msgid "In this example, what we use to drive the buzzer is the pin 9. We get the cathode of the Buzzer to GND, and the anode to the digital pin 9."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:42
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:47
+msgid "Code"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:53
+msgid "At the time when you finish uploading the codes to the Mega2560 board, you can hear a melody containing seven notes."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:56
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:58
+msgid "There are two points needing your attention:"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:60
+msgid "①tone() & noTone(): This function is used to control the sound of the passive buzzer directly and its prototype is as follows:"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:67
+msgid "Generates a square wave of the specified frequency (and 50% duty cycle) on a pin (so as to make the passive buzzer vibrate to make sound). A duration can be specified, otherwise the wave continues until a call to noTone(). The pin can be connected to a piezo buzzer or other speaker to play tones."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:69
+msgid "Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to tone() will have no effect. If the tone is playing on the same pin, the call will set its frequency."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:71
+msgid "Use of the tone() function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega)."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:73
+msgid "It is not possible to generate tones lower than 31Hz."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:75
+#: ../2.11_passive_buzzer.rst:87
+msgid "**pin**: The Arduino pin on which to generate the tone."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:77
+msgid "**frequency**: The frequency of the tone in hertz."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:79
+msgid "**duration**: The duration of the tone in milliseconds (optional)"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:85
+msgid "Stops the generation of a square wave triggered by tone(). Has no effect if no tone is being generated."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:89
+msgid "Having known the two functions, you may grasp the codes—the installation of the array melody[] and the array noteDurations[] is the preparation of the subsequently several times of calling of the function tone() and the changing of tone and duration in the loop for better effect of music play."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:91
+msgid "②pitches.h: The code uses an extra file, **pitches.h**. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the tone() command was based. You may find it useful whenever you want to make musical notes."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:98
+msgid "There is already a pitches.h file in this sample program. If we put it together with the main code in one folder, the successive steps of installing pitches.h can be omitted."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:102
+msgid "After you open the code 2.11passiveBuzzer, if you cannot open the pitches.h code, you can just install one manually. The steps are as follows:"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:106
+msgid "To make the pitches.h file, either click on the button just below the serial monitor icon and choose \"New Tab\", or use Ctrl+Shift+N."
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:111
+msgid "Then paste in the following code and save it as **pitches.h**:"
+msgstr ""
+
+#: ../2.11_passive_buzzer.rst:209
+msgid "Phenomenon Picture"
+msgstr ""

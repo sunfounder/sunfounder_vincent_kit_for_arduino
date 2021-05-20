@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.7_analog_input_control_output.rst:2
+msgid "1.7 Analog Input Control Output"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:7
+msgid "You can install an I/O system by using an analog input/ output device. For example, you can use potentiometer, photoresistor, water level sensor, etc., to control the brightness of LED, the speed of motor, and the like. In this lesson, potentiometer and LED are taken as examples to change the brightness of the LED when the potentiometer is turning."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:14
+msgid "Components Required"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:19
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:21
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:25
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:27
+msgid "In this lesson, we use PWM pin 9 to drive LED. The analog pin (A0) is used to read the value of potentiometer. After uploading the code, you'll notice that the brightness of the LED changes as the potentiometer rotates."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:36
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:42
+msgid "Code"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:48
+msgid "When the codes are uploaded to the Mega2560 board, you can see that the brightness of LED is changing with the turning of the knob of potentiometer."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:51
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:53
+msgid "Declare the pins of LED and Button."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:60
+msgid "In setup(), set the mode of ledPin to OUTPUT."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:66
+msgid "Read the readings of potentiometer in loop()."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:72
+msgid "Map the potentiometer reading to the LED brightness value (0-1024 is mapped to 0-255)."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:78
+msgid "Write the brightness value to LED."
+msgstr ""
+
+#: ../1.7_analog_input_control_output.rst:85
+msgid "Phenomenon Picture"
+msgstr ""

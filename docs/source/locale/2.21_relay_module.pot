@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.21_relay_module.rst:2
+msgid "2.21 Relay Module"
+msgstr ""
+
+#: ../2.21_relay_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:7
+msgid "In this lesson, you will learn about Relay Module."
+msgstr ""
+
+#: ../2.21_relay_module.rst:10
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:15
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:17
+msgid "As we may know, relay is a device which is used to provide connection between two or more points or devices in response to the input signal applied. In other words, relays provide isolation between the controller and the device as devices may work on AC as well as on DC. However, they receive signals from a microcontroller which works on DC hence requiring a relay to bridge the gap. Relay is extremely useful when you need to control a large amount of current or voltage with small electrical signal."
+msgstr ""
+
+#: ../2.21_relay_module.rst:26
+msgid "There are 5 parts in every relay:"
+msgstr ""
+
+#: ../2.21_relay_module.rst:34
+msgid "1. **Electromagnet** – It consists of an iron core wounded by coil of wires. When electricity is passed through, it becomes magnetic. Therefore, it is called electromagnet."
+msgstr ""
+
+#: ../2.21_relay_module.rst:38
+msgid "2. **Armature** – The movable magnetic strip is known as armature. When current flows through them, the coil is it energized thus producing a magnetic field which is used to make or break the normally open (N/O) or normally close (N/C) points. And the armature can be moved with direct current (DC) as well as alternating current (AC)."
+msgstr ""
+
+#: ../2.21_relay_module.rst:44
+msgid "3. **Spring** – When no currents flow through the coil on the electromagnet, the spring pulls the armature away so the circuit cannot be completed."
+msgstr ""
+
+#: ../2.21_relay_module.rst:48
+msgid "Set of electrical **contacts** – There are two contact points:"
+msgstr ""
+
+#: ../2.21_relay_module.rst:50
+msgid "Normally open - connected when the relay is activated, and disconnected when it is inactive."
+msgstr ""
+
+#: ../2.21_relay_module.rst:52
+msgid "Normally close – not connected when the relay is activated, and connected when it is inactive."
+msgstr ""
+
+#: ../2.21_relay_module.rst:54
+msgid "Molded frame – Relays are covered with plastic for protection."
+msgstr ""
+
+#: ../2.21_relay_module.rst:56
+msgid "**Working of Relay**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:58
+msgid "The working principle of relay is simple. When power is supplied to the relay, currents start flowing through the control coil; as a result, the electromagnet starts energizing. Then the armature is attracted to the coil, pulling down the moving contact together thus connecting with the normally open contacts. So the circuit with the load is energized. Then breaking the circuit would a similar case, as the moving contact will be pulled up to the normally closed contacts under the force of the spring. In this way, the switching on and off of the relay can control the state of a load circuit."
+msgstr ""
+
+#: ../2.21_relay_module.rst:69
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:71
+msgid "In this example, we use Power Supply Module to power the load，use LED as an example."
+msgstr ""
+
+#: ../2.21_relay_module.rst:81
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:89
+msgid "**Code**"
+msgstr ""
+
+#: ../2.21_relay_module.rst:95
+msgid "Once the codes are uploaded to the Mega2560 board, you can see that the Relay Module controls the closing and breaking of the external circuit, which will change its working state a second. For detailed code explanation, refer to :ref:`1.2 Digital Write`."
+msgstr ""
+
+#: ../2.21_relay_module.rst:101
+msgid "**Phenomenon Picture**"
+msgstr ""

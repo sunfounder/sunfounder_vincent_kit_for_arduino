@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:2
+msgid "3.2 Pedestrian Crossing Button"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:7
+msgid "When pedestrians cross the street, they just need to touch the button on the lamppost of the roadside signal lamp, and the green light above the traffic lane will turn into red then pedestrians can pass safely. Thus, the hard situation of citizens crossing the street is comprehensively resolved. At the same time, when there is no pedestrian to press, the light above the lane that is set for vehicles to pass will always be green, thus greatly improving the use efficiency of the road and traffic capacity."
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:17
+msgid "**Components Required**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:23
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:25
+msgid "In this example, 74hc595, 7-Segment, LED, touch sensor are to be connected according to the chart."
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:36
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:42
+msgid "**Example Explanation**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:44
+msgid "The workflow of the project is as shown in the flow chart. The function of number display of 7-Segment is realized by writing 8 bit data into 74HC595. When there is a need of displaying「0」, the pins abcdef of the segment display will be connected to the high level. The pins, g and dp need to be connected to low level to write「0x3f」(B00111111) in the codes. The complete codes for number display of 7-Segment are as follows."
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:56
+msgid "**Numbers**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:56
+msgid "**Common Cathode**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:57
+msgid "\\"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:57
+msgid "(DP)GFEDCBA"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:57
+msgid "Hex Code"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:58
+msgid "0"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:58
+msgid "00111111"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:58
+msgid "0x3f"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:59
+msgid "1"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:59
+msgid "00000110"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:59
+msgid "0x06"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:60
+msgid "2"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:60
+msgid "01011011"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:60
+msgid "0x5b"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:61
+msgid "3"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:61
+msgid "01001111"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:61
+msgid "0x4f"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:62
+msgid "4"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:62
+msgid "01100110"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:62
+msgid "0x66"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:63
+msgid "5"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:63
+msgid "01101101"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:63
+msgid "0x6d"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:64
+msgid "6"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:64
+msgid "01111101"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:64
+msgid "0x7d"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:65
+msgid "7"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:65
+msgid "00000111"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:65
+msgid "0x07"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:66
+msgid "8"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:66
+msgid "01111111"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:66
+msgid "0x7f"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:67
+msgid "9"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:67
+msgid "01101111"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:67
+msgid "0x6f"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:71
+msgid "**Phenomenon Picture**"
+msgstr ""
+
+#: ../3.2_Pedestrian_Crossing_Button.rst:83
+msgid "</iframe>"
+msgstr ""

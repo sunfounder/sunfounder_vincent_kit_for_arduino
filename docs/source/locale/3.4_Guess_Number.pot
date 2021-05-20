@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../3.4_Guess_Number.rst:2
+msgid "3.4 Guess Number"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:7
+msgid "Guessing Numbers is a fun party game where you and your friends take turns inputting a number (0~99). The range will be smaller with the inputting of the number till a player answers the riddle correctly. Then the player is defeated and punished. For example, if the lucky number is 51 which the players cannot see, and the player ① inputs 50, the prompt of number range changes to 50~99; if the player ② inputs 70, the range of number can be 50~70; if the player ③ inputs 51, he or she is the unlucky one. Here, we use IR Remote Controller to input numbers and use LCD to output outcomes."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:18
+msgid "**Components Required**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:24
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:26
+msgid "In this example, the wiring of LCD1602 and infrared receiving module is as follows."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:33
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:39
+msgid "**Example Explanation**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:44
+msgid "In order to make the number guessing game become vivid and funny, we need to achieve the following functions:"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:47
+msgid "The lucky number will be displayed when we start and reset the game, and the number range prompt is reset to 0 ~ 99."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:50
+msgid "LCD will display the number being input and the number range prompt."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:52
+msgid "After inputting two digits, there appears result judgment automatically."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:55
+msgid "If you input a single digit, you can press the CYCLE key (the key at the center of the Controller) to start the result judgment."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:58
+msgid "If the answer is not guessed, the new number range prompt will be displayed (if the lucky number is 51 and you enter 50, the number range prompt will change to 50~99)."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:62
+msgid "The game is automatically reset after the lucky number is guessed, so that the player can play a new round."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:65
+msgid "The game can be reset by directly pressing the POWER button (the button in the upper left corner)."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:68
+msgid "In conclusion, the work flow of the project is shown in the flow chart."
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:71
+msgid "**Phenomenon Picture**"
+msgstr ""
+
+#: ../3.4_Guess_Number.rst:83
+msgid "</iframe>"
+msgstr ""

@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.4_led_bar_graph.rst:2
+msgid "2.4 LED Bar Graph"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:7
+msgid "In this lesson, you will learn something about LED Bar Graph. Generally, LED Bar Graph works as a battery level indicator, Audio equipment, industrial control panel. If we want, we can also find its other application."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:13
+msgid "Components Required"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:19
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:21
+msgid "LED Bar Graph is an LED array, which is used to connect with electronic circuit or microcontroller. It’s easy to connect LED bar graph with the circuit like as connecting 10 individual LEDs with 10 output pins."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:26
+msgid "The anode is the side with a label (1-10)."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:32
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:34
+msgid "In this example, we use digital pins 2~11 to drive the LED Bar Graph. LED Bar Graph has ten separate LEDs inside and each LED has two pins. The left pins 1~10 of LED Bar Graph are connected with the digital pins 2~11 respectively; the right side pins 11~20 are separately extended to same side of these 220ohm resistors whose other sides are identically connected to GND."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:44
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:49
+msgid "Code"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:55
+msgid "Uploaded the codes to the Mega2560 board, you can see that the LEDs on the LED Bar Graph flash in sequence."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:58
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:59
+msgid "The codes in setup() use the for loop to initialize pins 2~11 to output mode in turn."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:68
+msgid "The for loop is used in loop() to make the LED flash(turn on 0.5s, then turn off 0.5s) in sequence."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:80
+msgid "Refer to **Part 1-1.2 Digital Write** for more details about controlling the LED by using digital pins."
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:82
+msgid ":ref:`1.2 Digital Write`"
+msgstr ""
+
+#: ../2.4_led_bar_graph.rst:85
+msgid "Phenomenon Picture"
+msgstr ""

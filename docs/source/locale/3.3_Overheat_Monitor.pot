@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../3.3_Overheat_Monitor.rst:2
+msgid "3.3 Overheat Monitor"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:7
+msgid "You may want to make an overheat monitoring device that applies to various situations. When the temperature of room is above 30°C in summer, the electric fan or the air conditioner will be turned on automatically. If the refrigerator stops to refrigerate, there will emit alarm. When the CPU gets overheated, the water-cooling system turns on. Next, we will use thermistor, relay, button, rotary encoder and LCD to make an intelligent temperature monitoring device whose threshold is adjustable. You can make it suitable for the scene you want by inserting different peripherals into the relay and using a rotary encoder to adjust the high temperature threshold."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:18
+msgid "**Components Required**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:27
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:29
+msgid "In this example, the component modules are connected as shown in the table."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:40
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:46
+msgid "**Example Explanation**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:48
+msgid "The flow diagram of the project is as follows:"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:53
+msgid "By using EEPROM.h library, the high temperature threshold is saved in EEPROM to avoid the value reset after the restart of MCU."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:56
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:62
+msgid "Write a byte to the EEPROM."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:68
+msgid "Reads a byte from the EEPROM. Locations that have never been written to have the value of 255."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:75
+msgid "Write a byte to the EEPROM. The value is written only if differs from the one already saved at the same address."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:82
+msgid "Write any data type or object to the EEPROM."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:88
+msgid "Read any data type or object from the EEPROM."
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:91
+msgid "**Phenomenon Picture**"
+msgstr ""
+
+#: ../3.3_Overheat_Monitor.rst:103
+msgid "</iframe>"
+msgstr ""

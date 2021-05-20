@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.25_rotary_encoder_module.rst:2
+msgid "2.25 Rotary Encoder Module"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:7
+msgid "In this lesson, you will learn about Rotary Encoder. A rotary encoder is an electronic switch with a set of regular pulses in strictly timing sequence. When used with IC, it can achieve increment, decrement, page turning and other operations such as mouse scrolling, menu selection, and so on."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:14
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:19
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:21
+msgid "There are mainly two types of rotary encoders: absolute and incremental (relative) encoders. An incremental one is used in this experiment."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:24
+msgid "Most rotary encoders have 5 pins with three functions of turning left & right and pressing down. Pin 1 and pin 2 are switch wiring terminals used to press. Pin 4 is generally connected to ground. Pin 3 and pin 5 are first connected to a pull-up resistor and then to VCC and they can generate two-phase square waves whose phase difference is 90°. Usually these waves are called channel A and channel B as shown below:"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:36
+msgid "As shown on the right, when channel A changes from high level to low level, if channel B is high level, it indicates the rotary encoder spins clockwise (CW); if at that moment channel B is low level, it means spins counterclockwise (CCW). So if we read the value of channel B when channel A is low level, we can know in which direction the rotary encoder rotates."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:48
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:50
+msgid "In this example, we can connect the Rotary Encoder pin directly to the Mega 2560 Board pin, connect the GND of the Rotary Encoder to GND, 「+」 to 5V, SW to digital pin 4, DT to digital pin 3, and CLK to digital pin 2."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:60
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:68
+msgid "**Code**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:74
+msgid "You will see the angular displacement of the rotary encoder printed on Serial Monitor. When you turn the rotary encoder clockwise, the angular displacement is increased; when turn it counterclockwise, the displacement is decreased. If you press the switch on the rotary encoder, the readings will return to zero."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:81
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:83
+msgid "When Rotary Encoder is used, the following situations of pin level will occur."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:86
+msgid "① When rotating the shaft, dtPin will go from high level to low level."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:88
+msgid "② clkPin will remain high level when the shaft rotates clockwise, otherwise it goes low level."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:91
+msgid "③ When the shaft is pressed, swPin will have low level."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:93
+msgid "From this, the program flow is shown on the right."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:95
+msgid "For detailed analysis of potential state change judgment, please refer to :ref:`1.10 State Change Detection`."
+msgstr ""
+
+#: ../2.25_rotary_encoder_module.rst:102
+msgid "**Phenomenon Picture**"
+msgstr ""

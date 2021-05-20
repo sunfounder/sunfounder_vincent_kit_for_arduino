@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.2_digital_write.rst:2
+msgid "1.2 Digital Write"
+msgstr ""
+
+#: ../1.2_digital_write.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.2_digital_write.rst:7
+msgid "The digitalWrite() statement here is used to write high level or low level to pins and to let LED and active buzzer 「work 」or 「stop」. In this lesson, we will take LED as an example to introduce the experiment phenomenon."
+msgstr ""
+
+#: ../1.2_digital_write.rst:13
+msgid "Components Required"
+msgstr ""
+
+#: ../1.2_digital_write.rst:19
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.2_digital_write.rst:21
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.2_digital_write.rst:24
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.2_digital_write.rst:26
+msgid "In this example, we use digital pin 9 to drive the LED. Attach one side of the resistor to the digital pin 9 and the longer pin (anode) of the LED to the other side of the resistor. Connect the shorter pin (cathode) of the LED to GND."
+msgstr ""
+
+#: ../1.2_digital_write.rst:35
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.2_digital_write.rst:41
+msgid "Code"
+msgstr ""
+
+#: ../1.2_digital_write.rst:43
+msgid "After finishing the circuit connection, connect the Mega2560 board to the computer. Run the Arduino software IDE and type in the following codes."
+msgstr ""
+
+#: ../1.2_digital_write.rst:48
+msgid "You can also open the 1.2digitalWrite.ino file in the path of sunfounder_vincent_kit_for_arduino\\code\\1.2digitalWrite to use the codes."
+msgstr ""
+
+#: ../1.2_digital_write.rst:55
+msgid "Upload the codes to the Mega2560 board, and you can see the blinking of LED."
+msgstr ""
+
+#: ../1.2_digital_write.rst:58
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.2_digital_write.rst:60
+msgid "Here, we connect the LED to the digital pin 9, so we need to declare an int variable called ledpin at the beginning of the program and assign a value of 9."
+msgstr ""
+
+#: ../1.2_digital_write.rst:68
+msgid "Now, initialize the pin in the setup() function, where you need to initialize the pin to OUTPUT mode."
+msgstr ""
+
+#: ../1.2_digital_write.rst:75
+msgid "In loop(), digitalWrite() is used to provide 5V high level signal for ledpin, which will cause voltage difference between LED pins and light LED up."
+msgstr ""
+
+#: ../1.2_digital_write.rst:82
+msgid "If the level signal is changed to LOW, the ledPin's signal will be returned to 0 V to turn LED off."
+msgstr ""
+
+#: ../1.2_digital_write.rst:88
+msgid "An interval between on and off is required to allow people to see the change, so we use a delay(1000) code to let the controller do nothing for 1000 ms."
+msgstr ""
+
+#: ../1.2_digital_write.rst:96
+msgid "※ How to Upload the Sketch"
+msgstr ""
+
+#: ../1.2_digital_write.rst:98
+msgid "Before you upload a written code to Arduino, you need first to select Board and Port."
+msgstr ""
+
+#: ../1.2_digital_write.rst:101
+msgid "Click Tools ->Board and select Arduino/Genuino Mega or Mega 2560."
+msgstr ""
+
+#: ../1.2_digital_write.rst:106
+msgid "Then select **Tools** ->\\ **Port**. Your port should be different from mine."
+msgstr ""
+
+#: ../1.2_digital_write.rst:112
+msgid "**Step 4:** Upload the sketch to the SunFounder Mega2560 board. Click the **Upload** icon to upload the code to the control board."
+msgstr ""
+
+#: ../1.2_digital_write.rst:118
+msgid "If \"Done uploading\" appears at the bottom of the window, it means the sketch has been successfully uploaded."
+msgstr ""
+
+#: ../1.2_digital_write.rst:125
+msgid "Phenomenon Picture"
+msgstr ""

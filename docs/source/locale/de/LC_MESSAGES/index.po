@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vincent-kit \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-18 11:34+0800\n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,27 +18,54 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: ../index.rst:9
-msgid "Contents:"
+#: ../index.rst:2
+msgid "SunFounder Vincent Kit for Arduino"
 msgstr ""
 
-#: ../index.rst:7
-msgid "Welcome to vincent-kit's documentation!"
-msgstr "德语测试"
-
-#: ../index.rst:16
-msgid "Indices and tables"
+#: ../index.rst:5
+msgid "About the Vincent Kit"
 msgstr ""
 
-#: ../index.rst:18
-msgid ":ref:`genindex`"
+#: ../index.rst:6
+msgid ""
+"This is a kit suitable for beginners and knowledgable Arduino learners. "
+"The kit uses Mega2560 as the main control board, containing 64 commonly "
+"used input and output components, modules and so many basic components "
+"(such as resistors, capacitors, transistors, etc.), and it can provide "
+"powerful help for you to finish your programming projects."
 msgstr ""
 
-#: ../index.rst:19
-msgid ":ref:`modindex`"
+#: ../index.rst:23
+msgid "Copyright Notice"
 msgstr ""
 
-#: ../index.rst:20
-msgid ":ref:`search`"
+#: ../index.rst:25
+msgid ""
+"All contents including but not limited to texts, images, and code in this"
+" manual are owned by the SunFounder Company. You should only use it for "
+"personal study, investigation, enjoyment, or other non-commercial or "
+"nonprofit purposes, under therelated regulations and copyrights laws, "
+"without infringing the legal rights of the author and relevant right "
+"holders. For any individual or organization that uses these for "
+"commercial profit without permission, the Company reserves the right to "
+"take legal action."
 msgstr ""
+
+#~ msgid "Contents:"
+#~ msgstr ""
+
+#~ msgid "Welcome to vincent-kit's documentation!"
+#~ msgstr "德语测试"
+
+#~ msgid "Indices and tables"
+#~ msgstr ""
+
+#~ msgid ":ref:`genindex`"
+#~ msgstr ""
+
+#~ msgid ":ref:`modindex`"
+#~ msgstr ""
+
+#~ msgid ":ref:`search`"
+#~ msgstr ""
 

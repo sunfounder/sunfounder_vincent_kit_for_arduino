@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.29_water_sensor_module.rst:2
+msgid "2.29 Water Sensor Module"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:7
+msgid "In this lesson, you will learn how to use a water sensor module. A water sensor module is designed for water detection, which can be widely used in sensing the rainfall, water level, even the liquid leakage."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:12
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:17
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:25
+msgid "This sensor works by having a series of exposed traces connected to ground. Interlaced between the grounded traces are the sense traces."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:28
+msgid "The sensor traces have a weak pull-up resistor of 1 MΩ. The resistor will pull the sensor trace value high until a drop of water shorts the sensor trace to the grounded trace."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:32
+msgid "This item can judge the water level through with a series of exposed parallel wires stitch to measure the water droplet/water size."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:35
+msgid "The core part of water level sensor is an amplification circuit composed of a transistor and several comb-shape PCB cables. When placed in water, the comb-shape cable will change its resistance with the depth of the water and convert the depth signal into an electrical signal, and output analog value can directly be used in the program function, then to achieve the function of water level alarm."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:43
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:45
+msgid "In this example, we directly connect the pins of Water Sensor Module to pins of Mega 2560 Board. We use analog A0 to get the value of Water Sensor Module, and get the pin「S」of Water Sensor Module to A0, 「-」to GND, 「+」to 5V."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:55
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:63
+msgid "**Code**"
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:69
+msgid "After uploading the code to the Mega2560 board, you can open the serial monitor to see the read value of the pin. As the water level rises, the readings increase. Readings vary within the range 「0」~「1023」, but influenced by the environmental condition and the characteristics of water level sensor, the actual reading range may be smaller than the theoretical range. Refer to Part 1-1.5 Analog Read to check the detail code explanation."
+msgstr ""
+
+#: ../2.29_water_sensor_module.rst:78
+msgid "**Phenomenon Picture**"
+msgstr ""

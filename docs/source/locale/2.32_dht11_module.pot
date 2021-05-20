@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.32_dht11_module.rst:2
+msgid "2.32 DHT11 Module"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:7
+msgid "In this lesson, you will learn how to use DHT11 Module. The DHT11 is a basic, ultra low-cost digital temperature and humidity sensor. It uses a capacitive humidity sensor and a thermistor to measure the surrounding air, and spits out a digital signal on the data pin (no analog input pins are needed)."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:14
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:19
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:25
+msgid "Only three pins are available: VCC, GND, and DATA. The communication process begins with the DATA line sending start signals to DHT11, and DHT11 receives the signals and returns an answer signal. Then the host receives the answer signal and begins to receive 40-bit humiture data (8-bit humidity integer + 8-bit humidity decimal + 8-bit temperature integer + 8-bit temperature decimal + 8-bit checksum). For more information, please refer to DHT11 datasheet."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:34
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:36
+msgid "In this example, we can directly connect the pins of DHT11 Module to the pins of Mega 2560 Board, and we use pin 4 to read the signal of DHT11 Module. Connect the pin「+」of DHT11 Module to 5V, the pin「-」 to GND, and the pin OUT to pin 4."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:46
+msgid "**Wiring Diagram**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:53
+msgid "**Code**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:55
+msgid "The codes use the `library dht.h <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_. About how to import library, please refer to :ref:`4.1 Add Libraries`."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:62
+msgid "After the codes are uploaded to the Mega2560 board, the serial monitor will continue to output the current temperature and humidity values of the environment."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:67
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:69
+msgid "The function of the module is included in the library dht.h."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:75
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:81
+msgid "Creates a new instance of the dht class that represents a particular DHT-11 module attached to your Arduino board."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:88
+msgid "This function will return CHECK values."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:90
+msgid "**DHTLIB_OK** means that DHT-11 is in good condition;"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:92
+msgid "**DHTLIB_ERROR_CHECKSUM** represents that the value may be abnormal;"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:94
+msgid "**DHTLIB_ERROR_TIMEOUT** indicates that there is timeout."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:96
+msgid "The function will store the detected humidity and temperature into the variables with the same name in dht class."
+msgstr ""
+
+#: ../2.32_dht11_module.rst:99
+msgid "The function should be called and used directly in the main program. (e.g. Serial\\ **.**\\ println\\ **(**\\ DHT\\ **.**\\ temperature\\ **,**\\ 1\\ **);**)"
+msgstr ""
+
+#: ../2.32_dht11_module.rst:105
+msgid "**Phenomenon Picture**"
+msgstr ""

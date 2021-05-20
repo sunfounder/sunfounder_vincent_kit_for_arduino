@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.28_sound_sensor_module.rst:2
+msgid "2.28 Sound Sensor Module"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:7
+msgid "In this lesson, you will learn how to use a sound sensor module. The sound sensor module provides an easy way to detect sound and is generally used for detecting sound intensity."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:12
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:17
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:24
+msgid "This module can be used for security, switch, and monitoring applications. Its accuracy can be easily adjusted for the convenience of usage."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:28
+msgid "It uses a microphone which supplies the input to an amplifier, peak detector and buffer. When the sensor detects a sound, it processes an output signal voltage which is sent to a micro-controller then performs necessary processing."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:33
+msgid "This module has two outputs:"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:35
+msgid "① AO: analog output, real-time output voltage signal of microphone."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:37
+msgid "② DO: when the intensity of the sound reaches a certain threshold, the output is a high or low level signal. The threshold sensitivity can be achieved by adjusting the potentiometer."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:43
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:45
+msgid "In this example, we can directly connect the pin of Sound Sensor Module to the pin of Mega 2560 Board, connect the pin「G」 of Sound Sensor Module to GND, the pin 「+」to 5V, AO to analog pin A0, and D0 to digital pin 2."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:55
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:63
+msgid "**Code**"
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:69
+msgid "After uploading the code to the Mega2560 board, you can open the serial monitor to see the read value of the pin. When the ambient sound gets louder, the digital reading is 「1」 (adjust the potentiometer of the module to modify the threshold to trigger the high level), and the reading value of the analog pin will change significantly; when the environment is quiet, the digital reading is 「0」 and the analog reading changes smoothly."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:77
+msgid "The range of analog reading is「0」~「1023」, but influenced by the the environmental condition and the characteristics of sound sensor, the actual reading range may be smaller than the theoretical one. If an oscilloscope is used, the changing of analog reading of the sound sensor will be more obvious."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:83
+msgid "About the detail code explanation, refer to :ref:`1.5 Analog Read` and :ref:`1.4 Digital Read`."
+msgstr ""
+
+#: ../2.28_sound_sensor_module.rst:87
+msgid "**Phenomenon Picture**"
+msgstr ""

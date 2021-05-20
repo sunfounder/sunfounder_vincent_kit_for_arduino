@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.8_led_matrix_module.rst:2
+msgid "2.8 LED Matrix Module"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:7
+msgid "In this lesson, you will learn about LED Matrix Module. LED Matrix Module uses the MAX7219 driver to drive the 8 x 8 LED Matrix."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:11
+msgid "Components Required"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:16
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:18
+msgid "The 64 LEDs are driven by 16 output pins of the IC. The maximum number of LEDs light up at the same time is actually eight. The LEDs are arranged as 8×8 set of rows and columns. So the MAX7219 activates each column for a very short period of time and at the same time it also drives each row. So by rapidly switching through the columns and rows the human eye will only notice a continuous light."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:23
+msgid "MAX7219"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:25
+msgid "These integrated circuits from Maxim are for driving either 64 individual LED's, or up to 8 digits of 7-segment displays. The drivers implement a SPI compatible slave interface that can be controlled from the Arduino using only 3 of the digital output pins."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:31
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:33
+msgid "In this example, we get the VCC pin of MAX7219 connected to 5V, GND to ground, DIN to digital pin 12, CS to digital pin 10, CLK to digital pin 11."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:40
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:45
+msgid "Code"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:47
+msgid "The codes use the library LedControl.h, and please refer to **Part 4 - 4.1 Add Libraries to add in the library to Arduino IDE**."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:49
+msgid "`LedControl.h <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:51
+msgid ":ref:`4.1 Add Libraries`"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:57
+msgid "After the codes are uploaded, you can see that the LEDs turn on in the sequence of a column, a row or a dot or there is a picture appearing on the LED matrix."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:61
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:63
+msgid "By calling the library LedControl.h, you can easily use the LED matrix."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:69
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:75
+msgid "Create an instance of type LedControl through which we talk to the MAX7219 devices. The initialization of an LedControl takes 4 arguments."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:78
+msgid "**dataPin,clockPin,csPin**: The first 3 arguments are the pin-numbers on the Arduino that are connected to the MAX7219. You are free to choose any of the digital IO-pins on the arduino, but since some of the pins are also used for serial communication or have a led attached to them its best to avoid pin 0,1 and 13."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:84
+msgid "**numDevices**: The fourth argument is the number of cascaded MAX7219 devices you're using with this LedControl. The library can address up to 8 devices from a single LedControl-variable."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:92
+#: ../2.8_led_matrix_module.rst:103
+#: ../2.8_led_matrix_module.rst:114
+#: ../2.8_led_matrix_module.rst:122
+#: ../2.8_led_matrix_module.rst:136
+#: ../2.8_led_matrix_module.rst:149
+msgid "**addr**: The address of the display to control."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:94
+msgid "**b**: If true the device goes into power-down mode. If false device goes into normal operation."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:100
+msgid "Themethod lets you control brightness in 16 discrete steps. Larger values make the display brighter up to the maximum of 15."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:105
+msgid "**intensity**: the brightness of the display. Only values between 0(darkest) and 15(brightest) are valid."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:112
+msgid "All LEDs off after this one."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:120
+msgid "Set the status of a single Led."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:124
+msgid "**row**: The row of the Led (0..7)."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:126
+msgid "**col**: The column of the Led (0..7)."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:128
+msgid "**state**: If true the led is switched on, if false it is switched off."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:134
+#: ../2.8_led_matrix_module.rst:147
+msgid "Set all 8 LEDs in a row to a new state."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:138
+msgid "**row**: Row which is to be set (0..7)."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:140
+#: ../2.8_led_matrix_module.rst:153
+msgid "**value**: Each bit set to 1 will light up the corresponding Led.(e.g. B01000000 will light up the 2nd)."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:151
+msgid "**col**: Column which is to be set (0..7)."
+msgstr ""
+
+#: ../2.8_led_matrix_module.rst:159
+msgid "Phenomenon Picture"
+msgstr ""

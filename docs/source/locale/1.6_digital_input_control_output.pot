@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.6_digital_input_control_output.rst:2
+msgid "1.6 Digital Input Control Output"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:7
+msgid "With the understanding of digitalWrite() and digitalRead(), we can build a complete I / O system to control the output device by obtaining the data from the input device. We can use this method to enable digital input components such as Button, Touch sensor, Infrared motion sensor to control digital output devices such as LED, active buzzer. This lesson will take Button and LED as examples to realize button control LED with the condition (if-else)."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:16
+msgid "Components Required"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:22
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:24
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:27
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:29
+msgid "In this example, we use pin 9 to drive LED. Use digital pin 2 to read the signal of Button. When the button is pressed, the LED lights up."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:36
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:42
+msgid "Code"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:48
+msgid "After uploading the code to the Mega2560 board, you can hold down Button to lighten the LED."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:52
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:54
+msgid "Declare the pins of LED and Button and declare a variable to store the state of button."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:63
+msgid "Initialize the pin mode in setup()."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:70
+msgid "Read the status of the Button in loop() and assign it to the variable buttonState."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:76
+msgid "Use if condition to judge: if you get high level from a button, light up the LED."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:84
+msgid "Otherwise, turn off the LED."
+msgstr ""
+
+#: ../1.6_digital_input_control_output.rst:93
+msgid "Phenomenon Picture"
+msgstr ""

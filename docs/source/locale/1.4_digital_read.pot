@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.4_digital_read.rst:2
+msgid "1.4 Digital Read"
+msgstr ""
+
+#: ../1.4_digital_read.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.4_digital_read.rst:7
+msgid "You can use the digitalRead() command to read the level status from a digital pin. The command is suitable for digital input elements such as Button, Touch sensor, infrared motion sensor, etc. This article will take Button as an example to read the level state."
+msgstr ""
+
+#: ../1.4_digital_read.rst:12
+msgid "This example also shows you how to monitor the state of a switch by using USB to establish serial communication between a control board and a computer."
+msgstr ""
+
+#: ../1.4_digital_read.rst:17
+msgid "Components Required"
+msgstr ""
+
+#: ../1.4_digital_read.rst:23
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.4_digital_read.rst:25
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.4_digital_read.rst:28
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.4_digital_read.rst:30
+msgid "In this example, we read the signal of the button with the digital pin 2. When the button is not pressed, the digital pin 2 (through the drop-down resistor) is connected to ground to read the low level (0); when the button is pressed, the two pins are connected and when the pin is connected to the 5V power supply, the high level (1) is read."
+msgstr ""
+
+#: ../1.4_digital_read.rst:41
+msgid "If you disconnect the digital I/O pin from everything, the LED may blink erratically. This is because the input is \"floating\" - that is, it doesn't have a solid connection to voltage or ground, and it will randomly return either HIGH or LOW. That's why you need a pull-down resistor in the circuit."
+msgstr ""
+
+#: ../1.4_digital_read.rst:48
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.4_digital_read.rst:54
+msgid "Code"
+msgstr ""
+
+#: ../1.4_digital_read.rst:60
+msgid "After uploading the code to the Mega2560 board, we can open the serial port monitor to see the reading value of the pin. When you press Button, the serial port monitor will display 「1」 and when Button is released, 「0」 will be displayed."
+msgstr ""
+
+#: ../1.4_digital_read.rst:66
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.4_digital_read.rst:68
+msgid "Start the serial communication in setup() and set the data rate to 9600."
+msgstr ""
+
+#: ../1.4_digital_read.rst:74
+msgid "You also need to set the status of the digital pin 2 to INPUT to read the output status of Button."
+msgstr ""
+
+#: ../1.4_digital_read.rst:80
+msgid "Use the digitalRead() statement in loop() to read the level state of the digital pin 2 and declare a variable to store the state."
+msgstr ""
+
+#: ../1.4_digital_read.rst:86
+msgid "Print the value stored by the variable on the serial port monitor."
+msgstr ""
+
+#: ../1.4_digital_read.rst:92
+msgid "Use delay() statements to make printing results easy to observe."
+msgstr ""
+
+#: ../1.4_digital_read.rst:99
+msgid "※ How to turn on Serial Port Monitor"
+msgstr ""
+
+#: ../1.4_digital_read.rst:101
+msgid "Click the magnifier icon at the top right of the Arduino IDE programming window to open the **Serial Monitor**."
+msgstr ""
+
+#: ../1.4_digital_read.rst:108
+msgid "Phenomenon Picture"
+msgstr ""

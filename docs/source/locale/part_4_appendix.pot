@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../part_4_appendix.rst:2
+msgid "Part 4 Appendix"
+msgstr ""
+
+#: ../part_4_appendix.rst:5
+msgid "4.1 Add Libraries"
+msgstr ""
+
+#: ../part_4_appendix.rst:8
+msgid "**What is Library?**"
+msgstr ""
+
+#: ../part_4_appendix.rst:10
+msgid "A library, gathering some function definitions and header files, usually contains two files: .h (header file, including function statement, Macro definition, constructor definition, etc.) and .cpp (execution file, with function implementation, variable definition, and so on). When you need to use a function in some library, you just need to add a header file (e.g. #include <dht.h>), and then call that function. This can make your code more concise. If you don't want to use the library, you can also write that function definition directly. Though as a result, the code will be long and inconvenient to read."
+msgstr ""
+
+#: ../part_4_appendix.rst:21
+msgid "**Add libraries**"
+msgstr ""
+
+#: ../part_4_appendix.rst:23
+msgid "Some libraries are already built in the Arduino IDE, when some others may need to be added. So now let's see how to add one. There are 2 methods for that."
+msgstr ""
+
+#: ../part_4_appendix.rst:27
+msgid "**Method 1**"
+msgstr ""
+
+#: ../part_4_appendix.rst:29
+msgid "Directly import the library in Arduino IDE (take Dht as an example below). The advantage of this method is easy to understand and operate, but on the other hand, only one library can be imported at a time. So it is inconvenient when you need to add quite a lot of libraries."
+msgstr ""
+
+#: ../part_4_appendix.rst:34
+msgid "**Step 1**: Select **Sketch** -> **Include Library** -> **Add ZIP Library**."
+msgstr ""
+
+#: ../part_4_appendix.rst:42
+msgid "**Step 2**: Find *Library folder*, Click **Open**."
+msgstr ""
+
+#: ../part_4_appendix.rst:49
+msgid "**Step 3**: When you see **Library added to your libraries. Check \"Include library\" menu**, it means you have added the library successfully. Please use the same method to add other libraries then."
+msgstr ""
+
+#: ../part_4_appendix.rst:58
+msgid "**Method 2**"
+msgstr ""
+
+#: ../part_4_appendix.rst:60
+msgid "Directly copy the library to libraries/Arduino path. This method can copy all libraries and add them at a time, but the drawback is that it is difficult to find libraries/Arduino."
+msgstr ""
+
+#: ../part_4_appendix.rst:64
+msgid "**Step 1**: Click **File** -> **Preferences** and on the pop-up window you can see the path of the libraries folder in the text box as shown below."
+msgstr ""
+
+#: ../part_4_appendix.rst:73
+msgid "**Step 2**: Copy all Libraries in the *library* folder."
+msgstr ""
+
+#: ../part_4_appendix.rst:80
+msgid "**Step 3**: Go to the path above and you will see there is a *libraries* folder, click to open it."
+msgstr ""
+
+#: ../part_4_appendix.rst:88
+msgid "**Step 4**: Paste all the libraries copied before to the folder. Then you can see them in libraries folder."
+msgstr ""
+
+#: ../part_4_appendix.rst:97
+msgid "**Copyright Notice**"
+msgstr ""
+
+#: ../part_4_appendix.rst:99
+msgid "All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study, investigation, enjoyment, or other non-commercial or nonprofit purposes, under the related regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action."
+msgstr ""

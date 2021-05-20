@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.5_7-segment_display.rst:2
+msgid "2.5 7-Segment Display"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:7
+msgid "In this lesson, you will learn something about 7-Segment Display. 7-Segment Display has so many advantages that it is widely used in electrical equipments, especially in household appliances that display numerical information, such as display, air conditioner, water heater, refrigerator and so on. LEDs on the 7-Segment Display emit light by the input of different electrical signals to the different pins of it. The numerical information it can display includes time, date, temperature and so on."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:10
+msgid "Components Required"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:15
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:20
+msgid "A 7-segment display is an 8-shaped component which packages 7 LEDs. Each LED is called a segment – when energized, one segment forms part of a numeral to be displayed."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:24
+msgid "There are two types of pin connection: Common Cathode (CC) and Common Anode (CA). As the name suggests, a CC display has all the cathodes of the 7 LEDs connected when a CA display has all the anodes of the 7 segments connected. In this kit, we use the former."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:29
+msgid "Each of the LEDs in the display is given a positional segment with one of its connection pins led out from the rectangular plastic package. These LED pins are labeled from \"a\" through to \"g\" representing each individual LED. The other LED pins are connected together forming a common pin. So by forward biasing the appropriate pins of the LED segments in a particular order, some segments will brighten and others stay dim, thus showing the corresponding character on the display."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:38
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:42
+msgid "Connect each of pin a-g of the 7-Segment Display to one 220ohm current limiting resistor respectively and then to pin 4–11. GND connects to GND."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:46
+msgid "The wiring between the 7-segment display and the Mega2560 board as shown below :"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:52
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:57
+msgid "Code"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:63
+msgid "Once upload the codes, you can see the 7-segment display displaying 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F in sequence."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:66
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:68
+msgid "Take the pin numbers on 7-segment as names, and declare the pins on the Mega2560 board."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:81
+msgid "Install a series of subfunctions to package the level state at each block during the number display of the 7-segment. For example, when the character 「2」 is displayed, the block F and the block c are turn off; the other blocks are lit up."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:88
+msgid "First we need to know how it looks like when display the numeral **2** on the 7-Segment display. It's actually the segments a, b, d, e and g are power on, which generates the display of **2**. In programming, pins connected to these segments are set High level when c and f are Low level. Here we use a *for()* statement to set these pins as High level respectively (the braces after *for()* are deleted as there is only one line). Connect pin dp to pin 4; it's already defined as LOW in *setup()*."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:97
+msgid "After running this part, the 7-segment will display **2**. Similarly, the display of other characters are the same. Since the letters b and d in upper case, namely **B** and **D**, would look the same with **8** and **0** on the display, they are displayed in lower case instead."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:116
+msgid "In loop(), call the function that displays the number."
+msgstr ""
+
+#: ../2.5_7-segment_display.rst:131
+msgid "Phenomenon Picture"
+msgstr ""

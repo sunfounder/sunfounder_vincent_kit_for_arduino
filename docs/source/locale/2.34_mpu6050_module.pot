@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.34_mpu6050_module.rst:2
+msgid "2.34 MPU6050 Module"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:7
+msgid "In this lesson, you will learn how to use MPU6050. MPU-6050 is a 6-axis (combined 3-axis Gyroscope, 3-axis Accelerometer) motion tracking devices. It is often used for augmented reality and electronic image stabilization (EIS: Electronic Image Stabilization), optical image stabilization (OIS: Optical Image Stabilization), \"Zero touch\" gesture user interface."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:15
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:20
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:22
+msgid "Its three coordinate systems are defined as follows:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:28
+msgid "Put MPU6050 flat on the table, assure that the face with label is upward and a dot on this surface is on the top left corner. Then the upright direction upward is the z-axis of the chip. The direction from left to right is regarded as the X-axis. Accordingly the direction from back to front is defined as the Y-axis."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:34
+msgid "**Acceleration**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:40
+msgid "The accelerometer works on the principle of piezo electric effect, the ability of certain materials to generate an electric charge in response to applied mechanical stress."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:44
+msgid "Here, imagine a cuboidal box, having a small ball inside it, like in the picture above. The walls of this box are made with piezo electric crystals. Whenever you tilt the box, the ball is forced to move in the direction of the inclination, due to gravity. The wall with which the ball collides, creates tiny piezo electric currents. There are totally, three pairs of opposite walls in a cuboid. Each pair corresponds to an axis in 3D space: X, Y and Z axes. Depending on the current produced from the piezo electric walls, we can determine the direction of inclination and its magnitude."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:54
+msgid "We can use the MPU6050 to detect its acceleration on each coordinate axis (in the stationary desktop state, the Z-axis acceleration is 1 gravity unit, and the X and Y axes are 0). If it is tilted or in a weightless/overweight condition, the corresponding reading will change."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:59
+msgid "There are four kinds of measuring ranges that can be selected programmatically: +/-2g, +/-4g, +/-8g, and +/-16g (+/-2g by default) corresponding to each precision. Values range from -32768 to 32767."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:63
+msgid "The reading of accelerometer is converted to an acceleration value by mapping the reading from the reading range to the measuring range."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:66
+msgid "**Acceleration = (Accelerometer axis raw data / 65536 \\* full scale Acceleration range) g**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:69
+msgid "Take the X-axis as an example, when Accelerometer X axis raw data is 16384 and the range is selected as +/-2g:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:72
+msgid "**Acceleration along the X axis = (16384 / 65536 \\* 4) g=1g**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:74
+msgid "**Gyroscopes**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:76
+msgid "Gyroscopes work on the principle of Coriolis acceleration. Imagine that there is a fork like structure, that is in constant back and forth motion. It is held in place using piezo electric crystals. Whenever, you try to tilt this arrangement, the crystals experience a force in the direction of inclination. This is caused as a result of the inertia of the moving fork. The crystals thus produce a current in consensus with the piezo electric effect, and this current is amplified."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:90
+msgid "The Gyroscope also has four kinds of measuring ranges: +/- 250, +/- 500, +/- 1000, +/- 2000 (+/-250degree/s by default) . The calculation method and Acceleration are basically consistent."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:94
+msgid "The formula for converting the reading into angular velocity is as follows:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:97
+msgid "**Angular velocity = (Gyroscope axis raw data / 65536 \\* full scale Gyroscope range) °/s**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:100
+msgid "The X axis, for example, the Accelerometer X axis raw data is 16384 and ranges + / - 250 ° / s:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:103
+msgid "**Angular velocity along the X axis = (16384 / 65536 \\* 500)°/s =125°/s**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:107
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:109
+msgid "In this example, we drive MPU6050 with IIC. We inset MPU6050 into the breadboard; get the VCC connected to 5V, GND to GND, SCL to pin SCL 21, and SDA to the pin SDA 20."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:118
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:126
+msgid "**Code**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:132
+msgid "After uploading the codes to the Mega2560 board, you can open the serial monitor to see the gravity acceleration and angular velocity of MPU6050 in each direction."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:137
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:139
+msgid "In the stationary desktop state, the Z-axis acceleration is 1 gravity unit, and the X and Y axes are 0."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:142
+msgid "Before your use, you need to calibrate the module, the methods are as follows:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:145
+msgid "1.MPU6050 modules are placed horizontally on the desktop and then you can fix them with clamps or adhesive tape."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:148
+msgid "2.Run the sample codes to get the RAW DATA of MPU6050 when it is static."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:150
+msgid "3.Add compensation according to the readings when MPU6050 is static."
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:152
+msgid "Take MPU6050 we use as an example, and the results of compensation are as follows:"
+msgstr ""
+
+#: ../2.34_mpu6050_module.rst:168
+msgid "**Phenomenon Picture**"
+msgstr ""

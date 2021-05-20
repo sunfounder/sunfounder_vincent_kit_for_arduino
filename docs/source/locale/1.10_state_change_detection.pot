@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.10_state_change_detection.rst:2
+msgid "1.10 State Change Detection"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:7
+msgid "When you use button, you can not only press down the button, light on the LED, release the button, turn off the LED, but also can switch the working state of the LED every time the button is pressed. In order to achieve this effect, you need to know when the state of the button changes from **off** to **on**, that is, \"state change detection\". In this lesson, we will print the results of state change detection of the button in the serial monitor."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:16
+msgid "Components Required"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:22
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:24
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:28
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:30
+msgid "In this example, we use pin 2 to read the signal of the button."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:36
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:42
+msgid "Code"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:48
+msgid "After the codes are uploaded into the Mega2560 board, the output number will switch between 0 and 1 every time you press the button."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:51
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:53
+msgid "Declare a pin connected to Button."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:59
+msgid "Declare a variable called 「detectionState」to record every state of state change detection."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:65
+msgid "Declare two variables to read the state of the button for state change detection."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:72
+msgid "In setup(), initialize the pins and then start up the serial monitor."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:79
+msgid "In loop(), read the value of buttonPin and then assign to the variable buttonState."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:85
+msgid "Compare buttonState with lastButtonState, if they are not equal, it indicates that the state is changed. A delay(50) is needed to realize debouncing during the changing detection. After comparison, assign the buttonState to lastButtonState to make the next round of judgment."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:95
+msgid "The state change judgment installed (buttonState != lastButtonState), the further judgment is made to get the condition「Press the button」."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:104
+msgid "Under the state「Press the button」, detectionState is being operated and it switches between 1 and 0. Meanwhile, the value of detectionState is printed."
+msgstr ""
+
+#: ../1.10_state_change_detection.rst:114
+msgid "Phenomenon Picture"
+msgstr ""

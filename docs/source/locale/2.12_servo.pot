@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.12_servo.rst:2
+msgid "2.12 Servo"
+msgstr ""
+
+#: ../2.12_servo.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.12_servo.rst:7
+msgid "In this lesson, you will learn something about Servo. Servo is a kind of driver whose position (angular) can be adjustable and kept or a rotary actuator that allows for precise control of angular position. Currently, it is widely used in upscale remote control toys, such as airplane, submarine, telerobot and so on."
+msgstr ""
+
+#: ../2.12_servo.rst:14
+msgid "Components Required"
+msgstr ""
+
+#: ../2.12_servo.rst:19
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.12_servo.rst:23
+msgid "A servo is generally composed of the following parts: case, shaft, gear system, potentiometer, DC motor, and embedded board."
+msgstr ""
+
+#: ../2.12_servo.rst:26
+msgid "It works like this: The microcontroller sends out PWM signals to the servo, and then the embedded board in the servo receives the signals through the signal pin and controls the motor inside to turn. As a result, the motor drives the gear system and then motivates the shaft after deceleration. The shaft and potentiometer of the servo are connected together. When the shaft rotates, it drives the potentiometer, so the potentiometer outputs a voltage signal to the embedded board. Then the board determines the direction and speed of rotation based on the current position, so it can stop exactly at the right position as defined and hold there."
+msgstr ""
+
+#: ../2.12_servo.rst:39
+msgid "The angle is determined by the duration of a pulse that is applied to the control wire. This is called Pulse width Modulation. The servo expects to see a pulse every 20 ms. The length of the pulse will determine how far the motor turns. For example, a 1.5ms pulse will make the motor turn to the 90 degree position (neutral position)."
+msgstr ""
+
+#: ../2.12_servo.rst:45
+msgid "When a pulse is sent to a servo that is less than 1.5 ms, the servo rotates to a position and holds its output shaft some number of degrees counterclockwise from the neutral point."
+msgstr ""
+
+#: ../2.12_servo.rst:49
+msgid "When the pulse is wider than 1.5 ms the opposite occurs. The minimal width and the maximum width of pulse that will command the servo to turn to a valid position are functions of each servo. Generally the minimum pulse will be about 0.5 ms wide and the maximum pulse will be 2.5 ms wide."
+msgstr ""
+
+#: ../2.12_servo.rst:59
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.12_servo.rst:61
+msgid "In this example, we use PWM pin 9 to drive the Servo, and get the orange wire of the servo connected to the PWM pin 9, the red one to 5V, and the brown one to GND."
+msgstr ""
+
+#: ../2.12_servo.rst:68
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.12_servo.rst:74
+msgid "Code"
+msgstr ""
+
+#: ../2.12_servo.rst:80
+msgid "Once you finish uploading the codes to the Mega2560 board, you can see the servo arm rotating in the range 0°~180°."
+msgstr ""
+
+#: ../2.12_servo.rst:83
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.12_servo.rst:85
+msgid "By calling the library Servo.h, you can drive the servo easily."
+msgstr ""
+
+#: ../2.12_servo.rst:91
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.12_servo.rst:97
+msgid "Create **Servo** object to control a servo."
+msgstr ""
+
+#: ../2.12_servo.rst:103
+msgid "Turn a pin into a servo driver. Calls pinMode. Returns 0 on failure."
+msgstr ""
+
+#: ../2.12_servo.rst:109
+msgid "Release a pin from servo driving."
+msgstr ""
+
+#: ../2.12_servo.rst:115
+msgid "Set the angle of the servo in degrees, 0 to 180."
+msgstr ""
+
+#: ../2.12_servo.rst:121
+msgid "Return that value set with the last write()."
+msgstr ""
+
+#: ../2.12_servo.rst:127
+msgid "Return 1 if the servo is currently attached."
+msgstr ""
+
+#: ../2.12_servo.rst:130
+msgid "Phenomenon Picture"
+msgstr ""

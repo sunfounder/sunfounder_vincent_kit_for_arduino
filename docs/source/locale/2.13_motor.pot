@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.13_motor.rst:2
+msgid "2.13 Motor"
+msgstr ""
+
+#: ../2.13_motor.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.13_motor.rst:7
+msgid "In this lesson, you will learn how to use Motor, the working principle of which is that the energized coil is forced to rotate in the magnetic field then the rotor of the motor rotates accordingly on which the pinion gear drives the engine flywheel to rotate."
+msgstr ""
+
+#: ../2.13_motor.rst:13
+msgid "Components Required"
+msgstr ""
+
+#: ../2.13_motor.rst:20
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.13_motor.rst:22
+msgid "This is a 5V DC motor. It will rotate when you give the two terminals of the copper sheet one high and one low level. For convenience, you can weld the pins to it."
+msgstr ""
+
+#: ../2.13_motor.rst:26
+msgid "**L293D**"
+msgstr ""
+
+#: ../2.13_motor.rst:30
+msgid "L293D is a 4-channel motor driver integrated by chip with high voltage and high current. It's designed to connect to standard DTL, TTL logic level, and drive inductive loads (such as relay coils, DC, Stepper Motors) and power switching transistors etc. DC Motors are devices that turn DC electrical energy into mechanical energy. They are widely used in electrical drive for their superior speed regulation performance."
+msgstr ""
+
+#: ../2.13_motor.rst:38
+msgid "L293D has two pins (Vcc1 and Vcc2) for power supply. Vcc2 is used to supply power for the motor, while Vcc1 to supply for the chip."
+msgstr ""
+
+#: ../2.13_motor.rst:41
+msgid "The following is the internal structure of L293D. Pin EN is an enable pin and only works with high level; A stands for input and Y for output. You can see the relationship among them at the right bottom. When pin EN is High level, if A is High, Y outputs high level; if A is Low, Y outputs Low level. When pin EN is Low level, the L293D does not work."
+msgstr ""
+
+#: ../2.13_motor.rst:50
+msgid "Power Supply Module"
+msgstr ""
+
+#: ../2.13_motor.rst:52
+msgid "In this experiment, it needs large currents to drive the motor especially when it starts and stops, which will severely interfere with the normal work of Raspberry Pi. Therefore, we separately supply power for the motor by this module to make it run safely and steadily."
+msgstr ""
+
+#: ../2.13_motor.rst:57
+msgid "You can just plug it in the breadboard to supply power. It provides a voltage of 3.3V and 5V, and you can connect either via a jumper cap included."
+msgstr ""
+
+#: ../2.13_motor.rst:64
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.13_motor.rst:66
+msgid "In this example, we use Power Supply Module to power the anode and cathode of breadboard. GND of Mega 2560 Board is connected to the cathode."
+msgstr ""
+
+#: ../2.13_motor.rst:73
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.13_motor.rst:78
+msgid "Code"
+msgstr ""
+
+#: ../2.13_motor.rst:84
+msgid "After uploading the codes to the Mega2560 board, you can select the rotating direction of motor by typing 「A」 or 「B」 in the serial monitor."
+msgstr ""
+
+#: ../2.13_motor.rst:88
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.13_motor.rst:91
+msgid "The motor can be driven by providing a voltage difference between the copper sheets at both sides of the motor. Therefore, you only need to write 0 for the voltage of one side of the copper sheet and 5V for the other side. Modify the written analog signal value to adjust the direction and speed."
+msgstr ""
+
+#: ../2.13_motor.rst:108
+msgid "In this example, Serial.Read() is used to control the direction of motor."
+msgstr ""
+
+#: ../2.13_motor.rst:110
+msgid "When you type ’A’ in serial monitor, there calls the clockwise (255) function to make the motor rotate with the speed of 255. Input 'B', and the motor will rotate in reverse direction."
+msgstr ""
+
+#: ../2.13_motor.rst:134
+msgid "Phenomenon Picture"
+msgstr ""

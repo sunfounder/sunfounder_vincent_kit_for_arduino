@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.20_ir_receiver_module.rst:2
+msgid "2.20 IR Receiver Module"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:7
+msgid "In this lesson, you will learn to use IR Receiver Module. IR Receiver is a component with photocell that is tuned to receive to infrared light. It is almost always used for remote control detection - every TV and DVD player has one of these in the front to receive for the IR signal from the clicker. Inside the remote control is a matching IR LED, which emits IR pulses to tell the TV to turn on, off or change channels."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:15
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:20
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:22
+msgid "An infrared-receiver is a component which receives infrared signals and can independently receive infrared ray and output signals compatible with TTL level. It's similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:32
+msgid "|image179|\\ |image180|"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:35
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:43
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:45
+msgid "In this example, we wire up the left pin (-) of IR Receiver Module to GND, the middle pin to 5V, and the right pin (S) to pin 11."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:55
+msgid "**Code**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:57
+msgid "The codes use the `library IRremote.h <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_, about how to import library,please refer to :ref:`4.1 Add Libraries`."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:64
+msgid "After uploading the codes to the Mega2560 board, you can see that the current value of the pressed button of IR Remote Controller displays on the serial monitor."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:69
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:71
+msgid "There are two important parts to notice in this program."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:73
+msgid "①The code uses an extra file decodeKeyValue.ino to decode the values in class decode_result into key value.The file will be opened together with the main file."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:77
+msgid "②IR Remote function is achieved by calling IRremote.h library related functions."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:84
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:90
+msgid "Create IRrecv object to control a IR Receiver module."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:96
+msgid "In this kit, results are usually 8-digit hexadecimal numbers starting with 00FF. You can check decodeKeyValue.ino file in the sample file."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:103
+msgid "Initialize the IR receiver module."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:109
+msgid "Decodes the received IR message. Returns 0 if no data ready, 1 if data ready. Results of decoding are stored in results."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:116
+msgid "Restart for receiving an other value."
+msgstr ""
+
+#: ../2.20_ir_receiver_module.rst:119
+msgid "**Phenomenon Picture**"
+msgstr ""

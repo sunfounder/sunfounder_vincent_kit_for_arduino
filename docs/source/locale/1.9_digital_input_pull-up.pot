@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.9_digital_input_pull-up.rst:2
+msgid "1.9 Digital Input Pull-Up"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:7
+msgid "When using some switch input devices, some pull-up or pull-down resistors are often used to keep the level of corresponding pins at certain value on the condition that the device is not working. Such as in 1.4 Digital Read, a 10k resistor is used to make the pin be connected to GND under the condition that the button is not pressed down. If we have used a lot of switch input components and want to simplify the circuit, we can set the pin mode to「INPUT_PULLUP」in the code so that the pin reads the high level in the suspended state."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:17
+msgid "Components Required"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:23
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:25
+msgid "In this example, we use pin 2 to read the signal of button. The internal pull-up in pin 2 is valid, so if the button isn’t pressed, HIGH is read in pin 2; when the button is pressed, LOW is read."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:33
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:39
+msgid "Code"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:45
+msgid "After the codes are uploaded to the Mega2560 board, you can open the serial port monitor to view the read values of the pin. When the Button is pressed, the serial port monitor will display \"0\", and the \"1\" will be displayed when the button is released."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:48
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:50
+msgid "Run the serial communication in setup() and set the data rate to 9600."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:56
+msgid "Configure pin 2 as an input and enable the internal pull-up resistor."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:62
+msgid "Read the level state from the digital pin 2 by using digitalRead() statement in loop() and declare a variable to store it."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:68
+msgid "Print the values stored by variables on the serial port monitor."
+msgstr ""
+
+#: ../1.9_digital_input_pull-up.rst:75
+msgid "Phenomenon Picture"
+msgstr ""

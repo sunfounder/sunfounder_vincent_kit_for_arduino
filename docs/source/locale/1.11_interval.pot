@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.11_interval.rst:2
+msgid "1.11 Interval"
+msgstr ""
+
+#: ../1.11_interval.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.11_interval.rst:7
+msgid "Sometimes you need to do two things at once. For example you might want to blink an LED while reading a button press. In this case, you can't use delay(), because Arduino pauses your program during the delay(). If the button is pressed while Arduino is paused waiting for the delay() to pass, your program will miss the button press."
+msgstr ""
+
+#: ../1.11_interval.rst:13
+msgid "This sketch demonstrates how to blink an LED without using delay(). It turns the LED on and then makes note of the time. Then, each time through loop(), it checks to see if the desired blink time has passed. If it has, it toggles the LED on or off and makes note of the new time. In this way the LED blinks continuously while the sketch execution never lags on a single instruction."
+msgstr ""
+
+#: ../1.11_interval.rst:20
+msgid "An analogy would be warming up a pizza in your microwave, and also waiting some important email. You put the pizza in the microwave and set it for 10 minutes. The analogy to using delay() would be to sit in front of the microwave watching the timer count down from 10 minutes until the timer reaches zero. If the important email arrives during this time you will miss it."
+msgstr ""
+
+#: ../1.11_interval.rst:27
+msgid "What you would do in real life would be to turn on the pizza, and then check your email, and then maybe do something else (that doesn't take too long!) and every so often you will come back to the microwave to see if the timer has reached zero, indicating that your pizza is done."
+msgstr ""
+
+#: ../1.11_interval.rst:34
+msgid "Components Required"
+msgstr ""
+
+#: ../1.11_interval.rst:40
+msgid "Refer to Part 2 to check details of hardware."
+msgstr ""
+
+#: ../1.11_interval.rst:42
+msgid ":ref:`Part 2 Component`"
+msgstr ""
+
+#: ../1.11_interval.rst:45
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.11_interval.rst:47
+msgid "In this example, we use digital pin 9 to drive the LED, and we attach one side of the resistor to the corresponding digital pins. The longer pin of LED (a positive electrode, referred to as anode) is connected to the other side of the resistor. The shorter pin (a negative electrode, referred to as cathode) of LED is attached to GND."
+msgstr ""
+
+#: ../1.11_interval.rst:56
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.11_interval.rst:61
+msgid "Code"
+msgstr ""
+
+#: ../1.11_interval.rst:67
+msgid "When you finish uploading the codes to the Mega2560 board, you can see the LED uploading."
+msgstr ""
+
+#: ../1.11_interval.rst:71
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.11_interval.rst:74
+msgid "Declare the digital pin 9 as ledPin."
+msgstr ""
+
+#: ../1.11_interval.rst:80
+msgid "Set the state of ledState to LOW to turn off the LED."
+msgstr ""
+
+#: ../1.11_interval.rst:86
+msgid "Initial a variable named previousMillis to store previous operating time of microcontroller."
+msgstr ""
+
+#: ../1.11_interval.rst:92
+msgid "Set the interval time to 1000ms (milliseconds)."
+msgstr ""
+
+#: ../1.11_interval.rst:98
+msgid "Set ledPin to OUTPUT mode."
+msgstr ""
+
+#: ../1.11_interval.rst:104
+msgid "In loop(), declare currentMillis to store the current time."
+msgstr ""
+
+#: ../1.11_interval.rst:110
+msgid "When the interval between the current operating time and last updating time is larger than 1000ms, certain functions are triggered. Meanwhile, update the previousMillis to the current time for the next triggering that is to happen 1 second latter."
+msgstr ""
+
+#: ../1.11_interval.rst:119
+msgid "Here, certain functions executed at intervals are to change the state of LED."
+msgstr ""
+
+#: ../1.11_interval.rst:130
+msgid "Phenomenon Picture"
+msgstr ""

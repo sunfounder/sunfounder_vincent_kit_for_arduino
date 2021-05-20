@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../1.5_analog_read.rst:2
+msgid "1.5 Analog Read"
+msgstr ""
+
+#: ../1.5_analog_read.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../1.5_analog_read.rst:7
+msgid "You can use the analogRead() command to read analog input from the physical world through an analog pin, which is suitable for analog input elements such as potentiometers, photoresistance, water level detection sensors, and so on. This article will take the potentiometer as an example to read the analog value of its output."
+msgstr ""
+
+#: ../1.5_analog_read.rst:14
+msgid "Components Required"
+msgstr ""
+
+#: ../1.5_analog_read.rst:20
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../1.5_analog_read.rst:22
+msgid "In this example, we use the analog pin (A0) to read the value of the potentiometer. Connect the pins at both ends of the potentiometer to 5V and GND respectively. Connect the middle pin to A0."
+msgstr ""
+
+#: ../1.5_analog_read.rst:26
+msgid "The voltage of the middle pin will be output to the Mega2560 board as an analog value. By rotating the axis of the potentiometer, you can change the voltage on the middle pin, thereby changing the analog value of the pin obtained by A0."
+msgstr ""
+
+#: ../1.5_analog_read.rst:35
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../1.5_analog_read.rst:41
+msgid "Code"
+msgstr ""
+
+#: ../1.5_analog_read.rst:47
+msgid "After the code is uploaded to the Mega2560 board, you can open the serial port monitor to view the reading value of the pin. When the shaft of the potentiometer is turned, the serial port monitor will print the value that changes between \"0\" and \"1023\"."
+msgstr ""
+
+#: ../1.5_analog_read.rst:53
+msgid "Code Analysis"
+msgstr ""
+
+#: ../1.5_analog_read.rst:55
+msgid "To enable Arduino IDE to print the value transmitted from electronic component to the Mega2560 board, you need to start serial communication in setup() and set the data rate to 9600."
+msgstr ""
+
+#: ../1.5_analog_read.rst:63
+msgid "Use the analoglRead() statement in loop() to read the level state acquired by analog pin A0 and declare a variable to store the level state."
+msgstr ""
+
+#: ../1.5_analog_read.rst:69
+msgid "Print the value stored in the variable on the serial monitor."
+msgstr ""
+
+#: ../1.5_analog_read.rst:75
+msgid "Use delay() statements to make printing results easy to observe."
+msgstr ""
+
+#: ../1.5_analog_read.rst:82
+msgid "※ Analog-to-Digital Converter"
+msgstr ""
+
+#: ../1.5_analog_read.rst:84
+msgid "The Arduino have a circuit inside called an analog-to-digital converter or ADC that reads this changing voltage and converts it to a number between 0 and 1023. When the shaft is turned all the way in one direction, there are 0 volts going to the pin, and the input value is 0. When the shaft is turned all the way in the opposite direction, there are 5 volts going to the pin and the input value is 1023. In between, analogRead() returns a number between 0 and 1023 that is proportional to the amount of voltage being applied to the pin."
+msgstr ""
+
+#: ../1.5_analog_read.rst:94
+msgid "Phenomenon Picture"
+msgstr ""

@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.3_rgb_led.rst:2
+msgid "2.3 RGB LED"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:7
+msgid "In this lesson, you will learn about how to use RGB LED. A RGB LED packages three LEDs in red, green and blue into one transparent or semitransparent plastic shell. It displays a broad array of colors by changing the input voltage of three pins and adding the three colors together in different ways. As is said in a statistic, RGB LED can create 16,777,216 different colors."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:15
+msgid "Components Required"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:20
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:22
+msgid "RGB LEDs can be categorized into common anode and common cathode ones. In this experiment, the latter is used. The common cathode, or CC, means to connect the cathodes of the three LEDs. After you connect it with GND and plug in the three pins, the LED will flash the corresponding color."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:30
+msgid "An RGB LED has 4 pins: the longest one is GND; the others are Red, Green and Blue. Touch its plastic shell and you will find a cut. The pin closest to the cut is the first pin, marked as Red, then GND, Green and Blue in turn."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:38
+msgid "Or you can distinguish them in another way. As GND is the longest one and can be defined directly, you just need to confirm the other three pins. You can test it by giving them a small voltage. The forward voltage drop from the three pins to the GND are respectively 1.8V (red), 2.5V (blue), and 2.3V (green). Thus, when you connect the same current limiting resistor with the three pins and supply them with the same voltage, the red one is the brightest, and then comes the green and the blue one. Therefore, you may need to add a current limiting resistor with different resistances to the three pins for these colors."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:49
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:54
+msgid "Here we input a value between 0 and 255 to the three pins of the RGB LED to make it display different colors. After connecting the pins of R, G, and B to a current limiting resistor, connect them to the pin 9, pin 10, and pin 11 respectively. The longest pin (GND) of the LED connects to the GND of the Mega 2560. When the three pins are given different PWM values, the RGB LED will display different colors."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:62
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:68
+msgid "Code"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:75
+msgid "Code Analysis"
+msgstr ""
+
+#: ../2.3_rgb_led.rst:77
+msgid "In this example, the function used to assign values to the three pins of RGB is packaged in an independent subfunction color()."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:88
+msgid "In loop(), RGB value works as an input argument to call the function color() to realize that the RGB can emit different colors."
+msgstr ""
+
+#: ../2.3_rgb_led.rst:104
+msgid "Phenomenon Picture"
+msgstr ""

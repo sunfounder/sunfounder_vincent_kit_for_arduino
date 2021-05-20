@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.35_rfid-rc522_module.rst:2
+msgid "2.35 RFID-RC522 Module"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:7
+msgid "In this lesson, you will learn how to use RFID Module. RFID is the abbreviation of Radio Frequency Identification. Its working principle is to carry on the contactless data communication between the reader and the label to achieve the goal of identifying the target. The application of RFID is very extensive, currently the typical applications are animal chips, immobilizer, access control, parking control, production chain automation, material management and so on."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:16
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:21
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:23
+msgid "Radio Frequency Identification (RFID) refers to technologies that involve using wireless communication between an object (or tag) and an interrogating device (or reader) to automatically track and identify such objects. The tag transmission range is limited to several meters from the reader. A clear line of sight between the reader and tag is not necessarily required."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:30
+msgid "Most tags contain at least one integrated circuit (IC) and an antenna. The microchip stores information and is responsible for managing the radio frequency (RF) communication with the reader. Passive tags do not have an independent energy source and depend on an external electromagnetic signal, provided by the reader, to power their operations. Active tags contain an independent energy source, such as a battery. Thus, they may have increased processing, transmission capabilities and range."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:39
+msgid "**MFRC522**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:41
+msgid "MF RC522 is a highly integrated read and write card chip applied to the 13.56MHz contactless communication. Launched by the NXP Company, it is a low-voltage, low-cost, and small-sized non-contact card chip, a best choice of intelligent instrument and portable hand held device."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:46
+msgid "The MF RC522 uses advanced modulation and demodulation concept which fully presented in all types of 13.56MHz passive contactless communication methods and protocols. In addition, it supports rapid CRYPTO1 encryption algorithm to verify MIFARE products."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:51
+msgid "MFRC522 also supports MIFARE series of high-speed non-contact communication, with a two-way data transmission rate up to 424kbit/s. As a new member of the 13.56MHz highly integrated reader card series, MF RC522 is much similar to the existing MF RC500 and MF RC530 but there also exists great differences."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:57
+msgid "It communicates with the host machine via the serial manner which needs less wiring. You can choose between SPI, I2C and serial UART mode (similar to RS232), which helps reduce the connection, save PCB board space (smaller size), and reduce cost."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:63
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:65
+msgid "In this example, we insert the RFID into the breadboard. Get the 3.3V of RFID connected to 3.3V, GND to GND, RST to pin 2, SDA to pin 6, SCK to pin 5, MOSI to pin 4, MISO to pin 3 and IRQ to pin 7."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:74
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:82
+msgid "**Code**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:84
+msgid "The codes use the `rfid1.h library <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_. About how to import the library, please refer to :ref:`4.1 Add Libraries`."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:91
+msgid "Uploaded the codes to the Mega2560 board, you can get your RFID card (secret key) close to the RFID Reader. The module will read the card information and then print it on the serial monitor."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:95
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:97
+msgid "The functions of the module are included in the library rfid1.h."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:103
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:109
+msgid "Create a new instance of the rfid1 class that represents a particular RFID module attached to your Arduino ."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:116
+msgid "Pin configuration."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:118
+msgid "IRQ_PIN,SCK_PIN,MOSI_PIN,MISO_PIN: the pins used for the SPI communication."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:121
+msgid "SDA_PIN: Synchronous data adapter."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:123
+msgid "RST_PIN: The pins used for reset."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:129
+msgid "Initialize the RFID."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:135
+msgid "Search card and read card type, and the function will return the current read status of RFID and return MI_OK if successed."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:138
+msgid "reqMode: Search methods. PICC_REQIDL is defined that 0x26 command bits (Search the cards that does not in the sleep mode in the antenna area)."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:141
+msgid "\\*TagType: It is used to store card type, and its value can be 4byte (e.g. 0x0400)."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:148
+msgid "This function decodes the four-digit hexadecimal number of \\*tagType into the specific card type and returns a string. If passed 0x0400, \"MFOne-S50\" will be returned."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:156
+msgid "Prevent conflict, and read the card serial number. The function will return the current reading status of RFID. It returns MI_OK if successed."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:160
+msgid "\\*serNum: It is used to store the card serial number, and return the 4 bytes card serial number. The 5th byte is recheck byte(e.g. e.g. my magnetic card ID is 5AE4C955)."
+msgstr ""
+
+#: ../2.35_rfid-rc522_module.rst:166
+msgid "**Phenomenon Picture**"
+msgstr ""

@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.33_ultrasonic_module.rst:2
+msgid "2.33 Ultrasonic Module"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:7
+msgid "In this lesson, you will learn how to use Ultrasonic module."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:10
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:15
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:21
+msgid "Ultrasonic ranging module provides 2cm - 400cm non-contact measurement function. The working principle is that when the MPU sends out orders, the ceramic chip begins to vibrate and then aluminum enclosure vibrates together with it to form ultrasonic wave and emit the wave towards the back of the car. After the emitted ultrasonic wave hits an obstacle, there will be echo wave. This echo wave is received by the same aluminum enclosure and the ceramic chip in the form of vibration. The MPU judges the position of the obstacle by calculating the time difference and azimuth difference of the echo wave. Ultrasonic distance sensor can be widely used in the field of material level (liquid level) monitoring, robot anti-collision, various ultrasonic proximity switches, and intruder alarm."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:32
+msgid "The module includes ultrasonic transmitters, receiver and control circuit. The basic principles are as follows:"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:35
+msgid "1.Use an IO flip-flop to process a high level signal of at least 10us;"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:37
+msgid "2.The module automatically sends eight 40khz and detects if there is a pulse signal return."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:40
+msgid "3.If the signal returns, passing the high level, the high output IO duration is the time from the transmission of the ultrasonic wave to the return of it. Here, test distance = (high time x sound speed (340 m / s) / 2."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:46
+msgid "**TRIG**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:46
+msgid "Trigger Pulse Input"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:46
+msgid "**GND**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:46
+msgid "Ground"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:47
+msgid "**ECHO**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:47
+msgid "Echo Pulse Output"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:47
+msgid "**VCC**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:47
+msgid "Supply"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:50
+msgid "The timing diagram is shown below. You only need to supply a short 10us pulse for the trigger input to start the ranging, and then the module will send out an 8 cycle burst of ultrasound at 40 kHz and raise its echo. You can calculate the range through the time interval between sending trigger signal and receiving echo signal."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:56
+msgid "Formula: us / 58 = centimeters or us / 148 =inch; or: the range = high level time \\* velocity (340M/S) / 2; you are suggested to use measurement cycle over 60ms in order to prevent signal collisions of trigger signal and the echo signal."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:65
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:67
+msgid "In this example, we directly connect the pins of Ultrasonic Module with the pins of Mega 2560 Board. And then we get VCC of the Ultrasonic Module connected to 5V, GND to GND, Trig to the digital pin 5, Echo to the digital pin 4."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:77
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:85
+msgid "**Code**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:91
+msgid "After uploading the codes to the Mega2560 board, the serial monitor will display the distance of obstacles ahead that the ultrasonic sensor has detected."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:96
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:98
+msgid "About the application of ultrasonic sensor, we can directly check the subfunction."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:105
+msgid "PING is triggered by a HIGH pulse of 2 or more microseconds. (Give a short LOW pulse beforehand to ensure a clean HIGH pulse.)"
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:116
+msgid "The echo pin is used to read signal from PING, a HIGH pulse whose duration is the time (in microseconds) from the sending of the ping to the reception of echo of the object."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:124
+msgid "The speed of sound is 340 m/s or 29 microseconds per centimeter."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:126
+msgid "This gives the distance travelled by the ping, outbound and return, so we divide by 2 to get the distance of the obstacle."
+msgstr ""
+
+#: ../2.33_ultrasonic_module.rst:134
+msgid "**Phenomenon Picture**"
+msgstr ""

@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../introduction.rst:2
+msgid "Introduction"
+msgstr ""
+
+#: ../introduction.rst:4
+msgid "This book, as a tutorial or a handbook, can be divided into four parts:"
+msgstr ""
+
+#: ../introduction.rst:6
+msgid "**Part 1：Basic**"
+msgstr ""
+
+#: ../introduction.rst:8
+msgid "This section includes Arduino-related materials, including IDE installation and basic functions (read, write, serial communication, etc.)."
+msgstr ""
+
+#: ../introduction.rst:10
+msgid "**Part 2：Component**"
+msgstr ""
+
+#: ../introduction.rst:12
+msgid "This part includes all components and modules of Vincent Kit, and explains their working principles and codes. If you view the directory carefully, you will find that the use of the output device is introduced first, and then the use of the input device. The input device is also divided into switched input and sensor input."
+msgstr ""
+
+#: ../introduction.rst:15
+msgid "**Part 3：Example**"
+msgstr ""
+
+#: ../introduction.rst:17
+msgid "This section includes several sample programs written by Sunfounder that you can refer to when finishing some interesting projects of Vincent Kit."
+msgstr ""
+
+#: ../introduction.rst:19
+msgid "**Part 4：Appendix**"
+msgstr ""
+
+#: ../introduction.rst:21
+msgid "This section contains the extension function of Arduino IDE, and currently includes the method of adding libraries. We look forward to your project and hope that you who have read this document will come to our forum to share the results when you finish the project."
+msgstr ""

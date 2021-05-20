@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.24_mpr121_module.rst:2
+msgid "2.24 MPR121 Module"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:5
+msgid "**Overview**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:7
+msgid "In this lesson, you will learn how to use MPR121. It's a good option when you want to add a lot of touch switches to your project. The electrode of MPR121 can be extended with a conductor. If you connect a wire to a banana, you can turn the banana into a touch switch, thus realizing projects such as fruit piano."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:14
+msgid "**Components Required**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:18
+msgid "**Component Introduction**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:24
+msgid "Add lots of touch sensors to your next project with this easy-to-use 12-channel capacitive touch sensor breakout board, starring the MPR121. This chip can handle up to 12 individual touch pads."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:28
+msgid "The MPR121 has support for only I2C, which can be implemented with nearly any microcontroller. You can select one of 4 addresses with the ADDR pin, for a total of 48 capacitive touch pads on one I2C 2-wire bus. Using this chip is a lot easier than doing the capacitive sensing with analog inputs: it handles all the filtering for you and can be configured for more/less sensitivity."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:35
+msgid "When the MPR121 senses a change, it pulls an interrupt pin LOW. The control board going to check that pin to see if it is LOW during the loop. To do this, this sensor also needs access to another digital pin."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:40
+msgid "**Electrodes**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:42
+msgid "Electrode is a touch sensor. Typically, electrodes can just be some piece of metal, or a wire. But some times depending on the length of our wire, or the material the electrode is on, it can make triggering the sensor difficult. For this reason, the MPR121 allows you to configure what is needed to trigger and untrigger an electrode."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:49
+msgid "**Fritzing Circuit**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:51
+msgid "In this example, we insert MPR121 into the breadboard. Get the GND of MPR121 connected to GND, 3.3V to 3V3, IRQ to the digital pin 2, SCL to the pin SCL(21), and SDA to the pin SDA(20). There are 12 electrodes for touch sensing. Note: MPR121 is powered by 3.3V, not 5V."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:62
+msgid "**Schematic Diagram**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:70
+msgid "**Code**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:72
+msgid "The codes use the `MPR121_JM. h library <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_. . Turn to :ref:`4.1 Add Libraries` for information on how to import Libraries."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:79
+msgid "After uploading the codes to the Mega2560 board, the touch state of pins of MPR121 「1」and「0」will be recorded in a 12 - bit boolean type of array that will be printed on the serial monitor."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:84
+msgid "**Code Analysis**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:86
+msgid "The function of the module is included in the library MPR121_JM.h."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:93
+msgid "**Library Functions：**"
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:99
+msgid "Creates a new instance of the MPR121."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:101
+msgid "irqpin: the interrupt request pin."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:103
+msgid "touThresh: Touch threshold，the electrode is recognized as a threshold of the 「Touch」 state."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:106
+msgid "relThresh: Release threshold，the electrode is recognized as a threshold of the 「Release」 state."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:109
+msgid "The range of the electrode data value is 0~255. For typical touch application, the threshold value can be in range 0x05~0x30 for example. The smaller the value, the more sensitive it is. The setting of the threshold is depended on the actual application.Typically the touch threshold is a little bigger than the release threshold to touch debounce and hysteresis."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:120
+msgid "Setup MPR121 module."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:126
+msgid "Make interrupt judgment, when the electrode state changes, the function returns a Boolean value 「0」."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:133
+msgid "The touch state of the electrode produces a Boolean value. The function accumulates the Boolean values generated by all the electrodes in sequence into a 12-bit binary number as the return value. If the first and eleventh electrodes are touched, 「100000000010」 is returned."
+msgstr ""
+
+#: ../2.24_mpr121_module.rst:139
+msgid "**Phenomenon Picture**"
+msgstr ""

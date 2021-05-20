@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, SunFounder
+# This file is distributed under the same license as the SunFounder Vincent Kit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: SunFounder Vincent Kit \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-20 17:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../2.15_button.rst:2
+msgid "2.15 Button"
+msgstr ""
+
+#: ../2.15_button.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../2.15_button.rst:7
+msgid "In this lesson, you will learn about Button. Button is a common component used to control electronic devices. It is usually used as a switch to connect or break circuits."
+msgstr ""
+
+#: ../2.15_button.rst:12
+msgid "Components Required"
+msgstr ""
+
+#: ../2.15_button.rst:18
+msgid "Component Introduction"
+msgstr ""
+
+#: ../2.15_button.rst:20
+msgid "Two pins on the left are connected, and the one on the right is similar to the left, which is shown below:"
+msgstr ""
+
+#: ../2.15_button.rst:26
+msgid "The symbol shown as below is usually used to represent a button in circuits."
+msgstr ""
+
+#: ../2.15_button.rst:31
+msgid "When the button is pressed, the 4 pins are connected, thus closing the circuit."
+msgstr ""
+
+#: ../2.15_button.rst:35
+msgid "Fritzing Circuit"
+msgstr ""
+
+#: ../2.15_button.rst:37
+msgid "In this example, we read the signal of the button with the digital pin 2. When the button is not pressed, the digital pin 2 (through the drop-down resistor) is connected to ground to read the low level (0); when the button is pressed, the two pins are connected and when the pin is connected to the 5V power supply, the high level (1) is read."
+msgstr ""
+
+#: ../2.15_button.rst:47
+msgid "If you disconnect the digital I/O pin from anything, the LED may blink erratically. The input is \"floating\" or it doesn't have a solid connection to voltage or ground, so it will randomly return either HIGH or LOW. That's why there needs a pull-down resistor in the circuit."
+msgstr ""
+
+#: ../2.15_button.rst:54
+msgid "Schematic Diagram"
+msgstr ""
+
+#: ../2.15_button.rst:59
+msgid "Code"
+msgstr ""
+
+#: ../2.15_button.rst:61
+msgid "**Example 1：**"
+msgstr ""
+
+#: ../2.15_button.rst:67
+msgid "Uploaded the codes to the Mega2560 board, you can see the readings of the pins on the serial monitor. When you press down the Button, there will display 「1」on the serial monitor, and once you release it, there will display「0」. As for the detail code explanation, please refer to **Part 1-1.4 Digital Read.**"
+msgstr ""
+
+#: ../2.15_button.rst:73
+msgid ":ref:`1.4 Digital Read`"
+msgstr ""
+
+#: ../2.15_button.rst:75
+msgid "**Example 2：**"
+msgstr ""
+
+#: ../2.15_button.rst:81
+msgid "Uploaded the codes to the Mega2560 board, every time you press the button, the output value will switch between 0 and 1. If you want to know more about the code explanation, you can turn to **Part 1-1.10 State Change Detection.**"
+msgstr ""
+
+#: ../2.15_button.rst:86
+msgid ":ref:`1.10 State Change Detection`"
+msgstr ""
+
+#: ../2.15_button.rst:89
+msgid "Phenomenon Picture"
+msgstr ""
