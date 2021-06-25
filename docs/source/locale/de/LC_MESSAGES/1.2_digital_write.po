@@ -4,43 +4,48 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:27+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../1.2_digital_write.rst:2
 msgid "1.2 Digital Write"
-msgstr ""
+msgstr "1.2 Digitales Schreiben"
 
 #: ../1.2_digital_write.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../1.2_digital_write.rst:7
 msgid ""
 "The digitalWrite() statement here is used to write high level or low "
-"level to pins and to let LED and active buzzer 「work 」or 「stop」. In this "
-"lesson, we will take LED as an example to introduce the experiment "
+"level to pins and to let LED and active buzzer 「work 」or 「stop」. In "
+"this lesson, we will take LED as an example to introduce the experiment "
 "phenomenon."
 msgstr ""
+"Die Anweisung digitalWrite () wird hier verwendet, um hohem oder "
+"niedrigem Pegel in die Pins zu schreiben und die LED und den aktiven "
+"Summer 「arbeiten」 oder 「stoppen」 zu lassen. In dieser Lektion nehmen "
+"wir LED als Beispiel, um das Experimentphänomen vorzustellen."
 
 #: ../1.2_digital_write.rst:13
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../1.2_digital_write.rst:19
 msgid "Refer to Part 2 to check details of hardware."
-msgstr ""
+msgstr "Informationen zur Hardware finden Sie in Teil 2."
 
 #: ../1.2_digital_write.rst:21
 msgid ":ref:`Part 2 Component`"
@@ -48,7 +53,7 @@ msgstr ""
 
 #: ../1.2_digital_write.rst:24
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../1.2_digital_write.rst:26
 msgid ""
@@ -57,20 +62,28 @@ msgid ""
 "LED to the other side of the resistor. Connect the shorter pin (cathode) "
 "of the LED to GND."
 msgstr ""
+"In diesem Beispiel verwenden wir den digitalen Pin 9, um die LED "
+"anzusteuern. Verbinden Sie eine Seite des Widerstands mit dem digitalen "
+"Pin 9 und den längeren Pin (Anode) der LED mit der anderen Seite des "
+"Widerstands. Verbinden Sie den kürzeren Pin (cathode) der LED mit GND."
 
 #: ../1.2_digital_write.rst:35
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../1.2_digital_write.rst:41
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../1.2_digital_write.rst:43
 msgid ""
-"After finishing the circuit connection, connect the Mega2560 board to the"
-" computer. Run the Arduino software IDE and type in the following codes."
+"After finishing the circuit connection, connect the Mega2560 board to "
+"the computer. Run the Arduino software IDE and type in the following "
+"codes."
 msgstr ""
+"Schließen Sie nach Abschluss der Schaltungsverbindung die Mega2560-Karte "
+"an den Computer an. Führen Sie die Arduino-Software-IDE aus und geben "
+"Sie die folgenden Codes ein."
 
 #: ../1.2_digital_write.rst:48
 msgid ""
@@ -78,16 +91,21 @@ msgid ""
 "sunfounder_vincent_kit_for_arduino\\code\\1.2digitalWrite to use the "
 "codes."
 msgstr ""
+"Sie können die Datei 1.2digitalWrite.ino auch im Pfad von "
+"sunfounder_vincent_kit_for_arduino\\code\\1.2digitalWrite öffnen, um die "
+"Codes zu verwenden."
 
 #: ../1.2_digital_write.rst:55
 msgid ""
 "Upload the codes to the Mega2560 board, and you can see the blinking of "
 "LED."
 msgstr ""
+"Laden Sie die Codes auf die Mega2560-Karte hoch, und Sie können das "
+"Blinken der LED sehen."
 
 #: ../1.2_digital_write.rst:58
 msgid "Code Analysis"
-msgstr ""
+msgstr "Code-Analyse"
 
 #: ../1.2_digital_write.rst:60
 msgid ""
@@ -95,12 +113,17 @@ msgid ""
 "int variable called ledpin at the beginning of the program and assign a "
 "value of 9."
 msgstr ""
+"Hier verbinden wir die LED mit dem digitalen Pin 9, daher müssen wir zu "
+"Beginn des Programms eine int-Variable namens ledpin deklarieren und den "
+"Wert 9 zuweisen."
 
 #: ../1.2_digital_write.rst:68
 msgid ""
 "Now, initialize the pin in the setup() function, where you need to "
 "initialize the pin to OUTPUT mode."
 msgstr ""
+"Initialisieren Sie nun den Pin in der Funktion setup (), wo Sie den Pin "
+"in den OUTPUT-Modus initialisieren müssen."
 
 #: ../1.2_digital_write.rst:75
 msgid ""
@@ -108,53 +131,71 @@ msgid ""
 "ledpin, which will cause voltage difference between LED pins and light "
 "LED up."
 msgstr ""
+"In loop () wird digitalWrite () verwendet, um ein 5-V-Hochpegelsignal "
+"für den LED-Pin bereitzustellen, das eine Spannungsdifferenz zwischen "
+"den LED-Pins und dem Aufleuchten der LED verursacht."
 
 #: ../1.2_digital_write.rst:82
 msgid ""
 "If the level signal is changed to LOW, the ledPin's signal will be "
 "returned to 0 V to turn LED off."
 msgstr ""
+"Wenn das Pegelsignal auf LOW geändert wird, wird das LEDPin-Signal auf 0 "
+"V zurückgesetzt, um die LED auszuschalten."
 
 #: ../1.2_digital_write.rst:88
 msgid ""
 "An interval between on and off is required to allow people to see the "
-"change, so we use a delay(1000) code to let the controller do nothing for"
-" 1000 ms."
+"change, so we use a delay(1000) code to let the controller do nothing "
+"for 1000 ms."
 msgstr ""
+"Ein Intervall zwischen Ein und Aus ist erforderlich, damit die Benutzer "
+"die Änderung sehen können. Daher verwenden wir einen delay(1000) Code, "
+"damit der Controller 1000 ms lang nichts tut."
 
 #: ../1.2_digital_write.rst:96
 msgid "※ How to Upload the Sketch"
-msgstr ""
+msgstr "※ Wie laden Sie die Skizze hoch"
 
 #: ../1.2_digital_write.rst:98
 msgid ""
 "Before you upload a written code to Arduino, you need first to select "
 "Board and Port."
 msgstr ""
+"Bevor Sie einen geschriebenen Code auf Arduino hochladen, müssen Sie "
+"zuerst Karte und Port auswählen."
 
 #: ../1.2_digital_write.rst:101
 msgid "Click Tools ->Board and select Arduino/Genuino Mega or Mega 2560."
 msgstr ""
+"Klicken Sie auf Extras -> Karte und wählen Sie Arduino / Genuino Mega "
+"oder Mega 2560."
 
 #: ../1.2_digital_write.rst:106
 msgid ""
 "Then select **Tools** ->\\ **Port**. Your port should be different from "
 "mine."
 msgstr ""
+"Wählen Sie dann **Tools** ->\\ **Port**. Ihr Port sollte sich von meinem "
+"unterscheiden."
 
 #: ../1.2_digital_write.rst:112
 msgid ""
-"**Step 4:** Upload the sketch to the SunFounder Mega2560 board. Click the"
-" **Upload** icon to upload the code to the control board."
+"**Step 4:** Upload the sketch to the SunFounder Mega2560 board. Click "
+"the **Upload** icon to upload the code to the control board."
 msgstr ""
+"**Schritt 4:** Laden Sie die Skizze auf das SunFounder Mega2560-Board "
+"hoch. Klicken Sie auf das Symbol **Hochladen**, um den Code auf die "
+"Steuerkarte hochzuladen."
 
 #: ../1.2_digital_write.rst:118
 msgid ""
 "If \"Done uploading\" appears at the bottom of the window, it means the "
 "sketch has been successfully uploaded."
 msgstr ""
+"Wenn unten im Fenster \"Hochladen abgeschlossen\" angezeigt wird, "
+"bedeutet dies, dass die Skizze erfolgreich hochgeladen wurde."
 
 #: ../1.2_digital_write.rst:125
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

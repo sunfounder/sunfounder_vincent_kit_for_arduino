@@ -4,27 +4,27 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 08:47+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.16_slide_switch.rst:2
 msgid "2.16 Slide Switch"
-msgstr ""
+msgstr "2.16 Schiebeschalter"
 
 #: ../2.16_slide_switch.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.16_slide_switch.rst:7
 msgid ""
@@ -35,14 +35,24 @@ msgid ""
 "and stability, and applies in electric instruments and electric toys "
 "widely."
 msgstr ""
+"In diesem Kurs lernen Sie einige Kenntnisse über Switch. Der "
+"Schiebeschalter dient, wie der Name schon sagt, dazu, die Schalterstange "
+"zu schieben, um den Stromkreis zu verbinden oder zu trennen und den "
+"Stromkreis weiter zu schalten. Der Schiebeschalter wird üblicherweise in "
+"Niederspannungsschaltungen verwendet. Es hat die Merkmale Flexibilität "
+"und Stabilität und ist in elektrischen Instrumenten und elektrischen "
+"Spielzeugen weit verbreitet."
 
 #: ../2.16_slide_switch.rst:15
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.16_slide_switch.rst:20
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
+
+msgid "Slide Switch"
+msgstr "Schiebeschalter"
 
 #: ../2.16_slide_switch.rst:28
 msgid ""
@@ -51,16 +61,23 @@ msgid ""
 "it to the right, the two pins on the right are connected. Thus, it works "
 "as a switch connecting or disconnecting circuits. See the figure below:"
 msgstr ""
+"So funktioniert es: Stellen Sie den mittleren Stift als festen Stift "
+"ein. Wenn Sie den Schieber nach links ziehen, sind die beiden Stifte "
+"links verbunden. Wenn Sie es nach rechts ziehen, sind die beiden Stifte "
+"rechts verbunden. Somit funktioniert es als Schalter, der Schaltkreise "
+"verbindet oder trennt. Siehe die folgende Abbildung:"
 
 #: ../2.16_slide_switch.rst:36
 msgid ""
-"The circuit symbol of the slide switch is shown as below. The pin2 in the"
-" figure refers to the middle pin."
+"The circuit symbol of the slide switch is shown as below. The pin2 in "
+"the figure refers to the middle pin."
 msgstr ""
+"Das Schaltungssymbol des Schiebeschalters ist wie folgt dargestellt. Der "
+"Pin2 in der Abbildung bezieht sich auf den mittleren Pin."
 
 #: ../2.16_slide_switch.rst:44
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.16_slide_switch.rst:46
 msgid ""
@@ -70,25 +87,39 @@ msgid ""
 "set between pin 2 and GND to realize debounce that may arise from your "
 "toggle of switch."
 msgstr ""
+"In diesem Beispiel wird der digitale Pin 2 zum Lesen des Signals des "
+"Schalters verwendet. Außerdem müssen Sie einen 10-kΩ-Widerstand und "
+"einen 104-Kondensator parallel schalten, um eine RC-Schaltung "
+"(Widerstands-Kondensator-Schaltung) zu bilden, die zwischen Pin 2 und "
+"GND eingestellt ist, um das mögliche durch den Schalter verursachte "
+"Entprellen zu realisieren."
 
 #: ../2.16_slide_switch.rst:56
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.16_slide_switch.rst:64
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.16_slide_switch.rst:70
 msgid ""
 "After the codes are uploaded to the Mega2560 board, you can open the "
 "serial monitor to check the readings of the pin. When the Switch toggles "
-"to the left, the serial monitor displays 「1」; when toggles to the right, "
-"the serial monitor displays「0」. Refer to :ref:`1.4 Digital Read` to check"
-" the code explanation."
+"to the left, the serial monitor displays 「1」; when toggles to the "
+"right, the serial monitor displays「0」. Refer to :ref:`1.4 Digital "
+"Read` to check the code explanation."
 msgstr ""
+"Nachdem Sie den Code auf die Mega2560-Karte hochgeladen haben, können "
+"Sie den seriellen Monitor öffnen, um die Anzeige dieses Pins zu "
+"überprüfen. Wenn der Schalter nach links wechselt, zeigt der serielle "
+"Monitor 「1」 an. Wenn Sie nach rechts wechseln, zeigt der serielle "
+"Monitor 「0」 an. Siehe Teil 1- 1.4 Digital Read, um die Code-Erklärung "
+"zu überprüfen."
 
 #: ../2.16_slide_switch.rst:78
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.16"
+msgstr "2.16"

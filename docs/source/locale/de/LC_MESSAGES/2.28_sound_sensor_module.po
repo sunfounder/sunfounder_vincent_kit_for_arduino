@@ -4,42 +4,48 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 09:30+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.28_sound_sensor_module.rst:2
 msgid "2.28 Sound Sensor Module"
-msgstr ""
+msgstr "2.28 Schallsensormodul"
 
 #: ../2.28_sound_sensor_module.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.28_sound_sensor_module.rst:7
 msgid ""
 "In this lesson, you will learn how to use a sound sensor module. The "
-"sound sensor module provides an easy way to detect sound and is generally"
-" used for detecting sound intensity."
+"sound sensor module provides an easy way to detect sound and is "
+"generally used for detecting sound intensity."
 msgstr ""
+"In diesem Lektioin lernen Sie den Umgang mit dem Schallsensormodul. Das "
+"Schallsensormodul bietet eine einfache Möglichkeit zur Schallerkennung "
+"und wird normalerweise zur Erkennung der Schallintensität verwendet."
 
 #: ../2.28_sound_sensor_module.rst:12
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.28_sound_sensor_module.rst:17
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
+
+msgid "5"
+msgstr "5"
 
 #: ../2.28_sound_sensor_module.rst:24
 msgid ""
@@ -47,6 +53,9 @@ msgid ""
 "applications. Its accuracy can be easily adjusted for the convenience of "
 "usage."
 msgstr ""
+"Dieses Modul kann für Sicherheits-, Switch- und Überwachungsanwendungen "
+"verwendet werden. Die Genauigkeit kann für die Benutzerfreundlichkeit "
+"leicht angepasst werden."
 
 #: ../2.28_sound_sensor_module.rst:28
 msgid ""
@@ -55,14 +64,19 @@ msgid ""
 "output signal voltage which is sent to a micro-controller then performs "
 "necessary processing."
 msgstr ""
+"Es verwendet ein Mikrofon, das den Eingang zu einem Verstärker, einem "
+"Spitzendetektor und einem Puffer liefert. Wenn der Sensor Geräusche "
+"erkennt, verarbeitet er die Ausgangssignalspannung, sendet sie an den "
+"Mikrocontroller und führt dann die erforderliche Verarbeitung durch."
 
 #: ../2.28_sound_sensor_module.rst:33
 msgid "This module has two outputs:"
-msgstr ""
+msgstr "Dieses Modul hat zwei Ausgänge:"
 
 #: ../2.28_sound_sensor_module.rst:35
 msgid "① AO: analog output, real-time output voltage signal of microphone."
 msgstr ""
+"① AO: Analogausgang, Echtzeit-Ausgangsspannungssignal des Mikrofons."
 
 #: ../2.28_sound_sensor_module.rst:37
 msgid ""
@@ -70,25 +84,34 @@ msgid ""
 "output is a high or low level signal. The threshold sensitivity can be "
 "achieved by adjusting the potentiometer."
 msgstr ""
+"② DO: Wenn die Intensität des Tons einen bestimmten Schwellenwert "
+"erreicht, ist der Ausgang ein Signal mit hohem oder niedrigem Pegel. Die "
+"Schwellenempfindlichkeit kann durch Einstellen des Potentiometers "
+"erreicht werden."
 
 #: ../2.28_sound_sensor_module.rst:43
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.28_sound_sensor_module.rst:45
 msgid ""
 "In this example, we can directly connect the pin of Sound Sensor Module "
-"to the pin of Mega 2560 Board, connect the pin「G」 of Sound Sensor Module "
-"to GND, the pin 「+」to 5V, AO to analog pin A0, and D0 to digital pin 2."
+"to the pin of Mega 2560 Board, connect the pin「G」 of Sound Sensor "
+"Module to GND, the pin 「+」to 5V, AO to analog pin A0, and D0 to "
+"digital pin 2."
 msgstr ""
+"In diesem Beispiel können wir den Pin des Soundsensormoduls direkt mit "
+"dem Pin der Mega 2560-Platine verbinden, den Pin 「G」 des "
+"Soundsensormoduls mit GND, den Pin 「+」 mit 5 V, AO mit dem analogen "
+"Pin A0 und D0 an digitalen Pin 2."
 
 #: ../2.28_sound_sensor_module.rst:55
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.28_sound_sensor_module.rst:63
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.28_sound_sensor_module.rst:69
 msgid ""
@@ -97,9 +120,17 @@ msgid ""
 "louder, the digital reading is 「1」 (adjust the potentiometer of the "
 "module to modify the threshold to trigger the high level), and the "
 "reading value of the analog pin will change significantly; when the "
-"environment is quiet, the digital reading is 「0」 and the analog reading "
-"changes smoothly."
+"environment is quiet, the digital reading is 「0」 and the analog "
+"reading changes smoothly."
 msgstr ""
+"Nachdem Sie den Code auf die Mega2560-Karte hochgeladen haben, können "
+"Sie den seriellen Monitor öffnen, um den Lesewert des Pins anzuzeigen. "
+"Wenn der Umgebungsschall lauter wird, beträgt der digitale Messwert "
+"「1」 (stellen Sie das Potentiometer des Moduls ein, um den "
+"Schwellenwert zu ändern und den hohen Pegel auszulösen), und der "
+"Lesewert des analogen Pins ändert sich erheblich. Wenn die Umgebung "
+"ruhig ist, ist der digitale Messwert 「0」 und der analoge Messwert "
+"ändert sich reibungslos."
 
 #: ../2.28_sound_sensor_module.rst:77
 msgid ""
@@ -109,14 +140,23 @@ msgid ""
 "oscilloscope is used, the changing of analog reading of the sound sensor "
 "will be more obvious."
 msgstr ""
+"Der Bereich des analogen Lesens beträgt 「0」 ~ 「1023」, aber abhängig "
+"von den Umgebungsbedingungen und den Eigenschaften des Schallsensors "
+"kann der tatsächliche Lesebereich kleiner sein als der theoretische. "
+"Wenn ein Oszilloskop verwendet wird, ist die Änderung des analogen "
+"Messwerts des Schallsensors offensichtlicher."
 
 #: ../2.28_sound_sensor_module.rst:83
 msgid ""
-"About the detail code explanation, refer to :ref:`1.5 Analog Read` and "
-":ref:`1.4 Digital Read`."
+"About the detail code explanation, refer to :ref:`1.5 Analog Read` and :"
+"ref:`1.4 Digital Read`."
 msgstr ""
+"Informationen zur Erläuterung des Detailcodes finden Sie in `Teil 1 -1.5 "
+"Analog Read` und `Teil 1- 1.4 Digital Read`."
 
 #: ../2.28_sound_sensor_module.rst:87
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.28"
+msgstr "2.28"

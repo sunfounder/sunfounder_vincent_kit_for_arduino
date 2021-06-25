@@ -4,61 +4,78 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 09:17+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.24_mpr121_module.rst:2
 msgid "2.24 MPR121 Module"
-msgstr ""
+msgstr "2.24 MPR121-Modul"
 
 #: ../2.24_mpr121_module.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.24_mpr121_module.rst:7
 msgid ""
-"In this lesson, you will learn how to use MPR121. It's a good option when"
-" you want to add a lot of touch switches to your project. The electrode "
-"of MPR121 can be extended with a conductor. If you connect a wire to a "
-"banana, you can turn the banana into a touch switch, thus realizing "
-"projects such as fruit piano."
+"In this lesson, you will learn how to use MPR121. It's a good option "
+"when you want to add a lot of touch switches to your project. The "
+"electrode of MPR121 can be extended with a conductor. If you connect a "
+"wire to a banana, you can turn the banana into a touch switch, thus "
+"realizing projects such as fruit piano."
 msgstr ""
+"In dieser Lektion lernen Sie, wie Sie MPR121 verwenden. Dies ist eine "
+"gute Option, wenn Sie Ihrem Projekt viele Touch-Schalter hinzufügen "
+"möchten. Die Elektrode von MPR121 kann mit einem Leiter verlängert "
+"werden. Wenn Sie einen Draht an eine Banane anschließen, können Sie die "
+"Banane in einen Berührungsschalter verwandeln und so Projekte wie "
+"Obstklavier realisieren."
 
 #: ../2.24_mpr121_module.rst:14
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.24_mpr121_module.rst:18
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
 
 #: ../2.24_mpr121_module.rst:24
 msgid ""
-"Add lots of touch sensors to your next project with this easy-to-use "
-"12-channel capacitive touch sensor breakout board, starring the MPR121. "
+"Add lots of touch sensors to your next project with this easy-to-use 12-"
+"channel capacitive touch sensor breakout board, starring the MPR121. "
 "This chip can handle up to 12 individual touch pads."
 msgstr ""
+"Fügen Sie Ihrem nächsten Projekt viele Berührungssensoren hinzu, indem "
+"Sie dieses benutzerfreundliche kapazitive 12-Kanal-Breakout-Board für "
+"Berührungssensoren mit dem MPR121 verwenden. Dieser Chip kann bis zu 12 "
+"einzelne Touchpads verarbeiten."
 
 #: ../2.24_mpr121_module.rst:28
 msgid ""
-"The MPR121 has support for only I2C, which can be implemented with nearly"
-" any microcontroller. You can select one of 4 addresses with the ADDR "
-"pin, for a total of 48 capacitive touch pads on one I2C 2-wire bus. Using"
-" this chip is a lot easier than doing the capacitive sensing with analog "
-"inputs: it handles all the filtering for you and can be configured for "
-"more/less sensitivity."
+"The MPR121 has support for only I2C, which can be implemented with "
+"nearly any microcontroller. You can select one of 4 addresses with the "
+"ADDR pin, for a total of 48 capacitive touch pads on one I2C 2-wire bus. "
+"Using this chip is a lot easier than doing the capacitive sensing with "
+"analog inputs: it handles all the filtering for you and can be "
+"configured for more/less sensitivity."
 msgstr ""
+"Der MPR121 unterstützt nur I2C, das mit nahezu jedem Mikrocontroller "
+"implementiert werden kann. Mit dem ADDR-Pin können Sie eine der 4 "
+"Adressen auswählen, um insgesamt 48 kapazitive Touchpads auf einem I2C-2-"
+"Draht-Bus zu verwenden. Die Verwendung dieses Chips ist viel einfacher "
+"als die kapazitive Erfassung über einen Analogeingang: Er kann alle "
+"Filter für Sie übernehmen und für eine höhere / niedrigere "
+"Empfindlichkeit konfiguriert werden."
 
 #: ../2.24_mpr121_module.rst:35
 msgid ""
@@ -66,23 +83,33 @@ msgid ""
 "control board going to check that pin to see if it is LOW during the "
 "loop. To do this, this sensor also needs access to another digital pin."
 msgstr ""
+"Wenn der MPR121 eine Änderung erkennt, zieht er einen Interrupt-Pin LOW. "
+"Die Steuerplatine überprüft diesen Pin, um festzustellen, ob er während "
+"der Schleife LOW ist. Dazu benötigt dieser Sensor auch Zugriff auf einen "
+"anderen digitalen Pin."
 
 #: ../2.24_mpr121_module.rst:40
 msgid "**Electrodes**"
-msgstr ""
+msgstr "**Elektroden**"
 
 #: ../2.24_mpr121_module.rst:42
 msgid ""
-"Electrode is a touch sensor. Typically, electrodes can just be some piece"
-" of metal, or a wire. But some times depending on the length of our wire,"
-" or the material the electrode is on, it can make triggering the sensor "
-"difficult. For this reason, the MPR121 allows you to configure what is "
-"needed to trigger and untrigger an electrode."
+"Electrode is a touch sensor. Typically, electrodes can just be some "
+"piece of metal, or a wire. But some times depending on the length of our "
+"wire, or the material the electrode is on, it can make triggering the "
+"sensor difficult. For this reason, the MPR121 allows you to configure "
+"what is needed to trigger and untrigger an electrode."
 msgstr ""
+"Die Elektrode ist ein Berührungssensor. Typischerweise können Elektroden "
+"nur ein Stück Metall oder ein Draht sein. Abhängig von der Länge des "
+"Drahtes oder dem Material auf der Elektrode kann es jedoch manchmal "
+"schwierig sein, den Sensor auszulösen. Aus diesem Grund können Sie mit "
+"dem MPR121 konfigurieren, was zum Auslösen und Auslösen einer Elektrode "
+"erforderlich ist."
 
 #: ../2.24_mpr121_module.rst:49
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.24_mpr121_module.rst:51
 msgid ""
@@ -91,61 +118,78 @@ msgid ""
 "the pin SCL(21), and SDA to the pin SDA(20). There are 12 electrodes for "
 "touch sensing. Note: MPR121 is powered by 3.3V, not 5V."
 msgstr ""
+"In diesem Beispiel fügen wir MPR121 in das Steckbrett ein. Stellen Sie "
+"die GND von MPR121 an GND, 3,3 V an 3 V3, IRQ an den digitalen Pin 2, "
+"SCL an den Pin SCL (21) und SDA an den Pin SDA (20). Es gibt 12 "
+"Elektroden für die Berührungserkennung. Hinweis: Der MPR121 wird mit 3,3 "
+"V und nicht mit 5 V betrieben."
 
 #: ../2.24_mpr121_module.rst:62
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.24_mpr121_module.rst:70
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.24_mpr121_module.rst:72
 msgid ""
-"The codes use the `MPR121_JM. h library "
-"<https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_."
-" . Turn to :ref:`4.1 Add Libraries` for information on how to import "
-"Libraries."
+"The codes use the `MPR121_JM. h library <https://github.com/sunfounder/"
+"sunfounder_vincent_kit_for_arduino/tree/master/library>`_. . Turn to :"
+"ref:`4.1 Add Libraries` for information on how to import Libraries."
 msgstr ""
+"Die Codes verwenden den `MPR121_JM. h Bibliothek <https://github.com/"
+"sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_. "
+"Informationen zum Importieren von Bibliotheken finden Sie in `Teil 4 - "
+"4.1 Hinzufügen von Bibliotheken`."
 
 #: ../2.24_mpr121_module.rst:79
 msgid ""
 "After uploading the codes to the Mega2560 board, the touch state of pins "
-"of MPR121 「1」and「0」will be recorded in a 12 - bit boolean type of array "
-"that will be printed on the serial monitor."
+"of MPR121 「1」and「0」will be recorded in a 12 - bit boolean type of "
+"array that will be printed on the serial monitor."
 msgstr ""
+"Nach dem Hochladen der Codes auf die Mega2560-Karte wird der Touch-"
+"Status der Pins von MPR121 (1) und (0) angezeigt\n"
+"Aufgenommen in einem booleschen 12-Bit-Array, das auf dem seriellen "
+"Monitor gedruckt wird."
 
 #: ../2.24_mpr121_module.rst:84
 msgid "**Code Analysis**"
-msgstr ""
+msgstr "**Code-Analyse**"
 
 #: ../2.24_mpr121_module.rst:86
 msgid "The function of the module is included in the library MPR121_JM.h."
 msgstr ""
+"Die Funktion des Moduls ist in der Bibliothek MPR121_JM.h enthalten."
 
 #: ../2.24_mpr121_module.rst:93
 msgid "**Library Functions：**"
-msgstr ""
+msgstr "**Bibliotheksfunktionen:**"
 
 #: ../2.24_mpr121_module.rst:99
 msgid "Creates a new instance of the MPR121."
-msgstr ""
+msgstr "Erstellt eine neue Instanz des MPR121."
 
 #: ../2.24_mpr121_module.rst:101
 msgid "irqpin: the interrupt request pin."
-msgstr ""
+msgstr "irqpin: der Interrupt-Anforderungs-Pin."
 
 #: ../2.24_mpr121_module.rst:103
 msgid ""
-"touThresh: Touch threshold，the electrode is recognized as a threshold of "
-"the 「Touch」 state."
+"touThresh: Touch threshold，the electrode is recognized as a threshold "
+"of the 「Touch」 state."
 msgstr ""
+"touThresh: : Berührungsschwelle, Die Elektrode wird als Schwelle des "
+"Zustands 「Berührung」 recognized erkannt."
 
 #: ../2.24_mpr121_module.rst:106
 msgid ""
 "relThresh: Release threshold，the electrode is recognized as a threshold "
 "of the 「Release」 state."
 msgstr ""
+"relThresh: Freigabeschwelle, Die Elektrode wird als Schwelle des "
+"Zustands 「Freigabe」 recognized erkannt."
 
 #: ../2.24_mpr121_module.rst:109
 msgid ""
@@ -153,19 +197,28 @@ msgid ""
 "application, the threshold value can be in range 0x05~0x30 for example. "
 "The smaller the value, the more sensitive it is. The setting of the "
 "threshold is depended on the actual application.Typically the touch "
-"threshold is a little bigger than the release threshold to touch debounce"
-" and hysteresis."
+"threshold is a little bigger than the release threshold to touch "
+"debounce and hysteresis."
 msgstr ""
+"Der Bereich des Elektrodendatenwerts liegt zwischen 0 und 255. Für eine "
+"typische Berührungsanwendung kann der Schwellenwert beispielsweise im "
+"Bereich von 0x05 bis 0x30 liegen. Je kleiner der Wert, desto "
+"empfindlicher ist er. Die Einstellung des Schwellenwerts hängt von der "
+"tatsächlichen Anwendung ab. Im Allgemeinen ist die Berührungsschwelle "
+"geringfügig größer als die Freigabeschwelle für das Entprellen und die "
+"Hysterese von Berührungen."
 
 #: ../2.24_mpr121_module.rst:120
 msgid "Setup MPR121 module."
-msgstr ""
+msgstr "MPR121-Modul einrichten."
 
 #: ../2.24_mpr121_module.rst:126
 msgid ""
 "Make interrupt judgment, when the electrode state changes, the function "
 "returns a Boolean value 「0」."
 msgstr ""
+"Wenn sich der Elektrodenzustand ändert, gibt die Funktion einen "
+"Booleschen Wert 「0」 returns zurück."
 
 #: ../2.24_mpr121_module.rst:133
 msgid ""
@@ -174,8 +227,15 @@ msgid ""
 "sequence into a 12-bit binary number as the return value. If the first "
 "and eleventh electrodes are touched, 「100000000010」 is returned."
 msgstr ""
+"Der Berührungszustand der Elektrode erzeugt einen Booleschen Wert. Diese "
+"Funktion akkumuliert die von allen Elektroden nacheinander erzeugten "
+"Booleschen Werte in einer 12-Bit-Binärzahl als Rückgabewert. Wenn die "
+"erste und die elfte Elektrode berührt werden, wird (100000000010) "
+"zurückgegeben."
 
 #: ../2.24_mpr121_module.rst:139
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.24"
+msgstr "2.24"

@@ -4,27 +4,28 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:29+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../1.7_analog_input_control_output.rst:2
 msgid "1.7 Analog Input Control Output"
-msgstr ""
+msgstr "1.7 Analogeingang Steuerausgang"
 
 #: ../1.7_analog_input_control_output.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../1.7_analog_input_control_output.rst:7
 msgid ""
@@ -34,14 +35,20 @@ msgid ""
 "the like. In this lesson, potentiometer and LED are taken as examples to "
 "change the brightness of the LED when the potentiometer is turning."
 msgstr ""
+"Sie können ein E / A-System mithilfe eines analogen Ein- / Ausgabegeräts "
+"installieren. Beispielsweise können Sie ein Potentiometer, einen "
+"Fotowiderstand, einen Wasserstandssensor usw. verwenden, um die "
+"Helligkeit der LED, die Motordrehzahl und dergleichen zu steuern. In "
+"dieser Lektion werden Potentiometer und LED als Beispiele verwendet, um "
+"die Helligkeit der LED zu ändern, wenn sich das Potentiometer dreht."
 
 #: ../1.7_analog_input_control_output.rst:14
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../1.7_analog_input_control_output.rst:19
 msgid "Refer to Part 2 to check details of hardware."
-msgstr ""
+msgstr "Informationen zur Hardware finden Sie in Teil 2."
 
 #: ../1.7_analog_input_control_output.rst:21
 msgid ":ref:`Part 2 Component`"
@@ -49,23 +56,27 @@ msgstr ""
 
 #: ../1.7_analog_input_control_output.rst:25
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../1.7_analog_input_control_output.rst:27
 msgid ""
 "In this lesson, we use PWM pin 9 to drive LED. The analog pin (A0) is "
-"used to read the value of potentiometer. After uploading the code, you'll"
-" notice that the brightness of the LED changes as the potentiometer "
-"rotates."
+"used to read the value of potentiometer. After uploading the code, "
+"you'll notice that the brightness of the LED changes as the "
+"potentiometer rotates."
 msgstr ""
+"In dieser Lektion verwenden wir PWM-Pin 9, um die LED anzusteuern. Der "
+"analoge Pin (A0) dient zum Ablesen des Potentiometerwerts. Nach dem "
+"Hochladen des Codes werden Sie feststellen, dass sich die Helligkeit der "
+"LED ändert, wenn sich das Potentiometer dreht."
 
 #: ../1.7_analog_input_control_output.rst:36
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../1.7_analog_input_control_output.rst:42
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../1.7_analog_input_control_output.rst:48
 msgid ""
@@ -73,34 +84,38 @@ msgid ""
 "brightness of LED is changing with the turning of the knob of "
 "potentiometer."
 msgstr ""
+"Wenn die Codes auf die Mega2560-Karte hochgeladen werden, können Sie "
+"sehen, dass sich die Helligkeit der LED mit dem Drehen des "
+"Potentiometerknopfs ändert."
 
 #: ../1.7_analog_input_control_output.rst:51
 msgid "Code Analysis"
-msgstr ""
+msgstr "Code-Analyse"
 
 #: ../1.7_analog_input_control_output.rst:53
 msgid "Declare the pins of LED and Button."
-msgstr ""
+msgstr "Deklarieren Sie die Pins von LED und Button."
 
 #: ../1.7_analog_input_control_output.rst:60
 msgid "In setup(), set the mode of ledPin to OUTPUT."
-msgstr ""
+msgstr "Stellen Sie in setup () den Modus von ledPin auf OUTPUT ein."
 
 #: ../1.7_analog_input_control_output.rst:66
 msgid "Read the readings of potentiometer in loop()."
-msgstr ""
+msgstr "Lesen Sie die Messwerte des Potentiometers in loop () ab."
 
 #: ../1.7_analog_input_control_output.rst:72
 msgid ""
 "Map the potentiometer reading to the LED brightness value (0-1024 is "
 "mapped to 0-255)."
 msgstr ""
+"Ordnen Sie den Potentiometerwert dem LED-Helligkeitswert zu (0-1024 ist "
+"0-255 zugeordnet)."
 
 #: ../1.7_analog_input_control_output.rst:78
 msgid "Write the brightness value to LED."
-msgstr ""
+msgstr "Schreiben Sie den Helligkeitswert auf die LED."
 
 #: ../1.7_analog_input_control_output.rst:85
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

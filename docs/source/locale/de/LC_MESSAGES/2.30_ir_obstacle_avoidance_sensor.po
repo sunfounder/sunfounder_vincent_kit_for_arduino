@@ -4,27 +4,27 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 09:35+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:2
 msgid "2.30 IR Obstacle Avoidance Sensor"
-msgstr ""
+msgstr "2.30 IR-Hindernisvermeidungssensor"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:7
 msgid ""
@@ -33,14 +33,19 @@ msgid ""
 "existence of the obstacles ahead. Also it is widely used in hand held "
 "device, water faucet and so on."
 msgstr ""
+"In diesem Lektion lernen Sie den Umgang mit Infrarot-"
+"Hindernisvermeidungssensoren. Dieses Modul wird normalerweise in Autos "
+"und Robotern installiert, um festzustellen, ob Hindernisse vor Ihnen "
+"liegen. Es ist auch weit verbreitet in Handgeräten, Wasserhähnen und so "
+"weiter."
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:13
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:18
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:19
 msgid ""
@@ -50,10 +55,14 @@ msgid ""
 "and reflects the infrared light, the infrared receiver will receive "
 "signals."
 msgstr ""
+"Ein IR-Hindernissensor erkennt nach dem Infrarotreflexionsprinzip "
+"Hindernisse. Wenn kein Objekt vorhanden ist, empfängt der "
+"Infrarotempfänger kein Signal. Wenn ein Objekt vor Ihnen Infrarotlicht "
+"blockiert und reflektiert, empfängt der Infrarotempfänger das Signal."
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:26
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:27
 msgid ""
@@ -62,25 +71,37 @@ msgid ""
 "IR Obstacle Avoidance Sensor Module. We get the VCC of IR Sensor Module "
 "connected to 5V, GND to GND, OUT to digital pin 2."
 msgstr ""
+"Wir können die Stifte des IR-Hindernissensormoduls direkt mit den "
+"Stiften der Mega 2560-Platine verbinden. Der digitale Pin 2 dient zum "
+"Lesen des Signals des IR-Hindernisvermeidungssensormoduls. Wir erhalten "
+"die VCC des IR-Sensormoduls an 5 V, GND an GND, OUT an digitalen Pin 2."
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:37
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:45
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:51
 msgid ""
 "Uploaded the codes to the Mega2560 board, you can see the readings of "
 "pins on the serial monitor. When IR Obstacle Avoidance Sensor Module "
-"detects there is something covering ahead, there appears 「0」on the serial"
-" monitor; otherwise,「1」is displayed. Refer to:ref:`1.4 Digital Read` to "
-"check the detail code explanation."
+"detects there is something covering ahead, there appears 「0」on the "
+"serial monitor; otherwise,「1」is displayed. Refer to:ref:`1.4 Digital "
+"Read` to check the detail code explanation."
 msgstr ""
+"Wenn Sie die Codes auf die Mega2560-Karte hochgeladen haben, können Sie "
+"die Messwerte der Pins auf dem seriellen Monitor anzeigen. Wenn das IR-"
+"Hindernisvermeidungssensormodul feststellt, dass sich etwas vor Ihnen "
+"befindet, wird auf dem seriellen Monitor 「0 appears angezeigt. "
+"Andernfalls wird 「1」 angezeigt. Informationen zur Erläuterung des "
+"Detailcodes finden Sie in `Teil 1- 1.4 Digital Read`."
 
 #: ../2.30_ir_obstacle_avoidance_sensor.rst:58
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.30"
+msgstr "2.30"

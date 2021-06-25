@@ -4,134 +4,172 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 09:20+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.25_rotary_encoder_module.rst:2
 msgid "2.25 Rotary Encoder Module"
-msgstr ""
+msgstr "2.25 Drehgebermodul"
 
 #: ../2.25_rotary_encoder_module.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.25_rotary_encoder_module.rst:7
 msgid ""
-"In this lesson, you will learn about Rotary Encoder. A rotary encoder is "
-"an electronic switch with a set of regular pulses in strictly timing "
-"sequence. When used with IC, it can achieve increment, decrement, page "
-"turning and other operations such as mouse scrolling, menu selection, and"
-" so on."
+"In this lesson, you will learn about Rotary Encoder. A rotary encoder is an "
+"electronic switch with a set of regular pulses in strictly timing sequence. "
+"When used with IC, it can achieve increment, decrement, page turning and "
+"other operations such as mouse scrolling, menu selection, and so on."
 msgstr ""
+"In dieser Lektion lernen Sie den Drehgeber kennen. Ein Drehgeber ist ein "
+"elektronischer Schalter mit einer Reihe von regulären Impulsen in streng "
+"zeitlicher Reihenfolge. Bei Verwendung mit IC können Inkremente, "
+"Dekremente, Umblättern und andere Vorgänge wie Maus-Scrollen, Menüauswahl "
+"usw. ausgeführt werden."
 
 #: ../2.25_rotary_encoder_module.rst:14
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.25_rotary_encoder_module.rst:19
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
 
 #: ../2.25_rotary_encoder_module.rst:21
 msgid ""
 "There are mainly two types of rotary encoders: absolute and incremental "
 "(relative) encoders. An incremental one is used in this experiment."
 msgstr ""
+"Es gibt hauptsächlich zwei Arten von Drehgebern: Absolut- und "
+"Inkrementalgeber. In diesem Experiment wird ein inkrementelles verwendet."
 
 #: ../2.25_rotary_encoder_module.rst:24
 msgid ""
 "Most rotary encoders have 5 pins with three functions of turning left & "
-"right and pressing down. Pin 1 and pin 2 are switch wiring terminals used"
-" to press. Pin 4 is generally connected to ground. Pin 3 and pin 5 are "
-"first connected to a pull-up resistor and then to VCC and they can "
-"generate two-phase square waves whose phase difference is 90°. Usually "
-"these waves are called channel A and channel B as shown below:"
+"right and pressing down. Pin 1 and pin 2 are switch wiring terminals used "
+"to press. Pin 4 is generally connected to ground. Pin 3 and pin 5 are first "
+"connected to a pull-up resistor and then to VCC and they can generate two-"
+"phase square waves whose phase difference is 90°. Usually these waves are "
+"called channel A and channel B as shown below:"
 msgstr ""
+"Die meisten Drehgeber haben 5 Stifte mit drei Funktionen: Drehen nach links "
+"und rechts und Drücken nach unten. Pin 1 und Pin 2 sind "
+"Schalterverdrahtungsklemmen, die zum Drücken verwendet werden. Pin 4 ist im "
+"Allgemeinen mit Masse verbunden. Pin 3 und Pin 5 werden zuerst mit dem Pull-"
+"up-Widerstand und dann mit VCC verbunden. Sie können eine zweiphasige "
+"Rechteckwelle mit einer Phasendifferenz von 90 ° erzeugen. Normalerweise "
+"werden diese Wellen wie unten gezeigt als Kanal A und Kanal B bezeichnet:"
 
 #: ../2.25_rotary_encoder_module.rst:36
 msgid ""
-"As shown on the right, when channel A changes from high level to low "
-"level, if channel B is high level, it indicates the rotary encoder spins "
-"clockwise (CW); if at that moment channel B is low level, it means spins "
-"counterclockwise (CCW). So if we read the value of channel B when channel"
-" A is low level, we can know in which direction the rotary encoder "
-"rotates."
+"As shown on the right, when channel A changes from high level to low level, "
+"if channel B is high level, it indicates the rotary encoder spins clockwise "
+"(CW); if at that moment channel B is low level, it means spins "
+"counterclockwise (CCW). So if we read the value of channel B when channel A "
+"is low level, we can know in which direction the rotary encoder rotates."
 msgstr ""
+"Wie rechts gezeigt, wenn Kanal A von einem hohen auf einen niedrigen Pegel "
+"wechselt und Kanal B einen hohen Pegel aufweist, zeigt dies an, dass sich "
+"der Drehgeber im Uhrzeigersinn dreht (CW), wenn Kanal B zu diesem Zeitpunkt "
+"einen niedrigen Pegel aufweist, bedeutet dies, dass er sich gegen den "
+"Uhrzeigersinn dreht (CCW). Wenn wir also den Wert von Kanal B lesen, wenn "
+"Kanal A einen niedrigen Pegel aufweist, können wir wissen, in welche "
+"Richtung sich der Drehgeber dreht."
 
 #: ../2.25_rotary_encoder_module.rst:48
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.25_rotary_encoder_module.rst:50
 msgid ""
-"In this example, we can connect the Rotary Encoder pin directly to the "
-"Mega 2560 Board pin, connect the GND of the Rotary Encoder to GND, 「+」 to"
-" 5V, SW to digital pin 4, DT to digital pin 3, and CLK to digital pin 2."
+"In this example, we can connect the Rotary Encoder pin directly to the Mega "
+"2560 Board pin, connect the GND of the Rotary Encoder to GND, 「+」 to 5V, "
+"SW to digital pin 4, DT to digital pin 3, and CLK to digital pin 2."
 msgstr ""
+"In diesem Beispiel können wir den Drehgeberstift direkt mit dem Mega 2560 "
+"Board-Stift verbinden, die GND des Drehgebers mit GND verbinden, 「+」 mit "
+"5 V, SW mit Digitalstift 4, DT mit Digitalstift 3 und CLK mit digitaler Pin "
+"2."
 
 #: ../2.25_rotary_encoder_module.rst:60
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.25_rotary_encoder_module.rst:68
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.25_rotary_encoder_module.rst:74
 msgid ""
 "You will see the angular displacement of the rotary encoder printed on "
 "Serial Monitor. When you turn the rotary encoder clockwise, the angular "
-"displacement is increased; when turn it counterclockwise, the "
-"displacement is decreased. If you press the switch on the rotary encoder,"
-" the readings will return to zero."
+"displacement is increased; when turn it counterclockwise, the displacement "
+"is decreased. If you press the switch on the rotary encoder, the readings "
+"will return to zero."
 msgstr ""
+"Sie sehen die Winkelverschiebung des Drehgebers auf dem seriellen Monitor. "
+"Beim Drehen des Drehgebers im Uhrzeigersinn nimmt die Winkelverschiebung "
+"zu, beim Drehen gegen den Uhrzeigersinn nimmt die Verschiebung ab. Wenn Sie "
+"den Schalter am Drehgeber drücken, werden die Messwerte auf Null "
+"zurückgesetzt."
 
 #: ../2.25_rotary_encoder_module.rst:81
 msgid "**Code Analysis**"
-msgstr ""
+msgstr "**Code-Analyse**"
 
 #: ../2.25_rotary_encoder_module.rst:83
 msgid ""
 "When Rotary Encoder is used, the following situations of pin level will "
 "occur."
 msgstr ""
+"Wenn ein Drehgeber verwendet wird, treten die folgenden Situationen mit Pin-"
+"Pegel auf."
 
 #: ../2.25_rotary_encoder_module.rst:86
 msgid "① When rotating the shaft, dtPin will go from high level to low level."
 msgstr ""
+"① Beim Drehen der Welle wechselt dtPin von einem hohen auf einen niedrigen "
+"Pegel."
 
 #: ../2.25_rotary_encoder_module.rst:88
 msgid ""
-"② clkPin will remain high level when the shaft rotates clockwise, "
-"otherwise it goes low level."
+"② clkPin will remain high level when the shaft rotates clockwise, otherwise "
+"it goes low level."
 msgstr ""
+"② clkPin bleibt hoch, wenn sich die Welle im Uhrzeigersinn dreht, "
+"andernfalls wird es niedrig."
 
 #: ../2.25_rotary_encoder_module.rst:91
 msgid "③ When the shaft is pressed, swPin will have low level."
-msgstr ""
+msgstr "③ Wenn die Welle gedrückt wird, hat swPin einen niedrigen Pegel."
 
 #: ../2.25_rotary_encoder_module.rst:93
 msgid "From this, the program flow is shown on the right."
-msgstr ""
+msgstr "Daraus wird rechts der Programmablauf angezeigt."
 
 #: ../2.25_rotary_encoder_module.rst:95
 msgid ""
-"For detailed analysis of potential state change judgment, please refer to"
-" :ref:`1.10 State Change Detection`."
+"For detailed analysis of potential state change judgment, please refer to :"
+"ref:`1.10 State Change Detection`."
 msgstr ""
+"Eine detaillierte Analyse der Beurteilung potenzieller Zustandsänderungen "
+"finden Sie in `Teil 1 - 1.10 Erkennung von Zustandsänderungen`."
 
 #: ../2.25_rotary_encoder_module.rst:102
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.25"
+msgstr "2.25"

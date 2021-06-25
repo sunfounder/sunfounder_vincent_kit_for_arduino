@@ -4,39 +4,39 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 09:06+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.21_relay_module.rst:2
 msgid "2.21 Relay Module"
-msgstr ""
+msgstr "2.21 Relaismodul"
 
 #: ../2.21_relay_module.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.21_relay_module.rst:7
 msgid "In this lesson, you will learn about Relay Module."
-msgstr ""
+msgstr "In dieser Lektion lernen Sie das Relaismodul kennen."
 
 #: ../2.21_relay_module.rst:10
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.21_relay_module.rst:15
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
 
 #: ../2.21_relay_module.rst:17
 msgid ""
@@ -49,10 +49,23 @@ msgid ""
 "control a large amount of current or voltage with small electrical "
 "signal."
 msgstr ""
+"Wie wir vielleicht wissen, ist Relais ein Gerät, das verwendet wird, um "
+"eine Verbindung zwischen zwei oder mehr Punkten oder Geräten als "
+"Reaktion auf das angelegte Eingangssignal herzustellen. Mit anderen "
+"Worten, Relais stellen eine Isolation zwischen der Steuerung und dem "
+"Gerät bereit, da Geräte sowohl mit Wechselstrom als auch mit Gleichstrom "
+"arbeiten können. Sie empfangen jedoch Signale von einem Mikrocontroller, "
+"der mit Gleichstrom arbeitet, weshalb ein Relais erforderlich ist, um "
+"die Lücke zu schließen. Das Relais ist äußerst nützlich, wenn Sie eine "
+"große Menge an Strom oder Spannung mit einem kleinen elektrischen Signal "
+"steuern müssen."
 
 #: ../2.21_relay_module.rst:26
 msgid "There are 5 parts in every relay:"
-msgstr ""
+msgstr "Jedes Relais besteht aus 5 Teilen:"
+
+msgid "tutu"
+msgstr "tutu"
 
 #: ../2.21_relay_module.rst:34
 msgid ""
@@ -60,6 +73,9 @@ msgid ""
 "wires. When electricity is passed through, it becomes magnetic. "
 "Therefore, it is called electromagnet."
 msgstr ""
+"1. **Elektromagnet** - Er besteht aus einem Eisenkern, der durch eine "
+"Drahtspule gewickelt ist. Wenn Elektrizität durchgelassen wird, wird sie "
+"magnetisch. Daher wird es Elektromagnet genannt."
 
 #: ../2.21_relay_module.rst:38
 msgid ""
@@ -69,6 +85,12 @@ msgid ""
 "normally close (N/C) points. And the armature can be moved with direct "
 "current (DC) as well as alternating current (AC)."
 msgstr ""
+"2. **Anker** - Der bewegliche Magnetstreifen wird als Anker bezeichnet. "
+"Wenn Strom durch sie fließt, wird die Spule erregt, wodurch ein "
+"Magnetfeld erzeugt wird, das verwendet wird, um normalerweise offene "
+"(N / O) oder normalerweise geschlossene (N / C) Punkte zu bilden oder zu "
+"zerstören. Der Anker kann sowohl mit Gleichstrom (DC) als auch mit "
+"Wechselstrom (AC) bewegt werden."
 
 #: ../2.21_relay_module.rst:44
 msgid ""
@@ -76,30 +98,37 @@ msgid ""
 "electromagnet, the spring pulls the armature away so the circuit cannot "
 "be completed."
 msgstr ""
+"3. **Feder** - Wenn am Elektromagneten keine Ströme durch die Spule "
+"fließen, zieht die Feder den Anker weg, sodass der Stromkreis nicht "
+"abgeschlossen werden kann."
 
 #: ../2.21_relay_module.rst:48
 msgid "Set of electrical **contacts** – There are two contact points:"
-msgstr ""
+msgstr "Satz elektrischer **Kontakte** - Es gibt zwei Kontaktpunkte:"
 
 #: ../2.21_relay_module.rst:50
 msgid ""
 "Normally open - connected when the relay is activated, and disconnected "
 "when it is inactive."
 msgstr ""
+"Normalerweise offen - verbunden, wenn das Relais aktiviert ist, und "
+"getrennt, wenn es inaktiv ist."
 
 #: ../2.21_relay_module.rst:52
 msgid ""
-"Normally close – not connected when the relay is activated, and connected"
-" when it is inactive."
+"Normally close – not connected when the relay is activated, and "
+"connected when it is inactive."
 msgstr ""
+"Normalerweise geschlossen - nicht angeschlossen, wenn das Relais "
+"aktiviert ist, und angeschlossen, wenn es inaktiv ist."
 
 #: ../2.21_relay_module.rst:54
 msgid "Molded frame – Relays are covered with plastic for protection."
-msgstr ""
+msgstr "Formrahmen - Die Relais sind zum Schutz mit Kunststoff bedeckt."
 
 #: ../2.21_relay_module.rst:56
 msgid "**Working of Relay**"
-msgstr ""
+msgstr "**Funktionieren des Relais**"
 
 #: ../2.21_relay_module.rst:58
 msgid ""
@@ -113,24 +142,39 @@ msgid ""
 "In this way, the switching on and off of the relay can control the state "
 "of a load circuit."
 msgstr ""
+"Das Funktionsprinzip des Relais ist einfach. Wenn das Relais mit Strom "
+"versorgt wird, fließen Ströme durch die Steuerspule. Infolgedessen "
+"beginnt der Elektromagnet zu erregen. Dann wird der Anker von der Spule "
+"angezogen, wobei der bewegliche Kontakt zusammengezogen wird, wodurch "
+"eine Verbindung mit den normalerweise offenen Kontakten hergestellt "
+"wird. Der Stromkreis mit der Last wird also erregt. Ein Unterbrechen des "
+"Stromkreises wäre dann ein ähnlicher Fall, da der bewegliche Kontakt "
+"unter der Kraft der Feder zu den normalerweise geschlossenen Kontakten "
+"hochgezogen wird. Auf diese Weise kann das Ein- und Ausschalten des "
+"Relais den Zustand eines Lastkreises steuern."
 
 #: ../2.21_relay_module.rst:69
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.21_relay_module.rst:71
 msgid ""
-"In this example, we use Power Supply Module to power the load，use LED as "
-"an example."
+"In this example, we use Power Supply Module to power the load，use LED "
+"as an example."
 msgstr ""
+"In diesem Beispiel verwenden wir das Netzteilmodul, um die Last mit "
+"Strom zu versorgen. Verwenden Sie als Beispiel die LED."
+
+msgid "2.21 Relay Module_bb"
+msgstr "2.21 Relay Module_bb"
 
 #: ../2.21_relay_module.rst:81
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.21_relay_module.rst:89
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.21_relay_module.rst:95
 msgid ""
@@ -139,8 +183,15 @@ msgid ""
 "which will change its working state a second. For detailed code "
 "explanation, refer to :ref:`1.2 Digital Write`."
 msgstr ""
+"Sobald die Codes auf die Mega2560-Karte hochgeladen wurden, können Sie "
+"sehen, dass das Relaismodul das Schließen und Unterbrechen des externen "
+"Stromkreises steuert, wodurch sich sein Arbeitszustand eine Sekunde lang "
+"ändert. Ausführliche Informationen zum Code finden Sie in `Teil 1- 1.2 "
+"Digitales Schreiben`."
 
 #: ../2.21_relay_module.rst:101
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.21"
+msgstr "2.21"

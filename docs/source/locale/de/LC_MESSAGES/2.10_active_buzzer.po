@@ -4,43 +4,49 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:25+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../2.10_active_buzzer.rst:2
 msgid "2.10 Active Buzzer"
-msgstr ""
+msgstr "2.10 Aktiver Summer"
 
 #: ../2.10_active_buzzer.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../2.10_active_buzzer.rst:7
 msgid ""
 "In this lesson, you will get to know about active buzzer. As a type of "
-"electronic buzzer with an integrated structure, active buzzer is supplied"
-" by DC power, widely used in computer, alarm, electronic toy, telephone, "
-"timer and other electronic products or voice devices."
+"electronic buzzer with an integrated structure, active buzzer is "
+"supplied by DC power, widely used in computer, alarm, electronic toy, "
+"telephone, timer and other electronic products or voice devices."
 msgstr ""
+"In dieser Lektion lernen Sie aktive Summer kennen. Der aktive Summer ist "
+"ein elektronischer Summer mit integrierter Struktur. Er wird von einer "
+"Gleichstromversorgung gespeist und ist in Computern, Alarmen, "
+"elektronischem Spielzeug, Telefonen, Zeitschaltuhren und anderen "
+"elektronischen Produkten oder Sprachgeräten weit verbreitet."
 
 #: ../2.10_active_buzzer.rst:13
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../2.10_active_buzzer.rst:18
 msgid "Component Introduction"
-msgstr ""
+msgstr "Komponenteneinführung"
 
 #: ../2.10_active_buzzer.rst:20
 msgid ""
@@ -49,35 +55,47 @@ msgid ""
 "with a green circuit board is a passive buzzer, while the one enclosed "
 "with a black tape is an active one."
 msgstr ""
+"Summer können in aktive und passive unterteilt werden (siehe folgendes "
+"Bild). Drehen Sie den Summer so, dass seine Nadel nach oben zeigt, der "
+"Summer mit der grünen Leiterplatte ist ein passiver Summer und der mit "
+"schwarzem Klebeband umwickelte Summer ist ein aktiver Summer."
 
 #: ../2.10_active_buzzer.rst:25
 msgid "The difference between an active buzzer and a passive buzzer:"
-msgstr ""
+msgstr "Der Unterschied zwischen einem aktiven und einem passiven Summer:"
 
 #: ../2.10_active_buzzer.rst:34
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../2.10_active_buzzer.rst:38
 msgid ""
 "In this example, we use the digital pin 9 to drive the buzzer and extend "
 "the cathode of the Buzzer to GND and its anode to the digital pin 9."
 msgstr ""
+"In diesem Beispiel verwenden wir den digitalen Pin 9, um den Summer "
+"anzusteuern und die Kathode des Summers auf GND und seine Anode auf den "
+"digitalen Pin 9 auszudehnen."
 
 #: ../2.10_active_buzzer.rst:42
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../2.10_active_buzzer.rst:47
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../2.10_active_buzzer.rst:53
 msgid ""
 "When you finish uploading the codes to the Mega2560 board, you can hear "
-"the beep—beep emitted from the buzzer. If you want to know more about the"
-" detail code explanation, please refer to **Part 1-1.2 Digital Write**."
+"the beep—beep emitted from the buzzer. If you want to know more about "
+"the detail code explanation, please refer to **Part 1-1.2 Digital "
+"Write**."
 msgstr ""
+"Wenn Sie mit dem Hochladen der Codes auf die Mega2560-Karte fertig sind, "
+"können Sie den Piepton hören - einen Piepton, der vom Summer ausgegeben "
+"wird. Wenn Sie mehr über die Erläuterung des Detailcodes erfahren "
+"möchten, lesen Sie bitte **Teil 1-1.2 Digital Write**."
 
 #: ../2.10_active_buzzer.rst:55
 msgid ":ref:`1.2 Digital Write`"
@@ -85,5 +103,4 @@ msgstr ""
 
 #: ../2.10_active_buzzer.rst:58
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

@@ -4,27 +4,28 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:31+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../2.2_led.rst:2
 msgid "2.2 LED"
-msgstr ""
+msgstr "2.2 LED"
 
 #: ../2.2_led.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../2.2_led.rst:7
 msgid ""
@@ -34,31 +35,45 @@ msgid ""
 "This component is used widely in the current society, such as "
 "illumination, panel display, medical device and so on."
 msgstr ""
+"In dieser Lektion lernen Sie den Umgang mit LED. LED ist eine übliche "
+"Licht emittierende Vorrichtung, die nach dem Prinzip der Lichtemission "
+"nach der Rekombination von Elektronen und Löchern arbeitet, um Energie "
+"freizusetzen. Diese Komponente ist in der heutigen Gesellschaft weit "
+"verbreitet, wie z. B. Beleuchtung, Anzeigetafel, medizinische Geräte usw."
 
 #: ../2.2_led.rst:14
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../2.2_led.rst:20
 msgid "Component Introduction"
-msgstr ""
+msgstr "Komponenteneinführung"
 
 #: ../2.2_led.rst:22
 msgid ""
 "Semiconductor light-emitting diode is a type of component which can turn "
-"electric energy into light energy via PN junctions. By wavelength, it can"
-" be categorized into laser diode, infrared light-emitting diode and "
+"electric energy into light energy via PN junctions. By wavelength, it "
+"can be categorized into laser diode, infrared light-emitting diode and "
 "visible light-emitting diode which is usually known as light-emitting "
 "diode (LED)."
 msgstr ""
+"Halbleiter-Leuchtdiode ist eine Art von Komponente, die elektrische "
+"Energie über PN-Übergänge in Lichtenergie umwandeln kann. Je nach "
+"Wellenlänge kann es in Laserdioden, Infrarot-Leuchtdioden und sichtbare "
+"Leuchtdioden unterteilt werden, die üblicherweise als Leuchtdioden (LED) "
+"bezeichnet werden."
 
 #: ../2.2_led.rst:31
 msgid ""
-"Diode has unidirectional conductivity, so the current flow will be as the"
-" arrow indicates in figure circuit symbol. You can only provide the anode"
-" with a positive power and the cathode with a negative. Thus the LED will"
-" light up."
+"Diode has unidirectional conductivity, so the current flow will be as "
+"the arrow indicates in figure circuit symbol. You can only provide the "
+"anode with a positive power and the cathode with a negative. Thus the "
+"LED will light up."
 msgstr ""
+"Die Diode hat eine unidirektionale Leitfähigkeit, sodass der Stromfluss "
+"so ist, wie der Pfeil im Symbol des Schaltkreises angibt. Sie können die "
+"Anode nur mit einer positiven Leistung und die Kathode mit einer "
+"negativen versorgen. Somit leuchtet die LED auf."
 
 #: ../2.2_led.rst:36
 msgid ""
@@ -71,10 +86,19 @@ msgid ""
 "withstand a maximum current of 20 mA, so we need to connect a current "
 "limiting resistor in series."
 msgstr ""
+"Eine LED hat zwei Pins. Der längere ist die Anode und der kürzere die "
+"Kathode. Achten Sie darauf, sie nicht umgekehrt anzuschließen. Die LED "
+"weist einen festen Durchlassspannungsabfall auf, sodass sie nicht direkt "
+"an den Stromkreis angeschlossen werden kann, da die Versorgungsspannung "
+"den Spannungsabfall überschreiten und die LED durchbrennen kann. Die "
+"Durchlassspannung der roten, gelben und grünen LED beträgt 1.8 V und die "
+"der weißen 2.6 V. Die meisten LEDs können einem maximalen Strom von 20 "
+"mA standhalten. Daher müssen wir einen Strombegrenzungswiderstand in "
+"Reihe schalten."
 
 #: ../2.2_led.rst:45
 msgid "The formula of the resistance value is as follows:"
-msgstr ""
+msgstr "Die Formel des Widerstandswertes lautet wie folgt:"
 
 #: ../2.2_led.rst:49
 msgid ""
@@ -82,6 +106,9 @@ msgid ""
 "**Vsupply** for voltage supply, **VD** for voltage drop and I for the "
 "working current of the LED."
 msgstr ""
+"R steht für den Widerstandswert des Strombegrenzungswiderstands, **V** "
+"für die Spannungsversorgung, **VD** für den Spannungsabfall und I für "
+"den Arbeitsstrom der LED."
 
 #: ../2.2_led.rst:53
 msgid ""
@@ -90,14 +117,19 @@ msgid ""
 "you need a 160Ω or larger resistor to protect the LED. **You are "
 "recommended to use the 220Ω resistor offered in the kit**."
 msgstr ""
+"Wenn wir für die rote LED eine Spannung von 5 bereitstellen, sollte der "
+"Mindestwiderstand des Strombegrenzungswiderstands betragen: "
+"(5V-1.8v)/20mA = 160Ω. Daher benötigen Sie einen Widerstand von 160 Ω "
+"oder mehr, um die LED zu schützen. **Es wird empfohlen, den im Kit "
+"enthaltenen 220Ω-Widerstand zu verwenden**."
 
 #: ../2.2_led.rst:59
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../2.2_led.rst:65
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../2.2_led.rst:67
 msgid ""
@@ -107,14 +139,20 @@ msgid ""
 "resistor. Extend the shorter pin (a negative electrode, referred to as "
 "cathode) of the LED to GND."
 msgstr ""
+"In diesem Beispiel verwenden wir Pin 9, um die LED anzusteuern. Führen "
+"Sie eine Seite des Widerstands in den digitalen Pin 9 ein und verbinden "
+"Sie den längeren Pin (eine positive Elektrode, die als Anode bezeichnet "
+"wird) der LED mit der anderen Seite des Widerstands. Erweitern Sie den "
+"kürzeren Stift (eine negative Elektrode, die als Kathode bezeichnet "
+"wird) der LED zu GND."
 
 #: ../2.2_led.rst:77
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../2.2_led.rst:79
 msgid "**Example 1：**"
-msgstr ""
+msgstr "**Beispiel 1:**"
 
 #: ../2.2_led.rst:85
 msgid ""
@@ -122,6 +160,9 @@ msgid ""
 "flashing. Refer to **Part 1-1.2 Digital Write** to check the detail code "
 "explanation."
 msgstr ""
+"Wenn Sie die Codes auf die Mega2560-Karte hochgeladen haben, blinkt die "
+"LED. Informationen zur Erläuterung des Detailcodes finden Sie in **Teil "
+"1-1.2 Digital Write**."
 
 #: ../2.2_led.rst:87
 msgid ":ref:`1.2 Digital Write`"
@@ -129,7 +170,7 @@ msgstr ""
 
 #: ../2.2_led.rst:89
 msgid "**Example 2：**"
-msgstr ""
+msgstr "**Beispiel 2:**"
 
 #: ../2.2_led.rst:95
 msgid ""
@@ -138,6 +179,11 @@ msgid ""
 "again...this loop will continue in this way. About the detail code "
 "explanation, please refer to **Part 1-1.3 Analog Write**."
 msgstr ""
+"Nachdem Sie den Code auf die Mega2560-Karte hochgeladen haben, können "
+"Sie sehen, dass die LED leuchtet, dann erlischt, sich einschaltet und "
+"dann wieder erlischt... Der Zyklus wird auf diese Weise fortgesetzt. "
+"Informationen zur Erläuterung des Detailcodes finden Sie in **Teil 1-1.3 "
+"Analog Write**."
 
 #: ../2.2_led.rst:100
 msgid ":ref:`1.3 Analog Write`"
@@ -145,5 +191,4 @@ msgstr ""
 
 #: ../2.2_led.rst:103
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

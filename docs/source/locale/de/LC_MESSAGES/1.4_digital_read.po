@@ -4,50 +4,57 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:28+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../1.4_digital_read.rst:2
 msgid "1.4 Digital Read"
-msgstr ""
+msgstr "1.4 Digitales Lesen"
 
 #: ../1.4_digital_read.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../1.4_digital_read.rst:7
 msgid ""
-"You can use the digitalRead() command to read the level status from a "
-"digital pin. The command is suitable for digital input elements such as "
-"Button, Touch sensor, infrared motion sensor, etc. This article will take"
-" Button as an example to read the level state."
+"You can use the digitalRead() command to read the level status from a digital "
+"pin. The command is suitable for digital input elements such as Button, Touch "
+"sensor, infrared motion sensor, etc. This article will take Button as an "
+"example to read the level state."
 msgstr ""
+"Mit dem Befehl digitalRead () können Sie den Pegelstatus von einem digitalen "
+"Pin lesen. Der Befehl eignet sich für digitale Eingabeelemente wie Taste, "
+"Berührungssensor, Infrarot-Bewegungssensor usw. In diesem Artikel wird Button "
+"als Beispiel zum Lesen des Ebenenstatus verwendet."
 
 #: ../1.4_digital_read.rst:12
 msgid ""
-"This example also shows you how to monitor the state of a switch by using"
-" USB to establish serial communication between a control board and a "
-"computer."
+"This example also shows you how to monitor the state of a switch by using USB "
+"to establish serial communication between a control board and a computer."
 msgstr ""
+"In diesem Beispiel wird auch gezeigt, wie Sie den Status eines Switches "
+"mithilfe von USB überwachen, um die serielle Kommunikation zwischen einer "
+"Steuerkarte und einem Computer herzustellen."
 
 #: ../1.4_digital_read.rst:17
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../1.4_digital_read.rst:23
 msgid "Refer to Part 2 to check details of hardware."
-msgstr ""
+msgstr "Informationen zur Hardware finden Sie in Teil 2."
 
 #: ../1.4_digital_read.rst:25
 msgid ":ref:`Part 2 Component`"
@@ -55,81 +62,106 @@ msgstr ""
 
 #: ../1.4_digital_read.rst:28
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../1.4_digital_read.rst:30
 msgid ""
-"In this example, we read the signal of the button with the digital pin 2."
-" When the button is not pressed, the digital pin 2 (through the drop-down"
-" resistor) is connected to ground to read the low level (0); when the "
-"button is pressed, the two pins are connected and when the pin is "
-"connected to the 5V power supply, the high level (1) is read."
+"In this example, we read the signal of the button with the digital pin 2. "
+"When the button is not pressed, the digital pin 2 (through the drop-down "
+"resistor) is connected to ground to read the low level (0); when the button "
+"is pressed, the two pins are connected and when the pin is connected to the "
+"5V power supply, the high level (1) is read."
 msgstr ""
+"In diesem Beispiel lesen wir das Signal der Taste mit dem digitalen Pin 2. "
+"Wenn die Taste nicht gedrückt wird, wird der digitale Pin 2 (über den "
+"Pulldown-Widerstand) geerdet, um den niedrigen Pegel (0) abzulesen. Wenn die "
+"Taste gedrückt wird, sind die beiden Pins verbunden, und wenn der Pin an eine "
+"5-V-Stromversorgung angeschlossen ist, wird ein hoher Pegel (1) gelesen."
 
 #: ../1.4_digital_read.rst:41
 msgid ""
 "If you disconnect the digital I/O pin from everything, the LED may blink "
-"erratically. This is because the input is \"floating\" - that is, it "
-"doesn't have a solid connection to voltage or ground, and it will "
-"randomly return either HIGH or LOW. That's why you need a pull-down "
-"resistor in the circuit."
+"erratically. This is because the input is \"floating\" - that is, it doesn't "
+"have a solid connection to voltage or ground, and it will randomly return "
+"either HIGH or LOW. That's why you need a pull-down resistor in the circuit."
 msgstr ""
+"HINWEIS: Wenn Sie den digitalen E/A-Pin von allem trennen, blinkt die LED "
+"möglicherweise unregelmäßig. Dies liegt daran, dass der Eingang \"schwebend\" "
+"ist - das heißt, er hat keine feste Verbindung zu Spannung oder Masse und "
+"gibt zufällig entweder HIGH oder LOW zurück. Deshalb benötigen Sie einen "
+"Pulldown-Widerstand in der Schaltung."
 
 #: ../1.4_digital_read.rst:48
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../1.4_digital_read.rst:54
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../1.4_digital_read.rst:60
 msgid ""
-"After uploading the code to the Mega2560 board, we can open the serial "
-"port monitor to see the reading value of the pin. When you press Button, "
-"the serial port monitor will display 「1」 and when Button is released, 「0」"
-" will be displayed."
+"After uploading the code to the Mega2560 board, we can open the serial port "
+"monitor to see the reading value of the pin. When you press Button, the "
+"serial port monitor will display 「1」 and when Button is released, 「0」 "
+"will be displayed."
 msgstr ""
+"Nach dem Hochladen des Codes auf die Mega2560-Karte können wir den Monitor "
+"für die serielle Schnittstelle öffnen, um den Lesewert des Pins anzuzeigen. "
+"Wenn Sie die Taste drücken, zeigt der Monitor für die serielle Schnittstelle "
+"「1」 an, und wenn die Taste losgelassen wird, wird 「0」 angezeigt."
 
 #: ../1.4_digital_read.rst:66
 msgid "Code Analysis"
-msgstr ""
+msgstr "Code-Analyse"
 
 #: ../1.4_digital_read.rst:68
 msgid "Start the serial communication in setup() and set the data rate to 9600."
 msgstr ""
+"Starten Sie die serielle Kommunikation in setup () und stellen Sie die "
+"Datenrate auf 9600 ein."
 
 #: ../1.4_digital_read.rst:74
 msgid ""
-"You also need to set the status of the digital pin 2 to INPUT to read the"
-" output status of Button."
+"You also need to set the status of the digital pin 2 to INPUT to read the "
+"output status of Button."
 msgstr ""
+"Sie müssen auch den Status des digitalen Pins 2 auf INPUT setzen, um den "
+"Ausgangsstatus der Taste zu lesen."
 
 #: ../1.4_digital_read.rst:80
 msgid ""
 "Use the digitalRead() statement in loop() to read the level state of the "
 "digital pin 2 and declare a variable to store the state."
 msgstr ""
+"Verwenden Sie die Anweisung digitalRead () in loop (), um den Pegelstatus des "
+"digitalen Pins 2 zu lesen und eine Variable zum Speichern des Status zu "
+"deklarieren."
 
 #: ../1.4_digital_read.rst:86
 msgid "Print the value stored by the variable on the serial port monitor."
 msgstr ""
+"Drucken Sie den von der Variablen gespeicherten Wert auf dem Monitor der "
+"seriellen Schnittstelle."
 
 #: ../1.4_digital_read.rst:92
 msgid "Use delay() statements to make printing results easy to observe."
 msgstr ""
+"Verwenden Sie Verzögerung () -Anweisungen, um die Druckergebnisse leicht "
+"beobachten zu können."
 
 #: ../1.4_digital_read.rst:99
 msgid "※ How to turn on Serial Port Monitor"
-msgstr ""
+msgstr "※ So schalten Sie den Serial Port Monitor ein"
 
 #: ../1.4_digital_read.rst:101
 msgid ""
 "Click the magnifier icon at the top right of the Arduino IDE programming "
 "window to open the **Serial Monitor**."
 msgstr ""
+"Klicken Sie oben rechts im Arduino IDE-Programmierfenster auf das "
+"Lupensymbol, um den seriellen Monitor zu öffnen."
 
 #: ../1.4_digital_read.rst:108
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

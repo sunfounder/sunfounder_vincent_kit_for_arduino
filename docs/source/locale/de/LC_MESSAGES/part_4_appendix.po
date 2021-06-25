@@ -4,31 +4,31 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 10:44+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../part_4_appendix.rst:2
 msgid "Part 4 Appendix"
-msgstr ""
+msgstr "Teil 4: Anhang"
 
 #: ../part_4_appendix.rst:5
 msgid "4.1 Add Libraries"
-msgstr ""
+msgstr "4.1 Bibliotheken hinzufügen"
 
 #: ../part_4_appendix.rst:8
 msgid "**What is Library?**"
-msgstr ""
+msgstr "**Was ist Bibliothek?**"
 
 #: ../part_4_appendix.rst:10
 msgid ""
@@ -36,27 +36,41 @@ msgid ""
 "contains two files: .h (header file, including function statement, Macro "
 "definition, constructor definition, etc.) and .cpp (execution file, with "
 "function implementation, variable definition, and so on). When you need "
-"to use a function in some library, you just need to add a header file "
-"(e.g. #include <dht.h>), and then call that function. This can make your "
+"to use a function in some library, you just need to add a header file (e."
+"g. #include <dht.h>), and then call that function. This can make your "
 "code more concise. If you don't want to use the library, you can also "
 "write that function definition directly. Though as a result, the code "
 "will be long and inconvenient to read."
 msgstr ""
+"Eine Bibliothek, die einige Funktionsdefinitionen und Header-Dateien "
+"sammelt. Sie enthält normalerweise zwei Dateien: .h (Header-Dateien, "
+"einschließlich Funktionsdeklarationen, Makrodefinitionen, "
+"Konstruktordefinitionen usw.) und .cpp (Ausführungsdateien mit "
+"Funktionsimplementierungen, Variablendefinitionen und Abhängigkeiten Und "
+"so weiter). Wenn Sie eine Funktion in einer Bibliothek verwenden müssen, "
+"müssen Sie nur eine Header-Datei hinzufügen (z. B. #include) <dht.h> ) "
+"und rufen Sie dann diese Funktion auf. Dies kann Ihren Code präziser "
+"machen. Wenn Sie die Bibliothek nicht verwenden möchten, können Sie "
+"diese Funktionsdefinition auch direkt schreiben. Infolgedessen ist der "
+"Code jedoch lang und unpraktisch zu lesen."
 
 #: ../part_4_appendix.rst:21
 msgid "**Add libraries**"
-msgstr ""
+msgstr "**Bibliotheken hinzufügen**"
 
 #: ../part_4_appendix.rst:23
 msgid ""
-"Some libraries are already built in the Arduino IDE, when some others may"
-" need to be added. So now let's see how to add one. There are 2 methods "
-"for that."
+"Some libraries are already built in the Arduino IDE, when some others "
+"may need to be added. So now let's see how to add one. There are 2 "
+"methods for that."
 msgstr ""
+"Einige Bibliotheken sind bereits in der Arduino IDE erstellt, während "
+"andere möglicherweise hinzugefügt werden müssen. Nun wollen wir sehen, "
+"wie man eine hinzufügt. Dafür gibt es zwei Methoden."
 
 #: ../part_4_appendix.rst:27
 msgid "**Method 1**"
-msgstr ""
+msgstr "**Methode 1**"
 
 #: ../part_4_appendix.rst:29
 msgid ""
@@ -65,16 +79,25 @@ msgid ""
 "but on the other hand, only one library can be imported at a time. So it "
 "is inconvenient when you need to add quite a lot of libraries."
 msgstr ""
+"Importieren Sie die Bibliothek direkt in die Arduino IDE (nehmen Sie Dht "
+"als Beispiel unten). Der Vorteil dieser Methode besteht darin, dass sie "
+"leicht zu verstehen und zu bedienen ist. Andererseits kann jeweils nur "
+"eine Bibliothek importiert werden. Es ist daher unpraktisch, wenn Sie "
+"eine ganze Reihe von Bibliotheken hinzufügen müssen."
 
 #: ../part_4_appendix.rst:34
 msgid ""
 "**Step 1**: Select **Sketch** -> **Include Library** -> **Add ZIP "
 "Library**."
 msgstr ""
+"**Schritt 1**: Wählen Sie. **Sketch** -> **Include Library** -> **Add "
+"ZIP Library**."
 
 #: ../part_4_appendix.rst:42
 msgid "**Step 2**: Find *Library folder*, Click **Open**."
 msgstr ""
+"**Schritt 2**: Finden Sie **SunFounder Mega Kit\\Library**, klicken Sie "
+"**Open**."
 
 #: ../part_4_appendix.rst:49
 msgid ""
@@ -82,17 +105,24 @@ msgid ""
 "\"Include library\" menu**, it means you have added the library "
 "successfully. Please use the same method to add other libraries then."
 msgstr ""
+"**Schritt 3**: Wenn Sie **\" Menü \"sehen, bedeutet dies, dass Sie die "
+"Bibliothek** erfolgreich hinzugefügt haben. Bitte verwenden Sie dieselbe "
+"Methode, um dann andere Bibliotheken hinzuzufügen."
 
 #: ../part_4_appendix.rst:58
 msgid "**Method 2**"
-msgstr ""
+msgstr "**Methode 2**"
 
 #: ../part_4_appendix.rst:60
 msgid ""
-"Directly copy the library to libraries/Arduino path. This method can copy"
-" all libraries and add them at a time, but the drawback is that it is "
-"difficult to find libraries/Arduino."
+"Directly copy the library to libraries/Arduino path. This method can "
+"copy all libraries and add them at a time, but the drawback is that it "
+"is difficult to find libraries/Arduino."
 msgstr ""
+"Kopieren Sie die Bibliothek direkt in den Bibliotheks- / Arduino-Pfad. "
+"Diese Methode kann alle Bibliotheken kopieren und gleichzeitig "
+"hinzufügen. Der Nachteil ist jedoch, dass es schwierig ist, "
+"Bibliotheken / Arduino zu finden."
 
 #: ../part_4_appendix.rst:64
 msgid ""
@@ -100,36 +130,52 @@ msgid ""
 "you can see the path of the libraries folder in the text box as shown "
 "below."
 msgstr ""
+"**Schritt 1**: Klicken Sie auf **File** -> **Preferences** und im Popup-"
+"Fenster sehen Sie den Pfad des Bibliotheksordners im Textfeld, wie unten "
+"gezeigt."
 
 #: ../part_4_appendix.rst:73
 msgid "**Step 2**: Copy all Libraries in the *library* folder."
 msgstr ""
+"**Schritt 2**: Kopieren Sie alle Bibliotheken in den *Bibliotheksordner*."
 
 #: ../part_4_appendix.rst:80
 msgid ""
 "**Step 3**: Go to the path above and you will see there is a *libraries* "
 "folder, click to open it."
 msgstr ""
+"**Schritt 4**: Gehen Sie zum obigen Pfad und Sie werden sehen, dass sich "
+"ein *Bibliothek* Ordner befindet. Klicken Sie, um ihn zu öffnen."
 
 #: ../part_4_appendix.rst:88
 msgid ""
-"**Step 4**: Paste all the libraries copied before to the folder. Then you"
-" can see them in libraries folder."
+"**Step 4**: Paste all the libraries copied before to the folder. Then "
+"you can see them in libraries folder."
 msgstr ""
+"**Schritt 5**: Fügen Sie alle zuvor kopierten Bibliotheken in den Ordner "
+"ein. Dann können Sie sie im Bibliotheksordner sehen."
 
 #: ../part_4_appendix.rst:97
 msgid "**Copyright Notice**"
-msgstr ""
+msgstr "**Urheberrechtshinweis**"
 
 #: ../part_4_appendix.rst:99
 msgid ""
-"All contents including but not limited to texts, images, and code in this"
-" manual are owned by the SunFounder Company. You should only use it for "
-"personal study, investigation, enjoyment, or other non-commercial or "
+"All contents including but not limited to texts, images, and code in "
+"this manual are owned by the SunFounder Company. You should only use it "
+"for personal study, investigation, enjoyment, or other non-commercial or "
 "nonprofit purposes, under the related regulations and copyrights laws, "
 "without infringing the legal rights of the author and relevant right "
 "holders. For any individual or organization that uses these for "
 "commercial profit without permission, the Company reserves the right to "
 "take legal action."
 msgstr ""
-
+"Alle Inhalte, einschließlich, aber nicht beschränkt auf Texte, Bilder "
+"und Code in diesem Handbuch, sind Eigentum der SunFounder Company. Gemäß "
+"den einschlägigen Vorschriften und Urheberrechtsgesetzen können Sie es "
+"nur für persönliches Lernen, Forschung, Unterhaltung oder andere "
+"nichtkommerzielle oder gemeinnützige Zwecke verwenden und verletzen "
+"nicht die gesetzlichen Rechte des Autors und verwandter Rechteinhaber. "
+"Für jede Person oder Organisation, die diese ohne Erlaubnis für "
+"kommerzielle Zwecke nutzt, behält sich das Unternehmen das Recht vor, "
+"rechtliche Schritte einzuleiten."

@@ -4,110 +4,137 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:35+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../2.9_i2c_lcd1602_module.rst:2
 msgid "2.9 I2C LCD1602 Module"
-msgstr ""
+msgstr "2.9 I2C LCD1602-Modul"
 
 #: ../2.9_i2c_lcd1602_module.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../2.9_i2c_lcd1602_module.rst:7
 msgid ""
-"In this lesson, you will learn about LCD1602. LCD1602, or 1602 character-"
-"type liquid crystal display, a kind of dot matrix module to show letters,"
-" numbers, characters and so on."
+"In this lesson, you will learn about LCD1602. LCD1602, or 1602 character-type "
+"liquid crystal display, a kind of dot matrix module to show letters, numbers, "
+"characters and so on."
 msgstr ""
+"In dieser Lektion lernen Sie LCD1602. Flüssigkristallanzeige vom Typ LCD1602 "
+"oder 1602, eine Art Punktmatrixmodul zur Anzeige von Buchstaben, Zahlen, "
+"Zeichen usw."
 
 #: ../2.9_i2c_lcd1602_module.rst:12
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../2.9_i2c_lcd1602_module.rst:17
 msgid "Component Introduction"
-msgstr ""
+msgstr "Komponenteneinführung"
 
 #: ../2.9_i2c_lcd1602_module.rst:19
 msgid ""
-"It's composed of 5x7 or 5x11 dot matrix positions; each position can "
-"display one character. There's a dot pitch between two characters and a "
-"space between lines, thus separating characters and lines. The number "
-"1602 means on the display, 2 rows can be showed and 16 characters in "
-"each."
+"It's composed of 5x7 or 5x11 dot matrix positions; each position can display "
+"one character. There's a dot pitch between two characters and a space between "
+"lines, thus separating characters and lines. The number 1602 means on the "
+"display, 2 rows can be showed and 16 characters in each."
 msgstr ""
+"Es besteht aus 5x7- oder 5x11-Punktmatrixpositionen. Jede Position kann ein "
+"Zeichen anzeigen. Es gibt einen Punktabstand zwischen zwei Zeichen und ein "
+"Leerzeichen zwischen den Zeilen, wodurch Zeichen und Zeilen getrennt werden. "
+"Die Zahl 1602 bedeutet, dass auf dem Display 2 Zeilen mit jeweils 16 Zeichen "
+"angezeigt werden können."
 
 #: ../2.9_i2c_lcd1602_module.rst:25
 msgid ""
-"As we all know, though LCD and some other displays greatly enrich the "
-"man-machine interaction, they share a common weakness. When they are "
-"connected to a controller, multiple IOs will be occupied of the "
-"controller which has no so many outer ports. Also it restricts other "
-"functions of the controller. Therefore, LCD1602 with an I2C bus is "
-"developed to solve the problem."
+"As we all know, though LCD and some other displays greatly enrich the man-"
+"machine interaction, they share a common weakness. When they are connected to "
+"a controller, multiple IOs will be occupied of the controller which has no so "
+"many outer ports. Also it restricts other functions of the controller. "
+"Therefore, LCD1602 with an I2C bus is developed to solve the problem."
 msgstr ""
+"Wie wir alle wissen, bereichern LCD und einige andere Displays die Mensch-"
+"Maschine-Interaktion erheblich, weisen jedoch eine gemeinsame Schwäche auf. "
+"Wenn sie mit einem Controller verbunden sind, werden mehrere E / A des "
+"Controllers belegt, der nicht so viele äußere Ports hat. Es schränkt auch "
+"andere Funktionen der Steuerung ein. Daher wurde LCD1602 mit einem I2C-Bus "
+"entwickelt, um das Problem zu lösen."
 
 #: ../2.9_i2c_lcd1602_module.rst:35
 msgid "I2C communication"
-msgstr ""
+msgstr "I2C-Kommunikation"
 
 #: ../2.9_i2c_lcd1602_module.rst:37
 msgid ""
 "I2C(Inter-Integrated Circuit) bus is a very popular and powerful bus for "
-"communication between a master device (or master devices) and a single or"
-" multiple slave devices. I2C main controller can be used to control IO "
+"communication between a master device (or master devices) and a single or "
+"multiple slave devices. I2C main controller can be used to control IO "
 "expander, various sensors, EEPROM, ADC/DAC and so on. All of these are "
-"controlled only by the two pins of host, the serial data (SDA) line and "
-"the serial clock line(SCL)."
+"controlled only by the two pins of host, the serial data (SDA) line and the "
+"serial clock line(SCL)."
 msgstr ""
+"Der I2C-Bus (Inter-Integrated Circuit) ist ein sehr beliebter und "
+"leistungsstarker Bus, der für die Kommunikation zwischen einem oder mehreren "
+"Master-Geräten und einzelnen oder mehreren Slave-Geräten verwendet wird. Der "
+"I2C-Hauptcontroller kann zur Steuerung des E / A-Expanders, verschiedener "
+"Sensoren, des EEPROM, des ADC / DAC usw. verwendet werden. Alle diese werden "
+"nur von den beiden Pins des Hosts gesteuert, der seriellen Datenleitung (SDA) "
+"und der seriellen Taktleitung (SCL)."
 
 #: ../2.9_i2c_lcd1602_module.rst:47
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../2.9_i2c_lcd1602_module.rst:49
 msgid ""
-"In this example, we will get the first pin GND of LCD1602 connected to "
-"GND, the second pin VCC to 5V, the third pin SDA to the pin SDA 20 and "
-"the forth pin SCL to the pin SCL 21."
+"In this example, we will get the first pin GND of LCD1602 connected to GND, "
+"the second pin VCC to 5V, the third pin SDA to the pin SDA 20 and the forth "
+"pin SCL to the pin SCL 21."
 msgstr ""
+"In diesem Beispiel wird der erste Pin GND des LCD1602 mit GND verbunden, der "
+"zweite Pin VCC mit 5 V, der dritte Pin SDA mit dem Pin SDA 20 und der vierte "
+"Pin SCL mit dem Pin SCL 21."
 
 #: ../2.9_i2c_lcd1602_module.rst:56
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../2.9_i2c_lcd1602_module.rst:61
 msgid "The SDA and SCL of the Mega2560 board are the pins 20 and 21."
-msgstr ""
+msgstr "SDA und SCL der Mega2560-Karte sind die Pins 20 und 21."
 
 #: ../2.9_i2c_lcd1602_module.rst:64
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../2.9_i2c_lcd1602_module.rst:66
 msgid ""
-"The libraries Wire.h and LiquidCrystal_I2C.h are used in these codes, "
-"Wire.h is built in Arduino, but LiquidCrystal_I2C.h needs adding "
-"manually. Add Method: Refer to **Part 4 - 4.1 Add Libraries**"
+"The libraries Wire.h and LiquidCrystal_I2C.h are used in these codes, Wire.h "
+"is built in Arduino, but LiquidCrystal_I2C.h needs adding manually. Add "
+"Method: Refer to **Part 4 - 4.1 Add Libraries**"
 msgstr ""
+"Die Bibliotheken Wire.h und LiquidCrystal_I2C.h werden in diesen Codes "
+"verwendet. Wire.h wird in Arduino erstellt, LiquidCrystal_I2C.h muss jedoch "
+"manuell hinzugefügt werden. Methode hinzufügen: Siehe **Teil 4 - 4.1 "
+"Bibliotheken hinzufügen**."
 
 #: ../2.9_i2c_lcd1602_module.rst:68
 msgid ""
-"`LiquidCrystal_I2C.h "
-"<https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/tree/master/library>`_"
+"`LiquidCrystal_I2C.h <https://github.com/sunfounder/"
+"sunfounder_vincent_kit_for_arduino/tree/master/library>`_"
 msgstr ""
 
 #: ../2.9_i2c_lcd1602_module.rst:70
@@ -116,15 +143,19 @@ msgstr ""
 
 #: ../2.9_i2c_lcd1602_module.rst:76
 msgid ""
-"Upload the codes to the Mega2560 board, the content that you input in the"
-" serial monitor will be printed on the LCD."
+"Upload the codes to the Mega2560 board, the content that you input in the "
+"serial monitor will be printed on the LCD."
 msgstr ""
+"Laden Sie die Codes auf die Mega2560-Karte hoch. Der Inhalt, den Sie in den "
+"seriellen Monitor eingeben, wird auf dem LCD gedruckt."
 
 #: ../2.9_i2c_lcd1602_module.rst:79
 msgid ""
-"About the ASCII code and the character input in the serial monitor, "
-"please refer to Part 1-1.8 Serial Read."
+"About the ASCII code and the character input in the serial monitor, please "
+"refer to Part 1-1.8 Serial Read."
 msgstr ""
+"Informationen zum ASCII-Code und zur Zeicheneingabe im seriellen Monitor "
+"finden Sie in Teil 1-1.8 Serial Read."
 
 #: ../2.9_i2c_lcd1602_module.rst:81
 msgid ":ref:`1.8 Serial Read`"
@@ -132,78 +163,84 @@ msgstr ""
 
 #: ../2.9_i2c_lcd1602_module.rst:85
 msgid "Code Analysis"
-msgstr ""
+msgstr "Code-Analyse"
 
 #: ../2.9_i2c_lcd1602_module.rst:87
 msgid "By calling the library LiquidCrystal_I2C.h, you can easily drive the LCD."
 msgstr ""
+"Durch Aufrufen der Bibliothek LiquidCrystal_I2C.h können Sie das LCD "
+"problemlos steuern."
 
 #: ../2.9_i2c_lcd1602_module.rst:93
 msgid "**Library Functions：**"
-msgstr ""
+msgstr "**Bibliotheksfunktionen:**"
 
 #: ../2.9_i2c_lcd1602_module.rst:99
 msgid ""
 "Creates a new instance of the LiquidCrystal_I2C class that represents a "
 "particular LCD attached to your Arduino board."
 msgstr ""
+"Erstellen Sie eine neue Instanz der LiquidCrystal_I2C-Klasse, die ein "
+"bestimmtes LCD darstellt, das mit der Arduino-Karte verbunden ist."
 
 #: ../2.9_i2c_lcd1602_module.rst:102
 msgid "**lcd_AddR**: The address of the LCD defaults to 0x27."
-msgstr ""
+msgstr "**lcd_AddR**: Die Adresse des LCD ist standardmäßig 0x27."
 
 #: ../2.9_i2c_lcd1602_module.rst:104
 msgid "**lcd_cols**: The LCD1602 has 16 columns."
-msgstr ""
+msgstr "**lcd_cols**: Der LCD1602 hat 16 Spalten."
 
 #: ../2.9_i2c_lcd1602_module.rst:106
 msgid "**lcd_rows**: The LCD1602 has 2 rows."
-msgstr ""
+msgstr "**lcd_rows**: Der LCD1602 hat 2 Zeilen."
 
 #: ../2.9_i2c_lcd1602_module.rst:113
 msgid "Initialize the lcd."
-msgstr ""
+msgstr "Initialisieren Sie den LCD."
 
 #: ../2.9_i2c_lcd1602_module.rst:119
 msgid "Turn the (optional) backlight on."
-msgstr ""
+msgstr "Schalten Sie die (optionale) Hintergrundbeleuchtung ein."
 
 #: ../2.9_i2c_lcd1602_module.rst:125
 msgid "Turn the (optional) backlight off."
-msgstr ""
+msgstr "Schalten Sie die (optionale) Hintergrundbeleuchtung aus."
 
 #: ../2.9_i2c_lcd1602_module.rst:131
 msgid "Turn the LCD display on."
-msgstr ""
+msgstr "Schalten Sie das LCD-Display ein."
 
 #: ../2.9_i2c_lcd1602_module.rst:137
 msgid "Turn the LCD display off quickly."
-msgstr ""
+msgstr "Schalten Sie das LCD-Display schnell aus."
 
 #: ../2.9_i2c_lcd1602_module.rst:143
 msgid "Clear display, set cursor position to zero."
-msgstr ""
+msgstr "Anzeige löschen, Cursorposition auf Null setzen."
 
 #: ../2.9_i2c_lcd1602_module.rst:149
 msgid "Set the cursor position to col,row."
-msgstr ""
+msgstr "Setzen Sie die Cursorposition auf col, row."
 
 #: ../2.9_i2c_lcd1602_module.rst:155
 msgid "Prints text to the LCD."
-msgstr ""
+msgstr "Druckt Text auf das LCD."
 
 #: ../2.9_i2c_lcd1602_module.rst:157
 msgid "**data**: The data to print (char, byte, int, long, or string)."
-msgstr ""
+msgstr "**data**: Die zu druckenden Daten (char, byte, int, long oder string)."
 
 #: ../2.9_i2c_lcd1602_module.rst:159
 msgid ""
-"**BASE (optional)**: The base in which to print numbers: BIN for binary "
-"(base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for "
-"hexadecimal (base 16)."
+"**BASE (optional)**: The base in which to print numbers: BIN for binary (base "
+"2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal "
+"(base 16)."
 msgstr ""
+"**BASE (optional)**: Die Basis, in der Zahlen gedruckt werden sollen: BIN für "
+"Binär (Basis 2), DEC für Dezimal (Basis 10), OCT für Oktal (Basis 8), HEX für "
+"Hexadezimal (Basis 16)."
 
 #: ../2.9_i2c_lcd1602_module.rst:162
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

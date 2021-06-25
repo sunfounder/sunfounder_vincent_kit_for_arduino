@@ -4,47 +4,55 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-05-29 08:02+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.5_7-segment_display.rst:2
 msgid "2.5 7-Segment Display"
-msgstr ""
+msgstr "2.5 7-Segment-Anzeige"
 
 #: ../2.5_7-segment_display.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../2.5_7-segment_display.rst:7
 msgid ""
-"In this lesson, you will learn something about 7-Segment Display. "
-"7-Segment Display has so many advantages that it is widely used in "
+"In this lesson, you will learn something about 7-Segment Display. 7-"
+"Segment Display has so many advantages that it is widely used in "
 "electrical equipments, especially in household appliances that display "
 "numerical information, such as display, air conditioner, water heater, "
 "refrigerator and so on. LEDs on the 7-Segment Display emit light by the "
 "input of different electrical signals to the different pins of it. The "
-"numerical information it can display includes time, date, temperature and"
-" so on."
+"numerical information it can display includes time, date, temperature "
+"and so on."
 msgstr ""
+"In diesem Lektion lernen Sie 7-Segment-Displays kennen. Das 7-Segment-"
+"Display hat viele Vorteile und wird daher häufig in elektrischen Geräten "
+"verwendet, insbesondere in Haushaltsgeräten, die digitale Informationen "
+"anzeigen, wie Bildschirme, Klimaanlagen, Warmwasserbereiter, "
+"Kühlschränke usw. LEDs auf dem 7-Segment-Display senden Licht durch die "
+"Eingabe verschiedener elektrischer Signale an die verschiedenen Pins. Zu "
+"den numerischen Informationen, die angezeigt werden können, gehören "
+"Uhrzeit, Datum, Temperatur usw."
 
 #: ../2.5_7-segment_display.rst:10
 msgid "Components Required"
-msgstr ""
+msgstr "Erforderliche Komponenten"
 
 #: ../2.5_7-segment_display.rst:15
 msgid "Component Introduction"
-msgstr ""
+msgstr "Komponenteneinführung"
 
 #: ../2.5_7-segment_display.rst:20
 msgid ""
@@ -52,6 +60,9 @@ msgid ""
 "LED is called a segment – when energized, one segment forms part of a "
 "numeral to be displayed."
 msgstr ""
+"Ein 7-Segment-Display ist eine 8-förmige Komponente, die 7 LEDs enthält. "
+"Jede LED wird als Segment bezeichnet. Bei Erregung ist ein Segment Teil "
+"einer anzuzeigenden Ziffer."
 
 #: ../2.5_7-segment_display.rst:24
 msgid ""
@@ -60,90 +71,129 @@ msgid ""
 "the 7 LEDs connected when a CA display has all the anodes of the 7 "
 "segments connected. In this kit, we use the former."
 msgstr ""
+"Es gibt zwei Arten von Pin-Verbindungen: Common Cathode (CC) und Common "
+"Anode (CA). Wie der Name schon sagt, verbindet die CC-Anzeige alle "
+"Kathoden der 7 LEDs, wenn die CA-Anzeige alle Anoden der 7 Segmente "
+"verbindet. In diesem Kit verwenden wir das erstere."
 
 #: ../2.5_7-segment_display.rst:29
 msgid ""
-"Each of the LEDs in the display is given a positional segment with one of"
-" its connection pins led out from the rectangular plastic package. These "
-"LED pins are labeled from \"a\" through to \"g\" representing each "
+"Each of the LEDs in the display is given a positional segment with one "
+"of its connection pins led out from the rectangular plastic package. "
+"These LED pins are labeled from \"a\" through to \"g\" representing each "
 "individual LED. The other LED pins are connected together forming a "
 "common pin. So by forward biasing the appropriate pins of the LED "
 "segments in a particular order, some segments will brighten and others "
 "stay dim, thus showing the corresponding character on the display."
 msgstr ""
+"Jede der LEDs im Display erhält ein Positionssegment, wobei einer der "
+"Verbindungsstifte aus dem rechteckigen Kunststoffgehäuse herausgeführt "
+"wird. Diese LED-Pins sind von \"a\" bis \"g\" beschriftet und "
+"repräsentieren jede einzelne LED. Die anderen LED-Pins sind miteinander "
+"verbunden und bilden einen gemeinsamen Pin. Daher werden durch "
+"Vorwärtsvorspannung der entsprechenden Stifte der LCD-Segmente in einer "
+"bestimmten Reihenfolge einige Segmente heller, während andere Segmente "
+"abgeblendet bleiben, wodurch die entsprechenden Zeichen auf dem Display "
+"angezeigt werden."
 
 #: ../2.5_7-segment_display.rst:38
 msgid "Fritzing Circuit"
-msgstr ""
+msgstr "Fritzing Circuit"
 
 #: ../2.5_7-segment_display.rst:42
 msgid ""
 "Connect each of pin a-g of the 7-Segment Display to one 220ohm current "
 "limiting resistor respectively and then to pin 4–11. GND connects to GND."
 msgstr ""
+"Verbinden Sie jeden Pin ag des 7-Segment-Displays mit einem 220-Ohm-"
+"Strombegrenzungswiderstand und dann mit Pin 4–11. GND verbindet sich mit "
+"GND."
 
 #: ../2.5_7-segment_display.rst:46
 msgid ""
 "The wiring between the 7-segment display and the Mega2560 board as shown "
 "below :"
 msgstr ""
+"Die Verkabelung zwischen dem 7-Segment-Display und der Mega2560-Karte "
+"wie unten gezeigt:"
 
 #: ../2.5_7-segment_display.rst:52
 msgid "Schematic Diagram"
-msgstr ""
+msgstr "Schematische Darstellung"
 
 #: ../2.5_7-segment_display.rst:57
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../2.5_7-segment_display.rst:63
 msgid ""
-"Once upload the codes, you can see the 7-segment display displaying 1, 2,"
-" 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F in sequence."
+"Once upload the codes, you can see the 7-segment display displaying 1, "
+"2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F in sequence."
 msgstr ""
+"Sobald Sie die Codes hochgeladen haben, sehen Sie in der 7-Segment-"
+"Anzeige nacheinander 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F "
+"nacheinander."
 
 #: ../2.5_7-segment_display.rst:66
 msgid "Code Analysis"
-msgstr ""
+msgstr "Code-Analyse"
 
 #: ../2.5_7-segment_display.rst:68
 msgid ""
 "Take the pin numbers on 7-segment as names, and declare the pins on the "
 "Mega2560 board."
 msgstr ""
+"Nehmen Sie die Pin-Nummern auf dem 7-Segment als Namen und deklarieren "
+"Sie die Pins auf der Mega2560-Platine."
 
 #: ../2.5_7-segment_display.rst:81
 msgid ""
-"Install a series of subfunctions to package the level state at each block"
-" during the number display of the 7-segment. For example, when the "
-"character 「2」 is displayed, the block F and the block c are turn off; the"
-" other blocks are lit up."
+"Install a series of subfunctions to package the level state at each "
+"block during the number display of the 7-segment. For example, when the "
+"character 「2」 is displayed, the block F and the block c are turn off; "
+"the other blocks are lit up."
 msgstr ""
+"Installieren Sie eine Reihe von Unterfunktionen, um den Pegelstatus an "
+"jedem Block während der Nummernanzeige des 7-Segments zu verpacken. Wenn "
+"beispielsweise das Zeichen 「2 displayed angezeigt wird, werden der "
+"Block F und der Block c ausgeschaltet. Die anderen Blöcke leuchten."
 
 #: ../2.5_7-segment_display.rst:88
 msgid ""
-"First we need to know how it looks like when display the numeral **2** on"
-" the 7-Segment display. It's actually the segments a, b, d, e and g are "
-"power on, which generates the display of **2**. In programming, pins "
+"First we need to know how it looks like when display the numeral **2** "
+"on the 7-Segment display. It's actually the segments a, b, d, e and g "
+"are power on, which generates the display of **2**. In programming, pins "
 "connected to these segments are set High level when c and f are Low "
 "level. Here we use a *for()* statement to set these pins as High level "
 "respectively (the braces after *for()* are deleted as there is only one "
 "line). Connect pin dp to pin 4; it's already defined as LOW in *setup()*."
 msgstr ""
+"Zuerst müssen wir wissen, wie es aussieht, wenn die Ziffer **2** auf der "
+"7-Segment-Anzeige angezeigt wird. Es sind tatsächlich die Segmente a, b, "
+"d, e und g, die eingeschaltet sind, was die Anzeige von **2** erzeugt. "
+"Bei der Programmierung werden die mit diesen Segmenten verbundenen Pins "
+"auf High Level gesetzt, wenn c und f Low Level sind. Hier verwenden wir "
+"eine *for()* - Anweisung, um diese Pins jeweils als High Level "
+"festzulegen (die geschweiften Klammern nach *for()* werden gelöscht, da "
+"nur eine Zeile vorhanden ist). Verbinden Sie Pin dp mit Pin 4; Es ist "
+"bereits in *setup()* als LOW definiert."
 
 #: ../2.5_7-segment_display.rst:97
 msgid ""
-"After running this part, the 7-segment will display **2**. Similarly, the"
-" display of other characters are the same. Since the letters b and d in "
-"upper case, namely **B** and **D**, would look the same with **8** and "
-"**0** on the display, they are displayed in lower case instead."
+"After running this part, the 7-segment will display **2**. Similarly, "
+"the display of other characters are the same. Since the letters b and d "
+"in upper case, namely **B** and **D**, would look the same with **8** "
+"and **0** on the display, they are displayed in lower case instead."
 msgstr ""
+"Nach dem Ausführen dieses Teils zeigt das 7-Segment **2** an. Ebenso ist "
+"die Anzeige anderer Zeichen gleich. Da die Großbuchstaben b und d, dh "
+"**B** und **D**, auf dem Display wie **8** und **0** aussehen, werden "
+"sie in Kleinbuchstaben angezeigt."
 
 #: ../2.5_7-segment_display.rst:116
 msgid "In loop(), call the function that displays the number."
-msgstr ""
+msgstr "Rufen Sie in loop () die Funktion auf, die die Nummer anzeigt."
 
 #: ../2.5_7-segment_display.rst:131
 msgid "Phenomenon Picture"
-msgstr ""
-
+msgstr "Phänomen Bild"

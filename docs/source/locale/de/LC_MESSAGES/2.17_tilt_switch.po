@@ -4,79 +4,102 @@
 # Kit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: SunFounder Vincent Kit \n"
+"Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 17:10+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"PO-Revision-Date: 2021-06-08 18:56+0800\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.7.0\n"
+"Generated-By: Babel 2.9.1\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"X-Generator: Poedit 2.4.3\n"
+"Language: de\n"
 
 #: ../2.17_tilt_switch.rst:2
 msgid "2.17 Tilt Switch"
-msgstr ""
+msgstr "2.17 Neigungsschalter"
 
 #: ../2.17_tilt_switch.rst:5
 msgid "**Overview**"
-msgstr ""
+msgstr "**Überblick**"
 
 #: ../2.17_tilt_switch.rst:7
 msgid ""
-"In this lesson, you will learn about tilt switch. Tilt switch can be used"
-" to detect whether objects tilt, which is of great value in practical "
+"In this lesson, you will learn about tilt switch. Tilt switch can be used to "
+"detect whether objects tilt, which is of great value in practical "
 "applications. It can be used to judge the tilt of bridges, buildings, "
-"transmission line tower and so on, so it has an important guiding "
-"function in carrying out maintenance work."
+"transmission line tower and so on, so it has an important guiding function in "
+"carrying out maintenance work."
 msgstr ""
+"In dieser Lektion lernen Sie den Neigungsschalter kennen. Mit dem "
+"Neigungsschalter kann festgestellt werden, ob Objekte geneigt sind, was in "
+"praktischen Anwendungen von großem Wert ist. Es kann verwendet werden, um die "
+"Neigung von Brücken, Gebäuden, Übertragungsleitungstürmen usw. zu beurteilen, "
+"sodass es eine wichtige Führungsrolle bei Wartungsarbeiten spielt."
 
 #: ../2.17_tilt_switch.rst:14
 msgid "**Components Required**"
-msgstr ""
+msgstr "**Erforderliche Komponenten**"
 
 #: ../2.17_tilt_switch.rst:19
 msgid "**Component Introduction**"
-msgstr ""
+msgstr "**Komponenteneinführung**"
 
 #: ../2.17_tilt_switch.rst:21
 msgid ""
-"The principle is very simple. When the switch is tilted in a certain "
-"angle, the ball inside rolls down and touches the two contacts connected "
-"to the pins outside, thus triggering circuits. Otherwise the ball will "
-"stay away from the contacts, thus breaking the circuits."
+"The principle is very simple. When the switch is tilted in a certain angle, "
+"the ball inside rolls down and touches the two contacts connected to the pins "
+"outside, thus triggering circuits. Otherwise the ball will stay away from the "
+"contacts, thus breaking the circuits."
 msgstr ""
+"Das Prinzip ist sehr einfach. Wenn der Schalter in einem bestimmten Winkel "
+"gekippt wird, rollt die interne Kugel nach unten und berührt die beiden mit "
+"den externen Stiften verbundenen Kontakte, wodurch die Schaltung ausgelöst "
+"wird. Andernfalls bleibt der Ball von den Kontakten fern und unterbricht die "
+"Stromkreise."
 
 #: ../2.17_tilt_switch.rst:32
 msgid "**Fritzing Circuit**"
-msgstr ""
+msgstr "**Fritzing Circuit**"
 
 #: ../2.17_tilt_switch.rst:34
 msgid "In this example, digital pin 2 is used to read the signal of Tilt Switch."
 msgstr ""
+"In diesem Beispiel wird der digitale Pin 2 zum Lesen des Signals des "
+"Neigungsschalters verwendet."
+
+msgid "2.17 Tilt Switch_bb"
+msgstr "2.17 Tilt Switch_bb"
 
 #: ../2.17_tilt_switch.rst:43
 msgid "**Schematic Diagram**"
-msgstr ""
+msgstr "**Schematische Darstellung**"
 
 #: ../2.17_tilt_switch.rst:51
 msgid "**Code**"
-msgstr ""
+msgstr "**Code**"
 
 #: ../2.17_tilt_switch.rst:57
 msgid ""
-"After the codes are uploaded to the Mega2560 board, you can open the "
-"serial monitor to see the readings of pins, which displays 「1」 or 「0」 "
-"when Tilt Switch is vertical (bringing the internal metal ball into "
-"contacting with the Wire Pins) or tilted. For detailed explanation of "
-"codes, you can turn to :ref:`1.4 Digital Read`."
+"After the codes are uploaded to the Mega2560 board, you can open the serial "
+"monitor to see the readings of pins, which displays 「1」 or 「0」 when Tilt "
+"Switch is vertical (bringing the internal metal ball into contacting with the "
+"Wire Pins) or tilted. For detailed explanation of codes, you can turn to :ref:"
+"`1.4 Digital Read`."
 msgstr ""
+"Nachdem Sie den Code auf die Mega2560-Karte hochgeladen haben, können Sie den "
+"seriellen Monitor öffnen, um die Anzeige des Pins anzuzeigen, auf dem「1」 "
+"oder「0」angezeigt wird, wenn der Neigungsschalter vertikal ist (so dass die "
+"innere Metallkugel den Drahtstift berührt) oder gekippt ist. Eine ausführliche "
+"Erläuterung der Codes finden Sie in `Teil 1- 1.4 Digital Read`."
 
 #: ../2.17_tilt_switch.rst:64
 msgid "**Phenomenon Picture**"
-msgstr ""
+msgstr "**Phänomen Bild**"
 
+msgid "2.17"
+msgstr "2.17"
