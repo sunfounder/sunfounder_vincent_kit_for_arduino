@@ -66,7 +66,7 @@ msgid ""
 "A call to analogWrite() is on a scale of 0 - 255, such that "
 "analogWrite(255) requests a 100% duty cycle (always on), and "
 "analogWrite(127) is a 50% duty cycle (on half the time) for example."
-msgstr ""
+msgstr "Der Bereich für den Aufruf von analogWrite() liegt zwischen 0 und 255. Beispielsweise erfordert analogWrite(255)  ein Tastverhältnis von 100% (immer eingeschaltet), während analogWrite(127) ein Tastverhältnis von 50% (halbe Zeite eingeschaltet) ist"
 
 #: ../1.3_analog_write.rst:38
 msgid "Fritzing Circuit"
