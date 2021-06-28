@@ -8,15 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"POT-Creation-Date: 2021-06-28 17:11+0800\n"
 "PO-Revision-Date: 2021-05-29 10:01+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.33_ultrasonic_module.rst:2
 msgid "2.33 Ultrasonic Module"
@@ -41,150 +40,147 @@ msgstr "**Komponenteneinführung**"
 #: ../2.33_ultrasonic_module.rst:21
 msgid ""
 "Ultrasonic ranging module provides 2cm - 400cm non-contact measurement "
-"function. The working principle is that when the MPU sends out orders, the "
-"ceramic chip begins to vibrate and then aluminum enclosure vibrates "
-"together with it to form ultrasonic wave and emit the wave towards the back "
-"of the car. After the emitted ultrasonic wave hits an obstacle, there will "
-"be echo wave. This echo wave is received by the same aluminum enclosure and "
-"the ceramic chip in the form of vibration. The MPU judges the position of "
-"the obstacle by calculating the time difference and azimuth difference of "
-"the echo wave. Ultrasonic distance sensor can be widely used in the field "
-"of material level (liquid level) monitoring, robot anti-collision, various "
-"ultrasonic proximity switches, and intruder alarm."
+"function. The working principle is that when the MPU sends out orders, "
+"the ceramic chip begins to vibrate and then aluminum enclosure vibrates "
+"together with it to form ultrasonic wave and emit the wave towards the "
+"back of the car. After the emitted ultrasonic wave hits an obstacle, "
+"there will be echo wave. This echo wave is received by the same aluminum "
+"enclosure and the ceramic chip in the form of vibration. The MPU judges "
+"the position of the obstacle by calculating the time difference and "
+"azimuth difference of the echo wave. Ultrasonic distance sensor can be "
+"widely used in the field of material level (liquid level) monitoring, "
+"robot anti-collision, various ultrasonic proximity switches, and intruder"
+" alarm."
 msgstr ""
 "Das Ultraschall-Entfernungsmessmodul bietet eine berührungslose "
 "Messfunktion von 2 cm bis 400 cm. Das Arbeitsprinzip ist, dass beim "
-"Versenden von Befehlen durch die MPU der Keramikchip zu vibrieren beginnt "
-"und das Aluminiumgehäuse zusammen mit ihm vibriert, um eine "
-"Ultraschallwelle zu bilden und die Welle zur Rückseite des Autos zu senden. "
-"Nachdem die ausgesendete Ultraschallwelle ein Hindernis getroffen hat, "
-"tritt eine Echowelle auf. Diese Echowelle wird von demselben "
-"Aluminiumgehäuse und dem Keramikchip in Form von Vibrationen empfangen. Die "
-"MPU beurteilt die Position des Hindernisses durch Berechnung der "
+"Versenden von Befehlen durch die MPU der Keramikchip zu vibrieren beginnt"
+" und das Aluminiumgehäuse zusammen mit ihm vibriert, um eine "
+"Ultraschallwelle zu bilden und die Welle zur Rückseite des Autos zu "
+"senden. Nachdem die ausgesendete Ultraschallwelle ein Hindernis getroffen"
+" hat, tritt eine Echowelle auf. Diese Echowelle wird von demselben "
+"Aluminiumgehäuse und dem Keramikchip in Form von Vibrationen empfangen. "
+"Die MPU beurteilt die Position des Hindernisses durch Berechnung der "
 "Zeitdifferenz und der Azimutdifferenz der Echowelle. Ultraschall-"
 "Abstandssensoren können in großem Umfang bei der Überwachung des "
-"Materialstands (Flüssigkeitsstand), der Vermeidung von Roboterkollisionen, "
-"verschiedenen Ultraschall-Näherungsschaltern und Einbruchalarmen eingesetzt "
-"werden."
+"Materialstands (Flüssigkeitsstand), der Vermeidung von "
+"Roboterkollisionen, verschiedenen Ultraschall-Näherungsschaltern und "
+"Einbruchalarmen eingesetzt werden."
 
 #: ../2.33_ultrasonic_module.rst:32
 msgid ""
-"The module includes ultrasonic transmitters, receiver and control circuit. "
-"The basic principles are as follows:"
+"The module includes ultrasonic transmitters, receiver and control "
+"circuit. The basic principles are as follows:"
 msgstr ""
 "Das Modul enthält Ultraschallsender, Empfänger und Steuerschaltung. Die "
 "Grundprinzipien sind wie folgt:"
 
 #: ../2.33_ultrasonic_module.rst:35
-msgid "1.Use an IO flip-flop to process a high level signal of at least 10us;"
+msgid "Use an IO flip-flop to process a high level signal of at least 10us;"
 msgstr ""
-"1. Verwenden Sie ein E / A-Flipflop, um ein Signal mit hohem Pegel von "
+"Verwenden Sie ein E / A-Flipflop, um ein Signal mit hohem Pegel von "
 "mindestens 10 us zu verarbeiten;"
 
 #: ../2.33_ultrasonic_module.rst:37
 msgid ""
-"2.The module automatically sends eight 40khz and detects if there is a "
+"The module automatically sends eight 40khz and detects if there is a "
 "pulse signal return."
 msgstr ""
-"2. Das Modul sendet automatisch acht 40 kHz und erkennt, ob ein "
+"Das Modul sendet automatisch acht 40 kHz und erkennt, ob ein "
 "Impulssignal zurückkehrt."
 
 #: ../2.33_ultrasonic_module.rst:40
 msgid ""
-"3.If the signal returns, passing the high level, the high output IO "
+"If the signal returns, passing the high level, the high output IO "
 "duration is the time from the transmission of the ultrasonic wave to the "
-"return of it. Here, test distance = (high time x sound speed (340 m / s) / "
-"2."
-msgstr ""
-"3. Wenn das Signal zurückkehrt und den hohen Pegel überschreitet, ist die "
-"E / A-Dauer des hohen Ausgangs die Zeit von der Übertragung der "
-"Ultraschallwelle bis zu ihrer Rückkehr. Hier Testabstand = (hohe Zeit x "
-"Schallgeschwindigkeit (340 m / s) / 2."
+"return of it. Here, test distance = (high time x sound speed (340 m / s) "
+"/ 2."
+msgstr "Wenn das Signal zurückkehrt und den hohen Pegel überschreitet, ist die E / A-Dauer des hohen Ausgangs die Zeit von der Übertragung der Ultraschallwelle bis zu ihrer Rückkehr. Hier Testabstand = (hohe Zeit x Schallgeschwindigkeit (340 m / s) / 2."
 
-#: ../2.33_ultrasonic_module.rst:46
+#: ../2.33_ultrasonic_module.rst:43
 msgid "**TRIG**"
 msgstr "**TRIG**"
 
-#: ../2.33_ultrasonic_module.rst:46
+#: ../2.33_ultrasonic_module.rst:43
 msgid "Trigger Pulse Input"
 msgstr "Impulseingang auslösen"
 
-#: ../2.33_ultrasonic_module.rst:46
+#: ../2.33_ultrasonic_module.rst:43
 msgid "**GND**"
 msgstr "**GND**"
 
-#: ../2.33_ultrasonic_module.rst:46
+#: ../2.33_ultrasonic_module.rst:43
 msgid "Ground"
 msgstr "Ground"
 
-#: ../2.33_ultrasonic_module.rst:47
+#: ../2.33_ultrasonic_module.rst:44
 msgid "**ECHO**"
 msgstr "**ECHO**"
 
-#: ../2.33_ultrasonic_module.rst:47
+#: ../2.33_ultrasonic_module.rst:44
 msgid "Echo Pulse Output"
 msgstr "Echoimpulsausgang"
 
-#: ../2.33_ultrasonic_module.rst:47
+#: ../2.33_ultrasonic_module.rst:44
 msgid "**VCC**"
 msgstr "**VCC**"
 
-#: ../2.33_ultrasonic_module.rst:47
+#: ../2.33_ultrasonic_module.rst:44
 msgid "Supply"
 msgstr "Liefern"
 
-#: ../2.33_ultrasonic_module.rst:50
+#: ../2.33_ultrasonic_module.rst:47
 msgid ""
 "The timing diagram is shown below. You only need to supply a short 10us "
-"pulse for the trigger input to start the ranging, and then the module will "
-"send out an 8 cycle burst of ultrasound at 40 kHz and raise its echo. You "
-"can calculate the range through the time interval between sending trigger "
-"signal and receiving echo signal."
+"pulse for the trigger input to start the ranging, and then the module "
+"will send out an 8 cycle burst of ultrasound at 40 kHz and raise its "
+"echo. You can calculate the range through the time interval between "
+"sending trigger signal and receiving echo signal."
 msgstr ""
 "Das Zeitdiagramm ist unten dargestellt. Sie brauchen nur einen kurzen "
-"Impuls von 10us an den Triggereingang senden, um die Entfernungsmessung zu "
-"starten. Anschließend sendet das Modul einen 8-Perioden-Ultraschallimpuls "
-"mit einer Frequenz von 40 kHz und erhöht sein Echo. Sie können den Bereich "
-"über das Zeitintervall zwischen dem Senden des Triggersignals und dem "
-"Empfangen des Echosignals berechnen."
+"Impuls von 10us an den Triggereingang senden, um die Entfernungsmessung "
+"zu starten. Anschließend sendet das Modul einen 8-Perioden-"
+"Ultraschallimpuls mit einer Frequenz von 40 kHz und erhöht sein Echo. Sie"
+" können den Bereich über das Zeitintervall zwischen dem Senden des "
+"Triggersignals und dem Empfangen des Echosignals berechnen."
 
-#: ../2.33_ultrasonic_module.rst:56
+#: ../2.33_ultrasonic_module.rst:53
 msgid ""
 "Formula: us / 58 = centimeters or us / 148 =inch; or: the range = high "
-"level time \\* velocity (340M/S) / 2; you are suggested to use measurement "
-"cycle over 60ms in order to prevent signal collisions of trigger signal and "
-"the echo signal."
+"level time \\* velocity (340M/S) / 2; you are suggested to use "
+"measurement cycle over 60ms in order to prevent signal collisions of "
+"trigger signal and the echo signal."
 msgstr ""
-"Formel: us / 58 = Zentimeter oder us / 148 = Zoll; oder: der Bereich = hohe "
-"Pegelzeit \\* Geschwindigkeit (340 M / S) / 2; Es wird empfohlen, einen "
-"Messzyklus über 60 ms zu verwenden, um Signalkollisionen des Triggersignals "
-"und des Echosignals zu vermeiden."
+"Formel: us / 58 = Zentimeter oder us / 148 = Zoll; oder: der Bereich = "
+"hohe Pegelzeit \\* Geschwindigkeit (340 M / S) / 2; Es wird empfohlen, "
+"einen Messzyklus über 60 ms zu verwenden, um Signalkollisionen des "
+"Triggersignals und des Echosignals zu vermeiden."
 
-#: ../2.33_ultrasonic_module.rst:65
+#: ../2.33_ultrasonic_module.rst:62
 msgid "**Fritzing Circuit**"
 msgstr "**Fritzing Circuit**"
 
-#: ../2.33_ultrasonic_module.rst:67
+#: ../2.33_ultrasonic_module.rst:64
 msgid ""
-"In this example, we directly connect the pins of Ultrasonic Module with the "
-"pins of Mega 2560 Board. And then we get VCC of the Ultrasonic Module "
-"connected to 5V, GND to GND, Trig to the digital pin 5, Echo to the digital "
-"pin 4."
+"In this example, we directly connect the pins of Ultrasonic Module with "
+"the pins of Mega 2560 Board. And then we get VCC of the Ultrasonic Module"
+" connected to 5V, GND to GND, Trig to the digital pin 5, Echo to the "
+"digital pin 4."
 msgstr ""
 "In diesem Beispiel verbinden wir die Stifte des Ultraschallmoduls direkt "
 "mit den Stiften der Mega 2560-Platine. Und dann erhalten wir VCC des "
 "Ultraschallmoduls, das an 5 V angeschlossen ist, GND an GND, Trig an den "
 "digitalen Pin 5, Echo an den digitalen Pin 4."
 
-#: ../2.33_ultrasonic_module.rst:77
+#: ../2.33_ultrasonic_module.rst:74
 msgid "**Schematic Diagram**"
 msgstr "**Schematische Darstellung**"
 
-#: ../2.33_ultrasonic_module.rst:85
+#: ../2.33_ultrasonic_module.rst:82
 msgid "**Code**"
 msgstr "**Code**"
 
-#: ../2.33_ultrasonic_module.rst:91
+#: ../2.33_ultrasonic_module.rst:88
 msgid ""
 "After uploading the codes to the Mega2560 board, the serial monitor will "
 "display the distance of obstacles ahead that the ultrasonic sensor has "
@@ -194,11 +190,11 @@ msgstr ""
 "Monitor die Entfernung der Hindernisse an, die der Ultraschallsensor "
 "erkannt hat."
 
-#: ../2.33_ultrasonic_module.rst:96
+#: ../2.33_ultrasonic_module.rst:93
 msgid "**Code Analysis**"
 msgstr "**Code-Analyse**"
 
-#: ../2.33_ultrasonic_module.rst:98
+#: ../2.33_ultrasonic_module.rst:95
 msgid ""
 "About the application of ultrasonic sensor, we can directly check the "
 "subfunction."
@@ -206,42 +202,61 @@ msgstr ""
 "Über die Anwendung des Ultraschallsensors können wir die Unterfunktion "
 "direkt überprüfen."
 
-#: ../2.33_ultrasonic_module.rst:105
+#: ../2.33_ultrasonic_module.rst:102
 msgid ""
-"PING is triggered by a HIGH pulse of 2 or more microseconds. (Give a short "
-"LOW pulse beforehand to ensure a clean HIGH pulse.)"
+"PING is triggered by a HIGH pulse of 2 or more microseconds. (Give a "
+"short LOW pulse beforehand to ensure a clean HIGH pulse.)"
 msgstr ""
-"PING wird durch einen HIGH-Impuls von 2 oder mehr Mikrosekunden ausgelöst. "
-"(Geben Sie vorher einen kurzen LOW-Impuls, um einen sauberen HIGH-Impuls zu "
-"gewährleisten.)"
+"PING wird durch einen HIGH-Impuls von 2 oder mehr Mikrosekunden "
+"ausgelöst. (Geben Sie vorher einen kurzen LOW-Impuls, um einen sauberen "
+"HIGH-Impuls zu gewährleisten.)"
 
-#: ../2.33_ultrasonic_module.rst:116
+#: ../2.33_ultrasonic_module.rst:113
 msgid ""
-"The echo pin is used to read signal from PING, a HIGH pulse whose duration "
-"is the time (in microseconds) from the sending of the ping to the reception "
-"of echo of the object."
+"The echo pin is used to read signal from PING, a HIGH pulse whose "
+"duration is the time (in microseconds) from the sending of the ping to "
+"the reception of echo of the object."
 msgstr ""
 "Der Echo-Pin wird zum Lesen des Signals von PING verwendet, einem HIGH-"
-"Impuls, dessen Dauer die Zeit (in Mikrosekunden) vom Senden des Pings bis "
-"zum Empfang des Echos des Objekts ist."
+"Impuls, dessen Dauer die Zeit (in Mikrosekunden) vom Senden des Pings bis"
+" zum Empfang des Echos des Objekts ist."
 
-#: ../2.33_ultrasonic_module.rst:124
+#: ../2.33_ultrasonic_module.rst:121
 msgid "The speed of sound is 340 m/s or 29 microseconds per centimeter."
 msgstr ""
 "Die Schallgeschwindigkeit beträgt 340 m / s oder 29 Mikrosekunden pro "
 "Zentimeter."
 
-#: ../2.33_ultrasonic_module.rst:126
+#: ../2.33_ultrasonic_module.rst:123
 msgid ""
-"This gives the distance travelled by the ping, outbound and return, so we "
-"divide by 2 to get the distance of the obstacle."
+"This gives the distance travelled by the ping, outbound and return, so we"
+" divide by 2 to get the distance of the obstacle."
 msgstr ""
-"Dies gibt die vom Ping zurückgelegte Strecke an, ausgehend und zurück, also "
-"teilen wir durch 2, um die Entfernung des Hindernisses zu erhalten."
+"Dies gibt die vom Ping zurückgelegte Strecke an, ausgehend und zurück, "
+"also teilen wir durch 2, um die Entfernung des Hindernisses zu erhalten."
 
-#: ../2.33_ultrasonic_module.rst:134
+#: ../2.33_ultrasonic_module.rst:131
 msgid "**Phenomenon Picture**"
 msgstr "**Phänomen Bild**"
 
-msgid "2.33"
-msgstr "2.33"
+#~ msgid "2.33"
+#~ msgstr "2.33"
+
+#~ msgid ""
+#~ "3.If the signal returns, passing the "
+#~ "high level, the high output IO "
+#~ "duration is the time from the "
+#~ "transmission of the ultrasonic wave to"
+#~ " the return of it. Here, test "
+#~ "distance = (high time x sound "
+#~ "speed (340 m / s) / 2."
+#~ msgstr ""
+#~ "3. Wenn das Signal zurückkehrt und "
+#~ "den hohen Pegel überschreitet, ist die"
+#~ " E / A-Dauer des hohen Ausgangs "
+#~ "die Zeit von der Übertragung der "
+#~ "Ultraschallwelle bis zu ihrer Rückkehr. "
+#~ "Hier Testabstand = (hohe Zeit x "
+#~ "Schallgeschwindigkeit (340 m / s) / "
+#~ "2."
+

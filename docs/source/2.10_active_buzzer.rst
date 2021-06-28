@@ -26,9 +26,23 @@ The difference between an active buzzer and a passive buzzer:
 
 .. image:: media/image117.png
 
+The difference between an active buzzer and a passive buzzer is: An active
+buzzer has a built-in oscillating source, so it will make sounds when
+electronic. But a passive buzzer does not have such source, so it will
+not beep if DC signals are used; instead, you need to use square waves
+whose frequency is between 2K and 5K to drive it. The active buzzer is
+often more expensive than the passive one because of multiple built-in
+oscillating circuits.
+
+The following is the electrical symbol of a buzzer. It has two pins with
+positive and negative poles. With a + in the surface represents the anode
+and the other is the cathode.
 
 .. image:: media/image447.png
 
+You can check the pins of the buzzer, the longer one is the anode and the
+shorter one is the cathode. Please don't mix them up when connecting, otherwise
+the buzzer will not make sound.
 
 Fritzing Circuit
 ----------------

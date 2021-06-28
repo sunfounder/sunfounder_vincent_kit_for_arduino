@@ -8,15 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SunFounder Vincent Kit\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-20 18:43+0800\n"
+"POT-Creation-Date: 2021-06-28 15:43+0800\n"
 "PO-Revision-Date: 2021-05-29 08:29+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
-"Last-Translator: \n"
-"Language-Team: \n"
-"X-Generator: Poedit 2.4.3\n"
 
 #: ../2.11_passive_buzzer.rst:2
 msgid "2.11 Passive Buzzer"
@@ -35,9 +34,9 @@ msgid ""
 msgstr ""
 "In dieser Lektion lernen Sie den passiven Summer kennen. Passiver Summer "
 "ist ein elektronischer Summer mit integrierter Struktur, der von einer "
-"Gleichstromquelle gespeist wird und in Computern, Alarmen, "
-"elektronischem Spielzeug, Telefonen, Zeitschaltuhren und anderen "
-"elektronischen Produkten oder Sprachgeräten weit verbreitet ist."
+"Gleichstromquelle gespeist wird und in Computern, Alarmen, elektronischem"
+" Spielzeug, Telefonen, Zeitschaltuhren und anderen elektronischen "
+"Produkten oder Sprachgeräten weit verbreitet ist."
 
 #: ../2.11_passive_buzzer.rst:13
 msgid "Components Required"
@@ -63,28 +62,53 @@ msgstr ""
 msgid "The difference between an active buzzer and a passive buzzer:"
 msgstr "Der Unterschied zwischen einem aktiven und einem passiven Summer:"
 
-#: ../2.11_passive_buzzer.rst:35
+#: ../2.11_passive_buzzer.rst:30
+msgid ""
+"The difference between an active buzzer and a passive buzzer is: An "
+"active buzzer has a built-in oscillating source, so it will make sounds "
+"when electronic. But a passive buzzer does not have such source, so it "
+"will not beep if DC signals are used; instead, you need to use square "
+"waves whose frequency is between 2K and 5K to drive it. The active buzzer"
+" is often more expensive than the passive one because of multiple built-"
+"in oscillating circuits."
+msgstr "Der Unterschied zwischen einem aktiven und einem passiven Summer besteht darin, dass ein aktiver Summer über eine eingebaute Oszillationsquelle verfügt, sodass er bei Elektrifizierung Geräusche erzeugt. Ein passiver Summer verfügt jedoch nicht über eine solche Quelle, sodass bei Verwendung von Gleichstromsignalen kein Piepton ertönt. Stattdessen müssen Sie Rechteckwellen verwenden, deren Frequenz zwischen 2K und 5K liegt, um sie anzutreiben. Der aktive Summer ist aufgrund mehrerer eingebauter Schwingkreise oft teurer als der passive."
+
+#: ../2.11_passive_buzzer.rst:38
+msgid ""
+"The following is the electrical symbol of a buzzer. It has two pins with "
+"positive and negative poles. With a + in the surface represents the anode"
+" and the other is the cathode."
+msgstr "Das Folgende ist das elektrische Symbol eines Summers. Es hat zwei Stifte mit positiven und negativen Polen. Mit einem + in der Oberfläche steht die Anode und das andere ist die Kathode."
+
+#: ../2.11_passive_buzzer.rst:44
+msgid ""
+"You can check the pins of the buzzer, the longer one is the anode and the"
+" shorter one is the cathode. Please don't mix them up when connecting, "
+"otherwise the buzzer will not make sound."
+msgstr "Sie können die Stifte des Summers überprüfen, je länger die Anode und je kürzer die Kathode ist. Bitte verwechseln Sie sie beim Anschließen nicht, da sonst kein Summer ertönt."
+
+#: ../2.11_passive_buzzer.rst:50
 msgid "Fritzing Circuit"
 msgstr "Fritzing Circuit"
 
-#: ../2.11_passive_buzzer.rst:39
+#: ../2.11_passive_buzzer.rst:54
 msgid ""
-"In this example, what we use to drive the buzzer is the pin 9. We get "
-"the cathode of the Buzzer to GND, and the anode to the digital pin 9."
+"In this example, what we use to drive the buzzer is the pin 9. We get the"
+" cathode of the Buzzer to GND, and the anode to the digital pin 9."
 msgstr ""
 "In diesem Beispiel verwenden wir den Pin 9, um den Summer anzutreiben. "
 "Wir bringen die Kathode des Summers auf GND und die Anode auf den "
 "digitalen Pin 9."
 
-#: ../2.11_passive_buzzer.rst:42
+#: ../2.11_passive_buzzer.rst:57
 msgid "Schematic Diagram"
 msgstr "Schematische Darstellung"
 
-#: ../2.11_passive_buzzer.rst:47
+#: ../2.11_passive_buzzer.rst:62
 msgid "Code"
 msgstr "Code"
 
-#: ../2.11_passive_buzzer.rst:53
+#: ../2.11_passive_buzzer.rst:68
 msgid ""
 "At the time when you finish uploading the codes to the Mega2560 board, "
 "you can hear a melody containing seven notes."
@@ -92,15 +116,15 @@ msgstr ""
 "Wenn Sie mit dem Hochladen der Codes auf das Mega2560-Board fertig sind, "
 "hören Sie eine Melodie mit sieben Noten."
 
-#: ../2.11_passive_buzzer.rst:56
+#: ../2.11_passive_buzzer.rst:71
 msgid "Code Analysis"
 msgstr "Code-Analyse"
 
-#: ../2.11_passive_buzzer.rst:58
+#: ../2.11_passive_buzzer.rst:73
 msgid "There are two points needing your attention:"
 msgstr "Es gibt zwei Punkte, die Ihre Aufmerksamkeit erfordern:"
 
-#: ../2.11_passive_buzzer.rst:60
+#: ../2.11_passive_buzzer.rst:75
 msgid ""
 "①tone() & noTone(): This function is used to control the sound of the "
 "passive buzzer directly and its prototype is as follows:"
@@ -108,7 +132,7 @@ msgstr ""
 "① Ton () & noTone (): Mit dieser Funktion wird der Klang des passiven "
 "Summers direkt gesteuert. Der Prototyp lautet wie folgt:"
 
-#: ../2.11_passive_buzzer.rst:67
+#: ../2.11_passive_buzzer.rst:82
 #, python-format
 msgid ""
 "Generates a square wave of the specified frequency (and 50% duty cycle) "
@@ -124,18 +148,18 @@ msgstr ""
 "kann an einen Piezo-Summer oder einen anderen Lautsprecher angeschlossen "
 "werden, um Töne abzuspielen."
 
-#: ../2.11_passive_buzzer.rst:69
+#: ../2.11_passive_buzzer.rst:84
 msgid ""
-"Only one tone can be generated at a time. If a tone is already playing "
-"on a different pin, the call to tone() will have no effect. If the tone "
-"is playing on the same pin, the call will set its frequency."
+"Only one tone can be generated at a time. If a tone is already playing on"
+" a different pin, the call to tone() will have no effect. If the tone is "
+"playing on the same pin, the call will set its frequency."
 msgstr ""
 "Es kann jeweils nur ein Ton erzeugt werden. Wenn ein Ton bereits auf "
 "einem anderen Pin abgespielt wird, hat der Aufruf von Ton () keine "
 "Auswirkung. Wenn der Ton auf demselben Pin abgespielt wird, stellt der "
 "Anruf seine Frequenz ein."
 
-#: ../2.11_passive_buzzer.rst:71
+#: ../2.11_passive_buzzer.rst:86
 msgid ""
 "Use of the tone() function will interfere with PWM output on pins 3 and "
 "11 (on boards other than the Mega)."
@@ -143,23 +167,23 @@ msgstr ""
 "Die Verwendung der Funktion ton () stört die PWM-Ausgabe an den Pins 3 "
 "und 11 (auf anderen Karten als der Mega)."
 
-#: ../2.11_passive_buzzer.rst:73
+#: ../2.11_passive_buzzer.rst:88
 msgid "It is not possible to generate tones lower than 31Hz."
 msgstr "Es ist nicht möglich, Töne unter 31 Hz zu erzeugen."
 
-#: ../2.11_passive_buzzer.rst:75 ../2.11_passive_buzzer.rst:87
+#: ../2.11_passive_buzzer.rst:90 ../2.11_passive_buzzer.rst:102
 msgid "**pin**: The Arduino pin on which to generate the tone."
 msgstr "**Pin**: Der Arduino-Pin, auf dem der Ton erzeugt werden soll."
 
-#: ../2.11_passive_buzzer.rst:77
+#: ../2.11_passive_buzzer.rst:92
 msgid "**frequency**: The frequency of the tone in hertz."
 msgstr "**Frequenz**: Die Frequenz des Tons in Hertz."
 
-#: ../2.11_passive_buzzer.rst:79
+#: ../2.11_passive_buzzer.rst:94
 msgid "**duration**: The duration of the tone in milliseconds (optional)"
 msgstr "**Dauer**: Die Dauer des Tons in Millisekunden (optional)"
 
-#: ../2.11_passive_buzzer.rst:85
+#: ../2.11_passive_buzzer.rst:100
 msgid ""
 "Stops the generation of a square wave triggered by tone(). Has no effect "
 "if no tone is being generated."
@@ -167,21 +191,21 @@ msgstr ""
 "Stoppt die Erzeugung einer durch Ton () ausgelösten Rechteckwelle. Hat "
 "keine Auswirkung, wenn kein Ton erzeugt wird."
 
-#: ../2.11_passive_buzzer.rst:89
+#: ../2.11_passive_buzzer.rst:104
 msgid ""
 "Having known the two functions, you may grasp the codes—the installation "
-"of the array melody[] and the array noteDurations[] is the preparation "
-"of the subsequently several times of calling of the function tone() and "
-"the changing of tone and duration in the loop for better effect of music "
+"of the array melody[] and the array noteDurations[] is the preparation of"
+" the subsequently several times of calling of the function tone() and the"
+" changing of tone and duration in the loop for better effect of music "
 "play."
 msgstr ""
 "Nachdem Sie diese beiden Funktionen kennen, können Sie den Code "
 "beherrschen: Die Installation der Array-Melodie [] und des Arrays "
 "noteDurations [] ist die Vorbereitung für die nachfolgenden Aufrufe des "
-"Funktion Tons () und die Vorbereitung für die Änderung von Ton und "
-"Dauer. Loop-Wiedergabe für einen besseren Musikwiedergabeeffekt."
+"Funktion Tons () und die Vorbereitung für die Änderung von Ton und Dauer."
+" Loop-Wiedergabe für einen besseren Musikwiedergabeeffekt."
 
-#: ../2.11_passive_buzzer.rst:91
+#: ../2.11_passive_buzzer.rst:106
 msgid ""
 "②pitches.h: The code uses an extra file, **pitches.h**. This file "
 "contains all the pitch values for typical notes. For example, NOTE_C4 is "
@@ -196,7 +220,7 @@ msgstr ""
 "Befehl ton () basierte. Sie können es nützlich finden, wenn Sie Noten "
 "machen möchten."
 
-#: ../2.11_passive_buzzer.rst:98
+#: ../2.11_passive_buzzer.rst:113
 msgid ""
 "There is already a pitches.h file in this sample program. If we put it "
 "together with the main code in one folder, the successive steps of "
@@ -204,10 +228,10 @@ msgid ""
 msgstr ""
 "In diesem Beispielprogramm befindet sich bereits eine Datei Pitches.h. "
 "Wenn wir es mit dem Hauptcode in einem Ordner zusammenfassen, können die "
-"aufeinander folgenden Schritte zum Installieren von Pitches.h "
-"weggelassen werden."
+"aufeinander folgenden Schritte zum Installieren von Pitches.h weggelassen"
+" werden."
 
-#: ../2.11_passive_buzzer.rst:102
+#: ../2.11_passive_buzzer.rst:117
 msgid ""
 "After you open the code 2.11passiveBuzzer, if you cannot open the "
 "pitches.h code, you can just install one manually. The steps are as "
@@ -217,21 +241,22 @@ msgstr ""
 "nicht öffnen können, können Sie ihn einfach manuell installieren. Die "
 "Schritte sind wie folgt:"
 
-#: ../2.11_passive_buzzer.rst:106
+#: ../2.11_passive_buzzer.rst:121
 msgid ""
 "To make the pitches.h file, either click on the button just below the "
 "serial monitor icon and choose \"New Tab\", or use Ctrl+Shift+N."
 msgstr ""
 "Um die Datei pitches.h zu erstellen, klicken Sie entweder auf die "
-"Schaltfläche direkt unter dem Symbol für den seriellen Monitor und "
-"wählen Sie \"Neue Registerkarte\" oder verwenden Sie Strg + Umschalt + N."
+"Schaltfläche direkt unter dem Symbol für den seriellen Monitor und wählen"
+" Sie \"Neue Registerkarte\" oder verwenden Sie Strg + Umschalt + N."
 
-#: ../2.11_passive_buzzer.rst:111
+#: ../2.11_passive_buzzer.rst:126
 msgid "Then paste in the following code and save it as **pitches.h**:"
 msgstr ""
-"Fügen Sie dann den folgenden Code ein und speichern Sie ihn als **Pitch."
-"h**:"
+"Fügen Sie dann den folgenden Code ein und speichern Sie ihn als "
+"**Pitch.h**:"
 
-#: ../2.11_passive_buzzer.rst:209
+#: ../2.11_passive_buzzer.rst:224
 msgid "Phenomenon Picture"
 msgstr "Phänomen Bild"
+

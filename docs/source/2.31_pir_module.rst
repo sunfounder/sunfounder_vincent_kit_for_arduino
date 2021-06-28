@@ -71,19 +71,12 @@ Two trigger modes: (choosing different modes by using the jumper cap).
 | PIR can only be installed indoors, and its false alarm rate has a
   great relationship with the location and mode of installation. The
   correct use should meet the following conditions:
-| 1. It should be 2.0-2.2 meters above the ground.
-| 2. Stay away from air conditioners, refrigerators, stoves and other
-  places where air temperature changes
-  `apparently <https://cn.bing.com/dict/search?q=apparently&FORM=BDVSP6&mkt=zh-cn>`__.
-| 3. No screen, furniture, large-scale bonsai or other isolation objects
-  shall be detected within the detection range.
-| 4. Don't face straightly toward the window, otherwise the disturbance
-  of the hot air flow outside the window and the movement of people will
-  cause false alarm.
-| 5. Do not use in areas with strong airflow.
-| 6. The sensitivity of PIR to human body is also closely related to the
-  direction of movement. It is least sensitive to radial movement and
-  most sensitive to the movement in the crosscutting direction.
+1. It should be 2.0-2.2 meters above the ground.
+2. Stay away from air conditioners, refrigerators, stoves and other places where air temperature changes `apparently <https://cn.bing.com/dict/search?q=apparently&FORM=BDVSP6&mkt=zh-cn>`__.
+3. No screen, furniture, large-scale bonsai or other isolation objects shall be detected within the detection range.
+4. Don't face straightly toward the window, otherwise the disturbance of the hot air flow outside the window and the movement of people will cause false alarm.
+5. Do not use in areas with strong airflow.
+6. The sensitivity of PIR to human body is also closely related to the direction of movement. It is least sensitive to radial movement and most sensitive to the movement in the crosscutting direction.
 
 **Fritzing Circuit**
 ----------------------

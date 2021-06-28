@@ -107,8 +107,8 @@ Therefore, you only need to write 0 for the voltage of one side of the copper sh
 
 In this example, Serial.Read() is used to control the direction of motor. 
 
-When you type ’A’ in serial monitor, there calls the clockwise (255) function to make the motor rotate with the speed of 255.
-Input 'B', and the motor will rotate in reverse direction.
+When you type \'A\' in serial monitor, there calls the clockwise (255) function to make the motor rotate with the speed of 255.
+Input \'B\', and the motor will rotate in reverse direction.
 
 .. code-block:: arduino
 

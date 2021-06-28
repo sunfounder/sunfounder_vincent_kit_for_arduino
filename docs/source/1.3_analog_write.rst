@@ -18,8 +18,21 @@ Components Required
 ※ Pulse Width Modulation
 -------------------------
 
-.. image:: media/image402.png
+Pulse Width Modulation, or PWM, is a technique for getting analog results 
+with digital means. Digital control is used to create a square wave, a 
+signal switched between on and off. This on-off pattern can simulate voltages 
+in between full on (5 Volts) and off (0 Volts) by changing the portion of 
+the time the signal spends on versus the time that the signal spends off. 
+The duration of "on time" is called the pulse width. To get varying analog 
+values, you change, or modulate, that pulse width. If you repeat this on-off 
+pattem fast enough with an LED for example, the result is as if the signal 
+is a steady voltage between 0 and 5v controlling the brightness of the LED.
 
+A call to analogWrite() is on a scale of 0 - 255, such that analogWrite(255) 
+requests a 100% duty cycle (always on), and analogWrite(127) is a 50% duty 
+cycle (on half the time) for example.
+
+.. image:: media/image402.png
 
 Fritzing Circuit
 ----------------

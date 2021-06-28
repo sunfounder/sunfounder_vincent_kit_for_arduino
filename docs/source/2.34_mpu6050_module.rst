@@ -142,12 +142,12 @@ unit, and the X and Y axes are 0.
 Before your use, you need to calibrate the module, the methods are as
 follows:
 
-1.MPU6050 modules are placed horizontally on the desktop and then you can
-fix them with clamps or adhesive tape.
+1. MPU6050 modules are placed horizontally on the desktop and then you can
+   fix them with clamps or adhesive tape.
 
-2.Run the sample codes to get the RAW DATA of MPU6050 when it is static.
+2. Run the sample codes to get the RAW DATA of MPU6050 when it is static.
 
-3.Add compensation according to the readings when MPU6050 is static.
+3. Add compensation according to the readings when MPU6050 is static.
 
 Take MPU6050 we use as an example, and the results of compensation are
 as follows:
