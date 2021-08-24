@@ -18,6 +18,7 @@ powerful help for you to finish your programming projects.
     part_2_component
     part_3_example
     part_4_appendix
+    thank-learning
 
 Copyright Notice
 ----------------------
