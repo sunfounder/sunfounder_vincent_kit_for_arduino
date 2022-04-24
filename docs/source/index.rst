@@ -21,8 +21,6 @@ Here is the Email: cs@sunfounder.com.
 .. toctree::
     :maxdepth: 2
     
-    components_list
-    introduction
     components/component_list
     arduino/play_with_arduino
     pictoblox/play_with_scratch
