@@ -1,0 +1,125 @@
+.. _ar_overheat_monitor:
+
+3.3 Overheat Monitor
+=====================
+
+Overview
+-----------------
+
+You may want to make an overheat monitoring device that applies to various 
+situations. When the temperature of room is above 30°C in summer, the electric 
+fan or the air conditioner will be turned on automatically. If the refrigerator 
+stops to refrigerate, there will emit alarm. When the CPU gets overheated, the 
+water-cooling system turns on. Next, we will use thermistor, relay, button, 
+rotary encoder and LCD to make an intelligent temperature monitoring device 
+whose threshold is adjustable. You can make it suitable for the scene you want 
+by inserting different peripherals into the relay and using a rotary encoder to 
+adjust the high temperature threshold.
+
+Components Required
+------------------------
+
+.. image:: img/Part_three_3.1.png
+    :align: center
+
+.. image:: img/Part_three_3.2.png
+    :align: center
+
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_resistor`
+* :ref:`cpn_led`
+* :ref:`cpn_button`
+* :ref:`cpn_i2c_lcd1602`
+* :ref:`cpn_rotary`
+
+Fritzing Circuit
+-----------------------
+
+In this example, the component modules are connected as shown in the
+table.
+
+.. image:: img/Part_three_3_Fritzing_Circuit.png
+    :align: center
+
+.. image:: img/image276.png
+   :alt: 3.3 Overheat Monitor_bb
+   :align: center
+
+Schematic Diagram
+-------------------------
+
+.. image:: img/image277.png
+   :align: center
+
+
+Code
+--------------
+
+.. note::
+
+    * You can open the file ``3.3_overheatMonitor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.3_overheatMonitor`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Then :ref:`ar_upload_code` to the board.
+    * Please make sure you have added the ``LiquidCrystal_I2C`` library, detailed tutorials refer to :ref:`add_libraries_ar`.
+
+
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/ed5a53dd-9d6d-43f7-b5f1-c240a1c320fb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Example Explanation
+-------------------------
+
+The flow diagram of the project is as follows:
+
+.. image:: img/Part_three_3_Example_Explanation.png
+   :align: center
+
+By using EEPROM.h library, the high temperature threshold is saved in
+EEPROM to avoid the value reset after the restart of MCU.
+
+**Library Functions：**
+
+.. code-block:: arduino
+
+    void write(address,value)
+
+Write a byte to the EEPROM.
+
+.. code-block:: arduino
+
+    void Read(address)
+
+Reads a byte from the EEPROM. Locations that have never been written to
+have the value of 255.
+
+.. code-block:: arduino
+
+    void update(address,value)
+
+Write a byte to the EEPROM. The value is written only if differs from
+the one already saved at the same address.
+
+.. code-block:: arduino
+
+    void put(address,value)
+
+Write any data type or object to the EEPROM.
+
+.. code-block:: arduino
+
+    void get(address)
+
+Read any data type or object from the EEPROM.
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image279.jpeg
+   :align: center
+
+

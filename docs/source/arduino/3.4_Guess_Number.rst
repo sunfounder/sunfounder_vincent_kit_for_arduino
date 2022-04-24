@@ -1,0 +1,101 @@
+.. _ar_guess_number:
+
+3.4 Guess Number
+==================
+
+Overview
+----------------
+
+Guessing Numbers is a fun party game where you and your friends take
+turns inputting a number (0~99). The range will be smaller with the
+inputting of the number till a player answers the riddle correctly. Then
+the player is defeated and punished. For example, if the lucky number is
+51 which the players cannot see, and the player ① inputs 50, the prompt
+of number range changes to 50~99; if the player ② inputs 70, the range
+of number can be 50~70; if the player ③ inputs 51, he or she is the
+unlucky one. Here, we use IR Remote Controller to input numbers and use
+LCD to output outcomes.
+
+Components Required
+------------------------
+
+.. image:: img/Part_three_4.png
+    :align: center
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_i2c_lcd1602`
+* :ref:`cpn_receive`
+
+
+Fritzing Circuit
+---------------------
+
+In this example, the wiring of LCD1602 and infrared receiving module is
+as follows.
+
+.. image:: img/image280.png
+   :align: center
+
+Schematic Diagram
+----------------------
+
+.. image:: img/image281.png
+   :align: center
+
+
+Code
+--------------
+
+.. note::
+
+    * You can open the file ``3.4_guessNumber.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Then :ref:`ar_upload_code` to the board.
+    * Please make sure you have added the ``IRremote`` and ``LiquidCrystal_I2C`` libraries, detailed tutorials refer to :ref:`add_libraries_ar`.
+
+
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfbecaf-8e6c-4868-95d2-ab09f8d818a7/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Example Explanation
+---------------------------
+
+.. image:: img/Part_three_4_Example_Explanation.png
+    :align: center
+
+In order to make the number guessing game become vivid and funny, we
+need to achieve the following functions:
+
+1. The lucky number will be displayed when we start and reset the game,
+   and the number range prompt is reset to 0 ~ 99.
+
+2. LCD will display the number being input and the number range prompt.
+
+3. After inputting two digits, there appears result judgment
+   automatically.
+
+4. If you input a single digit, you can press the CYCLE key (the key at
+   the center of the Controller) to start the result judgment.
+
+5. If the answer is not guessed, the new number range prompt will be
+   displayed (if the lucky number is 51 and you enter 50, the number
+   range prompt will change to 50~99).
+
+6. The game is automatically reset after the lucky number is guessed, so
+   that the player can play a new round.
+
+7. The game can be reset by directly pressing the POWER button (the
+   button in the upper left corner).
+
+In conclusion, the work flow of the project is shown in the flow chart.
+
+Phenomenon Picture
+-----------------------
+
+.. image:: img/image283.jpeg
+   :align: center
+

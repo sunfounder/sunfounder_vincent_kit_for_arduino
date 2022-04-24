@@ -1,0 +1,102 @@
+.. _ar_humiture:
+
+2.32 DHT11 Module
+==================
+
+Overview
+--------------
+
+In this lesson, you will learn how to use DHT11 Module. The DHT11 is a
+basic, ultra low-cost digital temperature and humidity sensor. It uses a
+capacitive humidity sensor and a thermistor to measure the surrounding
+air, and spits out a digital signal on the data pin (no analog input
+pins are needed).
+
+Components Required
+-----------------------
+
+.. image:: img/Part_two_32.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_humiture`
+
+Fritzing Circuit
+----------------------
+
+In this example, we can directly connect the pins of DHT11
+Module to the pins of Mega 2560 Board, and we use pin 4 to read the
+signal of DHT11 Module. Connect the pin「+」of DHT11 Module to 5V, the
+pin「-」 to GND, and the pin OUT to pin 4.
+
+.. image:: img/image241.png
+    :align: center
+
+**Wiring Diagram**
+--------------------
+
+.. image:: img/image242.png
+    :align: center
+
+Code
+----------
+
+.. note::
+
+    * You can open the file ``2.32_dhtModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.32_dhtModule`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Then :ref:`ar_upload_code` to the board.
+    * Please make sure you have added the library called ``dht``, detailed tutorials refer to :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/f8605323-827f-4741-b414-10241e4c9afa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the codes are uploaded to the Mega2560 board, the serial monitor
+will continue to output the current temperature and humidity values of
+the environment.
+
+Code Analysis
+-------------------
+
+The function of the module is included in the library dht.h.
+
+.. code-block:: arduino
+
+    #include <dht.h> 
+
+**Library Functions:**
+
+.. code-block:: arduino
+    
+    dht
+
+Creates a new instance of the dht class that represents a particular
+DHT-11 module attached to your Arduino board.
+
+.. code-block:: arduino
+
+    int read11(uint8_t pin)
+
+This function will return CHECK values.
+
+**DHTLIB_OK** means that DHT-11 is in good condition;
+
+**DHTLIB_ERROR_CHECKSUM** represents that the value may be abnormal;
+
+**DHTLIB_ERROR_TIMEOUT** indicates that there is timeout.
+
+The function will store the detected humidity and temperature into the
+variables with the same name in dht class.
+
+The function should be called and used directly in the main program.
+(e.g.
+Serial\ **.**\ println\ **(**\ DHT\ **.**\ temperature\ **,**\ 1\ **);**)
+
+
+Phenomenon Picture
+-----------------------
+
+.. image:: img/image243.jpeg
+   :align: center

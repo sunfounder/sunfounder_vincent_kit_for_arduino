@@ -1,0 +1,87 @@
+.. _ar_keypad:
+
+2.19 Keypad
+============
+
+Overview
+-------------
+
+In this lesson, you will learn to use Keypad. Keypad can be applied into
+various kinds of devices, including mobile phone, fax machine, microwave
+oven and so on. It is commonly used in user input.
+
+Components Required
+-------------------------
+
+.. image:: img/Part_two_19.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_keypad`
+
+Fritzing Circuit
+---------------------
+
+In this example, we extend the pins 1~8 of Keypad to connect to the
+digital pins 2~9.
+
+.. image:: img/image176.png
+
+Schematic Diagram
+----------------------
+
+.. image:: img/image177.png
+   :align: center
+
+Code
+-----------
+
+
+.. note::
+
+    * You can open the file ``2.19_keypad.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.19_keypad`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Then :ref:`ar_upload_code` to the board.
+    * Please make sure you have added the library called ``Keypad``, detailed tutorials refer to :ref:`add_libraries_ar`.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/89e21aab-1a9c-4bf7-a0b3-a9b80f4d2d96/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the codes to the Mega2560 board, on the serial monitor,
+you can see the value of the key currently pressed on the Keypad.
+
+Code Analysis
+-------------------
+
+By calling the Keypad.h library, you can easily use Keypad.
+
+.. code-block:: arduino
+
+    #include <Keypad.h> 
+
+**Library Functions：**
+
+.. code-block:: arduino
+
+    Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
+
+Initializes the internal keymap to be equal to userKeymap.
+
+userKeymap: The symbols on the buttons of the keypads.
+
+row, col: Pin configuration.
+
+numRows, numCols: Keypad sizes.
+
+.. code-block:: arduino
+
+    char getKey()
+
+Returns the key that is pressed, if any. This function is non-blocking.
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image178.jpeg
+   :align: center

@@ -1,0 +1,69 @@
+.. _ar_slide:
+
+2.16 Slide Switch
+==================
+
+Overview
+------------
+
+In this lesson, you will get to know something about Switch. A slide
+switch, just as its name implies, is to slide the switch bar to connect
+or break the circuit, and further switch circuits. The slide switch is
+commonly used in low-voltage circuit. It has the features of flexibility
+and stability, and applies in electric instruments and electric toys
+widely.
+
+Components Required
+------------------------
+
+.. image:: img/Part_two_16.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_resistor`
+* :ref:`cpn_slide`
+* :ref:`cpn_capacitor`
+
+Fritzing Circuit
+---------------------
+
+In this example, digital pin 2 is used to read the signal of Switch. In
+addition, you need to connect a 10 kΩ resistor and a 104 capacitor in
+parallel to form a RC circuit (Resistor - Capacitance circuit) which is
+set between pin 2 and GND to realize debounce that may arise from your 
+toggle of switch.
+
+.. image:: img/image160.png
+   :align: center
+
+Schematic Diagram
+
+.. image:: img/image161.png
+   :align: center
+
+Code
+---------
+
+.. note::
+
+    * You can open the file ``2.16_switch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.16_switch`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
+    * Then :ref:`ar_upload_code` to the board.
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/952c55eb-b08b-4c4a-8107-07a946183457/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After the codes are uploaded to the Mega2560 board, you can open the
+serial monitor to check the readings of the pin. When the Switch toggles
+to the left, the serial monitor displays 「1」; when toggles to the
+right, the serial monitor displays「0」. Refer to :ref:`digital_read` to check the code explanation.
+
+
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image162.jpeg

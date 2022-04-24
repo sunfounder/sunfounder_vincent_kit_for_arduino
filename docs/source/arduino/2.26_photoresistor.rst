@@ -1,0 +1,70 @@
+.. _ar_photoresistor:
+
+2.26 Photoresistor
+===================
+
+Overview
+---------------
+
+In this lesson, you will learn about Photoresistor. Photoresistor is applied in 
+many electronic goods, such as the camera meter, clock radio, alarm device (as beam detector), 
+small night lights, outdoor clock, solar street lamps and etc. Photoresistor is placed in a 
+street lamp to control when the light is turned on. Ambient light falling on the photoresistor 
+causes street lamps to turn on or off.
+
+Components Required
+-------------------------
+
+.. image:: img/Part_two_26.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_resistor`
+* :ref:`cpn_photoresistor`
+
+Fritzing Circuit
+----------------------
+
+In this example, we use analog pin ( A0 ) to read the value of photoresistor. One
+pin of photoresistor is connected to 5V, the other is wired up to A0.
+Besides, a 10kΩ resistor is needed before the other pin is connected to
+GND.
+
+.. image:: img/image213.png
+    :align: center
+
+Schematic Diagram
+-----------------------
+
+.. image:: img/image214.png
+    :align: center
+
+Code
+---------------
+
+
+.. note::
+
+    * You can open the file ``2.26_photoresistor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.26_photoresistor`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
+    * Then :ref:`ar_upload_code` to the board.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/c04e97d3-635a-4be6-9d35-9dae005331ae/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the codes to the Mega2560 board, you can open the serial
+monitor to see the read value of the pin. When the ambient light becomes
+stronger, the reading will increase correspondingly, and the pin reading
+range is 「0」~「1023」. However, according to the environmental
+conditions and the characteristics of the photoresistor, the actual
+reading range may be smaller than the theoretical range. For a detailed
+explanation of the code, refer to :ref:`analog_read`.
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image215.jpeg
+   :align: center

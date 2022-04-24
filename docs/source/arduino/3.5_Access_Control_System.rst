@@ -1,0 +1,101 @@
+.. _ar_access_system:
+
+3.5 Access Control System
+==========================
+
+Overview
+------------
+
+The access control system is the system that is used to control the
+entrance channel, which is developed on the basis of the traditional
+door lock. The traditional mechanical door lock is only a simple
+mechanical device, and no matter how reasonable the structural design
+is, how strong the material is, people can always open it through
+various means. The key to the entrance and exit (like an office
+building, a hotel room) is cumbersome. If the key is missed or replaced,
+the lock is to be replaced with the key. In order to solve these
+problems, the electronic magnetic card lock and the electronic coded
+lock are present, which has raised the management level of the access
+channel to a certain extent, and then the channel management enters into
+the electronic age.
+
+Components Required
+------------------------
+
+.. image:: img/Part_three_5.1.png
+    :align: center
+
+.. image:: img/Part_three_5.2.png
+    :align: center
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_buzzer`
+* :ref:`cpn_i2c_lcd1602`
+* :ref:`cpn_stepper_motor`
+* :ref:`cpn_keypad`
+* :ref:`cpn_power_module`
+
+Fritzing Circuit
+-----------------------
+
+In this example, Power Supply Module is used to power the breadboard. We
+get the GND of Mega 2560 Board connected to the cathode rail of the
+breadboard, GND of ULN2003 to the cathode rail of the breadboard, VCC to
+5V OUTPUT of Power Supply and the Stepper Motor to OUT1-OUT5 of ULN.
+
+.. image:: img/Part_three_5_Fritzing_Circuit.png
+    :align: center
+
+.. image:: img/image287.png
+   :align: center
+
+Schematic Diagram
+-----------------------
+
+.. image:: img/image288.png
+   :align: center
+
+
+Code
+--------------
+
+.. note::
+
+    * You can open the file ``3.5_accessControlSystem.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.5_accessControlSystem`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Then :ref:`ar_upload_code` to the board.
+    * Please make sure you have added the ``RFID1``, ``Keypad`` and ``LiquidCrystal_I2C`` libraries, detailed tutorials refer to :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/f7f9dd83-3ede-453e-806b-7420b9f7b29e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Example Explanation
+--------------------------
+
+The workflow of the access control system is shown in the flow chart.
+
+When there is no authorized ID identified (the variable “Approved”
+equals to 0), the device will perform functions of ID identification and
+password identification.
+
+If the authorized ID is identified (“Approved” equals to 1), the door
+will open. After that, the door will be closed a few seconds later and
+the identified status will be reset (“Approved” equals to 0).
+
+In addition to the core access control function, the project also uses
+LCD and active buzzer to complete the work of the user interaction
+system of the access control system.
+
+.. image:: img/Part_three_5_Example_Explanation.png
+   :align: center
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image290.jpeg
+   :align: center
+

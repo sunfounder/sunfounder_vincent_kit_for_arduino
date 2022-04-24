@@ -1,0 +1,71 @@
+.. _ar_potentiometer:
+
+2.22 Potentiometer
+===================
+
+Overview
+-------------
+
+In this lesson, you will learn about Potentiometer. Potentiometer is a
+resistor component with 3 terminals and its resistance value can be
+adjusted according to some regular variation.
+
+Components Required
+------------------------
+
+.. image:: img/Part_two_22.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_potentiometer`
+
+
+Fritzing Circuit
+----------------------
+
+.. image:: img/Part_two_22_Circuit.png
+    :align: center
+
+In this example, we use the analog pin (A0) to read the value
+of the potentiometer. By rotating the axis of the potentiometer, you can
+change the distribution of resistance among these three pins, changing
+the voltage on the middle pin. When the resistance between the middle
+and a outside pin connected to 5V is close to zero (and the resistance
+between the middle and the other outside pin is close to 10kΩ), the
+voltage at the middle pin is close to 5 V. The reverse operation (the
+resistance between the middle and a outside pin connected to 5V is close
+to 10kΩ) will make the voltage at the middle pin be close to 0V.
+
+
+Schematic Diagram
+-------------------------
+
+.. image:: img/Part_two_22_Diagram.png
+   :align: center
+
+Code
+---------
+
+.. note::
+
+    * You can open the file ``2.22_potentiometer.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.22_potentiometer`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
+    * Then :ref:`ar_upload_code` to the board.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/bb9cc78f-0156-4c3e-8603-742e71ef692d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the codes to the Mega2560 board, you can open the serial
+monitor to see the reading value of the pin. When rotating the axis of
+the potentiometer, the serial port monitor will print the value
+「0」~「1023」. For the detailed explanation of code, turn to check 
+:ref:`analog_read`.
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image192.jpeg
+   :align: center

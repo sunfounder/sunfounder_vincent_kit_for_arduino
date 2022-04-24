@@ -1,0 +1,98 @@
+.. _lcd1602:
+
+2.4 LCD1602
+=================
+
+LCD1602 can be used to display 2x16 characters, now we let it display the corresponding characters with the character sprites on the stage.
+
+When you click the Hello on the stage one by one, they will have different animation effects and the characters will be displayed on the LCD1602 at the same time.
+
+.. image:: img/5_hello.png
+
+
+You Will Learn
+---------------------
+
+- Using the LCD1602
+- Select multiple different sprites
+- Change sprite size, rotation angle, color and show or hide.
+
+
+Build the Circuit
+---------------------
+
+.. image:: img/circuit/lcd1602_circuit.png
+
+* :ref:`cpn_breadboard`
+* :ref:`cpn_i2c_lcd1602`
+
+Programming
+------------------
+
+**1. Select sprite**
+
+Delete the default sprite, click **Choose a Sprite**, then click **letters** and select the sprite you want.
+
+.. image:: img/5_sprite.png
+
+For example, I chose Hello, as shown below.
+
+.. image:: img/5_sprite1.png
+
+Now to set different effects for these sprites and display them on the LCD1602 while clicking.
+
+**2. H is zoom in and zoom out**
+
+Click on the **H** sprite, and now write a script for it.
+
+When the sprite **H** is clicked, make its size to 50%, then restore it; while displaying H on the first row and column of the LCD1602.
+
+* [set size to]: From **Looks** palette, used to set the size of the sprite, from 0% to 100%.
+* [set cursor at columan row]: From **Display Modules** palette, used to set the cursor at a specific row of the LCD1602 to start displaying characters.
+* [write display]: From the **Display Modules** palette, used to display characters or strings on the LCD1602.
+
+.. image:: img/5_h.png
+
+The distribution of rows and columns on the LCD1602 is shown in the figure.
+
+.. image:: img/5_row.png
+
+**3. E is flipping left and right**
+
+Click on the **E** sprite, and now write a script for it.
+
+When the sprite **E** is clicked, have it turn 180 degrees clockwise, then 180 degrees counterclockwise so you can see it flip left and right; and show H in the first row and column 2 of the LCD1602.
+
+* [turn degrees]: From the **Motions** palette, used to turn the sprite clockwise or counterclockwise, the range is 0-360 degrees.
+
+.. image:: img/5_lcd.png
+
+**4. L is slowly shrinking and zooming in**
+
+Click on the **first L** sprite and now write a script for it.
+
+When the sprite **L** is clicked, use the [repeat] block to increase its size by 50% (5 times, 10 each time), then shrink it back to its original size in the same way, while displaying L in the first row and column 3 of the LCD1602.
+
+* [change size by]: From the Motions palette, used to change the size of the sprite.
+
+.. image:: img/5_l.png
+
+**5. The second L is changing color**
+
+Click on the **second L** sprite and now write a script for it.
+
+When the sprite **L** is clicked, use the [repeat] block to repeat 10 times at a rate of 20 increments to switch between colors and return to the original color. Also display L in the first row and column 4 of the LCD1602.
+
+* [`change color effect by <https://en.scratch-wiki.info/wiki/Graphic_Effect#Changing_of_colors_using_the_Color_Effect_block>`_]: Used to change the color Effect, one costume can take on 200 different color-schemes using the color effect, 0 and 200 are the same color.
+
+.. image:: img/5_2l.png
+
+**6. O is hide and show**
+
+Click on the **O** sprite and now write a script for it.
+
+When the **O** sprite is clicked, it repeats the hide and show process 3 times, while displaying O in the first row and column 5 of the LCD1602.
+
+* [Hide] & [Show]: make the sprite hide and show.
+
+.. image:: img/5_o.png

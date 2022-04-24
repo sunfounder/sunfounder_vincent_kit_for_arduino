@@ -1,0 +1,95 @@
+.. _ar_mpu6050:
+
+2.34 MPU6050 Module
+====================
+
+Overview
+-------------
+
+In this lesson, you will learn how to use MPU6050. MPU-6050 is a 6-axis
+(combined 3-axis Gyroscope, 3-axis Accelerometer) motion tracking
+devices. It is often used for augmented reality and electronic image
+stabilization (EIS: Electronic Image Stabilization), optical image
+stabilization (OIS: Optical Image Stabilization), "Zero touch" gesture
+user interface.
+
+Components Required
+-------------------------
+
+.. image:: img/Part_two_34.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_mpu6050`
+
+Fritzing Circuit
+------------------------
+
+In this example, we drive MPU6050 with IIC. We inset MPU6050
+into the breadboard; get the VCC connected to 5V, GND to GND, SCL to pin
+SCL 21, and SDA to the pin SDA 20.
+
+.. image:: img/image253.png
+   :align: center
+
+Schematic Diagram
+----------------------
+
+.. image:: img/image254.png
+   :align: center
+
+Code
+-------------
+
+.. note::
+
+    * You can open the file ``2.34_MPU6050.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.34_MPU6050`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
+    * Then :ref:`ar_upload_code` to the board.
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfae41b-b651-41c2-830b-f2d9ea70efe8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+After uploading the codes to the Mega2560 board, you can open the serial
+monitor to see the gravity acceleration and angular velocity of MPU6050
+in each direction.
+
+Code Analysis
+--------------------
+
+In the stationary desktop state, the Z-axis acceleration is 1 gravity
+unit, and the X and Y axes are 0.
+
+Before your use, you need to calibrate the module, the methods are as
+follows:
+
+1. MPU6050 modules are placed horizontally on the desktop and then you can
+   fix them with clamps or adhesive tape.
+
+2. Run the sample codes to get the RAW DATA of MPU6050 when it is static.
+
+3. Add compensation according to the readings when MPU6050 is static.
+
+Take MPU6050 we use as an example, and the results of compensation are
+as follows:
+
+.. code-block:: arduino
+
+   Serial.print(AcX / 65536  * ACCELE_RANGE - 0.02); 
+   Serial.print(AcY / 65536  * ACCELE_RANGE + 0);
+   Serial.print(AcZ/65536  * ACCELE_RANGE + 0.02); 
+   Serial.print(GyX / 65536  * GYROSC_RANGE + 1.70);
+   Serial.print(GyY/65536  * GYROSC_RANGE - 1.70);
+   Serial.print(GyZ/65536*GYROSC_RANGE + 0.25);
+
+.. image:: img/Part_two_34_Code_Analysis.png
+   :align: center
+
+Phenomenon Picture
+------------------------
+
+.. image:: img/image257.jpeg
+   :align: center

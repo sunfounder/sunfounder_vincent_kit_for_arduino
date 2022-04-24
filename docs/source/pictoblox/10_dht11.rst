@@ -1,0 +1,72 @@
+.. _humiture:
+
+2.10 Read Temperature and Humidity
+=================================================
+
+Previous projects have been using stage mode, but some functions are only available in upload mode, such as serial communication function. 
+In this project, we will print the temperature and humidity of the DHT11 using the Serial Monitor in :ref:`Upload Mode`.
+
+.. image:: img/11_serial.png
+
+You Will Learn
+---------------------
+
+- Get the temperature and humidity from the DHT11 module
+- Serial Monitor for :ref:`Upload Mode`
+- Add extension
+
+Build the Circuit
+-----------------------
+
+The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity.
+
+Now build the circuit according to the following diagram.
+
+.. image:: img/circuit/dht11_circuit.png
+
+* :ref:`cpn_breadboard`
+* :ref:`cpn_humiture` 
+
+Programming
+------------------
+
+**1. Adding Extensions**
+
+Switch to **Upload** mode, click the **Add Extension** button in the bottom left corner, then select **Communication** to add it, and it will appear at the end of the palette area.
+
+.. image:: img/11_addcom.png
+
+**2. Initializing the Arduino Uno and Serial Monitor**
+
+In **Upload** mode, start Arduino Uno and then set the serial port baud rate.
+
+* [when Arduino Starts up]: In **Upload** mode, start Arduino Uno.
+* [set serial baud rate to]: From the **Communications** palette, used to set the baud rate of serial port 0, default is 115200. If you are using Mega2560, then you can choose to set baud rate in serial port 0~3.
+
+.. image:: img/11_init.png
+
+**3. Read temperature and humidity**
+
+Create 2 variables **tem** and **humi** to store the temperature and humidity respectively, the code will appear on the right side while you drag and drop the block.
+
+.. image:: img/11_readtem.png
+
+**4. Print them on the Serial Monitor**
+
+Write the read temperature and humidity to the Serial Monitor. To avoid transferring too fast and causing PictoBlox to jam, use the [wait seconds] block, to add some time interval for the next print.
+
+.. image:: img/11_writeserial.png
+
+**5. Uploading code**
+
+Unlike the **Stage** mode, the code in **Upload** mode needs to be uploaded to the Arduino board using the **Upload Code** button to see the effect. This also allows you to unplug the USB cable and still have the program running.
+
+.. image:: img/11_upload.png
+
+**6. Turn on the serial monitor**
+
+Now open the **Serial Monitor** to see the temperature and humidity.
+
+.. image:: img/11_serial.png
+
+

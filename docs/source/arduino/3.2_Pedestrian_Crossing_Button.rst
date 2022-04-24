@@ -1,0 +1,102 @@
+.. _ar_pedestrian:
+
+3.2 Pedestrian Crossing Button
+================================
+
+Overview
+-------------
+
+When pedestrians cross the street, they just need to touch the button on
+the lamppost of the roadside signal lamp, and the green light above the
+traffic lane will turn into red then pedestrians can pass safely. Thus,
+the hard situation of citizens crossing the street is comprehensively
+resolved. At the same time, when there is no pedestrian to press, the
+light above the lane that is set for vehicles to pass will always be
+green, thus greatly improving the use efficiency of the road and traffic
+capacity.
+
+Components Required
+------------------------
+
+.. image:: img/Part_three_2.png
+    :align: center
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_resistor`
+* :ref:`cpn_led`
+* :ref:`cpn_74hc595`
+* :ref:`cpn_7_segment`
+* :ref:`cpn_touch`
+
+
+Fritzing Circuit
+----------------------
+
+In this example, 74hc595, 7-Segment, LED, touch sensor are to be
+connected according to the chart.
+
+.. image:: img/Part_three_2_Fritzing_Circuit.png
+    :align: center
+
+.. image:: img/image269.png
+   :alt: 3.2 Pedestrian Crossing Button_bb
+   :align: center
+
+Schematic Diagram
+-----------------------
+
+.. image:: img/image270.png
+   :align: center
+
+Code
+--------------
+
+.. note::
+
+    * You can open the file ``3.2_pedestrianCrossingButton.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.2_pedestrianCrossingButton`` directly.
+    * Or copy this code into Arduino IDE 1/2.
+    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
+    * Then :ref:`ar_upload_code` to the board.
+
+.. raw:: html
+
+   <iframe src=https://create.arduino.cc/editor/sunfounder01/16418135-17f6-48d6-8ddf-c7bcd9858dbe/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+Example Explanation
+-------------------------
+
+The workflow of the project is as shown in the flow chart.
+The function of number display of 7-Segment is realized by writing 8 bit
+data into 74HC595. When there is a need of displaying「0」, the pins
+abcdef of the segment display will be connected to the high level. The
+pins, g and dp need to be connected to low level to
+write「0x3f」(B00111111) in the codes. The complete codes for number
+display of 7-Segment are as follows.
+
+.. image:: img/Part_three_2_Example_Explanation.png
+    :align: center
+
+=========== ================== ========
+**Numbers** **Common Cathode** 
+\           (DP)GFEDCBA        Hex Code
+0           00111111           0x3f
+1           00000110           0x06
+2           01011011           0x5b
+3           01001111           0x4f
+4           01100110           0x66
+5           01101101           0x6d
+6           01111101           0x7d
+7           00000111           0x07
+8           01111111           0x7f
+9           01101111           0x6f
+=========== ================== ========
+
+Phenomenon Picture
+-------------------------
+
+.. image:: img/image272.jpeg
+   :align: center
+
