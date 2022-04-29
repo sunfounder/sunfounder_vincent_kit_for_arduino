@@ -1,7 +1,7 @@
 .. _starfish:
 
 2.21 SPIEL - Starfishe fangen
-============================
+=====================================
 
 Hier wollen wir ein Spiel zum Fangen von Starfishen machen. Zu Beginn des Skripts schwimmt ein Starfish bequem auf der Bühne, und ein Taucher schwimmt ebenfalls nach rechts und links. Du musst die Tiefe des Wasserstandssensormoduls im Wasser steuern, damit der Taucher auf der Bühne den Starfish fangen kann, und für jeden gefangenen Starfish wird die Anzahl um 1 erhöht.
 
