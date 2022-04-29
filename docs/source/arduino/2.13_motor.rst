@@ -1,0 +1,98 @@
+.. _ar_motor:
+
+2.13 Motor
+==========
+
+Überblick
+---------------------
+
+In dieser Lektion lernen Sie, wie man einen Motor verwendet, dessen Funktionsprinzip darin besteht, dass die erregte Spule gezwungen wird, sich im Magnetfeld zu drehen, dann dreht sich der Rotor des Motors entsprechend, woraufhin das Ritzel das Schwungrad des Motors antreibt, um sich zu drehen.
+
+Erforderliche Komponenten
+----------------------------------
+
+.. image:: img/list_2.13.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_l293d`
+* :ref:`cpn_motor`
+* :ref:`cpn_power_module`
+
+Fritzing-Schaltung
+---------------------------
+
+In diesem Beispiel verwenden wir das Stromversorgungsmodul, um die Anode und Kathode des Steckbretts mit Strom zu versorgen. GND des Mega 2560 Boards ist mit der Kathode verbunden.
+
+
+.. image:: img/image141.png
+
+Schematische Darstellung
+---------------------------
+
+.. image:: img/image459.png
+
+Code
+----------
+
+.. note::
+
+    * Sie können die Datei ``2.13_motor.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.13_motor`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/97ab73d2-6658-43e3-b741-c95f5040c15f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem Sie die Codes auf das Mega2560-Board hochgeladen haben, können Sie die Drehrichtung des Motors auswählen, indem Sie im seriellen Monitor 「A」 oder 「B」 eingeben.
+
+
+Code-Analyse
+-------------
+Der Motor kann angetrieben werden, indem eine Spannungsdifferenz zwischen den Kupferblechen auf beiden Seiten des Motors bereitgestellt wird. Daher brauchen Sie nur 0 für die Spannung der einen Seite des Kupferblechs und 5 V für die andere Seite zu schreiben. Ändern Sie den geschriebenen analogen Signalwert, um Richtung und Geschwindigkeit anzupassen.
+
+.. code-block:: arduino
+
+    void clockwise(int Speed)
+    {
+    analogWrite(motor1A,0);
+    analogWrite(motor2A,Speed);
+    }
+
+    void anticlockwise(int Speed)
+    {
+    analogWrite(motor1A,Speed);
+    analogWrite(motor2A,0);
+    }
+
+In diesem Beispiel wird Serial.Read() verwendet, um die Richtung des Motors zu steuern.
+
+Wenn Sie ``A`` in den seriellen Monitor eingeben, wird die Funktion im Uhrzeigersinn (255) aufgerufen, um den Motor mit der Geschwindigkeit von 255 drehen zu lassen. Geben Sie ``B`` ein, und der Motor dreht sich in umgekehrter Richtung.
+
+.. code-block:: arduino
+
+    void loop() {
+    if (Serial.available() > 0) {
+        int incomingByte = Serial.read();
+        switch(incomingByte){
+        case 'A':
+            clockwise(255);
+            Serial.println("The motor rotate clockwise.");  
+            break;
+        case 'B':
+            anticlockwise(255);
+            Serial.println("The motor rotate anticlockwise."); 
+            break;
+        }
+    }
+    delay(3000);
+    stopMotor();
+    }
+
+Phänomen Bild
+------------------
+
+.. image:: img/image143.jpeg

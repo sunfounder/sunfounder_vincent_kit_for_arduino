@@ -1,0 +1,138 @@
+.. _ar_lcd1602:
+
+2.9 I2C LCD1602 Modul
+======================
+
+Überblick
+-------------------
+
+In dieser Lektion lernen Sie LCD1602 kennen. LCD1602- oder 1602-Zeichen-Flüssigkristallanzeige, eine Art Punktmatrixmodul zum Anzeigen von Buchstaben, Zahlen, Zeichen usw.
+
+Erforderliche Komponenten
+------------------------------------
+
+.. image:: img/list_2.9.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_i2c_lcd1602`
+
+
+Fritzing-Schaltung
+-----------------------------
+
+In diesem Beispiel verbinden wir den ersten Pin GND von LCD1602 mit GND, den zweiten Pin VCC mit 5 V, den dritten Pin SDA mit dem Pin SDA 20 und den vierten Pin SCL mit dem Pin SCL 21.
+
+.. image:: img/image113.png
+
+Schematische Darstellung
+-------------------------------
+
+.. image:: img/image446.png
+
+.. note::
+    Die SDA und SCL des Mega2560-Boards sind die Pins 20 und 21.
+
+Code
+-------
+
+.. note::
+
+    * Sie können die Datei ``2.9_i2clcd1602.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.9_i2clcd1602`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``LiquidCrystal_I2C`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/ca004845-7cd3-4fec-a85c-732a1a23c8b6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Laden Sie die Codes auf die Mega2560-Platine hoch, der Inhalt, den Sie in den seriellen Monitor eingeben, wird auf dem LCD gedruckt.
+
+.. note::
+    Informationen zum ASCII-Code und zur Zeicheneingabe im seriellen Monitor finden Sie in :ref:`ar_serial_read`.
+
+
+Code-Analyse
+----------------
+
+Durch den Aufruf der Bibliothek LiquidCrystal_I2C.h können Sie das LCD einfach ansteuern.
+
+.. code-block:: arduino
+
+    #include "LiquidCrystal_I2C.h"
+
+**Bibliotheksfunktionen：**
+
+.. code-block:: arduino
+
+    LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
+
+Erstellt eine neue Instanz der LiquidCrystal_I2C-Klasse, die ein bestimmtes LCD darstellt, das an Ihr Arduino-Board angeschlossen ist.
+
+* ``lcd_AddR``: Die Adresse des LCD ist standardmäßig 0x27.
+* ``lcd_cols``: Der LCD1602 hat 16 Spalten.
+* ``lcd_rows``: Der LCD1602 hat 2 Zeilen.
+
+
+.. code-block:: arduino
+
+    void init()
+
+Initialisieren Sie das LCD.
+
+.. code-block:: arduino
+
+    void backlight()
+
+Schalten Sie die (optionale) Hintergrundbeleuchtung ein.
+
+.. code-block:: arduino
+
+    void nobacklight()
+
+Schalten Sie die (optionale) Hintergrundbeleuchtung aus.
+
+.. code-block:: arduino
+
+    void display()
+
+Schalten Sie das LCD-Display ein.
+
+
+.. code-block:: arduino
+
+    void nodisplay()
+
+Schalten Sie das LCD-Display schnell aus.
+
+
+.. code-block:: arduino
+
+    void clear()
+
+Anzeige löschen, Cursorposition auf Null setzen.
+
+
+.. code-block:: arduino
+
+    void setCursor(uint8_t col,uint8_t row)
+
+Setzen Sie die Cursorposition auf col,row.
+
+
+.. code-block:: arduino
+
+    void print(data,BASE)
+
+Druckt Text auf dem LCD.
+
+* ``data``: Die zu druckenden Daten (char, byte, int, long oder string).
+* ``BASE (optional)``: Die Basis, in der Zahlen gedruckt werden: BIN für binär (Basis 2), DEC für dezimal (Basis 10), OCT für oktal (Basis 8), HEX für hexadezimal (Basis 16).
+
+Phänomen Bild
+------------------
+
+.. image:: img/image115.jpeg

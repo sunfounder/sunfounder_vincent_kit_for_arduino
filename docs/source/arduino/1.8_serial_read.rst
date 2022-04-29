@@ -1,0 +1,119 @@
+.. _ar_serial_read:
+
+1.8 Serielles Lesen
+================================
+
+Überblick
+-------------
+
+Zusätzlich zum Lesen von Daten von den elektronischen Komponenten kann die Mega2560-Platine die Dateneingabe im Monitor der seriellen Schnittstelle lesen, und Sie können ``Serial.read()`` als Controller des Schaltungsexperiments verwenden. Dann verwenden wir LED, um mit dem Serial zu experimentieren. ``Read()``-Anweisung zum Steuern der LED zum Ein- und Ausschalten.
+
+Erforderliche Komponenten
+------------------------------------
+
+.. image:: img/list_1.8.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_led`
+* :ref:`cpn_resistor`
+
+Fritzing-Schaltung
+--------------------------
+
+In diesem Beispiel verwenden wir den digitalen Pin 9, um die LED anzusteuern. Wenn im seriellen Monitor eine 1 eingegeben wird, leuchtet die LED. Bei Eingabe von 0 erlischt die LED.
+
+.. image:: img/image30.png
+
+
+Schematische Darstellung
+-------------------------------
+
+.. image:: img/image401.png
+
+
+Code
+-------
+
+.. note::
+
+    * Sie können die Datei ``1.8_serialRead.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\1.8_serialRead`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/ca230e6c-c8c1-4101-87cf-25da1130f414/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem die Codes auf die Mega2560-Karte hochgeladen wurden, schalten Sie bitte den Monitor für die serielle Schnittstelle ein. Die Eingabe von „1“ kann die LED einschalten und die Eingabe von „0“ kann sie ausschalten.
+
+.. image:: img/image52.png
+
+
+Code-Analyse
+-----------------------
+
+Deklarieren Sie den digitalen Pin 9 als ledPin.
+
+.. code-block:: arduino
+
+    const int ledPin = 9;
+
+``Serial.read()`` liest ein einzelnes Byte des ASCII-Werts, und daher müssen Sie eine Variable vom Typ int, incomingByte, deklarieren, um die erfassten Daten zu speichern.
+
+.. code-block:: arduino
+
+    int incomingByte = 0;
+
+Führen Sie die serielle Kommunikation in ``setup()`` aus und stellen Sie die Datenrate auf 9600 ein.
+
+.. code-block:: arduino
+
+    Serial.begin(9600);
+
+Stellen Sie ledPin auf OUTPUT-Modus.
+
+.. code-block:: arduino
+
+    pinMode(ledPin,OUTPUT);
+
+Der Status des Monitors für die serielle Schnittstelle wird in loop() beurteilt, und die Informationsverarbeitung wird nur ausgeführt, wenn die Daten empfangen werden.
+
+.. code-block:: arduino
+
+    if (Serial.available() > 0){}
+
+Liest den Eingabewert im Monitor für die serielle Schnittstelle und speichert ihn in der Variable eingehendesByte.
+
+.. code-block:: arduino
+
+    incomingByte = Serial.read();
+
+Wenn das Zeichen „1“ erhalten wird, leuchtet die LED; wenn '0' erhalten wird, erlischt die LED.
+
+.. code-block:: arduino
+
+        if(incomingByte=='1'){digitalWrite(ledPin,HIGH);}
+        else if(incomingByte=='0'){digitalWrite(ledPin,LOW);}
+
+.. note::
+    ``Serial.read()`` übernimmt den ASCII-Wert in einem einzelnen Zeichen, was bedeutet, dass bei Eingabe von „1“ der erhaltene Wert nicht die Zahl „1“ ist, sondern das Zeichen „1“, dessen entsprechender ASCII-Wert 49 ist.
+
+
+※ Analog-Digital-Wandler
+-----------------------------
+
+Die ASCII-Codierung (American Standard Code for Information Interchange) stammt aus den 1960er Jahren. Es ist die Standardmethode, mit der Text numerisch codiert wird.
+
+Beachten Sie, dass die ersten 32 Zeichen (0-31) nicht druckbare Zeichen sind, die oft als Steuerzeichen bezeichnet werden. Die nützlicheren Zeichen wurden beschriftet.
+
+.. image:: img/image409.png
+.. image:: img/image410.png
+
+Phänomen Bild
+------------------
+
+.. image:: img/image36.jpeg

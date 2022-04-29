@@ -1,0 +1,67 @@
+.. _ar_reversing_aid:
+
+3.1 Rückfahrhilfe
+===================
+
+Überblick
+-------------
+
+Mit der Entwicklung von Wissenschaft und Technologie wurden viele Hightech-Produkte in Autos eingebaut, darunter das Rückfahrassistenzsystem. Hier verwenden wir Ultraschallsensoren, LCD, LED und Summer, um ein einfaches Ultraschall-Rückfahrassistenzsystem herzustellen.
+
+
+Erforderliche Komponenten
+----------------------------
+
+.. image:: img/Part_three_1.png
+    :align: center
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_buzzer`
+* :ref:`cpn_i2c_lcd1602`
+* :ref:`cpn_ultrasonic`
+
+Fritzing-Schaltung
+----------------------
+
+In diesem Beispiel ist die Verdrahtung unten dargestellt.
+
+.. image:: img/image264.png
+    :align: center
+
+Schematische Darstellung
+----------------------------
+
+.. image:: img/image265.png
+    :align: center
+
+Code
+------------
+
+.. note::
+
+    * Sie können die Datei ``3.1_reversingAid.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\3.1_reversingAid`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``LiquidCrystal_I2C`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/4bbcea82-c6cd-4658-90ce-9bcd291c58d4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Example Explanation
+---------------------------
+
+In diesem Projekt müssen wir die Interferenz zwischen dem LCD-Bildschirm und dem Alarmsystem so weit wie möglich vermeiden (z. B. ist die LED-Flackerzeit zu lang und die LCD-Aktualisierung verzögert), also vermeiden Sie bitte die Verwendung der delay()-Anweisung und verwenden Sie zwei separate Intervalle, um die Arbeitsfrequenz des LCD bzw. des Alarmsystems zu steuern. Sein Arbeitsablauf ist im Flussdiagramm dargestellt. Zur Analyse der Intervallfunktion siehe :ref:`ar_interval`.
+
+.. image:: img/Part_three_1_Example_Explanation.png
+    :align: center
+
+Phänomen Bild
+-------------------------
+
+.. image:: img/image267.jpeg
+   :align: center
+

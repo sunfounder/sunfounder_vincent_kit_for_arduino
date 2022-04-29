@@ -1,0 +1,119 @@
+.. _ar_rfid:
+
+2.35 RFID-RC522-Modul
+=======================
+
+Überblick
+-------------
+
+In dieser Lektion lernen Sie, wie Sie das RFID-Modul verwenden. RFID ist die Abkürzung für Radio Frequency Identification. Sein Arbeitsprinzip besteht darin, die kontaktlose Datenkommunikation zwischen dem Lesegerät und dem Etikett fortzusetzen, um das Ziel der Identifizierung des Ziels zu erreichen. Die Anwendung von RFID ist sehr umfangreich, derzeit sind die typischen Anwendungen Tierchips, Wegfahrsperre, Zugangskontrolle, Parkkontrolle, Produktionskettenautomatisierung, Materialverwaltung und so weiter.
+
+
+Erforderliche Komponenten
+----------------------------
+
+.. image:: img/Part_two_35.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_rfid`
+
+Fritzing-Schaltung
+---------------------
+
+In diesem Beispiel fügen wir den RFID in das Steckbrett ein. Verbinden Sie die 3,3 V von RFID mit 3,3 V, GND mit GND, RST mit Pin 2, SDA mit Pin 6, SCK mit Pin 5, MOSI mit Pin 4, MISO mit Pin 3 und IRQ mit Pin 7.
+
+
+.. image:: img/image259.png
+   :align: center
+
+Schematische Darstellung
+-------------------------
+
+.. image:: img/image260.png
+   :align: center
+
+Code
+-----------
+
+.. note::
+
+    * Sie können die Datei ``2.35_RFID.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.35_RFID`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``RFID1`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/81d293e2-aba5-4bc2-9c16-ddb45b6357a8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Wenn Sie die Codes auf das Mega2560-Board hochgeladen haben, können Sie Ihre RFID-Karte (geheimer Schlüssel) in der Nähe des RFID-Lesegeräts erhalten. Das Modul liest die Karteninformationen und druckt sie dann auf dem seriellen Monitor aus.
+
+Code-Analyse
+-------------------
+
+Die Funktionen des Moduls sind in der Bibliothek ``rfid1.h`` enthalten.
+
+.. code-block:: arduino
+
+    #include <rfid1.h>
+
+**Library Functions：**
+
+.. code-block:: arduino
+
+    RFID1
+
+Erstellen Sie eine neue Instanz der Klasse rfid1, die ein bestimmtes RFID-Modul darstellt, das an Ihr Arduino angeschlossen ist.
+
+
+.. code-block:: arduino
+
+    void begin(IRQ_PIN,SCK_PIN,MOSI_PIN,MISO_PIN,SDA_PIN,RST_PIN)
+
+Pin-Konfiguration.
+
+* ``IRQ_PIN,SCK_PIN,MOSI_PIN,MISO_PIN``: die für die SPI-Kommunikation verwendeten Pins.
+* ``SDA_PIN``: Synchroner Datenadapter.
+* ``RST_PIN``: Die zum Zurücksetzen verwendeten Pins.
+
+.. code-block:: arduino
+
+    void init()
+
+Initialisieren Sie den RFID.
+
+.. code-block:: arduino
+
+    uchar request(uchar reqMode, uchar *TagType);
+
+Suchen Sie nach Karte und lesen Sie den Kartentyp, und die Funktion gibt den aktuellen Lesestatus von RFID zurück und gibt bei Erfolg MI_OK zurück.
+
+reqMode: Suchmethoden. PICC_REQIDL ist definiert, dass 0x26 Befehlsbits (Suchen Sie die Karten, die sich nicht im Antennenbereich im Schlafmodus befinden).
+
+* ``*TagType``: Wird verwendet, um den Kartentyp zu speichern, und sein Wert kann 4 Byte betragen (z. B. 0x0400).
+
+
+.. code-block:: arduino
+
+    char * readCardType(uchar *TagType)
+
+Diese Funktion decodiert die vierstellige Hexadezimalzahl von ``*tagType`` in den spezifischen Kartentyp und gibt einen String zurück. Wenn 0x0400 übergeben wird, wird „MFOne-S50“ zurückgegeben.
+
+
+.. code-block:: arduino
+
+    uchar anticoll(uchar *serNum);
+
+Vermeiden Sie Konflikte und lesen Sie die Seriennummer der Karte. Die Funktion gibt den aktuellen Lesestatus von RFID zurück. Bei Erfolg gibt es ``MI_OK`` zurück.
+
+* ``*serNum``: Wird verwendet, um die Kartenseriennummer zu speichern und die 4-Byte-Kartenseriennummer zurückzugeben. Das 5. Byte ist ein Recheck-Byte (z. B. meine Magnetkarten-ID ist 5AE4C955).
+
+
+
+Phänomen Bild
+---------------------------
+
+.. image:: img/Part_two_35_Code_Analysis.png
+    :align: center

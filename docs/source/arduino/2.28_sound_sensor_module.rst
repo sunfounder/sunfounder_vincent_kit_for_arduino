@@ -1,0 +1,64 @@
+.. _ar_sound:
+
+2.28 Schallsensormodul
+=========================
+
+Überblick
+------------
+
+In dieser Lektion lernen Sie, wie Sie ein Schallsensormodul verwenden. Das Schallsensormodul bietet eine einfache Möglichkeit zum Erkennen von Schall und wird im Allgemeinen zum Erkennen der Schallintensität verwendet.
+
+
+Erforderliche Komponenten
+------------------------------
+
+.. image:: img/Part_two_28.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_sound`
+
+
+
+Fritzing-Schaltung
+-----------------------
+
+In diesem Beispiel können wir den Stift des Schallsensormoduls direkt mit dem Stift des Mega 2560-Boards verbinden, den Stift 「G」 des Schallsensormoduls mit GND verbinden, den Stift 「+」 mit 5 V, AO mit dem analogen Stift A0 und D0 an Digitalpin 2.
+
+
+.. image:: img/image223.png
+   :align: center 
+
+Schematische Darstellung
+-------------------------------
+
+.. image:: img/image224.png
+   :align: center 
+
+Code
+----------
+
+
+.. note::
+
+    * Sie können die Datei ``2.28_soundSensorModule.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.28_soundSensorModule`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/42164fe5-5ae0-4e26-bee8-e1f085e863e2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem Sie den Code auf das Mega2560-Board hochgeladen haben, können Sie den seriellen Monitor öffnen, um den gelesenen Wert des Pins zu sehen. Wenn die Umgebungsgeräusche lauter werden, ist der digitale Messwert 「1」 (stellen Sie das Potentiometer des Moduls ein, um den Schwellenwert zum Auslösen des hohen Pegels zu ändern), und der Lesewert des analogen Pins ändert sich erheblich; Wenn die Umgebung ruhig ist, ist der digitale Messwert 「0」 und der analoge Messwert ändert sich reibungslos.
+
+Der Bereich des analogen Lesens ist「0」~「1023」, aber beeinflusst von den Umgebungsbedingungen und den Eigenschaften des Schallsensors, kann der tatsächliche Lesebereich kleiner als der theoretische sein. Wenn ein Oszilloskop verwendet wird, ist die Änderung des analogen Messwerts des Schallsensors offensichtlicher.
+
+
+Bezüglich der detaillierten Code-Erklärung siehe :ref:`ar_analog_read` und :ref:`ar_digital_read`.
+
+Phänomen Bild
+------------------------
+
+.. image:: img/image225.jpeg
+   :height: 4.35278in

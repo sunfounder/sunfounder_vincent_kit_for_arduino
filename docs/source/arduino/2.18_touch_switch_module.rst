@@ -1,0 +1,60 @@
+.. _ar_touch:
+
+2.18 Berührungsschaltermodul
+====================================
+
+Überblick
+------------
+
+In dieser Lektion lernen Sie das Touch-Switch-Modul kennen. Er kann die herkömmlichen Schalterarten mit diesen Vorteilen ersetzen: komfortable Bedienung, feines Tastgefühl, präzise Steuerung und geringster mechanischer Verschleiß.
+
+Erforderliche Komponenten
+-----------------------------------
+
+.. image:: img/Part_two_18.png
+
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_touch`
+
+Fritzing-Schaltung
+-----------------------
+
+In diesem Beispiel wird Pin 2 verwendet, um das Signal des Berührungsschaltermoduls zu lesen.
+
+
+.. image:: img/image170.png
+   :align: center
+
+Schematische Darstellung
+-----------------------------------
+
+.. image:: img/image171.png
+   :align: center
+
+Code
+---------
+
+
+.. note::
+
+    * Sie können die Datei ``2.18_touchSwitch.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.18_touchSwitch`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/526e6ca9-a140-48cc-9cfb-d8bc7f32cf6d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+
+Wenn Sie die Codes auf die Mega2560-Platine hochgeladen haben, können Sie die Messwerte der Pins sehen, die auf dem seriellen Monitor angezeigt werden.
+
+Wenn Ihre Fingerspitze das Berührungsschaltermodul berührt, wird 「1」 auf dem seriellen Monitor angezeigt; und wenn Sie Ihren Finger entfernen, wird 「0」 angezeigt. Was die detaillierte Code-Erklärung betrifft, müssen Sie sich :ref:`ar_digital_read` zuwenden.
+
+Phänomen Bild
+------------------------
+
+.. image:: img/image172.jpeg
+   :height: 4.74167in

@@ -1,0 +1,104 @@
+.. _ar_mpr121:
+
+2.24 MPR121-Modul
+====================
+
+Überblick
+---------------
+
+In dieser Lektion lernen Sie, wie Sie MPR121 verwenden. Dies ist eine gute Option, wenn Sie Ihrem Projekt viele Berührungsschalter hinzufügen möchten. Die Elektrode des MPR121 kann mit einem Leiter verlängert werden. Wenn Sie einen Draht mit einer Banane verbinden, können Sie die Banane in einen Berührungsschalter verwandeln und so Projekte wie ein Fruchtklavier realisieren.
+
+
+Erforderliche Komponenten
+----------------------------
+
+.. image:: img/Part_two_24.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_mpr121`
+
+Fritzing-Schaltung
+----------------------
+
+In diesem Beispiel setzen wir MPR121 in das Steckbrett ein. Verbinden Sie GND von MPR121 mit GND, 3,3 V mit 3 V3, IRQ mit dem digitalen Pin 2, SCL mit Pin SCL (21) und SDA mit Pin SDA (20). Es gibt 12 Elektroden für die Berührungserkennung. Hinweis: Der MPR121 wird mit 3.3V versorgt, nicht mit 5V.
+
+
+.. image:: img/image201.png
+   :align: center
+
+Schematische Darstellung
+---------------------------------
+
+.. image:: img/image202.png
+   :align: center
+
+Code
+--------
+
+.. note::
+
+    * Sie können die Datei ``2.24_mpr121.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.24_mpr121`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``MPR121_JM`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/92bbae94-2807-4207-b0ac-393d89189517/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nach dem Hochladen der Codes auf die Mega2560-Platine wird der Berührungszustand der Pins von MPR121 「1」 und 「0」 in einem booleschen 12-Bit-Array aufgezeichnet, das auf dem seriellen Monitor gedruckt wird.
+
+
+Code-Analyse
+--------------------
+
+Die Funktion des Moduls ist in der Bibliothek ``MPR121_JM.h`` enthalten.
+
+.. code-block:: arduino
+
+    #include <MPR121_JM.h> 
+
+**Bibliotheksfunktionen:**
+
+
+.. code-block:: arduino
+
+    MPR121(int irqpin,uint8_t touThresh,uint8_t relThresh)
+
+Erstellt eine neue Instanz des ``MPR121``.
+
+* ``irqpin``: der Interrupt-Request-Pin.
+* ``touThresh``: Berührungsschwelle, die Elektrode wird als Schwelle des 「Berührungs」-Zustands erkannt.
+* ``relThresh``: Freigabeschwelle, die Elektrode wird als Schwelle des 「Freigabe」-Zustands erkannt.
+
+Der Wertebereich der Elektrodendaten liegt zwischen 0 und 255. Für eine typische Berührungsanwendung kann der Schwellenwert beispielsweise im Bereich von 0x05~0x30 liegen. Je kleiner der Wert, desto empfindlicher ist es. Die Einstellung des Schwellenwerts hängt von der tatsächlichen Anwendung ab. Typischerweise ist der Berührungsschwellenwert etwas größer als der Auslöseschwellenwert für Berührungsentprellung und Hysterese.
+
+
+.. code-block:: arduino
+
+    void mpr121_setup()
+
+MPR121-Modul einrichten.
+
+.. code-block:: arduino
+
+    bool checkInterrupt()
+
+Nehmen Sie eine Unterbrechungsbeurteilung vor, wenn sich der Elektrodenzustand ändert, gibt die Funktion einen booleschen Wert 「0」 zurück.
+
+
+.. code-block:: arduino
+
+    uint16_t readTouchInputs()
+
+Der Berührungszustand der Elektrode erzeugt einen booleschen Wert. Die Funktion akkumuliert die von allen Elektroden erzeugten booleschen Werte nacheinander zu einer 12-Bit-Binärzahl als Rückgabewert. Wenn die erste und die elfte Elektrode berührt werden, wird 「100000000010」 zurückgegeben.
+
+
+Phänomen Bild
+-------------------------
+
+.. image:: img/image203.jpeg
+   :align: center

@@ -1,0 +1,16 @@
+
+1.1 Erste Schritte mit Arduino IDE
+=======================================
+
+Arduino ist eine Open-Source-Plattform mit einfacher Soft- und Hardware. Sie können es in kurzer Zeit abholen, auch wenn Sie ein Anfänger sind. Es bietet eine integrierte Entwicklungsumgebung (IDE) zum Kompilieren von Code, die mit mehreren Steuerplatinen kompatibel ist. Sie können also einfach die Arduino IDE herunterladen, die Skizzen (dh die Codedateien) auf das Board hochladen und dann können Sie relative experimentelle Phänomene sehen. Weitere Informationen finden Sie unter http://www.arduino.cc .
+
+Bitte folgen Sie dem nachstehenden Tutorial, um zu erfahren, wie Sie die Arduino IDE installieren, Bibliotheken hinzufügen und Code hochladen.
+
+.. toctree::
+    :maxdepth: 1
+
+    arduino_start/install_arduino_ide
+    arduino_start/download_add
+    arduino_start/upload_code
+
+

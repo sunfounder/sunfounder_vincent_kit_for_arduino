@@ -1,0 +1,103 @@
+.. _ar_analog_write:
+
+1.3 Analoges Schreiben
+=============================
+
+Überblick
+--------------------
+
+Sie können die PWM-Welle mit analogWrite() auf den Pin schreiben. Diese Methode kann verwendet werden, um die Helligkeit der LED anzupassen, die Farbe von RGB zu ändern oder die Motordrehzahl usw. anzupassen. Hier nehmen wir LED als Beispiel, um die Gradientenhelligkeit der LED zu erhalten.
+
+Erforderliche Komponenten
+-----------------------------
+
+.. image:: img/list_1.3.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_led`
+* :ref:`cpn_resistor`
+
+
+※ Pulsweitenmodulation
+---------------------------
+
+Pulsweitenmodulation oder PWM ist eine Technik, um mit digitalen Mitteln analoge Ergebnisse zu erzielen. Die digitale Steuerung wird verwendet, um eine Rechteckwelle zu erzeugen, ein Signal, das zwischen ein und aus geschaltet wird. Dieses Ein-Aus-Muster kann Spannungen zwischen vollständig ein (5 Volt) und aus (0 Volt) simulieren, indem der Anteil der Zeit, die das Signal einschaltet, gegenüber der Zeit, die das Signal ausschaltet, geändert wird. Die Dauer der „Einschaltzeit“ wird als Impulsbreite bezeichnet. Um unterschiedliche Analogwerte zu erhalten, ändern oder modulieren Sie diese Impulsbreite. Wenn Sie dieses Ein-Aus-Muster beispielsweise mit einer LED schnell genug wiederholen, ist das Ergebnis so, als ob das Signal eine konstante Spannung zwischen 0 und 5 V ist, die die Helligkeit der LED steuert.
+
+Ein Aufruf von analogWrite() liegt auf einer Skala von 0 - 255, sodass analogWrite(255) ein Tastverhältnis von 100 % (immer eingeschaltet) anfordert und analogWrite(127) ein Tastverhältnis von 50 % (bei der Hälfte der Zeit) ist Beispiel.
+
+.. image:: img/image402.png
+
+Fritzing-Schaltung
+----------------------
+
+In diesem Beispiel verwenden wir den PWM-Pin 9, um die LED anzusteuern. Verbinden Sie ein Ende des Widerstands mit Pin 9. Verbinden Sie den langen Stift (Anode) der LED mit dem anderen Ende des Widerstands. Verbinden Sie den kurzen Stift (negativ, als Kathode bezeichnet) der LED mit GND.
+
+.. note::
+    Die PWM-Pins der Mega2560-Platine sind 2 - 13, 44 - 46.
+
+.. image:: img/image30.png
+
+
+Schematische Darstellung
+---------------------------
+
+.. image:: img/image401.png
+
+
+Code
+----------
+
+
+.. note::
+
+    * Sie können die Datei ``1.3_analogWrite.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\1.3_analogWrite`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/0870c13c-2064-4d3b-9b5b-cf14d3466425/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem Sie den Code auf das Mega2560-Board hochgeladen haben, können Sie sehen, dass die LED allmählich heller wird und allmählich ausgeht.
+
+Code-Analyse
+-----------------
+
+Deklarieren Sie Pin 9 als ``ledPin``.
+
+.. code-block:: arduino
+
+    int ledPin = 9; 
+
+``analogWrite()`` in loop() weist ``ledPin`` einen analogen Wert (PWM-Welle) zwischen 0 und 255 zu, um die Helligkeit der LED zu ändern.
+
+.. code-block:: arduino
+
+    analogWrite(ledPin, value);
+
+Mittels einer for-Schleife kann der Wert von ``analogWrite()`` schrittweise zwischen dem Minimalwert (0) und dem Maximalwert (255) verändert werden.
+
+.. code-block:: arduino
+
+    for (int value = 0 ; value <= 255; value += 5) {
+        analogWrite(ledPin, value);
+    }
+
+Um das experimentelle Phänomen deutlich zu sehen, muss dem for-Zyklus eine ``delay(30)`` hinzugefügt werden, um die Helligkeitsänderungszeit zu steuern.
+
+.. code-block:: arduino
+
+    void loop() {
+    for (int value = 0 ; value <= 255; value += 5) {
+        analogWrite(ledPin, value);
+        delay(30);
+    }
+    }
+
+Phänomen Bild
+------------------
+
+.. image:: img/image36.jpeg

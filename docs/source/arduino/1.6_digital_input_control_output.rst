@@ -1,0 +1,96 @@
+.. _ar_digital_input_output:
+
+1.6 Steuerausgang Digitaleingang
+===================================
+
+Überblick
+-------------------
+
+Mit dem Verständnis von ``digitalWrite()`` und ``digitalRead()`` können wir ein vollständiges E/A-System aufbauen, um das Ausgabegerät zu steuern, indem wir die Daten vom Eingabegerät erhalten. Wir können diese Methode verwenden, um digitale Eingabekomponenten wie Tasten, Berührungssensoren und Infrarot-Bewegungssensoren zu aktivieren, um digitale Ausgabegeräte wie LEDs und aktive Summer zu steuern. In dieser Lektion werden Taster und LED als Beispiele verwendet, um die Tastersteuerungs-LED mit der Bedingung (if-else) zu realisieren.
+
+Erforderliche Komponenten
+----------------------------------
+
+.. image:: img/list_1.6.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_button`
+* :ref:`cpn_resistor`
+
+Fritzing-Schaltung
+-----------------------------
+
+In diesem Beispiel verwenden wir Pin 9, um die LED anzusteuern. Verwenden Sie den digitalen Pin 2, um das Signal von Button zu lesen. Wenn die Taste gedrückt wird, leuchtet die LED.
+
+.. image:: img/image48.png
+
+
+Schematische Darstellung
+------------------------------------
+
+.. image:: img/image407.png
+
+
+Code
+----
+
+.. note::
+
+    * Sie können die Datei ``1.6_digitalInputControlOutput.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\1.6_digitalInputControlOutput`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/e018645f-5a3e-4c36-be7a-d786fe8f3601/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem Sie den Code auf das Mega2560-Board hochgeladen haben, können Sie die Taste gedrückt halten, um die LED aufzuleuchten.
+
+Code-Analyse
+--------------
+
+Deklarieren Sie die Pins von LED und Button und deklarieren Sie eine Variable, um den Zustand des Buttons zu speichern.
+
+.. code-block:: arduino
+
+    const int buttonPin = 2; 
+    const int ledPin =  9;  
+    int buttonState = 0;
+
+Initialisieren Sie den Pin-Modus in setup().
+
+.. code-block:: arduino
+
+    pinMode(ledPin, OUTPUT);
+    pinMode(buttonPin, INPUT);
+
+Lesen Sie den Status des Buttons in loop() und weisen Sie ihn der Variablen buttonState zu.
+.. code-block:: arduino
+
+    buttonState = digitalRead(buttonPin);
+
+Verwenden Sie die Bedingung, um zu beurteilen: Wenn Sie einen hohen Pegel von einer Taste erhalten, leuchten Sie die LED auf.
+
+
+.. code-block:: arduino
+
+    if (buttonState == HIGH) {
+        digitalWrite(ledPin, HIGH);
+    } 
+
+Andernfalls schalten Sie die LED aus.
+
+.. code-block:: arduino
+
+    else {
+    digitalWrite(ledPin, LOW);
+    }
+
+Phänomen Bild
+------------------
+
+.. image:: img/image49.jpeg

@@ -1,0 +1,60 @@
+.. _ar_joystick:
+
+2.23 Joystick-Modul
+======================
+
+Überblick
+--------------
+
+In dieser Lektion lernen Sie etwas über Joystick. Die Grundidee eines Joysticks besteht darin, die Bewegung eines Sticks in elektronische Informationen zu übersetzen, die ein Computer verarbeiten kann. Es kann angewendet werden, um als Controller von Geräten wie Robotern zu arbeiten.
+
+
+Erforderliche Komponenten
+---------------------------
+
+.. image:: img/Part_two_23.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_joystick`
+
+Fritzing-Schaltung
+---------------------
+
+In diesem Beispiel bekommen wir den GND des Joysticks erweitert um ihn mit GND zu verbinden, VCC mit 5V, VRX mit Pin A0. Danach verbinden wir VRY mit Pin A1, SW mit Pin 8.
+
+
+.. image:: img/image196.png
+   :align: center
+
+Schematische Darstellung
+---------------------------
+
+.. image:: img/image197.png
+   :align: center
+
+Code
+------------
+
+
+.. note::
+
+    * Sie können die Datei ``2.23_joystick.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.23_joystick`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/0ce9568f-02d7-4b7e-8aef-975abb24566b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Wenn Sie die Codes auf die Mega2560-Platine hochgeladen haben, können Sie den seriellen Monitor öffnen, um die Messwerte auf der X-Achse und der Y-Achse des Joysticks sowie den Tastenstatus der Z-Achse anzuzeigen. Die Werte der X-Achse und Y-Achse sind die analogen Werte, die innerhalb des Bereichs「0」~「1023」 variieren. Die Z-Achse zeigt einen numerischen Wert und der Zustand ist entweder 「1」 oder 「0」. 
+
+Siehe :ref:`ar_analog_read` und :ref:`ar_digital_read`, um die Codeerklärung zu überprüfen.
+
+
+Phänomen Bild
+-------------------------
+
+.. image:: img/image198.jpeg
+   :align: center

@@ -1,0 +1,82 @@
+.. _ar_rgb:
+
+2.3 RGB LED
+===========
+
+Überblick
+-------------
+
+In dieser Lektion erfahren Sie, wie Sie RGB-LEDs verwenden. Eine RGB-LED verpackt drei LEDs in Rot, Grün und Blau in einer transparenten oder halbtransparenten Kunststoffhülle. Es zeigt eine breite Palette von Farben an, indem es die Eingangsspannung von drei Pins ändert und die drei Farben auf unterschiedliche Weise addiert. Laut einer Statistik können RGB-LEDs 16.777.216 verschiedene Farben erzeugen.
+
+Erforderliche Komponenten
+-----------------------------------
+
+.. image:: img/list_2.3.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_rgb`
+* :ref:`cpn_resistor`
+
+Fritzing-Schaltung
+----------------------
+
+.. image:: img/image425.png
+
+
+Hier geben wir einen Wert zwischen 0 und 255 in die drei Pins der RGB-LED ein, damit sie verschiedene Farben anzeigt. Nachdem Sie die Pins von R, G und B mit einem Strombegrenzungswiderstand verbunden haben, verbinden Sie sie mit Pin 9, Pin 10 bzw. Pin 11. Der längste Pin (GND) der LED ist mit dem GND des Mega 2560 verbunden. Wenn den drei Pins unterschiedliche PWM-Werte gegeben werden, zeigt die RGB-LED unterschiedliche Farben an.
+
+Schematische Darstellung
+---------------------------------
+
+.. image:: img/image426.png
+
+
+Code
+---------
+
+.. note::
+
+    * Sie können die Datei ``2.3_rgbLed.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.3_rgbLed`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/3032b0a1-49e3-4d88-a73a-eeacf3761935/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Code-Analyse
+----------------
+
+In diesem Beispiel ist die Funktion, die zum Zuweisen von Werten zu den drei Pins von RGB verwendet wird, in eine unabhängige Unterfunktion ``color()`` gepackt.
+
+.. code-block:: arduino
+
+    void color (unsigned char red, unsigned char green, unsigned char blue)// the color generating function  
+    {    
+    analogWrite(redPin, red);   
+    analogWrite(greenPin, green); 
+    analogWrite(bluePin, blue); 
+    }
+
+In loop() fungiert der RGB-Wert als Eingabeargument zum Aufrufen der Funktion ``color()``, um zu erkennen, dass RGB verschiedene Farben ausgeben kann.
+
+.. code-block:: arduino
+
+    void loop()  // run over and over again  
+    {    
+    color(255, 0, 0); // turn the RGB LED red 
+    delay(1000); // delay for 1 second  
+    color(0,255, 0); // turn the RGB LED green  
+    delay(1000); // delay for 1 second  
+    color(0, 0, 255); // turn the RGB LED blue  
+    delay(1000); // delay for 1 second 
+    // ... 
+    }  
+
+Phänomen Bild
+------------------
+
+.. image:: img/image79.jpeg

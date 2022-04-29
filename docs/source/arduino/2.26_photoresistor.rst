@@ -1,0 +1,59 @@
+.. _ar_photoresistor:
+
+2.26 Fotowiderstand
+=====================
+
+Überblick
+---------------
+
+In dieser Lektion lernen Sie den Fotowiderstand kennen. Fotowiderstände werden in vielen elektronischen Geräten verwendet, wie z. B. in Kameramessgeräten, Radioweckern, Alarmgeräten (als Strahldetektor), kleinen Nachtlichtern, Außenuhren, Solarstraßenlaternen usw. Fotowiderstände werden in Straßenlaternen eingesetzt, um das Licht zu steuern Ist eingeschaltet. Umgebungslicht, das auf den Fotowiderstand fällt, bewirkt, dass Straßenlaternen ein- oder ausgeschaltet werden.
+
+
+Erforderliche Komponenten
+----------------------------------
+
+.. image:: img/Part_two_26.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_resistor`
+* :ref:`cpn_photoresistor`
+
+Fritzing-Schaltung
+----------------------
+
+In diesem Beispiel verwenden wir den analogen Pin (A0), um den Wert des Fotowiderstands zu lesen. Ein Pin des Fotowiderstands ist mit 5 V verbunden, der andere ist mit A0 verdrahtet. Außerdem wird ein 10kΩ-Widerstand benötigt, bevor der andere Pin mit GND verbunden wird.
+
+
+.. image:: img/image213.png
+    :align: center
+
+Schematische Darstellung
+---------------------------
+
+.. image:: img/image214.png
+    :align: center
+
+Code
+---------------
+
+
+.. note::
+
+    * Sie können die Datei ``2.26_photoresistor.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.26_photoresistor`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/c04e97d3-635a-4be6-9d35-9dae005331ae/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem Sie die Codes auf das Mega2560-Board hochgeladen haben, können Sie den seriellen Monitor öffnen, um den gelesenen Wert des Pins zu sehen. Wenn das Umgebungslicht stärker wird, erhöht sich der Messwert entsprechend und der Pin-Lesebereich beträgt 「0」~「1023」. Je nach Umgebungsbedingungen und Eigenschaften des Fotowiderstands kann der tatsächliche Lesebereich jedoch kleiner sein als der theoretische Bereich. Eine detaillierte Erläuterung des Codes finden Sie unter :ref:`ar_analog_read`.
+
+Phänomen Bild
+------------------------
+
+.. image:: img/image215.jpeg
+   :align: center

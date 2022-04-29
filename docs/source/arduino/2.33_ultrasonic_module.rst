@@ -1,0 +1,92 @@
+.. _ar_ultrasonic:
+
+2.33 Ultraschallmodul
+======================
+
+Überblick
+------------
+
+In dieser Lektion lernen Sie, wie Sie das Ultraschallmodul verwenden.
+
+Erforderliche Komponenten
+----------------------------
+
+.. image:: img/Part_two_33.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_ultrasonic`
+
+Fritzing-Schaltung
+---------------------
+
+In diesem Beispiel verbinden wir die Pins des Ultraschallmoduls direkt mit den Pins des Mega 2560 Boards. Und dann bekommen wir VCC des Ultraschallmoduls mit 5V verbunden, GND mit GND, Trig mit dem digitalen Pin 5, Echo mit dem digitalen Pin 4.
+
+.. image:: img/image246.png
+   :align: center
+
+Schematische Darstellung
+--------------------------
+
+.. image:: img/image247.png
+   :align: center
+
+Code
+----------
+
+.. note::
+
+    * Sie können die Datei ``2.33_ultrasonicModule.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.33_ultrasonicModule`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/8254174a-93c8-4a72-a440-26f1ab63ca07/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nach dem Hochladen der Codes auf die Mega2560-Platine zeigt der serielle Monitor die Entfernung von Hindernissen an, die der Ultraschallsensor erkannt hat.
+
+
+Code-Analyse
+--------------------
+
+Über die Anwendung des Ultraschallsensors können wir die Unterfunktion direkt überprüfen.
+
+
+.. code-block:: arduino
+
+    float readSensorData(){// ...}
+
+PING wird durch einen HIGH-Impuls von 2 oder mehr Mikrosekunden ausgelöst. (Geben Sie vorher einen kurzen LOW-Impuls, um einen sauberen HIGH-Impuls zu gewährleisten.)
+
+
+.. code-block:: arduino
+
+    digitalWrite(trigPin, LOW); 
+    delayMicroseconds(2);
+    digitalWrite(trigPin, HIGH); 
+    delayMicroseconds(10);
+    digitalWrite(trigPin, LOW); 
+
+Der Echo-Pin wird zum Lesen des Signals von PING verwendet, einem HIGH-Impuls, dessen Dauer die Zeit (in Mikrosekunden) vom Senden des Pings bis zum Empfang des Echos des Objekts ist.
+
+
+.. code-block:: arduino
+
+    microsecond=pulseIn(echoPin, HIGH);
+
+Die Schallgeschwindigkeit beträgt 340 m/s oder 29 Mikrosekunden pro Zentimeter.
+
+Dies ergibt die vom Ping zurückgelegte Entfernung, hin und zurück, also teilen wir durch 2, um die Entfernung des Hindernisses zu erhalten.
+
+
+.. code-block:: arduino
+
+    float distance = microsecond / 29.00 / 2;  
+
+Phänomen Bild
+------------------------
+
+.. image:: img/image248.jpeg
+   :align: center

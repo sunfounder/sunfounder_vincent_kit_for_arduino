@@ -1,0 +1,92 @@
+.. _ar_humiture:
+
+2.32 DHT11-Modul
+==================
+
+Überblick
+--------------
+
+In dieser Lektion lernen Sie, wie Sie das DHT11-Modul verwenden. Der DHT11 ist ein einfacher, extrem kostengünstiger digitaler Temperatur- und Feuchtigkeitssensor. Es verwendet einen kapazitiven Feuchtigkeitssensor und einen Thermistor, um die Umgebungsluft zu messen, und gibt ein digitales Signal an den Datenpin aus (es werden keine analogen Eingangspins benötigt).
+
+
+Erforderliche Komponenten
+----------------------------
+
+.. image:: img/Part_two_32.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_wires`
+* :ref:`cpn_humiture`
+
+Fritzing-Schaltung
+----------------------
+
+In diesem Beispiel können wir die Pins des DHT11-Moduls direkt mit den Pins des Mega 2560-Boards verbinden, und wir verwenden Pin 4, um das Signal des DHT11-Moduls zu lesen. Verbinden Sie den Pin「+」des DHT11-Moduls mit 5V, den Pin「-」 mit GND und den Pin OUT mit Pin 4.
+
+
+.. image:: img/image241.png
+    :align: center
+
+**Wiring Diagram**
+--------------------
+
+.. image:: img/image242.png
+    :align: center
+
+Code
+----------
+
+.. note::
+
+    * Sie können die Datei ``2.32_dhtModule.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.32_dhtModule`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``dht`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/f8605323-827f-4741-b414-10241e4c9afa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Nachdem die Codes auf die Mega2560-Platine hochgeladen wurden, gibt der serielle Monitor weiterhin die aktuellen Temperatur- und Feuchtigkeitswerte der Umgebung aus.
+
+
+Code-Analyse
+-------------------
+
+Die Funktion des Moduls ist in der Bibliothek ``dht.h`` enthalten.
+
+.. code-block:: arduino
+
+    #include <dht.h> 
+
+**Bibliotheksfunktionen:**
+
+.. code-block:: arduino
+    
+    dht
+
+Erstellt eine neue Instanz der dht-Klasse, die ein bestimmtes DHT-11-Modul darstellt, das an Ihr Arduino-Board angeschlossen ist.
+
+
+.. code-block:: arduino
+
+    int read11(uint8_t pin)
+
+Diese Funktion gibt CHECK-Werte zurück.
+
+* ``DHTLIB_OK`` bedeutet, dass DHT-11 in gutem Zustand ist;
+
+* ``DHTLIB_ERROR_CHECKSUM`` stellt dar, dass der Wert anormal sein kann;
+
+* ``DHTLIB_ERROR_TIMEOUT`` gibt an, dass eine Zeitüberschreitung vorliegt.
+
+Die Funktion speichert die erkannte Feuchtigkeit und Temperatur in den gleichnamigen Variablen in der dht-Klasse.
+
+Die Funktion sollte direkt im Hauptprogramm aufgerufen und verwendet werden. (z. B. ``Serial.println (DHT.temperature, 1)``)
+
+Phänomen Bild
+-----------------------
+
+.. image:: img/image243.jpeg
+   :align: center

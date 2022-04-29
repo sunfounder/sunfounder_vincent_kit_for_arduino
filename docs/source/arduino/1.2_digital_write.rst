@@ -1,0 +1,93 @@
+.. _ar_digital_write:
+
+1.2 Digitales Schreiben
+===================================
+
+Überblick
+-----------
+
+Die ``digitalWrite()``-Anweisung hier wird verwendet, um High-Pegel oder Low-Pegel auf Pins zu schreiben und LED und aktiven Summer 「arbeiten」 oder 「stoppen」 zu lassen. In dieser Lektion nehmen wir LED als Beispiel, um das Experimentphänomen vorzustellen.
+
+Erforderliche Komponenten
+-------------------------------
+
+.. image:: img/list_1.2.png
+
+* :ref:`cpn_mega2560`
+* :ref:`cpn_breadboard`
+* :ref:`cpn_wires`
+* :ref:`cpn_led`
+* :ref:`cpn_resistor`
+
+
+Fritzing-Schaltung
+-----------------------
+
+In diesem Beispiel verwenden wir den digitalen Pin 9, um die LED anzusteuern. Befestigen Sie eine Seite des Widerstands am digitalen Pin 9 und den längeren Pin (Anode) der LED an der anderen Seite des Widerstands. Verbinden Sie den kürzeren Pin (Kathode) der LED mit GND.
+
+.. image:: img/image30.png
+
+
+Schematische Darstellung
+-----------------------------------
+
+.. image:: img/image401.png
+
+
+Code
+------
+
+Schließen Sie nach Abschluss der Schaltungsverbindung die Mega2560-Platine an den Computer an. Führen Sie die Arduino-Software-IDE aus und geben Sie die folgenden Codes ein.
+.. note::
+
+    * Sie können die Datei ``1.2_digitalWrite.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\1.2_digitalWrite`` direkt öffnen.
+    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
+    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
+    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+
+.. raw:: html
+
+    <iframe src=https://create.arduino.cc/editor/sunfounder01/014d0aec-693e-4246-b944-17105b28e818/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
+
+Laden Sie die Codes auf die Mega2560-Platine hoch, und Sie können das Blinken der LED sehen.
+
+
+Code-Analyse
+-------------
+
+Hier verbinden wir die LED mit dem digitalen Pin 9, also müssen wir am Anfang des Programms eine int-Variable namens ledpin deklarieren und einen Wert von 9 zuweisen.
+
+.. code-block:: arduino
+
+    const int ledPin = 9;
+    
+Initialisieren Sie nun den Pin in der Funktion ``setup()``, wo Sie den Pin in den OUTPUT-Modus initialisieren müssen.
+
+.. code-block:: arduino
+
+    pinMode(ledPin, OUTPUT);
+
+In ``loop()`` wird ``digitalWrite()`` verwendet, um ein 5-V-Hochpegelsignal für ledpin bereitzustellen, was zu einer Spannungsdifferenz zwischen den LED-Pins und dem Aufleuchten der LED führt.
+
+.. code-block:: arduino
+
+    digitalWrite(ledPin, HIGH);
+
+Wenn das Pegelsignal auf LOW geändert wird, wird das Signal des ledPin auf 0 V zurückgesetzt, um die LED auszuschalten.
+
+.. code-block:: arduino
+
+    digitalWrite(ledPin, LOW);
+
+Ein Intervall zwischen Ein und Aus ist erforderlich, damit die Leute die Änderung sehen können, also verwenden wir einen Verzögerungscode (1000), damit der Controller 1000 ms lang nichts tut.
+
+
+.. code-block:: arduino
+
+    delay(1000);
+
+
+Phänomen Bild
+------------------
+
+.. image:: img/image36.jpeg
