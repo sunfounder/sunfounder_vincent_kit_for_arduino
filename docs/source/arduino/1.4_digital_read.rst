@@ -1,4 +1,4 @@
-.. _digital_read:
+.. _ar_digital_read:
 
 
 1.4 Digital Read

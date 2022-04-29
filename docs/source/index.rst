@@ -25,6 +25,7 @@ Here is the Email: cs@sunfounder.com.
     arduino/play_with_arduino
     pictoblox/play_with_scratch
     thank-learning
+    other_language
 
 Copyright Notice
 ----------------------

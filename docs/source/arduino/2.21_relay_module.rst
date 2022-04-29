@@ -53,7 +53,7 @@ Code
 Once the codes are uploaded to the Mega2560 board, you can see that the
 Relay Module controls the closing and breaking of the external circuit,
 which will change its working state a second. For detailed code
-explanation, refer to :ref:`digital_write`.
+explanation, refer to :ref:`ar_digital_write`.
 
 Phenomenon Picture
 --------------------------

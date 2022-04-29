@@ -24,8 +24,7 @@ Components Required
 Fritzing Circuit
 ----------------
 
-In this example, we read the signal of the button with the digital pin
-1. When the button is not pressed, the digital pin 2 (through the
+In this example, we read the signal of the button with the digital pin. When the button is not pressed, the digital pin 2 (through the
 drop-down resistor) is connected to ground to read the low level (0);
 when the button is pressed, the two pins are connected and when the pin
 is connected to the 5V power supply, the high level (1) is read.
@@ -64,7 +63,7 @@ Code
 Uploaded the codes to the Mega2560 board, you can see the readings of
 the pins on the serial monitor. When you press down the Button, there
 will display 「1」on the serial monitor, and once you release it, there
-will display「0」. As for the detail code explanation, please refer to :ref:`digital_read`.
+will display「0」. As for the detail code explanation, please refer to :ref:`ar_digital_read`.
 
 
 
@@ -83,7 +82,7 @@ will display「0」. As for the detail code explanation, please refer to :ref:`d
 
 Uploaded the codes to the Mega2560 board, every time you press the
 button, the output value will switch between 0 and 1. If you want to
-know more about the code explanation, you can turn to :ref:`1.10 State Change Detection`.
+know more about the code explanation, you can turn to :ref:`ar_state_change`.
 
 Phenomenon Picture
 ------------------

@@ -62,7 +62,7 @@ After uploading the codes to the Mega2560 board, you can open the serial
 monitor to see the reading value of the pin. When rotating the axis of
 the potentiometer, the serial port monitor will print the value
 「0」~「1023」. For the detailed explanation of code, turn to check 
-:ref:`analog_read`.
+:ref:`ar_analog_read`.
 
 Phenomenon Picture
 ------------------------

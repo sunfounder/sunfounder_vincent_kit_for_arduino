@@ -30,7 +30,6 @@ In this example, digital pin 2 is used to read the signal of Tilt
 Switch.
 
 .. image:: img/image165.png
-
    :align: center
 
 Schematic Diagram
@@ -57,7 +56,7 @@ After the codes are uploaded to the Mega2560 board, you can open the
 serial monitor to see the readings of pins, which displays 「1」 or
 「0」 when Tilt Switch is vertical (bringing the internal metal ball
 into contacting with the Wire Pins) or tilted. For detailed explanation
-of codes, you can turn to :ref:`digital_read`.
+of codes, you can turn to :ref:`ar_digital_read`.
 
 Phenomenon Picture
 -----------------------

@@ -67,8 +67,8 @@ actual reading range may be smaller than the theoretical one. If an
 oscilloscope is used, the changing of analog reading of the sound sensor
 will be more obvious.
 
-About the detail code explanation, refer to :ref:`analog_read` and
-:ref:`digital_read`.
+About the detail code explanation, refer to :ref:`ar_analog_read` and
+:ref:`ar_digital_read`.
 
 Phenomenon Picture
 ------------------------

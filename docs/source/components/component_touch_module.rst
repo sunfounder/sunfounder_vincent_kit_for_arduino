@@ -8,7 +8,7 @@ Touch Switch Module
     :align: center
 
 * **IO**: Signal pin, usually low level, will output high level after touch.
-* **VCC**: Power supply, 2 ~ 5.5VDC.
+* **VCC**: Power supply, 3.3 ~ 5V DC.
 * **GND**: Ground.
 
 This module is a capacitive touch switch module based on a touch sensor IC (TTP223B). In the normal state, the module outputs a low level with low power consumption; when a finger touches the corresponding position, the module outputs a high level and becomes low level again after the finger is released.

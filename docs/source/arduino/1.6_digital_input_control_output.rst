@@ -1,4 +1,4 @@
-.. _digital_input_output:
+.. _ar_digital_input_output:
 
 1.6 Digital Input Control Output
 ================================

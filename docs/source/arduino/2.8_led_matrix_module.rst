@@ -58,7 +58,7 @@ By calling the library LedControl.h, you can easily use the LED matrix.
 
     #include "LedControl.h"
 
-**Library Functions：**
+**Library Functions**：
 
 .. code-block:: arduino
 
@@ -67,23 +67,16 @@ By calling the library LedControl.h, you can easily use the LED matrix.
 Create an instance of type LedControl through which we talk to the
 MAX7219 devices. The initialization of an LedControl takes 4 arguments.
 
-**dataPin,clockPin,csPin**: The first 3 arguments are the pin-numbers on the
-Arduino that are connected to the MAX7219. You are free to choose any of
-the digital IO-pins on the arduino, but since some of the pins are also
-used for serial communication or have a led attached to them its best to
-avoid pin 0,1 and 13.
+* ``dataPin,clockPin,csPin``: The first 3 arguments are the pin-numbers on the Arduino that are connected to the MAX7219. You are free to choose any of the digital IO-pins on the arduino, but since some of the pins are also used for serial communication or have a led attached to them its best to avoid pin 0,1 and 13.
 
-**numDevices**: The fourth argument is the number of cascaded MAX7219
-devices you're using with this LedControl. The library can address up to
-8 devices from a single LedControl-variable.
+* ``numDevices``: The fourth argument is the number of cascaded MAX7219 devices you're using with this LedControl. The library can address up to 8 devices from a single LedControl-variable.
 
 .. code-block:: arduino
 
     void shutdown(int addr, bool b)
 
-**addr**: The address of the display to control.
-
-**b**: If true the device goes into power-down mode. If false device goes into normal operation.
+* ``addr``: The address of the display to control.
+* ``b``: If true the device goes into power-down mode. If false device goes into normal operation.
 
 .. code-block:: arduino
 
@@ -92,10 +85,8 @@ devices you're using with this LedControl. The library can address up to
 Themethod lets you control brightness in 16 discrete steps. Larger
 values make the display brighter up to the maximum of 15.
 
-**addr**: The address of the display to control.
-
-**intensity**: the brightness of the display. Only values between 0(darkest)
-and 15(brightest) are valid.
+* ``addr``: The address of the display to control.
+* ``intensity``: the brightness of the display. Only values between 0(darkest) and 15(brightest) are valid.
 
 .. code-block:: arduino
 
@@ -103,7 +94,7 @@ and 15(brightest) are valid.
 
 All LEDs off after this one.
 
-**addr**: The address of the display to control.
+* ``addr``: The address of the display to control.
 
 .. code-block:: arduino
 
@@ -111,13 +102,10 @@ All LEDs off after this one.
 
 Set the status of a single Led.
 
-**addr**: The address of the display to control.
-
-**row**: The row of the Led (0..7).
-
-**col**: The column of the Led (0..7).
-
-**state**: If true the led is switched on, if false it is switched off.
+* ``addr``: The address of the display to control.
+* ``row``: The row of the Led (0..7).
+* ``col``: The column of the Led (0..7).
+* ``state``: If true the led is switched on, if false it is switched off.
 
 .. code-block:: arduino
 
@@ -125,12 +113,9 @@ Set the status of a single Led.
 
 Set all 8 LEDs in a row to a new state.
 
-**addr**: The address of the display to control.
-
-**row**: Row which is to be set (0..7).
-
-**value**: Each bit set to 1 will light up the corresponding Led.(e.g.
-B01000000 will light up the 2nd).
+* ``addr``: The address of the display to control.
+* ``row``: Row which is to be set (0..7).
+* ``value``: Each bit set to 1 will light up the corresponding Led.(e.g. B01000000 will light up the 2nd).
 
 .. code-block:: arduino
 
@@ -138,12 +123,9 @@ B01000000 will light up the 2nd).
 
 Set all 8 LEDs in a row to a new state.
 
-**addr**: The address of the display to control.
-
-**col**: Column which is to be set (0..7).
-
-**value**: Each bit set to 1 will light up the corresponding Led.(e.g.
-B01000000 will light up the 2nd).
+* ``addr``: The address of the display to control.
+* ``col``: Column which is to be set (0..7).
+* ``value``: Each bit set to 1 will light up the corresponding Led.(e.g. B01000000 will light up the 2nd).
 
 
 

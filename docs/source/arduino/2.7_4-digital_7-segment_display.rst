@@ -58,13 +58,13 @@ Code Analysis
 
 There are two points needing your attention:
 
-①Because every segment display works independently in the 4-Digital 7-Segment Display, the principle of visual persistence is applied to quickly display every 7 segment character in turn to form a continuous character string. 
+1. Because every segment display works independently in the 4-Digital 7-Segment Display, the principle of visual persistence is applied to quickly display every 7 segment character in turn to form a continuous character string. 
 
-Refer to **Part 2 - 2.5 7-Segment Display** to check the details of the number display of the 4-Digital 7-Segment Display.
+Refer to :ref:`ar_7_segment` to check the details of the number display of the 4-Digital 7-Segment Display.
 
-:ref:`2.5 7-Segment Display`
 
-②In this example, a library TimerOne.h is used to realize the function of counting. 
+
+2. In this example, a library TimerOne.h is used to realize the function of counting. 
 
 .. code-block:: arduino
 

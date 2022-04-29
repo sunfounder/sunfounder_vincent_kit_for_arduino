@@ -45,7 +45,7 @@ Delete the default sprite, then select the **Beetle** sprite.
 
 .. image:: img/14_sprite.png
 
-Place the **Beetle** sprite at the entrance of the **Maze** sprite, remembering the x,y coordinate values at this point, and resize the sprite to 40%.
+Place the **Beetle** sprite at the entrance of the **Maze** backdrop, remembering the x,y coordinate values at this point, and resize the sprite to 40%.
 
 .. image:: img/14_sprite1.png
 
@@ -60,7 +60,7 @@ First click on the backdrop thumbnail to go to the **Backdrops** page and click 
 
 Now start drawing, you can refer to the picture below to draw, or you can draw a backdrop on your own, as long as the expression is winning.
 
-* Using the **Draw Circle** tool, draw an ellipse with the color set to red and no outline.
+* Using the **Circle** tool, draw an ellipse with the color set to red and no outline.
 * Then use the **Text** tool, write the character \"WIN!\", set the character color to black, and adjust the size and position of the character.
 * Name the backdrop as **Win**.
 

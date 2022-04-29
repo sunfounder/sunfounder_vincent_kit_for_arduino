@@ -8,7 +8,7 @@ Obstacle Avoidance Module
    :width: 400
    :align: center
 
-* **VCC**: Power supply, 2 ~ 5.5VDC.
+* **VCC**: Power supply, 3.3 ~ 5V DC.
 * **GND**: Ground
 * **OUT**: Signal pin, usually high level, and low level when an obstacle is detected.
 

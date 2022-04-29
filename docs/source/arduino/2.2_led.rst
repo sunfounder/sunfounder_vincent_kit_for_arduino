@@ -57,7 +57,7 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6932f77a-37ea-422d-be9f-9b4d2eaa3571/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Finished uploading the codes to the Mega2560 board, you can see the LED flashing. Refer to :ref:`digital_write` to check the detail code explanation.
+Finished uploading the codes to the Mega2560 board, you can see the LED flashing. Refer to :ref:`ar_digital_write` to check the detail code explanation.
 
 
 
@@ -77,7 +77,7 @@ Finished uploading the codes to the Mega2560 board, you can see the LED flashing
 After uploading the codes to the Mega2560 board, you can see the LED
 getting brighter, then turning off, getting brighter, then turning off
 again...this loop will continue in this way. About the detail code
-explanation, please refer to :ref:`analog_write`.
+explanation, please refer to :ref:`ar_analog_write`.
 
 
 

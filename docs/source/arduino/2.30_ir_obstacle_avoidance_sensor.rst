@@ -53,7 +53,7 @@ Code
 Uploaded the codes to the Mega2560 board, you can see the readings of
 pins on the serial monitor. When IR Obstacle Avoidance Sensor Module
 detects there is something covering ahead, there appears 「0」on the
-serial monitor; otherwise,「1」is displayed. Refer to:ref:`digital_read` 
+serial monitor; otherwise,「1」is displayed. Refer to:ref:`ar_digital_read` 
 to check the detail code explanation.
 
 Phenomenon Picture

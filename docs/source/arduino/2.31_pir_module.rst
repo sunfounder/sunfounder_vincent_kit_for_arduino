@@ -55,7 +55,7 @@ Code
 After the codes are uploaded to the Mega2560 board, you can open the
 serial monitor to see the reading value of the pin. When PIR Module
 detects activity nearby, the serial monitor will display 「1」;
-otherwise, it will display 「0」. Check :ref:`digital_read` 
+otherwise, it will display 「0」. Check :ref:`ar_digital_read` 
 detail code explanation.
 
 There are two potentiometers on the PIR module: one is to adjust

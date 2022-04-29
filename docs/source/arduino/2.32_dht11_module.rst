@@ -81,11 +81,9 @@ DHT-11 module attached to your Arduino board.
 
 This function will return CHECK values.
 
-**DHTLIB_OK** means that DHT-11 is in good condition;
-
-**DHTLIB_ERROR_CHECKSUM** represents that the value may be abnormal;
-
-**DHTLIB_ERROR_TIMEOUT** indicates that there is timeout.
+* ``DHTLIB_OK`` means that DHT-11 is in good condition;
+* ``DHTLIB_ERROR_CHECKSUM`` represents that the value may be abnormal;
+* ``DHTLIB_ERROR_TIMEOUT`` indicates that there is timeout.
 
 The function will store the detected humidity and temperature into the
 variables with the same name in dht class.

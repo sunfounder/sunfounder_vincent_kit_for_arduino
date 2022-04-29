@@ -7,10 +7,43 @@ Relay Module
     :width: 400
     :align: center
 
-* **S**: Signal pin
-* **+**: Power supply, 
-* **-**: Ground
+The relay module is a module consisting of a relay and a simple circuit that can be used to control large voltage devices, such as household appliances, by outputting a low voltage such as 3.3V from the control board.
 
+FEATURES
+-----------------------
+
+* Output: 250VAC-10A, 125VAC-10A, 30VDC-10A, 28VDC-10A.
+* Operating voltage 5V, suction current about 70mA.
+* With signal indicator
+* Input high and the relay closes, input low and the relay opens.
+* Using 8050 transistor to drive the relay action
+* With mounting screw holes
+* PCB size: 1.8cm*4.0cm*1.9cm, weight 15g
+
+PINS OUT
+----------------
+
+.. image:: img/relay_pinout.jpg
+
+**INPUT**
+
+It has a 1×3 (2.54mm pitch) pin header for connecting power (5V and 0V), and for controlling the relay. The pins are marked on the PCB:
+
+* **-**: GND
+* **+**: VCC
+* **S**: Signal pin, used to control this relay. Input high and the relay closes, input low and the relay opens.
+
+**OUTPUT**
+
+The 1 channel relay module could be considered like a series switches: 1 normally Open (NO), 1 normally closed (NC) and 1 common Pins (COM).
+
+* **COM** - Common pin
+* **NC** - Normally Closed, in which case NC is connected with COM when pin **S** is set low and disconnected when pin **S** is high.
+* **NO** - Normally Open, in which case NO is disconnected with COM when pin **S** is set low and connected when pin **S** is high.
+
+
+HOW RELAY WORKS?
+-----------------------
 
 As we may know, relay is a device which is used to provide connection
 between two or more points or devices in response to the input signal

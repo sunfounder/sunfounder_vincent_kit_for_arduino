@@ -1,4 +1,4 @@
-.. _analog_input_output:
+.. _ar_analog_input_output:
 
 1.7 Analog Input Control Output
 ===============================

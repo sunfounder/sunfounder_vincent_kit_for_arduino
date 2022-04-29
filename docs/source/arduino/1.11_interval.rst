@@ -1,4 +1,4 @@
-.. _interval:
+.. _ar_interval:
 
 1.11 Interval
 =============

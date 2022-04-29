@@ -6,7 +6,7 @@ Water Level Sensor Module
 .. image:: img/water_sensor.png
 
 * **S**: Signal pin, the more water the sensor is immersed in, the greater the output value.
-* **+**: Power supply, 2 ~ 5.5VDC.
+* **+**: Power supply, 3.3 ~ 5V DC.
 * **-**: Ground.
 
 The Water Level Sensor module is an easy-to-use, compact and cost effective water level/drop detection sensor that measures the water level by a series of exposed parallel wire traces to determine the size of the water drop/volume.

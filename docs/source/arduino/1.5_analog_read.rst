@@ -1,4 +1,4 @@
-.. _analog_read:
+.. _ar_analog_read:
 
 1.5 Analog Read
 ===============

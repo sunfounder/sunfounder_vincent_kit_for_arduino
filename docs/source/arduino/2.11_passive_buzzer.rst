@@ -55,7 +55,7 @@ Code Analysis
 
 There are two points needing your attention:
 
-①tone() & noTone(): This function is used to control the sound of the passive buzzer directly and its prototype is as follows: 
+1. ``tone()`` & ``noTone()``: This function is used to control the sound of the passive buzzer directly and its prototype is as follows: 
 
 .. code-block:: arduino
 
@@ -66,7 +66,7 @@ Generates a square wave of the specified frequency (and 50% duty cycle) on a pin
 
 Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to tone() will have no effect. If the tone is playing on the same pin, the call will set its frequency.
 
-Use of the tone() function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega).
+Use of the ``tone()`` function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega).
 
 It is not possible to generate tones lower than 31Hz.
 
@@ -80,33 +80,33 @@ It is not possible to generate tones lower than 31Hz.
 
     void noTone(int pin)
 
-Stops the generation of a square wave triggered by tone(). Has no effect if no tone is being generated.
+Stops the generation of a square wave triggered by ``tone()``. Has no effect if no tone is being generated.
 
 **pin**: The Arduino pin on which to generate the tone.
 
-Having known the two functions, you may grasp the codes—the installation of the array melody[] and the array noteDurations[] is the preparation of the subsequently several times of calling of the function tone() and the changing of tone and duration in the loop for better effect of music play.
+Having known the two functions, you may grasp the codes—the installation of the array melody[] and the array noteDurations[] is the preparation of the subsequently several times of calling of the function ``tone()`` and the changing of tone and duration in the loop for better effect of music play.
 
-②pitches.h: The code uses an extra file, **pitches.h**. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the tone() command was based. You may find it useful whenever you want to make musical notes.
+2. ``pitches.h``: The code uses an extra file, ``pitches.h``. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the ``tone()`` command was based. You may find it useful whenever you want to make musical notes.
 
 .. code-block:: arduino
 
     #include "pitches.h"
 
 .. note::
-    There is already a pitches.h file in this sample program. If we put it together with the main code in one folder, the successive steps of installing pitches.h can be omitted.
+    There is already a ``pitches.h`` file in this sample program. If we put it together with the main code in one folder, the successive steps of installing ``pitches.h`` can be omitted.
 
 .. image:: img/image123.png
 
 After you open the code 2.11passiveBuzzer, if you cannot open the
-pitches.h code, you can just install one manually. The steps are as
+``pitches.h`` code, you can just install one manually. The steps are as
 follows:
 
-To make the pitches.h file, either click on the button just below the
+To make the ``pitches.h`` file, either click on the button just below the
 serial monitor icon and choose "New Tab", or use Ctrl+Shift+N.
 
 .. image:: img/image124.png
 
-Then paste in the following code and save it as **pitches.h**:
+Then paste in the following code and save it as ``pitches.h``:
 
 .. code-block:: arduino
 

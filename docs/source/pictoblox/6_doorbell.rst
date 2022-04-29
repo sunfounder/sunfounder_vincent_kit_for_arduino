@@ -66,7 +66,7 @@ Then select the **bell** sprite on the stage and move it to the right position.
 
 Use [if then] to make a conditional statement that when the value of the pin12 read is equal to 1 (the key is pressed), the sound **xylo1** will be played.
 
-* [read status of digital pin]: This block is from the **Arduino Uno** palette and used to read the value of a digital pin, the result is 0 or 1.
+* [read status of digital pin]: This block is from the **Arduino Mega** palette and used to read the value of a digital pin, the result is 0 or 1.
 * [`if then <https://en.scratch-wiki.info/wiki/If_()_Then_(block)>`_]: This block is a control block and from **Control** palette. If its boolean condition is true, the blocks held inside it will run, and then the script involved will continue. If the condition is false, the scripts inside the block will be ignored. The condition is only checked once; if the condition turns to false while the script inside the block is running, it will keep running until it has finished.
 * [play sound until done]: from the Sound palette, used to play specific sounds.
 

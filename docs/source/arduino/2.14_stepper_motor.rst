@@ -71,7 +71,7 @@ By calling the library Stepper.h, you can easily drive the stepper motor.
 
 Creates a new instance of the Stepper class that represents a particular stepper motor attached to your Arduino board.
 
-**steps**: the number of steps in one revolution of your motor. If your motor gives the number of degrees per step, divide that number into 360 to get the number of steps (e.g. 360 / 3.6 gives 100 steps). (int)
+* ``steps``: the number of steps in one revolution of your motor. If your motor gives the number of degrees per step, divide that number into 360 to get the number of steps (e.g. 360 / 3.6 gives 100 steps). (int)
 
 .. note::
     Every circle of the stepper motor takes 2048 steps.
@@ -82,7 +82,7 @@ Creates a new instance of the Stepper class that represents a particular stepper
 
 Sets the motor speed in rotations per minute. This function doesn't make the motor turn, just sets the speed at which it will when you call step().
 
-**rpm**: the speed at which the motor should turn in rotations per minute - a positive number. (long)
+* ``rpm``: the speed at which the motor should turn in rotations per minute - a positive number. (long)
 
 .. note::
     The stepper motor we use here rotates 17 circles a minute at most.
@@ -93,9 +93,9 @@ Sets the motor speed in rotations per minute. This function doesn't make the mot
 
 Turns the motor a specific number of steps, at a speed determined by the most recent call to setSpeed(). 
 
-**This function is blocking;** that is, it will wait until the motor has finished moving to pass control to the next line in your sketch. For example, if you set the speed to, say, 1 RPM and called step(2048) on a 2048-step motor, this function would take a full minute to run. For better control, keep the speed high and only go a few steps with each call to step().
+This function is blocking; that is, it will wait until the motor has finished moving to pass control to the next line in your sketch. For example, if you set the speed to, say, 1 RPM and called step(2048) on a 2048-step motor, this function would take a full minute to run. For better control, keep the speed high and only go a few steps with each call to step().
 
-**steps:** the number of steps to turn the motor - positive to turn one direction, negative to turn the other. (int)
+* ``steps``: the number of steps to turn the motor - positive to turn one direction, negative to turn the other. (int)
 
 Phenomenon Picture
 ------------------

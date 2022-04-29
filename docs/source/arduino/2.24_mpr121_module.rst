@@ -76,13 +76,9 @@ The function of the module is included in the library MPR121_JM.h.
 
 Creates a new instance of the MPR121.
 
-irqpin: the interrupt request pin.
-
-touThresh: Touch threshold，the electrode is recognized as a threshold
-of the 「Touch」 state.
-
-relThresh: Release threshold，the electrode is recognized as a threshold
-of the 「Release」 state.
+* ``irqpin``: the interrupt request pin.
+* ``touThresh``: Touch threshold，the electrode is recognized as a threshold of the 「Touch」 state.
+* ``relThresh``: Release threshold，the electrode is recognized as a threshold of the 「Release」 state.
 
 The range of the electrode data value is 0~255. For typical touch
 application, the threshold value can be in range 0x05~0x30 for example.

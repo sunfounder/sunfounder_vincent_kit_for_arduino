@@ -51,7 +51,7 @@ Code
 
 When you finish uploading the codes to the Mega2560 board, you can hear the beep—beep emitted from the buzzer. If you want to know more about the detail code explanation, please refer to **Part 1-1.2 Digital Write**.
 
-:ref:`digital_write`
+:ref:`ar_digital_write`
 
 Phenomenon Picture
 ------------------

@@ -80,7 +80,7 @@ The for loop is used in loop() to make the LED flash(turn on 0.5s, then turn off
 
 Refer to **Part 1-1.2 Digital Write** for more details about controlling the LED by using digital pins. 
 
-:ref:`digital_write`
+:ref:`ar_digital_write`
 
 Phenomenon Picture
 ------------------

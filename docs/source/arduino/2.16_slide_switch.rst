@@ -59,7 +59,7 @@ Code
 After the codes are uploaded to the Mega2560 board, you can open the
 serial monitor to check the readings of the pin. When the Switch toggles
 to the left, the serial monitor displays 「1」; when toggles to the
-right, the serial monitor displays「0」. Refer to :ref:`digital_read` to check the code explanation.
+right, the serial monitor displays「0」. Refer to :ref:`ar_digital_read` to check the code explanation.
 
 
 

@@ -62,7 +62,7 @@ flicker time is too long and the LCD refresh is delayed), so please
 avoid using the delay() statement and use two separate intervals to
 control the working frequency of the LCD and alarm system respectively.
 Its workflow is shown in the flow chart. For analysis of Interval
-function, refer to :ref:`1.11 Interval`
+function, refer to :ref:`ar_interval`.
 
 .. image:: img/Part_three_1_Example_Explanation.png
    :align: center

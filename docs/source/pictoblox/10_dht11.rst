@@ -36,11 +36,11 @@ Switch to **Upload** mode, click the **Add Extension** button in the bottom left
 
 .. image:: img/11_addcom.png
 
-**2. Initializing the Arduino Uno and Serial Monitor**
+**2. Initializing the Arduino Mega and Serial Monitor**
 
-In **Upload** mode, start Arduino Uno and then set the serial port baud rate.
+In **Upload** mode, start Arduino Mega and then set the serial port baud rate.
 
-* [when Arduino Starts up]: In **Upload** mode, start Arduino Uno.
+* [when Arduino Starts up]: In **Upload** mode, start Arduino Mega.
 * [set serial baud rate to]: From the **Communications** palette, used to set the baud rate of serial port 0, default is 115200. If you are using Mega2560, then you can choose to set baud rate in serial port 0~3.
 
 .. image:: img/11_init.png

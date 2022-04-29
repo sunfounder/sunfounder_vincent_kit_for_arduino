@@ -56,7 +56,7 @@ monitor to see readings on the X-axis and Y-axis of Joystick, as well as
 the button status of Z-axis. The values of the X-axis and Y-axis are the
 analog values, which vary within the range「0」~「1023」. The Z-axis
 shows numerical value and the state is either 「1」 or 「0」. Refer to
-:ref:`analog_read` and :ref:`digital_read` to check the code
+:ref:`ar_analog_read` and :ref:`ar_digital_read` to check the code
 explanation.
 
 

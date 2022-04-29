@@ -61,7 +61,7 @@ stronger, the reading will increase correspondingly, and the pin reading
 range is 「0」~「1023」. However, according to the environmental
 conditions and the characteristics of the photoresistor, the actual
 reading range may be smaller than the theoretical range. For a detailed
-explanation of the code, refer to :ref:`analog_read`.
+explanation of the code, refer to :ref:`ar_analog_read`.
 
 Phenomenon Picture
 ------------------------

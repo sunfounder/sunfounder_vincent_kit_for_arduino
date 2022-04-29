@@ -61,32 +61,29 @@ successfully. Please use the same method to add other libraries then.
 
 **Method 2 Manually Add**
 
-Directly copy the library to ``libraries/Arduino`` path. This method can
-copy all libraries and add them at a time, but the drawback is that it
-is difficult to find ``libraries/Arduino``.
+You can also try to put the library in the ``libraries`` folder of your sketchbook by yourself. This method can
+copy all libraries and add them at a time, but first you need to find the path where the ``libraries`` folder is located.
 
-**Step 1**: Click **File** -> **Preferences** and on the pop-up window
-you can see the path of the libraries folder in the text box as shown
-below.
+**Step 1**: You can find or change the location of your ``libraries`` folder at **File** > **Preferences** > **Sketchbook location**.
 
 .. image:: img/image294.png
    :align: center
 
-**Step 2**: Copy all Libraries in the *library* folder.
+**Step 2**: Go to the directory ``sunfounder_vincent_kit_for_arduino/library`` and copy all the folders inside.
 
 .. image:: img/image295.png
    :align: center
 
-**Step 3**: Go to the path above and you will see there is a *libraries*
-folder, click to open it.
+**Step 3**: Go to the location of your ``libraries`` folder(find from Arduino IDE), click to open it.
 
 .. image:: img/image296.png
    :align: center
 
-**Step 4**: Paste all the libraries copied before to the folder. Then
-you can see them in libraries folder.
+**Step 4**: Paste all the libraries copied before to the ``libraries`` folder.
 
 .. image:: img/image297.png
    :align: center
 
 There is also a way to use the **Library Manager**, but the libraries added using this method are not necessarily compatible with the code we provide, so it is not recommended.
+
+Here is the link to the official Arduino tutorial: https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries

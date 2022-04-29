@@ -1,4 +1,4 @@
-.. _digital_write:
+.. _ar_digital_write:
 
 1.2 Digital Write
 =================

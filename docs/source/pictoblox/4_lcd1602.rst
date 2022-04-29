@@ -23,7 +23,7 @@ Build the Circuit
 
 .. image:: img/circuit/lcd1602_circuit.png
 
-* :ref:`cpn_breadboard`
+* :ref:`cpn_mega2560`
 * :ref:`cpn_i2c_lcd1602`
 
 Programming

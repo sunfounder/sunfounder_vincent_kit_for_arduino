@@ -62,11 +62,11 @@ Code Analysis
 
 There are two important parts to notice in this program.
 
-①The code uses an extra file decodeKeyValue.ino to decode the values in
+1. The code uses an extra file decodeKeyValue.ino to decode the values in
 class decode_result into key value.The file will be opened together with
 the main file.
 
-②IR Remote function is achieved by calling IRremote.h library related
+2. IR Remote function is achieved by calling IRremote.h library related
 functions.
 
 .. code-block:: arduino

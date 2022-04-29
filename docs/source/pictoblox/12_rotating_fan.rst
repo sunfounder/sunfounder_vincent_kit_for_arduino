@@ -19,7 +19,7 @@ You Will Learn
 Build the Circuit
 -----------------------
 
-In this project, the motor driver chip :ref:`L293D` is used to make the motor rotate.
+In this project, the motor driver chip :ref:`cpn_l293d` is used to make the motor rotate.
 
 L293D is a 4-channel motor driver integrated by chip with high voltage and high current. 
 

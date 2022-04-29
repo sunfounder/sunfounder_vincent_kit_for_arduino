@@ -65,17 +65,17 @@ Code Analysis
 When Rotary Encoder is used, the following situations of pin level will
 occur.
 
-① When rotating the shaft, dtPin will go from high level to low level.
+1. When rotating the shaft, dtPin will go from high level to low level.
 
-② clkPin will remain high level when the shaft rotates clockwise,
+2. clkPin will remain high level when the shaft rotates clockwise,
 otherwise it goes low level.
 
-③ When the shaft is pressed, swPin will have low level.
+3. When the shaft is pressed, swPin will have low level.
 
 From this, the program flow is shown on the right.
 
 For detailed analysis of potential state change judgment, please refer
-to :ref:`1.10 State Change Detection`.
+to :ref:`ar_state_change`.
 
 .. image:: img/image209.png
    :align: center

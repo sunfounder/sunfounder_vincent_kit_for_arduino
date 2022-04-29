@@ -1,4 +1,4 @@
-.. _digital_pullup:
+.. _ar_digital_pullup:
 
 1.9 Digital Input Pull-Up
 =========================

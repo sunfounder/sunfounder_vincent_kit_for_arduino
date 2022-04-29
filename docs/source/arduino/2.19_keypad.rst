@@ -68,11 +68,9 @@ By calling the Keypad.h library, you can easily use Keypad.
 
 Initializes the internal keymap to be equal to userKeymap.
 
-userKeymap: The symbols on the buttons of the keypads.
-
-row, col: Pin configuration.
-
-numRows, numCols: Keypad sizes.
+* ``userKeymap``: The symbols on the buttons of the keypads.
+* ``row, col``: Pin configuration.
+* ``numRows, numCols``: Keypad sizes.
 
 .. code-block:: arduino
 
