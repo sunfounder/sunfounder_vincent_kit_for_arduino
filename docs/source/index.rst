@@ -15,6 +15,7 @@ Wenn Sie andere Projekte lernen möchten, die wir nicht haben, senden Sie bitte 
 Hier ist die E-Mail: cs@sunfounder.com.
 
 
+
 .. toctree::
     :maxdepth: 2
     
@@ -22,6 +23,7 @@ Hier ist die E-Mail: cs@sunfounder.com.
     arduino/play_with_arduino
     pictoblox/play_with_scratch
     thank-learning
+    other_language
 
 Urheberrechtshinweis
 ----------------------
