@@ -1,4 +1,4 @@
-Play with Scratch
+Spielen mit Scratch
 ========================
 
 Neben der Programmierung auf der Arduino IDE mit Uno/Mega2560-Boards können wir diese auch für die grafische Programmierung verwenden.

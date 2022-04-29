@@ -1,6 +1,6 @@
 .. _breakout_clone:
 
-2.19 GAME - Breakout-Klon
+2.19 SPIEL - Breakout-Klon
 ============================
 
 Hier benutzen wir das Potentiometer, um ein Breakout-Clone-Spiel zu spielen.

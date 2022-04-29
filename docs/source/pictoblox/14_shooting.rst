@@ -1,6 +1,6 @@
 .. _shooting:
 
-2.14 GAME - Schießen
+2.14 SPIEL - Schießen
 ====================================
 
 Hast du diese Schießspiele im Fernsehen gesehen? Je näher ein Teilnehmer eine Kugel auf der Zielscheibe an das Bullseye schießt, desto höher ist seine Punktzahl.

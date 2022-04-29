@@ -1,6 +1,6 @@
 .. _fishing:
 
-2.20 GAME - Fischen
+2.20 SPIEL - Fischen
 ===========================
 
 Hier spielen wir ein Angelspiel mit einer Taste.

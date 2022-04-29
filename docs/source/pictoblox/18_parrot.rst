@@ -1,7 +1,7 @@
 .. _parrot:
 
-2.18 SPIEL - Flappy Parrot
-==============================
+2.18 SPIEL - Flatterhafter Papagei
+========================================
 
 Hier verwenden wir das Ultraschallmodul, um ein "Flappy Parrot"-Spiel zu spielen.
 
