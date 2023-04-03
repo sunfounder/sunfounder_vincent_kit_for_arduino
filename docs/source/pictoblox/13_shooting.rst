@@ -1,6 +1,6 @@
 .. _shooting:
 
-2.14 GAME - Shooting
+2.13 GAME - Shooting
 ====================================
 
 Have you seen those shooting games on TV? The closer a contestant shoots a bullet on the target to the bullseye, the higher his score.

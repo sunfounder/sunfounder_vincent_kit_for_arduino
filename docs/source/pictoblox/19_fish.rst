@@ -1,6 +1,6 @@
 .. _fishing:
 
-2.20 GAME - Fishing
+2.19 GAME - Fishing
 ===========================
 
 Here, we play a fishing game with a button.

@@ -96,3 +96,9 @@ When the **O** sprite is clicked, it repeats the hide and show process 3 times, 
 * [Hide] & [Show]: make the sprite hide and show.
 
 .. image:: img/5_o.png
+
+**7. Initialize the LCD1602**
+
+After clicking the green flag, set the I2C address of the LCD1602 and clear the last content in backdrop.
+
+.. image:: img/lcd1602.png

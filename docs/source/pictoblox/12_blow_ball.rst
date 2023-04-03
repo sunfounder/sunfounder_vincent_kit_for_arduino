@@ -1,6 +1,6 @@
 .. _blow_ball:
 
-2.13 Blow Ball
+2.12 Blow Ball
 ==============================
 
 In this project, we use sound sensor to make the ball on the stage fly upwards. Blow into the sound sensor module, the more vibration it feels, the higher the ball can fly. When the ball touches the string, it makes a nice sound as well as a twinkling starlight.

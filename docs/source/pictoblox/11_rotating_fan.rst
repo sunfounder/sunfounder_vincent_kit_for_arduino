@@ -1,6 +1,6 @@
 .. _rotating_fan:
 
-2.12 Rotating Fan
+2.11 Rotating Fan
 ========================
 
 In this project, we will make a spinning star sprite and fan.

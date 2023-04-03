@@ -1,6 +1,6 @@
 .. _balloon:
 
-2.15 GAME - Inflating the Balloon
+2.14 GAME - Inflating the Balloon
 =========================================
 
 Here, we will play a game of ballooning.

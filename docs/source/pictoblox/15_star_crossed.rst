@@ -1,6 +1,6 @@
 .. _star_crossed:
 
-2.16 GAME - Star-Crossed
+2.15 GAME - Star-Crossed
 ==========================
 
 In the next projects, we will play some fun mini-games in PictoBlox.

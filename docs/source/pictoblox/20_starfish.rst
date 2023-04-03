@@ -1,6 +1,6 @@
 .. _starfish:
 
-2.21 Catching Starfish
+2.20 Catching Starfish
 ============================
 
 Here, let's make a game to catch starfish. At the start of the script, a starfish is swimming comfortably on the stage, and a diver is also swimming to the right and left. You need to control the depth of the water level sensor module in the water in order to let the diver on the stage catch the starfish, and for each starfish caught, the count will be increased by 1.

@@ -1,6 +1,6 @@
 .. _dragon:
 
-2.22 GAME - Kill Dragon
+2.21 GAME - Kill Dragon
 ============================
 
 Here, we use the joystick to play a game of dragon killing.

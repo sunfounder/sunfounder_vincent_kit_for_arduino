@@ -53,18 +53,17 @@ But the :ref:`humiture` is used the :ref:`Upload Mode`.
     8_temperature
     9_alarm_clock
     10_dht11
-    11_pendulum
-    12_rotating_fan
-    13_blow_ball
-    14_shooting
-    15_balloon
-    16_star_crossed
-    17_apple
-    18_parrot
-    19_brick
-    20_fish
-    21_starfish
-    22_dragon
+    11_rotating_fan
+    12_blow_ball
+    13_shooting
+    14_balloon
+    15_star_crossed
+    16_apple
+    17_parrot
+    18_brick
+    19_fish
+    20_starfish
+    21_dragon
 
 
 

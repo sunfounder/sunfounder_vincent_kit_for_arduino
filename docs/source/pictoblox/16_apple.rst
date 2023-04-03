@@ -1,6 +1,6 @@
 .. _eat_apple:
 
-2.17 GAME - Eat Apple
+2.16 GAME - Eat Apple
 ==============================
 
 In this project, we play a game that uses button to control Beetle to eat apple.

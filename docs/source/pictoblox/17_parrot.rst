@@ -1,6 +1,6 @@
 .. _parrot:
 
-2.18 GAME - Flappy Parrot
+2.17 GAME - Flappy Parrot
 ==============================
 
 Here we use the ultrasonic module to play a flappy parrot game.
