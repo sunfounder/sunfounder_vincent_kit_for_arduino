@@ -2,13 +2,13 @@
 #include <LiquidCrystal_I2C.h>
 #include <IRremote.h>
 
-const int recvPin = 5;
+const int IR_RECEIVE_PIN = 5;  // Define the pin number for the IR Sensor
+String lastDecodedValue = "";  // Variable to store the last decoded value
+
 const long interval = 1000;
 
 unsigned long previousMillis = 0;
 
-IRrecv irrecv(recvPin);
-decode_results results;
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
 
@@ -21,14 +21,20 @@ void setup() {
   lcd.init();
   lcd.backlight();
   Serial.begin(9600);
-  irrecv.enableIRIn();
+  Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
   initNewValue();
 }
 
 void loop() {
-  if (irrecv.decode(&results)) {
+  if (IrReceiver.decode()) {
     bool result = 0;
-    String num = decodeKeyValue(results.value);
+    String num = decodeKeyValue(IrReceiver.decodedIRData.command);
+    if (num != "ERROR" && num != lastDecodedValue) {
+      Serial.println(num);
+      lastDecodedValue = num;  // Update the last decoded value
+    }
+
     if (num == "POWER") {
       initNewValue();
     }
@@ -44,7 +50,7 @@ void loop() {
       }
       lcdShowInput(result);
     }
-    irrecv.resume();
+    IrReceiver.resume();  // Enable receiving of the next value
   }
 }
 

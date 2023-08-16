@@ -1,74 +1,50 @@
 
-/*
- *  FF6897 0    
-    FF30CF 1    
-    FF18E7 2    
-    FF7A85 3    
-    FF10EF 4    
-    FF38C7 5    
-    FF5AA5 6    
-    FF42BD 7      
-    FF4AB5 8    
-    FF52AD 9    
-    FF906F ＋   
-    FFA857 -    
-    FFE01F EQ   
-    FFB04F U/SD 
-    FF9867 CYCLE
-    FF22DD PLAY/PAUSE
-    FF02FD FORWARD
-    FFC23D BACKWARD
-    FFA25D POWER
-    FFE21D MUTE
-    FF629D MODE
- * 
- */
 String decodeKeyValue(long result)
 {
   switch(result){
-    case 0xFF6897:
+    case 0x16:
       return "0";
-    case 0xFF30CF:
+    case 0xC:
       return "1"; 
-    case 0xFF18E7:
+    case 0x18:
       return "2"; 
-    case 0xFF7A85:
+    case 0x5E:
       return "3"; 
-    case 0xFF10EF:
+    case 0x8:
       return "4"; 
-    case 0xFF38C7:
+    case 0x1C:
       return "5"; 
-    case 0xFF5AA5:
+    case 0x5A:
       return "6"; 
-    case 0xFF42BD:
+    case 0x42:
       return "7"; 
-    case 0xFF4AB5:
+    case 0x52:
       return "8"; 
-    case 0xFF52AD:
+    case 0x4A:
       return "9"; 
-    case 0xFF906F:
+    case 0x9:
       return "+"; 
-    case 0xFFA857:
+    case 0x15:
       return "-"; 
-    case 0xFFE01F:
+    case 0x7:
       return "EQ"; 
-    case 0xFFB04F:
+    case 0xD:
       return "U/SD";
-    case 0xFF9867:
+    case 0x19:
       return "CYCLE";         
-    case 0xFF22DD:
+    case 0x44:
       return "PLAY/PAUSE";   
-    case 0xFF02FD:
+    case 0x43:
       return "FORWARD";   
-    case 0xFFC23D:
+    case 0x40:
       return "BACKWARD";   
-    case 0xFFA25D:
+    case 0x45:
       return "POWER";   
-    case 0xFFE21D:
+    case 0x47:
       return "MUTE";   
-    case 0xFF629D:
+    case 0x46:
       return "MODE";       
-    case 0xFFFFFFFF:
+    case 0x0:
       return "ERROR";   
     default :
       return "ERROR";

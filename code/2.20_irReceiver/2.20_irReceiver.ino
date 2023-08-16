@@ -1,23 +1,20 @@
 #include <IRremote.h>
 
-const int recvPin = 11;
+const int IR_RECEIVE_PIN = 11;  // Define the pin number for the IR Sensor
+String lastDecodedValue = "";  // Variable to store the last decoded value
 
-IRrecv irrecv(recvPin);
-decode_results results;
-
-void setup()
-{
-  Serial.begin(9600);
-  irrecv.enableIRIn(); // Start the receiver
+void setup() {
+  Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
+  IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
 }
 
 void loop() {
-  if (irrecv.decode(&results)) {
-    //Serial.println(results.value,HEX);
-    if (decodeKeyValue(results.value)!="ERROR")
-    {
-      Serial.println(decodeKeyValue(results.value));
+  if (IrReceiver.decode()) {
+    String decodedValue = decodeKeyValue(IrReceiver.decodedIRData.command);
+    if (decodedValue != "ERROR" && decodedValue != lastDecodedValue) {
+      Serial.println(decodedValue);
+      lastDecodedValue = decodedValue;  // Update the last decoded value
     }
-    irrecv.resume(); // Receive the next value
+    IrReceiver.resume();  // Enable receiving of the next value
   }
 }

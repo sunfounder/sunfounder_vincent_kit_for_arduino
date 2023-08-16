@@ -1,41 +1,36 @@
-#include <dht.h>
+#include "DHT.h"
 
-dht DHT;
+#define DHTPIN 4  // Set the pin connected to the DHT11 data pin
+#define DHTTYPE DHT11 // DHT 11 
 
-#define DHT11_PIN 4
+DHT dht(DHTPIN, DHTTYPE);
 
-void setup()
-{
+void setup() {
   Serial.begin(9600);
-  Serial.println("DHT TEST PROGRAM ");
-  Serial.print("LIBRARY VERSION: ");
-  Serial.println(DHT_LIB_VERSION);
-  Serial.println();
-  Serial.println("Type,\tstatus,\tHumidity (%),\tTemperature (C)");
+  Serial.println("DHT11 test!");
+  dht.begin();
 }
 
-void loop()
-{
-  Serial.print("DHT11, \t");
-  int chk = DHT.read11(DHT11_PIN);
-  switch (chk)
-  {
-    case DHTLIB_OK:  
-		Serial.print("OK,\t");
-    Serial.print(DHT.humidity,1);
-    Serial.print(",\t");
-    Serial.println(DHT.temperature,1);
-    delay(1000); 
-		break;
-    case DHTLIB_ERROR_CHECKSUM: 
-		Serial.println("Checksum error,\t"); 
-		break;
-    case DHTLIB_ERROR_TIMEOUT: 
-		Serial.println("Time out error,\t"); 
-    delay(20); 
-		break;
-    default: 
-		Serial.println("Unknown error,\t"); 
-		break;
+void loop() {
+  // Wait a few seconds between measurements.
+  delay(2000);
+
+  // Reading temperature or humidity takes about 250 milliseconds!
+  // Sensor readings may also be up to 2 seconds 'old' (it's a very slow sensor)
+  float humidity = dht.readHumidity();
+  // Read temperature as Celsius (the default)
+  float temperature = dht.readTemperature();
+
+  // Check if any reads failed and exit early (to try again).
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println("Failed to read from DHT sensor!");
+    return;
   }
+  // Print the humidity and temperature
+  Serial.print("Humidity: "); 
+  Serial.print(humidity);
+  Serial.print(" %\t");
+  Serial.print("Temperature: "); 
+  Serial.print(temperature);
+  Serial.println(" *C");
 }
