@@ -87,3 +87,13 @@ language = 'en' # Before running make html, set the language.
 locale_dirs = ['locale/'] # .po files for other languages are placed in the locale/ folder.
 
 gettext_compact = False # Support for generating the contents of the folders inside source/ into other languages.
+
+# open link in a new window
+
+rst_epilog = """
+
+.. |link_download_arduino| raw:: html
+
+    <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a>
+
+"""

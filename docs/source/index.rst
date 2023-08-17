@@ -1,11 +1,12 @@
 SunFounder Vincent Kit for Arduino
 ======================================
 
-This is a kit suitable for beginners and knowledgable Arduino learners.
-The kit uses Mega2560 as the main control board, containing 64 commonly
-used input and output components, modules and so many basic components
-(such as resistors, capacitors, transistors, etc.), and it can provide
-powerful help for you to finish your programming projects.
+This comprehensive learning kit centers around the Mega2560 as 
+its main control board, offering a perfect blend of essential components, 
+modules, and a wide array of basic elements like resistors, capacitors, 
+and transistors. Whether you're a beginner taking your first steps into Arduino 
+or an adept learner seeking to deepen your knowledge, this kit is tailored to meet your needs.
+
 
 Download the relevant code from the link below.
 

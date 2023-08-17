@@ -38,9 +38,11 @@ Code
 .. note::
 
     * You can open the file ``2.8_ledMatrix.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.8_ledMatrix`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the library called ``LedControl``, detailed tutorials refer to :ref:`add_libraries_ar`.
+    * The ``LedControl`` library is used here, you can install it from the **Library Manager**.
+
+        .. image:: img/lib_ledcontrol.png
+            :align: center
+    
 
 .. raw:: html
 

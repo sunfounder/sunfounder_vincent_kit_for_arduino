@@ -40,5 +40,5 @@ The SunFounder Mega Board is a microcontroller board based on the ATmega2560 (`d
 
 * `Arduino IDE <https://www.arduino.cc/en/software>`_
 * `Arduino Programming Language Reference <https://www.arduino.cc/reference/en/>`_
-* :ref:`Install and Introduce Arduino IDE`
+* :ref:`get_started_ar`
 * `ATmega2560 Datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf>`_

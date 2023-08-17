@@ -63,11 +63,9 @@ Code
 
 .. note::
 
-    * You can open the file ``3.5_accessControlSystem.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.5_accessControlSystem`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the ``RFID1``, ``Keypad`` and ``LiquidCrystal_I2C`` libraries, detailed tutorials refer to :ref:`add_libraries_ar`.
-
+   * You can open the file ``3.5_accessControlSystem.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.5_accessControlSystem`` directly.
+   * The ``Keypad`` and ``LiquidCrystal I2C`` library are used here, you can install them from the **Library Manager**.
+   * The ``RFID1`` library is used here, refer to :ref:`install_lib_man` for a tutorial to install.
 
 .. raw:: html
 

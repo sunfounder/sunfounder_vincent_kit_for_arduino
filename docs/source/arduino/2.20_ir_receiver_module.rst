@@ -44,10 +44,10 @@ Code
 .. note::
 
     * You can open the file ``2.20_irReceiver.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.20_irReceiver`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the library called ``IRremote``, detailed tutorials refer to :ref:`add_libraries_ar`.
+    * The ``IRremote`` library is used here, you can install it from the **Library Manager**.
 
+        .. image:: img/lib_irremote.png
+            :align: center
 
 .. raw:: html
 
@@ -60,52 +60,52 @@ the serial monitor.
 Code Analysis
 ---------------------
 
-There are two important parts to notice in this program.
+This code is designed to work with an infrared (IR) remote control using the ``IRremote`` library. Here's the breakdown:
 
-1. The code uses an extra file decodeKeyValue.ino to decode the values in
-class decode_result into key value.The file will be opened together with
-the main file.
+#. Include Libraries: This includes the IRremote library, which provides functions to work with IR remote controls.
 
-2. IR Remote function is achieved by calling IRremote.h library related
-functions.
+    .. code-block:: arduino
 
-.. code-block:: arduino
+        #include <IRremote.h>
 
-    #include <IRremote.h>
+#. Defines the Arduino pin to which the IR sensor's signal pin is connected and declares a variable to store the last decoded IR value.
 
-**Library Functions：**
+    .. code-block:: arduino
 
-.. code-block:: arduino
+        const int IR_RECEIVE_PIN = 11;  // Define the pin number for the IR Sensor
+        String lastDecodedValue = "";  // Variable to store the last decoded value
 
-    IRrecv(int recvpin)
+#. Initializes serial communication at a baud rate of 9600. Initializes the IR receiver on the specified pin (``IR_RECEIVE_PIN``) and enables LED feedback (if applicable).
 
-Create IRrecv object to control a IR Receiver module.
+    .. code-block:: arduino
 
-.. code-block:: arduino
+        void setup() {
+            Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
+            IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
+        }
 
-    decode_result
+#. The loop runs continuously to process incoming IR remote signals.
 
-In this kit, results are usually 8-digit hexadecimal numbers starting
-with 00FF. You can check decodeKeyValue.ino file in the sample file.
+    .. code-block:: arduino
 
-.. code-block:: arduino
+        void loop() {
+            if (IrReceiver.decode()) {
+                String decodedValue = decodeKeyValue(IrReceiver.decodedIRData.command);
+                if (decodedValue != "ERROR" && decodedValue != lastDecodedValue) {
+                    Serial.println(decodedValue);
+                    lastDecodedValue = decodedValue;  // Update the last decoded value
+                }
+                IrReceiver.resume();  // Enable receiving of the next value
+            }
+        }
+    
+    * Checks if an IR signal is received and successfully decoded.
+    * Decodes the IR command and stores it in ``decodedValue`` using a custom ``decodeKeyValue()`` function.
+    * Checks if the decoded value is not an error and is different from the last decoded value.
+    * Prints the decoded IR value to the serial monitor.
+    * Updates the ``lastDecodedValue`` with the new decoded value.
+    * Resumes IR signal reception for the next signal.
 
-    void enableIRIn()
-
-Initialize the IR receiver module.
-
-.. code-block:: arduino
-
-    int decode(decode_results *results);
-
-Decodes the received IR message. Returns 0 if no data ready, 1 if data
-ready. Results of decoding are stored in results.
-
-.. code-block:: arduino
-
-    void resume()
-
-Restart for receiving an other value.
 
 Phenomenon Picture
 ------------------------

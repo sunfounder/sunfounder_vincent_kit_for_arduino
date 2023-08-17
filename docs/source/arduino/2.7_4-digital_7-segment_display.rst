@@ -40,12 +40,12 @@ Code
 
 .. note::
 
-    * You can open the file ``2.8_ledMatrix.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.8_ledMatrix`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the library called ``TimerOne``, detailed tutorials refer to :ref:`add_libraries_ar`.
+    * You can open the file ``2.7_4digitalSegment.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.7_4digitalSegment`` directly.
+    * The ``TimerOne`` library is used here, you can install it from the **Library Manager**.
 
-
+        .. image:: img/lib_timerone.png
+            :align: center
+    
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1a717c75-35df-4674-be90-a5d290f7065d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -70,7 +70,7 @@ Refer to :ref:`ar_7_segment` to check the details of the number display of the 4
 
     #include "TimerOne.h"
 
-**Library Functions：**
+**Library Functions**
 
 .. code-block:: arduino
 

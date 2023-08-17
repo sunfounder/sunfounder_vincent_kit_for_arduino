@@ -45,9 +45,8 @@ Code
 .. note::
 
     * You can open the file ``2.35_RFID.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.35_RFID`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the library called ``rfid1``, detailed tutorials refer to :ref:`add_libraries_ar`.
+    * The ``RFID1`` library is used here, refer to :ref:`install_lib_man` for a tutorial to install.
+
 
 
 .. raw:: html

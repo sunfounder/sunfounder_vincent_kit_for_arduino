@@ -61,10 +61,10 @@ Code
 .. note::
 
     * You can open the file ``3.3_overheatMonitor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.3_overheatMonitor`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the ``LiquidCrystal_I2C`` library, detailed tutorials refer to :ref:`add_libraries_ar`.
+    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
 
+        .. image:: img/lib_liquidcrystal_i2c.png
+            :align: center
 
 
 .. raw:: html

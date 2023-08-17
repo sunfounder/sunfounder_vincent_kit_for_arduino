@@ -61,9 +61,9 @@ Code
 .. note::
 
     * You can open the file ``1.4_digitalRead.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.4_digitalRead`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Or click **Open Code** to open it in `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_.
-    * Then :ref:`ar_upload_code` to the board.
+    * Or copy this code into Arduino IDE.
+
+
 
 
 .. raw:: html

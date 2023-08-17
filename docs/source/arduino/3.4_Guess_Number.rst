@@ -51,10 +51,7 @@ Code
 .. note::
 
     * You can open the file ``3.4_guessNumber.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-    * Then :ref:`ar_upload_code` to the board.
-    * Please make sure you have added the ``IRremote`` and ``LiquidCrystal_I2C`` libraries, detailed tutorials refer to :ref:`add_libraries_ar`.
-
+    * The ``LiquidCrystal I2C`` and ``IRremote`` libraries are used here, you can install them from the **Library Manager**.
 
 
 .. raw:: html
