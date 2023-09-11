@@ -1,9 +1,10 @@
 SunFounder Vincent Kit for Arduino
 ======================================
 
-Dies ist ein Kit, das für Anfänger und sachkundige Arduino-Lernende geeignet ist. Das Kit verwendet Mega2560 als Hauptsteuerplatine, die 64 häufig verwendete Eingangs- und Ausgangskomponenten, Module und so viele grundlegende Komponenten (wie Widerstände, Kondensatoren, Transistoren usw.) enthält, und es kann Ihnen eine leistungsstarke Hilfe bei der Fertigstellung Ihrer Programmierung bieten Projekte.
+Dieses umfassende Lernset dreht sich um den Mega2560 als Hauptsteuerplatine und bietet eine perfekte Mischung aus wesentlichen Komponenten, Modulen und einer Vielzahl grundlegender Elemente wie Widerständen, Kondensatoren und Transistoren. 
 
-Laden Sie den entsprechenden Code über den unten stehenden Link herunter.
+Ob Sie ein Anfänger sind, der seine ersten Schritte in der Arduino-Welt macht, oder ein versierter Lernender, der sein Wissen vertiefen möchte, dieses Kit ist auf Ihre Bedürfnisse zugeschnitten.
+
 
 
 * :download:`SunFounder Vincent Kit for Arduino <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`

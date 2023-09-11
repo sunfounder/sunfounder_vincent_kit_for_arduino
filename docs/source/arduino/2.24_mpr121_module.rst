@@ -40,10 +40,12 @@ Code
 .. note::
 
     * Sie können die Datei ``2.24_mpr121.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.24_mpr121`` direkt öffnen.
-    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
-    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
-    * Bitte stellen Sie sicher, dass Sie die Bibliothek ``MPR121_JM`` hinzugefügt haben, detaillierte Anleitungen finden Sie unter :ref:`add_libraries_ar`.
+    * Oder kopieren Sie diesen Code in Arduino IDE. 
+    * Die Bibliothek ``Adafruit MPR121`` wird hier verwendet. Sie können sie über den **Library Manager** installieren.
 
+
+        .. image:: img/lib_mpr121.png
+            :align: center
 
 .. raw:: html
 
@@ -54,47 +56,107 @@ Nach dem Hochladen der Codes auf die Mega2560-Platine wird der Berührungszustan
 
 Code-Analyse
 --------------------
+Dieser Code ermöglicht die Kommunikation und den Betrieb des MPR121-Touchsensors. Er kann den Status von Berührungselektroden erkennen und Informationen über berührte oder freigegebene Elektroden an der seriellen Schnittstelle ausgeben. Falls detaillierte Sensordaten erforderlich sind, kann der entsprechende Code auskommentiert werden.
 
-Die Funktion des Moduls ist in der Bibliothek ``MPR121_JM.h`` enthalten.
+Hier eine Analyse des Codes:
 
-.. code-block:: arduino
+#. Bibliotheken importieren:
 
-    #include <MPR121_JM.h> 
+    .. code-block:: arduino
 
-**Bibliotheksfunktionen:**
+        #include <Wire.h>
+        #include "Adafruit_MPR121.h"
 
+    * ``Wire.h``: Wird für die I2C-Kommunikation verwendet.
+    * ``Adafruit_MPR121.h``: Adafruits MPR121-Bibliothek zum Betreiben des MPR121-Touchsensors.
 
-.. code-block:: arduino
+#. Das ``_BV`` Makro definieren:
 
-    MPR121(int irqpin,uint8_t touThresh,uint8_t relThresh)
+    .. code-block:: arduino
 
-Erstellt eine neue Instanz des ``MPR121``.
+        #ifndef _BV
+        #define _BV(bit) (1 << (bit)) 
+        #endif
 
-* ``irqpin``: der Interrupt-Request-Pin.
-* ``touThresh``: Berührungsschwelle, die Elektrode wird als Schwelle des 「Berührungs」-Zustands erkannt.
-* ``relThresh``: Freigabeschwelle, die Elektrode wird als Schwelle des 「Freigabe」-Zustands erkannt.
+    ``_BV(bit)`` definiert ein Makro, das ein gegebenes Bit in den entsprechenden Binärwert umwandelt, ähnlich 1 << bit.
 
-Der Wertebereich der Elektrodendaten liegt zwischen 0 und 255. Für eine typische Berührungsanwendung kann der Schwellenwert beispielsweise im Bereich von 0x05~0x30 liegen. Je kleiner der Wert, desto empfindlicher ist es. Die Einstellung des Schwellenwerts hängt von der tatsächlichen Anwendung ab. Typischerweise ist der Berührungsschwellenwert etwas größer als der Auslöseschwellenwert für Berührungsentprellung und Hysterese.
+#. Instanz der Klasse ``Adafruit_MPR121`` initialisieren:
 
+    .. code-block:: arduino
 
-.. code-block:: arduino
+        Adafruit_MPR121 cap = Adafruit_MPR121();
 
-    void mpr121_setup()
+    Eine Instanz der Klasse ``Adafruit_MPR121`` namens ``cap`` erstellen. Das Objekt ``cap`` wird verwendet, um mit dem MPR121-Touchsensor zu kommunizieren und ihn zu betreiben.
 
-MPR121-Modul einrichten.
+#. Funktion ``setup()``:
 
-.. code-block:: arduino
+    Serielle Kommunikation mit einer Baudrate von 9600 initialisieren. Anschließend den MPR121-Touchsensor mit der Standard-I2C-Adresse 0x5A initialisieren. Falls die Initialisierung fehlschlägt, eine Fehlermeldung ausgeben und eine Endlosschleife starten.
 
-    bool checkInterrupt()
+    .. code-block:: arduino
 
-Nehmen Sie eine Unterbrechungsbeurteilung vor, wenn sich der Elektrodenzustand ändert, gibt die Funktion einen booleschen Wert 「0」 zurück.
+        void setup() {
+            Serial.begin(9600);
 
+            while (!Serial) { 
+                delay(10);
+            }
 
-.. code-block:: arduino
+            Serial.println("Adafruit MPR121 Capacitive Touch sensor test"); 
 
-    uint16_t readTouchInputs()
+            if (!cap.begin(0x5A)) {
+                Serial.println("MPR121 nicht gefunden, Verkabelung überprüfen?");
+                while (1);
+            }
+            Serial.println("MPR121 gefunden!");
 
-Der Berührungszustand der Elektrode erzeugt einen booleschen Wert. Die Funktion akkumuliert die von allen Elektroden erzeugten booleschen Werte nacheinander zu einer 12-Bit-Binärzahl als Rückgabewert. Wenn die erste und die elfte Elektrode berührt werden, wird 「100000000010」 zurückgegeben.
+#. Funktion ``loop()``:
+
+    * Den aktuellen Berührungsstatus abrufen, der als 16-Bit-Integer zurückgegeben wird.
+
+        .. code-block:: arduino
+
+            currtouched = cap.touched();
+
+    * Durch den Status von 12 Elektroden iterieren (nummeriert von 0 bis 11).
+
+        .. code-block:: arduino
+
+            for (uint8_t i=0; i<12; i++) {
+                if ((currtouched & _BV(i)) && !(lasttouched & _BV(i)) ) {
+                    Serial.print(i); Serial.println(" berührt");
+                }
+                if (!(currtouched & _BV(i)) && (lasttouched & _BV(i)) ) {
+                    Serial.print(i); Serial.println(" freigegeben");
+                }
+            }
+
+        * Wenn eine Elektrode berührt wird und vorher nicht berührt wurde, ``x touched`` ausgeben, wobei x die Elektrodennummer ist.
+        * Wenn eine Elektrode zuvor berührt wurde, aber jetzt nicht mehr berührt wird, ``x released`` ausgeben.
+
+    * ``lasttouched`` aktualisieren, um den aktuellen Berührungsstatus für den Vergleich in der nächsten Iteration zu speichern.
+
+        .. code-block:: arduino
+
+            lasttouched = currtouched;
+
+    * Debug-Informationen (Optional):
+
+        .. code-block:: arduino
+
+            Serial.print("\t\t\t\t\t\t\t\t\t\t\t\t\t 0x"); Serial.println(cap.touched(), HEX);
+            Serial.print("Filt: ");
+            for (uint8_t i=0; i<12; i++) {
+                Serial.print(cap.filteredData(i)); Serial.print("\t");
+            }
+            Serial.println();
+            Serial.print("Base: ");
+            for (uint8_t i=0; i<12; i++) {
+                Serial.print(cap.baselineData(i)); Serial.print("\t");
+            }
+            Serial.println();
+
+            // Verzögerung einfügen, um nicht zu überwältigen
+            delay(100);
 
 
 Phänomen Bild

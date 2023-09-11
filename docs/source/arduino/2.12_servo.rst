@@ -42,9 +42,7 @@ Code
 .. note::
 
     * Sie können die Datei ``2.12_servo.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.12_servo`` direkt öffnen.
-    * Oder kopieren Sie diesen Code in Arduino IDE 1/2.
-    * Oder klicken Sie auf Code öffnen, um ihn im `Web Editor <https://docs.arduino.cc/cloud/web-editor/tutorials/getting-started/getting-started-web-editor>`_ zu öffnen .
-    * Laden Sie dann :ref:`ar_upload_code` auf das Board hoch.
+    * Oder kopieren Sie diesen Code in Arduino IDE. 
 
 .. raw:: html
 

@@ -1,92 +1,80 @@
+.. _install_arduino:
 
-.. _install_ide:
+Arduino IDE installieren (Wichtig)
+======================================
 
-Arduino IDE installieren und einführen
-========================================
+Die Arduino IDE, bekannt als Arduino Integrated Development Environment, bietet alle Softwareunterstützungen, die für ein Arduino-Projekt benötigt werden. Es handelt sich um eine speziell für Arduino entwickelte Programmiersoftware, die vom Arduino-Team bereitgestellt wird und uns das Schreiben von Programmen und das Hochladen auf das Arduino-Board ermöglicht.
 
-Installieren Sie die Arduino-IDE
---------------------------------------
+Die Arduino IDE 2.0 ist ein Open-Source-Projekt. Sie ist ein großer Schritt von ihrem robusten Vorgänger, der Arduino IDE 1.x, und kommt mit einer überarbeiteten Benutzeroberfläche, verbessertem Board & **Library Manager**, Debugger, Autocomplete-Funktion und vielem mehr.
 
-Derzeit stehen drei Programmiertools zur Auswahl: Arduino IDE 1, Arduino IDE 2 und Arduino Web Editor.
+In diesem Tutorial zeigen wir, wie man die Arduino IDE 2.0 auf einem Windows-, Mac- oder Linux-Computer herunterlädt und installiert.
 
-* **Arduino IDE 1** ist der standardmäßige Offline-Editor.
-* **Arduino IDE 2** ist die zukünftige Version der Arduino IDE, die schneller und noch leistungsfähiger ist.
-* **Arduino Web Editor** ist eine Online-Entwicklungsumgebung.
+Anforderungen
+-------------------
 
+* Windows - Win 10 und neuer, 64 Bit
+* Linux - 64 Bit
+* Mac OS X - Version 10.14: "Mojave" oder neuer, 64 Bit
 
-**Arduino IDE 1**
-
-.. image:: img/ide1.png
-
-Die Arduino Integrated Development Environment – ​​oder Arduino Software (IDE) – enthält einen Texteditor zum Schreiben von Code, einen Nachrichtenbereich, eine Textkonsole, eine Symbolleiste mit Schaltflächen für allgemeine Funktionen und eine Reihe von Menüs. Es verbindet sich mit der Arduino-Hardware, um Programme hochzuladen und mit ihnen zu kommunizieren.
-
-Alles über **Arduino IDE 1** finden Sie unter: https://docs.arduino.cc/software/ide-v1 .
-
-Die folgenden Links sind Tutorials für die Installation von Arduino IDE 1 für jedes Betriebssystem.
-
-* `Windows <http://docs.arduino.cc/software/ide-v1/tutorials/Windows>`_
-* `mac OS <http://docs.arduino.cc/software/ide-v1/tutorials/macOS>`_
-* `Linux <http://docs.arduino.cc/software/ide-v1/tutorials/Linux>`_
-
-
-**Arduino IDE 2**
-
-.. image:: img/ide2.png
-
-Die neue Hauptversion der Arduino IDE ist schneller und noch leistungsfähiger! Neben einem moderneren Editor und einer reaktionsschnelleren Benutzeroberfläche bietet es Autovervollständigung, Codenavigation und sogar einen Live-Debugger.
-
-Alles über **Arduino IDE 2** finden Sie unter: https://docs.arduino.cc/software/ide-v2
-
-
-**Arduino Web Editor**
-
-.. image:: img/web_editor.png
-
-**Arduino Web Editor** ist eine Online-Entwicklungsumgebung mit Online-Speicher und Tausenden verfügbaren Bibliotheken und unterstützt auch neue Arduino-Boards.
-
-Alles über den **Arduino Web Editor** finden Sie unter: https://docs.arduino.cc/cloud/web-editor
-
-
-
-Einführung von Arduino IDE 1
+Arduino IDE 2.0 herunterladen
 -------------------------------
 
-Doppelklicken Sie auf das Arduino-Symbol (arduino.exe), das während des Installationsvorgangs erstellt wurde.
+#. Besuchen Sie |link_download_arduino|.
+
+#. Laden Sie die IDE für Ihre Betriebssystemversion herunter.
+
+    .. image:: img/sp_001.png
+
+Installation
+------------------------------
+
+Windows
+^^^^^^^^^^^^^
+
+#. Doppelklicken Sie auf die Datei ``arduino-ide_xxxx.exe``, um die heruntergeladene Datei auszuführen.
+
+#. Lesen Sie die Lizenzvereinbarung und stimmen Sie zu.
+
+    .. image:: img/sp_002.png
+
+#. Wählen Sie die Installationsoptionen.
+
+    .. image:: img/sp_003.png
+
+#. Wählen Sie den Installationsort. Es wird empfohlen, die Software auf einem anderen Laufwerk als dem Systemlaufwerk zu installieren.
+
+    .. image:: img/sp_004.png
+
+#. Dann Abschließen. 
+
+    .. image:: img/sp_005.png
+
+macOS
+^^^^^^^^^^^^^^^^
+
+Doppelklicken Sie auf die heruntergeladene Datei ``arduino_ide_xxxx.dmg`` und befolgen Sie die Anweisungen, um die **Arduino IDE.app** in den **Applications**-Ordner zu kopieren. Nach wenigen Sekunden sehen Sie, dass die Arduino IDE erfolgreich installiert wurde.
+
+.. image:: img/macos_install_ide.png
+    :width: 800
+
+Linux
+^^^^^^^^^^^^
+
+Für das Tutorial zur Installation der Arduino IDE 2.0 auf einem Linux-System folgen Sie bitte diesem Link: https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-downloading-and-installing#linux
 
 
-.. image:: img/image24.png
+Die IDE öffnen
+--------------
 
-Dann erscheint die Arduino IDE. Lassen Sie uns die Details der Software überprüfen.
+#. Wenn Sie das erste Mal die Arduino IDE 2.0 öffnen, installiert sie automatisch die Arduino AVR Boards, integrierte Bibliotheken und andere benötigte Dateien.
 
-.. image:: img/image23.jpeg
+    .. image:: img/sp_901.png
 
-#. **Verifizieren**: Kompilieren Sie Ihren Code. Jedes Syntaxproblem wird mit Fehlern angezeigt.
+#. Außerdem kann Ihre Firewall oder Ihr Sicherheitscenter einige Male anzeigen, ob Sie einige Gerätetreiber installieren möchten. Bitte installieren Sie alle davon.
 
-#. **Hochladen**: Laden Sie den Code auf Ihr Board hoch. Wenn Sie auf die Schaltfläche klicken, flackern die RX- und TX-LEDs auf der Platine schnell und hören nicht auf, bis der Upload abgeschlossen ist.
+    .. image:: img/sp_104.png
 
-#. **Neu**: Erstellt ein neues Codebearbeitungsfenster.
+#. Jetzt ist Ihre Arduino IDE einsatzbereit!
 
-#. **Öffnen**: Öffnen Sie eine .ino-Skizze.
-
-#. **Speichern**: Speichern Sie die Skizze.
-
-#. **Serieller Monitor**: Klicken Sie auf die Schaltfläche und ein Fenster wird angezeigt. Es empfängt die von Ihrer Steuerplatine gesendeten Daten. Es ist sehr nützlich zum Debuggen.
-
-#. **Datei**: Klicken Sie auf das Menü und eine Dropdown-Liste wird angezeigt, einschließlich Dateierstellung, Öffnen, Speichern, Schließen, Konfigurieren einiger Parameter usw.
-
-#. **Bearbeiten**: Klicken Sie auf das Menü. In der Dropdown-Liste gibt es einige Bearbeitungsvorgänge wie Ausschneiden, Kopieren, Einfügen, Suchen usw. mit den entsprechenden Verknüpfungen.
-
-#. **Skizze**: Umfasst Vorgänge wie Überprüfen, Hochladen, Hinzufügen von Dateien usw. Eine wichtigere Funktion ist Bibliothek einbeziehen – wo Sie Bibliotheken hinzufügen können.
-
-#. **Tool**: Enthält einige Tools – das am häufigsten verwendete Board (das Board, das Sie verwenden) und Port (der Port, an dem sich Ihr Board befindet). Jedes Mal, wenn Sie den Code hochladen möchten, müssen Sie ihn auswählen oder überprüfen.
-
-#. **Hilfe**: Wenn Sie ein Anfänger sind, können Sie die Optionen im Menü überprüfen und die benötigte Hilfe erhalten, einschließlich Operationen in der IDE, Einführungsinformationen, Fehlerbehebung, Codeerklärung usw.
-
-#. In diesem Meldungsbereich erscheint immer die zusammenfassende Meldung, egal wann Sie kompilieren oder hochladen.
-
-#. Detaillierte Meldungen beim Kompilieren und Hochladen. Zum Beispiel, in welchem ​​Pfad die verwendete Datei liegt, die Details der Fehlerabfrage.
-
-#. **Platine und Port**: Hier können Sie eine Vorschau der Platine und des Ports sehen, die für den Code-Upload ausgewählt wurden. Sie können sie über Tools -> Board / Port erneut auswählen, falls etwas falsch ist.
-
-#. Der Bearbeitungsbereich der IDE. Hier können Sie Code schreiben.
-
+    .. note::
+        Falls einige Installationen aufgrund von Netzwerkproblemen oder aus anderen Gründen nicht funktioniert haben, können Sie die Arduino IDE erneut öffnen und sie wird den Rest der Installation abschließen. Das Ausgabefenster wird nach Abschluss aller Installationen nicht automatisch geöffnet, es sei denn, Sie klicken auf Überprüfen oder Hochladen.

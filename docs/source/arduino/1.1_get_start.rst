@@ -1,4 +1,6 @@
 
+.. _get_started_ar:
+
 1.1 Erste Schritte mit Arduino IDE
 =======================================
 
@@ -10,7 +12,7 @@ Bitte folgen Sie dem nachstehenden Tutorial, um zu erfahren, wie Sie die Arduino
     :maxdepth: 1
 
     arduino_start/install_arduino_ide
-    arduino_start/download_add
-    arduino_start/upload_code
+    arduino_start/introduce_ide
+    arduino_start/add_libraries_ar
 
 
