@@ -60,8 +60,6 @@ the environment.
 Code Analysis
 -------------------
 
-**How it works?**
-
 #.  Includes the ``DHT.h`` library, which provides functions to interact with the DHT sensors. Then, set the pin and type for the DHT sensor.
 
     .. code-block:: arduino
