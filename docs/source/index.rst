@@ -6,20 +6,24 @@ Dieses umfassende Lernset dreht sich um den Mega2560 als Hauptsteuerplatine und 
 Ob Sie ein Anfänger sind, der seine ersten Schritte in der Arduino-Welt macht, oder ein versierter Lernender, der sein Wissen vertiefen möchte, dieses Kit ist auf Ihre Bedürfnisse zugeschnitten.
 
 
-
 * :download:`SunFounder Vincent Kit for Arduino <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`
 
 * Oder sehen Sie sich den Code bei `Vincent Kit for Arduino - GitHub <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino>`_
 
-Wenn Sie andere Projekte lernen möchten, die wir nicht haben, senden Sie bitte eine E-Mail und wir werden unsere Online-Tutorials so schnell wie möglich aktualisieren. Vorschläge sind willkommen.
 
-Hier ist die E-Mail: cs@sunfounder.com.
+Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, und wir werden so schnell wie möglich antworten.
 
 
+**Über die Anzeigesprache**
+
+Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache zu ändern, klicken Sie bitte auf das Read the Docs-Symbol in der linken unteren Ecke der Seite.
+
+.. image:: img/translation.webp
 
 .. toctree::
     :maxdepth: 2
-    
+
+    About this Kit <self>
     components/component_list
     arduino/play_with_arduino
     pictoblox/play_with_scratch
