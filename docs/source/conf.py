@@ -17,9 +17,11 @@
 
 # -- Project information -----------------------------------------------------
 import sphinx_rtd_theme
+import time
+
 
 project = 'SunFounder vincent_kit_for_arduino'
-copyright = '2021, SunFounder'
+copyright = f'{time.localtime().tm_year}, SunFounder'
 author = 'www.sunfounder.com'
 
 
@@ -49,10 +51,11 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 
-# SunFounder logo
+# SunFounder logo and detect browser language and auto-redirect
 
 html_js_files = [
     'https://ezblock.cc/readDocFile/custom.js',
+    './lang.js', # new
 ]
 html_css_files = [
     'https://ezblock.cc/readDocFile/custom.css',
