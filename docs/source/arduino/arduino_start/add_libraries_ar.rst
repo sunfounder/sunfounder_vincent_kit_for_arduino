@@ -47,7 +47,7 @@ Some libraries are not available through the **Library Manager** and need to be 
 
    .. image:: img/rfid_success.png
 
-#. Repeat the same process to add the ``ESP8266Audio.zip`` library.
+#. Repeat the same process to add other libraries.
 
 
 .. note::
