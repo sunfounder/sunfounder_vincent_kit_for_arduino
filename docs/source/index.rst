@@ -14,17 +14,18 @@ Download the relevant code from the link below.
 
 * Or check out the code at `Vincent Kit for Arduino - GitHub <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino>`_
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
 
 **About the display language**
 
 This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
 
-.. image:: translation.webp
+.. image:: translation.png
 
 .. toctree::
     :maxdepth: 2
     
+    About this Kit <self>
     components/component_list
     arduino/play_with_arduino
     pictoblox/play_with_scratch
