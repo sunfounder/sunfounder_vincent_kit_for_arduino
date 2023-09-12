@@ -18,7 +18,7 @@ Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an service@sunfounder.com, u
 
 Dieses Dokument ist auch in anderen Sprachen verfügbar. Um die Anzeigesprache zu ändern, klicken Sie bitte auf das Read the Docs-Symbol in der linken unteren Ecke der Seite.
 
-.. image:: img/translation.webp
+.. image:: img/translation.png
 
 .. toctree::
     :maxdepth: 2
