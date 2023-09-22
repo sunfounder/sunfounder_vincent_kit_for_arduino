@@ -53,17 +53,60 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/4bbcea82-c6cd-4658-90ce-9bcd291c58d4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
+Code-Analyse
 ---------------------------
 
-In diesem Projekt müssen wir die Interferenz zwischen dem LCD-Bildschirm und dem Alarmsystem so weit wie möglich vermeiden (z. B. ist die LED-Flackerzeit zu lang und die LCD-Aktualisierung verzögert), also vermeiden Sie bitte die Verwendung der delay()-Anweisung und verwenden Sie zwei separate Intervalle, um die Arbeitsfrequenz des LCD bzw. des Alarmsystems zu steuern. Sein Arbeitsablauf ist im Flussdiagramm dargestellt. Zur Analyse der Intervallfunktion siehe :ref:`ar_interval`.
+Dieser Code hilft uns, ein einfaches Distanzmessgerät zu erstellen, das die Entfernung zwischen Objekten messen kann und Feedback über ein LCD-Display und einen Summer gibt.
 
-.. image:: img/Part_three_1_Example_Explanation.png
-    :align: center
+Die Funktion ``loop()`` enthält die Hauptlogik des Programms und läuft kontinuierlich. Werfen wir einen genaueren Blick auf die ``loop()`` Funktion.
 
-Phänomen Bild
--------------------------
+#. Schleife zur Distanzmessung und Aktualisierung der Parameter
 
-.. image:: img/image267.jpeg
-   :align: center
+    Innerhalb der ``loop`` liest der Code zuerst die vom Ultraschallmodul gemessene Entfernung und aktualisiert den Intervallparameter basierend auf dieser Entfernung.
+
+    .. code-block:: arduino
+
+        // Update the distance
+        distance = readDistance();
+
+        // Update intervals based on distance
+        if (distance <= 10) {
+            intervals = 300;
+        } else if (distance <= 20) {
+            intervals = 500;
+        } else if (distance <= 50) {
+            intervals = 1000;
+        } else {
+            intervals = 2000;
+        }
+
+#. Überprüfen, ob es Zeit zum Piepen ist
+
+    Der Code berechnet die Differenz zwischen der aktuellen Zeit und der letzten Piepzeit. Wenn die Differenz größer oder gleich der Intervallzeit ist, wird der Summer ausgelöst und die letzte Piepzeit aktualisiert.
+
+    .. code-block:: arduino
+
+        unsigned long currentMillis = millis();
+        if (currentMillis - previousMillis >= intervals) {
+            Serial.println("Piepen!");
+            beep();
+            previousMillis = currentMillis;
+        }
+
+#. LCD-Display aktualisieren
+
+    Der Code löscht das LCD-Display und zeigt dann "Dis:" und die aktuelle Entfernung in Zentimetern in der ersten Zeile an.
+
+    .. code-block:: arduino
+
+        lcd.clear();
+        lcd.setCursor(0, 0);
+        lcd.print("Dis: ");
+        lcd.print(distance);
+        lcd.print(" cm");
+
+        delay(100);
+
+
+
 

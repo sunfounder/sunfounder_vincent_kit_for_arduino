@@ -17,6 +17,10 @@ This comprehensive learning kit centers around the Mega2560 as its main control 
 
 <a id="update"></a>
 ## Update:
+
+2023-09-22:
+- Modify the diagram and code analysis of 3.1_Reversing_Aid.
+
 2023-09-11:
  - Updated Arduino IDE-related usage tutorials.
  - Modified prompts and code analysis for projects that require library usage.
