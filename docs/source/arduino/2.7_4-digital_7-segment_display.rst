@@ -41,10 +41,6 @@ Code
 .. note::
 
     * You can open the file ``2.7_4digitalSegment.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.7_4digitalSegment`` directly.
-    * The ``TimerOne`` library is used here, you can install it from the **Library Manager**.
-
-        .. image:: img/lib_timerone.png
-            :align: center
     
 .. raw:: html
 
@@ -53,45 +49,138 @@ Code
 Code Analysis
 -------------
 
-.. image:: img/image440.png
-.. image:: img/image441.png
+In essence, this code uses the principle of multiplexing to display a 4-digit number on a 7-segment display. By rapidly switching between digits and displaying one digit at a time, it gives the illusion of all digits being displayed concurrently. 
+The stopwatch functionality is achieved by using the built-in ``millis()`` function to track time and increment the displayed number every second.
 
-There are two points needing your attention:
+#. Variable and Constant Definitions:
 
-1. Because every segment display works independently in the 4-Digital 7-Segment Display, the principle of visual persistence is applied to quickly display every 7 segment character in turn to form a continuous character string. 
+    .. code-block:: arduino
 
-Refer to :ref:`ar_7_segment` to check the details of the number display of the 4-Digital 7-Segment Display.
+        int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
+        int digitPins[] = {13, 12, 11, 10};
+
+        long n = 0; // Variable to store the current stopwatch number
+        int del = 5; // Delay time (in milliseconds) to keep each digit illuminated
+        unsigned long previousMillis = 0; // Store the last time the stopwatch incremented
+        const long interval = 1000; // One-second interval (in milliseconds)
 
 
+    * ``segmentPins`` and ``digitPins`` arrays define the pins that are connected to the segments and the digits of the 7-segment display, respectively.
+    * ``n`` is a long variable that keeps track of the current stopwatch number, starting from 0 and incrementing.
+    * ``del`` is a delay time to maintain the display of the current digit before transitioning to the next one.
+    * ``previousMillis`` and ``interval`` are related to timing to decide when to increment the stopwatch.
 
-2. In this example, a library TimerOne.h is used to realize the function of counting. 
+#. 7-Segment Patterns for Numbers:
 
-.. code-block:: arduino
+    The 2D array numbers defines how each of the numbers 0-9 is represented on a common-cathode 7-segment display. Each sub-array has 8 values (either HIGH or LOW), corresponding to the 7 segments and a decimal point. This pattern helps in driving the appropriate segments for each number.
 
-    #include "TimerOne.h"
+    .. code-block:: arduino
 
-**Library Functions**
+        byte numbers[10][8] = {
+            {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW, LOW},  // 0
+            {LOW, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},      // 1
+            {HIGH, HIGH, LOW, HIGH, HIGH, LOW, HIGH, LOW},   // 2
+            {HIGH, HIGH, HIGH, HIGH, LOW, LOW, HIGH, LOW},   // 3
+            {LOW, HIGH, HIGH, LOW, LOW, HIGH, HIGH, LOW},    // 4
+            {HIGH, LOW, HIGH, HIGH, LOW, HIGH, HIGH, LOW},   // 5
+            {HIGH, LOW, HIGH, HIGH, HIGH, HIGH, HIGH, LOW},  // 6
+            {HIGH, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},     // 7
+            {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW}, // 8
+            {HIGH, HIGH, HIGH, HIGH, LOW, HIGH, HIGH, LOW}   // 9
+        }; 
 
-.. code-block:: arduino
+#. Setup Function:
 
-    void initialize(long microsenconds=1000000)
+    .. code-block:: arduino
 
-You must call this method first to use any of the other methods. You can optionally specify the timer's period here (in microseconds), by default it is set at 1 second. 
+        void setup() {
+            // Configure all segment and digit pins as OUTPUT
+            for (int i = 0; i < 8; i++) {
+                pinMode(segmentPins[i], OUTPUT);
+            }
+            for (int i = 0; i < 4; i++) {
+                pinMode(digitPins[i], OUTPUT);
+                digitalWrite(digitPins[i], HIGH); // Initially turn off all digits (for common-cathode displays, HIGH is OFF)
+            }
+        }
 
-.. note:: 
-    This breaks analogWrite() for digital pins 9 and 10 on Arduino.
+    * All segment and digit pins are set to OUTPUT mode since they will drive the segments and digits of the display.
+    * Initially, all the digits are turned off, denoted by writing HIGH for a common-cathode display.
 
-.. code-block:: arduino
+#. Main Loop:
 
-    void attachInterrupt(void (*isr)(), long microseconds=-1);
+    .. code-block:: arduino
 
-Calls a function at the specified interval in microseconds. Be careful about trying to execute too complicated of an interrupt at too high of a frequency, or the CPU may never enter the main loop and your program will 'lock up'. Note that you can optionally set the period with this function if you include a value in microseconds as the last parameter when you call it.
+        void loop() {
+            // Check if a second has passed since the last increment
+            if (millis() - previousMillis >= interval) {
+                previousMillis += interval; // Update the last increment time
+                n = (n + 1) % 10000; // Increment the stopwatch number and wrap around at 9999
+            }
 
-.. code-block:: arduino
+            displayNumber(n); // Display the current stopwatch number on the 7-segment display
+        }
 
-    void detachInterrupte();
+    * This section checks if the interval (which is set to 1000ms or 1 second) has passed since the last increment of the stopwatch. If so, it increments the number.
+    * The number is then displayed on the 7-segment using the displayNumber() function.
 
-Disables the attached interrupt.
+#. ``displayNumber()`` Function:
+
+    .. code-block:: arduino
+
+        // Function to display a 4-digit number on the 7-segment display
+        void displayNumber(long num) {
+            for (int digit = 0; digit < 4; digit++) {
+                clearLEDs(); // Turn off all segments and digits
+                pickDigit(digit); // Activate the current digit
+                int value = (num / (int)pow(10, 3 - digit)) % 10; // Extract the specific digit from the number
+                pickNumber(value); // Illuminate the segments to display the digit
+                delay(del); // Keep the digit illuminated for a short time
+            }
+        }
+
+    * This function breaks down the 4-digit number into individual digits and displays each digit one at a time in rapid succession. This creates the illusion of all digits being displayed simultaneously due to persistence of vision.
+    * For each digit, the function first clears all LEDs, selects the appropriate digit using ``pickDigit()``, and then displays the number on that digit using ``pickNumber()``.
+    * The ``delay (del)`` ensures each digit is visible for a short time before transitioning to the next.
+
+#. ``pickDigit()`` Function:
+
+    This function is responsible for selecting (or turning on) one of the four digits on the 7-segment display. This is achieved by setting the corresponding digit pin to LOW.
+
+    .. code-block:: arduino
+
+        void pickDigit(int x) {
+            digitalWrite(digitPins[x], LOW); // Turn ON the selected digit (for common-cathode displays, LOW is ON)
+        }
+
+
+#. ``pickNumber()`` Function:
+
+    Given a single number (0-9), this function drives the 7-segment display's segments to show that number. It uses the previously defined ``numbers`` array to know which segments to turn on/off.
+
+    .. code-block:: arduino
+
+        void pickNumber(int x) {
+            for (int i = 0; i < 8; i++) {
+                digitalWrite(segmentPins[i], numbers[x][i]); // Set each segment according to the pattern for the given number
+            }
+        }
+
+
+#. ``clearLEDs()`` Function:
+
+    As the name suggests, this function turns off all segments and digits. It's used to ensure that only one digit is active at a time during the multiplexing process in the ``displayNumber()`` function.
+
+    .. code-block:: arduino
+
+        void clearLEDs() {
+            for (int i = 0; i < 8; i++) {
+                digitalWrite(segmentPins[i], LOW); // Turn off all segments
+            }
+            for (int i = 0; i < 4; i++) {
+                digitalWrite(digitPins[i], HIGH); // Turn off all digits
+            }
+        }
 
 Phenomenon Picture
 ------------------

@@ -22,6 +22,10 @@ or an adept learner seeking to deepen your knowledge, this kit is tailored to me
 
 <a id="update"></a>
 ## Update:
+
+2023-09-27:
+- Modify the 4-digit 7-segment code and provide a code analysis
+
 2023-09-22:
 - Modify the diagram and code analysis of 3.1_Reversing_Aid.
 
