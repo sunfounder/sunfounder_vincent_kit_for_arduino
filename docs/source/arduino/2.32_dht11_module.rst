@@ -66,7 +66,7 @@ Code Analysis
 
         #include "DHT.h"
 
-        #define DHTPIN 14  // Set the pin connected to the DHT11 data pin
+        #define DHTPIN 4  // Set the pin connected to the DHT11 data pin
         #define DHTTYPE DHT11 // DHT 11 
 
         DHT dht(DHTPIN, DHTTYPE);
