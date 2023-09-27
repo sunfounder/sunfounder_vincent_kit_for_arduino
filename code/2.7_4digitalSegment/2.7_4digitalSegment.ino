@@ -1,262 +1,76 @@
-/***************************************
-name:Stopwatch
-function: you can see the number increases by one per second on the 4-digit 7-segment display.
-***********************************/
-//Email:support@sunfounder.com
-//Website:www.sunfounder.com
+// Define the pins that are connected to the segments and the digits of the 7-segment display
+int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
+int digitPins[] = {13, 12, 11, 10};
 
-/**************************************/
-#include <TimerOne.h>
-//the pins of 4-digit 7-segment display attach to pin2-13 respectively 
-int a = 2;int b = 3;int c = 4;
-int d = 5;int e = 6;int f = 7;
-int g = 8;int p = 9;
+long n = 0; // Variable to store the current stopwatch number
+int del = 5; // Delay time (in milliseconds) to keep each digit illuminated
+unsigned long previousMillis = 0; // Store the last time the stopwatch incremented
+const long interval = 1000; // One-second interval (in milliseconds)
 
-int d4 = 10;int d3 = 11;
-int d2 = 12;int d1 = 13;
+// Numbers 0-9 for a 7-segment display (common-cathode)
+byte numbers[10][8] = {
+  {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW, LOW},  // 0
+  {LOW, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},      // 1
+  {HIGH, HIGH, LOW, HIGH, HIGH, LOW, HIGH, LOW},   // 2
+  {HIGH, HIGH, HIGH, HIGH, LOW, LOW, HIGH, LOW},   // 3
+  {LOW, HIGH, HIGH, LOW, LOW, HIGH, HIGH, LOW},    // 4
+  {HIGH, LOW, HIGH, HIGH, LOW, HIGH, HIGH, LOW},   // 5
+  {HIGH, LOW, HIGH, HIGH, HIGH, HIGH, HIGH, LOW},  // 6
+  {HIGH, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},     // 7
+  {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW}, // 8
+  {HIGH, HIGH, HIGH, HIGH, LOW, HIGH, HIGH, LOW}   // 9
+};
 
-long n = 0;// n represents the value displayed on the LED display. For example, when n=0, 0000 is displayed. The maximum value is 9999. 
-int x = 100;
-int del = 5;//Set del as 5; the value is the degree of fine tuning for the clock
-int count = 0;//Set count=0. Here count is a count value that increases by 1 every 0.1 second, which means 1 second is counted when the value is 10
-
-void setup()
-{
-  //set all the pins of the LED display as output
-  pinMode(d1, OUTPUT);
-  pinMode(d2, OUTPUT);
-  pinMode(d3, OUTPUT);
-  pinMode(d4, OUTPUT);
-  pinMode(a, OUTPUT);
-  pinMode(b, OUTPUT);
-  pinMode(c, OUTPUT);
-  pinMode(d, OUTPUT);
-  pinMode(e, OUTPUT);
-  pinMode(f, OUTPUT);
-  pinMode(g, OUTPUT);
-  pinMode(p, OUTPUT);
-  
-  Timer1.initialize(100000); // set a timer of length 100000 microseconds (or 0.1 sec - or 10Hz => the led will blink 5 times, 5 cycles of on-and-off, per second)
-  Timer1.attachInterrupt( add ); // attach the service routine here
-}
-/***************************************/	 
-void loop()
-{
-  clearLEDs();//clear the 7-segment display screen
-  pickDigit(0);//Light up 7-segment display d1
-  pickNumber((n/1000));// get the value of thousand
-  delay(del);//delay 5ms
-  
-  clearLEDs();//clear the  7-segment display screen
-  pickDigit(1);//Light up 7-segment display d2
-  pickNumber((n%1000)/100);// get the value of hundred
-  delay(del);//delay 5ms
- 
-  clearLEDs();//clear the  7-segment display screen
-  pickDigit(2);//Light up 7-segment display d3
-  pickNumber(n%100/10);//get the value of ten
-  delay(del);//delay 5ms
- 
-  clearLEDs();//clear the 7-segment display screen
-  pickDigit(3);//Light up 7-segment display d4
-  pickNumber(n%10);//Get the value of single digit
-  delay(del);//delay 5ms
-}
-/**************************************/	 
-void pickDigit(int x)  //light up a 7-segment display
-{
-  //The 7-segment LED display is a common-cathode one. So also use digitalWrite to set d1 as high and the LED will go out
-  digitalWrite(d1, HIGH);
-  digitalWrite(d2, HIGH);
-  digitalWrite(d3, HIGH);
-  digitalWrite(d4, HIGH);
- 
-  switch(x)
-  {
-    case 0: 
-    digitalWrite(d1, LOW);//Light d1 up 
-    break;
-    case 1: 
-    digitalWrite(d2, LOW); //Light d2 up 
-    break;
-    case 2: 
-    digitalWrite(d3, LOW); //Light d3 up 
-    break;
-  default: 
-    digitalWrite(d4, LOW); //Light d4 up 
-    break;
+void setup() {
+  // Configure all segment and digit pins as OUTPUT
+  for (int i = 0; i < 8; i++) {
+    pinMode(segmentPins[i], OUTPUT);
+  }
+  for (int i = 0; i < 4; i++) {
+    pinMode(digitPins[i], OUTPUT);
+    digitalWrite(digitPins[i], HIGH); // Initially turn off all digits (for common-cathode displays, HIGH is OFF)
   }
 }
-//The function is to control the 7-segment LED display to display numbers. Here x is the number to be displayed. It is an integer from 0 to 9	 
-void pickNumber(int x)
-{
-  switch(x)
-  {
-    default: 
-    zero(); 
-    break;
-    case 1: 
-    one(); 
-    break;
-    case 2: 
-    two(); 
-    break;
-    case 3: 
-    three(); 
-    break;
-    case 4: 
-    four(); 
-    break;
-  case 5: 
-    five(); 
-    break;
-  case 6: 
-    six(); 
-    break;
-  case 7: 
-    seven(); 
-    break;
-  case 8: 
-    eight(); 
-    break;
-  case 9: 
-    nine(); 
-    break;
+
+void loop() {
+  // Check if a second has passed since the last increment
+  if (millis() - previousMillis >= interval) {
+    previousMillis += interval; // Update the last increment time
+    n = (n + 1) % 10000; // Increment the stopwatch number and wrap around at 9999
   }
-}	 
-void clearLEDs() //clear the  7-segment display screen
-{
-  digitalWrite(a, LOW);
-  digitalWrite(b, LOW);
-  digitalWrite(c, LOW);
-  digitalWrite(d, LOW);
-  digitalWrite(e, LOW);
-  digitalWrite(f, LOW);
-  digitalWrite(g, LOW);
-  digitalWrite(p, LOW);
-}
-	 
-void zero() //the  7-segment led display 0
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, HIGH);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, LOW);
-}
-	 
-void one()  //the  7-segment led display 1
-{
-  digitalWrite(a, LOW);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, LOW);
-  digitalWrite(e, LOW);
-  digitalWrite(f, LOW);
-  digitalWrite(g, LOW);
-}
-	 
-void two()  //the  7-segment led display 2
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, LOW);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, HIGH);
-  digitalWrite(f, LOW);
-  digitalWrite(g, HIGH);
+
+  displayNumber(n); // Display the current stopwatch number on the 7-segment display
 }
 
-void three()  //the  7-segment led display 3
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, LOW);
-  digitalWrite(f, LOW);
-  digitalWrite(g, HIGH);
+// Function to display a 4-digit number on the 7-segment display
+void displayNumber(long num) {
+  for (int digit = 0; digit < 4; digit++) {
+    clearLEDs(); // Turn off all segments and digits
+    pickDigit(digit); // Activate the current digit
+    int value = (num / (int)pow(10, 3 - digit)) % 10; // Extract the specific digit from the number
+    pickNumber(value); // Illuminate the segments to display the digit
+    delay(del); // Keep the digit illuminated for a short time
+  }
 }
-	 
-void four()  //the  7-segment led display 4
-{
-  digitalWrite(a, LOW);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, LOW);
-  digitalWrite(e, LOW);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, HIGH);
+
+// Function to activate a specific digit (0 to 3)
+void pickDigit(int x) {
+  digitalWrite(digitPins[x], LOW); // Turn ON the selected digit (for common-cathode displays, LOW is ON)
 }
- 
-void five()  //the  7-segment led display 5
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, LOW);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, LOW);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, HIGH);
+
+// Function to display a single number (0-9) on the currently activated digit
+void pickNumber(int x) {
+  for (int i = 0; i < 8; i++) {
+    digitalWrite(segmentPins[i], numbers[x][i]); // Set each segment according to the pattern for the given number
+  }
 }
-	 
-void six()  //the  7-segment led display 6
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, LOW);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, HIGH);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, HIGH);
-}
-	 
-void seven()  //the  7-segment led display 7
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, LOW);
-  digitalWrite(e, LOW);
-  digitalWrite(f, LOW);
-  digitalWrite(g, LOW);
-}
- 
-void eight()   //the  7-segment led display 8
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, HIGH);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, HIGH);
-}
-	 
-void nine()  //the  7-segment led display 9
-{
-  digitalWrite(a, HIGH);
-  digitalWrite(b, HIGH);
-  digitalWrite(c, HIGH);
-  digitalWrite(d, HIGH);
-  digitalWrite(e, LOW);
-  digitalWrite(f, HIGH);
-  digitalWrite(g, HIGH);
-}
-/*******************************************/
-void add()
-{
-    // Toggle LED
-    count ++;
-    if(count == 10)
-    {
-      count = 0;
-      n ++;
-      if(n == 10000)
-      {
-        n = 0;
-      }
-    }
+
+// Function to turn off all segments and digits
+void clearLEDs() {
+  for (int i = 0; i < 8; i++) {
+    digitalWrite(segmentPins[i], LOW); // Turn off all segments
+  }
+  for (int i = 0; i < 4; i++) {
+    digitalWrite(digitPins[i], HIGH); // Turn off all digits
+  }
 }
