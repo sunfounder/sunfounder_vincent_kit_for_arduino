@@ -40,10 +40,6 @@ Code
 .. note::
 
     * Sie können die Datei ``2.7_4digitalSegment.ino`` unter dem Pfad ``sunfounder_vincent_kit_for_arduino\code\2.7_4digitalSegment`` direkt öffnen.
-    * Hier wird die ``TimerOne``-Bibliothek verwendet, die Sie aus dem **Library Manager** installieren können.
-
-        .. image:: img/lib_timerone.png
-            :align: center
 
 .. raw:: html
 
@@ -52,45 +48,139 @@ Code
 Code-Analyse
 -------------
 
-.. image:: img/image440.png
-.. image:: img/image441.png
+Im Wesentlichen verwendet dieser Code das Prinzip des Multiplexing, um eine 4-stellige Zahl auf einer 7-Segment-Anzeige darzustellen. Durch schnelles Umschalten zwischen den Ziffern und Anzeigen einer Ziffer zu einem Zeitpunkt entsteht der Eindruck, dass alle Ziffern gleichzeitig angezeigt werden.
+Die Stoppuhr-Funktionalität wird durch die Verwendung der eingebauten ``millis()``-Funktion erreicht, um die Zeit zu verfolgen und die angezeigte Zahl jede Sekunde zu erhöhen.
 
-Es gibt zwei Punkte, die Ihre Aufmerksamkeit erfordern:
+#. Variable and Constant Definitions:
 
-1. Da jede Segmentanzeige in der 4-Digital-7-Segment-Anzeige unabhängig arbeitet, wird das Prinzip der visuellen Persistenz angewendet, um jedes 7-Segment-Zeichen schnell nacheinander anzuzeigen, um eine fortlaufende Zeichenfolge zu bilden.
+    .. code-block:: arduino
 
-Siehe :ref:`ar_7_segment`, um die Details der Zahlenanzeige der 4-Digital-7-Segment-Anzeige zu überprüfen.
+        int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
+        int digitPins[] = {13, 12, 11, 10};
+
+        long n = 0; // Variable to store the current stopwatch number
+        int del = 5; // Delay time (in milliseconds) to keep each digit illuminated
+        unsigned long previousMillis = 0; // Store the last time the stopwatch incremented
+        const long interval = 1000; // One-second interval (in milliseconds)
 
 
+    * Die Arrays ``segmentPins`` und ``digitPins`` definieren die Pins, die mit den Segmenten bzw. Ziffern der 7-Segment-Anzeige verbunden sind.
+    * ``n`` ist eine long-Variable, die die aktuelle Stoppuhrennummer verfolgt, beginnend bei 0 und erhöhend.
+    * ``del`` ist eine Verzögerungszeit, um die Anzeige der aktuellen Ziffer aufrechtzuerhalten, bevor zur nächsten übergegangen wird.
+    * ``previousMillis`` und ``interval`` beziehen sich auf die Zeitmessung, um zu entscheiden, wann die Stoppuhr erhöht wird.
 
-2. In diesem Beispiel wird eine Bibliothek TimerOne.h verwendet, um die Funktion des Zählens zu realisieren.
+#. 7-Segment-Muster für Zahlen:
 
-.. code-block:: arduino
+    Das 2D-Array numbers definiert, wie jede der Zahlen 0-9 auf einer Gemeinsam-Kathoden-7-Segment-Anzeige dargestellt wird. Jedes Unterarray hat 8 Werte (entweder HIGH oder LOW), die den 7 Segmenten und einem Dezimalpunkt entsprechen. Dieses Muster hilft, die entsprechenden Segmente für jede Zahl anzusteuern.
 
-    #include "TimerOne.h"
+    .. code-block:: arduino
 
-**Bibliotheksfunktionen**:
+        byte numbers[10][8] = {
+            {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW, LOW},  // 0
+            {LOW, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},      // 1
+            {HIGH, HIGH, LOW, HIGH, HIGH, LOW, HIGH, LOW},   // 2
+            {HIGH, HIGH, HIGH, HIGH, LOW, LOW, HIGH, LOW},   // 3
+            {LOW, HIGH, HIGH, LOW, LOW, HIGH, HIGH, LOW},    // 4
+            {HIGH, LOW, HIGH, HIGH, LOW, HIGH, HIGH, LOW},   // 5
+            {HIGH, LOW, HIGH, HIGH, HIGH, HIGH, HIGH, LOW},  // 6
+            {HIGH, HIGH, HIGH, LOW, LOW, LOW, LOW, LOW},     // 7
+            {HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, HIGH, LOW}, // 8
+            {HIGH, HIGH, HIGH, HIGH, LOW, HIGH, HIGH, LOW}   // 9
+        }; 
 
-.. code-block:: arduino
+#. Setup-Funktion:
 
-    void initialize(long microsenconds=1000000)
+    .. code-block:: arduino
 
-Sie müssen diese Methode zuerst aufrufen, um eine der anderen Methoden zu verwenden. Optional können Sie hier die Zeitdauer des Timers angeben (in Mikrosekunden), standardmäßig ist sie auf 1 Sekunde eingestellt.
+        void setup() {
+            // Configure all segment and digit pins as OUTPUT
+            for (int i = 0; i < 8; i++) {
+                pinMode(segmentPins[i], OUTPUT);
+            }
+            for (int i = 0; i < 4; i++) {
+                pinMode(digitPins[i], OUTPUT);
+                digitalWrite(digitPins[i], HIGH); // Initially turn off all digits (for common-cathode displays, HIGH is OFF)
+            }
+        }
 
-.. note:: 
-    Dies unterbricht ``analogWrite()`` für die digitalen Pins 9 und 10 auf Arduino.
+    * Alle Segment- und Ziffern-Pins sind auf OUTPUT-Modus gesetzt, da sie die Segmente und Ziffern der Anzeige steuern.
+    * Zu Beginn sind alle Ziffern ausgeschaltet, was durch Schreiben von HIGH für eine Gemeinsam-Kathoden-Anzeige angezeigt wird.
 
-.. code-block:: arduino
+#. Haupt-Schleife:
 
-    void attachInterrupt(void (*isr)(), long microseconds=-1);
+    .. code-block:: arduino
 
-Ruft eine Funktion im angegebenen Intervall in Mikrosekunden auf. Seien Sie vorsichtig, wenn Sie versuchen, einen zu komplizierten Interrupt mit zu hoher Frequenz auszuführen, da die CPU sonst möglicherweise nie in die Hauptschleife eintritt und Ihr Programm "blockiert". Beachten Sie, dass Sie optional den Zeitraum mit dieser Funktion festlegen können, wenn Sie beim Aufruf einen Wert in Mikrosekunden als letzten Parameter angeben.
+        void loop() {
+            // Check if a second has passed since the last increment
+            if (millis() - previousMillis >= interval) {
+                previousMillis += interval; // Update the last increment time
+                n = (n + 1) % 10000; // Increment the stopwatch number and wrap around at 9999
+            }
 
-.. code-block:: arduino
+            displayNumber(n); // Display the current stopwatch number on the 7-segment display
+        }
 
-    void detachInterrupte();
+    * Dieser Abschnitt überprüft, ob das Intervall (das auf 1000ms oder 1 Sekunde eingestellt ist) seit der letzten Erhöhung der Stoppuhr vergangen ist. Wenn ja, erhöht es die Nummer.
+    * Die Nummer wird dann auf der 7-Segment-Anzeige mit der Funktion displayNumber() angezeigt.
 
-Deaktiviert den angehängten Interrupt.
+#. ``displayNumber()``-Funktion:
+
+    .. code-block:: arduino
+
+        // Function to display a 4-digit number on the 7-segment display
+        void displayNumber(long num) {
+            for (int digit = 0; digit < 4; digit++) {
+                clearLEDs(); // Turn off all segments and digits
+                pickDigit(digit); // Activate the current digit
+                int value = (num / (int)pow(10, 3 - digit)) % 10; // Extract the specific digit from the number
+                pickNumber(value); // Illuminate the segments to display the digit
+                delay(del); // Keep the digit illuminated for a short time
+            }
+        }
+
+    * Diese Funktion zerlegt die 4-stellige Zahl in einzelne Ziffern und zeigt jede Ziffer nacheinander in schneller Folge an. Dies erzeugt den Eindruck, dass alle Ziffern gleichzeitig angezeigt werden, aufgrund der Trägheit des Sehens.
+    * Für jede Ziffer löscht die Funktion zuerst alle LEDs, wählt die entsprechende Ziffer mit ``pickDigit()`` aus und zeigt dann die Nummer auf dieser Ziffer mit ``pickNumber()`` an.
+    * Die ``delay(del)`` stellt sicher, dass jede Ziffer für eine kurze Zeit sichtbar ist, bevor zur nächsten übergegangen wird.
+
+#. ``pickDigit()``-Funktion:
+
+    Diese Funktion ist dafür verantwortlich, eine der vier Ziffern auf der 7-Segment-Anzeige auszuwählen (oder einzuschalten). Dies wird erreicht, indem der entsprechende Ziffern-Pin auf LOW gesetzt wird.
+
+    .. code-block:: arduino
+
+        void pickDigit(int x) {
+            digitalWrite(digitPins[x], LOW); // Turn ON the selected digit (for common-cathode displays, LOW is ON)
+        }
+
+
+#. ``pickNumber()`` Function:
+
+    Gegeben eine einzelne Zahl (0-9), steuert diese Funktion die Segmente der 7-Segment-Anzeige, um diese Zahl anzuzeigen. Sie verwendet das zuvor definierte ``numbers``-Array, um zu wissen, welche Segmente ein-/ausgeschaltet werden sollen.
+
+    .. code-block:: arduino
+
+        void pickNumber(int x) {
+            for (int i = 0; i < 8; i++) {
+                digitalWrite(segmentPins[i], numbers[x][i]); // Set each segment according to the pattern for the given number
+            }
+        }
+
+
+#. ``clearLEDs()`` Function:
+
+    Wie der Name schon sagt, schaltet diese Funktion alle Segmente und Ziffern aus. Sie wird verwendet, um sicherzustellen, dass während des Multiplexing-Prozesses in der ``displayNumber()``-Funktion nur eine Ziffer aktiv ist.
+
+    .. code-block:: arduino
+
+        void clearLEDs() {
+            for (int i = 0; i < 8; i++) {
+                digitalWrite(segmentPins[i], LOW); // Turn off all segments
+            }
+            for (int i = 0; i < 4; i++) {
+                digitalWrite(digitPins[i], HIGH); // Turn off all digits
+            }
+        }
+
 
 Phänomen Bild
 ------------------
