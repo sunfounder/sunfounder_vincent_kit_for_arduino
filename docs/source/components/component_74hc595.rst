@@ -27,7 +27,6 @@ Pins of 74HC595 and their functions:
 
 **Example**
 
-* :ref:`ar_7_segment` (Arduino Project)
 * :ref:`ar_4_digit` (Arduino Project)
 * :ref:`ar_pedestrian` (Arduino Project)
 
