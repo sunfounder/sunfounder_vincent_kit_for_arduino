@@ -1,6 +1,16 @@
 SunFounder Vincent Kit for Arduino
 ======================================
 
+Thanks for choosing our Vincent Kit.
+
+.. note::
+    This document is available in the following languages.
+
+        * |link_german_tutorials|
+        * |link_en_tutorials|
+    
+    Please click on the respective links to access the document in your preferred language.
+
 This comprehensive learning kit centers around the Mega2560 as 
 its main control board, offering a perfect blend of essential components, 
 modules, and a wide array of basic elements like resistors, capacitors, 
