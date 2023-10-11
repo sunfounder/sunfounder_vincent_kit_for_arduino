@@ -77,33 +77,23 @@ the other blocks are lit up.
 
 .. image:: img/image89.jpeg
 
-First we need to know how it looks like when display the numeral **2**
-on the 7-Segment display. It's actually the segments a, b, d, e and g
-are power on, which generates the display of **2**. In programming, pins
-connected to these segments are set High level when c and f are Low
-level. Here we use a *for()* statement to set these pins as High level
-respectively (the braces after *for()* are deleted as there is only one
-line). Connect pin dp to pin 4; it's already defined as LOW in
-*setup()*.
+First, we need to understand how the numeral **2** appears on the 7-Segment display. It is achieved by powering on segments a, b, d, e, and g. In programming, pins connected to these segments are set to a High level while c and f are set to Low level. We start by using the function ``turnOffAllSegments()`` to turn off all segments and then light up the required ones.
 
-After running this part, the 7-segment will display **2**. Similarly,
-the display of other characters are the same. Since the letters b and d
-in upper case, namely **B** and **D**, would look the same with **8**
-and **0** on the display, they are displayed in lower case instead.
+After running this part, the 7-segment will display **2**. Similarly, the display of other characters are the same. Since the letters b and d in upper case, namely **B** and **D**, would look the same with **8** and **0** on the display, they are displayed in lower case instead.
 
 .. code-block:: arduino
 
-    ...
-    void digital_2(void) //diaplay 2 to the 7-segment
-    {
-    digitalWrite(b,HIGH);
-    digitalWrite(a,HIGH);
-    for(int j = 9;j <= 11;j++)
-    digitalWrite(j,LOW);
-    digitalWrite(c,LOW);
-    digitalWrite(f,LOW);
-    }
-    ... 
+   ...
+   void digital_2()  //diaplay 2 to the 7-segment
+   {
+     turnOffAllSegments();
+     digitalWrite(a, HIGH);
+     digitalWrite(b, HIGH);
+     digitalWrite(g, HIGH);
+     digitalWrite(e, HIGH);
+     digitalWrite(d, HIGH);
+   }
+   ... 
 
 In loop(), call the function that displays the number.
 
