@@ -69,23 +69,23 @@ Installieren Sie eine Reihe von Unterfunktionen, um den Füllstandsstatus an jed
 
 .. image:: img/image89.jpeg
 
-Zuerst müssen wir wissen, wie es aussieht, wenn die Ziffer 2 auf der 7-Segment-Anzeige angezeigt wird. Tatsächlich sind die Segmente a, b, d, e und g eingeschaltet, was die Anzeige von 2 erzeugt . Beim Programmieren werden mit diesen Segmenten verbundene Pins auf High-Pegel gesetzt, wenn c und f auf Low-Pegel sind. Hier verwenden wir eine ``for()``- Anweisung, um diese Pins jeweils auf High-Pegel zu setzen (die geschweiften Klammern nach ``for()`` werden gelöscht, da es nur eine Zeile gibt). Verbinden Sie Pin dp mit Pin 4; Es ist bereits in setup() als LOW definiert .
+Zuerst müssen wir verstehen, wie die Ziffer **2** auf der 7-Segment-Anzeige erscheint. Dies wird erreicht, indem die Segmente a, b, d, e und g eingeschaltet werden. In der Programmierung werden die Pins, die mit diesen Segmenten verbunden sind, auf ein hohes Niveau gesetzt, während c und f auf ein niedriges Niveau gesetzt werden. Wir beginnen damit, die Funktion ``turnOffAllSegments()`` zu verwenden, um alle Segmente auszuschalten und dann nur die erforderlichen anzuschalten.
 
-Nachdem Sie diesen Teil ausgeführt haben, zeigt das 7-Segment 2 an . Ebenso ist die Anzeige anderer Zeichen gleich. Da die Buchstaben b und d in Großbuchstaben, nämlich B und D , mit 8 und 0 auf dem Display gleich aussehen würden , werden sie stattdessen in Kleinbuchstaben angezeigt.
+Nach Ausführung dieses Teils zeigt die 7-Segment-Anzeige **2** an. Ähnlich ist es bei anderen Zeichen. Da sich der Buchstabe b in Großbuchstaben (also **B**) genauso wie eine **8** und der Buchstabe d in Großbuchstaben (also **D**) genauso wie eine **0** darstellen würde, werden sie stattdessen in Kleinbuchstaben angezeigt.
 
 .. code-block:: arduino
 
-    ...
-    void digital_2(void) //diaplay 2 to the 7-segment
-    {
-    digitalWrite(b,HIGH);
-    digitalWrite(a,HIGH);
-    for(int j = 9;j <= 11;j++)
-    digitalWrite(j,LOW);
-    digitalWrite(c,LOW);
-    digitalWrite(f,LOW);
-    }
-    ... 
+   ...
+   void digital_2()  //diaplay 2 to the 7-segment
+   {
+     turnOffAllSegments();
+     digitalWrite(a, HIGH);
+     digitalWrite(b, HIGH);
+     digitalWrite(g, HIGH);
+     digitalWrite(e, HIGH);
+     digitalWrite(d, HIGH);
+   }
+   ... 
 
 Rufen Sie in ``loop()`` die Funktion auf, die die Zahl anzeigt.
 
