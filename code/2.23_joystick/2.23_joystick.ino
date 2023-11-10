@@ -4,8 +4,7 @@ const int swPin = 8;  //the SW attach to
 
 void setup()
 {
-  pinMode(swPin, INPUT);  //set the SW pin to INPUT
-  digitalWrite(swPin, HIGH);   //And initial value is HIGH
+  pinMode(swPin, INPUT_PULLUP);  //set the SW pin to INPUT_PULLUP
   Serial.begin(9600);
 }
 
@@ -17,5 +16,5 @@ void loop()
   Serial.print(analogRead(yPin), DEC);  // print the value of VRX in DEC
   Serial.print("|Z: ");
   Serial.println(digitalRead(swPin));   // print the value of SW
-  delay(500);
+  delay(50);
 }
