@@ -95,6 +95,10 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/3WMiqZg" target="_blank">here</a>
+
 .. |link_download_arduino| raw:: html
 
     <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a>
