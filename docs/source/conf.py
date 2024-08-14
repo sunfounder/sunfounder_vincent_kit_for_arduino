@@ -111,4 +111,12 @@ rst_epilog = """
 
     <a href="https://docs.sunfounder.com/projects/vincent-kit/en/latest/" target="_blank">English Online-tutorials</a>
 
+.. |link_Vincent_Ultimate_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Purchase Link for Vincent Ultimate Kit</a>
+
+.. |link_Vincent_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Vincent Ultimate Kit</a>
+
 """

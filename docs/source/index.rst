@@ -12,10 +12,12 @@
 
     👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
 
-SunFounder Vincent Ultimate Kit for Arduino Mega 2560
+SunFounder |link_Vincent_Kit| for Arduino Mega 2560
 ==========================================================
 
-Thanks for choosing our Vincent Kit.
+* |link_Vincent_Ultimate_Kit|
+
+Thanks for choosing our |link_Vincent_Kit|.
 
 .. note::
     This document is available in the following languages.
