@@ -49,9 +49,9 @@ Dans chaque projet, vous trouverez des étapes détaillées qui vous guideront d
 
 Vous pouvez bien sûr ouvrir directement le script pour l'exécuter, mais assurez-vous d'avoir téléchargé les fichiers nécessaires depuis `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
-Une fois le téléchargement terminé, décompressez le fichier. Référez-vous au :ref:`Stage Mode` pour exécuter les scripts individuellement.
+Une fois le téléchargement terminé, décompressez le fichier. Référez-vous au :ref:`Mode Scène` pour exécuter les scripts individuellement.
 
-Le :ref:`humiture`, en revanche, utilise le :ref:`Upload Mode`.
+Le :ref:`humiture`, en revanche, utilise le :ref:`Mode Téléchargement`.
 
 .. toctree::
     :maxdepth: 1

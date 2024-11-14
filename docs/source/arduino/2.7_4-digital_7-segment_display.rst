@@ -193,7 +193,7 @@ La fonction chronomètre est réalisée grâce à la fonction ``millis()`` inté
         }
 
 Illustration du Phénomène
-------------------
+-----------------------------
 
 .. image:: img/image104.jpeg
 

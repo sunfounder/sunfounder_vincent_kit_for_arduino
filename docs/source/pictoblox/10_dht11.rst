@@ -18,7 +18,7 @@
 ====================================================
 
 Les projets précédents utilisaient le mode scène, mais certaines fonctions ne sont disponibles qu'en mode téléchargement, comme la fonction de communication série.
-Dans ce projet, nous allons afficher la température et l'humidité du DHT11 en utilisant le Moniteur Série en :ref:`Upload Mode`.
+Dans ce projet, nous allons afficher la température et l'humidité du DHT11 en utilisant le Moniteur Série en :ref:`Mode Téléchargement`.
 
 .. image:: img/11_serial.png
 
@@ -26,7 +26,7 @@ Vous Apprendrez
 ---------------------
 
 - Obtenir la température et l'humidité depuis le module DHT11
-- Utiliser le Moniteur Série en :ref:`Upload Mode`
+- Utiliser le Moniteur Série en :ref:`Mode Téléchargement`
 - Ajouter une extension
 
 Construire le Circuit

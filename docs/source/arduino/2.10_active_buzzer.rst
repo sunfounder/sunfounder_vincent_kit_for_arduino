@@ -46,7 +46,7 @@ Dans cet exemple, nous utilisons la broche numérique 9 pour piloter le buzzer.
 Connectez la cathode du buzzer à la masse (GND) et l'anode à la broche numérique 9.
 
 Schéma de Connexion
------------------
+----------------------
 
 .. image:: img/image450.png
 
@@ -67,6 +67,6 @@ Après avoir téléversé le code sur la carte Mega2560, vous entendrez le bip-b
 :ref:`ar_digital_write`
 
 Illustration du Phénomène
-------------------
+-------------------------------
 
 .. image:: img/image121.jpeg

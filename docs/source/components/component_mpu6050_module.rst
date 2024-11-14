@@ -11,6 +11,7 @@
     - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+    
 .. _cpn_mpu6050:
 
 MPU6050 Module

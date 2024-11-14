@@ -11,7 +11,9 @@
     - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
+
 .. _cpn_prototype:
+
 Prototype Shield
 ===========================
 
@@ -27,6 +29,7 @@ une solution pratique pour intégrer votre circuit personnalisé et votre Arduin
 dans un seul module.
 
 **Spécifications**
+
 
 - Il peut être superposé directement sur la carte SunFounder Mega2560. Une 
 petite breadboard est fournie, que vous pouvez utiliser pour réaliser des 

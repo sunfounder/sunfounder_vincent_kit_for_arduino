@@ -12,7 +12,7 @@
 
     👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-
+.. _cpn_stepper_motor:
 
 Moteur pas à pas
 ========================

@@ -49,7 +49,7 @@ D'autres palettes de blocs peuvent être chargées depuis le bouton **Ajouter un
 Contrairement à Scratch, PictoBlox propose deux modes :
 
 
-* :ref:`Stage Mode` : Dans ce mode, vous pouvez écrire des scripts pour que le lutin et les cartes interagissent en temps réel avec les lutins. Si vous déconnectez la carte de PictoBlox, l’interaction cesse.
-* :ref:`Upload Mode` : Ce mode vous permet d’écrire des scripts et de les téléverser sur la carte, de sorte que le programme continue de fonctionner même lorsque la carte n'est pas connectée à votre ordinateur, par exemple, pour un robot mobile.
+* :ref:`Mode Scène` : Dans ce mode, vous pouvez écrire des scripts pour que le lutin et les cartes interagissent en temps réel avec les lutins. Si vous déconnectez la carte de PictoBlox, l’interaction cesse.
+* :ref:`Mode Téléchargement` : Ce mode vous permet d’écrire des scripts et de les téléverser sur la carte, de sorte que le programme continue de fonctionner même lorsque la carte n'est pas connectée à votre ordinateur, par exemple, pour un robot mobile.
 
 Pour plus d'informations, veuillez consulter : https://thestempedia.com/tutorials/getting-started-pictoblox
