@@ -1,32 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur le monde du Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions de saison.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_digital_write:
 
-1.2 Digital Write
-=================
+1.2 Écriture numérique
+========================
 
-Overview
------------
+Aperçu
+---------
 
-The digitalWrite() statement here is used to write high level or low
-level to pins and to let LED and active buzzer 「work 」or 「stop」. In
-this lesson, we will take LED as an example to introduce the experiment
-phenomenon.
+L’instruction digitalWrite() est ici utilisée pour envoyer un niveau haut 
+ou bas aux broches, ce qui permet à la LED et au buzzer actif de s'allumer 
+ou de s'éteindre. Dans cette leçon, nous prendrons la LED comme exemple pour 
+illustrer le phénomène expérimental.
 
-Components Required
-----------------------
+Composants requis
+-------------------
 
 .. image:: img/list_1.2.png
 
@@ -36,82 +36,80 @@ Components Required
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-
-Fritzing Circuit
+Circuit Fritzing
 -------------------
 
-In this example, we use digital pin 9 to drive the LED. Attach one side
-of the resistor to the digital pin 9 and the longer pin (anode) of the
-LED to the other side of the resistor. Connect the shorter pin (cathode)
-of the LED to GND.
+Dans cet exemple, nous utilisons la broche numérique 9 pour commander la LED. 
+Connectez une extrémité de la résistance à la broche 9 et la broche longue 
+(anode) de la LED à l’autre extrémité de la résistance. Reliez la broche courte 
+(cathode) de la LED au GND.
 
 .. image:: img/image30.png
 
 
-Schematic Diagram
--------------------
+Schéma électronique
+---------------------
 
 .. image:: img/image401.png
 
-
 Code
-------
+-----
 
-After finishing the circuit connection, connect the Mega2560 board to
-the computer. Run the Arduino software IDE and type in the following
-codes.
+Après avoir terminé le câblage, connectez la carte Mega2560 à l’ordinateur. Lancez le logiciel Arduino IDE et saisissez le code suivant.
 
 .. note::
 
-    * You can open the file ``1.2_digitalWrite.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.2_digitalWrite`` directly.
-    * Or copy this code into Arduino IDE.
+    * Vous pouvez ouvrir directement le fichier ``1.2_digitalWrite.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\1.2_digitalWrite``.
+    * Ou copier ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/014d0aec-693e-4246-b944-17105b28e818/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Upload the codes to the Mega2560 board, and you can see the blinking of LED.
+Téléversez le code sur la carte Mega2560 et vous pourrez voir la LED clignoter.
 
-Code Analysis
--------------
+Analyse du Code
+----------------
 
-Here, we connect the LED to the digital pin 9, so we need to declare an
-int variable called ledpin at the beginning of the program and assign a
-value of 9.
+Ici, nous connectons la LED à la broche numérique 9, donc nous devons 
+déclarer une variable de type int appelée ledPin au début du programme 
+et lui assigner la valeur 9.
 
 .. code-block:: arduino
 
     const int ledPin = 9;
 
-Now, initialize the pin in the setup() function, where you need to 
-initialize the pin to OUTPUT mode.
+Ensuite, initialisez la broche dans la fonction setup(), où vous devez définir 
+la broche en mode OUTPUT.
 
 .. code-block:: arduino
 
     pinMode(ledPin, OUTPUT);
 
-In loop(), digitalWrite() is used to provide 5V high level signal for 
-ledpin, which will cause voltage difference between LED pins and light LED up.
+Dans loop(), digitalWrite() est utilisé pour fournir un signal de 5V de niveau 
+haut à ledPin, ce qui créera une différence de potentiel entre les broches de 
+la LED et allumera celle-ci.
 
 .. code-block:: arduino
 
     digitalWrite(ledPin, HIGH);
 
-If the level signal is changed to LOW, the ledPin's signal will be returned to 0 V to turn LED off.
+Si le signal de niveau est modifié à LOW, le signal de ledPin reviendra à 0 V et la LED s’éteindra.
 
 .. code-block:: arduino
 
     digitalWrite(ledPin, LOW);
 
-An interval between on and off is required to allow people to see the change, so 
-we use a delay(1000) code to let the controller do nothing for 1000 ms.
+Un intervalle entre l'allumage et l'extinction est nécessaire pour permettre 
+de voir le changement, donc nous utilisons le code delay(1000) pour que le 
+contrôleur ne fasse rien pendant 1000 ms.
 
 .. code-block:: arduino
 
     delay(1000);
 
 
-Phenomenon Picture
-------------------
+Image du Phénomène
+--------------------
 
 .. image:: img/image36.jpeg

@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions durant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_slide:
 
-2.16 Slide Switch
-==================
+2.16 Interrupteur à Glissière
+=================================
 
-Overview
+Aperçu
 ------------
 
-In this lesson, you will get to know something about Switch. A slide
-switch, just as its name implies, is to slide the switch bar to connect
-or break the circuit, and further switch circuits. The slide switch is
-commonly used in low-voltage circuit. It has the features of flexibility
-and stability, and applies in electric instruments and electric toys
-widely.
+Dans cette leçon, vous allez découvrir l'interrupteur. Un interrupteur à 
+glissière, comme son nom l'indique, permet de connecter ou de rompre un 
+circuit en faisant glisser le levier de l'interrupteur, et ainsi de basculer 
+entre différents circuits. L'interrupteur à glissière est couramment utilisé 
+dans les circuits basse tension. Il est flexible et stable, et s'applique 
+largement dans les instruments électriques et les jouets électroniques.
 
-Components Required
+Composants Requis
 ------------------------
 
 .. image:: img/Part_two_16.png
@@ -39,19 +39,19 @@ Components Required
 * :ref:`cpn_slide`
 * :ref:`cpn_capacitor`
 
-Fritzing Circuit
+Circuit Fritzing
 ---------------------
 
-In this example, digital pin 2 is used to read the signal of Switch. In
-addition, you need to connect a 10 kΩ resistor and a 104 capacitor in
-parallel to form a RC circuit (Resistor - Capacitance circuit) which is
-set between pin 2 and GND to realize debounce that may arise from your 
-toggle of switch.
+Dans cet exemple, la broche numérique 2 est utilisée pour lire le signal de 
+l'interrupteur. De plus, vous devez connecter une résistance de 10 kΩ et un 
+condensateur de 104 en parallèle pour former un circuit RC (résistance-capacité) 
+placé entre la broche 2 et GND afin de réaliser un anti-rebond qui peut survenir 
+lors de la bascule de l'interrupteur.
 
 .. image:: img/image160.png
    :align: center
 
-Schematic Diagram
+Schéma de Connexion
 
 .. image:: img/image161.png
    :align: center
@@ -61,23 +61,22 @@ Code
 
 .. note::
 
-    * You can open the file ``2.16_switch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.16_switch`` directly.
-    * Or copy this code into Arduino IDE.
-
+    * Vous pouvez ouvrir directement le fichier ``2.16_switch.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.16_switch``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/952c55eb-b08b-4c4a-8107-07a946183457/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the
-serial monitor to check the readings of the pin. When the Switch toggles
-to the left, the serial monitor displays 「1」; when toggles to the
-right, the serial monitor displays「0」. Refer to :ref:`ar_digital_read` to check the code explanation.
+Après avoir téléversé le code sur la carte Mega2560, vous pouvez ouvrir le 
+moniteur série pour vérifier les lectures de la broche. Lorsque l'interrupteur 
+est basculé vers la gauche, le moniteur série affiche « 1 » ; lorsqu'il est 
+basculé vers la droite, le moniteur série affiche « 0 ». Référez-vous à :ref:`ar_digital_read` pour consulter les explications du code.
 
 
 
-Phenomenon Picture
-------------------------
+Illustration du Phénomène
+---------------------------
 
 .. image:: img/image162.jpeg

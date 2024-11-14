@@ -1,54 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez plus profondément dans l'univers du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et jeux concours** : Participez à des jeux concours et à des promotions spéciales pour les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_ultrasonic:
 
-Ultrasonic Module
-================================
+Module Ultrasonique
+=========================
 
 .. image:: img/ultrasonic_pic.png
     :width: 400
     :align: center
 
-Ultrasonic ranging module provides 2cm - 400cm non-contact measurement function, and the ranging accuracy can reach to 3mm. 
-It can ensure that the signal is stable within 5m, and the signal is gradually weakened after 5m, till the 7m position disappears.
+Le module ultrasonique permet de réaliser des mesures sans contact dans une plage de 2 cm à 400 cm, avec une précision de 3 mm. 
+Il garantit que le signal reste stable jusqu'à 5 m, puis il se dégrade progressivement après cette distance, jusqu'à disparaître à 7 m.
 
-The module includes ultrasonic transmitters, receiver and control circuit. The basic principles are as follows:
+Le module comprend un émetteur ultrasonique, un récepteur et un circuit de contrôle. Les principes de fonctionnement sont les suivants :
 
-#. Use an IO flip-flop to process a high level signal of at least 10us.
+#. Utiliser un basculeur IO pour traiter un signal de niveau haut d’au moins 10 µs.
 
-#. The module automatically sends eight 40khz and detects if there is a pulse signal return.
+#. Le module envoie automatiquement huit impulsions à 40 kHz et détecte si un signal de retour sous forme d'impulsion est reçu.
 
-#. If the signal returns, passing the high level, the high output IO duration is the time from the transmission of the ultrasonic wave to the return of it. Here, test distance = (high time x sound speed (340 m / s) / 2.
+#. Si le signal est renvoyé, en passant par le niveau haut, la durée du signal de sortie en niveau haut correspond au temps écoulé depuis l'émission de l'onde ultrasonore jusqu'à son retour. Ici, la distance de mesure = (temps haut x vitesse du son (340 m/s) / 2).
 
-
-
-The timing diagram is shown below. 
+Le diagramme de temporisation est montré ci-dessous.
 
 .. image:: img/ultrasonic228.png
 
-You only need to supply a short 10us pulse for the trigger input to start the ranging, and then the module
-will send out an 8 cycle burst of ultrasound at 40 kHz and raise its
-echo. You can calculate the range through the time interval between
-sending trigger signal and receiving echo signal.
+Il suffit de fournir une courte impulsion de 10 µs sur l'entrée de déclenchement 
+pour démarrer la mesure de distance. Ensuite, le module émettra une rafale de 
+huit cycles d'ultrasons à 40 kHz et attendra son écho. Vous pouvez calculer la 
+distance en fonction de l'intervalle de temps entre l'émission du signal de 
+déclenchement et la réception de l'écho.
 
-Formula: us / 58 = centimeters or us / 148 =inch; or: the range = high
-level time \* velocity (340M/S) / 2; you are suggested to use
-measurement cycle over 60ms in order to prevent signal collisions of
-trigger signal and the echo signal.
+Formule : us / 58 = centimètres ou us / 148 = pouces ; ou encore : la distance = 
+temps haut * vitesse (340 m/s) / 2. Il est conseillé d'utiliser un cycle de mesure 
+supérieur à 60 ms afin d'éviter les collisions de signaux entre le signal de 
+déclenchement et l'écho.
 
-**Example**
+**Exemples**
 
 * :ref:`ar_ultrasonic` (Arduino Project)
 * :ref:`ar_reversing_aid` (Arduino Project)

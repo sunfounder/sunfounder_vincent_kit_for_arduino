@@ -1,30 +1,30 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions durant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_button:
 
-2.15 Button
-===========
+2.15 Bouton
+=============
 
-Overview
---------
+Aperçu
+----------
 
-In this lesson, you will learn about Button. Button is a common
-component used to control electronic devices. It is usually used as a
-switch to connect or break circuits.
+Dans cette leçon, vous allez découvrir le bouton. Un bouton est un composant 
+courant utilisé pour contrôler des dispositifs électroniques. Il sert généralement 
+d'interrupteur pour établir ou rompre des circuits.
 
-Components Required
+Composants Requis
 -------------------
 
 .. image:: img/list_2.15.png
@@ -35,70 +35,64 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_button`
 
-Fritzing Circuit
-----------------
+Circuit Fritzing
+-------------------
 
-In this example, we read the signal of the button with the digital pin. When the button is not pressed, the digital pin 2 (through the
-drop-down resistor) is connected to ground to read the low level (0);
-when the button is pressed, the two pins are connected and when the pin
-is connected to the 5V power supply, the high level (1) is read.
+Dans cet exemple, nous lisons le signal du bouton avec la broche numérique. 
+Lorsque le bouton n'est pas pressé, la broche numérique 2 (via la résistance 
+de tirage vers le bas) est reliée à la masse pour lire un niveau bas (0) ; 
+lorsque le bouton est pressé, les deux broches sont connectées, et la broche 
+est alors reliée à l'alimentation de 5V, ce qui permet de lire un niveau haut (1).
 
 .. image:: img/image464.png
 
-
 .. note::
-    If you disconnect the digital I/O pin from anything,
-    the LED may blink erratically. The input is "floating" or it doesn't
-    have a solid connection to voltage or ground, so it will randomly return
-    either HIGH or LOW. That's why there needs a pull-down resistor in the
-    circuit.
+    Si vous déconnectez la broche d'E/S numérique de tout circuit, la LED peut 
+    clignoter de manière erratique. L'entrée est alors "flottante", c'est-à-dire 
+    qu'elle n'a pas de connexion solide à la tension ou à la masse, et renverra 
+    donc aléatoirement un état HAUT ou BAS. C'est pourquoi une résistance de 
+    tirage vers le bas est nécessaire dans le circuit.
 
-Schematic Diagram
------------------
+Schéma de Connexion
+---------------------
 
 .. image:: img/image465.png
 
 Code
 ----
 
-**Example 1：**
+**Exemple 1 :**
 
 .. note::
 
-    * You can open the file ``2.15_button.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.15_button`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.15_button.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.15_button``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/435a252c-3d2e-45be-a3e2-294a5dcdb9fd/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see the readings of
-the pins on the serial monitor. When you press down the Button, there
-will display 「1」on the serial monitor, and once you release it, there
-will display「0」. As for the detail code explanation, please refer to :ref:`ar_digital_read`.
+Après avoir téléversé le code sur la carte Mega2560, vous verrez les lectures 
+des broches dans le moniteur série. Lorsque vous appuyez sur le bouton, le 
+moniteur série affichera « 1 », et lorsque vous le relâchez, il affichera « 0 ». 
+Pour des explications détaillées du code, veuillez consulter :ref:`ar_digital_read`.
 
-
-
-**Example 2：**
+**Exemple 2 :**
 
 .. note::
 
-    * You can open the file ``2.15_button_2.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.15_button_2`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.15_button_2.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.15_button_2``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/020e4812-4345-4bf2-849b-df0c2b857213/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, every time you press the
-button, the output value will switch between 0 and 1. If you want to
-know more about the code explanation, you can turn to :ref:`ar_state_change`.
+Après avoir téléversé le code sur la carte Mega2560, chaque pression sur 
+le bouton fera basculer la valeur de sortie entre 0 et 1. Pour plus 
+d'explications sur le code, vous pouvez consulter :ref:`ar_state_change`.
 
-Phenomenon Picture
-------------------
+Illustration du Phénomène
+------------------------------
 
 .. image:: img/image43.jpeg

@@ -1,17 +1,16 @@
-
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez plus en profondeur l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_pir:
 
@@ -22,35 +21,35 @@ PIR Motion Sensor Module
     :width: 300
     :align: center
 
-The PIR sensor detects infrared heat radiation that can be used to detect the presence of organisms that emit infrared heat radiation.
+Le capteur PIR détecte le rayonnement infrarouge thermique, ce qui permet de détecter la présence d'organismes émettant ce type de rayonnement.
 
-The PIR sensor is split into two slots that are connected to a differential amplifier. Whenever a stationary object is in front of the sensor, the two slots receive the same amount of radiation and the output is zero. Whenever a moving object is in front of the sensor, one of the slots receives more radiation than the other , which makes the output fluctuate high or low. This change in output voltage is a result of detection of motion.
+Le capteur PIR est divisé en deux fentes connectées à un amplificateur différentiel. Lorsqu'un objet stationnaire se trouve devant le capteur, les deux fentes reçoivent la même quantité de rayonnement et la sortie est nulle. Lorsqu'un objet en mouvement passe devant le capteur, l'une des fentes reçoit plus de rayonnement que l'autre, ce qui fait fluctuer la sortie entre un niveau haut et bas. Ce changement de tension de sortie est le résultat de la détection du mouvement.
 
 .. image:: img/PIR_working_principle.jpg
     :width: 800
 
-After the sensing module is wired, there is a one-minute initialization. During the initialization, module will output for 0~3 times at intervals. Then the module will be in the standby mode. Please keep the interference of light source and other sources away from the surface of the module so as to avoid the misoperation caused by the interfering signal. Even you'd better use the module without too much wind, because the wind can also interfere with the sensor.
+Après le câblage du module de détection, une phase d'initialisation d'une minute a lieu. Pendant cette initialisation, le module émet des sorties entre 0 et 3 fois à intervalles réguliers. Ensuite, il passe en mode veille. Il est important d'éviter l'interférence de sources lumineuses et d'autres sources de perturbation proches du module, afin d'éviter les erreurs de fonctionnement dues aux signaux interférents. Il est même préférable d'utiliser le module sans trop de vent, car celui-ci peut également interférer avec le capteur.
 
 .. image:: img/pir_back.png
     :width: 600
     :align: center
 
-**Distance Adjustment**
+**Réglage de la distance**
 
-Turning the knob of the distance adjustment potentiometer clockwise, the range of sensing distance increases, and the maximum sensing distance range is about 0-7 meters. If turn it anticlockwise, the range of sensing distance is reduced, and the minimum sensing distance range is about 0-3 meters.
+En tournant le potentiomètre de réglage de la distance dans le sens des aiguilles d'une montre, la portée de détection augmente, avec une portée maximale d'environ 0 à 7 mètres. Si vous le tournez dans le sens inverse, la portée de détection diminue, et la portée minimale est d'environ 0 à 3 mètres.
 
-**Delay adjustment**
+**Réglage du délai**
 
-Rotate the knob of the delay adjustment potentiometer clockwise, you can also see the sensing delay increasing. The maximum of the sensing delay can reach up to 300s. On the contrary, if rotate it anticlockwise, you can shorten the delay with a minimum of 5s. 
+En tournant le potentiomètre du délai dans le sens des aiguilles d'une montre, vous pouvez augmenter le délai de détection, qui peut atteindre jusqu'à 300 secondes. Inversement, en le tournant dans le sens inverse, vous pouvez réduire ce délai à un minimum de 5 secondes.
 
-**Two Trigger Modes**
+**Deux modes de déclenchement**
 
-Choosing different modes by using the jumper cap.
+Vous pouvez choisir entre différents modes à l'aide du capuchon de cavalier.
 
-* **H**: Repeatable trigger mode, after sensing the human body, the module outputs high level. During the subsequent delay period, if somebody enters the sensing range, the output will keep being the high level.
+* **H** : Mode de déclenchement répétable, après avoir détecté la présence d'un corps humain, le module émet un niveau haut. Pendant la période de délai suivante, si quelqu'un entre dans la zone de détection, la sortie restera à un niveau haut.
 
-* **L**: Non-repeatable trigger mode, outputs high level when it senses the human body. After the delay, the output will change from high level into low level automatically. 
+* **L** : Mode de déclenchement non répétable, émet un niveau haut lorsqu'il détecte un corps humain. Après le délai, la sortie passe automatiquement du niveau haut au niveau bas.
 
-**Example**
+**Exemple**
 
 * :ref:`ar_pir` (Arduino Project)

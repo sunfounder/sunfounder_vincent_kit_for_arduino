@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez l'univers de Raspberry Pi, Arduino et ESP32 en profondeur avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_sound:
 
-2.28 Sound Sensor Module
-=========================
+2.28 Module de capteur sonore
+================================
 
-Overview
-------------
+Aperçu
+----------
 
-In this lesson, you will learn how to use a sound sensor module. The
-sound sensor module provides an easy way to detect sound and is
-generally used for detecting sound intensity.
+Dans cette leçon, vous apprendrez à utiliser un module de capteur sonore. 
+Ce module permet de détecter facilement les sons et est généralement utilisé 
+pour mesurer l'intensité sonore.
 
-Components Required
-------------------------
+Composants requis
+--------------------
 
 .. image:: img/Part_two_28.png
 
@@ -33,59 +33,53 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_sound`
 
+Circuit Fritzing
+------------------
 
-
-Fritzing Circuit
------------------------
-
-In this example, we can directly connect the pin of Sound
-Sensor Module to the pin of Mega 2560 Board, connect the pin「G」 of
-Sound Sensor Module to GND, the pin 「+」to 5V, AO to analog pin A0, and
-D0 to digital pin 2.
+Dans cet exemple, nous connectons directement la broche du module de capteur 
+sonore à la broche de la carte Mega 2560, connectons la broche « G » du module 
+de capteur sonore à GND, la broche « + » à 5V, AO à la broche analogique A0, 
+et D0 à la broche numérique 2.
 
 .. image:: img/image223.png
-   :align: center 
+   :align: center
 
-Schematic Diagram
-----------------------
+Schéma de connexion
+---------------------
 
 .. image:: img/image224.png
-   :align: center 
+   :align: center
 
 Code
-----------
-
+-------
 
 .. note::
 
-    * You can open the file ``2.28_soundSensorModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.28_soundSensorModule`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.28_soundSensorModule.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\2.28_soundSensorModule``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/42164fe5-5ae0-4e26-bee8-e1f085e863e2/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, you can open the serial
-monitor to see the read value of the pin. When the ambient sound gets
-louder, the digital reading is 「1」 (adjust the potentiometer of the
-module to modify the threshold to trigger the high level), and the
-reading value of the analog pin will change significantly; when the
-environment is quiet, the digital reading is 「0」 and the analog
-reading changes smoothly.
+Après avoir téléchargé le code sur la carte Mega2560, vous pouvez ouvrir 
+le moniteur série pour voir la valeur lue de la broche. Lorsque le bruit 
+ambiant devient plus fort, la lecture numérique est « 1 » (ajustez le 
+potentiomètre du module pour modifier le seuil de déclenchement du niveau 
+haut), et la valeur de la broche analogique changera de manière significative ; 
+lorsque l'environnement est silencieux, la lecture numérique est « 0 » et la 
+lecture analogique varie lentement.
 
-The range of analog reading is「0」~「1023」, but influenced by the the
-environmental condition and the characteristics of sound sensor, the
-actual reading range may be smaller than the theoretical one. If an
-oscilloscope is used, the changing of analog reading of the sound sensor
-will be more obvious.
+La plage de lecture analogique est de « 0 » à « 1023 », mais en fonction des 
+conditions environnementales et des caractéristiques du capteur sonore, la 
+plage réelle de lecture peut être inférieure à la plage théorique. Si un 
+oscilloscope est utilisé, les variations de la lecture analogique du capteur 
+sonore seront plus visibles.
 
-About the detail code explanation, refer to :ref:`ar_analog_read` and
-:ref:`ar_digital_read`.
+Pour une explication détaillée du code, consultez :ref:`ar_analog_read` et :ref:`ar_digital_read`.
 
-Phenomenon Picture
-------------------------
+Illustration du phénomène
+-----------------------------
 
 .. image:: img/image225.jpeg
    :height: 4.35278in

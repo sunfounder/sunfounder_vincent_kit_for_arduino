@@ -1,34 +1,34 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez plus en profondeur l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_mpu6050:
 
-2.34 MPU6050 Module
-====================
+2.34 Module MPU6050
+======================
 
-Overview
--------------
+Aperçu
+----------
 
-In this lesson, you will learn how to use MPU6050. MPU-6050 is a 6-axis
-(combined 3-axis Gyroscope, 3-axis Accelerometer) motion tracking
-devices. It is often used for augmented reality and electronic image
-stabilization (EIS: Electronic Image Stabilization), optical image
-stabilization (OIS: Optical Image Stabilization), "Zero touch" gesture
-user interface.
+Dans cette leçon, vous apprendrez à utiliser le MPU6050. Le MPU-6050 est un 
+dispositif de suivi de mouvement à 6 axes (combinant un gyroscope à 3 axes et 
+un accéléromètre à 3 axes). Il est souvent utilisé dans la réalité augmentée, 
+la stabilisation d'image électronique (EIS : Electronic Image Stabilization), 
+la stabilisation d'image optique (OIS : Optical Image Stabilization), et pour 
+l'interface utilisateur basée sur des gestes "Zero touch".
 
-Components Required
--------------------------
+Composants requis
+--------------------
 
 .. image:: img/Part_two_34.png
 
@@ -37,58 +37,55 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_mpu6050`
 
-Fritzing Circuit
-------------------------
+Circuit Fritzing
+--------------------
 
-In this example, we drive MPU6050 with IIC. We inset MPU6050
-into the breadboard; get the VCC connected to 5V, GND to GND, SCL to pin
-SCL 21, and SDA to the pin SDA 20.
+Dans cet exemple, nous pilotons le MPU6050 via IIC. Nous insérons le MPU6050 
+dans la breadboard et connectons la broche VCC à 5V, GND à GND, SCL à la broche 
+SCL 21, et SDA à la broche SDA 20.
 
 .. image:: img/image253.png
    :align: center
 
-Schematic Diagram
-----------------------
+**Schéma de câblage**
+-------------------------
 
 .. image:: img/image254.png
    :align: center
 
 Code
--------------
+------
 
 .. note::
 
-    * You can open the file ``2.34_MPU6050.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.34_MPU6050`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.34_MPU6050.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\2.34_MPU6050``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfae41b-b651-41c2-830b-f2d9ea70efe8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you can open the serial
-monitor to see the gravity acceleration and angular velocity of MPU6050
-in each direction.
+Après avoir téléchargé le code sur la carte Mega2560, vous pouvez ouvrir le 
+moniteur série pour voir l'accélération gravitationnelle et la vitesse angulaire 
+du MPU6050 dans chaque direction.
 
-Code Analysis
---------------------
+Analyse du code
+-------------------
 
-In the stationary desktop state, the Z-axis acceleration is 1 gravity
-unit, and the X and Y axes are 0.
+Dans un état stationnaire sur le bureau, l'accélération sur l'axe Z est de 1 
+unité gravitationnelle, et les axes X et Y sont à 0.
 
-Before your use, you need to calibrate the module, the methods are as
-follows:
+Avant d'utiliser le module, vous devez le calibrer, voici la méthode :
 
-1. MPU6050 modules are placed horizontally on the desktop and then you can
-   fix them with clamps or adhesive tape.
+1. Placez les modules MPU6050 horizontalement sur le bureau et fixez-les à 
+   l'aide de pinces ou de ruban adhésif.
 
-2. Run the sample codes to get the RAW DATA of MPU6050 when it is static.
+2. Exécutez les codes d'exemple pour obtenir les données brutes (RAW DATA) du MPU6050 lorsqu'il est à l'état statique.
 
-3. Add compensation according to the readings when MPU6050 is static.
+3. Ajoutez des compensations selon les lectures lorsque le MPU6050 est statique.
 
-Take MPU6050 we use as an example, and the results of compensation are
-as follows:
+Prenons l'exemple du MPU6050 que nous utilisons, et les résultats de 
+compensation sont les suivants :
 
 .. code-block:: arduino
 
@@ -102,8 +99,8 @@ as follows:
 .. image:: img/Part_two_34_Code_Analysis.png
    :align: center
 
-Phenomenon Picture
-------------------------
+Illustration du phénomène
+-----------------------------
 
 .. image:: img/image257.jpeg
    :align: center

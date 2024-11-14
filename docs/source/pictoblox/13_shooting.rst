@@ -1,113 +1,112 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts sur Facebook ! Plongez dans l’univers de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes post-achat et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions et cadeaux festifs** : Participez à des concours et des promotions de fête.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _shooting:
 
-2.13 GAME - Shooting
+2.13 JEU - Tir sur cible
 ====================================
 
-Have you seen those shooting games on TV? The closer a contestant shoots a bullet on the target to the bullseye, the higher his score.
+Avez-vous déjà vu ces jeux de tir à la télévision ? Plus un participant tire près du centre de la cible, plus son score est élevé.
 
-Today we are also doing a shooting game in Scratch. In the game, let the Crosshair shoot as far as possible to the bullseye to get a higher score.
+Aujourd'hui, nous allons réaliser un jeu de tir dans Scratch. Dans ce jeu, faites en sorte que le viseur tire le plus près possible du centre de la cible pour obtenir un score élevé.
 
-Click on the green flag to start. Use the Obstacle Avoidance module to shoot an bullet.
+Cliquez sur le drapeau vert pour commencer. Utilisez le module d'évitement d’obstacles pour tirer une balle.
 
 .. image:: img/14_shooting.png
 
-You Will Learn
+Vous Apprendrez
 ---------------------
 
-- How the Obstacle Avoidance module works and the angle range
-- Paint different sprites
-- Touch colors
+- Fonctionnement du module d’évitement d’obstacles et gamme d'angles
+- Dessiner différents sprites
+- Détecter les couleurs
 
-Build the Circuit
------------------------
+Construire le Circuit
+-------------------------
 
-The obstacle avoidance module is a distance-adjustable infrared proximity sensor whose output is normally high and low when an obstacle is detected.
+Le module d'évitement d'obstacles est un capteur infrarouge de proximité à distance réglable, dont la sortie est normalement haute et passe à bas lorsqu'un obstacle est détecté.
 
-Now build the circuit according to the diagram below.
+Montez maintenant le circuit selon le schéma ci-dessous.
 
 .. image:: img/circuit/avoid_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_avoid` 
 
-Programming
+Programmation
 ------------------
 
-**1. Paint the Crosshair sprite**
+**1. Dessiner le sprite de Viseur**
 
-Delete the default sprite, select the **Sprite** button and click **Paint**, a blank sprite **Sprite1** will appear and name it **Crosshair**.
+Supprimez le sprite par défaut, sélectionnez le bouton **Sprite** et cliquez sur **Peindre**, un sprite vide **Sprite1** apparaîtra et nommez-le **Viseur**.
 
 .. image:: img/14_shooting0.png
 
-
-Go to the **Crosshair** sprite's **Costumes** page. Click on the **Circle** tool, remove the fill color, and set the color and width of the outline.
+Allez sur la page **Costumes** du sprite **Viseur**. Cliquez sur l'outil **Cercle**, supprimez la couleur de remplissage et définissez la couleur et la largeur du contour.
 
 .. image:: img/14_shooting02.png
 
-Now draw a circle with the **Circle** tool. After drawing, you can click to the **Select** tool and move the circle so that the original point is aligned with the center of the canvas.
+Dessinez maintenant un cercle avec l'outil **Cercle**. Après l’avoir dessiné, vous pouvez cliquer sur l'outil **Sélectionner** pour déplacer le cercle afin que son centre soit aligné avec celui de la zone de dessin.
 
 .. image:: img/14_shooting03.png
 
-Using the **Line** tool, draw a cross inside the circle.
+Utilisez l'outil **Ligne** pour dessiner une croix à l'intérieur du cercle.
 
 .. image:: img/14_shooting033.png
 
-**Paint the Target sprite**
+**Dessiner le sprite de Cible**
 
-Create a new sprite called **Target** sprite.
+Créez un nouveau sprite appelé **Cible**.
 
 .. image:: img/14_shooting01.png
 
-Go to the Costumes page of the **Target** sprite, click on the **Circle** tool, select a fill color and remove the Outline and paint a large circle.
+Allez à la page **Costumes** du sprite **Cible**, cliquez sur l'outil **Cercle**, sélectionnez une couleur de remplissage et supprimez le contour, puis dessinez un grand cercle.
 
 .. image:: img/14_shooting05.png
 
-Use the same method to draw additional circles, each with a different color, and you can use the **Forward** or **Backbard** tool to change the position of the overlapping circles. Note that you also need to select the tool to move the circles, so that the origin of all the circles and the center of the canvas are aligned.
+Utilisez la même méthode pour dessiner d'autres cercles, chacun d'une couleur différente. Utilisez les outils **Avancer** ou **Reculer** pour ajuster la position des cercles superposés. Assurez-vous que l'origine de tous les cercles est alignée avec le centre de la zone de dessin.
 
 .. image:: img/14_shooting04.png
 
-**3. Add a backdrop**
+**3. Ajouter un arrière-plan**
 
-Add a suitable background which preferably does not have too many colors and does not match the colors in the **Target** sprite. Here I have chosen **Wall1** backdrop.
+Ajoutez un arrière-plan simple de préférence sans trop de couleurs et qui ne correspond pas aux couleurs du sprite **Cible**. Ici, nous avons choisi l'arrière-plan **Mur1**.
 
 .. image:: img/14_shooting06.png
 
-**4. Script the Crosshair sprite**
+**4. Script du sprite Viseur**
 
-Set the random position and size of the **Crosshair** sprite, and let it move randomly.
+Définissez la position aléatoire et la taille du sprite **Viseur** et faites-le se déplacer de manière aléatoire.
 
 .. image:: img/14_shooting4.png
 
-When a hand is placed in front of the obstacle avoidance module, it will output a low level as a transmit signal.
+Lorsqu'une main est placée devant le module d'évitement d'obstacles, celui-ci émettra un signal bas.
 
 .. image:: img/14_shooting5.png
 
-When the **shooting** message is received, the sprite stops moving and slowly shrinks, thus simulating the effect of a bullet being shot.
+Lorsqu’il reçoit le message **tir**, le sprite arrête de bouger et rétrécit lentement, simulant ainsi l’effet d'une balle tirée.
 
 .. image:: img/14_shooting6.png
 
-Use the [Touch color ()] block to determine the position of the shot.
+Utilisez le bloc [Toucher couleur ()] pour déterminer l'emplacement du tir.
 
 .. image:: img/14_shooting7.png
 
-When the shot is inside the yellow circle, 10 is reported.
+Si le tir se situe dans le cercle jaune, un score de 10 points est attribué.
 
 .. image:: img/14_shooting8.png
 
-Use the same method to determine the position of the bullet shot, if it is not set on the **Target** sprite, it means it is out of the circle.
+Utilisez la même méthode pour déterminer la position de la balle si elle n'est pas dans le sprite **Cible**, ce qui signifie qu'elle est hors du cercle.
 
 .. image:: img/14_shooting9.png

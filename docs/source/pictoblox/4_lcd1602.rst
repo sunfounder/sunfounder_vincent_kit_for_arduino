@@ -1,118 +1,118 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez les univers de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et Partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] pour nous rejoindre dès aujourd'hui !
 
 .. _lcd1602:
 
 2.4 LCD1602
 =================
 
-LCD1602 can be used to display 2x16 characters, now we let it display the corresponding characters with the character sprites on the stage.
+Le module LCD1602 permet d'afficher 2 lignes de 16 caractères. Nous allons l'utiliser pour afficher les caractères correspondant aux lutins de l'interface. 
 
-When you click the Hello on the stage one by one, they will have different animation effects and the characters will be displayed on the LCD1602 at the same time.
+Lorsque vous cliquez sur chaque caractère "Hello" dans la scène, ils exécutent des effets d'animation différents et les caractères apparaissent simultanément sur le LCD1602.
 
 .. image:: img/5_hello.png
 
 
-You Will Learn
----------------------
+Ce Que Vous Apprendrez
+------------------------
 
-- Using the LCD1602
-- Select multiple different sprites
-- Change sprite size, rotation angle, color and show or hide.
+- Utilisation de l’écran LCD1602
+- Sélectionner plusieurs lutins différents
+- Modifier la taille, l'angle de rotation, la couleur et l'affichage des lutins
 
 
-Build the Circuit
----------------------
+Construire le Circuit
+-----------------------
 
 .. image:: img/circuit/lcd1602_circuit.png
 
 * :ref:`cpn_mega2560`
 * :ref:`cpn_i2c_lcd1602`
 
-Programming
+Programmation
 ------------------
 
-**1. Select sprite**
+**1. Sélectionner un lutin**
 
-Delete the default sprite, click **Choose a Sprite**, then click **letters** and select the sprite you want.
+Supprimez le lutin par défaut, cliquez sur **Choisir un lutin**, puis sélectionnez **lettres** et choisissez le lutin désiré.
 
 .. image:: img/5_sprite.png
 
-For example, I chose Hello, as shown below.
+Par exemple, choisissez le mot "Hello" comme indiqué ci-dessous.
 
 .. image:: img/5_sprite1.png
 
-Now to set different effects for these sprites and display them on the LCD1602 while clicking.
+Nous allons maintenant attribuer des effets différents à chaque lutin et les afficher sur le LCD1602 lorsqu'on clique dessus.
 
-**2. H is zoom in and zoom out**
+**2. H : Agrandir et Rétrécir**
 
-Click on the **H** sprite, and now write a script for it.
+Cliquez sur le lutin **H** et écrivez un script pour lui.
 
-When the sprite **H** is clicked, make its size to 50%, then restore it; while displaying H on the first row and column of the LCD1602.
+Quand **H** est cliqué, sa taille est définie à 50 %, puis revient à sa taille initiale ; le caractère **H** s'affiche sur la première ligne et la première colonne du LCD1602.
 
-* [set size to]: From **Looks** palette, used to set the size of the sprite, from 0% to 100%.
-* [set cursor at columan row]: From **Display Modules** palette, used to set the cursor at a specific row of the LCD1602 to start displaying characters.
-* [write display]: From the **Display Modules** palette, used to display characters or strings on the LCD1602.
+* [définir la taille à] : Depuis la palette **Apparence**, utilisé pour définir la taille du lutin (0 % à 100 %).
+* [placer curseur à colonne ligne] : Depuis la palette **Modules d’affichage**, pour positionner le curseur à une ligne spécifique du LCD1602 pour afficher les caractères.
+* [écrire afficher] : Depuis la palette **Modules d’affichage**, pour afficher des caractères ou chaînes de caractères sur le LCD1602.
 
 .. image:: img/5_h.png
 
-The distribution of rows and columns on the LCD1602 is shown in the figure.
+La disposition des lignes et colonnes sur le LCD1602 est illustrée ci-dessous.
 
 .. image:: img/5_row.png
 
-**3. E is flipping left and right**
+**3. E : Basculer de gauche à droite**
 
-Click on the **E** sprite, and now write a script for it.
+Cliquez sur le lutin **E** et écrivez un script.
 
-When the sprite **E** is clicked, have it turn 180 degrees clockwise, then 180 degrees counterclockwise so you can see it flip left and right; and show H in the first row and column 2 of the LCD1602.
+Quand **E** est cliqué, il tourne de 180 degrés dans le sens horaire puis antihoraire, simulant un effet de basculement. Affichez ensuite **E** sur la première ligne et la deuxième colonne du LCD1602.
 
-* [turn degrees]: From the **Motions** palette, used to turn the sprite clockwise or counterclockwise, the range is 0-360 degrees.
+* [tourner de x degrés] : Depuis la palette **Mouvement**, pour tourner le lutin dans le sens horaire ou antihoraire, avec une plage de 0 à 360 degrés.
 
 .. image:: img/5_lcd.png
 
-**4. L is slowly shrinking and zooming in**
+**4. L : Rétrécir et Agrandir Lentement**
 
-Click on the **first L** sprite and now write a script for it.
+Cliquez sur le premier lutin **L** et écrivez un script.
 
-When the sprite **L** is clicked, use the [repeat] block to increase its size by 50% (5 times, 10 each time), then shrink it back to its original size in the same way, while displaying L in the first row and column 3 of the LCD1602.
+Quand **L** est cliqué, utilisez le bloc [répéter] pour augmenter sa taille de 50 % (5 fois, 10 à chaque fois), puis réduisez-la à sa taille initiale de la même façon, tout en affichant **L** sur la première ligne et la troisième colonne du LCD1602.
 
-* [change size by]: From the Motions palette, used to change the size of the sprite.
+* [changer la taille de] : Depuis la palette **Mouvement**, pour modifier la taille du lutin.
 
 .. image:: img/5_l.png
 
-**5. The second L is changing color**
+**5. Deuxième L : Changer de Couleur**
 
-Click on the **second L** sprite and now write a script for it.
+Cliquez sur le deuxième lutin **L** et écrivez un script.
 
-When the sprite **L** is clicked, use the [repeat] block to repeat 10 times at a rate of 20 increments to switch between colors and return to the original color. Also display L in the first row and column 4 of the LCD1602.
+Quand **L** est cliqué, utilisez le bloc [répéter] pour effectuer un changement de couleur 10 fois par incrément de 20, avant de revenir à la couleur initiale. Affichez **L** sur la première ligne et la quatrième colonne du LCD1602.
 
-* [`change color effect by <https://en.scratch-wiki.info/wiki/Graphic_Effect#Changing_of_colors_using_the_Color_Effect_block>`_]: Used to change the color Effect, one costume can take on 200 different color-schemes using the color effect, 0 and 200 are the same color.
+* [`change color effect by <https://en.scratch-wiki.info/wiki/Graphic_Effect#Changing_of_colors_using_the_Color_Effect_block>`_]:Utilisé pour changer l’effet de couleur ; un costume peut prendre jusqu’à 200 variations de couleur, avec 0 et 200 représentant la même couleur.
 
 .. image:: img/5_2l.png
 
-**6. O is hide and show**
+**6. O : Masquer et Afficher**
 
-Click on the **O** sprite and now write a script for it.
+Cliquez sur le lutin **O** et écrivez un script.
 
-When the **O** sprite is clicked, it repeats the hide and show process 3 times, while displaying O in the first row and column 5 of the LCD1602.
+Quand **O** est cliqué, il répète l’effet de masquage et d’affichage 3 fois, tout en affichant **O** sur la première ligne et la cinquième colonne du LCD1602.
 
-* [Hide] & [Show]: make the sprite hide and show.
+* [cacher] & [montrer] : pour masquer et afficher le lutin.
 
 .. image:: img/5_o.png
 
-**7. Initialize the LCD1602**
+**7. Initialiser le LCD1602**
 
-After clicking the green flag, set the I2C address of the LCD1602 and clear the last content in backdrop.
+Après avoir cliqué sur le drapeau vert, définissez l'adresse I2C du LCD1602 et effacez le dernier contenu dans l'arrière-plan.
 
 .. image:: img/lcd1602.png

@@ -1,44 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_avoid:
 
-Obstacle Avoidance Module
+Module de détection d'obstacles
 ===========================================
-
 
 .. image:: img/IR_Obstacle.png
    :width: 400
    :align: center
 
-* **VCC**: Power supply, 3.3 ~ 5V DC.
-* **GND**: Ground
-* **OUT**: Signal pin, usually high level, and low level when an obstacle is detected.
+* **VCC** : Alimentation, 3,3 ~ 5V DC.
+* **GND** : Masse
+* **OUT** : Broche de signal, généralement à niveau haut, et à niveau bas lorsqu'un obstacle est détecté.
 
 
-The IR obstacle avoidance module has strong adaptability to environmental light, it has a pair of infrared transmitting and receiving tubes.
+Le module de détection d'obstacles par infrarouge (IR) présente une grande adaptabilité à la lumière ambiante. Il comporte une paire de tubes émetteurs et récepteurs infrarouges.
 
-The transmitting tube emits infrared frequency, when the detection direction encounters an obstacle, the infrared radiation is received by the receiving tube, 
-after the comparator circuit processing, the green indicator will light up and output low level signal.
+Le tube émetteur émet des ondes infrarouges. Lorsque le faisceau rencontre un 
+obstacle dans la direction de détection, le rayonnement infrarouge est capté 
+par le tube récepteur. Après traitement par le circuit comparateur, le voyant 
+vert s'allume et un signal à faible niveau est émis.
 
-The detection distance can be adjusted by potentiometer, the effective distance range 2-30cm.
+La distance de détection peut être ajustée à l'aide d'un potentiomètre, avec une plage de distance effective allant de 2 à 30 cm.
 
 .. image:: img/IR_module.png
     :width: 600
     :align: center
 
-**Example**
+**Exemple**
 
 * :ref:`ar_avoid` (Arduino Project)
 * :ref:`shooting` (Scratch Project)

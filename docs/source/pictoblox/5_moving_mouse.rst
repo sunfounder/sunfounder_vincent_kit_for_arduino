@@ -1,91 +1,90 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur le Raspberry Pi, l’Arduino et l’ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] pour nous rejoindre dès aujourd'hui !
 
 .. _moving_mouse:
 
-2.5 Moving Mouse
-===================
+2.5 Souris en Mouvement
+===========================
 
-Today we are going to make a mouse toy controlled by a potentiometer.
+Aujourd'hui, nous allons fabriquer un jouet "souris" contrôlé par un potentiomètre.
 
-When the green flag is clicked, the mouse on the stage moves forward, and when you rotate the potentiometer, the mouse will change the direction of movement.
+Lorsque le drapeau vert est cliqué, la souris sur la scène avance, et en tournant le potentiomètre, vous pourrez changer la direction de son mouvement.
 
 .. image:: img/6_mouse.png
 
-You Will Learn
----------------------
+Ce Que Vous Apprendrez
+--------------------------
 
-- Potentiometer principle
-- Read analog pin and ranges
-- Mapping one range to another
-- Moving and changing the direction of sprite
+- Principe du potentiomètre
+- Lecture de la broche analogique et de ses plages
+- Mapper une plage vers une autre
+- Déplacer et changer la direction d'un lutin
 
-Build the Circuit
+Construire le Circuit
 -----------------------
 
-The potentiometer is a resistive element with 3 terminals, the 2 side pins are connected to 5V and GND, and the middle pin is connected to A0. After conversion by the ADC converter of the Arduino board, the value range is 0-1023.
+Le potentiomètre est un élément résistif à trois bornes, les deux bornes latérales sont connectées à 5V et GND, et la borne centrale est reliée à A0. Après conversion par le convertisseur ADC de la carte Arduino, la plage de valeurs est de 0 à 1023.
 
 .. image:: img/circuit/potentiometer_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_potentiometer`
 
-
-Programming
+Programmation
 ------------------
 
-**1. Choose a sprite**
+**1. Choisir un lutin**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **mouse** in the search box, and then click to add it.
+Supprimez le lutin par défaut, cliquez sur le bouton **Choisir un Lutin** dans le coin inférieur droit de la zone des lutins, tapez **mouse** dans la barre de recherche, puis cliquez pour l'ajouter.
 
 .. image:: img/6_sprite.png
 
-**2. Creating a variable**.
+**2. Créer une variable**
 
-Create a variable called **value** to store the value of the potentiometer read.
+Créez une variable appelée **valeur** pour stocker la valeur lue du potentiomètre.
 
-Once created, you will see **value** appear inside the **Variables** palette and in the checked state, which means this variable will appear on the stage.
+Une fois créée, vous verrez **valeur** apparaître dans la palette **Variables** et dans l’état coché, ce qui signifie que cette variable apparaîtra sur la scène.
 
 .. image:: img/6_value.png
 
-**3. Read the value of A0**
+**3. Lire la valeur de A0**
 
-Store the value of A0 read into the variable **value**.
+Stockez la valeur lue de A0 dans la variable **valeur**.
 
-* [set my variable to 0]: Set the value of the variable.
-* [read analog pin A0]: Read the value of A0~A5 in the range of 0-1023.
+* [définir ma variable à 0] : Définir la valeur de la variable.
+* [lire broche analogique A0] : Lire la valeur des broches A0~A5 dans la plage de 0-1023.
 
 .. image:: img/6_read_a0.png
 
-To be able to read all the way through, you need to use the [forever] block. Click on this script to run it, rotate the potentiometer in both directions, and you will see that the value range is 0-1023.
+Pour effectuer une lecture continue, vous devez utiliser le bloc [toujours]. Cliquez sur ce script pour l'exécuter, tournez le potentiomètre dans les deux directions et vous verrez que la plage de valeurs est de 0 à 1023.
 
 .. image:: img/6_1023.png
 
-**4. Move the sprite**
+**4. Déplacer le lutin**
 
-Use the [move steps] block to move the sprite, run the script and you will see the sprite move from the middle to the right.
+Utilisez le bloc [avancer de nombre de pas] pour déplacer le lutin, lancez le script et vous verrez le lutin se déplacer du centre vers la droite.
 
 .. image:: img/6_move.png
 
-**5. Changing the sprite's direction**
+**5. Changer la direction du lutin**
 
-Now change the direction of the sprite's movement by the value of A0. Since the value of A0 ranges from 0-1023, but the sprite's rotation direction is -180~180, a [map] block needs to be used.
+Maintenant, changez la direction du mouvement du lutin en fonction de la valeur de A0. Comme la valeur de A0 varie de 0 à 1023, mais que l'angle de rotation du lutin est compris entre -180 et 180, un bloc [mapper] doit être utilisé.
 
-Also add [when green flag clicked] at the beginning to start the script.
+Ajoutez également [quand drapeau vert cliqué] au début pour démarrer le script.
 
-* [`point in direction <https://en.scratch-wiki.info/wiki/Point_in_Direction_()_(block)>`_]: Set the steering angle of the sprite, from **Motion** palette.
-* [map from to]: Map a range to another range.
+* [`point in direction <https://en.scratch-wiki.info/wiki/Point_in_Direction_()_(block)>`_]: Définir l'angle de direction du lutin, depuis la palette **Mouvement**.
+* [mapper de à] : Mapper une plage vers une autre.
 
 .. image:: img/6_direction.png
 

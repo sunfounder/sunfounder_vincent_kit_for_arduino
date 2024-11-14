@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_74hc595:
 
@@ -19,27 +19,28 @@
 
 .. image:: img/74HC595.png
 
-The 74HC595 consists of an 8−bit shift register and a storage register with three−state parallel outputs. It converts serial input into parallel output so you can save IO ports of an MCU.
-When MR (pin10) is high level and OE (pin13) is low level, data is input in the rising edge of SHcp and goes to the memory register through the rising edge of SHcp. If the two clocks are connected together, the shift register is always one pulse earlier than the memory register. There is a serial shift input pin (Ds), a serial output pin (Q) and an asynchronous reset button (low level) in the memory register. The memory register outputs a Bus with a parallel 8-bit and in three states. When OE is enabled (low level), the data in memory register is output to the bus.
+Le 74HC595 est un registre à décalage 8 bits et un registre de stockage avec des sorties parallèles à trois états. Il convertit les entrées série en sorties parallèles, ce qui permet de conserver les ports d'E/S d'un microcontrôleur (MCU).
+
+Lorsque MR (broche 10) est à un niveau haut et OE (broche 13) est à un niveau bas, les données sont entrées sur le front montant de SHcp et passent dans le registre mémoire au même moment. Si les deux horloges sont connectées ensemble, le registre à décalage prend toujours un temps d'avance d'un cycle par rapport au registre mémoire. Il existe une broche d'entrée série (Ds), une broche de sortie série (Q) et un bouton de réinitialisation asynchrone (niveau bas) dans le registre mémoire. Le registre mémoire émet un bus avec des sorties parallèles 8 bits et trois états. Lorsque OE est activé (niveau bas), les données du registre mémoire sont envoyées vers le bus.
 
 * `74HC595 Datasheet <https://www.ti.com/lit/ds/symlink/cd74hc595.pdf?ts=1617341564801>`_
 
 .. image:: img/74hc595_pin.png
     :width: 600
 
-Pins of 74HC595 and their functions:
+Broches du 74HC595 et leurs fonctions :
 
-* **Q0-Q7**: 8-bit parallel data output pins, able to control 8 LEDs or 8 pins of 7-segment display directly.
-* **Q7’**: Series output pin, connected to DS of another 74HC595 to connect multiple 74HC595s in series
-* **MR**: Reset pin, active at low level; 
-* **SHcp**: Time sequence input of shift register. On the rising edge, the data in shift register moves successively one bit, i.e. data in Q1 moves to Q2, and so forth. While on the falling edge, the data in shift register remain unchanged.
-* **STcp**: Time sequence input of storage register. On the rising edge, data in the shift register moves into memory register.
-* **CE**: Output enable pin, active at low level. 
-* **DS**: Serial data input pin
-* **VCC**: Positive supply voltage.
-* **GND**: Ground.
+* **Q0-Q7** : Pins de sortie des données parallèles 8 bits, pouvant contrôler directement 8 LEDs ou 8 broches d'un afficheur 7 segments.
+* **Q7’** : Broche de sortie série, connectée à DS d'un autre 74HC595 pour connecter plusieurs 74HC595 en série.
+* **MR** : Broche de réinitialisation, active à un niveau bas.
+* **SHcp** : Entrée d'horloge du registre à décalage. Sur le front montant, les données du registre à décalage se déplacent successivement d'un bit, c'est-à-dire que les données de Q1 passent à Q2, et ainsi de suite. Sur le front descendant, les données restent inchangées.
+* **STcp** : Entrée d'horloge du registre de stockage. Sur le front montant, les données du registre à décalage passent dans le registre mémoire.
+* **CE** : Broche d'activation de sortie, active à un niveau bas.
+* **DS** : Broche d'entrée des données série.
+* **VCC** : Broche de tension d'alimentation positive.
+* **GND** : Broche de masse.
 
-**Example**
+**Exemple**
 
 * :ref:`ar_4_digit` (Arduino Project)
 * :ref:`ar_pedestrian` (Arduino Project)

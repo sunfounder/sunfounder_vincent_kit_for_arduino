@@ -1,122 +1,115 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Components List and Introduction
+Composants et Introduction
 ====================================
 
 
-After opening the package, please check whether the quantity of components is compliance with product description and whether all components are in good condition.
+Après avoir ouvert le colis, veuillez vérifier que la quantité des composants est conforme à la description du produit et que tous les composants sont en bon état.
 
 * :download:`Vincent Kit Components List <https://github.com/sunfounder/sf-pdf/raw/master/components_list/a0000242-vincent-kit.pdf>`
 
 
-Below is the introduction to each component, which contains the operating principle of the component and the corresponding projects.
+Voici l'introduction de chaque composant, incluant le principe de fonctionnement et les projets associés.
 
-**Control Board**
+**Carte de Contrôle**
 
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_mega2560
-    component_mega_proto_shield
+    component_mega2560  
+    component_mega_proto_shield  
 
+**Composants de Base**
 
-**Basic**
-
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_breadboard
-    component_resistor
-    component_transistor
-    component_capacitor
-    component_diode
-    component_wires
+    component_breadboard  
+    component_resistor  
+    component_transistor  
+    component_capacitor  
+    component_diode  
+    component_wires  
 
-**Chip**
+**Puce**
 
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_74hc595
-    component_l293d
+    component_74hc595  
+    component_l293d  
 
+**Affichage**
 
-
-**Display**
-
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_led
-    component_rgb_led
-    component_bar_graph
-    component_7_segment
-    component_4_digit
-    component_dot_matrix_module
-    component_i2c_lcd
+    component_led  
+    component_rgb_led  
+    component_bar_graph  
+    component_7_segment  
+    component_4_digit  
+    component_dot_matrix_module  
+    component_i2c_lcd  
 
+**Son**
 
-**Sound**
-
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_buzzer
+    component_buzzer  
 
-**Driver**
+**Pilote**
 
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_motor
-    component_servo
-    component_stepper_motor
-    component_power_module
-    component_relay_module
-    
+    component_motor  
+    component_servo  
+    component_stepper_motor  
+    component_power_module  
+    component_relay_module  
 
-**Controller**
+**Contrôleur**
 
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_button
-    component_slide_switch
-    component_potentiometer
-    component_joystick_module
-    component_rotary_encoder_module
-    component_keypad
-    component_receive_module
-    component_mpr121_module
+    component_button  
+    component_slide_switch  
+    component_potentiometer  
+    component_joystick_module  
+    component_rotary_encoder_module  
+    component_keypad  
+    component_receive_module  
+    component_mpr121_module  
 
+**Capteur**
 
-
-**Sensor**
-
-.. toctree::
+.. toctree::  
     :maxdepth: 1
 
-    component_photoresistor
-    component_thermistor
-    component_tilt_switch
-    component_water_module
-    component_sound_module
-    component_touch_module
-    component_avoidance_module
-    component_pir_module
-    component_ultrasonic_module
-    component_humiture_module
-    component_mpu6050_module
-    component_mfrc522_module
+    component_photoresistor  
+    component_thermistor  
+    component_tilt_switch  
+    component_water_module  
+    component_sound_module  
+    component_touch_module  
+    component_avoidance_module  
+    component_pir_module  
+    component_ultrasonic_module  
+    component_humiture_module  
+    component_mpu6050_module  
+    component_mfrc522_module  

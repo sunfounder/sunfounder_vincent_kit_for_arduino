@@ -1,32 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Découvrez plus en profondeur le monde de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Profitez d'un accès anticipé aux nouvelles annonces de produits et aux avant-premières.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et à des promotions de saison.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_analog_write:
 
-1.3 Analog Write
-================
+1.3 Écriture Analogique
+==========================
 
-Overview
+Aperçu
 --------
 
-You can write the PWM wave to the pin by using analogWrite(). This
-method can be used to adjust the brightness of LED, change the color of
-RGB, or adjust the motor speed, etc. Here we will take LED as an example
-to get gradient brightness of LED.
+Vous pouvez générer une onde PWM sur la broche en utilisant analogWrite(). 
+Cette méthode peut être utilisée pour ajuster la luminosité d’une LED, changer 
+la couleur d’une LED RGB, ajuster la vitesse d’un moteur, etc. Ici, nous 
+allons prendre l'exemple d'une LED pour obtenir une variation progressive de 
+sa luminosité.
 
-Components Required
--------------------
+Composants requis
+--------------------
 
 .. image:: img/list_1.3.png
 
@@ -37,78 +38,77 @@ Components Required
 * :ref:`cpn_resistor`
 
 
-※ Pulse Width Modulation
--------------------------
+※ Modulation de largeur d'impulsion
+-------------------------------------
 
-Pulse Width Modulation, or PWM, is a technique for getting analog results 
-with digital means. Digital control is used to create a square wave, a 
-signal switched between on and off. This on-off pattern can simulate voltages 
-in between full on (5 Volts) and off (0 Volts) by changing the portion of 
-the time the signal spends on versus the time that the signal spends off. 
-The duration of "on time" is called the pulse width. To get varying analog 
-values, you change, or modulate, that pulse width. If you repeat this on-off 
-pattem fast enough with an LED for example, the result is as if the signal 
-is a steady voltage between 0 and 5v controlling the brightness of the LED.
+La modulation de largeur d'impulsion, ou PWM, est une technique permettant 
+d’obtenir des résultats analogiques par des moyens numériques. Le contrôle 
+numérique est utilisé pour créer une onde carrée, un signal qui alterne 
+entre marche et arrêt. Ce motif marche-arrêt peut simuler des tensions entre 
+l'état allumé (5 Volts) et éteint (0 Volts) en modifiant la durée de l'état 
+actif par rapport à l'état inactif. Cette durée d’activation est appelée 
+largeur d'impulsion. En modifiant cette largeur, on obtient des valeurs 
+analogiques variables. Par exemple, si ce motif est appliqué suffisamment 
+vite avec une LED, le résultat est comme si la LED était commandée par une 
+tension stable entre 0 et 5 V, modulant ainsi sa luminosité.
 
-A call to analogWrite() is on a scale of 0 - 255, such that analogWrite(255) 
-requests a 100% duty cycle (always on), and analogWrite(127) is a 50% duty 
-cycle (on half the time) for example.
+Un appel à analogWrite() se fait sur une échelle de 0 à 255, de sorte que 
+analogWrite(255) correspond à un cycle de travail de 100 % (toujours activé), 
+tandis que analogWrite(127) correspond à un cycle de travail de 50 % (activé 
+la moitié du temps).
 
 .. image:: img/image402.png
 
-Fritzing Circuit
-----------------
+Circuit Fritzing
+-------------------
 
-In this example, we use the PWM pin 9 to drive the LED. Connect one end
-of the resistor to pin 9. Connect the long pin (anode) of the LED to the
-other end of the resistor. Connect the short pin (negative, referred to
-as the cathode) of LED to GND. 
+Dans cet exemple, nous utilisons la broche PWM 9 pour commander la LED. 
+Connectez une extrémité de la résistance à la broche 9, puis la patte 
+longue (anode) de la LED à l’autre extrémité de la résistance. Reliez 
+la patte courte (cathode) de la LED au GND.
 
 .. note::
-    PWM pins of Mega2560 board are 2 -13, 44 - 46.
+    Les broches PWM de la carte Mega2560 sont les suivantes : 2 à 13, 44 à 46.
 
 .. image:: img/image30.png
 
 
-Schematic Diagram
------------------
+Schéma électronique
+-----------------------
 
 .. image:: img/image401.png
 
 
 Code
-----
-
+------
 
 .. note::
 
-    * You can open the file ``1.3_analogWrite.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.3_analogWrite`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``1.3_analogWrite.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\1.3_analogWrite``.
+    * Ou copier ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0870c13c-2064-4d3b-9b5b-cf14d3466425/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, you can see that the LED gradually brightens out and turns off gradually.
+Après avoir téléversé le code sur la carte Mega2560, vous pourrez voir que la LED s'illumine progressivement puis s'éteint progressivement.
 
-Code Analysis
--------------
+Analyse du Code
+-----------------
 
-Declare pin 9 as ledPin.
+Déclarez la broche 9 en tant que ledPin.
 
 .. code-block:: arduino
 
     int ledPin = 9; 
 
-analogWrite() in loop() assigns ledPin an analog value (PWM wave) between 0 and 255 to change the brightness of LED.
+Dans loop(), analogWrite() assigne à ledPin une valeur analogique (onde PWM) entre 0 et 255 pour modifier la luminosité de la LED.
 
 .. code-block:: arduino
 
     analogWrite(ledPin, value);
 
-Using a for loop, the value of analogWrite() can be changed step by step between the minimum value (0) and the maximum value (255).
+En utilisant une boucle for, la valeur de analogWrite() peut être modifiée progressivement entre la valeur minimale (0) et la valeur maximale (255).
 
 .. code-block:: arduino
 
@@ -116,7 +116,7 @@ Using a for loop, the value of analogWrite() can be changed step by step between
         analogWrite(ledPin, value);
     }
 
-In order to see the experimental phenomenon clearly, a delay(30) needs to be added to the for cycle to control the brightness change time.
+Pour voir clairement le phénomène expérimental, un délai (delay(30)) est ajouté dans la boucle for afin de contrôler la vitesse de variation de la luminosité.
 
 .. code-block:: arduino
 
@@ -127,7 +127,7 @@ In order to see the experimental phenomenon clearly, a delay(30) needs to be add
     }
     }
 
-Phenomenon Picture
--------------------
+Image du Phénomène
+---------------------
 
 .. image:: img/image36.jpeg

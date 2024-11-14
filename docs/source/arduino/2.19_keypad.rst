@@ -1,31 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et relevez vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux nouvelles annonces de produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions lors des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_keypad:
 
-2.19 Keypad
-============
+2.19 Clavier Matriciel
+=========================
 
-Overview
--------------
+Aperçu
+---------
 
-In this lesson, you will learn to use Keypad. Keypad can be applied into
-various kinds of devices, including mobile phone, fax machine, microwave
-oven and so on. It is commonly used in user input.
+Dans cette leçon, vous allez apprendre à utiliser un clavier matriciel. 
+Le clavier est largement utilisé dans divers dispositifs, comme les téléphones 
+portables, les télécopieurs, les micro-ondes, etc. Il est souvent employé pour 
+la saisie de données par l’utilisateur.
 
-Components Required
--------------------------
+Composants Requis
+--------------------
 
 .. image:: img/Part_two_19.png
 
@@ -33,28 +34,26 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_keypad`
 
-Fritzing Circuit
----------------------
+Circuit Fritzing
+-------------------
 
-In this example, we extend the pins 1~8 of Keypad to connect to the
-digital pins 2~9.
+Dans cet exemple, nous étendons les broches 1 à 8 du clavier pour les connecter aux broches numériques 2 à 9.
 
 .. image:: img/image176.png
 
-Schematic Diagram
+Schéma de Connexion
 ----------------------
 
 .. image:: img/image177.png
    :align: center
 
 Code
------------
-
+----
 
 .. note::
 
-    * You can open the file ``2.19_keypad.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.19_keypad`` directly.
-    * The ``Keypad`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir directement le fichier ``2.19_keypad.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.19_keypad``.
+    * La bibliothèque ``Keypad`` est utilisée ici, vous pouvez l'installer depuis le **Gestionnaire de Bibliothèques**.
 
         .. image:: img/lib_keypad.png
             :align: center
@@ -63,38 +62,38 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/89e21aab-1a9c-4bf7-a0b3-a9b80f4d2d96/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, on the serial monitor,
-you can see the value of the key currently pressed on the Keypad.
+Après avoir téléversé le code sur la carte Mega2560, vous pourrez voir sur 
+le moniteur série la valeur de la touche actuellement appuyée sur le clavier.
 
-Code Analysis
--------------------
+Analyse du Code
+-----------------
 
-By calling the Keypad.h library, you can easily use Keypad.
+En utilisant la bibliothèque Keypad.h, vous pouvez facilement exploiter un clavier matriciel.
 
 .. code-block:: arduino
 
     #include <Keypad.h> 
 
-**Library Functions：**
+**Fonctions de la Bibliothèque :**
 
 .. code-block:: arduino
 
     Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
 
-Initializes the internal keymap to be equal to userKeymap.
+Initialise la disposition interne des touches pour correspondre à userKeymap.
 
-* ``userKeymap``: The symbols on the buttons of the keypads.
-* ``row, col``: Pin configuration.
-* ``numRows, numCols``: Keypad sizes.
+* ``userKeymap`` : Les symboles affichés sur les touches du clavier.
+* ``row, col`` : Configuration des broches.
+* ``numRows, numCols`` : Dimensions du clavier.
 
 .. code-block:: arduino
 
     char getKey()
 
-Returns the key that is pressed, if any. This function is non-blocking.
+Renvoie la touche qui est appuyée, le cas échéant. Cette fonction est non-bloquante.
 
-Phenomenon Picture
-------------------------
+Illustration du Phénomène
+----------------------------
 
 .. image:: img/image178.jpeg
    :align: center

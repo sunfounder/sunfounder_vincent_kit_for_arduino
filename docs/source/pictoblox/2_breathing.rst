@@ -1,41 +1,41 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur les univers de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et techniques grâce à l’aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Profitez d’un accès anticipé aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à des concours et promotions festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] pour nous rejoindre dès aujourd'hui !
 
 .. _breathing_led:
 
-2.2 Breathing LED
+2.2 LED Respirante
 ========================
 
-Now use another method to control the brightness of the LED. Unlike the previous project, here the brightness of the LED is made to slowly diminish until it disappears.
+Utilisons maintenant une autre méthode pour contrôler la luminosité de la LED. Contrairement au projet précédent, la luminosité de la LED diminue lentement jusqu’à disparaître.
 
-When the sprite on the stage is clicked, the brightness of the LED slowly increases and then goes out instantly.
+Lorsque le lutin sur la scène est cliqué, la luminosité de la LED augmente progressivement pour ensuite s'éteindre instantanément.
 
 .. image:: img/3_ap.png
 
-You Will Learn
----------------------
+Ce Que Vous Apprendrez
+------------------------
 
-- Set the output value of the PWM pin
-- Create variables
-- Change the brightness of the sprite
+- Régler la valeur de sortie de la broche PWM
+- Créer des variables
+- Modifier la luminosité d'un lutin
 
-Build the Circuit
------------------------
+Construire le Circuit
+--------------------------
 
-This project uses the same circuit as the previous project :ref:`table_lamp`, but instead of using HIGH/LOW to make the LEDs light up or turn off, this project uses the `PWM - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ signal to slowly light up or dim down the LED.
+Ce projet utilise le même circuit que celui du projet précédent :ref:`table_lamp`, mais au lieu d’utiliser HIGH/LOW pour allumer ou éteindre les LED, ce projet utilise le signal `PWM - Wikipedia <https://en.wikipedia.org/wiki/Pulse-width_modulation>`_ pour éclairer ou atténuer progressivement la LED.
 
-The PWM signal range is 0-255, on the Arduno Uno board, 3, 5, 6, 9, 10, 11 can output PWM signal; on the Mega2560, 2 - 13, 44 - 46 can output PWM signal.
+La plage de signal PWM est de 0 à 255. Sur la carte Arduino Uno, les broches 3, 5, 6, 9, 10, 11 peuvent émettre un signal PWM ; sur la Mega2560, les broches 2 à 13, 44 à 46 peuvent émettre un signal PWM.
 
 .. image:: img/circuit/led_circuit.png
 
@@ -43,49 +43,48 @@ The PWM signal range is 0-255, on the Arduno Uno board, 3, 5, 6, 9, 10, 11 can o
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-Programming
+Programmation
 ------------------
 
-**1. Select a sprite**
+**1. Sélectionner un lutin**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **button3** in the search box, and then click to add it.
+Supprimez le lutin par défaut, cliquez sur le bouton **Choisir un lutin** dans le coin inférieur droit de la zone des lutins, entrez **button3** dans la barre de recherche, puis cliquez pour l’ajouter.
 
 .. image:: img/3_sprite.png
 
-**2. Creating a variable**.
+**2. Création d'une variable**
 
-Create a variable called **pwm** to store the value of the pwm change.
+Créez une variable appelée **pwm** pour stocker la valeur de variation du pwm.
 
-Click on the **Variables** palette and select **Make a Variable**.
+Cliquez sur la palette **Variables** et sélectionnez **Créer une variable**.
 
 .. image:: img/3_ap_va.png
 
-Enter the name of the variable, it can be any name, but it is recommended to describe its function. The data type is number and For all sprites.
+Entrez le nom de la variable ; il peut être librement choisi, mais il est recommandé d’utiliser un nom décrivant sa fonction. Le type de données est numérique et pour tous les lutins.
 
 .. image:: img/3_ap_pwm.png
 
-Once created, you will see **pwm** inside the **Variables** palette and in the checked state, which means this variable will appear on the stage. You can try unchecking it to see if pwm is still present on the stage.
+Une fois créée, vous verrez **pwm** dans la palette **Variables** en état coché, ce qui signifie que cette variable apparaîtra sur la scène. Vous pouvez essayer de décocher pour vérifier si pwm est toujours visible sur la scène.
 
 .. image:: img/3_ap_0.png
 
-**3. Set the initial state**
+**3. Définir l'état initial**
 
-When the **button3** sprite is clicked, switch the costume to **button-b** (clicked state), and set the initial value of the variable **pwm** to 0.
+Lorsque le lutin **button3** est cliqué, changez son costume en **button-b** (état cliqué), et définissez la valeur initiale de la variable **pwm** à 0.
 
-* [set pwm to 0]: from **Variables** palette, used to set the value of the variable.
+* [définir pwm à 0] : de la palette **Variables**, utilisée pour définir la valeur de la variable.
 
 .. image:: img/3_ap_brightness.png
 
-**4. Make the LED brighter and brighter**
+**4. Faire augmenter progressivement la luminosité de la LED**
 
-Since the range of pwm is 255, so by [repeat] block, the variable **pwm** is accumulated to 255 by 5, and then put into [set PWM pin] block, so you can see the LED slowly light up.
+Comme la plage de pwm est de 255, utilisez le bloc [répéter] pour accumuler la variable **pwm** jusqu'à 255 par incréments de 5, puis insérez-la dans le bloc [définir la broche PWM]. Vous verrez ainsi la LED s’éclairer progressivement.
 
-* [change pwm by 5]: from **Variables** palette, let the variable change a specific number each time. It can be a positive or negative number, positive is increasing each time, negative is decreasing each time, for example, here the variable pwm is increased by 5 each time.
-* [set PWM pin]: from the **Arduino Uno** palette, used to set the output value of the pwm pin.
+* [changer pwm de 5] : de la palette **Variables**, permet d’incrémenter la variable d’une valeur spécifique à chaque répétition. Elle peut être positive ou négative, par exemple ici pwm est augmentée de 5 à chaque répétition.
+* [définir la broche PWM] : de la palette **Arduino Uno**, utilisée pour régler la valeur de sortie de la broche pwm.
 
 .. image:: img/3_ap_1.png
 
-
-Finally, switch the costume of button3 back to **button-a** and make the PWM pin value 0, so that the LED will light up slowly and then turn off again.
+Enfin, changez le costume du bouton3 en **button-a** et ramenez la valeur de la broche PWM à 0, de sorte que la LED s'allume lentement, puis s'éteigne de nouveau.
 
 .. image:: img/3_ap_2.png

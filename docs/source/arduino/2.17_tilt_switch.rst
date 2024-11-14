@@ -1,32 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions durant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_tilt:
 
-2.17 Tilt Switch
-==================
+2.17 Interrupteur d'inclinaison
+==================================
 
-Overview
----------------
+Aperçu
+----------------
 
-In this lesson, you will learn about tilt switch. Tilt switch can be
-used to detect whether objects tilt, which is of great value in
-practical applications. It can be used to judge the tilt of bridges,
-buildings, transmission line tower and so on, so it has an important
-guiding function in carrying out maintenance work.
+Dans cette leçon, vous allez découvrir l'interrupteur d'inclinaison. 
+Ce composant peut être utilisé pour détecter l'inclinaison d'objets, 
+ce qui est d'une grande utilité dans les applications pratiques. Il peut, 
+par exemple, permettre de surveiller l'inclinaison de ponts, de bâtiments, 
+de pylônes de lignes de transmission, et ainsi jouer un rôle important pour 
+guider les travaux de maintenance.
 
-Components Required
+Composants Requis
 -------------------------
 
 .. image:: img/Part_two_17.png
@@ -37,16 +38,16 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_tilt`
 
-Fritzing Circuit
+Circuit Fritzing
 ---------------------
 
-In this example, digital pin 2 is used to read the signal of Tilt
-Switch.
+Dans cet exemple, la broche numérique 2 est utilisée pour lire le signal 
+de l'interrupteur d'inclinaison.
 
 .. image:: img/image165.png
    :align: center
 
-Schematic Diagram
+Schéma de Connexion
 -----------------------
 
 .. image:: img/image166.png
@@ -57,8 +58,8 @@ Code
 
 .. note::
 
-    * You can open the file ``2.17_tiltSwitch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.17_tiltSwitch`` directly.
-    * Or copy this code into Arduino IDE.
+    * Vous pouvez ouvrir directement le fichier ``2.17_tiltSwitch.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.17_tiltSwitch``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 
 
@@ -66,14 +67,14 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b0649977-fa45-423a-9612-9180d600f3ec/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the
-serial monitor to see the readings of pins, which displays 「1」 or
-「0」 when Tilt Switch is vertical (bringing the internal metal ball
-into contacting with the Wire Pins) or tilted. For detailed explanation
-of codes, you can turn to :ref:`ar_digital_read`.
+Après avoir téléversé le code sur la carte Mega2560, vous pouvez ouvrir 
+le moniteur série pour voir les lectures de la broche. L’affichage montre 
+« 1 » ou « 0 » lorsque l'interrupteur d'inclinaison est en position verticale 
+(faisant entrer en contact la bille métallique interne avec les broches) ou 
+incliné. Pour une explication détaillée des codes, consultez :ref:`ar_digital_read`.
 
-Phenomenon Picture
------------------------
+Illustration du Phénomène
+-----------------------------
 
 .. image:: img/image167.jpeg
    :align: center

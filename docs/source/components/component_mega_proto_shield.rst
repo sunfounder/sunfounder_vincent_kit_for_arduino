@@ -1,41 +1,40 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Plongez plus profondément dans l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
-
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 .. _cpn_prototype:
-
 Prototype Shield
 ===========================
 
 .. image:: img/image421.png
 
-The Prototype Shield makes it easy for you to design custom
-circuits. You can solder parts to the prototyping area to create your
-project, or use it with a Tiny breadboard to quickly test circuit ideas
-without having to solder. It's got extra connections for all of the
-Arduino I/O pins, and it's got space to mount through-hole and surface
-mount integrated circuits. It's a convenient way to make your custom
-circuit and Arduino into a single module.
+Le Prototype Shield facilite la conception de circuits personnalisés. 
+Vous pouvez souder des composants sur la zone de prototypage pour créer 
+votre projet, ou l'utiliser avec une petite breadboard pour tester rapidement 
+vos idées de circuits sans avoir besoin de souder. Il dispose de connexions 
+supplémentaires pour tous les broches I/O de l'Arduino, ainsi que d'un espace 
+pour monter des circuits intégrés à montage traversant ou en surface. C'est 
+une solution pratique pour intégrer votre circuit personnalisé et votre Arduino 
+dans un seul module.
 
-**Specifications**
+**Spécifications**
 
--  It can be overlayed on the Sunfounder Mega2560 board directly. A Tiny
-   breadboard is provided, which you can use to do some simple
-   experiments.
+- Il peut être superposé directement sur la carte SunFounder Mega2560. Une 
+petite breadboard est fournie, que vous pouvez utiliser pour réaliser des 
+expériences simples.
 
--  Provide a footprint for SOP28.
+- Fournit un emplacement pour un circuit intégré SOP28.
 
--  It's got extra connections for all of the Arduino I/O pins
+- Il dispose de connexions supplémentaires pour toutes les broches I/O de l'Arduino.
 
--  We offer you pin22-pin53 bonding pad and you can use it to weld the
-   component directly.
+- Nous vous proposons des pads de soudure de la broche 22 à la broche 53, que 
+  vous pouvez utiliser pour souder directement les composants.

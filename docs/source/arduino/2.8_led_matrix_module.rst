@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l'univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après achat et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_matrix_module:
 
-2.8 LED Matrix Module
-======================
+2.8 Module Matrice LED
+=========================
 
-Overview
---------
+Aperçu
+---------
 
-In this lesson, you will learn about LED Matrix Module. LED Matrix
-Module uses the MAX7219 driver to drive the 8 x 8 LED Matrix.
+Dans cette leçon, vous allez découvrir le module matrice LED. Ce module 
+utilise le pilote MAX7219 pour piloter une matrice LED de 8 x 8.
 
-Components Required
+Composants requis
 -------------------
 
 .. image:: img/list_2.8.png
@@ -33,16 +33,17 @@ Components Required
 * :ref:`cpn_matrix_module`
 
 
-Fritzing Circuit
-----------------
+Schéma de connexion
+---------------------
 
-In this example, we get the VCC pin of MAX7219 connected to 5V, GND to
-ground, DIN to digital pin 12, CS to digital pin 10, CLK to digital pin11.
+Dans cet exemple, connectez la broche VCC du MAX7219 à 5V, GND à la masse, 
+DIN à la broche numérique 12, CS à la broche numérique 10 et CLK à la broche 
+numérique 11.
 
 .. image:: img/image443.png
 
-Schematic Diagram
------------------
+Schéma électronique
+----------------------
 
 .. image:: img/image444.png
 
@@ -51,101 +52,100 @@ Code
 
 .. note::
 
-    * You can open the file ``2.8_ledMatrix.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.8_ledMatrix`` directly.
-    * The ``LedControl`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir directement le fichier ``2.8_ledMatrix.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.8_ledMatrix``.
+    * La bibliothèque ``LedControl`` est utilisée ici ; vous pouvez l'installer via le **Gestionnaire de Bibliothèques**.
 
         .. image:: img/lib_ledcontrol.png
             :align: center
-    
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/189a15e4-a81f-43f2-8618-3d565901f285/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded, you can see that the LEDs turn on in the sequence of a column, a row or a dot or there is a picture appearing on the LED matrix.  
+Après avoir téléchargé le code, vous verrez que les LED s'allument en suivant la séquence d'une colonne, d'une ligne ou d'un point, ou bien une image apparaîtra sur la matrice LED.
 
 
-Code Analysis
--------------
+Analyse du Code
+-------------------
 
-By calling the library LedControl.h, you can easily use the LED matrix.
+En utilisant la bibliothèque LedControl.h, vous pouvez facilement contrôler la matrice LED.
 
 .. code-block:: arduino
 
     #include "LedControl.h"
 
-**Library Functions**：
+**Fonctions de la Bibliothèque**：
 
 .. code-block:: arduino
 
     LedControl(int dataPin,int clockPin,int csPin,int numDevices)
 
-Create an instance of type LedControl through which we talk to the
-MAX7219 devices. The initialization of an LedControl takes 4 arguments.
+Créez une instance de type LedControl pour communiquer avec les dispositifs 
+MAX7219. L'initialisation de LedControl prend 4 arguments.
 
-* ``dataPin,clockPin,csPin``: The first 3 arguments are the pin-numbers on the Arduino that are connected to the MAX7219. You are free to choose any of the digital IO-pins on the arduino, but since some of the pins are also used for serial communication or have a led attached to them its best to avoid pin 0,1 and 13.
+* ``dataPin,clockPin,csPin`` : Les trois premiers arguments sont les numéros de broches sur l'Arduino connectés au MAX7219. Vous êtes libre de choisir n'importe quelle broche IO numérique, mais il est préférable d'éviter les broches 0, 1 et 13 car elles sont utilisées pour la communication série ou sont reliées à une LED.
 
-* ``numDevices``: The fourth argument is the number of cascaded MAX7219 devices you're using with this LedControl. The library can address up to 8 devices from a single LedControl-variable.
+* ``numDevices`` : Le quatrième argument est le nombre de dispositifs MAX7219 en cascade que vous utilisez avec cette variable LedControl. La bibliothèque peut gérer jusqu'à 8 dispositifs à partir d'une seule variable LedControl.
 
 .. code-block:: arduino
 
     void shutdown(int addr, bool b)
 
-* ``addr``: The address of the display to control.
-* ``b``: If true the device goes into power-down mode. If false device goes into normal operation.
+* ``addr`` : L'adresse de l'affichage à contrôler.
+* ``b`` : Si true, le dispositif passe en mode économie d'énergie. Si false, le dispositif passe en mode normal.
 
 .. code-block:: arduino
 
     void setIntensity(int addr, int intensity)
 
-Themethod lets you control brightness in 16 discrete steps. Larger
-values make the display brighter up to the maximum of 15.
+Cette méthode permet de contrôler la luminosité en 16 niveaux. 
+Des valeurs plus élevées rendent l'affichage plus lumineux, jusqu'à un maximum de 15.
 
-* ``addr``: The address of the display to control.
-* ``intensity``: the brightness of the display. Only values between 0(darkest) and 15(brightest) are valid.
+* ``addr`` : L'adresse de l'affichage à contrôler.
+* ``intensity`` : La luminosité de l'affichage. Seules les valeurs entre 0 (le plus sombre) et 15 (le plus lumineux) sont valides.
 
 .. code-block:: arduino
 
     void clearDisplay(int addr)
 
-All LEDs off after this one.
+Éteint toutes les LED.
 
-* ``addr``: The address of the display to control.
+* ``addr`` : L'adresse de l'affichage à contrôler.
 
 .. code-block:: arduino
 
     void setLed(int addr, int row, int col, boolean state)
 
-Set the status of a single Led.
+Définit l'état d'une seule LED.
 
-* ``addr``: The address of the display to control.
-* ``row``: The row of the Led (0..7).
-* ``col``: The column of the Led (0..7).
-* ``state``: If true the led is switched on, if false it is switched off.
+* ``addr`` : L'adresse de l'affichage à contrôler.
+* ``row`` : La ligne de la LED (0..7).
+* ``col`` : La colonne de la LED (0..7).
+* ``state`` : Si true, la LED s'allume ; si false, elle s'éteint.
 
 .. code-block:: arduino
 
     void setRow(int addr, int row, byte value)
 
-Set all 8 LEDs in a row to a new state.
+Définit tous les 8 LEDs dans une ligne à un nouvel état.
 
-* ``addr``: The address of the display to control.
-* ``row``: Row which is to be set (0..7).
-* ``value``: Each bit set to 1 will light up the corresponding Led.(e.g. B01000000 will light up the 2nd).
+* ``addr`` : L'adresse de l'affichage à contrôler.
+* ``row`` : Ligne à configurer (0..7).
+* ``value`` : Chaque bit défini à 1 allumera la LED correspondante. (ex. B01000000 allumera la 2ème LED).
 
 .. code-block:: arduino
 
     void setColumn(int addr, int col, byte value)
 
-Set all 8 LEDs in a row to a new state.
+Définit tous les 8 LEDs dans une colonne à un nouvel état.
 
-* ``addr``: The address of the display to control.
-* ``col``: Column which is to be set (0..7).
-* ``value``: Each bit set to 1 will light up the corresponding Led.(e.g. B01000000 will light up the 2nd).
+* ``addr`` : L'adresse de l'affichage à contrôler.
+* ``col`` : Colonne à configurer (0..7).
+* ``value`` : Chaque bit défini à 1 allumera la LED correspondante. (ex. B01000000 allumera la 2ème LED).
 
 
 
-Phenomenon Picture
-------------------
+Illustration du Phénomène
+---------------------------
 
 .. image:: img/image109.jpeg

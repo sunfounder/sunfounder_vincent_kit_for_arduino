@@ -1,30 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour enrichir vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et à des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions durant les périodes festives.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_touch:
 
-2.18 Touch Switch Module
-========================
+2.18 Module d'interrupteur tactile
+=====================================
 
-Overview
+Aperçu
 ------------
 
-In this lesson, you will learn about touch switch module. It can replace
-the traditional kinds of switch with these advantages: convenient
-operation, fine touch sense, precise control and least mechanical wear.
+Dans cette leçon, vous allez découvrir le module d'interrupteur tactile. 
+Ce module peut remplacer les interrupteurs traditionnels, offrant les 
+avantages suivants : une utilisation pratique, une sensation tactile agréable, 
+un contrôle précis et une usure mécanique minimale.
 
-Components Required
+Composants Requis
 ------------------------
 
 .. image:: img/Part_two_18.png
@@ -34,16 +35,16 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_touch`
 
-Fritzing Circuit
+Circuit Fritzing
 --------------------
 
-In this example, pin 2 is used to read the signal of Touch Switch
-Module.
+Dans cet exemple, la broche 2 est utilisée pour lire le signal du module 
+d'interrupteur tactile.
 
 .. image:: img/image170.png
    :align: center
 
-Schematic Diagram
+Schéma de Connexion
 -----------------------
 
 .. image:: img/image171.png
@@ -52,11 +53,10 @@ Schematic Diagram
 Code
 ---------
 
-
 .. note::
 
-    * You can open the file ``2.18_touchSwitch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.18_touchSwitch`` directly.
-    * Or copy this code into Arduino IDE.
+    * Vous pouvez ouvrir directement le fichier ``2.18_touchSwitch.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.18_touchSwitch``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 
 
@@ -64,16 +64,15 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/526e6ca9-a140-48cc-9cfb-d8bc7f32cf6d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see the readings of
-pins displaying on the serial monitor.
+Après avoir téléversé le code sur la carte Mega2560, vous pourrez voir les 
+lectures des broches affichées sur le moniteur série.
 
-When your finger tip touches the Touch switch module, 「1」will be
-displayed on the serial monitor; and when you remove your finger, 「0」
-will be be displayed. As for the detailed code explanation, you need to
-turn to :ref:`ar_digital_read`.
+Lorsque vous touchez le module tactile avec le bout de votre doigt, un 「1」 
+s'affiche sur le moniteur série ; lorsque vous retirez votre doigt, un 「0」 
+s'affiche. Pour une explication détaillée du code, référez-vous à :ref:`ar_digital_read`.
 
-Phenomenon Picture
-------------------------
+Illustration du Phénomène
+-----------------------------
 
 .. image:: img/image172.jpeg
    :height: 4.74167in

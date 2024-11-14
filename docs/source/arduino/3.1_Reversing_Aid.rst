@@ -1,32 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez plus en profondeur l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_reversing_aid:
 
-3.1 Reversing Aid
-===================
+3.1 Aide au stationnement
+============================
 
-Overview
--------------
+Aperçu
+---------
 
-With the development of science and technology, a lot of high-tech
-products have been installed in cars, among which the reversing assist
-system is one of them. Here we use ultrasonic sensors, LCD, LED and
-buzzer to make a simple ultrasonic reversing assist system.
+Avec le développement des sciences et technologies, de nombreux produits 
+high-tech ont été installés dans les voitures, dont le système d'assistance 
+au stationnement, l'un des plus populaires. Dans ce projet, nous utilisons 
+des capteurs ultrasoniques, un écran LCD, des LED et un buzzer pour réaliser 
+un système simple d'assistance au stationnement à ultrasons.
 
-Components Required
--------------------------
+Composants requis
+-------------------
 
 .. image:: img/Part_three_1.png
     :align: center
@@ -38,27 +39,27 @@ Components Required
 * :ref:`cpn_i2c_lcd1602`
 * :ref:`cpn_ultrasonic`
 
-Fritzing Circuit
-----------------------
+Circuit Fritzing
+-------------------
 
-In this example, the wiring is shown below.
+Dans cet exemple, le câblage est présenté ci-dessous.
 
 .. image:: img/image264.png
    :align: center
 
-Schematic Diagram
-----------------------
+**Schéma de câblage**
+------------------------
 
 .. image:: img/image265.png
    :align: center
 
 Code
-------------
+-----
 
 .. note::
 
-    * You can open the file ``3.1_reversingAid.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.1_reversingAid`` directly.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir directement le fichier ``3.1_reversingAid.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\3.1_reversingAid``.
+    * La bibliothèque ``LiquidCrystal I2C`` est utilisée ici. Vous pouvez l'installer depuis le **Gestionnaire de bibliothèques**.
 
         .. image:: img/lib_liquidcrystal_i2c.png
             :align: center
@@ -67,23 +68,23 @@ Code
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/4bbcea82-c6cd-4658-90ce-9bcd291c58d4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
----------------------------
+Explication de l'exemple
+-------------------------
 
-This code helps us create a simple distance measuring device that can measure the distance between objects and provide feedback through an LCD display and a buzzer.
+Ce code nous permet de créer un dispositif simple de mesure de distance qui peut mesurer la distance entre un objet et fournir un retour via un écran LCD et un buzzer.
 
-The ``loop()`` function contains the main logic of the program and runs continuously. Let's take a closer look at the ``loop()`` function.
+La fonction ``loop()`` contient la logique principale du programme et s'exécute en continu. Regardons de plus près cette fonction.
 
-#. Loop to read distance and update parameters
+#. Boucle pour lire la distance et mettre à jour les paramètres
 
-    In the ``loop``, the code first reads the distance measured by the ultrasonic module and updates the interval parameter based on the distance. 
+    Dans la ``loop``, le code commence par lire la distance mesurée par le module ultrasonique et met à jour le paramètre des intervalles en fonction de la distance.
 
     .. code-block:: arduino
 
-        // Update the distance
+        // Mise à jour de la distance
         distance = readDistance();
 
-        // Update intervals based on distance
+        // Mise à jour des intervalles en fonction de la distance
         if (distance <= 10) {
             intervals = 300;
         } else if (distance <= 20) {
@@ -94,9 +95,9 @@ The ``loop()`` function contains the main logic of the program and runs continuo
             intervals = 2000;
         }
 
-#. Check if it's time to beep
+#. Vérification du moment où il faut émettre un bip
 
-    The code calculates the difference between the current time and the previous beep time, and if the difference is greater than or equal to the interval time, it triggers the buzzer and updates the previous beep time.
+    Le code calcule la différence entre l'heure actuelle et l'heure du dernier bip. Si cette différence est supérieure ou égale à l'intervalle, le buzzer est déclenché et l'heure du dernier bip est mise à jour.
 
     .. code-block:: arduino
 
@@ -107,9 +108,9 @@ The ``loop()`` function contains the main logic of the program and runs continuo
             previousMillis = currentMillis;
         }
 
-#. Update LCD display
+#. Mise à jour de l'affichage LCD
 
-    The code clears the LCD display and then displays "Dis:" and the current distance in centimeters on the first line.
+    Le code efface l'affichage LCD puis affiche "Dis:" suivi de la distance actuelle en centimètres sur la première ligne.
 
     .. code-block:: arduino
 

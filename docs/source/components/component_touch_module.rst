@@ -1,43 +1,45 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez davantage le monde du Raspberry Pi, de l'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et découvrez des aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et cadeaux** : Participez à nos jeux concours et promotions saisonnières.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_touch:
 
-Touch Switch Module
+Module d'Interrupteur Tactile
 ==================================
 
 .. image:: img/touch168.png
     :width: 300
     :align: center
 
-* **IO**: Signal pin, usually low level, will output high level after touch.
-* **VCC**: Power supply, 3.3 ~ 5V DC.
-* **GND**: Ground.
+* **IO** : Broche de signal, généralement à niveau bas, elle passe à un niveau haut après un contact.
+* **VCC** : Alimentation, 3.3 ~ 5V CC.
+* **GND** : Masse.
 
-This module is a capacitive touch switch module based on a touch sensor IC (TTP223B). In the normal state, the module outputs a low level with low power consumption; when a finger touches the corresponding position, the module outputs a high level and becomes low level again after the finger is released.
+Ce module est un interrupteur capacitif basé sur un circuit intégré de capteur tactile (TTP223B). En état normal, le module sort un signal à faible niveau avec une faible consommation d'énergie ; lorsque le doigt touche la zone correspondante, le module génère un signal à niveau haut, puis revient à un niveau bas après le retrait du doigt.
 
-Here is how the capacitive touch switch works:
+Voici comment fonctionne l'interrupteur capacitif :
 
-A capacitive touch switch has different layers—top insulating face plate followed by touch plate, another insulating layer and then ground plate.
+Un interrupteur capacitif est constitué de différentes couches : une plaque isolante supérieure, suivie de la plaque tactile, une autre couche isolante, puis la plaque de masse.
 
 .. image:: img/touch169.jpeg
 
-In practice, a capacitive sensor can be made on a double-sided PCB by regarding one side as the touch sensor and the opposite side as ground plate of the capacitor. When power is applied across these plates, the two plates get charged. In equilibrium state, the plates have the same voltage as the power source.
+En pratique, un capteur capacitif peut être réalisé sur un circuit imprimé double face, en considérant un côté comme le capteur tactile et l'autre comme la plaque de masse du condensateur. Lorsqu'une alimentation est appliquée entre ces plaques, celles-ci se chargent. En état d'équilibre, les plaques ont la même tension que la source d'alimentation.
 
-The touch detector circuit has an oscillator whose frequency is dependent on capacitance of the touchpad. When a finger is moved close to the touchpad, additional capacitance causes frequency of this internal oscillator to change. The detector circuit tracks oscillator frequency at timed intervals, and when the shift crosses the threshold change, the circuit triggers a key-press event.
+Le circuit détecteur comprend un oscillateur dont la fréquence dépend de la capacitance de la zone tactile. Lorsqu'un doigt s'approche du capteur, la capacitance supplémentaire fait varier la fréquence de cet oscillateur interne. Le circuit détecteur suit la fréquence de l'oscillateur à intervalles réguliers, et lorsque le décalage dépasse le seuil, le circuit déclenche un événement de pression sur la touche.
 
-**Example**
+
+**Exemple**
+
 
 * :ref:`ar_touch` (Arduino Project)
 * :ref:`balloon` (Scratch Project)

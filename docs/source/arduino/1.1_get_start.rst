@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Explorez plus en profondeur le monde du Raspberry Pi, d’Arduino et d’ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions de saison.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _get_started_ar:
 
-1.1 Get Started with Arduino IDE
-=======================================
+1.1 Premiers pas avec l'Arduino IDE
+======================================
 
-Arduino is an open source platform with simple software and hardware.
-You can pick it up in short time even if you are a beginner. It provides
-an integrated development environment (IDE) for code compiling,
-compatible with multiple control boards. So you can just download the
-Arduino IDE, upload the sketches (i.e. the code files) to the board, and
-then you can see relative experimental phenomena. For more information,
-refer to http://www.arduino.cc.
+Arduino est une plateforme open source avec des logiciels et du matériel 
+simples à utiliser. Vous pouvez la maîtriser rapidement, même si vous êtes 
+débutant. Elle propose un environnement de développement intégré (IDE) pour 
+la compilation de code, compatible avec plusieurs cartes de contrôle. Il vous 
+suffit donc de télécharger l'IDE Arduino, de téléverser les sketches (c'est-à-dire 
+les fichiers de code) sur la carte, et vous pourrez observer les phénomènes 
+expérimentaux correspondants. Pour plus d'informations, consultez http://www.arduino.cc.
 
-Please follow the tutorial below to learn how to install the Arduino IDE, add libraries and upload code.
+Veuillez suivre le tutoriel ci-dessous pour apprendre à installer l'IDE Arduino, ajouter des bibliothèques et téléverser du code.
 
 .. toctree::
     :maxdepth: 1

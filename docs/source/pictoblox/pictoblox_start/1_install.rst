@@ -1,23 +1,20 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 avec d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez vos problèmes après-vente et défis techniques avec l’aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Profitez d’un accès anticipé aux nouvelles annonces de produits.
+    - **Réductions spéciales** : Bénéficiez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez aux concours et promotions spéciales des fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
-
-1.1 Install PictoBlox
+1.1 Installer PictoBlox
 ===========================
 
-Click this link：https://thestempedia.com/product/pictoblox/download-pictoblox/，choose the appropriate Operating System (Windows, macOS, Linux) and follow the steps to install.
+Cliquez sur ce lien : https://thestempedia.com/product/pictoblox/download-pictoblox/, sélectionnez le système d'exploitation correspondant (Windows, macOS, Linux) et suivez les étapes d'installation.
 
 .. image:: img/download.png
-
-

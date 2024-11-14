@@ -1,110 +1,107 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez plus en profondeur l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-.. _cpn_relay:
-
-Relay Module
+Module Relais
 ==========================================
 
 .. image:: img/relay_module.png
     :width: 400
     :align: center
 
-The relay module is a module consisting of a relay and a simple circuit that can be used to control large voltage devices, such as household appliances, by outputting a low voltage such as 3.3V from the control board.
+Le module relais est un dispositif constitué d'un relais et d'un circuit simple permettant de contrôler des appareils fonctionnant à haute tension, tels que des appareils électroménagers, à l'aide d'une tension faible, comme 3.3V, provenant de la carte de commande.
 
-FEATURES
+CARACTÉRISTIQUES
 -----------------------
 
-* Output: 250VAC-10A, 125VAC-10A, 30VDC-10A, 28VDC-10A.
-* Operating voltage 5V, suction current about 70mA.
-* With signal indicator
-* Input high and the relay closes, input low and the relay opens.
-* Using 8050 transistor to drive the relay action
-* With mounting screw holes
-* PCB size: 1.8cm*4.0cm*1.9cm, weight 15g
+* Sortie : 250VAC-10A, 125VAC-10A, 30VDC-10A, 28VDC-10A.
+* Tension de fonctionnement : 5V, courant d'aspiration environ 70mA.
+* Avec indicateur de signal
+* Entrée haute et le relais se ferme, entrée basse et le relais s'ouvre.
+* Utilisation du transistor 8050 pour piloter l'action du relais
+* Avec des trous de montage pour vis
+* Taille du PCB : 1,8 cm * 4,0 cm * 1,9 cm, poids 15g
 
-PINS OUT
-----------------
+BROCHES DE SORTIE
+---------------------
 
 .. image:: img/relay_pinout.jpg
 
-**INPUT**
+**ENTRÉE**
 
-It has a 1×3 (2.54mm pitch) pin header for connecting power (5V and 0V), and for controlling the relay. The pins are marked on the PCB:
+Il dispose d'une barrette de 1×3 broches (pas de 2,54 mm) pour connecter l'alimentation (5V et 0V) et pour contrôler le relais. Les broches sont indiquées sur le PCB :
 
-* **-**: GND
-* **+**: VCC
-* **S**: Signal pin, used to control this relay. Input high and the relay closes, input low and the relay opens.
+* **-** : GND
+* **+** : VCC
+* **S** : Broche de signal, utilisée pour contrôler ce relais. Entrée haute, le relais se ferme ; entrée basse, le relais s'ouvre.
 
-**OUTPUT**
+**SORTIE**
 
-The 1 channel relay module could be considered like a series switches: 1 normally Open (NO), 1 normally closed (NC) and 1 common Pins (COM).
+Le module relais à 1 canal peut être considéré comme une série de commutateurs : 1 normalement ouvert (NO), 1 normalement fermé (NC) et 1 broche commune (COM).
 
-* **COM** - Common pin
-* **NC** - Normally Closed, in which case NC is connected with COM when pin **S** is set low and disconnected when pin **S** is high.
-* **NO** - Normally Open, in which case NO is disconnected with COM when pin **S** is set low and connected when pin **S** is high.
+* **COM** - Broche commune
+* **NC** - Normalement fermé, dans ce cas NC est connecté avec COM lorsque la broche **S** est basse et déconnecté lorsque la broche **S** est haute.
+* **NO** - Normalement ouvert, dans ce cas NO est déconnecté de COM lorsque la broche **S** est basse et connecté lorsque la broche **S** est haute.
 
 
-HOW RELAY WORKS?
------------------------
+COMMENT FONCTIONNE LE RELAIS ?
+---------------------------------
 
-As we may know, relay is a device which is used to provide connection
-between two or more points or devices in response to the input signal
-applied. In other words, relays provide isolation between the controller
-and the device as devices may work on AC as well as on DC. However, they
-receive signals from a microcontroller which works on DC hence requiring
-a relay to bridge the gap. Relay is extremely useful when you need to
-control a large amount of current or voltage with small electrical
-signal.
+Comme nous le savons, un relais est un dispositif qui permet de créer une 
+connexion entre deux ou plusieurs points ou appareils en réponse à un signal 
+d'entrée. Autrement dit, les relais assurent l'isolation entre le contrôleur 
+et l'appareil, car les appareils peuvent fonctionner à la fois en courant 
+alternatif (AC) et en courant continu (DC). Cependant, ils reçoivent des 
+signaux d'un microcontrôleur qui fonctionne en DC, ce qui nécessite un relais 
+pour établir la liaison. Le relais est extrêmement utile lorsque vous devez 
+contrôler une grande quantité de courant ou de tension avec un petit signal 
+électrique.
 
-There are 5 parts in every relay:
+Il y a cinq parties dans chaque relais :
 
 .. image:: img/relay142.jpeg
 
-**Electromagnet** - It consists of an iron core wounded by coil of
-wires. When electricity is passed through, it becomes magnetic.
-Therefore, it is called electromagnet.
+**Électro-aimant** - Il se compose d'un noyau en fer entouré d'une bobine de fils. 
+Lorsque l'électricité y circule, il devient magnétique. C'est pourquoi il est 
+appelé électro-aimant.
 
-**Armature** - The movable magnetic strip is known as armature. When
-current flows through them, the coil is it energized thus producing a
-magnetic field which is used to make or break the normally open (N/O) or
-normally close (N/C) points. And the armature can be moved with direct
-current (DC) as well as alternating current (AC).
+**Armature** - La bande magnétique mobile est appelée armature. Lorsque le courant 
+circule à travers elle, la bobine est activée, produisant un champ magnétique utilisé 
+pour faire ou défaire les points normalement ouverts (N/O) ou normalement fermés 
+(N/C). L'armature peut être déplacée aussi bien par courant continu (DC) que par 
+courant alternatif (AC).
 
-**Spring** - When no currents flow through the coil on the
-electromagnet, the spring pulls the armature away so the circuit cannot
-be completed.
+**Ressort** - Lorsqu'aucun courant ne circule dans la bobine de l'électro-aimant, 
+le ressort tire l'armature pour que le circuit ne soit pas complété.
 
-Set of electrical **contacts** - There are two contact points:
+Ensemble de contacts **électriques** - Il existe deux points de contact :
 
--  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+- Normalement ouvert - connecté lorsque le relais est activé, et déconnecté lorsqu'il est inactif.
+- Normalement fermé - non connecté lorsque le relais est activé, et connecté lorsqu'il est inactif.
 
--  Normally close - not connected when the relay is activated, and connected when it is inactive.
+**Boîtier moulé** - Les relais sont recouverts de plastique pour les protéger.
 
-**Molded frame** - Relays are covered with plastic for protection.
+Le principe de fonctionnement du relais est simple. Lorsque l'alimentation est 
+fournie au relais, le courant commence à circuler dans la bobine de commande ; 
+en conséquence, l'électro-aimant commence à s'activer. Ensuite, l'armature est 
+attirée par la bobine, tirant le contact mobile vers le bas et le connectant 
+aux contacts normalement ouverts. Le circuit avec la charge est alors alimenté. 
+En coupant le circuit, un processus similaire se produit, l'armature étant tirée 
+vers le haut pour se connecter aux contacts normalement fermés sous l'effet du 
+ressort. Ainsi, l'activation et la désactivation du relais peuvent contrôler 
+l'état d'un circuit de charge.
 
-The working principle of relay is simple. When power is supplied to the
-relay, currents start flowing through the control coil; as a result, the
-electromagnet starts energizing. Then the armature is attracted to the
-coil, pulling down the moving contact together thus connecting with the
-normally open contacts. So the circuit with the load is energized. Then
-breaking the circuit would a similar case, as the moving contact will be
-pulled up to the normally closed contacts under the force of the spring.
-In this way, the switching on and off of the relay can control the state
-of a load circuit.
-
-**Example**
+**Exemple**
 
 * :ref:`ar_relay` (Arduino Project)
 * :ref:`ar_overheat_monitor` (Arduino Project)

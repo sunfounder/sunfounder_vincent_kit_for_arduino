@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l'univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après achat et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_7_segment:
 
-2.5 7-Segment Display
-======================
+2.5 Afficheur à 7 segments
+============================
 
-Overview
---------
+Aperçu
+-------
 
-In this lesson, you will learn something about 7-Segment Display. 7-Segment Display has so many advantages that it is widely used in electrical equipments, especially in household appliances that display numerical information, such as display, air conditioner, water heater, refrigerator and so on. LEDs on the 7-Segment Display emit light by the input of different electrical signals to the different pins of it. The numerical information it can display includes time, date, temperature and so on.
+Dans cette leçon, vous découvrirez l'afficheur à 7 segments. Cet afficheur présente de nombreux avantages qui en font un composant largement utilisé dans les équipements électriques, notamment les appareils ménagers qui affichent des informations numériques telles que l'heure, la date, la température, etc. Les LED de l'afficheur s'allument selon les signaux électriques appliqués à différentes broches, permettant de représenter une variété d'informations numériques.
 
-Components Required
--------------------
+Composants requis
+------------------
 
 .. image:: img/list_2.5.png
 
@@ -33,72 +33,69 @@ Components Required
 * :ref:`cpn_7_segment`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-------------------
+Schéma de Connexion
+--------------------
 
 .. image:: img/image429.png
 
-Connect each of pin a-g of the 7-Segment Display to one
-220ohm current limiting resistor respectively and then to pin 4–11. GND
-connects to GND.
+Connectez chaque broche de l'afficheur (a-g) à une résistance de 220 ohms, 
+puis aux broches 4 à 11 du Mega2560. La broche GND de l'afficheur est reliée 
+à la masse (GND).
 
-The wiring between the 7-segment display and the Mega2560 board as shown
-below :
+Le câblage entre l'afficheur à 7 segments et la carte Mega2560 est illustré ci-dessous :
 
 .. image:: img/image430.png
 
-Schematic Diagram
------------------
+Diagramme Schématique
+------------------------
 
 .. image:: img/image431.png
 
 Code
-----
+-----
 
 .. note::
 
-    * You can open the file ``2.5_7segment.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.5_7segment`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.5_7segment.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.5_7segment``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c8b782c0-162e-447a-8406-c32a1378cc59/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once upload the codes, you can see the 7-segment display displaying 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F in sequence. 
+Une fois le code téléversé, l'afficheur à 7 segments affichera successivement les caractères 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E et F.
 
-Code Analysis
--------------
+Analyse du Code
+-----------------
 
-Take the pin numbers on 7-segment as names, and declare the pins on the Mega2560 board.  
+Utilisez les numéros de broches de l'afficheur à 7 segments comme noms et déclarez les broches sur la carte Mega2560.
 
 .. code-block:: arduino
 
-    const int a=7; //a of 7-segment attach to digital pin 7
-    const int b=6; //b of 7-segment attach to digital pin 6
-    const int c=5; //c of 7-segment attach to digital pin 5
-    const int d=11;//d of 7-segment attach to digital pin 11
-    const int e=10;//e of 7-segment attach to digital pin 10
-    const int f=8;//f of 7-segment attach to digital pin 8
-    const int g=9;//g of 7-segment attach to digital pin 9
-    const int dp=4;//dp of 7-segment attach to digital pin 4
+    const int a=7; // 'a' de l'afficheur relié à la broche numérique 7
+    const int b=6; // 'b' de l'afficheur relié à la broche numérique 6
+    const int c=5; // 'c' de l'afficheur relié à la broche numérique 5
+    const int d=11; // 'd' de l'afficheur relié à la broche numérique 11
+    const int e=10; // 'e' de l'afficheur relié à la broche numérique 10
+    const int f=8; // 'f' de l'afficheur relié à la broche numérique 8
+    const int g=9; // 'g' de l'afficheur relié à la broche numérique 9
+    const int dp=4; // point décimal (dp) relié à la broche numérique 4
 
-Install a series of subfunctions to package the level state at each
-block during the number display of the 7-segment. For example, when the
-character 「2」 is displayed, the block F and the block c are turn off;
-the other blocks are lit up.
+Installez une série de sous-fonctions pour configurer l'état de chaque 
+segment en fonction du chiffre affiché. Par exemple, pour afficher le 
+caractère 「2」, seuls les segments a, b, d, e et g sont allumés, tandis 
+que les segments c et f sont éteints.
 
 .. image:: img/image89.jpeg
 
-First, we need to understand how the numeral **2** appears on the 7-Segment display. It is achieved by powering on segments a, b, d, e, and g. In programming, pins connected to these segments are set to a High level while c and f are set to Low level. We start by using the function ``turnOffAllSegments()`` to turn off all segments and then light up the required ones.
+Pour afficher le chiffre **2** sur l'afficheur, alimentez les segments a, b, d, e et g. Dans le code, cela se fait en réglant les broches correspondantes sur HIGH, tandis que les broches c et f restent à LOW. Commencez par utiliser la fonction ``turnOffAllSegments()`` pour éteindre tous les segments, puis allumez ceux nécessaires.
 
-After running this part, the 7-segment will display **2**. Similarly, the display of other characters are the same. Since the letters b and d in upper case, namely **B** and **D**, would look the same with **8** and **0** on the display, they are displayed in lower case instead.
+Après l'exécution de cette partie, l'afficheur montre **2**. De la même manière, d'autres caractères peuvent être affichés. Notez que les lettres majuscules B et D, similaires aux chiffres 8 et 0, sont affichées en minuscules pour éviter toute confusion.
 
 .. code-block:: arduino
 
    ...
-   void digital_2()  //diaplay 2 to the 7-segment
+   void digital_2()  // Affiche le chiffre 2 sur l'afficheur à 7 segments
    {
      turnOffAllSegments();
      digitalWrite(a, HIGH);
@@ -109,21 +106,21 @@ After running this part, the 7-segment will display **2**. Similarly, the displa
    }
    ... 
 
-In loop(), call the function that displays the number.
+Dans `loop()`, appelez la fonction correspondant au chiffre à afficher.
 
 .. code-block:: arduino
 
     void loop()
     {
-    digital_1();//diaplay 1 to the 7-segment
-    delay(1000);//wait for a second
-    digital_2();//diaplay 2 to the 7-segment
-    delay(1000); //wait for a second
-    digital_3();//diaplay 3 to the 7-segment
+    digital_1(); // Affiche le chiffre 1
+    delay(1000); // Attendre une seconde
+    digital_2(); // Affiche le chiffre 2
+    delay(1000); // Attendre une seconde
+    digital_3(); // Affiche le chiffre 3
     //... 
     }
 
-Phenomenon Picture
-------------------
+Illustration du Phénomène
+---------------------------
 
 .. image:: img/image90.jpeg

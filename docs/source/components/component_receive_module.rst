@@ -1,60 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez plus en profondeur l'univers du Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_receive:
 
-IR Receiver Module
+Module Récepteur IR
 ===========================
 
-**IR Receiver Module**
+**Module Récepteur IR**
 
 .. image:: img/image185.png
 
-* S: Signal output
-* +：VCC
-* -: GND
+* S : Sortie du signal
+* + : VCC
+* - : GND
 
-An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.
+Un récepteur infrarouge (IR) est un composant qui capte les signaux infrarouges et peut indépendamment recevoir des rayons infrarouges et émettre des signaux compatibles avec le niveau TTL. Il ressemble à un transistor classique encapsulé en plastique et est adapté à tous les types de télécommandes infrarouges et de transmissions infrarouges.
 
-Infrared, or IR, communication is a popular, low-cost, easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, so it is imperceptible to the human eye - ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+La communication infrarouge (IR) est une technologie de communication sans fil populaire, peu coûteuse et facile à utiliser. La lumière infrarouge a une longueur d'onde légèrement plus longue que celle de la lumière visible, ce qui la rend imperceptible à l'œil humain, idéal pour la communication sans fil. Une modulation courante pour la communication infrarouge est la modulation à 38 kHz.
 
+* Capteur de récepteur IR HX1838 adopté, haute sensibilité
+* Peut être utilisé pour la télécommande
+* Alimentation : 5V
+* Interface : Numérique
+* Fréquence de modulation : 38kHz
+* Définitions des broches : (1) Sortie (2) Vcc (3) GND
+* Dimensions : 23,5 mm x 21,5 mm
 
-* Adopted HX1838 IR Receiver Sensor, high sensitivity
-* Can be used for remote control
-* Power Supply: 5V
-* Interface: Digital
-* Modulate Frequency: 38Khz
-* Pin Definitions: (1) Output (2) Vcc (3) GND
-* Size: 23.5mm x 21.5mm
-
-
-**Remote Control**
+**Télécommande**
 
 .. image:: img/image186.jpeg
     :width: 400
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
+Voici une télécommande infrarouge mince et compacte, avec 21 boutons fonctionnels et une portée de transmission pouvant atteindre 8 mètres, idéale pour contrôler une large gamme de dispositifs dans une chambre d'enfant.
 
-* Size: 85x39x6mm
-* Remote control range: 8-10m
-* Battery: 3V button type lithium manganese battery
-* Infrared carrier frequency: 38KHz
-* Surface paste material: 0.125mm PET
-* Effective life: more than 20,000 times
+* Dimensions : 85x39x6 mm
+* Portée de la télécommande : 8-10 m
+* Batterie : pile lithium-manganèse 3V
+* Fréquence porteuse infrarouge : 38kHz
+* Matériau de surface : PET de 0,125 mm
+* Durée de vie effective : plus de 20 000 utilisations
 
-
-**Example**
+**Exemple**
 
 * :ref:`ar_receive` (Arduino Project)
 * :ref:`ar_guess_number` (Arduino Project)

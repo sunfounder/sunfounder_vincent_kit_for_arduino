@@ -1,40 +1,38 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez en profondeur l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_access_system:
 
-3.5 Access Control System
-==========================
+3.5 Système de contrôle d'accès
+==================================
 
-Overview
-------------
+Aperçu
+-------
 
-The access control system is the system that is used to control the
-entrance channel, which is developed on the basis of the traditional
-door lock. The traditional mechanical door lock is only a simple
-mechanical device, and no matter how reasonable the structural design
-is, how strong the material is, people can always open it through
-various means. The key to the entrance and exit (like an office
-building, a hotel room) is cumbersome. If the key is missed or replaced,
-the lock is to be replaced with the key. In order to solve these
-problems, the electronic magnetic card lock and the electronic coded
-lock are present, which has raised the management level of the access
-channel to a certain extent, and then the channel management enters into
-the electronic age.
+Le système de contrôle d'accès est conçu pour gérer l'entrée dans un espace, 
+et se base sur les mécanismes des serrures traditionnelles. Une serrure 
+mécanique classique, bien que structurée de manière rationnelle et fabriquée 
+avec des matériaux résistants, peut toujours être ouverte par différents moyens. 
+De plus, la gestion des clés d'entrée (comme celles d'un immeuble de bureaux 
+ou d'une chambre d'hôtel) peut devenir fastidieuse. Si une clé est perdue ou 
+remplacée, la serrure doit être changée. Afin de résoudre ces problèmes, des 
+solutions électroniques comme la serrure à carte magnétique ou la serrure codée 
+ont été développées, permettant de moderniser la gestion des accès et d'entrer 
+dans l'ère numérique.
 
-Components Required
-------------------------
+Composants requis
+--------------------
 
 .. image:: img/Part_three_5.1.png
     :align: center
@@ -51,13 +49,14 @@ Components Required
 * :ref:`cpn_keypad`
 * :ref:`cpn_power_module`
 
-Fritzing Circuit
------------------------
+Circuit Fritzing
+-------------------
 
-In this example, Power Supply Module is used to power the breadboard. We
-get the GND of Mega 2560 Board connected to the cathode rail of the
-breadboard, GND of ULN2003 to the cathode rail of the breadboard, VCC to
-5V OUTPUT of Power Supply and the Stepper Motor to OUT1-OUT5 of ULN.
+Dans cet exemple, le module d'alimentation est utilisé pour alimenter la 
+planche à pain. Le GND de la carte Mega 2560 est relié à la ligne cathodique 
+de la planche à pain, le GND du ULN2003 à la ligne cathodique de la planche 
+à pain, VCC est relié à la sortie 5V du module d'alimentation et le moteur 
+pas à pas est connecté aux sorties OUT1 à OUT5 du ULN.
 
 .. image:: img/Part_three_5_Fritzing_Circuit.png
     :align: center
@@ -65,48 +64,47 @@ breadboard, GND of ULN2003 to the cathode rail of the breadboard, VCC to
 .. image:: img/image287.png
    :align: center
 
-Schematic Diagram
------------------------
+**Schéma de câblage**
+------------------------
 
 .. image:: img/image288.png
    :align: center
 
-
 Code
---------------
+-------
 
 .. note::
 
-   * You can open the file ``3.5_accessControlSystem.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.5_accessControlSystem`` directly.
-   * The ``Keypad`` and ``LiquidCrystal I2C`` library are used here, you can install them from the **Library Manager**.
-   * The ``RFID1`` library is used here, refer to :ref:`install_lib_man` for a tutorial to install.
+   * Vous pouvez ouvrir directement le fichier ``3.5_accessControlSystem.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\3.5_accessControlSystem``.
+   * Les bibliothèques ``Keypad`` et ``LiquidCrystal I2C`` sont utilisées ici, vous pouvez les installer depuis le **Gestionnaire de bibliothèques**.
+   * La bibliothèque ``RFID1`` est utilisée ici, pour l'installer, référez-vous à :ref:`install_lib_man` pour un tutoriel détaillé.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/f7f9dd83-3ede-453e-806b-7420b9f7b29e/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
---------------------------
+Explication de l'exemple
+----------------------------
 
-The workflow of the access control system is shown in the flow chart.
+Le flux de travail du système de contrôle d'accès est montré dans le 
+diagramme suivant.
 
-When there is no authorized ID identified (the variable “Approved”
-equals to 0), the device will perform functions of ID identification and
-password identification.
+Lorsque l'ID autorisé n'est pas identifié (la variable "Approved" égale 0), 
+l'appareil effectuera une identification de l'ID et du mot de passe.
 
-If the authorized ID is identified (“Approved” equals to 1), the door
-will open. After that, the door will be closed a few seconds later and
-the identified status will be reset (“Approved” equals to 0).
+Si l'ID autorisé est identifié ("Approved" égale 1), la porte s'ouvrira. 
+Après cela, la porte se fermera quelques secondes plus tard et l'état 
+d'identification sera réinitialisé ("Approved" égale 0).
 
-In addition to the core access control function, the project also uses
-LCD and active buzzer to complete the work of the user interaction
-system of the access control system.
+En plus de la fonction principale de contrôle d'accès, le projet utilise 
+également un écran LCD et un buzzer actif pour assurer l'interaction avec 
+l'utilisateur du système de contrôle d'accès.
 
 .. image:: img/Part_three_5_Example_Explanation.png
    :align: center
 
-Phenomenon Picture
-------------------------
+Image de phénomène
+---------------------
 
 .. image:: img/image290.jpeg
    :align: center

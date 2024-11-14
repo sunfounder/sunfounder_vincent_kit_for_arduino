@@ -1,31 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez dans l’univers du Raspberry Pi, d'Arduino et de l'ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes post-achat et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez à des concours et promotions durant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_active_buzzer:
 
-2.10 Active Buzzer
-==================
+2.10 Buzzer Actif
+====================
 
-Overview
---------
+Aperçu
+----------
 
-In this lesson, you will get to know about active buzzer. As a type of
-electronic buzzer with an integrated structure, active buzzer is
-supplied by DC power, widely used in computer, alarm, electronic toy,
-telephone, timer and other electronic products or voice devices.
+Dans cette leçon, vous allez découvrir le buzzer actif. Ce type de buzzer 
+électronique avec une structure intégrée est alimenté par une source de 
+courant continu (DC). Le buzzer actif est largement utilisé dans les ordinateurs, 
+alarmes, jouets électroniques, téléphones, minuteries, et autres produits 
+électroniques ou dispositifs sonores.
 
-Components Required
+Composants Requis
 -------------------
 
 .. image:: img/list_2.10.png
@@ -36,15 +37,15 @@ Components Required
 * :ref:`cpn_buzzer`
 
 
-Fritzing Circuit
-----------------
+Circuit Fritzing
+------------------
 
 .. image:: img/image448.png
 
-In this example, we use the digital pin 9 to drive the buzzer and extend
-the cathode of the Buzzer to GND and its anode to the digital pin 9.
+Dans cet exemple, nous utilisons la broche numérique 9 pour piloter le buzzer. 
+Connectez la cathode du buzzer à la masse (GND) et l'anode à la broche numérique 9.
 
-Schematic Diagram
+Schéma de Connexion
 -----------------
 
 .. image:: img/image450.png
@@ -54,20 +55,18 @@ Code
 
 .. note::
 
-    * You can open the file ``2.10_activeBuzzer.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.10_activeBuzzer`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.10_activeBuzzer.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.10_activeBuzzer``.
+    * Ou copiez ce code dans l’IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6452dcca-4e26-4e50-a32f-a00c8d0ace38/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-When you finish uploading the codes to the Mega2560 board, you can hear the beep—beep emitted from the buzzer. If you want to know more about the detail code explanation, please refer to **Part 1-1.2 Digital Write**.
+Après avoir téléversé le code sur la carte Mega2560, vous entendrez le bip-bip émis par le buzzer. Pour plus de détails sur l'explication du code, veuillez vous référer à **Partie 1-1.2 Écriture numérique**.
 
 :ref:`ar_digital_write`
 
-Phenomenon Picture
+Illustration du Phénomène
 ------------------
 
 .. image:: img/image121.jpeg

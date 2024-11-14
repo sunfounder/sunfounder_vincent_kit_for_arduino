@@ -1,45 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez au cœur de Raspberry Pi, Arduino et ESP32 aux côtés d’autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d’experts** : Résolvez vos problèmes après-vente et défis techniques avec l’aide de notre communauté et de notre équipe.
+    - **Apprendre & Partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Profitez d’un accès anticipé aux annonces de nouveaux produits.
+    - **Réductions spéciales** : Bénéficiez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et tirages au sort** : Participez à nos concours et promotions spéciales pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd’hui !
 
 .. _cpn_wires:
 
-Jumper Wires
-=====================
+Fils de Liaison (Jumpers)
+===============================
 
-Wires that connect two terminals are called jumper wires. There are
-various kinds of jumper wires. Here we focus on those used in
-breadboard. Among others, they are used to transfer electrical signals
-from anywhere on the breadboard to the input/output pins of a
-microcontroller.
+Les fils qui relient deux terminaux sont appelés fils de liaison ou jumpers. 
+Il existe divers types de jumpers. Ici, nous nous concentrons sur ceux utilisés 
+sur une plaque d'essai. Parmi leurs fonctions, ils servent à transmettre les 
+signaux électriques d'un point de la plaque d'essai vers les broches d'entrée/sortie 
+d'un microcontrôleur.
 
-Jump wires are fitted by inserting their "end connectors" into the slots
-provided in the breadboard, beneath whose surface there are a few sets
-of parallel plates that connect the slots in groups of rows or columns
-depending on the area. The "end connectors" are inserted into the
-breadboard, without soldering, in the particular slots that need to be
-connected in the specific prototype.
+Les jumpers se fixent en insérant leurs "connecteurs d'extrémité" dans les 
+emplacements de la plaque d'essai, sous lesquels se trouvent des plaques 
+parallèles connectant les emplacements en groupes de rangées ou de colonnes 
+selon la zone. Les "connecteurs d'extrémité" sont insérés dans la plaque sans 
+besoin de soudure, dans les emplacements spécifiques à connecter pour le prototype.
 
-There are three types of jumper wire: Female-to-Female, Male-to-Male,
-and Male-to-Female. The reason we call it Male-to-Female is because it
-has the outstanding tip in one end as well as a sunk female end.
-Male-to-Male means both side are male and Female-to-Female means both
-ends are female.
+Il existe trois types de jumpers : Femelle-à-Femelle, Mâle-à-Mâle et Mâle-à-Femelle. 
+Le terme Mâle-à-Femelle signifie qu’un côté est doté d’une fiche mâle et l’autre d’une 
+prise femelle. Mâle-à-Mâle désigne deux côtés mâles et Femelle-à-Femelle signifie que 
+les deux extrémités sont femelles.
 
 .. image:: img/image414.png
 
 
-More than one type of them may be used in a project. **The color of the
-jump wires is different but it doesn’t mean their function is different
-accordingly; it's just designed so to better identify the connection
-between each circuit**.
+Il est possible d’utiliser plusieurs types de jumpers dans un même projet. 
+**Les couleurs des jumpers varient pour faciliter l'identification des 
+connexions entre les circuits ; elles n’ont pas de fonction spécifique**.

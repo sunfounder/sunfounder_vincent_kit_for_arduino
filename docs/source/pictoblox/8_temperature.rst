@@ -1,44 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Rejoignez-nous pour explorer plus en profondeur le Raspberry Pi, l’Arduino et l’ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez les problèmes après-vente et les défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Soyez parmi les premiers à découvrir nos nouveaux produits et annonces.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos nouveaux produits.
+    - **Promotions festives et cadeaux** : Participez aux concours et promotions de saison.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] pour nous rejoindre dès aujourd'hui !
 
 .. _low_temperature:
 
-2.8 Low Temperature Alarm
-=========================
+2.8 Alarme de Basse Température
+===================================
 
-In this project, we will make a low temperature alarm system, when the temperature is below the threshold, the **Snowflake** sprite will appear on the stage.
+Dans ce projet, nous allons créer un système d'alarme de basse température. Lorsque la température descend en dessous d'un certain seuil, le lutin **Flocon de neige** apparaîtra sur la scène.
 
 .. image:: img/9_tem.png
 
-You Will Learn
+Vous Apprendrez
 ---------------------
 
-- Thermistor working principle
-- Multivariable and Subtractive Operations
+- Principe de fonctionnement de la thermistance
+- Utilisation de plusieurs variables et opérations de soustraction
 
+Construire le Circuit
+------------------------
 
+Une thermistance est un type de résistance dont la valeur dépend fortement de la température, davantage que pour les résistances standards. Il en existe deux types : les PTC (la résistance augmente avec la température) et les NTC (la résistance diminue avec la température).
 
-Build the Circuit
------------------------
+Construisez le circuit selon le schéma suivant :
 
-A thermistor is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors, and there are two types of resistors, PTC (resistance increases as temperature increases) and PTC (resistance decreases as temperature increases).
+Connectez une extrémité de la thermistance à la terre (GND), l’autre extrémité à A0, et un résistor de 10K en série à 5V.
 
-Build the circuit according to the following diagram.
-
-One end of the thermistor is connected to GND, the other end is connected to A0, and a 10K resistor is connected in series to 5V.
-
-The NTC thermistor is used here, so when the temperature rises, the resistance of the thermistor decreases, the voltage division of A0 decreases, and the value obtained from A0 decreases, and vice versa increases.
+Ici, nous utilisons une thermistance NTC. Ainsi, lorsque la température augmente, la résistance de la thermistance diminue, la tension sur A0 diminue, et la valeur obtenue depuis A0 diminue également ; inversement, elle augmente lorsque la température baisse.
 
 .. image:: img/circuit/thermistor_circuit.png
 
@@ -46,37 +44,37 @@ The NTC thermistor is used here, so when the temperature rises, the resistance o
 * :ref:`cpn_thermistor` 
 * :ref:`cpn_resistor`
 
-Programming
+Programmation
 ------------------
 
-**1. Select a sprite**
+**1. Sélectionnez un lutin**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **Snowflake** in the search box, and then click to add it.
+Supprimez le lutin par défaut, puis cliquez sur le bouton **Choisir un lutin** en bas à droite de la zone des lutins. Entrez **Flocon de neige** dans la barre de recherche, puis cliquez pour l’ajouter.
 
 .. image:: img/9_snow.png
 
-**2. Create 2 variables**
+**2. Créez 2 variables**
 
-Create two variables, **before** and **current**, to store the value of A0 in different cases.
+Créez deux variables, **avant** et **actuel**, pour stocker les valeurs d'A0 dans différentes situations.
 
 .. image:: img/9_va.png
 
-**3. Read the value of A0**
+**3. Lisez la valeur de A0**
 
-When the green flag is clicked, the value of A0 is read and stored in the variable **before**.
+Lorsque le drapeau vert est cliqué, la valeur de A0 est lue et stockée dans la variable **avant**.
 
 .. image:: img/9_before.png
 
-**4. Read the value of A0 again**
+**4. Lisez de nouveau la valeur de A0**
 
-In [forever], read the value of A0 again and store it in the variable **current**.
+Dans [pour toujours], lisez la valeur de A0 et stockez-la dans la variable **actuel**.
 
 .. image:: img/9_current.png
 
-**5. Determining temperature changes**
+**5. Déterminer les variations de température**
 
-Using the [if else] block, determine if the current value of A0 is 50 greater than before, which represents a decrease in temperature. At this point let **Snowflake** sprite show, otherwise hide.
+À l'aide du bloc [si alors sinon], vérifiez si la valeur actuelle de A0 est supérieure de 50 à la valeur de **avant**, ce qui représente une baisse de température. À ce moment, faites apparaître le lutin **Flocon de neige** ; sinon, cachez-le.
 
-* [-] & [>]: subtraction and comparison operators from **Operators** platette.
+* [-] & [>]: Opérateurs de soustraction et de comparaison de la palette **Opérateurs**.
 
 .. image:: img/9_show.png

@@ -1,37 +1,39 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez l'univers de Raspberry Pi, Arduino et ESP32 plus en profondeur avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_overheat_monitor:
 
-3.3 Overheat Monitor
-=====================
+3.3 Moniteur de surchauffe
+=============================
 
-Overview
+Aperçu
+--------
+
+Vous souhaiterez peut-être créer un dispositif de surveillance de la 
+surchauffe adapté à diverses situations. Par exemple, lorsque la température 
+d'une pièce dépasse 30°C en été, un ventilateur ou un climatiseur s'allume 
+automatiquement. Si le réfrigérateur cesse de fonctionner correctement, une 
+alarme se déclenche. Lorsque le processeur surchauffe, un système de 
+refroidissement par eau se met en marche. Dans ce projet, nous utiliserons 
+un thermistor, un relais, un bouton, un encodeur rotatif et un écran LCD pour 
+concevoir un dispositif de surveillance de température intelligent, dont le 
+seuil est ajustable. Vous pourrez personnaliser ce système en fonction de 
+différents scénarios en insérant divers périphériques dans le relais et en 
+utilisant l'encodeur rotatif pour ajuster le seuil de température élevé.
+
+Composants requis
 -----------------
-
-You may want to make an overheat monitoring device that applies to various 
-situations. When the temperature of room is above 30°C in summer, the electric 
-fan or the air conditioner will be turned on automatically. If the refrigerator 
-stops to refrigerate, there will emit alarm. When the CPU gets overheated, the 
-water-cooling system turns on. Next, we will use thermistor, relay, button, 
-rotary encoder and LCD to make an intelligent temperature monitoring device 
-whose threshold is adjustable. You can make it suitable for the scene you want 
-by inserting different peripherals into the relay and using a rotary encoder to 
-adjust the high temperature threshold.
-
-Components Required
-------------------------
 
 .. image:: img/Part_three_3.1.png
     :align: center
@@ -49,11 +51,11 @@ Components Required
 * :ref:`cpn_i2c_lcd1602`
 * :ref:`cpn_rotary`
 
-Fritzing Circuit
------------------------
+Circuit Fritzing
+---------------------
 
-In this example, the component modules are connected as shown in the
-table.
+Dans cet exemple, les modules sont connectés comme indiqué dans le schéma 
+ci-dessous.
 
 .. image:: img/Part_three_3_Fritzing_Circuit.png
     :align: center
@@ -62,20 +64,19 @@ table.
    :alt: 3.3 Overheat Monitor_bb
    :align: center
 
-Schematic Diagram
--------------------------
+**Schéma de câblage**
+-----------------------
 
 .. image:: img/image277.png
    :align: center
 
-
 Code
---------------
+-------
 
 .. note::
 
-    * You can open the file ``3.3_overheatMonitor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.3_overheatMonitor`` directly.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Vous pouvez ouvrir directement le fichier ``3.3_overheatMonitor.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\3.3_overheatMonitor``.
+    * La bibliothèque ``LiquidCrystal I2C`` est utilisée ici, vous pouvez l'installer depuis le **Gestionnaire de bibliothèques**.
 
         .. image:: img/lib_liquidcrystal_i2c.png
             :align: center
@@ -85,53 +86,54 @@ Code
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/ed5a53dd-9d6d-43f7-b5f1-c240a1c320fb/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
--------------------------
+Explication de l'exemple
+----------------------------
 
-The flow diagram of the project is as follows:
+Le diagramme de flux du projet est le suivant :
 
 .. image:: img/Part_three_3_Example_Explanation.png
    :align: center
 
-By using EEPROM.h library, the high temperature threshold is saved in
-EEPROM to avoid the value reset after the restart of MCU.
+En utilisant la bibliothèque EEPROM.h, le seuil de température élevé est 
+enregistré dans l'EEPROM afin d'éviter que la valeur ne soit réinitialisée 
+après le redémarrage du microcontrôleur.
 
-**Library Functions：**
+**Fonctions de la bibliothèque :**
 
 .. code-block:: arduino
 
     void write(address,value)
 
-Write a byte to the EEPROM.
+Écrit un octet dans l'EEPROM.
 
 .. code-block:: arduino
 
     void Read(address)
 
-Reads a byte from the EEPROM. Locations that have never been written to
-have the value of 255.
+Lit un octet depuis l'EEPROM. Les emplacements qui n'ont jamais été écrits ont 
+la valeur 255.
 
 .. code-block:: arduino
 
     void update(address,value)
 
-Write a byte to the EEPROM. The value is written only if differs from
-the one already saved at the same address.
+Écrit un octet dans l'EEPROM. La valeur est écrite uniquement si elle diffère 
+de celle déjà enregistrée à la même adresse.
 
 .. code-block:: arduino
 
     void put(address,value)
 
-Write any data type or object to the EEPROM.
+Écrit n'importe quel type de donnée ou objet dans l'EEPROM.
 
 .. code-block:: arduino
 
     void get(address)
 
-Read any data type or object from the EEPROM.
+Lit n'importe quel type de donnée ou objet depuis l'EEPROM.
 
-Phenomenon Picture
-------------------------
+Image de phénomène
+----------------------
 
 .. image:: img/image279.jpeg
    :align: center

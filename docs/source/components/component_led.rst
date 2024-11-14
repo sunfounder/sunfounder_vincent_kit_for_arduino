@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez en profondeur Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour développer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos produits les plus récents.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _cpn_led:
 
@@ -20,24 +20,24 @@ LED
 .. image:: img/LED.png
     :width: 400
 
-Semiconductor light-emitting diode is a type of component which can turn electric energy into light energy via PN junctions. By wavelength, it can be categorized into laser diode, infrared light-emitting diode and visible light-emitting diode which is usually known as light-emitting diode (LED). 
-                    
-Diode has unidirectional conductivity, so the current flow will be as the arrow indicates in figure circuit symbol. You can only provide the anode with a positive power and the cathode with a negative. Thus the LED will light up. 
+La diode électroluminescente à semi-conducteur est un composant qui transforme l'énergie électrique en énergie lumineuse grâce aux jonctions PN. Selon la longueur d'onde, elle peut être classée en diode laser, diode électroluminescente infrarouge et diode électroluminescente visible, souvent désignée sous le nom de LED.
+
+La diode possède une conductivité unidirectionnelle, ce qui signifie que le courant circulera dans le sens indiqué par la flèche sur le symbole du circuit. Vous devez fournir une tension positive à l'anode et une tension négative à la cathode pour que la LED s'allume.
 
 .. image:: img/led_symbol.png
 
 
-An LED has two pins. The longer one is the anode, and shorter one, the cathode. Pay attention not to connect them inversely. There is fixed forward voltage drop in the LED, so it cannot be connected with the circuit directly because the supply voltage can outweigh this drop and cause the LED to be burnt. The forward voltage of the red, yellow, and green LED is 1.8 V and that of the white one is 2.6 V. Most LEDs can withstand a maximum current of 20 mA, so we need to connect a current limiting resistor in series.                   
+Une LED possède deux broches. La broche la plus longue est l'anode, et la plus courte est la cathode. Faites attention à ne pas les inverser. En raison de la chute de tension fixe dans la LED, elle ne peut pas être connectée directement au circuit, car la tension d'alimentation pourrait excéder cette chute et endommager la LED. La tension directe des LED rouges, jaunes et vertes est de 1,8 V, tandis que celle des LED blanches est de 2,6 V. La plupart des LED peuvent supporter un courant maximal de 20 mA, c'est pourquoi il est nécessaire de connecter une résistance limitatrice de courant en série.
 
-The formula of the resistance value is as follows:
+La formule pour calculer la valeur de la résistance est la suivante :
 
     R = (Vsupply – VD)/I
 
-**R** stands for the resistance value of the current limiting resistor, **Vsupply** for voltage supply, **VD** for voltage drop and **I** for the working current of the LED.
+**R** représente la valeur de la résistance limitatrice de courant, **Vsupply** la tension d'alimentation, **VD** la chute de tension et **I** le courant de fonctionnement de la LED.
 
-Here is the detailed introduction for the LED: `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
+Voici une introduction détaillée sur la LED : `LED - Wikipedia <https://en.wikipedia.org/wiki/Light-emitting_diode>`_.
 
-**Example**
+**Exemple**
 
 * :ref:`ar_led` (Arduino Project)
 * :ref:`breathing_led` (Scratch Project)

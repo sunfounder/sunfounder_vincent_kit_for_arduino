@@ -1,37 +1,38 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Explorez l'univers de Raspberry Pi, Arduino et ESP32 plus en profondeur avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_guess_number:
 
-3.4 Guess Number
-==================
+3.4 Deviner le nombre
+========================
 
-Overview
-----------------
+Aperçu
+---------
 
-Guessing Numbers is a fun party game where you and your friends take
-turns inputting a number (0~99). The range will be smaller with the
-inputting of the number till a player answers the riddle correctly. Then
-the player is defeated and punished. For example, if the lucky number is
-51 which the players cannot see, and the player 1 inputs 50, the prompt
-of number range changes to 50~99; if the player 2 inputs 70, the range
-of number can be 50~70; if the player 3 inputs 51, he or she is the
-unlucky one. Here, we use IR Remote Controller to input numbers and use
-LCD to output outcomes.
+"Deviner le nombre" est un jeu amusant à jouer lors des soirées où vous et 
+vos amis entrez chacun à leur tour un nombre (0~99). La plage des nombres 
+devient de plus en plus petite au fur et à mesure que les joueurs font leurs 
+propositions, jusqu'à ce que l'un d'entre eux trouve la solution. 
+À ce moment-là, ce joueur perd et doit subir une punition. Par exemple, si le 
+nombre mystère est 51 et que le joueur 1 entre 50, l'indication de la plage des 
+nombres devient 50~99 ; si le joueur 2 entre 70, la plage des nombres devient 
+50~70 ; si le joueur 3 entre 51, il est celui qui a trouvé la réponse. Ici, 
+nous utilisons une télécommande IR pour saisir les nombres et un écran LCD 
+pour afficher les résultats.
 
-Components Required
-------------------------
+Composants requis
+--------------------
 
 .. image:: img/Part_three_4.png
     :align: center
@@ -42,71 +43,67 @@ Components Required
 * :ref:`cpn_i2c_lcd1602`
 * :ref:`cpn_receive`
 
+Circuit Fritzing
+-------------------
 
-Fritzing Circuit
----------------------
-
-In this example, the wiring of LCD1602 and infrared receiving module is
-as follows.
+Dans cet exemple, le câblage de l'écran LCD1602 et du module de réception 
+infrarouge est le suivant.
 
 .. image:: img/image280.png
    :align: center
 
-Schematic Diagram
-----------------------
+**Schéma de câblage**
+-------------------------
 
 .. image:: img/image281.png
    :align: center
 
-
 Code
---------------
+--------
 
 .. note::
 
-    * You can open the file ``3.4_guessNumber.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber`` directly.
-    * The ``LiquidCrystal I2C`` and ``IRremote`` libraries are used here, you can install them from the **Library Manager**.
-
+    * Vous pouvez ouvrir directement le fichier ``3.4_guessNumber.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber``.
+    * Les bibliothèques ``LiquidCrystal I2C`` et ``IRremote`` sont utilisées ici, vous pouvez les installer depuis le **Gestionnaire de bibliothèques**.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfbecaf-8e6c-4868-95d2-ab09f8d818a7/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
----------------------------
+Explication de l'exemple
+----------------------------
 
 .. image:: img/Part_three_4_Example_Explanation.png
     :align: center
 
-In order to make the number guessing game become vivid and funny, we
-need to achieve the following functions:
+Pour rendre le jeu de devinette plus vivant et amusant, nous devons 
+réaliser les fonctionnalités suivantes :
 
-1. The lucky number will be displayed when we start and reset the game,
-   and the number range prompt is reset to 0 ~ 99.
+1. Le nombre mystère sera affiché au début et lors du réinitialisation du jeu, 
+   et l'indication de la plage des nombres sera réinitialisée à 0 ~ 99.
 
-2. LCD will display the number being input and the number range prompt.
+2. L'écran LCD affichera le nombre saisi ainsi que l'indication de la plage des nombres.
 
-3. After inputting two digits, there appears result judgment
-   automatically.
+3. Après avoir entré deux chiffres, le jugement du résultat apparaît 
+   automatiquement.
 
-4. If you input a single digit, you can press the CYCLE key (the key at
-   the center of the Controller) to start the result judgment.
+4. Si un chiffre unique est saisi, vous pouvez appuyer sur la touche CYCLE 
+   (la touche centrale de la télécommande) pour commencer le jugement du résultat.
 
-5. If the answer is not guessed, the new number range prompt will be
-   displayed (if the lucky number is 51 and you enter 50, the number
-   range prompt will change to 50~99).
+5. Si la réponse n'est pas correcte, la nouvelle plage des nombres sera affichée 
+   (par exemple, si le nombre mystère est 51 et que vous entrez 50, la plage des 
+   nombres deviendra 50~99).
 
-6. The game is automatically reset after the lucky number is guessed, so
-   that the player can play a new round.
+6. Le jeu se réinitialise automatiquement après que le nombre mystère ait 
+   été deviné, permettant ainsi au joueur de commencer une nouvelle partie.
 
-7. The game can be reset by directly pressing the POWER button (the
-   button in the upper left corner).
+7. Le jeu peut être réinitialisé en appuyant directement sur le bouton POWER 
+   (le bouton situé dans le coin supérieur gauche).
 
-In conclusion, the work flow of the project is shown in the flow chart.
+En conclusion, le flux de travail du projet est représenté par le diagramme suivant.
 
-Phenomenon Picture
------------------------
+Image de phénomène
+---------------------
 
 .. image:: img/image283.jpeg
    :align: center
-

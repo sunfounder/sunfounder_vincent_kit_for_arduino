@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder sur Facebook ! Plongez plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez vos problèmes après-vente et défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos nouveaux produits.
+    - **Promotions festives et concours** : Participez à des concours et promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_rgb:
 
-2.3 RGB LED
-===========
+2.3 LED RGB
+=============
 
-Overview
---------
+Aperçu
+---------
 
-In this lesson, you will learn about how to use RGB LED. A RGB LED
-packages three LEDs in red, green and blue into one transparent or
-semitransparent plastic shell. It displays a broad array of colors by
-changing the input voltage of three pins and adding the three colors
-together in different ways. As is said in a statistic, RGB LED can
-create 16,777,216 different colors.
+Dans cette leçon, vous apprendrez à utiliser une LED RGB. Une LED RGB 
+regroupe trois LED (rouge, verte et bleue) dans un même boîtier en 
+plastique transparent ou semi-transparent. Elle affiche une large gamme 
+de couleurs en ajustant la tension d'entrée de trois broches et en combinant 
+ces trois couleurs de différentes manières. Selon les statistiques, une LED 
+RGB peut créer 16 777 216 couleurs différentes.
 
-Components Required
+Composants requis
 -------------------
 
 .. image:: img/list_2.3.png
@@ -38,69 +38,66 @@ Components Required
 * :ref:`cpn_rgb`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Schéma de connexion
+---------------------
 
 .. image:: img/image425.png
 
+Ici, nous appliquons une valeur comprise entre 0 et 255 sur les trois 
+broches de la LED RGB pour afficher différentes couleurs. Après avoir 
+connecté les broches R, G et B à une résistance de limitation de courant, 
+connectez-les respectivement aux broches 9, 10 et 11. La broche la plus 
+longue (GND) de la LED est connectée à la masse (GND) de la Mega 2560. 
+Lorsque les trois broches reçoivent différentes valeurs PWM, la LED RGB 
+affichera différentes couleurs.
 
-Here we input a value between 0 and 255 to the three pins of the RGB LED
-to make it display different colors. After connecting the pins of R, G,
-and B to a current limiting resistor, connect them to the pin 9, pin 10,
-and pin 11 respectively. The longest pin (GND) of the LED connects to
-the GND of the Mega 2560. When the three pins are given different PWM
-values, the RGB LED will display different colors.
-
-Schematic Diagram
------------------
+Diagramme schématique
+------------------------
 
 .. image:: img/image426.png
 
-
 Code
-----
+------
 
 .. note::
 
-    * You can open the file ``2.3_rgbLed.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.3_rgbLed`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.3_rgbLed.ino`` situé dans le chemin ``sunfounder_vincent_kit_for_arduino\code\2.3_rgbLed``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/3032b0a1-49e3-4d88-a73a-eeacf3761935/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
--------------
+Analyse du code
+------------------
 
-In this example, the function used to assign values to the three pins of RGB is packaged in an independent subfunction color().  
+Dans cet exemple, la fonction utilisée pour attribuer des valeurs aux trois broches de la LED RGB est encapsulée dans une fonction indépendante `color()`.
 
 .. code-block:: arduino
 
     void color (unsigned char red, unsigned char green, unsigned char blue)// the color generating function  
     {    
-    analogWrite(redPin, red);   
-    analogWrite(greenPin, green); 
-    analogWrite(bluePin, blue); 
+        analogWrite(redPin, red);   
+        analogWrite(greenPin, green); 
+        analogWrite(bluePin, blue); 
     }
 
-In loop(), RGB value works as an input argument to call the function color() to realize that the RGB can emit different colors.   
+Dans la fonction `loop()`, les valeurs RGB sont utilisées comme arguments d'entrée pour appeler la fonction `color()` et ainsi permettre à la LED RGB d'émettre différentes couleurs.
 
 .. code-block:: arduino
 
-    void loop()  // run over and over again  
+    void loop()  // exécution répétée  
     {    
-    color(255, 0, 0); // turn the RGB LED red 
-    delay(1000); // delay for 1 second  
-    color(0,255, 0); // turn the RGB LED green  
-    delay(1000); // delay for 1 second  
-    color(0, 0, 255); // turn the RGB LED blue  
-    delay(1000); // delay for 1 second 
-    // ... 
-    }  
+        color(255, 0, 0); // allumer la LED RGB en rouge 
+        delay(1000); // attendre 1 seconde  
+        color(0, 255, 0); // allumer la LED RGB en vert  
+        delay(1000); // attendre 1 seconde  
+        color(0, 0, 255); // allumer la LED RGB en bleu  
+        delay(1000); // attendre 1 seconde 
+        // ... 
+    }
 
-Phenomenon Picture
-------------------
+Illustration du phénomène
+----------------------------
 
 .. image:: img/image79.jpeg

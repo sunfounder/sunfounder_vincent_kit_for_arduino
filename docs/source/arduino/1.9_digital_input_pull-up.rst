@@ -1,35 +1,36 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Assistance d'experts** : Résolvez les problèmes après-vente et les défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des conseils et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et d'aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions et cadeaux festifs** : Participez à des promotions spéciales et des tirages au sort.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_digital_pullup:
 
-1.9 Digital Input Pull-Up
-=========================
+1.9 Entrée Numérique Pull-Up
+==============================
 
-Overview
----------
+Aperçu
+--------
 
-When using some switch input devices, some pull-up or pull-down
-resistors are often used to keep the level of corresponding pins at
-certain value on the condition that the device is not working. Such as
-in 1.4 Digital Read, a 10k resistor is used to make the pin be connected
-to GND under the condition that the button is not pressed down. If we
-have used a lot of switch input components and want to simplify the
-circuit, we can set the pin mode to「INPUT_PULLUP」in the code so that
-the pin reads the high level in the suspended state.
+Lors de l'utilisation de certains dispositifs de commutation en entrée, des 
+résistances de pull-up ou de pull-down sont souvent utilisées pour maintenir 
+le niveau des broches correspondantes à une certaine valeur lorsque le 
+dispositif n'est pas actif. Par exemple, dans l'exercice 1.4 Lecture Numérique, 
+une résistance de 10k est utilisée pour connecter la broche à la masse (GND) 
+lorsque le bouton n'est pas pressé. Si nous utilisons de nombreux composants 
+d'entrée et souhaitons simplifier le circuit, nous pouvons configurer le mode 
+de la broche sur 「INPUT_PULLUP」 dans le code, permettant ainsi à la broche 
+de lire un niveau haut lorsqu'elle est en état suspendu.
 
-Components Required
+Composants requis
 -------------------
 
 .. image:: img/list_1.9.png
@@ -39,69 +40,64 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_button`
 
+Circuit Fritzing
+------------------
 
-
-Fritzing Circuit
-----------------
-
-In this example, we use pin 2 to read the signal of button. The internal
-pull-up in pin 2 is valid, so if the button isn’t pressed, HIGH is read
-in pin 2; when the button is pressed, LOW is read.
+Dans cet exemple, nous utilisons la broche 2 pour lire le signal du bouton. 
+La résistance de pull-up interne de la broche 2 est activée, donc si le bouton 
+n'est pas pressé, la broche 2 lira un état HAUT; lorsque le bouton est pressé, 
+un état BAS est lu.
 
 .. image:: img/image53.png
 
 
-Schematic Diagram
------------------
+Schéma électronique
+---------------------
 
 .. image:: img/image411.png
 
-
 Code
-----
+-----
 
 .. note::
 
-    * You can open the file ``1.9_digitalInputPullup.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.9_digitalInputPullup`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Vous pouvez ouvrir directement le fichier ``1.9_digitalInputPullup.ino`` dans le dossier ``sunfounder_vincent_kit_for_arduino\code\1.9_digitalInputPullup``.
+    * Ou copier ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/223d1c70-2644-4b9c-9f69-74e18394631f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the serial port monitor to view the read values of the pin. When the Button is pressed, the serial port monitor will display "0", and the "1" will be displayed when the button is released.
+Après avoir téléversé le code sur la carte Mega2560, vous pouvez ouvrir le moniteur série pour visualiser les valeurs lues sur la broche. Lorsque le bouton est pressé, le moniteur série affiche "0", et "1" est affiché lorsque le bouton est relâché.
 
-Code Analysis
--------------
+Analyse du Code
+------------------
 
-Run the serial communication in setup() and set the data rate to 9600.
+Démarrez la communication série dans setup() et définissez la vitesse de transmission à 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-Configure pin 2 as an input and enable the internal pull-up resistor.
+Configurez la broche 2 en tant qu'entrée et activez la résistance de pull-up interne.
 
 .. code-block:: arduino
 
     pinMode(2, INPUT_PULLUP);
 
-Read the level state from the digital pin 2 by using digitalRead() statement in loop() and declare a variable to store it.
+Utilisez digitalRead() dans loop() pour lire l'état de la broche numérique 2 et déclarez une variable pour stocker cet état.
 
 .. code-block:: arduino
 
     int buttonState = digitalRead(2);
 
-Print the values stored by variables on the serial port monitor.
+Affichez les valeurs stockées par la variable sur le moniteur série.
 
 .. code-block:: arduino
 
     Serial.println(buttonState);
 
-Phenomenon Picture
-------------------
+Illustration du phénomène
+----------------------------
 
 .. image:: img/image55.jpeg

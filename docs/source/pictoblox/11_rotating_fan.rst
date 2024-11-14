@@ -1,55 +1,55 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de SunFounder Raspberry Pi, Arduino et ESP32 sur Facebook ! Rejoignez d'autres passionnés pour explorer en profondeur les plateformes Raspberry Pi, Arduino et ESP32.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez et partagez** : Échangez des astuces et des tutoriels pour perfectionner vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux exclusivités.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions et concours festifs** : Participez à des concours et des promotions spéciales.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et à créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _rotating_fan:
 
-2.11 Rotating Fan
-========================
+2.11 Ventilateur Rotatif
+===========================
 
-In this project, we will make a spinning star sprite and fan.
+Dans ce projet, nous allons créer un sprite en forme d'étoile qui tourne ainsi qu’un ventilateur.
 
-Clicking on the left and right arrow sprites on the stage will control the clockwise and counterclockwise rotation of the motor and star sprite, click on the star sprite to stop the rotation.
+En cliquant sur les flèches gauche et droite sur la scène, vous contrôlez la rotation dans le sens horaire et antihoraire du moteur et du sprite en étoile. Cliquez sur le sprite étoile pour arrêter la rotation.
 
 .. image:: img/13_fan.png
 
-You Will Learn
----------------------
+Vous Apprendrez
+------------------------
 
-- Motor working principle
-- Broadcast function
-- Stop other script in sprite block
+- Principe de fonctionnement du moteur
+- Fonction de diffusion
+- Bloquer les autres scripts dans le sprite
 
-Build the Circuit
+Construire le Circuit
 -----------------------
 
-In this project, the motor driver chip :ref:`cpn_l293d` is used to make the motor rotate.
+Dans ce projet, le circuit utilise le pilote de moteur :ref:`cpn_l293d` pour faire tourner le moteur.
 
-L293D is a 4-channel motor driver integrated by chip with high voltage and high current. 
+Le L293D est un pilote de moteur à 4 canaux avec une haute tension et un courant élevé.
 
-Its pinouts are shown below: 
+Le schéma des broches est le suivant :
 
-Pin **EN** is an enable pin and only works with high level; **A** stands for input and **Y** for output. When pin **EN** is High level, if **A** is High, **Y** outputs high level; if **A** is Low, **Y** outputs Low level. When pin **EN** is Low level, the L293D does not work.
+La broche **EN** est une broche d’activation qui fonctionne uniquement avec un signal de haut niveau ; **A** représente l’entrée et **Y** la sortie. Lorsque la broche **EN** est à un niveau haut, si **A** est haut, **Y** envoie un niveau haut ; si **A** est bas, **Y** envoie un niveau bas. Lorsque la broche **EN** est en niveau bas, le L293D est désactivé.
 
 .. image:: img/13_l293d.png
 
-Now build the circuit according to the following diagram.
+Construisez le circuit en suivant le schéma ci-dessous.
 
-* The Enable pin 1,2EN of the L293D are connected to 3.3V already, so L293D is always in the working state. 
-* Connect pin 1A and 2A to pin 9 and 10 of the control board respectively. 
-* The two pins of the motor are connected to pin 1Y and 2Y respectively. 
-* When pin 10 is set as High level and pin 9 as Low, the motor will start to rotate towards one direction. 
-* When the pin 10 is Low and pin 9 is High, it rotates in the opposite direction.
+* La broche Enable 1,2EN du L293D est déjà connectée à 3,3V, donc le L293D est toujours actif.
+* Connectez les broches 1A et 2A aux broches 9 et 10 de la carte de contrôle, respectivement.
+* Les deux broches du moteur sont reliées aux broches 1Y et 2Y respectivement.
+* Lorsque la broche 10 est à un niveau haut et la broche 9 à un niveau bas, le moteur tourne dans un sens.
+* Lorsque la broche 10 est bas et la broche 9 est haut, il tourne dans le sens inverse.
 
 .. image:: img/circuit/motor_circuit.png
 
@@ -57,47 +57,47 @@ Now build the circuit according to the following diagram.
 * :ref:`cpn_motor`
 * :ref:`cpn_l293d` 
 
-Programming
+Programmation
 ------------------
-The effect we want to achieve is to use 2 arrow sprites to control the clockwise and counterclockwise rotation of the motor and the star sprite respectively, clicking on the star sprite will stop the motor from rotating.
+L’effet recherché est d’utiliser deux sprites en forme de flèche pour contrôler la rotation horaire et antihoraire du moteur et de l'étoile. En cliquant sur le sprite étoile, le moteur s'arrête.
 
-**1. Add sprites**
+**1. Ajouter les sprites**
 
-Delete the default sprite, then select the **Star** sprite and the **Arrow1** sprite, and copy **Arrow1** once.
+Supprimez le sprite par défaut, sélectionnez ensuite le sprite **Étoile** et le sprite **Flèche1**, puis copiez **Flèche1** une fois.
 
 .. image:: img/13_star.png
 
-In the **Costumes** option, change the **Arrow1** sprite to a different direction costume.
+Dans l’option **Costumes**, changez la direction du sprite **Flèche1** en sélectionnant un costume différent.
 
 .. image:: img/13_star1.png
 
-Adjust the size and position of the sprite appropriately.
+Ajustez la taille et la position du sprite de manière appropriée.
 
 .. image:: img/13_star2.png
 
-**2. Left arrow sprite**
+**2. Sprite de la flèche gauche**
 
-When this sprite is clicked, it broadcasts a message - turn, then sets digital pin 9 to low and pin 10 to high, and sets the variable **flag** to 1. If you click the left arrow sprite, you will find that the motor turns counterclockwise, if your turn is clockwise, then you swap the positions of pin 9 and pin 10.
+Quand ce sprite est cliqué, il diffuse un message - tourner, puis règle la broche numérique 9 à bas et la broche 10 à haut, en réglant la variable **flag** à 1. Si vous cliquez sur la flèche gauche, le moteur tournera dans le sens antihoraire ; si le mouvement est horaire, inversez les broches 9 et 10.
 
-There are 2 points to note here.
+Deux points importants :
 
-* `[broadcast <https://en.scratch-wiki.info/wiki/Broadcast>`_]: from the **Events** palette, used to broadcast a message to the other sprites, when the other sprites receive this message, it will perform a specific event. For example, here is **turn**, when the **star** sprite receives this message, it executes the rotation script.
-* variable flag: The direction of rotation of the star sprite is determined by the value of flag. So when you create the **flag** variable, you need to make it apply to all sprites.
+* `[broadcast <https://en.scratch-wiki.info/wiki/Broadcast>`_]: depuis la palette **Événements**, utilisée pour envoyer un message aux autres sprites. Lorsqu’ils reçoivent ce message, ils exécutent une action spécifique. Par exemple, ici, c’est **tourner** ; lorsque le sprite **étoile** reçoit ce message, il exécute le script de rotation.
+* variable flag : La direction de rotation du sprite étoile dépend de la valeur de flag. En créant la variable **flag**, appliquez-la à tous les sprites.
 
 .. image:: img/13_left.png
 
-**3. right-arrow sprite**
+**3. Sprite de la flèche droite**
 
-When this sprite is clicked, broadcast a message turn, then set digital pin 9 high and pin 10 low to make the motor turn clockwise and set the **flag** variable to 0.
+Quand ce sprite est cliqué, il diffuse le message tourner, puis règle la broche numérique 9 à haut et la broche 10 à bas pour faire tourner le moteur dans le sens horaire et définit la variable **flag** à 0.
 
 .. image:: img/13_right.png
 
-**4. star sprite**
+**4. Sprite étoile**
 
-There are 2 events included here.
+Ce script comporte deux événements :
 
-* When the **star** sprite receives the broadcasted message turn, it determines the value of flag; if flag is 1, it turns 10 degrees to the left, otherwise it reverses. Since it is in [FOREVER], it will keep turning.
-* When this sprite is clicked, set both pins of the motor to high to make it stop rotating and stop the other scripts in this sprite.
+* Quand le sprite **étoile** reçoit le message diffusé tourner, il vérifie la valeur de flag ; si flag est à 1, il tourne de 10 degrés à gauche, sinon il tourne dans l’autre sens. Puisqu’il est dans [FOREVER], il continuera de tourner.
+* Quand on clique sur ce sprite, les deux broches du moteur sont réglées à haut pour l’arrêter, et il arrête les autres scripts dans ce sprite.
 
 .. image:: img/13_broadcast.png
 

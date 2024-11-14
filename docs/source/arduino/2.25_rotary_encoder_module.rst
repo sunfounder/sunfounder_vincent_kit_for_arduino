@@ -1,33 +1,35 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour et bienvenue dans la communauté des passionnés de Raspberry Pi, Arduino et ESP32 sur Facebook, animée par SunFounder ! Plongez encore plus profondément dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques grâce à l'aide de notre communauté et de notre équipe.
+    - **Apprendre et partager** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Bénéficiez d'un accès anticipé aux annonces de nouveaux produits et aux avant-premières.
+    - **Réductions spéciales** : Profitez de réductions exclusives sur nos derniers produits.
+    - **Promotions festives et concours** : Participez à des concours et des promotions pendant les fêtes.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
 .. _ar_rotary_encoder:
 
-2.25 Rotary Encoder Module
-===========================
+2.25 Module d'Encodeur Rotatif
+=================================
 
-Overview
---------------
+Aperçu
+---------
 
-In this lesson, you will learn about Rotary Encoder. A rotary encoder is
-an electronic switch with a set of regular pulses in strictly timing
-sequence. When used with IC, it can achieve increment, decrement, page
-turning and other operations such as mouse scrolling, menu selection,
-and so on.
+Dans cette leçon, vous apprendrez à utiliser un encodeur rotatif. Un 
+encodeur rotatif est un interrupteur électronique qui génère une série 
+de pulsations régulières, selon une séquence temporelle précise. Lorsqu'il 
+est utilisé avec un circuit intégré, il peut permettre d'effectuer des 
+opérations telles que l'incrémentation, la décrémentation, le changement 
+de page, ainsi que des actions comme le défilement de la souris ou la 
+sélection de menus.
 
-Components Required
-------------------------
+Composants Requis
+---------------------
 
 .. image:: img/Part_two_25.png
 
@@ -35,67 +37,63 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_rotary`
 
+Circuit Fritzing
+--------------------
 
-Fritzing Circuit
------------------------
-
-In this example, we can connect the Rotary Encoder pin directly to the
-Mega 2560 Board pin, connect the GND of the Rotary Encoder to GND, 「+」
-to 5V, SW to digital pin 4, DT to digital pin 3, and CLK to digital pin
-2.
+Dans cet exemple, nous connectons directement les broches de l'encodeur 
+rotatif aux broches de la carte Mega 2560. Connectez le GND de l'encodeur 
+rotatif au GND, le 「+」au 5V, SW à la broche numérique 4, DT à la broche 
+numérique 3, et CLK à la broche numérique 2.
 
 .. image:: img/image207.png
    :align: center
 
-Schematic Diagram
-------------------------
+Schéma de Connexion
+-----------------------
 
 .. image:: img/image208.png
    :align: center
 
 Code
-------------
+-------
 
 .. note::
 
-    * You can open the file ``2.25_rotaryEncoder.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.25_rotaryEncoder`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Vous pouvez ouvrir directement le fichier ``2.25_rotaryEncoder.ino`` situé dans le dossier ``sunfounder_vincent_kit_for_arduino\code\2.25_rotaryEncoder``.
+    * Ou copiez ce code dans l'IDE Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b54bd8df-96a1-40e5-a091-13e24c7179e4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-You will see the angular displacement of the rotary encoder
-printed on Serial Monitor. When you turn the rotary encoder clockwise,
-the angular displacement is increased; when turn it counterclockwise,
-the displacement is decreased. If you press the switch on the rotary
-encoder, the readings will return to zero.
+Vous verrez le déplacement angulaire de l'encodeur rotatif affiché dans 
+le moniteur série. Lorsque vous tournez l'encodeur dans le sens horaire, 
+le déplacement angulaire augmente ; lorsque vous le tournez dans le sens 
+antihoraire, le déplacement diminue. Si vous appuyez sur l'interrupteur 
+de l'encodeur rotatif, les valeurs reviendront à zéro.
 
-Code Analysis
+Analyse du Code
 ------------------
 
-When Rotary Encoder is used, the following situations of pin level will
-occur.
+Lorsqu'un encodeur rotatif est utilisé, les niveaux de tension des broches suivantes peuvent se produire.
 
-1. When rotating the shaft, dtPin will go from high level to low level.
+1. Lorsque l'arbre est tourné, la broche dtPin passe du niveau haut au niveau bas.
 
-2. clkPin will remain high level when the shaft rotates clockwise,
-otherwise it goes low level.
+2. La broche clkPin restera au niveau haut lorsque l'arbre tourne dans le sens 
+horaire, sinon elle passera au niveau bas.
 
-3. When the shaft is pressed, swPin will have low level.
+3. Lorsque l'arbre est enfoncé, la broche swPin sera au niveau bas.
 
-From this, the program flow is shown on the right.
+À partir de ces observations, le flux du programme est illustré ci-dessous.
 
-For detailed analysis of potential state change judgment, please refer
-to :ref:`ar_state_change`.
+Pour une analyse détaillée des jugements sur les changements d'état potentiels, 
+veuillez consulter :ref:`ar_state_change`.
 
 .. image:: img/image209.png
    :align: center
 
-Phenomenon Picture
--------------------------
+Illustration du Phénomène
+----------------------------
 
 .. image:: img/image210.jpeg
    :align: center

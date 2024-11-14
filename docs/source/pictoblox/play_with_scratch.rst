@@ -1,36 +1,36 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Bonjour, bienvenue dans la communauté Facebook des passionnés de Raspberry Pi, Arduino et ESP32 de SunFounder ! Plongez dans l'univers de Raspberry Pi, Arduino et ESP32 avec d'autres passionnés.
 
-    **Why Join?**
+    **Pourquoi nous rejoindre ?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Support d'experts** : Résolvez vos problèmes après-vente et vos défis techniques avec l'aide de notre communauté et de notre équipe.
+    - **Apprenez & Partagez** : Échangez des astuces et des tutoriels pour améliorer vos compétences.
+    - **Aperçus exclusifs** : Accédez en avant-première aux annonces de nouveaux produits et aux aperçus exclusifs.
+    - **Réductions spéciales** : Profitez de remises exclusives sur nos derniers produits.
+    - **Promotions festives et cadeaux** : Participez à des promotions spéciales et à des concours pour gagner des produits.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Prêt à explorer et créer avec nous ? Cliquez sur [|link_sf_facebook|] et rejoignez-nous dès aujourd'hui !
 
-Play with Scratch
-========================
+Programmer avec Scratch
+===========================
 
-Besides programming on the Arduino IDE with Uno/Mega2560 boards, we can also use them for graphical programming.
+En plus de programmer sur l'IDE Arduino avec les cartes Uno/Mega2560, nous pouvons également les utiliser pour la programmation graphique.
 
-Here we recommend programming with Scratch, but the official Scratch is currently only compatible with Raspberry Pi, so we have partnered with a company, STEMPedia, who has developed a Scratch 3 based graphical programming software for Arduino boards (Uno, Mega2560 and Nano) - `PictoBlox <https://thestempedia.com/product/pictoblox/>`_.
+Nous recommandons la programmation avec Scratch ; cependant, Scratch officiel est actuellement compatible uniquement avec le Raspberry Pi. C’est pourquoi nous avons collaboré avec STEMPedia, une entreprise ayant développé un logiciel de programmation graphique basé sur Scratch 3 pour les cartes Arduino (Uno, Mega2560 et Nano) - `PictoBlox <https://thestempedia.com/product/pictoblox/>`_.
 
 .. image:: img/1_pictoblox.png
 
-It keeps the basic functions of Scratch 3, but also adds control boards, such as Arduino Uno, Mega, Nano, ESP32, Microbit and STEAMPedia homemade main boards, which can use external sensors, robots to control the sprites on the stage, with strong hardware interaction capabilities.
+PictoBlox conserve les fonctions de base de Scratch 3 et ajoute le contrôle de diverses cartes, telles qu'Arduino Uno, Mega, Nano, ESP32, Micro:bit et les cartes principales développées par STEAMPedia. Il permet d'utiliser des capteurs externes et des robots pour interagir avec les personnages sur scène, offrant de puissantes capacités d'interaction matérielle.
 
-In addition, it has AI and machine learning, even if you do not have much programming foundation, you can learn and use these popular and high-tech.
+De plus, PictoBlox inclut des modules d'IA et de machine learning, permettant même aux débutants d'apprendre et d'utiliser ces technologies de pointe.
 
-Just drag and drop the Scratch coding blocks and make cool games, animations, interactive projects, and even control robots the way you want!
+Il suffit de glisser et déposer les blocs de codage Scratch pour créer des jeux, des animations, des projets interactifs et même contrôler des robots selon vos envies !
 
 
-Now let's start the journey of discovery!
+Commençons ensemble ce voyage de découverte !
 
-**1. Get Started**
+**1. Commencer**
 
 .. toctree::
     :maxdepth: 2
@@ -41,18 +41,17 @@ Now let's start the journey of discovery!
 
     
 
-**2. Projects**
+**2. Projets** 
 
-The following projects are written in order of programming difficulty, so we recommend reading them in order.
+Les projets suivants sont présentés par ordre de difficulté en programmation ; nous vous recommandons donc de les suivre dans cet ordre.
 
-In each project, there are very detailed steps to teach you how to build the circuit and how to program it step by step to achieve the final result.
+Dans chaque projet, vous trouverez des étapes détaillées qui vous guideront dans la construction du circuit et la programmation, étape par étape, jusqu'à l'obtention du résultat final.
 
-Of course, you can also open the script directly to run it, but you need to make sure you have downloaded the relevant material from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Vous pouvez bien sûr ouvrir directement le script pour l'exécuter, mais assurez-vous d'avoir téléchargé les fichiers nécessaires depuis `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
-Once the download is complete, unzip it. Refer to :ref:`Stage Mode` to run individual scripts directly.
+Une fois le téléchargement terminé, décompressez le fichier. Référez-vous au :ref:`Stage Mode` pour exécuter les scripts individuellement.
 
-But the :ref:`humiture` is used the :ref:`Upload Mode`.
-
+Le :ref:`humiture`, en revanche, utilise le :ref:`Upload Mode`.
 
 .. toctree::
     :maxdepth: 1
