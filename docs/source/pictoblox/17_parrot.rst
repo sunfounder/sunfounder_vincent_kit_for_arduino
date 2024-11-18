@@ -1,101 +1,98 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _parrot:
 
-2.17 GAME - Flappy Parrot
-==============================
+2.17 JUEGO - Loro Saltarín
+============================
 
-Here we use the ultrasonic module to play a flappy parrot game.
+En este proyecto, utilizaremos el módulo ultrasónico para jugar un juego de "loro saltarín".
 
-After the script runs, the green bamboo will slowly move from the right to the left at a random height. Now place your hand on top of the ultrasonic module, if the distance between your hand and the ultrasonic module is less than 10, the parrot will fly upwards, otherwise it will fall downwards.
-You need to control the distance between your hand and the ultrasonic module so that the Parrot can avoid the green bamboo (Paddle), if it touches it, the game is over.
+Después de ejecutar el guion, el bambú verde se moverá lentamente de derecha a izquierda a una altura aleatoria. Coloca tu mano encima del módulo ultrasónico; si la distancia entre tu mano y el módulo ultrasónico es menor a 10 cm, el loro volará hacia arriba, de lo contrario, caerá hacia abajo. Debes controlar la distancia entre tu mano y el módulo ultrasónico para que el loro evite el bambú verde (**Paddle**). Si lo toca, el juego termina.
 
 .. image:: img/15_parrot.png
 
-Build the Circuit
------------------------
+Construir el Circuito
+------------------------
 
-An ultrasonic sensor module is an instrument that measures the distance to an object using ultrasonic sound waves. 
-It has two probes. One is to send ultrasonic waves and the other is to receive the waves and transform the time of sending and receiving into a distance, thus detecting the distance between the device and an obstacle.
+Un sensor ultrasónico es un instrumento que mide la distancia a un objeto utilizando ondas de sonido ultrasónicas. 
+Tiene dos sondas: una para enviar ondas ultrasónicas y otra para recibirlas, transformando el tiempo de envío y recepción en una distancia, detectando así la distancia entre el dispositivo y un obstáculo.
 
-Now build the circuit according to the following diagram.
+Construye el circuito según el siguiente diagrama.
 
 .. image:: img/circuit/ultrasonic_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_ultrasonic`
 
-Programming
-------------------
+Programación
+---------------
 
-The effect we want to achieve is to use the ultrasonic module to control the flight height of the sprite **Parrot**, while avoiding the **Paddle** sprite.
+El objetivo es usar el módulo ultrasónico para controlar la altura de vuelo del sprite **Parrot** mientras evita el sprite **Paddle**.
 
 
-**1. Add a sprite**
+**1. Agregar un sprite**
 
-Delete the default sprite, and use the **Choose a Sprite** button to add the **Parrot** sprite. Set its size to 50%, and move its position to the left center.
+Elimina el sprite predeterminado y utiliza el botón **Choose a Sprite** para agregar el sprite **Parrot**. Ajusta su tamaño al 50% y mueve su posición al centro izquierdo.
 
 .. image:: img/15_sprite.png
 
-Now add the **Paddle** sprite, set its size to 150%, set its angle to 180, and move its initial position to the top right corner.
+Agrega el sprite **Paddle**, ajusta su tamaño al 150%, configura su ángulo en 180 y mueve su posición inicial a la esquina superior derecha.
 
 .. image:: img/15_sprite1.png
 
-Go to the **Costumes** page of the **Paddle** sprite and remove the Outline.
+Ve a la página **Costumes** del sprite **Paddle** y elimina el contorno.
 
 .. image:: img/15_sprite2.png
 
-**2. Scripting for the Parrot Sprite**
+**2. Guion para el Sprite Parrot**
 
-Now script the **Parrot** sprite, which is in flight and the flight altitude is determined by the detection distance of the ultrasonic module.
+Escribe el guion para el sprite **Parrot**, que estará en vuelo y cuya altitud será determinada por la distancia detectada por el módulo ultrasónico.
 
-
-* When the green flag is clicked, switch the costume every 0.2s so that it is always in flight.
+* Cuando se haga clic en la bandera verde, cambia el disfraz cada 0.2 segundos para que esté siempre en vuelo.
 
 .. image:: img/15_parr1.png
 
-* Read the value of the ultrasonic module and store it in the variable **distance** after rounding it with the [round] block.
-
+* Lee el valor del módulo ultrasónico y guárdalo en la variable **distance** después de redondearlo con el bloque [round].
 
 .. image:: img/15_parr2.png
 
-* If the ultrasonic detection distance is less than 10cm, let the y coordinate increase by 50, the **Parrot** sprite will fly upwards. Otherwise, the y-coordinate value is decreased by 40, **Parrot** will fall down.
+* Si la distancia detectada es menor a 10 cm, aumenta la coordenada y en 50; el sprite **Parrot** volará hacia arriba. De lo contrario, disminuye la coordenada y en 40; el **Parrot** caerá.
 
 .. image:: img/15_parr3.png
 
-* If the **Parrot** sprite touches the **Paddle** sprite, the game ends and the script stops running.
+* Si el sprite **Parrot** toca el sprite **Paddle**, el juego termina y el guion se detiene.
 
 .. image:: img/15_parr4.png
 
 
-**3. Scripting for the Paddle sprite**
+**3. Guion para el Sprite Paddle**
 
-Now write the script for the **Paddle** sprite, which needs to appear randomly on the stage.
+Escribe el guion para el sprite **Paddle**, que debe aparecer aleatoriamente en el escenario.
 
-* Hide the sprite **Paddle** when the green flag is clicked, and clone itself at the same time. The [`create clone of <https://en.scratch-wiki.info/wiki/Create_Clone_of_()_(block)>`_] block is a control block and a stack block. It creates a clone of the sprite in the argument. It can also clone the sprite it is running in, creating clones of clones, recursively.
+* Oculta el sprite **Paddle** cuando se haga clic en la bandera verde y clónalo al mismo tiempo. El bloque [`create clone of <https://en.scratch-wiki.info/wiki/Create_Clone_of_()_(block)>`_] es un bloque de control que crea un clon del sprite especificado.
 
 .. image:: img/15_padd.png
 
-* When **Paddle** is presented as a clone, its position is 220 (rightmost) for the x-coordinate and its y-coordinate at (-125 to 125) random (height random).
+* Cuando el sprite **Paddle** aparezca como un clon, su posición x será 220 (la más a la derecha) y su coordenada y será un valor aleatorio entre -125 y 125 (altura aleatoria).
 
 .. image:: img/15_padd1.png
 
-* Use the [repeat] block to make its x coordinate value slowly decrease, so you can see the clone of the **Paddle** sprite slowly move from the right to the left until it disappears.
+* Usa el bloque [repeat] para disminuir lentamente el valor de la coordenada x, haciendo que el clon del sprite **Paddle** se mueva lentamente de derecha a izquierda hasta desaparecer.
 
 .. image:: img/15_padd2.png
 
-* Re-clone a new **Paddle** sprite and delete the previous clone.
+* Clona un nuevo sprite **Paddle** y elimina el clon anterior.
 
 .. image:: img/15_padd3.png

@@ -1,118 +1,117 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _lcd1602:
 
 2.4 LCD1602
 =================
 
-LCD1602 can be used to display 2x16 characters, now we let it display the corresponding characters with the character sprites on the stage.
+El LCD1602 puede mostrar 2x16 caracteres. Ahora haremos que muestre los caracteres correspondientes con los sprites de caracteres en el escenario.
 
-When you click the Hello on the stage one by one, they will have different animation effects and the characters will be displayed on the LCD1602 at the same time.
+Cuando hagas clic en "Hello" en el escenario uno por uno, tendrán diferentes efectos de animación y los caracteres se mostrarán en el LCD1602 al mismo tiempo.
 
 .. image:: img/5_hello.png
 
 
-You Will Learn
----------------------
+Lo que aprenderás
+--------------------
 
-- Using the LCD1602
-- Select multiple different sprites
-- Change sprite size, rotation angle, color and show or hide.
+- Cómo usar el LCD1602.
+- Seleccionar múltiples sprites diferentes.
+- Cambiar el tamaño, ángulo de rotación, color y mostrar u ocultar sprites.
 
-
-Build the Circuit
----------------------
+Construir el circuito
+------------------------
 
 .. image:: img/circuit/lcd1602_circuit.png
 
 * :ref:`cpn_mega2560`
 * :ref:`cpn_i2c_lcd1602`
 
-Programming
-------------------
+Programación
+--------------
 
-**1. Select sprite**
+**1. Seleccionar sprite**
 
-Delete the default sprite, click **Choose a Sprite**, then click **letters** and select the sprite you want.
+Elimina el sprite predeterminado, haz clic en **Elegir un Sprite**, luego selecciona **letters** y elige el sprite que desees.
 
 .. image:: img/5_sprite.png
 
-For example, I chose Hello, as shown below.
+Por ejemplo, seleccioné "Hello", como se muestra a continuación.
 
 .. image:: img/5_sprite1.png
 
-Now to set different effects for these sprites and display them on the LCD1602 while clicking.
+Ahora configura diferentes efectos para estos sprites y haz que se muestren en el LCD1602 al hacer clic.
 
-**2. H is zoom in and zoom out**
+**2. H se amplía y reduce**
 
-Click on the **H** sprite, and now write a script for it.
+Haz clic en el sprite **H** y escribe un script para él.
 
-When the sprite **H** is clicked, make its size to 50%, then restore it; while displaying H on the first row and column of the LCD1602.
+Cuando se haga clic en el sprite **H**, cambia su tamaño al 50 %, luego restáuralo, mientras se muestra "H" en la primera fila y columna del LCD1602.
 
-* [set size to]: From **Looks** palette, used to set the size of the sprite, from 0% to 100%.
-* [set cursor at columan row]: From **Display Modules** palette, used to set the cursor at a specific row of the LCD1602 to start displaying characters.
-* [write display]: From the **Display Modules** palette, used to display characters or strings on the LCD1602.
+* [set size to]: Desde la paleta **Apariencia**, utilizado para establecer el tamaño del sprite, de 0 % a 100 %.
+* [set cursor at column row]: Desde la paleta **Módulos de pantalla**, utilizado para establecer el cursor en una fila específica del LCD1602 para comenzar a mostrar caracteres.
+* [write display]: Desde la paleta **Módulos de pantalla**, utilizado para mostrar caracteres o cadenas en el LCD1602.
 
 .. image:: img/5_h.png
 
-The distribution of rows and columns on the LCD1602 is shown in the figure.
+La distribución de filas y columnas en el LCD1602 se muestra en la figura.
 
 .. image:: img/5_row.png
 
-**3. E is flipping left and right**
+**3. E gira hacia la izquierda y hacia la derecha**
 
-Click on the **E** sprite, and now write a script for it.
+Haz clic en el sprite **E** y escribe un script para él.
 
-When the sprite **E** is clicked, have it turn 180 degrees clockwise, then 180 degrees counterclockwise so you can see it flip left and right; and show H in the first row and column 2 of the LCD1602.
+Cuando se haga clic en el sprite **E**, haz que gire 180 grados en el sentido de las agujas del reloj, luego 180 grados en sentido contrario, y muestra "E" en la primera fila y columna 2 del LCD1602.
 
-* [turn degrees]: From the **Motions** palette, used to turn the sprite clockwise or counterclockwise, the range is 0-360 degrees.
+* [turn degrees]: Desde la paleta **Movimiento**, utilizado para girar el sprite en el sentido de las agujas del reloj o en sentido contrario, el rango es de 0 a 360 grados.
 
 .. image:: img/5_lcd.png
 
-**4. L is slowly shrinking and zooming in**
+**4. L se encoge y se amplía lentamente**
 
-Click on the **first L** sprite and now write a script for it.
+Haz clic en el primer sprite **L** y escribe un script para él.
 
-When the sprite **L** is clicked, use the [repeat] block to increase its size by 50% (5 times, 10 each time), then shrink it back to its original size in the same way, while displaying L in the first row and column 3 of the LCD1602.
+Cuando se haga clic en el sprite **L**, utiliza el bloque [repeat] para aumentar su tamaño un 50 % (5 veces, 10 cada vez), luego reduce su tamaño de la misma manera, mientras se muestra "L" en la primera fila y columna 3 del LCD1602.
 
-* [change size by]: From the Motions palette, used to change the size of the sprite.
+* [change size by]: Desde la paleta de Movimiento, utilizado para cambiar el tamaño del sprite.
 
 .. image:: img/5_l.png
 
-**5. The second L is changing color**
+**5. El segundo L cambia de color**
 
-Click on the **second L** sprite and now write a script for it.
+Haz clic en el segundo sprite **L** y escribe un script para él.
 
-When the sprite **L** is clicked, use the [repeat] block to repeat 10 times at a rate of 20 increments to switch between colors and return to the original color. Also display L in the first row and column 4 of the LCD1602.
+Cuando se haga clic en el sprite **L**, utiliza el bloque [repeat] para repetir 10 veces con incrementos de 20 para alternar entre colores y volver al color original. También muestra "L" en la primera fila y columna 4 del LCD1602.
 
-* [`change color effect by <https://en.scratch-wiki.info/wiki/Graphic_Effect#Changing_of_colors_using_the_Color_Effect_block>`_]: Used to change the color Effect, one costume can take on 200 different color-schemes using the color effect, 0 and 200 are the same color.
+* [`change color effect by <https://en.scratch-wiki.info/wiki/Graphic_Effect#Changing_of_colors_using_the_Color_Effect_block>`_]: Utilizado para cambiar el efecto de color, un disfraz puede tener 200 combinaciones de colores diferentes, 0 y 200 son del mismo color.
 
 .. image:: img/5_2l.png
 
-**6. O is hide and show**
+**6. O se oculta y muestra**
 
-Click on the **O** sprite and now write a script for it.
+Haz clic en el sprite **O** y escribe un script para él.
 
-When the **O** sprite is clicked, it repeats the hide and show process 3 times, while displaying O in the first row and column 5 of the LCD1602.
+Cuando se haga clic en el sprite **O**, repite el proceso de ocultar y mostrar 3 veces, mientras muestra "O" en la primera fila y columna 5 del LCD1602.
 
-* [Hide] & [Show]: make the sprite hide and show.
+* [Hide] & [Show]: Hace que el sprite se oculte y muestre.
 
 .. image:: img/5_o.png
 
-**7. Initialize the LCD1602**
+**7. Inicializar el LCD1602**
 
-After clicking the green flag, set the I2C address of the LCD1602 and clear the last content in backdrop.
+Después de hacer clic en la bandera verde, configura la dirección I2C del LCD1602 y limpia el último contenido en el fondo.
 
 .. image:: img/lcd1602.png

@@ -1,34 +1,34 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_keypad:
 
-Keypad
+Teclado Matricial
 ========================
 
-A keypad is a rectangular array of 12 or 16 OFF-(ON) buttons. 
-Their contacts are accessed via a header suitable for connection with a ribbon cable or insertion into a printed circuit board. 
-In some keypads, each button connects with a separate contact in the header, while all the buttons share a common ground.
+Un teclado matricial es una disposición rectangular de 12 o 16 botones OFF-(ON). 
+Sus contactos se acceden a través de un conector adecuado para la conexión con un cable de cinta o para la inserción en una placa de circuito impreso. 
+En algunos teclados, cada botón se conecta con un contacto separado en el conector, mientras que todos los botones comparten una tierra común.
 
 .. image:: img/keypad314.png
 
-More often, the buttons are matrix encoded, meaning that each of them bridges a unique pair of conductors in a matrix. 
-This configuration is suitable for polling by a microcontroller, which can be programmed to send an output pulse to each of the four horizontal wires in turn. 
-During each pulse, it checks the remaining four vertical wires in sequence, to determine which one, if any, is carrying a signal. 
-Pullup or pulldown resistors should be added to the input wires to prevent the inputs of the microcontroller from behaving unpredictably when no signal is present.
+Con mayor frecuencia, los botones están codificados en una matriz, lo que significa que cada uno de ellos conecta un par único de conductores en la matriz. 
+Esta configuración es adecuada para ser sondeada por un microcontrolador, el cual puede programarse para enviar un pulso de salida a cada uno de los cuatro cables horizontales por turno. 
+Durante cada pulso, verifica los cuatro cables verticales restantes en secuencia para determinar cuál, si alguno, está llevando una señal. 
+Se deben añadir resistencias pullup o pulldown a los cables de entrada para evitar que las entradas del microcontrolador se comporten de manera impredecible cuando no haya señal presente.
 
-**Example**
+**Ejemplo**
 
-* :ref:`ar_keypad` (Arduino Project)
-* :ref:`ar_access_system` (Arduino Project)
+* :ref:`ar_keypad` (Proyecto Arduino)
+* :ref:`ar_access_system` (Proyecto Arduino)

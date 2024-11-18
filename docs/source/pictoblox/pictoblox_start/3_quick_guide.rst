@@ -1,198 +1,197 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
-1.3 Quick Guide on PictoBlox
+1.3 Guía Rápida sobre PictoBlox
 ====================================
 
-Now let's learn how to use PictoBlox in two modes.
+Ahora aprendamos a usar PictoBlox en dos modos.
 
-Also, there is an On-board LED connected to Pin 13 on the Arduino Uno/Mega2560, we will learn to make this LED blink in 2 different modes.
+Además, hay un LED integrado conectado al Pin 13 en el Arduino Uno/Mega2560. Aprenderemos a hacer que este LED parpadee en 2 modos diferentes.
 
 .. image:: img/1_led.jpg
     :width: 500
     :align: center
 
 
-Stage Mode
----------------
+Modo Escenario
+-----------------
 
-**1. Connect to Arduino Board**
+**1. Conectar a la Placa Arduino**
 
-Connect your Arduino board to the computer with a USB cable, usually the computer will automatically recognize your board and finally assign a COM port.
+Conecta tu placa Arduino a la computadora con un cable USB; usualmente, la computadora reconocerá automáticamente tu placa y asignará un puerto COM.
 
-Open PictoBlox, the Python programming interface will open by default. And we need to switch to the Blocks interface.
+Abre PictoBlox; la interfaz de programación en Python se abrirá por defecto. Debemos cambiar a la interfaz de Bloques.
 
 .. image:: img/0_choose_blocks.png
 
-Then you will see the top right corner for mode switching. The default is Stage mode, where Tobi is standing on the stage.
+Luego, verás la esquina superior derecha para cambiar de modo. El modo predeterminado es el Modo Escenario, donde Tobi está en el escenario.
 
 .. image:: img/1_stage_upload.png
 
-Click **Board** in the upper right navigation bar to select the board.
+Haz clic en **Board** en la barra de navegación superior para seleccionar la placa.
 
 .. image:: img/1_board.png
 
-For example, choose **Arduino Mega**.
+Por ejemplo, selecciona **Arduino Mega**.
 
 .. image:: img/1_choose_mega.png
 
-A connection window will then pop up for you to select the port to connect to, and return to the home page when the connection is complete. If you break the connection during use, you can also click **Connect** to reconnect.
+Aparecerá una ventana de conexión para que selecciones el puerto y, una vez completada la conexión, regresarás a la página de inicio. Si pierdes la conexión durante el uso, también puedes hacer clic en **Connect** para reconectar.
 
 .. image:: img/1_connect.png
 
-At the same time, Arduino Mega related palettes, such as Arduino Mega, Actuators, etc., will appear in the **Block Palette**.
+Al mismo tiempo, aparecerán paletas relacionadas con Arduino Mega, como Arduino Mega, Actuators, etc., en la **Paleta de Bloques**.
 
 .. image:: img/1_arduino_mega.png
 
-**2. Upload Firmware**
+**2. Subir Firmware**
 
-Since we’re going to work in the Stage mode, we must upload the firmware to the board. It will ensure real-time communication between the board and the computer. Uploading the firmware it is a one-time process. To do so, click on the Upload Firmware button.
+Como vamos a trabajar en el Modo Escenario, debemos cargar el firmware en la placa. Esto garantizará la comunicación en tiempo real entre la placa y la computadora. Cargar el firmware es un proceso único. Para hacerlo, haz clic en el botón Upload Firmware.
 
-After waiting for a while, the upload success message will appear.
+Después de esperar un momento, aparecerá el mensaje de éxito de la carga.
 
 .. note::
 
-    If you are using this Arduino board in PictoBlox for the first time, or if this Arduino was previously uploaded with the Arduino IDE. Then you need to tap **Upload Firmware** before you can use it.
-
+    Si estás utilizando esta placa Arduino en PictoBlox por primera vez o si previamente cargaste código con Arduino IDE, entonces necesitas hacer clic en **Upload Firmware** antes de poder usarla.
 
 .. image:: img/1_firmware.png
 
 
-**3. Programming**
+**3. Programación**
 
-* Open and run the script directly
+* Abre y ejecuta el script directamente
 
-Of course, you can open the scripts directly to run them, but please download them from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_ first.
+Puedes abrir los scripts directamente para ejecutarlos, pero primero descárgalos desde `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
-You can click on **File** in the top right corner and then choose **Open**.
+Haz clic en **File** en la esquina superior derecha y selecciona **Open**.
 
 .. image:: img/0_open.png
 
-Choose **Open from Computer**.
+Selecciona **Open from Computer**.
 
 .. image:: img/0_dic.png
 
-Then go to the path of ``sunfounder_vincent_kit_for_arduino\scratch\code``, and open **1. Stage Mode.sb3**. Please ensure that you have downloaded the required code from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Luego, navega a la ruta ``sunfounder_vincent_kit_for_arduino\scratch\code`` y abre **1. Modo Escenario.sb3**. Asegúrate de haber descargado el código requerido desde `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
 .. image:: img/0_stage.png
 
-Click directly on the script to run it, some projects are click on the green flag or click on the sprite.
+Haz clic directamente en el script para ejecutarlo. Algunos proyectos requieren hacer clic en la bandera verde o en el sprite.
 
 .. image:: img/1_more.png
 
-* Program step by step
+* Programa paso a paso
 
-You can also write the script step by step by following these steps.
+También puedes escribir el script paso a paso siguiendo estos pasos.
 
-Click on the **Arduino Mega** palette.
+Haz clic en la paleta **Arduino Mega**.
 
 .. image:: img/1_arduino_mega.png
 
-The LED on the Arduino board is controlled by the digital pin 13 (only 2 states, HIGH or LOW), so drag the [set digital pin out as]  block to the script area.
+El LED en la placa Arduino se controla mediante el pin digital 13 (solo 2 estados, HIGH o LOW). Arrastra el bloque [set digital pin out as] al área de script.
 
-Since the default state of the LED is lit, now set pin 13 to LOW and click on this block and you will see the LED go off.
+Dado que el estado predeterminado del LED está encendido, ahora configura el pin 13 en LOW y haz clic en este bloque. Verás que el LED se apaga.
 
-* [set digital pin out as]: Set the digital pins (2~13) to (HIGH/LOW) level.
+* [set digital pin out as]: Configura los pines digitales (2~13) a nivel (HIGH/LOW).
 
 .. image:: img/1_digital.png
 
-In order to see the effect of continuous blinking LED, you need to use the [Wait 1 seconds] and [forever] blocks in the **Control** palette. Click on these blocks after writing, there is a yellow halo means it is running.
+Para ver el efecto del parpadeo continuo del LED, necesitas usar los bloques [Wait 1 seconds] y [forever] en la paleta **Control**. Haz clic en estos bloques después de escribir; un halo amarillo indica que se están ejecutando.
 
-* [Wait 1 seconds]: from the **Control** palette, used to set the time interval between 2 blocks.
-* [forever]: from the **Control** palette, allows the script to keep running unless manually paused.
+* [Wait 1 seconds]: de la paleta **Control**, usado para establecer el intervalo de tiempo entre 2 bloques.
+* [forever]: de la paleta **Control**, permite que el script siga ejecutándose a menos que se detenga manualmente.
 
 .. image:: img/1_more.png
 
-Upload Mode
----------------
+Modo Carga
+--------------
 
-**1. Connect to Arduino Board**
+**1. Conectar a la Placa Arduino**
 
-Connect your Arduino board to the computer with a USB cable, usually the computer will automatically recognize your board and finally assign a COM port.
+Conecta tu placa Arduino a la computadora con un cable USB; usualmente, la computadora reconocerá automáticamente tu placa y asignará un puerto COM.
 
-Open PictoBlox and click **Board** in the top right navigation bar to select the board.
+Abre PictoBlox y haz clic en **Board** en la barra de navegación superior para seleccionar la placa.
 
 .. image:: img/1_board.png
 
-For example, choose **Arduino Mega**.
+Por ejemplo, selecciona **Arduino Mega**.
 
 .. image:: img/1_choose_mega.png
 
-A connection window will then pop up for you to select the port to connect to, and return to the home page when the connection is complete. If you break the connection during use, you can also click **Connect** to reconnect.
+Aparecerá una ventana de conexión para que selecciones el puerto y, una vez completada la conexión, regresarás a la página de inicio. Si pierdes la conexión durante el uso, también puedes hacer clic en **Connect** para reconectar.
 
 .. image:: img/1_connect.png
 
-At the same time, Arduino Mega related palettes, such as Arduino Mega, Actuators, etc., will appear in the **Block Palette**.
+Al mismo tiempo, aparecerán paletas relacionadas con Arduino Mega, como Arduino Mega, Actuators, etc., en la **Paleta de Bloques**.
 
 .. image:: img/1_upload_mega.png
 
-After selecting Upload mode, the stage will switch to the original Arduino code area.
+Después de seleccionar el Modo Carga, el escenario cambiará al área de código original de Arduino.
 
 .. image:: img/1_upload.png
 
-**2. Programming**
+**2. Programación**
 
-* Open and run the script directly
+* Abre y ejecuta el script directamente
 
-You can click on **File** in the top right corner.
+Haz clic en **File** en la esquina superior derecha.
 
 .. image:: img/0_open.png
 
-Choose **Open from Computer**.
+Selecciona **Open from Computer**.
 
 .. image:: img/0_dic.png
 
-Then go to the path of ``sunfounder_vincent_kit_for_arduino\scratch\code``, and open **1. Upload Mode.sb3**. Please ensure that you have downloaded the required code from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Luego, navega a la ruta ``sunfounder_vincent_kit_for_arduino\scratch\code`` y abre **1. Upload Mode.sb3**. Asegúrate de haber descargado el código requerido desde `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
 .. image:: img/0_upload.png
 
-Finally, click the **Upload Code** button.
+Finalmente, haz clic en el botón **Upload Code**.
 
 .. image:: img/1_upload_code.png
 
 
-* Program step by step
+* Programa paso a paso
 
-You can also write the script step by step by following these steps.
+También puedes escribir el script paso a paso siguiendo estos pasos.
 
-Click on the **Arduino Mega** palette.
+Haz clic en la paleta **Arduino Mega**.
 
 .. image:: img/1_upload_mega.png
 
-Drag [when Arduino Mega starts up] to the script area, which is required for every script.
+Arrastra [when Arduino Mega starts up] al área de script, lo cual es necesario para cada script.
 
 .. image:: img/1_mega_starts.png
 
-The LED on the Arduino board is controlled by the digital pin13 (only 2 states HIGH or LOW), so drag the [set digital pin out as]  block to the script area.
+El LED en la placa Arduino se controla mediante el pin digital 13 (solo 2 estados HIGH o LOW). Arrastra el bloque [set digital pin out as] al área de script.
 
-Since the default state of the LED is lit, now set pin 13 to LOW and click on this block and you will see the LED go off.
+Dado que el estado predeterminado del LED está encendido, ahora configura el pin 13 en LOW y haz clic en este bloque. Verás que el LED se apaga.
 
-* [set digital pin out as]: Set the digital pin (2~13) to (HIGH/LOW) level.
+* [set digital pin out as]: Configura el pin digital (2~13) a nivel (HIGH/LOW).
 
 .. image:: img/1_upload_digital.png
 
-At this point you will see the Arduino code appear on the right side, if you want to edit this code, then you can turn Edit mode on.
+En este punto, verás el código de Arduino aparecer en el lado derecho. Si deseas editar este código, puedes activar el modo de edición.
 
 .. image:: img/1_upload1.png
 
-In order to see the effect of continuous blinking LED, you need to use the [Wait 1 seconds] and [forever] blocks in the **Control** palette. Click on these blocks after writing, there is a yellow halo means it is running.
+Para ver el efecto del parpadeo continuo del LED, necesitas usar los bloques [Wait 1 seconds] y [forever] en la paleta **Control**. Haz clic en estos bloques después de escribir; un halo amarillo indica que se están ejecutando.
 
-* [Wait 1 seconds]: from the **Control** palette, used to set the time interval between 2 blocks.
-* [forever]: from the **Control** palette, allows the script to keep running unless the power is off.
+* [Wait 1 seconds]: de la paleta **Control**, usado para establecer el intervalo de tiempo entre 2 bloques.
+* [forever]: de la paleta **Control**, permite que el script siga ejecutándose a menos que se apague la energía.
 
 .. image:: img/1_upload_more.png
 
-Finally, click the **Upload Code** button.
+Finalmente, haz clic en el botón **Upload Code**.
 
 .. image:: img/1_upload_code.png

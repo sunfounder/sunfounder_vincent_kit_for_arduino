@@ -1,34 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza tus conocimientos sobre Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_slide:
 
-2.16 Slide Switch
-==================
+2.16 Interruptor Deslizante
+=============================
 
-Overview
-------------
+Resumen
+---------
 
-In this lesson, you will get to know something about Switch. A slide
-switch, just as its name implies, is to slide the switch bar to connect
-or break the circuit, and further switch circuits. The slide switch is
-commonly used in low-voltage circuit. It has the features of flexibility
-and stability, and applies in electric instruments and electric toys
-widely.
+En esta lección, aprenderás sobre el interruptor deslizante. Este tipo de 
+interruptor permite conectar o desconectar el circuito al deslizar su barra, 
+lo que posibilita alternar circuitos. Es comúnmente usado en circuitos de bajo 
+voltaje y se caracteriza por su flexibilidad y estabilidad, siendo ampliamente 
+aplicado en instrumentos eléctricos y juguetes electrónicos.
 
-Components Required
-------------------------
+Componentes necesarios
+--------------------------
 
 .. image:: img/Part_two_16.png
 
@@ -39,45 +38,44 @@ Components Required
 * :ref:`cpn_slide`
 * :ref:`cpn_capacitor`
 
-Fritzing Circuit
+Circuito Fritzing
 ---------------------
 
-In this example, digital pin 2 is used to read the signal of Switch. In
-addition, you need to connect a 10 kΩ resistor and a 104 capacitor in
-parallel to form a RC circuit (Resistor - Capacitance circuit) which is
-set between pin 2 and GND to realize debounce that may arise from your 
-toggle of switch.
+En este ejemplo, el pin digital 2 se utiliza para leer la señal del interruptor. 
+Además, necesitas conectar una resistencia de 10 kΩ y un condensador de 104 en 
+paralelo para formar un circuito RC (Resistencia - Capacitancia), que se coloca 
+entre el pin 2 y GND para eliminar posibles rebotes que pueden surgir al alternar 
+el interruptor.
 
 .. image:: img/image160.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
+------------------------
 
 .. image:: img/image161.png
    :align: center
 
-Code
+Código
 ---------
 
 .. note::
 
-    * You can open the file ``2.16_switch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.16_switch`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.16_switch.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.16_switch`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/952c55eb-b08b-4c4a-8107-07a946183457/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the
-serial monitor to check the readings of the pin. When the Switch toggles
-to the left, the serial monitor displays 「1」; when toggles to the
-right, the serial monitor displays「0」. Refer to :ref:`ar_digital_read` to check the code explanation.
+Una vez subidos los códigos a la placa Mega2560, puedes abrir el monitor 
+serial para comprobar las lecturas del pin. Cuando el interruptor se desliza 
+hacia la izquierda, el monitor serial muestra 「1」; cuando se desliza hacia 
+la derecha, muestra 「0」. Consulta :ref:`ar_digital_read` para ver la explicación 
+del código.
 
 
-
-Phenomenon Picture
-------------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image162.jpeg

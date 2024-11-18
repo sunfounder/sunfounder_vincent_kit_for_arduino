@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 de SunFounder en Facebook! Profundiza tus conocimientos sobre Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_servo:
 
 2.12 Servo
 ==========
 
-Overview
---------
+Resumen
+----------
 
-In this lesson, you will learn something about Servo. Servo is a kind of
-driver whose position (angular) can be adjustable and kept or a rotary
-actuator that allows for precise control of angular position. Currently,
-it is widely used in upscale remote control toys, such as airplane,
-submarine, telerobot and so on.
+En esta lección, aprenderás sobre el Servo. Un servo es un tipo de actuador 
+de posición (angular) ajustable y mantenible, o un actuador rotativo que 
+permite un control preciso de la posición angular. Actualmente, es ampliamente 
+utilizado en juguetes de control remoto de alta gama, como aviones, submarinos, 
+tele-robots, entre otros.
 
-Components Required
--------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/list_2.12.png
 
@@ -35,86 +35,82 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_servo`
 
+Circuito Fritzing
+----------------------
 
-Fritzing Circuit
-----------------
-
-In this example, we use PWM pin 9 to drive the Servo, and get the orange
-wire of the servo connected to the PWM pin 9, the red one to 5V, and the
-brown one to GND.
+En este ejemplo, usamos el pin PWM 9 para controlar el Servo. Conecta el 
+cable naranja del servo al pin PWM 9, el cable rojo a 5V y el cable marrón a GND.
 
 .. image:: img/image454.png
 
-Schematic Diagram
------------------
+Diagrama esquemático
+----------------------
 
 .. image:: img/image455.png
 
 
-Code
-----
+Código
+--------
 
 .. note::
 
-    * You can open the file ``2.12_servo.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.12_servo`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.12_servo.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.12_servo`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/a32d1aea-1fe2-44f1-9ec7-46713d50ef3d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once you finish uploading the codes to the Mega2560 board, you can see the servo arm rotating in the range 0°~180°.
+Al finalizar la carga del código en la placa Mega2560, podrás ver el brazo del servo girando en el rango de 0° a 180°.
 
-Code Analysis
--------------
+Análisis del código
+----------------------
 
-By calling the library Servo.h, you can drive the servo easily. 
+Usando la biblioteca Servo.h, puedes controlar fácilmente el servo.
 
 .. code-block:: arduino
 
     #include <Servo.h> 
 
-**Library Functions：**
+**Funciones de la biblioteca：**
 
 .. code-block:: arduino
 
     Servo
 
-Create **Servo** object to control a servo.
+Crear un objeto **Servo** para controlar un servo.
 
 .. code-block:: arduino
 
     uint8_t attach(int pin); 
 
-Turn a pin into a servo driver. Calls pinMode. Returns 0 on failure.
+Convierte un pin en un controlador de servo. Llama a pinMode. Devuelve 0 en caso de fallo.
 
 .. code-block:: arduino
 
     void detach();
 
-Release a pin from servo driving.
+Libera un pin del control de servo.
 
 .. code-block:: arduino
 
     void write(int value); 
 
-Set the angle of the servo in degrees, 0 to 180.
+Establece el ángulo del servo en grados, de 0 a 180.
 
 .. code-block:: arduino
 
     int read();
 
-Return that value set with the last write().
+Devuelve el valor establecido con la última llamada a write().
 
 .. code-block:: arduino
 
     bool attached(); 
 
-Return 1 if the servo is currently attached.
+Devuelve 1 si el servo está actualmente conectado.
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image132.jpeg

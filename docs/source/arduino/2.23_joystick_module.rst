@@ -1,32 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook. Sumérgete junto a otros entusiastas en el fascinante mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales en días festivos.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_joystick:
 
-2.23 Joystick Module
-======================
+2.23 Módulo de Joystick
+=========================
 
-Overview
---------------
+Resumen
+----------
 
-In this lesson, you will learn something about Joystick. The basic idea
-of a joystick is to translate the movement of a stick into electronic
-information that a computer can process. It can be applied to work as
-the controller of devices, such as robot.
+En esta lección, aprenderás sobre el módulo de joystick. La idea básica 
+de un joystick es traducir el movimiento de una palanca en información 
+electrónica que una computadora puede procesar. Se puede utilizar como 
+controlador de dispositivos, como un robot.
 
-Components Required
----------------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/Part_two_23.png
 
@@ -34,48 +34,43 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_joystick`
 
-Fritzing Circuit
----------------------
+Circuito Fritzing
+--------------------
 
-In this example, we get the GND of the Joystick extended to connect with
-GND, VCC with 5V, VRX with pin A0. After that, we make VRY connect with
-pin A1, SW connect with pin 8.
+En este ejemplo, conectamos el GND del Joystick a GND, VCC a 5V y VRX al pin A0. 
+Luego conectamos VRY al pin A1 y SW al pin 8.
 
 .. image:: img/image196.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
 ------------------------
 
 .. image:: img/image197.png
    :align: center
 
-Code
-------------
-
+Código
+----------
 
 .. note::
 
-    * You can open the file ``2.23_joystick.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.23_joystick`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.23_joystick.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.23_joystick`` directamente.
+    * O copia este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0ce9568f-02d7-4b7e-8aef-975abb24566b/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can open the serial
-monitor to see readings on the X-axis and Y-axis of Joystick, as well as
-the button status of Z-axis. The values of the X-axis and Y-axis are the
-analog values, which vary within the range「0」~「1023」. The Z-axis
-shows numerical value and the state is either 「1」 or 「0」. Refer to
-:ref:`ar_analog_read` and :ref:`ar_digital_read` to check the code
-explanation.
+Una vez cargado el código en la placa Mega2560, puedes abrir el monitor 
+serial para ver las lecturas de los ejes X e Y del Joystick, así como el 
+estado del botón en el eje Z. Los valores de los ejes X e Y son analógicos 
+y varían dentro del rango de 「0」~「1023」. El eje Z muestra un valor numérico 
+que indica su estado, ya sea 「1」 o 「0」. Consulta :ref:`ar_analog_read` y :ref:`ar_digital_read` 
+para una explicación detallada del código.
 
 
-Phenomenon Picture
--------------------------
+Imagen del fenómeno
+-----------------------
 
 .. image:: img/image198.jpeg
    :align: center

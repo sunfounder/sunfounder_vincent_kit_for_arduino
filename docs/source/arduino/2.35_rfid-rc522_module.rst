@@ -1,35 +1,35 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_rfid:
 
-2.35 RFID-RC522 Module
-=======================
+2.35 Módulo RFID-RC522
+=========================
 
-Overview
--------------
+Descripción general
+-----------------------
 
-In this lesson, you will learn how to use RFID Module. RFID is the
-abbreviation of Radio Frequency Identification. Its working principle is
-to carry on the contactless data communication between the reader and
-the label to achieve the goal of identifying the target. The application
-of RFID is very extensive, currently the typical applications are animal
-chips, immobilizer, access control, parking control, production chain
-automation, material management and so on.
+En esta lección, aprenderás a utilizar el módulo RFID. RFID es la abreviatura 
+de Identificación por Radiofrecuencia. Su principio de funcionamiento consiste 
+en llevar a cabo una comunicación de datos sin contacto entre el lector y la 
+etiqueta para lograr el objetivo de identificar el objetivo. La aplicación de 
+RFID es muy amplia, siendo los usos típicos actuales chips para animales, 
+inmovilizadores, control de accesos, control de estacionamiento, automatización 
+de cadenas de producción, gestión de materiales, entre otros.
 
-Components Required
--------------------------
+Componentes necesarios
+-----------------------
 
 .. image:: img/Part_two_35.png
 
@@ -37,103 +37,103 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_rfid`
 
-Fritzing Circuit
+Circuito Fritzing
 ---------------------
 
-In this example, we insert the RFID into the breadboard. Get the 3.3V of
-RFID connected to 3.3V, GND to GND, RST to pin 2, SDA to pin 6, SCK to
-pin 5, MOSI to pin 4, MISO to pin 3 and IRQ to pin 7.
+En este ejemplo, insertamos el módulo RFID en la protoboard. Conecta el 
+pin de 3.3V del RFID a 3.3V, GND a GND, RST al pin 2, SDA al pin 6, SCK 
+al pin 5, MOSI al pin 4, MISO al pin 3, e IRQ al pin 7.
 
 .. image:: img/image259.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
 -------------------------
 
 .. image:: img/image260.png
    :align: center
 
-Code
+Código
 -----------
 
 .. note::
 
-    * You can open the file ``2.35_RFID.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.35_RFID`` directly.
-    * The ``RFID1`` library is used here, refer to :ref:`install_lib_man` for a tutorial to install.
-
-
+    * Puedes abrir el archivo ``2.35_RFID.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.35_RFID`` directamente.
+    * Aquí se utiliza la librería ``RFID1``; consulta :ref:`install_lib_man` para un tutorial de instalación.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/81d293e2-aba5-4bc2-9c16-ddb45b6357a8/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can get your RFID card (secret key) 
-close to the RFID Reader. The module will read the card information and then print it on the serial monitor.  
+Cargados los códigos en la placa Mega2560, acerca tu tarjeta RFID 
+(clave secreta) al lector RFID. El módulo leerá la información de 
+la tarjeta y la imprimirá en el monitor serial.
 
-Code Analysis
--------------------
+Análisis del Código
+----------------------
 
-The functions of the module are included in the library rfid1.h.
+Las funciones del módulo están incluidas en la librería rfid1.h.
 
 .. code-block:: arduino
 
     #include <rfid1.h>
 
-**Library Functions：**
+**Funciones de la librería：**
 
 .. code-block:: arduino
 
     RFID1
 
-Create a new instance of the rfid1 class that represents a particular
-RFID module attached to your Arduino .
+Crea una nueva instancia de la clase rfid1 que representa un módulo 
+RFID específico conectado a tu Arduino.
 
 .. code-block:: arduino
 
     void begin(IRQ_PIN,SCK_PIN,MOSI_PIN,MISO_PIN,SDA_PIN,RST_PIN)
 
-Pin configuration.
+Configuración de pines.
 
-* ``IRQ_PIN,SCK_PIN,MOSI_PIN,MISO_PIN``: the pins used for the SPI communication.
-* ``SDA_PIN``: Synchronous data adapter.
-* ``RST_PIN``: The pins used for reset.
+* ``IRQ_PIN, SCK_PIN, MOSI_PIN, MISO_PIN``: los pines usados para la comunicación SPI.
+* ``SDA_PIN``: Adaptador de datos sincrónico.
+* ``RST_PIN``: El pin usado para el reinicio.
 
 .. code-block:: arduino
 
     void init()
 
-Initialize the RFID.
+Inicializa el RFID.
 
 .. code-block:: arduino
 
     uchar request(uchar reqMode, uchar *TagType);
 
-Search card and read card type, and the function will return the current
-read status of RFID and return MI_OK if successed.
+Busca la tarjeta y lee el tipo de tarjeta, devolviendo el estado de lectura 
+actual del RFID y MI_OK si tiene éxito.
 
-* ``reqMode``: Search methods. PICC_REQIDL is defined that 0x26 command bits (Search the cards that does not in the sleep mode in the antenna area).
-* ``*TagType``: It is used to store card type, and its value can be 4byte (e.g. 0x0400).
+* ``reqMode``: Métodos de búsqueda. PICC_REQIDL está definido como 0x26 en bits de comando (busca tarjetas que no están en modo de suspensión en el área de la antena).
+* ``*TagType``: Se usa para almacenar el tipo de tarjeta, y su valor puede ser de 4 bytes (p. ej., 0x0400).
 
 .. code-block:: arduino
 
     char * readCardType(uchar *TagType)
 
-This function decodes the four-digit hexadecimal number of ``*tagType``
-into the specific card type and returns a string. If passed 0x0400,
-"MFOne-S50" will be returned.
+Esta función decodifica el número hexadecimal de cuatro dígitos de ``*TagType`` 
+en el tipo de tarjeta específico y devuelve una cadena. Si se pasa 0x0400, se 
+devolverá "MFOne-S50".
 
 .. code-block:: arduino
 
     uchar anticoll(uchar *serNum);
 
-Prevent conflict, and read the card serial number. The function will
-return the current reading status of RFID. It returns MI_OK if
-successed.
+Previene conflictos y lee el número de serie de la tarjeta. La función 
+devolverá el estado de lectura actual del RFID, regresando MI_OK si es exitoso.
 
-* ``*serNum``: It is used to store the card serial number, and return the 4 bytes card serial number. The 5th byte is recheck byte(e.g. e.g. my magnetic card ID is 5AE4C955).
+* ``*serNum``: Se usa para almacenar el número de serie de la tarjeta, 
+devolviendo el número de serie de 4 bytes. El quinto byte es el byte de 
+verificación (por ejemplo, el ID de mi tarjeta magnética es 5AE4C955).
 
 
-Phenomenon Picture
+Imagen del Fenómeno
 ---------------------------
 
 .. image:: img/Part_two_35_Code_Analysis.png

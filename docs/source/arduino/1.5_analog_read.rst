@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_analog_read:
 
-1.5 Analog Read
-===============
+1.5 Lectura Analógica
+=========================
 
-Overview
-------------
+Resumen
+----------
 
-You can use the analogRead() command to read analog input from the
-physical world through an analog pin, which is suitable for analog input
-elements such as potentiometers, photoresistance, water level detection
-sensors, and so on. This article will take the potentiometer as an
-example to read the analog value of its output.
+Puedes usar el comando analogRead() para leer entradas analógicas del mundo 
+físico a través de un pin analógico, lo que es adecuado para elementos de 
+entrada analógicos como potenciómetros, fotorresistencias, sensores de nivel 
+de agua, entre otros. En este artículo, tomaremos como ejemplo el potenciómetro 
+para leer el valor analógico de su salida.
 
-Components Required
---------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/list_1.5.png
 
@@ -36,89 +36,84 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_potentiometer`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+--------------------
 
-In this example, we use the analog pin (A0) to read the value of the
-potentiometer. Connect the pins at both ends of the potentiometer to 5V
-and GND respectively. Connect the middle pin to A0.
+En este ejemplo, utilizamos el pin analógico (A0) para leer el valor del 
+potenciómetro. Conecta los pines en ambos extremos del potenciómetro a 5V 
+y GND, respectivamente. Conecta el pin del medio al pin A0.
 
-The voltage of the middle pin will be output to the Mega2560 board as an
-analog value. By rotating the axis of the potentiometer, you can change
-the voltage on the middle pin, thereby changing the analog value of the
-pin obtained by A0.
+El voltaje del pin central se enviará a la placa Mega2560 como un valor 
+analógico. Al girar el eje del potenciómetro, podrás cambiar el voltaje 
+en el pin central, lo que cambiará el valor analógico obtenido en el pin A0.
 
 .. image:: img/image45.png
 
-
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image406.png
 
 
-Code
-----
+Código
+--------
 
 .. note::
 
-    * You can open the file ``1.5_analogRead.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.5_analogRead`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puedes abrir el archivo ``1.5_analogRead.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\1.5_analogRead`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/5003d35b-2bb2-47ec-9a87-cf259311c8c5/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the code is uploaded to the Mega2560 board, you can open the
-serial port monitor to view the reading value of the pin. When the shaft
-of the potentiometer is turned, the serial port monitor will print the
-value that changes between "0" and "1023".
+Después de cargar el código en la placa Mega2560, puedes abrir el monitor 
+de puerto serie para ver el valor leído del pin. Cuando gires el eje del 
+potenciómetro, el monitor de puerto serie imprimirá el valor que cambia 
+entre "0" y "1023".
 
-Code Analysis
--------------
+Análisis del código
+---------------------
 
-To enable Arduino IDE to print the value transmitted from electronic
-component to the Mega2560 board, you need to start serial communication
-in setup() and set the data rate to 9600.
+Para permitir que el IDE de Arduino imprima el valor transmitido desde el 
+componente electrónico a la placa Mega2560, debes iniciar la comunicación 
+serial en setup() y establecer la tasa de datos a 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-Use the analoglRead() statement in loop() to read the level state acquired by analog pin A0 and declare a variable to store the level state.
+Usa el comando analogRead() en loop() para leer el estado de nivel adquirido por el pin analógico A0 y declara una variable para almacenar el estado de nivel.
 
 .. code-block:: arduino
 
     int sensorValue = analogRead(A0);
 
-Print the value stored in the variable on the serial monitor.
+Imprime el valor almacenado en la variable en el monitor de puerto serie.
 
 .. code-block:: arduino
 
     Serial.println(sensorValue);
 
-Use delay() statements to make printing results easy to observe.
+Usa declaraciones delay() para que los resultados de impresión sean fáciles de observar.
 
 .. code-block:: arduino
 
     delay(1);
 
-※ Analog-to-Digital Converter
-------------------------------
+※ Convertidor Analógico a Digital
+-------------------------------------
 
-The Arduino have a circuit inside called an analog-to-digital converter
-or ADC that reads this changing voltage and converts it to a number
-between 0 and 1023. When the shaft is turned all the way in one
-direction, there are 0 volts going to the pin, and the input value is 0.
-When the shaft is turned all the way in the opposite direction, there
-are 5 volts going to the pin and the input value is 1023. In between,
-analogRead() returns a number between 0 and 1023 that is proportional to
-the amount of voltage being applied to the pin.
+El Arduino tiene un circuito interno llamado convertidor analógico a digital 
+o ADC que lee este voltaje variable y lo convierte en un número entre 0 y 1023. 
+Cuando el eje se gira completamente en una dirección, no llega voltaje al pin y 
+el valor de entrada es 0. Cuando el eje se gira completamente en la dirección 
+opuesta, llega 5V al pin y el valor de entrada es 1023. Entre estos dos extremos, 
+el comando analogRead() devuelve un número entre 0 y 1023 que es proporcional a 
+la cantidad de voltaje aplicada al pin.
 
-Phenomenon Picture
-------------------
+
+Imagen del fenómeno
+-----------------------
 
 .. image:: img/image47.jpeg

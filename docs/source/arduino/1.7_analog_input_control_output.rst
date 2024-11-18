@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_analog_input_output:
 
-1.7 Analog Input Control Output
-===============================
+1.7 Control de Entrada Analógica y Salida
+============================================
 
-Overview
----------
+Resumen
+----------
 
-You can install an I/O system by using an analog input/ output device.
-For example, you can use potentiometer, photoresistor, water level
-sensor, etc., to control the brightness of LED, the speed of motor, and
-the like. In this lesson, potentiometer and LED are taken as examples to
-change the brightness of the LED when the potentiometer is turning.
+Puedes instalar un sistema de E/S utilizando un dispositivo de entrada/salida 
+analógico. Por ejemplo, puedes usar un potenciómetro, una fotorresistencia, un 
+sensor de nivel de agua, etc., para controlar el brillo de un LED, la velocidad 
+de un motor, entre otros. En esta lección, se toman como ejemplo el potenciómetro 
+y el LED para cambiar el brillo del LED cuando se ajusta el potenciómetro.
 
-Components Required
--------------------
+Componentes necesarios
+--------------------------
 
 .. image:: img/list_1.7.png
 
@@ -38,77 +38,70 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_potentiometer`
 
+Circuito Fritzing
+--------------------
 
-Fritzing Circuit
------------------
-
-In this lesson, we use PWM pin 9 to drive LED. The analog pin (A0) is
-used to read the value of potentiometer. After uploading the code,
-you'll notice that the brightness of the LED changes as the
-potentiometer rotates.
+En esta lección, usamos el pin PWM 9 para controlar el LED. El pin analógico 
+(A0) se utiliza para leer el valor del potenciómetro. Después de cargar el 
+código, notarás que el brillo del LED cambia a medida que se gira el potenciómetro.
 
 .. image:: img/image50.png
 
-
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image408.png
 
 
-Code
-----
+Código
+---------
 
 .. note::
 
-    * You can open the file ``1.7_analogInputControlOutput.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.7_analogInputControlOutput`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
-
+    * Puedes abrir el archivo ``1.7_analogInputControlOutput.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\1.7_analogInputControlOutput`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ab85c832-b034-40fa-a231-ef54f461f898/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-When the codes are uploaded to the Mega2560 board, you can see that the brightness of LED is changing with the turning of the knob of potentiometer.  
+Cuando el código se carga en la placa Mega2560, puedes observar que el brillo del LED cambia con el giro del potenciómetro.
 
-Code Analysis
--------------
+Análisis del código
+-----------------------
 
-Declare the pins of LED and Button.
+Declara los pines del LED y el potenciómetro.
 
 .. code-block:: arduino
 
     const int sensorPin = A0;    
     const int ledPin = 9;    
 
-In setup(), set the mode of ledPin to OUTPUT.
+En setup(), establece el modo del pin del LED a OUTPUT.
 
 .. code-block:: arduino
 
     pinMode(ledPin,OUTPUT);
 
-Read the readings of potentiometer in loop().
+Lee los valores del potenciómetro en loop().
 
 .. code-block:: arduino
 
     int sensorValue=analogRead(sensorPin);
 
-Map the potentiometer reading to the LED brightness value (0-1024 is mapped to 0-255).
+Mapea la lectura del potenciómetro al valor de brillo del LED (de 0-1024 a 0-255).
 
 .. code-block:: arduino
 
     int brightness = map(sensorValue,0,1024,0,255);
 
-Write the brightness value to LED.
+Escribe el valor de brillo al LED.
 
 .. code-block:: arduino
 
     analogWrite(ledPin,brightness);
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image51.jpeg

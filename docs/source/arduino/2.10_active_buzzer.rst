@@ -1,32 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_active_buzzer:
 
-2.10 Active Buzzer
-==================
+2.10 Zumbador Activo
+======================
 
-Overview
---------
+Resumen
+---------
 
-In this lesson, you will get to know about active buzzer. As a type of
-electronic buzzer with an integrated structure, active buzzer is
-supplied by DC power, widely used in computer, alarm, electronic toy,
-telephone, timer and other electronic products or voice devices.
+En esta lección, conocerás el zumbador activo. Este es un tipo de zumbador 
+electrónico con estructura integrada que funciona con alimentación de corriente 
+continua (DC). Se utiliza ampliamente en computadoras, alarmas, juguetes 
+electrónicos, teléfonos, temporizadores y otros dispositivos electrónicos o de 
+sonido.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_2.10.png
 
@@ -35,39 +36,36 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_buzzer`
 
-
-Fritzing Circuit
-----------------
+Circuito Fritzing
+---------------------
 
 .. image:: img/image448.png
 
-In this example, we use the digital pin 9 to drive the buzzer and extend
-the cathode of the Buzzer to GND and its anode to the digital pin 9.
+En este ejemplo, utilizamos el pin digital 9 para activar el zumbador. 
+Conecta el cátodo del zumbador a GND y su ánodo al pin digital 9.
 
-Schematic Diagram
------------------
+Diagrama esquemático
+----------------------
 
 .. image:: img/image450.png
 
-Code
-----
+Código
+---------
 
 .. note::
 
-    * You can open the file ``2.10_activeBuzzer.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.10_activeBuzzer`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.10_activeBuzzer.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.10_activeBuzzer`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6452dcca-4e26-4e50-a32f-a00c8d0ace38/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-When you finish uploading the codes to the Mega2560 board, you can hear the beep—beep emitted from the buzzer. If you want to know more about the detail code explanation, please refer to **Part 1-1.2 Digital Write**.
+Después de cargar el código en la placa Mega2560, escucharás el pitido—pitido emitido por el zumbador. Si deseas saber más detalles sobre la explicación del código, consulta **Parte 1-1.2 Digital Write**.
 
 :ref:`ar_digital_write`
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image121.jpeg

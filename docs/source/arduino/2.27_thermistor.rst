@@ -1,35 +1,36 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Únete a otros entusiastas para profundizar en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales en días festivos.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_thermistor:
 
-2.27 Thermistor
-===============
+2.27 Termistor
+================
 
-Overview
--------------
+Resumen
+----------
 
-In this lesson, you will learn how to use thermistor. Thermistor can be
-used as electronic circuit components for temperature compensation of
-instrument circuits. In the current meter, flowmeter, gas analyzer, and
-other devices. It can also be used for overheating protection,
-contactless relay, constant temperature, automatic gain control, motor
-start, time delay, color TV automatic degaussing, fire alarm and
-temperature compensation.
+En esta lección, aprenderás cómo utilizar un termistor. Este componente 
+se puede emplear como parte de circuitos electrónicos para compensación 
+de temperatura en instrumentos de medición. Se utiliza en dispositivos 
+como amperímetros, caudalímetros, analizadores de gas, y otros. También 
+puede usarse para protección contra sobrecalentamiento, relés sin contacto, 
+control de temperatura constante, control de ganancia automático, arranque 
+de motores, retardo de tiempo, desmagnetización automática en televisores 
+de color, alarmas contra incendios y compensación de temperatura.
 
-Components Required
-------------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/Part_two_27.png
 
@@ -39,44 +40,40 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_thermistor`
 
-Fritzing Circuit
-----------------------
+Circuito Fritzing
+------------------
 
-In this example, we use the analog pin A0 to get the value of
-Thermistor. One pin of thermistor is connected to 5V, and the other is
-wired up to A0. At the same time, a 10kΩ resistor is connected with the
-other pin before connecting to GND.
+En este ejemplo, utilizamos el pin analógico A0 para obtener el valor del 
+termistor. Un pin del termistor se conecta a 5V y el otro a A0. Además, una 
+resistencia de 10kΩ se conecta entre el otro pin del termistor y GND.
 
 .. image:: img/image218.png
     :align: center
 
-Schematic Diagram
+Diagrama esquemático
 -----------------------
 
 .. image:: img/image219.png
    :align: center
 
-Code
------------
+Código
+---------
 
 .. note::
 
-    * You can open the file ``2.27_thermistor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.27_thermistor`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.27_thermistor.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.27_thermistor`` directamente.
+    * O copia este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b4d8972d-3667-477e-b152-e87656b6f578/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, you can open the serial
-monitor to check the current temperature. The Kelvin temperature is
-calculated according to the formula
-**T\ K\ =1/(ln(R\ T/R\ N)/B+1/T\ N).**
+Una vez subido el código a la placa Mega2560, puedes abrir el monitor 
+serial para ver la temperatura actual. La temperatura en Kelvin se calcula 
+de acuerdo a la fórmula **T\ K\ =1/(ln(R\ T/R\ N)/B+1/T\ N).**
 
-Phenomenon Picture
-------------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image220.jpeg
    :align: center

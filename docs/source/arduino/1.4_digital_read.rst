@@ -1,37 +1,36 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_digital_read:
 
+1.4 Lectura Digital
+====================
 
-1.4 Digital Read
-=================
-
-Overview
+Resumen
 ----------
 
-You can use the digitalRead() command to read the level status from a
-digital pin. The command is suitable for digital input elements such as
-Button, Touch sensor, infrared motion sensor, etc. This article will
-take Button as an example to read the level state.
+Puedes utilizar el comando digitalRead() para leer el estado de nivel de un 
+pin digital. Este comando es adecuado para elementos de entrada digital como 
+botones, sensores táctiles, sensores de movimiento infrarrojos, etc. En este 
+artículo, tomaremos como ejemplo el botón para leer el estado de nivel.
 
-This example also shows you how to monitor the state of a switch by
-using USB to establish serial communication between a control board and
-a computer.
+Este ejemplo también te muestra cómo monitorear el estado de un interruptor 
+utilizando USB para establecer comunicación serial entre una placa de control 
+y una computadora.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_1.4.png
 
@@ -41,97 +40,88 @@ Components Required
 * :ref:`cpn_button`
 * :ref:`cpn_resistor`
 
+Circuito Fritzing
+---------------------
 
-Fritzing Circuit
-----------------
-
-In this example, we read the signal of the button with the
-digital pin 2. When the button is not pressed, the digital pin 2
-(through the drop-down resistor) is connected to ground to read the low
-level (0); when the button is pressed, the two pins are connected and
-when the pin is connected to the 5V power supply, the high level (1) is
-read.
+En este ejemplo, leemos la señal del botón con el pin digital 2. Cuando el 
+botón no está presionado, el pin digital 2 (a través de la resistencia de 
+pull-down) está conectado a tierra para leer el nivel bajo (0); cuando el 
+botón está presionado, ambos pines se conectan y, cuando el pin se conecta 
+a la fuente de 5V, se lee el nivel alto (1).
 
 .. image:: img/image403.png
 
-
 .. note::
-    If you disconnect the digital I/O pin from everything, the LED may
-    blink erratically. This is because the input is "floating" - that is, it
-    doesn't have a solid connection to voltage or ground, and it will
-    randomly return either HIGH or LOW. That's why you need a pull-down
-    resistor in the circuit.
+    Si desconectas el pin digital I/O de todo, el LED puede parpadear de manera 
+    errática. Esto se debe a que la entrada está "flotando", es decir, no tiene 
+    una conexión sólida a voltaje o tierra, y devolverá aleatoriamente un valor 
+    de HIGH o LOW. Por eso es necesario usar una resistencia de pull-down en el 
+    circuito.
 
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image404.png
 
-
-Code
-----
-
+Código
+---------
 
 .. note::
 
-    * You can open the file ``1.4_digitalRead.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.4_digitalRead`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puedes abrir el archivo ``1.4_digitalRead.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\1.4_digitalRead`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/4ef3d429-1015-4f56-ac7d-6d841bdaee5f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, we can open the serial
-port monitor to see the reading value of the pin. When you press Button,
-the serial port monitor will display 「1」 and when Button is released,
-「0」 will be displayed.
+Después de cargar el código en la placa Mega2560, podemos abrir el monitor 
+de puerto serie para ver el valor leído del pin. Cuando presionas el botón, 
+el monitor de puerto serie mostrará "1" y cuando se suelta el botón, se 
+mostrará "0".
 
-Code Analysis
--------------
 
-Start the serial communication in setup() and set the data rate to 9600.
+Análisis del código
+------------------------
+
+Inicia la comunicación serial en setup() y establece la tasa de datos a 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-You also need to set the status of the digital pin 2 to INPUT to read the output status of Button.
+También necesitas configurar el estado del pin digital 2 como INPUT para leer el estado de salida del botón.
 
 .. code-block:: arduino
 
     pinMode(2, INPUT);
 
-Use the digitalRead() statement in loop() to read the level state of the digital pin 2 and declare a variable to store the state.
+Usa el comando digitalRead() en loop() para leer el estado de nivel del pin digital 2 y declarar una variable para almacenar el estado.
 
 .. code-block:: arduino
 
     int buttonState = digitalRead(2);
 
-Print the value stored by the variable on the serial port monitor.
+Imprime el valor almacenado en la variable en el monitor de puerto serie.
 
 .. code-block:: arduino
 
     Serial.println(buttonState);
 
-Use delay() statements to make printing results easy to observe.
+Usa declaraciones delay() para que los resultados de impresión sean fáciles de observar.
 
 .. code-block:: arduino
 
     delay(1);
 
-※ How to turn on Serial Port Monitor
--------------------------------------
+※ Cómo activar el monitor de puerto serie
+---------------------------------------------
 
-Click the magnifier icon at the top right of the Arduino IDE
-programming window to open the **Serial Monitor**.
+Haz clic en el ícono de la lupa en la parte superior derecha de la ventana de programación del IDE de Arduino para abrir el **Monitor Serial**.
 
 .. image:: img/image405.png
 
-
-Phenomenon Picture
--------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image43.jpeg

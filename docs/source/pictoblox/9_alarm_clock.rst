@@ -1,44 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _light_alarm:
 
-2.9 Light Alarm Clock
-======================
+2.9 Reloj Alarma de Luz
+=========================
 
-In life, there are various kinds of time alarm clocks. Now let's make a light-controlled alarm clock. When morning comes, the brightness of light increases and this light-controlled alarm clock will remind you that it's time to get up.
+En la vida cotidiana, existen diversos tipos de relojes alarma. Ahora, vamos a crear un reloj alarma controlado por la luz. Cuando llega la mañana, la intensidad de la luz aumenta y este reloj alarma te recordará que es hora de levantarte.
 
 .. image:: img/10_clock.png
 
-You Will Learn
----------------------
+Lo que aprenderás
+--------------------
 
-- Photoresistor working principle
-- Stopping sound playback and stopping scripts from running
+- Principio de funcionamiento del fotoresistor.
+- Detener la reproducción de sonidos y scripts en ejecución.
 
 
 
-Build the Circuit
+Construir el Circuito
 -----------------------
 
-A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity.
+Un fotoresistor o célula fotoeléctrica es un resistor variable controlado por la luz. La resistencia de un fotoresistor disminuye con el aumento de la intensidad de la luz incidente.
 
-Build the circuit according to the following diagram.
+Construye el circuito según el siguiente diagrama:
 
-Connect one end of the photoresistor to 5V, the other end to A0, and connect a 10K resistor in series with GND at this end.
+Conecta un extremo del fotoresistor a 5V, el otro extremo a A0, y conecta una resistencia de 10K en serie con GND en este extremo.
 
-So when the light intensity increases, the resistance of a photoresistor decreases, the voltage division of the 10K resistor increases, and the value obtained by A0 becomes larger.
+Así, cuando la intensidad de luz aumenta, la resistencia del fotoresistor disminuye, la división de voltaje de la resistencia de 10K aumenta y el valor obtenido por A0 se hace mayor.
 
 .. image:: img/circuit/photoresistor_circuit.png
 
@@ -46,36 +46,35 @@ So when the light intensity increases, the resistance of a photoresistor decreas
 * :ref:`cpn_photoresistor` 
 * :ref:`cpn_resistor`
 
-Programming
-------------------
+Programación
+--------------
 
-**1. Select a sprite**
+**1. Selecciona un sprite**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **bell** in the search box, and then click to add it.
+Elimina el sprite predeterminado, haz clic en el botón **Elegir un Sprite** en la esquina inferior derecha del área de sprites, escribe **campana** en el cuadro de búsqueda y haz clic para añadirlo.
 
 .. image:: img/10_sprite.png
 
-**2. Read the value of A0**
+**2. Lee el valor de A0**
 
-Create two variables **before** and **current**. When green flag is clicked, read the value of A0 and store it in variable **before** as a reference value. In [forever], read the value of A0 again, store it in the variable **current**.
+Crea dos variables **antes** y **actual**. Al hacer clic en la bandera verde, lee el valor de A0 y guárdalo en la variable **antes** como valor de referencia. En [por siempre], lee nuevamente el valor de A0 y guárdalo en la variable **actual**.
 
 .. image:: img/10_reada0.png
 
-**3. Make a sound**
+**3. Haz un sonido**
 
-When the value of current A0 is greater than the previous 50, which represents the current light intensity is greater than the threshold, then let the sprite make a sound.
+Cuando el valor actual de A0 sea mayor que el valor de referencia por 50, lo que representa que la intensidad de luz actual supera el umbral, haz que el sprite emita un sonido.
 
 .. image:: img/10_sound.png
 
-**4. Turning the sprite**
+**4. Gira el sprite**
 
-Use [turn block] to make the **bell** sprite turn left and right to achieve the alarm effect.
+Usa el bloque [girar] para hacer que el sprite **campana** gire hacia la izquierda y la derecha para lograr el efecto de alarma.
 
 .. image:: img/10_turn.png
 
-**5. stop all**
+**5. Detén todo**
 
-Stops the alarm when it has been ringing for a while.
+Detén la alarma después de que haya sonado por un tiempo.
 
 .. image:: img/10_stop.png
-

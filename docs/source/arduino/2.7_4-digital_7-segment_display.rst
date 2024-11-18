@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_4_digit:
 
-2.7 4-Digital 7-Segment Display
-================================
+2.7 Pantalla de 7 Segmentos de 4 Dígitos
+==========================================
 
-Overview
----------
+Resumen
+----------
 
-In this lesson, you will learn about the 4-Digital 7-Segment Display. It
-consists of four 7-segment displays working together so as to display 4
-digit numbers.
+En esta lección, aprenderás sobre la pantalla de 7 segmentos de 4 dígitos. 
+Consiste en cuatro pantallas de 7 segmentos que trabajan juntas para mostrar 
+números de hasta 4 dígitos.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_2.7.png
 
@@ -35,58 +35,54 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_4_digit`
 
-Fritzing Circuit
-----------------
-
+Circuito Fritzing
+--------------------
 
 .. image:: img/image438.png
 
-Schematic Diagram
------------------
+Diagrama esquemático
+----------------------
 
 .. image:: img/image439.png
 
 
-Code
-----
-
-
+Código
+--------
 
 .. note::
 
-    * You can open the file ``2.7_4digitalSegment.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.7_4digitalSegment`` directly.
+    * Puedes abrir el archivo ``2.7_4digitalSegment.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.7_4digitalSegment`` directamente.
     
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1a717c75-35df-4674-be90-a5d290f7065d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
--------------
+Análisis del código
+---------------------
 
-In essence, this code uses the principle of multiplexing to display a 4-digit number on a 7-segment display. By rapidly switching between digits and displaying one digit at a time, it gives the illusion of all digits being displayed concurrently. 
-The stopwatch functionality is achieved by using the built-in ``millis()`` function to track time and increment the displayed number every second.
+Esencialmente, este código utiliza el principio de multiplexación para mostrar un número de 4 dígitos en una pantalla de 7 segmentos. Cambiando rápidamente entre los dígitos y mostrando un dígito a la vez, crea la ilusión de que todos los dígitos se muestran simultáneamente. La funcionalidad de cronómetro se logra utilizando la función ``millis()`` para llevar un seguimiento del tiempo e incrementar el número mostrado cada segundo.
 
-#. Variable and Constant Definitions:
+#. Definición de variables y constantes:
 
     .. code-block:: arduino
 
         int segmentPins[] = {2, 3, 4, 5, 6, 7, 8, 9};
         int digitPins[] = {13, 12, 11, 10};
 
-        long n = 0; // Variable to store the current stopwatch number
-        int del = 5; // Delay time (in milliseconds) to keep each digit illuminated
-        unsigned long previousMillis = 0; // Store the last time the stopwatch incremented
-        const long interval = 1000; // One-second interval (in milliseconds)
+        long n = 0; // Variable para almacenar el número actual del cronómetro
+        int del = 5; // Tiempo de retardo (en milisegundos) para mantener cada dígito iluminado
+        unsigned long previousMillis = 0; // Almacena el último tiempo de incremento del cronómetro
+        const long interval = 1000; // Intervalo de un segundo (en milisegundos)
 
 
-    * ``segmentPins`` and ``digitPins`` arrays define the pins that are connected to the segments and the digits of the 7-segment display, respectively.
-    * ``n`` is a long variable that keeps track of the current stopwatch number, starting from 0 and incrementing.
-    * ``del`` is a delay time to maintain the display of the current digit before transitioning to the next one.
-    * ``previousMillis`` and ``interval`` are related to timing to decide when to increment the stopwatch.
+    * Los arrays ``segmentPins`` y ``digitPins`` definen los pines conectados a los segmentos y a los dígitos de la pantalla de 7 segmentos, respectivamente.
+    * ``n`` es una variable long que lleva el conteo del número del cronómetro, comenzando en 0 e incrementando.
+    * ``del`` es un tiempo de retardo para mantener la visualización del dígito actual antes de pasar al siguiente.
+    * ``previousMillis`` e ``interval`` están relacionados con el tiempo para decidir cuándo incrementar el cronómetro.
 
-#. 7-Segment Patterns for Numbers:
+#. Patrones de los números en 7 segmentos:
 
-    The 2D array numbers defines how each of the numbers 0-9 is represented on a common-cathode 7-segment display. Each sub-array has 8 values (either HIGH or LOW), corresponding to the 7 segments and a decimal point. This pattern helps in driving the appropriate segments for each number.
+    El array 2D ``numbers`` define cómo se representa cada uno de los números del 0 al 9 en una pantalla de 7 segmentos de cátodo común. Cada sub-array tiene 8 valores (HIGH o LOW), que corresponden a los 7 segmentos y un punto decimal. Este patrón permite controlar los segmentos adecuados para cada número.
 
     .. code-block:: arduino
 
@@ -103,101 +99,101 @@ The stopwatch functionality is achieved by using the built-in ``millis()`` funct
             {HIGH, HIGH, HIGH, HIGH, LOW, HIGH, HIGH, LOW}   // 9
         }; 
 
-#. Setup Function:
+#. Función ``setup``:
 
     .. code-block:: arduino
 
         void setup() {
-            // Configure all segment and digit pins as OUTPUT
+            // Configura todos los pines de segmento y dígito como OUTPUT
             for (int i = 0; i < 8; i++) {
                 pinMode(segmentPins[i], OUTPUT);
             }
             for (int i = 0; i < 4; i++) {
                 pinMode(digitPins[i], OUTPUT);
-                digitalWrite(digitPins[i], HIGH); // Initially turn off all digits (for common-cathode displays, HIGH is OFF)
+                digitalWrite(digitPins[i], HIGH); // Apaga inicialmente todos los dígitos (para pantallas de cátodo común, HIGH es OFF)
             }
         }
 
-    * All segment and digit pins are set to OUTPUT mode since they will drive the segments and digits of the display.
-    * Initially, all the digits are turned off, denoted by writing HIGH for a common-cathode display.
+    * Todos los pines de segmento y dígito se configuran en modo OUTPUT ya que controlarán los segmentos y dígitos de la pantalla.
+    * Inicialmente, todos los dígitos se apagan, denotado al escribir HIGH para una pantalla de cátodo común.
 
-#. Main Loop:
+#. Bucle principal ``loop``:
 
     .. code-block:: arduino
 
         void loop() {
-            // Check if a second has passed since the last increment
+            // Comprueba si ha pasado un segundo desde el último incremento
             if (millis() - previousMillis >= interval) {
-                previousMillis += interval; // Update the last increment time
-                n = (n + 1) % 10000; // Increment the stopwatch number and wrap around at 9999
+                previousMillis += interval; // Actualiza el último tiempo de incremento
+                n = (n + 1) % 10000; // Incrementa el número del cronómetro y reinicia en 9999
             }
 
-            displayNumber(n); // Display the current stopwatch number on the 7-segment display
+            displayNumber(n); // Muestra el número actual del cronómetro en la pantalla de 7 segmentos
         }
 
-    * This section checks if the interval (which is set to 1000ms or 1 second) has passed since the last increment of the stopwatch. If so, it increments the number.
-    * The number is then displayed on the 7-segment using the displayNumber() function.
+    * Esta sección comprueba si ha pasado el intervalo (configurado a 1000ms o 1 segundo) desde el último incremento del cronómetro. Si es así, incrementa el número.
+    * El número se muestra en la pantalla de 7 segmentos mediante la función ``displayNumber()``.
 
-#. ``displayNumber()`` Function:
+#. Función ``displayNumber``:
 
     .. code-block:: arduino
 
-        // Function to display a 4-digit number on the 7-segment display
+        // Función para mostrar un número de 4 dígitos en la pantalla de 7 segmentos
         void displayNumber(long num) {
             for (int digit = 0; digit < 4; digit++) {
-                clearLEDs(); // Turn off all segments and digits
-                pickDigit(digit); // Activate the current digit
-                int value = (num / (int)pow(10, 3 - digit)) % 10; // Extract the specific digit from the number
-                pickNumber(value); // Illuminate the segments to display the digit
-                delay(del); // Keep the digit illuminated for a short time
+                clearLEDs(); // Apaga todos los segmentos y dígitos
+                pickDigit(digit); // Activa el dígito actual
+                int value = (num / (int)pow(10, 3 - digit)) % 10; // Extrae el dígito específico del número
+                pickNumber(value); // Ilumina los segmentos para mostrar el dígito
+                delay(del); // Mantiene el dígito iluminado por un breve tiempo
             }
         }
 
-    * This function breaks down the 4-digit number into individual digits and displays each digit one at a time in rapid succession. This creates the illusion of all digits being displayed simultaneously due to persistence of vision.
-    * For each digit, the function first clears all LEDs, selects the appropriate digit using ``pickDigit()``, and then displays the number on that digit using ``pickNumber()``.
-    * The ``delay (del)`` ensures each digit is visible for a short time before transitioning to the next.
+    * Esta función descompone el número de 4 dígitos en dígitos individuales y muestra cada dígito uno a la vez en rápida sucesión. Esto crea la ilusión de que todos los dígitos se muestran simultáneamente debido a la persistencia de la visión.
+    * Para cada dígito, la función primero apaga todos los LEDs, selecciona el dígito correspondiente con ``pickDigit()`` y luego muestra el número en ese dígito usando ``pickNumber()``.
+    * El ``delay (del)`` asegura que cada dígito sea visible por un breve tiempo antes de pasar al siguiente.
 
-#. ``pickDigit()`` Function:
+#. Función ``pickDigit``:
 
-    This function is responsible for selecting (or turning on) one of the four digits on the 7-segment display. This is achieved by setting the corresponding digit pin to LOW.
+    Esta función selecciona (o enciende) uno de los cuatro dígitos en la pantalla de 7 segmentos. Esto se logra configurando el pin de dígito correspondiente en LOW.
 
     .. code-block:: arduino
 
         void pickDigit(int x) {
-            digitalWrite(digitPins[x], LOW); // Turn ON the selected digit (for common-cathode displays, LOW is ON)
+            digitalWrite(digitPins[x], LOW); // Enciende el dígito seleccionado (para pantallas de cátodo común, LOW es ON)
         }
 
 
-#. ``pickNumber()`` Function:
+#. Función ``pickNumber``:
 
-    Given a single number (0-9), this function drives the 7-segment display's segments to show that number. It uses the previously defined ``numbers`` array to know which segments to turn on/off.
+    Dado un solo número (0-9), esta función enciende los segmentos de la pantalla de 7 segmentos para mostrar ese número. Utiliza el array ``numbers`` definido anteriormente para saber qué segmentos encender o apagar.
 
     .. code-block:: arduino
 
         void pickNumber(int x) {
             for (int i = 0; i < 8; i++) {
-                digitalWrite(segmentPins[i], numbers[x][i]); // Set each segment according to the pattern for the given number
+                digitalWrite(segmentPins[i], numbers[x][i]); // Configura cada segmento según el patrón para el número dado
             }
         }
 
 
-#. ``clearLEDs()`` Function:
+#. Función ``clearLEDs``:
 
-    As the name suggests, this function turns off all segments and digits. It's used to ensure that only one digit is active at a time during the multiplexing process in the ``displayNumber()`` function.
+    Como su nombre indica, esta función apaga todos los segmentos y dígitos. Se utiliza para asegurar que solo un dígito esté activo a la vez durante el proceso de multiplexación en la función ``displayNumber``.
 
     .. code-block:: arduino
 
         void clearLEDs() {
             for (int i = 0; i < 8; i++) {
-                digitalWrite(segmentPins[i], LOW); // Turn off all segments
+                digitalWrite(segmentPins[i], LOW); // Apaga todos los segmentos
             }
             for (int i = 0; i < 4; i++) {
-                digitalWrite(digitPins[i], HIGH); // Turn off all digits
+                digitalWrite(digitPins[i], HIGH); // Apaga todos los dígitos
             }
         }
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image104.jpeg
 

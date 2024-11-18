@@ -1,50 +1,53 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi & Arduino & ESP32 en Facebook! Sumérgete en el fascinante mundo de Raspberry Pi, Arduino y ESP32 junto a otros apasionados.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Preestrenos exclusivos**: Obtén acceso anticipado a anuncios de nuevos productos y adelantos exclusivos.
+    - **Descuentos especiales**: Aprovecha descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy.
 
-SunFounder |link_Vincent_Kit| for Arduino Mega 2560
+SunFounder |link_Vincent_Kit| para Arduino Mega 2560
 ==========================================================
 
 * |link_Vincent_Ultimate_Kit|
 
-Thanks for choosing our |link_Vincent_Kit|.
+Gracias por elegir nuestro |link_Vincent_Kit|.
 
 .. note::
-    This document is available in the following languages.
+    Este documento está disponible en los siguientes idiomas:
 
         * |link_german_tutorials|
         * |link_en_tutorials|
+        * |link_fr_tutorials|
+        * |link_es_tutorials|
+        * |link_it_tutorials|
     
-    Please click on the respective links to access the document in your preferred language.
+    Por favor, haz clic en los enlaces correspondientes para acceder al documento en tu idioma preferido.
 
-This comprehensive learning kit centers around the Mega2560 as 
-its main control board, offering a perfect blend of essential components, 
-modules, and a wide array of basic elements like resistors, capacitors, 
-and transistors. Whether you're a beginner taking your first steps into Arduino 
-or an adept learner seeking to deepen your knowledge, this kit is tailored to meet your needs.
+Este kit de aprendizaje integral se centra en la placa Mega2560 como su 
+principal placa de control, ofreciendo una combinación perfecta de componentes 
+esenciales, módulos y una amplia gama de elementos básicos como resistencias, 
+condensadores y transistores. Ya sea que estés comenzando con Arduino o seas 
+un aprendiz avanzado que busca profundizar su conocimiento, este kit está 
+diseñado para satisfacer tus necesidades.
 
-
-Download the relevant code from the link below.
+Descarga el código relevante desde el enlace a continuación.
 
 * :download:`SunFounder Vincent Kit for Arduino <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`
 
-* Or check out the code at `Vincent Kit for Arduino - GitHub <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino>`_
+* O consulta el código en `Vincent Kit for Arduino - GitHub <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino>`_
 
-If you have any questions, please send an email to service@sunfounder.com and we will respond as soon as possible.
+Si tienes alguna pregunta, envía un correo electrónico a service@sunfounder.com y responderemos lo antes posible.
 
-**About the display language**
+**Sobre el idioma de visualización**
 
-This document is available in other languages as well. To switch the display language, kindly click on the **Read the Docs** icon located in the lower left corner of the page.
+Este documento también está disponible en otros idiomas. Para cambiar el idioma de visualización, haz clic en el icono de **Read the Docs** ubicado en la esquina inferior izquierda de la página.
 
 .. image:: translation.png
 
@@ -57,7 +60,7 @@ This document is available in other languages as well. To switch the display lan
     pictoblox/play_with_scratch
     thank-learning
 
-Copyright Notice
+Aviso de Copyright
 ----------------------
 
-All contents including but not limited to texts, images, and code in this manual are owned by the SunFounder Company. You should only use it for personal study, investigation, enjoyment, or other non-commercial or nonprofit purposes, under therelated regulations and copyrights laws, without infringing the legal rights of the author and relevant right holders. For any individual or organization that uses these for commercial profit without permission, the Company reserves the right to take legal action.
+Todos los contenidos, incluidos pero no limitados a textos, imágenes y código en este manual, son propiedad de SunFounder Company. Solo deben ser utilizados para estudio personal, investigación, disfrute u otros propósitos no comerciales o sin fines de lucro, bajo las regulaciones relacionadas y las leyes de derechos de autor, sin infringir los derechos legales del autor y los titulares de derechos relevantes. Para cualquier individuo u organización que utilice estos contenidos con fines comerciales sin permiso, la Compañía se reserva el derecho de emprender acciones legales.

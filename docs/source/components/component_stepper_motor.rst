@@ -1,102 +1,89 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_stepper_motor:
 
-Stepper Motor
+Motor Paso a Paso
 =========================
 
 .. image:: img/stepper129.png
     :align: center
 
-Stepper motors, due to their unique design, can be controlled to a high
-degree of accuracy without any feedback mechanisms. The shaft of a
-stepper, mounted with a series of magnets, is controlled by a series of
-electromagnetic coils that are charged positively and negatively in a
-specific sequence, precisely moving it forward or backward in small
-"steps".
+Los motores paso a paso, debido a su diseño único, pueden controlarse con 
+un alto grado de precisión sin necesidad de mecanismos de retroalimentación. 
+El eje de un motor paso a paso, equipado con una serie de imanes, es controlado 
+por una serie de bobinas electromagnéticas que se cargan positiva y negativamente 
+en una secuencia específica, moviéndolo hacia adelante o hacia atrás en pequeños 
+"pasos".
 
-**Principle**
+**Principio**
 
-There are two types of steppers, unipolars and bipolars, and it is very
-important to know which type you are working with. In this experiment,
-we will use a unipolar stepper.
+Existen dos tipos de motores paso a paso: unipolares y bipolares, y es muy 
+importante saber con cuál estás trabajando. En este experimento, utilizaremos 
+un motor paso a paso unipolar.
 
-The stepper motor is a four-phase one, which uses a unipolarity DC power
-supply. As long as you electrify all phase windings of the motor by an
-appropriate timing sequence, you can make it rotate step by step. The
-**Schematic** of a four-phase reactive stepper motor:
+El motor paso a paso es de cuatro fases y utiliza una fuente de alimentación 
+de corriente continua unipolar. Mientras energices todas las bobinas de fase 
+del motor en la secuencia adecuada, este girará paso a paso. El **Esquema** 
+de un motor paso a paso reactivo de cuatro fases:
 
-**Here's how a 4-phase stepper motor works:**
+**Cómo funciona un motor paso a paso de 4 fases:**
 
 .. image:: img/stepper130.png
    :align: center
 
-In the figure, in the middle of the motor is a rotor – a gear-shaped
-permanent magnet. Around the rotor, 0 to 5 are teeth. Then more outside,
-there are 8 magnetic poles, with each two opposite ones connected by
-coil winding. So they form four pairs from A to D, which is called a
-phase. It has four lead wires to be connected with switches SA, SB, SC,
-and SD. Therefore, the four phases are in parallel in the circuit, and
-the two magnetic poles in one phase are in series.
+En la figura, en el centro del motor hay un rotor, un imán permanente con 
+forma de engranaje. Alrededor del rotor, los dientes están numerados del 0 
+al 5. Más hacia afuera, hay 8 polos magnéticos, con cada dos polos opuestos 
+conectados por bobinas. Así forman cuatro pares de fases de la A a la D. 
+Estas fases están conectadas en paralelo en el circuito, y los polos magnéticos 
+de cada fase están en serie.
 
+Al principio, el interruptor SB está encendido y los interruptores SA, SC y 
+SD están apagados. Los polos magnéticos de la fase B se alinean con los dientes 
+0 y 3 del rotor. Cuando el interruptor SC se enciende y los otros están apagados, 
+el rotor gira bajo el campo magnético de la fase C y los dientes correspondientes 
+se alinean con los polos magnéticos de esa fase. Este ciclo se repite al energizar 
+las fases A, B, C y D en secuencia, haciendo que el rotor gire en el orden A, B, C y D.
 
+El motor paso a paso de cuatro fases tiene tres modos de operación: cuatro pasos 
+simples, cuatro pasos dobles y ocho pasos. El ángulo de paso en los modos de 
+cuatro pasos es el mismo, pero el par de torsión en el modo de cuatro pasos 
+simples es menor. El ángulo de paso en el modo de ocho pasos es la mitad del 
+de los otros modos, manteniendo un alto par de torsión y mejorando la precisión 
+del control. En este experimento, el motor operará en el modo de ocho pasos.
 
-At the beginning, switch SB is power on, switch SA, SC, and SD is power
-off, and B-phase magnetic poles align with tooth 0 and 3 of the rotor.
-At the same time, tooth 1 and 4 generate staggered teeth with C- and
-D-phase poles. Tooth 2 and 5 generate staggered teeth with D- and
-A-phase poles. When switch SC is power on, switch SB, SA, and SD is
-power off, the rotor rotates under magnetic field of C-phase winding and
-that between tooth 1 and 4. Then tooth 1 and 4 align with the magnetic
-poles of C-phase winding. While tooth 0 and 3 generate staggered teeth
-with A- and B-phase poles, and tooth 2 and 5 generate staggered teeth
-with the magnetic poles of A- and D-phase poles. The similar situation
-goes on and on. Energize the A, B, C and D phases in turn, and the rotor
-will rotate in the order of A, B, C and D.
-
-
-The four-phase stepper motor has three operating modes: single
-four-step, double four-step, and eight-step. The step angle for the
-single four-step and double four-step are the same, but the driving
-torque for the single four-step is smaller. The step angle of the
-eight-step is half that of the single four-step and double four-step.
-Thus, the eight-step operating mode can keep high driving torque and
-improve control accuracy. In this experiment, we let the stepper motor
-work in the eight-step mode.
-
-**ULN2003 Module**
+**Módulo ULN2003**
 
 .. image:: img/uln2003.png
     :align: center
 
 .. image:: img/uln338.png
 
-To apply the motor in the circuit, a driver board needs to be used.
-Stepper Motor Driver-ULN2003 is a 7-channel inverter circuit. That is,
-when the input end is at high level, the output end of ULN2003 is at low
-level, and vice versa. If we supply high level to IN1, and low level to
-IN2, IN3 and IN4, then the output end OUT1 is at low level, and all the
-other output ends are at high level. So D1 lights up, switch SA is power
-on, and the stepper motor rotates one step. The similar case repeats on
-and on. Therefore, just give the stepper motor a specific timing
-sequence, it will rotate step by step. The ULN2003 here is used to
-provide particular timing sequences for the stepper motor.
+Para usar el motor en el circuito, se necesita una placa controladora. 
+El controlador de motor paso a paso ULN2003 es un circuito inversor de 
+7 canales. Es decir, cuando la entrada está en alto nivel, la salida 
+del ULN2003 está en bajo nivel, y viceversa. Si suministramos un nivel 
+alto a IN1 y niveles bajos a IN2, IN3 e IN4, la salida OUT1 estará en 
+bajo nivel, encendiendo el D1 y permitiendo que el interruptor SA active 
+el motor para que gire un paso. Este proceso se repite siguiendo una 
+secuencia específica. El ULN2003 se utiliza aquí para proporcionar esas 
+secuencias de temporización para el motor paso a paso.
 
 
-**Example**
 
+**Ejemplo**
 
-* :ref:`ar_stepper_motor` (Arduino Project)
-* :ref:`ar_access_system` (Arduino Project)
+* :ref:`ar_stepper_motor` (Proyecto Arduino)
+* :ref:`ar_access_system` (Proyecto Arduino)

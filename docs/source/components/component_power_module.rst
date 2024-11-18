@@ -1,46 +1,44 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_power_module:
 
-Power Supply Module
-=====================
+Módulo de Alimentación
+=========================
 
-When we need a large current to drive a component, which will severely interfere with the normal work of Raspberry Pi. Therefore, we separately supply power for the component by this module to make it run safely and steadily.
+Cuando necesitamos una corriente elevada para alimentar un componente, esto puede interferir gravemente con el funcionamiento normal de la Raspberry Pi. Por lo tanto, utilizamos este módulo para suministrar energía de manera independiente al componente, asegurando que funcione de manera segura y estable.
 
-You can just plug it in the breadboard to supply power. It provides a voltage of 3.3V and 5V, and you can connect either via a jumper cap included.
+Puedes conectarlo directamente en la protoboard para proporcionar energía. Ofrece un voltaje de 3.3V y 5V, y puedes seleccionar entre ellos mediante un puente incluido.
 
 .. image:: img/power_supply.png
     :width: 500
     :align: center
 
-**Features and specifications**
+**Características y especificaciones**
 
-* Input voltage: 6.5 - 12V
-* Two Independent Channel
-* Output voltage: 5V, 3.3V (adjustable via jumpers. 0V, 3.3V, and 5V configuration)
-* Output current: Maximum output current 700mA
-* Onboard berg male header for GND, 5V, 3.3V output
-* ON-OFF Switch available.
-* USB (Type-A) input available.
-* DC Barrel Jack input available.
-* Onboard power LED
-* Dimension: 53mm x 33mm (L x W)
+* Voltaje de entrada: 6.5 - 12V
+* Dos canales independientes
+* Voltaje de salida: 5V, 3.3V (ajustable mediante puentes: configuración de 0V, 3.3V y 5V)
+* Corriente de salida: Corriente máxima de salida 700mA
+* Cabecera tipo berg macho para salida GND, 5V, 3.3V
+* Interruptor de encendido y apagado disponible.
+* Entrada USB (tipo A) disponible.
+* Entrada mediante conector tipo barril DC disponible.
+* Indicador LED de encendido integrado
+* Dimensiones: 53mm x 33mm (L x A)
 
+**Ejemplo**
 
-**Example**
-
-* :ref:`ar_motor` (Arduino Project)
-* :ref:`ar_stepper_motor` (Arduino Project)
-
+* :ref:`ar_motor` (Proyecto Arduino)
+* :ref:`ar_stepper_motor` (Proyecto Arduino)

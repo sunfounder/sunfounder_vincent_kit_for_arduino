@@ -1,31 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_reversing_aid:
 
-3.1 Reversing Aid
-===================
+3.1 Asistente de Reversa
+==========================
 
-Overview
--------------
+Descripción general
+-----------------------
 
-With the development of science and technology, a lot of high-tech
-products have been installed in cars, among which the reversing assist
-system is one of them. Here we use ultrasonic sensors, LCD, LED and
-buzzer to make a simple ultrasonic reversing assist system.
+Con el avance de la ciencia y la tecnología, muchos productos de alta 
+tecnología se han incorporado en los automóviles, entre los cuales el 
+sistema de asistencia de reversa es uno de ellos. Aquí utilizamos sensores 
+ultrasónicos, una pantalla LCD, un LED y un zumbador para construir un 
+sistema simple de asistencia de reversa basado en ultrasonidos.
 
-Components Required
+Componentes necesarios
 -------------------------
 
 .. image:: img/Part_three_1.png
@@ -38,27 +39,27 @@ Components Required
 * :ref:`cpn_i2c_lcd1602`
 * :ref:`cpn_ultrasonic`
 
-Fritzing Circuit
+Circuito Fritzing
 ----------------------
 
-In this example, the wiring is shown below.
+En este ejemplo, el esquema de conexión se muestra a continuación.
 
 .. image:: img/image264.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
 ----------------------
 
 .. image:: img/image265.png
    :align: center
 
-Code
-------------
+Código
+-------------
 
 .. note::
 
-    * You can open the file ``3.1_reversingAid.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.1_reversingAid`` directly.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``3.1_reversingAid.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\3.1_reversingAid`` directamente.
+    * Aquí se utiliza la librería ``LiquidCrystal I2C``, que puedes instalar desde el **Administrador de Librerías**.
 
         .. image:: img/lib_liquidcrystal_i2c.png
             :align: center
@@ -67,23 +68,23 @@ Code
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/4bbcea82-c6cd-4658-90ce-9bcd291c58d4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
----------------------------
+Explicación del Ejemplo
+------------------------
 
-This code helps us create a simple distance measuring device that can measure the distance between objects and provide feedback through an LCD display and a buzzer.
+Este código nos ayuda a crear un dispositivo simple de medición de distancia que mide la distancia entre objetos y proporciona retroalimentación mediante una pantalla LCD y un zumbador.
 
-The ``loop()`` function contains the main logic of the program and runs continuously. Let's take a closer look at the ``loop()`` function.
+La función ``loop()`` contiene la lógica principal del programa y se ejecuta continuamente. Analicemos más a fondo la función ``loop()``.
 
-#. Loop to read distance and update parameters
+#. Bucle para leer distancia y actualizar parámetros
 
-    In the ``loop``, the code first reads the distance measured by the ultrasonic module and updates the interval parameter based on the distance. 
+    En el ``loop``, el código primero lee la distancia medida por el módulo ultrasónico y actualiza el parámetro de intervalo en función de la distancia.
 
     .. code-block:: arduino
 
-        // Update the distance
+        // Actualizar la distancia
         distance = readDistance();
 
-        // Update intervals based on distance
+        // Actualizar los intervalos según la distancia
         if (distance <= 10) {
             intervals = 300;
         } else if (distance <= 20) {
@@ -94,9 +95,9 @@ The ``loop()`` function contains the main logic of the program and runs continuo
             intervals = 2000;
         }
 
-#. Check if it's time to beep
+#. Verificar si es tiempo de activar el zumbador
 
-    The code calculates the difference between the current time and the previous beep time, and if the difference is greater than or equal to the interval time, it triggers the buzzer and updates the previous beep time.
+    El código calcula la diferencia entre el tiempo actual y el tiempo del último pitido. Si la diferencia es mayor o igual al intervalo establecido, activa el zumbador y actualiza el tiempo del último pitido.
 
     .. code-block:: arduino
 
@@ -107,9 +108,9 @@ The ``loop()`` function contains the main logic of the program and runs continuo
             previousMillis = currentMillis;
         }
 
-#. Update LCD display
+#. Actualizar la pantalla LCD
 
-    The code clears the LCD display and then displays "Dis:" and the current distance in centimeters on the first line.
+    El código limpia la pantalla LCD y luego muestra "Dis:" junto con la distancia actual en centímetros en la primera línea.
 
     .. code-block:: arduino
 

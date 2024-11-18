@@ -1,42 +1,42 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _tumbler:
 
-2.7 Tumbler
-=============
+2.7 Juguete de Balanceo
+=======================
 
-Now we use a tilt switch to control tumbler on the stage, so that the switch tilted, tumbler also tilted.
+Ahora usamos un interruptor de inclinación para controlar un juguete de balanceo en el escenario, de manera que al inclinar el interruptor, el juguete también se incline.
 
-.. Image:: img/8_tumbler.png
+.. image:: img/8_tumbler.png
 
-You Will Learn
----------------------
+Lo que aprenderás
+-------------------
 
-- How the tilt switch works
-- [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_] block
-- Adding external sprite
+- Cómo funciona el interruptor de inclinación.
+- Bloque [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_] 
+- Agregar un sprite externo.
 
-Build the circuit
+Construir el circuito
 -----------------------
 
-The tilt switch used here is a ball with a metal ball inside. When it is upright, the 2 pins are connected together, and when it is tilted, they are separate.
+El interruptor de inclinación utilizado aquí es un sensor con una bola metálica en su interior. Cuando está en posición vertical, los dos pines están conectados, y cuando se inclina, se separan.
 
-Build the circuit according to the following diagram:
+Construye el circuito de acuerdo con el siguiente diagrama:
 
-* Connect one pin of the tilt switch to pin 12, which is connected to a pull-down resistor and a 0.1uF (104) capacitor (used to eliminate jitter and output a stable level when the tilt switch is operating).
-* Connect the other end of the resistor and capacitor to GND and the other pin of the tilt switch to 5V.
+* Conecta un pin del interruptor de inclinación al pin 12, que está conectado a una resistencia pull-down y un condensador de 0.1uF (104) (usado para eliminar el ruido y generar un nivel estable cuando el interruptor de inclinación está operando).
+* Conecta el otro extremo de la resistencia y el condensador a GND y el otro pin del interruptor de inclinación a 5V.
 
 .. image:: img/circuit/tilt_circuit.png
 
@@ -45,28 +45,28 @@ Build the circuit according to the following diagram:
 * :ref:`cpn_resistor`
 * :ref:`cpn_capacitor`
 
-Programming
-------------------
+Programación
+---------------
 
-**1. Customize the sprite**
+**1. Personalizar el sprite**
 
-Select the **Tobi** sprite and go to the **Costumes** page. Select the icon in the bottom left corner and then select **Upload Costume**.
+Selecciona el sprite **Tobi** y ve a la página **Disfraces**. Selecciona el ícono en la esquina inferior izquierda y luego selecciona **Cargar Disfraz**.
 
 .. image:: img/8_upload.png
 
-Then open ``tumbler1.png`` and ``tumbler2.png`` in the ``sunfounder_vincent_kit_for_arduino\scratch\picture`` path and make sure you have downloaded the relevant material from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Luego abre ``tumbler1.png`` y ``tumbler2.png`` en la ruta ``sunfounder_vincent_kit_for_arduino\scratch\picture`` y asegúrate de haber descargado el material correspondiente desde `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
 .. image:: img/8_add_tumbler.png
 
-Remove the **Tobi** sprite related costume and change the name to **Tumbler**. Now that we have customized a new sprite Tumbler, we start scripting it.
+Elimina los disfraces relacionados con el sprite **Tobi** y cambia el nombre a **Tumbler**. Ahora que hemos personalizado un nuevo sprite llamado Tumbler, comenzamos a programarlo.
 
 .. image:: img/8_rename.png
 
-**2. Tilt the switch**
+**2. Inclinar el interruptor**
 
-If the value of pin12 is read as 0 (the switch is tilted), switch the sprite costume to **tumbler2**, which is also in the tilted state. Otherwise, switch the sprite costume to **tumbler1**, upright.
+Si el valor leído del pin12 es 0 (el interruptor está inclinado), cambia el disfraz del sprite a **tumbler2**, que también está en estado inclinado. De lo contrario, cambia el disfraz del sprite a **tumbler1**, en posición vertical.
 
-* [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_]: The block checks its boolean condition; if the condition is true, the code held inside the first C (space) will activate; if the if the condition is false, the code inside the second C will activate.
-* [=]: The block is used to compare the equality of the values on the 2 sides of the equal sign, from the **Operators** platette.
+* [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_]: El bloque verifica su condición booleana; si la condición es verdadera, el código dentro del primer espacio C se activará; si la condición es falsa, el código dentro del segundo espacio C se activará.
+* [=]: El bloque se utiliza para comparar la igualdad de los valores a ambos lados del signo igual, de la paleta **Operadores**.
 
 .. image:: img/8_script.png

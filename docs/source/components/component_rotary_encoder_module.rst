@@ -1,45 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_rotary:
 
-Rotary Encoder Module
-=============================
+Módulo de Codificador Rotativo
+===================================
 
 .. image:: img/rotary_encoder_pic.png
     :width: 300
     :align: center
 
-The rotary encoder module counts the number of pulses output in the forward and reverse directions during rotation. unlike a potentiometer, this rotation count is unlimited and the number of pulses per cycle is 20. Press the key (SW) on the rotary encoder to start counting from zero.
+El módulo de codificador rotativo cuenta la cantidad de pulsos de salida en las direcciones hacia adelante y hacia atrás durante la rotación. A diferencia de un potenciómetro, este cuenta con rotación ilimitada y el número de pulsos por ciclo es de 20. Al presionar la tecla (SW) en el codificador rotativo, se inicia el conteo desde cero.
 
-There are mainly two types of rotary encoders: absolute and incremental (relative) encoders. An incremental one is used in this kit.
+Existen principalmente dos tipos de codificadores rotativos: absolutos e incrementales (relativos). En este kit se utiliza un codificador incremental.
 
-Incremental encoders give two-phase square waves, their phase difference is 90, usually called A channel and B channel.
+Los codificadores incrementales generan ondas cuadradas de dos fases con una diferencia de fase de 90°, comúnmente denominadas canal A y canal B.
 
-As shown on the right, when channel A changes from high level to low
-level, if channel B is high level, it indicates the rotary encoder spins
-clockwise (CW); if at that moment channel B is low level, it means spins
-counterclockwise (CCW). So if we read the value of channel B when
-channel A is low level, we can know in which direction the rotary
-encoder rotates.
-
-
+Como se muestra a la derecha, cuando el canal A cambia de nivel alto a nivel bajo, 
+si el canal B está en nivel alto, indica que el codificador rotativo gira en el sentido de las agujas del reloj 
+(CW). Si en ese momento el canal B está en nivel bajo, significa que gira en sentido contrario a las agujas del 
+reloj (CCW). Por lo tanto, si leemos el valor del canal B cuando el canal A está en nivel bajo, podemos determinar 
+en qué dirección gira el codificador rotativo.
 
 .. image:: img/image206.png
     :width: 600
     :align: center
-	
-**Example**
 
-* :ref:`ar_rotary_encoder` (Arduino Project)
+**Ejemplo**
+
+
+* :ref:`ar_rotary_encoder` (Proyecto Arduino)

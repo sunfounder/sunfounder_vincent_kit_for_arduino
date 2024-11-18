@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza tus conocimientos sobre Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_button:
 
-2.15 Button
-===========
+2.15 Botón
+============
 
-Overview
---------
+Resumen
+----------
 
-In this lesson, you will learn about Button. Button is a common
-component used to control electronic devices. It is usually used as a
-switch to connect or break circuits.
+En esta lección, aprenderás sobre el botón. El botón es un componente 
+comúnmente usado para controlar dispositivos electrónicos. Suele utilizarse 
+como un interruptor para conectar o interrumpir circuitos.
 
-Components Required
--------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/list_2.15.png
 
@@ -35,70 +35,63 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_button`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+--------------------
 
-In this example, we read the signal of the button with the digital pin. When the button is not pressed, the digital pin 2 (through the
-drop-down resistor) is connected to ground to read the low level (0);
-when the button is pressed, the two pins are connected and when the pin
-is connected to the 5V power supply, the high level (1) is read.
+En este ejemplo, leemos la señal del botón con el pin digital. 
+Cuando el botón no está presionado, el pin digital 2 (a través de una 
+resistencia pull-down) se conecta a tierra, leyendo un nivel bajo (0). 
+Cuando se presiona el botón, ambos pines se conectan, y cuando el pin 
+se conecta a la fuente de alimentación de 5V, se lee un nivel alto (1).
 
 .. image:: img/image464.png
 
-
 .. note::
-    If you disconnect the digital I/O pin from anything,
-    the LED may blink erratically. The input is "floating" or it doesn't
-    have a solid connection to voltage or ground, so it will randomly return
-    either HIGH or LOW. That's why there needs a pull-down resistor in the
-    circuit.
+    Si desconectas el pin de I/O digital de cualquier conexión, el LED puede 
+    parpadear de manera errática. La entrada queda "flotante" o sin una conexión 
+    sólida a voltaje o tierra, y por lo tanto, regresará aleatoriamente valores 
+    HIGH o LOW. Por eso es necesaria una resistencia pull-down en el circuito.
 
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image465.png
 
-Code
-----
+Código
+----------
 
-**Example 1：**
+**Ejemplo 1:**
 
 .. note::
 
-    * You can open the file ``2.15_button.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.15_button`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.15_button.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.15_button`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/435a252c-3d2e-45be-a3e2-294a5dcdb9fd/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see the readings of
-the pins on the serial monitor. When you press down the Button, there
-will display 「1」on the serial monitor, and once you release it, there
-will display「0」. As for the detail code explanation, please refer to :ref:`ar_digital_read`.
+Una vez cargado el código en la placa Mega2560, podrás ver las lecturas de los 
+pines en el monitor serial. Cuando presionas el botón, se mostrará un 「1」 en 
+el monitor serial, y cuando lo sueltas, se mostrará un 「0」. Para más detalles 
+sobre el código, consulta :ref:`ar_digital_read`.
 
-
-
-**Example 2：**
+**Ejemplo 2:**
 
 .. note::
 
-    * You can open the file ``2.15_button_2.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.15_button_2`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.15_button_2.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.15_button_2`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/020e4812-4345-4bf2-849b-df0c2b857213/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, every time you press the
-button, the output value will switch between 0 and 1. If you want to
-know more about the code explanation, you can turn to :ref:`ar_state_change`.
+Una vez cargado el código en la placa Mega2560, cada vez que presiones el botón, 
+el valor de salida cambiará entre 0 y 1. Si deseas conocer más sobre la explicación 
+del código, consulta :ref:`ar_state_change`.
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+-----------------------
 
 .. image:: img/image43.jpeg

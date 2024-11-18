@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_lcd1602:
 
-2.9 I2C LCD1602 Module
-======================
+2.9 Módulo LCD1602 I2C
+========================
 
-Overview
---------
+Resumen
+-----------
 
-In this lesson, you will learn about LCD1602. LCD1602, or 1602
-character-type liquid crystal display, a kind of dot matrix module to
-show letters, numbers, characters and so on.
+En esta lección, aprenderás sobre el LCD1602. El LCD1602 es una pantalla de 
+cristal líquido de tipo carácter 16x2 que permite mostrar letras, números, 
+caracteres y más.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_2.9.png
 
@@ -33,31 +33,29 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_i2c_lcd1602`
 
+Circuito Fritzing
+---------------------
 
-Fritzing Circuit
-----------------
-
-In this example, we will get the first pin GND of LCD1602 connected to
-GND, the second pin VCC to 5V, the third pin SDA to the pin SDA 20 and
-the forth pin SCL to the pin SCL 21.
+En este ejemplo, conectaremos el primer pin GND del LCD1602 a GND, el segundo 
+pin VCC a 5V, el tercer pin SDA al pin SDA 20 y el cuarto pin SCL al pin SCL 21.
 
 .. image:: img/image113.png
 
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image446.png
 
 .. note::
-    The SDA and SCL of the Mega2560 board are the pins 20 and 21.
+    Los pines SDA y SCL de la placa Mega2560 son los pines 20 y 21.
 
-Code
-----
+Código
+--------
 
 .. note::
 
-    * You can open the file ``2.9_i2clcd1602.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.9_i2clcd1602`` directly.
-    * The ``LiquidCrystal I2C`` library is used here, you can install it from the **Library Manager**.
+    * Puedes abrir el archivo ``2.9_i2clcd1602.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.9_i2clcd1602`` directamente.
+    * Se utiliza la biblioteca ``LiquidCrystal I2C`` en este ejemplo, la cual puedes instalar desde el **Gestor de Bibliotecas**.
 
         .. image:: img/lib_liquidcrystal_i2c.png
             :align: center
@@ -66,87 +64,85 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ca004845-7cd3-4fec-a85c-732a1a23c8b6/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Upload the codes to the Mega2560 board, the content that you input in the serial monitor will be printed on the LCD. 
+Sube el código a la placa Mega2560 y el contenido que ingreses en el monitor serial se mostrará en el LCD.
 
 .. note::
-    About the ASCII code and the character input in the serial monitor, please refer to :ref:`ar_serial_read`.
+    Para más información sobre el código ASCII y la entrada de caracteres en el monitor serial, consulta :ref:`ar_serial_read`.
 
 
-Code Analysis
--------------
+Análisis del código
+----------------------
 
-By calling the library LiquidCrystal_I2C.h, you can easily drive the LCD. 
+Al llamar a la biblioteca LiquidCrystal_I2C.h, puedes controlar el LCD de manera sencilla.
 
 .. code-block:: arduino
 
     #include "LiquidCrystal_I2C.h"
 
-**Library Functions：**
+**Funciones de la biblioteca：**
 
 .. code-block:: arduino
 
     LiquidCrystal_I2C(uint8_t lcd_Addr,uint8_t lcd_cols,uint8_t lcd_rows)
 
-Creates a new instance of the LiquidCrystal_I2C class that represents a
-particular LCD attached to your Arduino board.
+Crea una nueva instancia de la clase LiquidCrystal_I2C que representa un LCD específico conectado a tu placa Arduino.
 
-* ``lcd_AddR``: The address of the LCD defaults to 0x27.
-* ``lcd_cols``: The LCD1602 has 16 columns.
-* ``lcd_rows``: The LCD1602 has 2 rows.
-
+* ``lcd_AddR``: La dirección del LCD, que por defecto es 0x27.
+* ``lcd_cols``: El LCD1602 tiene 16 columnas.
+* ``lcd_rows``: El LCD1602 tiene 2 filas.
 
 .. code-block:: arduino
 
     void init()
 
-Initialize the lcd.
+Inicializa el LCD.
 
 .. code-block:: arduino
 
     void backlight()
 
-Turn the (optional) backlight on.
+Enciende la luz de fondo (opcional).
 
 .. code-block:: arduino
 
     void nobacklight()
 
-Turn the (optional) backlight off.
+Apaga la luz de fondo (opcional).
 
 .. code-block:: arduino
 
     void display()
 
-Turn the LCD display on.
+Enciende la pantalla del LCD.
 
 .. code-block:: arduino
 
     void nodisplay()
 
-Turn the LCD display off quickly.
+Apaga rápidamente la pantalla del LCD.
 
 .. code-block:: arduino
 
     void clear()
 
-Clear display, set cursor position to zero.
+Limpia la pantalla y coloca el cursor en la posición inicial.
 
 .. code-block:: arduino
 
     void setCursor(uint8_t col,uint8_t row)
 
-Set the cursor position to col,row.
+Coloca el cursor en la posición col, fila.
 
 .. code-block:: arduino
 
     void print(data,BASE)
 
-Prints text to the LCD.
+Imprime texto en el LCD.
 
-* ``data``: The data to print (char, byte, int, long, or string).
-* ``BASE (optional)``: The base in which to print numbers: BIN for binary (base 2), DEC for decimal (base 10), OCT for octal (base 8), HEX for hexadecimal (base 16).
+* ``data``: Los datos a imprimir (char, byte, int, long o string).
+* ``BASE (opcional)``: La base en la cual imprimir los números: BIN para binario (base 2), DEC para decimal (base 10), OCT para octal (base 8), HEX para hexadecimal (base 16).
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+-----------------------
 
 .. image:: img/image115.jpeg

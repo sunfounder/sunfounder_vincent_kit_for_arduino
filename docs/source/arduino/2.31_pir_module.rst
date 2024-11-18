@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_pir:
 
-2.31 PIR Module
-================
+2.31 Módulo PIR
+==================
 
-Overview
---------------
+Descripción general
+-----------------------
 
-In this lesson, you will learn how to use PIR Module. The PIR sensor
-detects infrared heat radiation or the presence of organisms that emit
-infrared heat radiation. This module is widely used in daily life for
-our intruder alarm and visiting prompt.
+En esta lección, aprenderás a utilizar el módulo PIR. El sensor PIR detecta 
+radiación de calor infrarrojo o la presencia de organismos que emiten radiación 
+de calor infrarrojo. Este módulo se utiliza ampliamente en la vida diaria para 
+alarmas de intrusión y alertas de visita.
 
-Components Required
+Componentes necesarios
 -------------------------
 
 .. image:: img/Part_two_31.png
@@ -34,50 +34,46 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_pir`
 
-Fritzing Circuit
+Circuito Fritzing
 ----------------------
 
-In this example, we can connect the pins of Sound Sensor
-Module to the pins of Mega 2560 Board directly, and we use digital pin 2
-to read the signal of PIR Module. Connect the VCC of PIR Module to 5V,
-GND to GND, and OUT to digital pin NOTE: you can remove the PIR cover to
-see the pin mark.
+En este ejemplo, conectamos los pines del módulo sensor de sonido directamente 
+a los pines de la placa Mega 2560, y usamos el pin digital 2 para leer la señal 
+del módulo PIR. Conecta el VCC del módulo PIR a 5V, GND a GND y OUT al pin digital. 
+NOTA: puedes retirar la cubierta del PIR para ver la marca de los pines.
 
 .. image:: img/image236.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
 
 .. image:: img/image237.png 
    :align: center
 
-Code
--------------
-
+Código
+--------------
 
 .. note::
 
-    * You can open the file ``2.31_pirModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.31_pirModule`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.31_pirModule.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.31_pirModule`` directamente.
+    * O copia este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/7d331c91-94eb-4284-b288-5260521505fc/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the
-serial monitor to see the reading value of the pin. When PIR Module
-detects activity nearby, the serial monitor will display 「1」;
-otherwise, it will display 「0」. Check :ref:`ar_digital_read` 
-detail code explanation.
+Después de cargar el código en la placa Mega2560, puedes abrir el monitor 
+serial para ver el valor de lectura del pin. Cuando el módulo PIR detecta 
+actividad cercana, el monitor serial mostrará 「1」; de lo contrario, 
+mostrará 「0」. Consulta :ref:`ar_digital_read` para la explicación detallada 
+del código.
 
-There are two potentiometers on the PIR module: one is to adjust
-**sensitivity** and the other is to adjust the **detection distance**.
-In order to make the PIR module work better, you need to try to adjust
-these two potentiometers.
+El módulo PIR tiene dos potenciómetros: uno para ajustar la **sensibilidad** 
+y otro para ajustar la **distancia de detección**. Para que el módulo PIR 
+funcione de manera óptima, debes ajustar ambos potenciómetros.
 
-Phenomenon Picture
+
+Imagen del Fenómeno
 ------------------------
 
 .. image:: img/image238.jpeg

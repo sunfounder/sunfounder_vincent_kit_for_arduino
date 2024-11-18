@@ -1,113 +1,112 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _shooting:
 
-2.13 GAME - Shooting
-====================================
+2.13 JUEGO - Disparos
+========================
 
-Have you seen those shooting games on TV? The closer a contestant shoots a bullet on the target to the bullseye, the higher his score.
+¿Has visto esos juegos de disparos en televisión? Cuanto más cerca esté el concursante de disparar al blanco central, mayor será su puntuación.
 
-Today we are also doing a shooting game in Scratch. In the game, let the Crosshair shoot as far as possible to the bullseye to get a higher score.
+Hoy también haremos un juego de disparos en Scratch. En el juego, permite que la mira dispare lo más cerca posible al centro del blanco para obtener una mayor puntuación.
 
-Click on the green flag to start. Use the Obstacle Avoidance module to shoot an bullet.
+Haz clic en la bandera verde para comenzar. Usa el módulo de evitación de obstáculos para disparar una bala.
 
 .. image:: img/14_shooting.png
 
-You Will Learn
----------------------
+Lo que aprenderás
+--------------------
 
-- How the Obstacle Avoidance module works and the angle range
-- Paint different sprites
-- Touch colors
+- Cómo funciona el módulo de evitación de obstáculos y el rango de ángulo.
+- Pintar diferentes sprites.
+- Detectar colores.
 
-Build the Circuit
------------------------
+Construir el Circuito
+------------------------
 
-The obstacle avoidance module is a distance-adjustable infrared proximity sensor whose output is normally high and low when an obstacle is detected.
+El módulo de evitación de obstáculos es un sensor de proximidad por infrarrojos ajustable cuya salida es normalmente alta y baja cuando se detecta un obstáculo.
 
-Now build the circuit according to the diagram below.
+Construye el circuito según el diagrama siguiente.
 
 .. image:: img/circuit/avoid_circuit.png
 
 * :ref:`cpn_breadboard`
-* :ref:`cpn_avoid` 
+* :ref:`cpn_avoid`
 
-Programming
-------------------
+Programación
+--------------
 
-**1. Paint the Crosshair sprite**
+**1. Pintar el sprite Crosshair**
 
-Delete the default sprite, select the **Sprite** button and click **Paint**, a blank sprite **Sprite1** will appear and name it **Crosshair**.
+Elimina el sprite predeterminado, selecciona el botón **Sprite** y haz clic en **Paint**, aparecerá un sprite en blanco llamado **Sprite1**, cámbiale el nombre a **Crosshair**.
 
 .. image:: img/14_shooting0.png
 
-
-Go to the **Crosshair** sprite's **Costumes** page. Click on the **Circle** tool, remove the fill color, and set the color and width of the outline.
+Ve a la página **Costumes** del sprite **Crosshair**. Haz clic en la herramienta **Circle**, elimina el color de relleno y establece el color y el ancho del contorno.
 
 .. image:: img/14_shooting02.png
 
-Now draw a circle with the **Circle** tool. After drawing, you can click to the **Select** tool and move the circle so that the original point is aligned with the center of the canvas.
+Ahora dibuja un círculo con la herramienta **Circle**. Después de dibujar, puedes hacer clic en la herramienta **Select** y mover el círculo para que el punto de origen se alinee con el centro del lienzo.
 
 .. image:: img/14_shooting03.png
 
-Using the **Line** tool, draw a cross inside the circle.
+Usando la herramienta **Line**, dibuja una cruz dentro del círculo.
 
 .. image:: img/14_shooting033.png
 
-**Paint the Target sprite**
+**Pintar el sprite Target**
 
-Create a new sprite called **Target** sprite.
+Crea un nuevo sprite llamado **Target**.
 
 .. image:: img/14_shooting01.png
 
-Go to the Costumes page of the **Target** sprite, click on the **Circle** tool, select a fill color and remove the Outline and paint a large circle.
+Ve a la página **Costumes** del sprite **Target**, haz clic en la herramienta **Circle**, selecciona un color de relleno y elimina el contorno. Dibuja un círculo grande.
 
 .. image:: img/14_shooting05.png
 
-Use the same method to draw additional circles, each with a different color, and you can use the **Forward** or **Backbard** tool to change the position of the overlapping circles. Note that you also need to select the tool to move the circles, so that the origin of all the circles and the center of the canvas are aligned.
+Usa el mismo método para dibujar círculos adicionales, cada uno con un color diferente. Puedes usar la herramienta **Forward** o **Backward** para cambiar la posición de los círculos superpuestos. Asegúrate de alinear el origen de todos los círculos con el centro del lienzo.
 
 .. image:: img/14_shooting04.png
 
-**3. Add a backdrop**
+**3. Añadir un fondo**
 
-Add a suitable background which preferably does not have too many colors and does not match the colors in the **Target** sprite. Here I have chosen **Wall1** backdrop.
+Agrega un fondo adecuado que, preferiblemente, no tenga demasiados colores y no coincida con los colores del sprite **Target**. Aquí he elegido el fondo **Wall1**.
 
 .. image:: img/14_shooting06.png
 
-**4. Script the Crosshair sprite**
+**4. Crear el script del sprite Crosshair**
 
-Set the random position and size of the **Crosshair** sprite, and let it move randomly.
+Establece la posición y el tamaño aleatorios del sprite **Crosshair** y haz que se mueva de manera aleatoria.
 
 .. image:: img/14_shooting4.png
 
-When a hand is placed in front of the obstacle avoidance module, it will output a low level as a transmit signal.
+Cuando una mano se coloca frente al módulo de evitación de obstáculos, este emitirá un nivel bajo como señal de disparo.
 
 .. image:: img/14_shooting5.png
 
-When the **shooting** message is received, the sprite stops moving and slowly shrinks, thus simulating the effect of a bullet being shot.
+Cuando se reciba el mensaje **shooting**, el sprite dejará de moverse y se encogerá lentamente, simulando el efecto de una bala siendo disparada.
 
 .. image:: img/14_shooting6.png
 
-Use the [Touch color ()] block to determine the position of the shot.
+Usa el bloque [Touch color ()] para determinar la posición del disparo.
 
 .. image:: img/14_shooting7.png
 
-When the shot is inside the yellow circle, 10 is reported.
+Cuando el disparo esté dentro del círculo amarillo, se reportarán 10 puntos.
 
 .. image:: img/14_shooting8.png
 
-Use the same method to determine the position of the bullet shot, if it is not set on the **Target** sprite, it means it is out of the circle.
+Usa el mismo método para determinar la posición del disparo. Si no se establece en el sprite **Target**, significa que está fuera del círculo.
 
 .. image:: img/14_shooting9.png

@@ -1,44 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _table_lamp:
 
-2.1 Table Lamp
-================
+2.1 Lámpara de Mesa
+======================
 
-Here, we connect an LED on the breadboard and have the sprite control the blinking of this LED.
+En esta actividad, conectaremos un LED en la placa de pruebas y usaremos el sprite para controlar el parpadeo del LED.
 
-When the Button sprite on the stage is clicked, the LED will blink 5 times and then stop.
+Cuando se hace clic en el sprite del botón en el escenario, el LED parpadeará 5 veces y luego se detendrá.
 
 .. image:: img/2_button.png
 
-You Will Learn
+Lo que aprenderás
 ---------------------
 
+- Placa de pruebas, LEDs y resistencias.
+- Construcción de un circuito en una placa de pruebas.
+- Eliminar y seleccionar sprites.
+- Cambiar disfraces.
+- Configurar un número limitado de bucles repetitivos.
 
-- Breadboard, LEDs and Resistors
-- Building a circuit on a breadboard
-- Delete and select sprites
-- Switching costumes
-- Set a limited number of repeat loops
-
-Build the Circuit
+Construir el circuito
 -----------------------
 
-Follow the diagram below to build the circuit on the breadboard.
+Sigue el diagrama a continuación para construir el circuito en la placa de pruebas.
 
-Since the anode of the LED (the longer pin) is connected to pin 9 through a 220Ω resistor, and the cathode of the LED is connected to GND, you can light up the LED by giving pin 9 a high level.
+Dado que el ánodo del LED (el pin más largo) está conectado al pin 9 a través de una resistencia de 220Ω, y el cátodo del LED está conectado a GND, puedes encender el LED dando un nivel alto al pin 9.
 
 .. image:: img/circuit/led_circuit.png
 
@@ -46,36 +45,36 @@ Since the anode of the LED (the longer pin) is connected to pin 9 through a 220�
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-Programming
-------------------
+Programación
+---------------
 
-The whole programming is divided into 3 parts, the first part is to select the desired sprite, the second part is to switch the costume for the sprite to make it look clickable, and the third part is to make the LED blink.
+La programación completa se divide en 3 partes: la primera es seleccionar el sprite deseado, la segunda es cambiar el disfraz del sprite para que parezca clicable, y la tercera es hacer que el LED parpadee.
 
-**1. Select Button3 sprite**
+**1. Seleccionar el sprite Button3**
 
-Delete the existing Tobi sprite by using the Delete button in the upper right corner, and select a sprite again.
+Elimina el sprite Tobi existente usando el botón de eliminar en la esquina superior derecha y selecciona un nuevo sprite.
 
 .. image:: img/2_tobi.png
 
-Here, we select the **Button3** sprite.
+Aquí, seleccionamos el sprite **Button3**.
 
 .. image:: img/2_button3.png
 
-Click on Costumes in the top right corner and you will see that the Button3 sprite has 2 costumes, we set **button3-a** to be released and **button3-b** to be pressed.
+Haz clic en "Costumes" en la esquina superior derecha y verás que el sprite Button3 tiene 2 disfraces. Configuramos **button3-a** como el estado liberado y **button3-b** como el estado presionado.
 
 .. image:: img/2_button3_2.png
 
-**2. Switching costumes**.
+**2. Cambiar disfraces**
 
-When the sprite is clicked (**Events** palette), it switches to costume for **button3-b** (**looks** palette).
+Cuando se hace clic en el sprite (**paleta Events**), este cambia al disfraz **button3-b** (**paleta Looks**).
 
 .. image:: img/2_switch.png
 
-**3. Make the LED blink 5 times**
+**3. Hacer que el LED parpadee 5 veces**
 
-Use the [Repeat] block to make the LED blink 5 times (High-> LOW cycle), remember to change pin 13 to pin 9, and finally switch the costume back to **button3-a**.
+Usa el bloque [Repeat] para que el LED parpadee 5 veces (ciclo HIGH -> LOW). Recuerda cambiar el pin 13 al pin 9 y, al final, vuelve a cambiar el disfraz a **button3-a**.
 
-* [Repeat 10]: limited number of repeat loops, you can set the number of repeats yourself, from the **Control** palette.
+* [Repeat 10]: número limitado de bucles repetitivos, puedes establecer el número de repeticiones, desde la **paleta Control**.
 
 .. image:: img/2_led_on_off.png
 

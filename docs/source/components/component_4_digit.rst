@@ -1,55 +1,54 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_4_digit:
 
-4-Digit 7-Segment Display
-==================================
+Display de 7 Segmentos de 4 Dígitos
+=======================================
 
-4-Digit 7-segment display consists of four 7- segment displays working
-together.
+El display de 7 segmentos y 4 dígitos consiste en cuatro displays de 
+7 segmentos que trabajan juntos.
 
 .. image:: img/4-digit-sche.png
 
-The 4-digtal 7-segment display works independently. It uses the
-principle of human visual persistence to quickly display the characters
-of each 7-segment in a loop to form continuous strings.
+El display de 7 segmentos de 4 dígitos funciona de manera independiente. 
+Utiliza el principio de persistencia visual humana para mostrar rápidamente 
+los caracteres de cada segmento en un bucle, formando cadenas continuas.
 
-For example, when "1234" is displayed on the display, "1" is displayed
-on the first 7-segment, and "234" is not displayed. After a period of
-time, the second 7-segment shows "2", the 1st 3th 4th of 7-segment does
-not show, and so on, the four digital display show in turn. This process
-is very short (typically 5ms), and because of the optical afterglow
-effect and the principle of visual residue, we can see four characters
-at the same time.
+Por ejemplo, cuando se muestra "1234" en el display, primero se muestra "1" 
+en el primer segmento de 7, mientras que "234" no se muestra. Después de un 
+período breve, el segundo segmento muestra "2", y los segmentos 1, 3 y 4 no 
+muestran nada. Este proceso continúa, y los cuatro dígitos se muestran de forma 
+alternada. Este proceso es muy corto (generalmente 5ms), y gracias al efecto 
+de pospersistencia óptica y al principio de residuo visual, podemos ver los 
+cuatro caracteres al mismo tiempo.
 
 .. image:: img/image78.png
 
+**Códigos de Visualización**
 
-**Display Codes**
-
-To help you get to know how 7-segment displays(Common Anode) display
-Numbers, we have drawn the following table. Numbers are the number 0-F
-displayed on the 7-segment display; (DP) GFEDCBA refers to the
-corresponding LED set to 0 or 1, For example, 11000000 means that DP and
-G are set to 1, while others are set to 0. Therefore, the number 0 is
-displayed on the 7-segment display, while HEX Code corresponds to
-hexadecimal number.
+Para ayudarte a entender cómo los displays de 7 segmentos (Cátodo Común) 
+muestran números, hemos elaborado la siguiente tabla. Los números representan 
+los valores del 0 al F que se muestran en el display de 7 segmentos; 
+(DP) GFEDCBA se refiere a los LEDs correspondientes configurados en 0 o 1. 
+Por ejemplo, 11000000 significa que DP y G están configurados en 1, mientras 
+que los demás están configurados en 0. Por lo tanto, el número 0 se muestra 
+en el display de 7 segmentos, mientras que el Código HEX corresponde al número 
+en formato hexadecimal.
 
 .. image:: img/common_anode.png
 
-**Example**
+**Ejemplo**
 
-* :ref:`ar_4_digit` (Arduino Project)
-
+* :ref:`ar_4_digit` (Proyecto Arduino)

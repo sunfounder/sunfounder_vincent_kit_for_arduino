@@ -1,34 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_rgb:
 
-2.3 RGB LED
-===========
+2.3 LED RGB
+==============
 
-Overview
---------
+Resumen
+----------
 
-In this lesson, you will learn about how to use RGB LED. A RGB LED
-packages three LEDs in red, green and blue into one transparent or
-semitransparent plastic shell. It displays a broad array of colors by
-changing the input voltage of three pins and adding the three colors
-together in different ways. As is said in a statistic, RGB LED can
-create 16,777,216 different colors.
+En esta lección, aprenderás a utilizar un LED RGB. Un LED RGB agrupa tres 
+LEDs de colores rojo, verde y azul dentro de una cápsula plástica transparente 
+o semitransparente. Muestra una amplia gama de colores al variar el voltaje de 
+entrada de tres pines y combinar los tres colores de diferentes maneras. Según 
+estadísticas, un LED RGB puede generar hasta 16,777,216 colores diferentes.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_2.3.png
 
@@ -38,69 +37,66 @@ Components Required
 * :ref:`cpn_rgb`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+----------------------
 
 .. image:: img/image425.png
 
+Aquí, ingresamos un valor entre 0 y 255 en los tres pines del LED RGB para que 
+este muestre diferentes colores. Después de conectar los pines R, G y B a una 
+resistencia limitadora de corriente, los conectamos a los pines 9, 10 y 11 
+respectivamente. El pin más largo (GND) del LED se conecta al GND de la Mega 2560. 
+Cuando se aplican diferentes valores PWM a los tres pines, el LED RGB mostrará 
+colores distintos.
 
-Here we input a value between 0 and 255 to the three pins of the RGB LED
-to make it display different colors. After connecting the pins of R, G,
-and B to a current limiting resistor, connect them to the pin 9, pin 10,
-and pin 11 respectively. The longest pin (GND) of the LED connects to
-the GND of the Mega 2560. When the three pins are given different PWM
-values, the RGB LED will display different colors.
-
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image426.png
 
 
-Code
-----
+Código
+--------
 
 .. note::
 
-    * You can open the file ``2.3_rgbLed.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.3_rgbLed`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.3_rgbLed.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.3_rgbLed`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/3032b0a1-49e3-4d88-a73a-eeacf3761935/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Code Analysis
--------------
+Análisis del código
+----------------------
 
-In this example, the function used to assign values to the three pins of RGB is packaged in an independent subfunction color().  
+En este ejemplo, la función utilizada para asignar valores a los tres pines del LED RGB está empaquetada en una subfunción independiente llamada `color()`.
 
 .. code-block:: arduino
 
-    void color (unsigned char red, unsigned char green, unsigned char blue)// the color generating function  
+    void color (unsigned char red, unsigned char green, unsigned char blue)// función para generar colores  
     {    
     analogWrite(redPin, red);   
     analogWrite(greenPin, green); 
     analogWrite(bluePin, blue); 
     }
 
-In loop(), RGB value works as an input argument to call the function color() to realize that the RGB can emit different colors.   
+En el ciclo `loop()`, los valores RGB se utilizan como argumentos de entrada para llamar a la función `color()` y así hacer que el LED RGB emita diferentes colores.
 
 .. code-block:: arduino
 
-    void loop()  // run over and over again  
+    void loop()  // se ejecuta de forma continua  
     {    
-    color(255, 0, 0); // turn the RGB LED red 
-    delay(1000); // delay for 1 second  
-    color(0,255, 0); // turn the RGB LED green  
-    delay(1000); // delay for 1 second  
-    color(0, 0, 255); // turn the RGB LED blue  
-    delay(1000); // delay for 1 second 
+    color(255, 0, 0); // enciende el LED RGB en rojo  
+    delay(1000); // espera 1 segundo  
+    color(0,255, 0); // enciende el LED RGB en verde  
+    delay(1000); // espera 1 segundo  
+    color(0, 0, 255); // enciende el LED RGB en azul  
+    delay(1000); // espera 1 segundo 
     // ... 
     }  
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image79.jpeg

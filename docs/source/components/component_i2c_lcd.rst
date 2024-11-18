@@ -1,16 +1,16 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_i2c_lcd1602:
 
@@ -20,42 +20,41 @@ I2C LCD1602
 .. image:: img/i2c_lcd1602.png
     :width: 800
 
-* **GND**: Ground
-* **VCC**: Voltage supply, 5V.
-* **SDA**: Serial data line. Connect to VCC through a pullup resistor.
-* **SCL**: Serial clock line. Connect to VCC through a pullup resistor.
+* **GND**: Tierra.
+* **VCC**: Suministro de voltaje, 5V.
+* **SDA**: Línea de datos en serie. Conectar a VCC a través de una resistencia pullup.
+* **SCL**: Línea de reloj en serie. Conectar a VCC a través de una resistencia pullup.
 
-As we all know, though LCD and some other displays greatly enrich the man-machine interaction, they share a common weakness. When they are connected to a controller, multiple IOs will be occupied of the controller which has no so many outer ports. Also it restricts other functions of the controller. 
+Como sabemos, aunque las pantallas LCD y otras similares mejoran considerablemente la interacción hombre-máquina, tienen una desventaja común. Al conectarse a un controlador, ocupan múltiples IOs del controlador, lo cual limita el uso de otros puertos y funciones del dispositivo.
 
-Therefore, LCD1602 with an I2C module is developed to solve the problem. The I2C module has a built-in PCF8574 I2C chip that converts I2C serial data to parallel data for the LCD display.        
+Para resolver este problema, se desarrolló la pantalla LCD1602 con un módulo I2C. Este módulo I2C tiene integrado un chip PCF8574, que convierte datos en serie I2C a datos en paralelo para la pantalla LCD.
 
-* `PCF8574 Datasheet <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
+* `Ficha técnica del PCF8574 <https://www.ti.com/lit/ds/symlink/pcf8574.pdf?ts=1627006546204&ref_url=https%253A%252F%252Fwww.google.com%252F>`_
 
-**I2C Address**
+**Dirección I2C**
 
-The default address is basically 0x27, in a few cases it may be 0x3F.
+La dirección predeterminada es generalmente 0x27, aunque en algunos casos puede ser 0x3F.
 
-Taking the default address of 0x27 as an example, the device address can be modified by shorting the A0/A1/A2 pads; in the default state, A0/A1/A2 is 1, and if the pad is shorted, A0/A1/A2 is 0.
+Tomando como ejemplo la dirección por defecto 0x27, la dirección del dispositivo puede modificarse acortando las almohadillas A0/A1/A2; en el estado predeterminado, A0/A1/A2 es 1, y si se cortocircuita la almohadilla, A0/A1/A2 pasa a ser 0.
 
 .. image:: img/i2c_address.jpg
     :width: 600
 
-**Backlight/Contrast**
+**Retroiluminación/Contraste**
 
-Backlight can be enabled by jumper cap, unplugg the jumper cap to disable the backlight. The blue potentiometer on the back 
-
+La retroiluminación se puede habilitar mediante el jumper; al quitar el jumper se desactiva la retroiluminación. El potenciómetro azul en la parte posterior permite ajustar el contraste.
 
 .. image:: img/back_lcd1602.jpg
 
-* **Shorting Cap**: Backlight can be enabled by this cap，unplugg this cap to disable the backlight.
-* **Potentiometer**: It is used to adjust the contrast (the clarity of the displayed text), which is increased in the clockwise direction and decreased in the counterclockwise direction.
+* **Jumper de Cortocircuito**: La retroiluminación puede habilitarse con este jumper; al retirarlo, se desactiva la retroiluminación.
+* **Potenciómetro**: Se usa para ajustar el contraste (la claridad del texto mostrado), aumentando en sentido horario y disminuyendo en sentido antihorario.
 
 
 
-**Example**
+**Ejemplo**
 
-* :ref:`ar_lcd1602` (Arduino Project)
-* :ref:`ar_access_system` (Arduino Project)
-* :ref:`ar_guess_number` (Arduino Project)
-* :ref:`ar_overheat_monitor` (Arduino Project)
-* :ref:`lcd1602` (Scratch Project)
+* :ref:`ar_lcd1602` (Proyecto Arduino)
+* :ref:`ar_access_system` (Proyecto Arduino)
+* :ref:`ar_guess_number` (Proyecto Arduino)
+* :ref:`ar_overheat_monitor` (Proyecto Arduino)
+* :ref:`lcd1602` (Proyecto Scratch)

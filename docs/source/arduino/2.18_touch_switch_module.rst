@@ -1,79 +1,74 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la Comunidad de Entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Obtén acceso anticipado a nuevos anuncios de productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_touch:
 
-2.18 Touch Switch Module
-========================
+2.18 Módulo de Interruptor Táctil
+=====================================
 
-Overview
-------------
+Resumen
+----------
 
-In this lesson, you will learn about touch switch module. It can replace
-the traditional kinds of switch with these advantages: convenient
-operation, fine touch sense, precise control and least mechanical wear.
+En esta lección, aprenderás sobre el módulo de interruptor táctil. Este 
+puede reemplazar los interruptores tradicionales con ventajas como operación 
+conveniente, agradable al tacto, control preciso y mínimo desgaste mecánico.
 
-Components Required
-------------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/Part_two_18.png
-
 
 * :ref:`cpn_mega2560`
 * :ref:`cpn_wires`
 * :ref:`cpn_touch`
 
-Fritzing Circuit
---------------------
+Circuito Fritzing
+----------------------
 
-In this example, pin 2 is used to read the signal of Touch Switch
-Module.
+En este ejemplo, el pin 2 se utiliza para leer la señal del módulo de 
+interruptor táctil.
 
 .. image:: img/image170.png
    :align: center
 
-Schematic Diagram
------------------------
+Diagrama esquemático
+------------------------
 
 .. image:: img/image171.png
    :align: center
 
-Code
+Código
 ---------
-
 
 .. note::
 
-    * You can open the file ``2.18_touchSwitch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.18_touchSwitch`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.18_touchSwitch.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.18_touchSwitch`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/526e6ca9-a140-48cc-9cfb-d8bc7f32cf6d/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see the readings of
-pins displaying on the serial monitor.
+Después de subir el código a la placa Mega2560, podrás ver las lecturas de 
+los pines en el monitor serial.
 
-When your finger tip touches the Touch switch module, 「1」will be
-displayed on the serial monitor; and when you remove your finger, 「0」
-will be be displayed. As for the detailed code explanation, you need to
-turn to :ref:`ar_digital_read`.
+Cuando tu dedo toca el módulo de interruptor táctil, el monitor serial mostrará 「1」; 
+cuando retiras el dedo, se mostrará 「0」. Para una explicación detallada del 
+código, consulta :ref:`ar_digital_read`.
 
-Phenomenon Picture
-------------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image172.jpeg
    :height: 4.74167in

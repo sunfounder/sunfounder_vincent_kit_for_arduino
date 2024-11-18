@@ -1,36 +1,36 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_digital_pullup:
 
-1.9 Digital Input Pull-Up
-=========================
+1.9 Entrada Digital con Resistencia Pull-Up
+=============================================
 
-Overview
----------
+Resumen
+----------
 
-When using some switch input devices, some pull-up or pull-down
-resistors are often used to keep the level of corresponding pins at
-certain value on the condition that the device is not working. Such as
-in 1.4 Digital Read, a 10k resistor is used to make the pin be connected
-to GND under the condition that the button is not pressed down. If we
-have used a lot of switch input components and want to simplify the
-circuit, we can set the pin mode to「INPUT_PULLUP」in the code so that
-the pin reads the high level in the suspended state.
+Al utilizar algunos dispositivos de entrada con interruptor, a menudo se 
+emplean resistencias pull-up o pull-down para mantener el nivel de los pines 
+correspondientes en un valor determinado cuando el dispositivo no está activado. 
+Como en el caso de la lectura digital en 1.4, se utiliza una resistencia de 10k 
+para conectar el pin a GND cuando el botón no está presionado. Si hemos utilizado 
+muchos componentes de entrada con interruptor y deseamos simplificar el circuito, 
+podemos configurar el modo del pin como「INPUT_PULLUP」en el código para que el 
+pin lea el nivel alto en estado suspendido.
 
-Components Required
--------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/list_1.9.png
 
@@ -39,69 +39,64 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_button`
 
+Circuito Fritzing
+--------------------
 
-
-Fritzing Circuit
-----------------
-
-In this example, we use pin 2 to read the signal of button. The internal
-pull-up in pin 2 is valid, so if the button isn’t pressed, HIGH is read
-in pin 2; when the button is pressed, LOW is read.
+En este ejemplo, utilizamos el pin 2 para leer la señal del botón. 
+La resistencia pull-up interna en el pin 2 está habilitada, por lo que 
+si el botón no se presiona, se lee un valor ALTO en el pin 2; cuando el 
+botón se presiona, se lee un valor BAJO.
 
 .. image:: img/image53.png
 
-
-Schematic Diagram
------------------
+Diagrama esquemático
+-------------------------
 
 .. image:: img/image411.png
 
 
-Code
-----
+Código
+---------
 
 .. note::
 
-    * You can open the file ``1.9_digitalInputPullup.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.9_digitalInputPullup`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puedes abrir el archivo ``1.9_digitalInputPullup.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\1.9_digitalInputPullup`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/223d1c70-2644-4b9c-9f69-74e18394631f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the serial port monitor to view the read values of the pin. When the Button is pressed, the serial port monitor will display "0", and the "1" will be displayed when the button is released.
+Después de cargar el código en la placa Mega2560, puedes abrir el monitor serie para ver los valores leídos del pin. Cuando se presiona el botón, el monitor serie mostrará "0", y cuando se suelta el botón, mostrará "1".
 
-Code Analysis
--------------
+Análisis del código
+----------------------
 
-Run the serial communication in setup() and set the data rate to 9600.
+Inicia la comunicación serial en setup() y establece la tasa de datos a 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-Configure pin 2 as an input and enable the internal pull-up resistor.
+Configura el pin 2 como entrada y habilita la resistencia pull-up interna.
 
 .. code-block:: arduino
 
     pinMode(2, INPUT_PULLUP);
 
-Read the level state from the digital pin 2 by using digitalRead() statement in loop() and declare a variable to store it.
+Lee el estado del nivel del pin digital 2 usando la instrucción digitalRead() en loop() y declara una variable para almacenarlo.
 
 .. code-block:: arduino
 
     int buttonState = digitalRead(2);
 
-Print the values stored by variables on the serial port monitor.
+Imprime los valores almacenados por la variable en el monitor serie.
 
 .. code-block:: arduino
 
     Serial.println(buttonState);
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image55.jpeg

@@ -1,122 +1,121 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _blow_ball:
 
-2.12 Blow Ball
-==============================
+2.12 Soplar la Pelota
+=======================
 
-In this project, we use sound sensor to make the ball on the stage fly upwards. Blow into the sound sensor module, the more vibration it feels, the higher the ball can fly. When the ball touches the string, it makes a nice sound as well as a twinkling starlight.
+En este proyecto, utilizaremos un sensor de sonido para hacer que la pelota en el escenario suba. Al soplar en el módulo del sensor de sonido, cuanto más vibración detecte, más alto volará la pelota. Cuando la pelota toque la cuerda, emitirá un agradable sonido acompañado de un destello de estrellas.
 
 .. image:: img/18_ball.png
 
-You Will Learn
----------------------
+Lo que aprenderás
+--------------------
 
-- How the Sound module works and the angle range
-- Fill the sprite with colors
-- Touch between the sprites
+- Cómo funciona el módulo de sonido y el rango de ángulo.
+- Rellenar el sprite con colores.
+- Detectar colisiones entre sprites.
 
-Build the Circuit
------------------------
+Construir el Circuito
+-------------------------
 
-A sound sensor is defined as a module that detects sound waves through its intensity and converting it to electrical signals.
+Un sensor de sonido se define como un módulo que detecta ondas sonoras mediante su intensidad y las convierte en señales eléctricas.
 
-This module has two outputs:
+Este módulo tiene dos salidas:
 
-* **AO**: analog output, real-time output voltage signal of microphone.
-* **DO**: when the intensity of the sound reaches a certain threshold, the output is a high or low level signal. The threshold sensitivity can be achieved by adjusting the potentiometer.
+* **AO**: salida analógica, señal de voltaje en tiempo real del micrófono.
+* **DO**: cuando la intensidad del sonido alcanza un cierto umbral, la salida es una señal de nivel alto o bajo. La sensibilidad del umbral se puede ajustar con el potenciómetro.
 
-Here we have used only the AO pin, now build the circuit according to the following diagram.
+Aquí utilizamos solo el pin AO. Ahora construye el circuito según el siguiente diagrama.
 
 .. image:: img/circuit/sound_circuit.png
 
 * :ref:`cpn_breadboard`
-* :ref:`cpn_sound` 
+* :ref:`cpn_sound`
 
-Programming
-------------------
+Programación
+----------------
 
-The effect we want to get is that when you blow into the sound sensor, the ball sprite on the stage keeps going up, and if you stop blowing, it will fall on the bowl sprite. If it touches the Line sprite while walking up or falling down, it will make a musical sound and emit star sprites in all directions.
+El efecto que queremos lograr es que al soplar en el sensor de sonido, el sprite de la pelota en el escenario suba, y si dejas de soplar, caerá sobre el sprite del cuenco. Si toca el sprite de la línea mientras sube o baja, emitirá un sonido musical y lanzará sprites de estrellas en todas direcciones.
 
 
-**1. Select sprite and backdrop**
+**1. Selecciona el sprite y el fondo**
 
-Delete the default sprite, select the **Ball**, **Bowl** and **Star** sprite.
+Elimina el sprite predeterminado, selecciona los sprites **Ball**, **Bowl** y **Star**.
 
 .. image:: img/18_ball1.png
 
-
-Move the **Bowl** sprite to the bottom center of the stage and enlarge its size.
+Mueve el sprite **Bowl** al centro inferior del escenario y aumenta su tamaño.
 
 .. image:: img/18_ball3.png
 
-Because we need to move it upwards, so set direction of **Ball** sprite to 0.
+Dado que necesitamos moverlo hacia arriba, establece la dirección del sprite **Ball** en 0.
 
 .. image:: img/18_ball4.png
 
-Set the size and direction of the **Star** sprite to 180 because we need it to fall down, or you can change it to another angle.
+Establece el tamaño y la dirección del sprite **Star** en 180 porque necesitamos que caiga, o puedes cambiarlo a otro ángulo.
 
 .. image:: img/18_ball12.png
 
-Now add the **Stars** backdrop.
+Ahora añade el fondo **Stars**.
 
 .. image:: img/18_ball2.png
 
-**2. Draw a Line sprite**
+**2. Dibuja un sprite de línea**
 
-Add a Line sprite.
+Añade un sprite de línea.
 
 .. image:: img/18_ball7.png
 
-Go to the **Costumes** page of the **Line** sprite, reduce the width of the red line on the canvas slightly, then copy it 5 times and align the lines.
+Ve a la página **Costumes** del sprite **Line**, reduce un poco el ancho de la línea roja en el lienzo, luego cópiala 5 veces y alinea las líneas.
 
 .. image:: img/18_ball8.png
 
-Now fill the lines with different colors. First choose a color you like, then click on the **Fill** tool and move the mouse over the line to fill it with color.
+Rellena las líneas con diferentes colores. Primero elige un color, luego haz clic en la herramienta **Fill** y mueve el mouse sobre la línea para rellenarla.
 
 .. image:: img/18_ball9.png
 
-Follow the same method to change the color of the other lines.
+Sigue el mismo método para cambiar el color de las otras líneas.
 
 .. image:: img/18_ball10.png
 
 
-**3. Scripting the Ball sprite**
+**3. Crear el script del sprite Ball**
 
-Set the initial position of the **Ball** sprite, then when the value of the sound sensor is greater than 100 (it can be any other value, depending on your current environment), let the Ball move up.
+Establece la posición inicial del sprite **Ball**, luego, cuando el valor del sensor de sonido sea mayor a 100 (puede ser otro valor dependiendo del entorno), haz que la pelota suba.
 
 .. image:: img/18_ball5.png
 
-Otherwise, the **Ball** sprite will fall and limit its Y coordinate to a minimum of -100. This can be modified to make it look like it is falling on the Bowl sprite.
+De lo contrario, el sprite **Ball** caerá y limita su coordenada Y a un mínimo de -100. Esto se puede modificar para que parezca que está cayendo sobre el sprite **Bowl**.
 
 .. image:: img/18_ball6.png
 
-When the **Line** sprite is hit, the current Y coordinate is saved to the variable **ball_coor** and a **Bling** message is broadcast.
+Cuando el sprite **Line** sea tocado, guarda la coordenada Y actual en la variable **ball_coor** y transmite un mensaje **Bling**.
 
 .. image:: img/18_ball11.png
 
-**4. Scripting the Star sprite**
+**4. Crear el script del sprite Star**
 
-When the script starts, first hide the **Star** sprite. When the **Bling** message is received, clone the **Star** sprite.
+Cuando se inicie el script, primero oculta el sprite **Star**. Cuando reciba el mensaje **Bling**, clona el sprite **Star**.
 
 .. image:: img/18_ball13.png
 
-When the **Star** sprite appears as a clone, play the sound effect and set its coordinates to be in sync with the **Ball** sprite.
+Cuando el sprite **Star** aparezca como un clon, reproduce el efecto de sonido y ajusta sus coordenadas para sincronizarlo con el sprite **Ball**.
 
 .. image:: img/18_ball14.png
 
-Create the effect of the **Star** sprite appearing, and adjust it as needed.
+Crea el efecto del sprite **Star** apareciendo y ajusta según sea necesario.
 
 .. image:: img/18_ball15.png

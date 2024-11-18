@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_led:
 
 2.2 LED
-=========
+==========
 
-Overview
---------
+Resumen
+----------
 
-In this lesson, you will learn how to use LED. LED is a kind of common
-light-emitting device that works according to the principle that the
-recombination of electron and hole releases energy to give out light.
-This component is used widely in the current society, such as
-illumination, panel display, medical device and so on.
+En esta lección, aprenderás cómo utilizar un LED. Un LED es un dispositivo 
+común de emisión de luz que funciona según el principio de que la recombinación 
+de electrones y huecos libera energía en forma de luz. Este componente se 
+utiliza ampliamente en la sociedad actual, en aplicaciones como iluminación, 
+pantallas de panel, dispositivos médicos, entre otros.
 
-Components Required
--------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/list_2.2.png
 
@@ -37,65 +37,57 @@ Components Required
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-Schematic Diagram
------------------
+Diagrama esquemático
+-----------------------
 
 .. image:: img/image401.png
 
+Circuito Fritzing
+--------------------
 
-Fritzing Circuit
-----------------
-
-In this example, we use pin 9 to drive LED. Insert one side of the
-resistor in the digital pin 9 and connect the longer pin (a positive
-electrode, referred to as anode) of the LED with the other side of the
-resistor. Extend the shorter pin (a negative electrode, referred to as
-cathode) of the LED to GND.
+En este ejemplo, usamos el pin 9 para controlar el LED. Inserta un lado de 
+la resistencia en el pin digital 9 y conecta el pin más largo (el ánodo, que 
+es el electrodo positivo) del LED al otro lado de la resistencia. Extiende el 
+pin más corto (el cátodo, que es el electrodo negativo) del LED hacia GND.
 
 .. image:: img/image30.png
 
 
-Code
-----
+Código
+---------
 
 .. note::
 
-    * You can open the file ``2.2_led.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.2_led`` directly.
-    * Or copy this code into Arduino IDE.
+    * Puedes abrir el archivo ``2.2_led.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.2_led`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
-
-
-**Example 1：**
+**Ejemplo 1:**
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/6932f77a-37ea-422d-be9f-9b4d2eaa3571/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Finished uploading the codes to the Mega2560 board, you can see the LED flashing. Refer to :ref:`ar_digital_write` to check the detail code explanation.
+Después de cargar el código en la placa Mega2560, podrás ver cómo el LED parpadea. Consulta :ref:`ar_digital_write` para obtener la explicación detallada del código.
 
-
-
-**Example 2:**
+**Ejemplo 2:**
 
 .. note::
 
-    * You can open the file ``2.2_led_2.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.2_led_2`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.2_led_2.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.2_led_2`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ba7aa4c7-7537-40af-bb9e-e849d6a722b5/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you can see the LED
-getting brighter, then turning off, getting brighter, then turning off
-again...this loop will continue in this way. About the detail code
-explanation, please refer to :ref:`ar_analog_write`.
+Después de cargar el código en la placa Mega2560, podrás ver cómo el LED se 
+va iluminando, luego se apaga, se ilumina nuevamente y se apaga otra vez... 
+este ciclo continuará de esta forma. Para obtener la explicación detallada del 
+código, consulta :ref:`ar_analog_write`.
 
 
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image36.jpeg

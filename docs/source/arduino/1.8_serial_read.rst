@@ -1,33 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    ¡Hola, bienvenido a la Comunidad de Entusiastas de Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprender y compartir**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Vistas previas exclusivas**: Obtén acceso anticipado a nuevos anuncios de productos y avances.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más nuevos.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales de temporada.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_serial_read:
 
-1.8 Serial Read
-===============
+1.8 Lectura Serial
+====================
 
-Overview
---------
+Resumen
+------------
 
-In addition to reading data from the electronic components, the Mega2560
-board can read the data input in the serial port monitor, and you can
-use Serial.read() as the controller of the circuit experiment. Then we
-use LED to experiment with the Serial. Read() statement to control LED
-to turn on and off.
+Además de leer datos de los componentes electrónicos, la placa Mega2560 
+puede leer datos desde el monitor serie, y puedes usar Serial.read() como 
+controlador para los experimentos del circuito. En este caso, utilizamos 
+un LED para experimentar con la instrucción Serial.read() para controlar 
+el encendido y apagado del LED.
 
-Components Required
--------------------
+Componentes necesarios
+------------------------
 
 .. image:: img/list_1.8.png
 
@@ -37,81 +37,78 @@ Components Required
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+--------------------
 
-In this example, we use digital pin 9 to drive LED. When 1 is entered in
-serial monitor, the LED lights up. When 0 is entered, the LED turns off.
+En este ejemplo, utilizamos el pin digital 9 para controlar el LED. Cuando se 
+ingresa el valor "1" en el monitor serie, el LED se enciende. Cuando se ingresa 
+"0", el LED se apaga.
 
 .. image:: img/image30.png
 
-
-Schematic Diagram
------------------
+Diagrama esquemático
+---------------------
 
 .. image:: img/image401.png
 
 
-Code
-----
+Código
+--------
 
 .. note::
 
-    * You can open the file ``1.8_serialRead.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.8_serialRead`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puedes abrir el archivo ``1.8_serialRead.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\1.8_serialRead`` directamente.
+    * O copiar este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/ca230e6c-c8c1-4101-87cf-25da1130f414/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, please turn on the serial port monitor. Typing in ”1” can make LED turn on and typing in ”0” can make it turn off. 
+Después de cargar el código en la placa Mega2560, abre el monitor serie. Al escribir "1", el LED se enciende, y al escribir "0", se apaga.
 
 .. image:: img/image52.png
 
 
-Code Analysis
------------------------
+Análisis del código
+---------------------
 
-Declare digital pin 9 as ledPin.
+Declara el pin digital 9 como ledPin.
 
 .. code-block:: arduino
 
     const int ledPin = 9;
 
-Serial.read() reads a single byte of ASCII value, and therefore you need to declare a int type variable, incomingByte to store the acquired data.
+Serial.read() lee un solo byte de valor ASCII, por lo que debes declarar una variable de tipo int, incomingByte, para almacenar los datos recibidos.
 
 .. code-block:: arduino
 
     int incomingByte = 0; 
 
-Run the serial communication in setup() and set the data rate to 9600.
+Inicia la comunicación serial en setup() y establece la tasa de transmisión a 9600.
 
 .. code-block:: arduino
 
     Serial.begin(9600);
 
-Set ledPin to OUTPUT mode.
+Configura el pin ledPin en modo OUTPUT.
 
 .. code-block:: arduino
 
     pinMode(ledPin,OUTPUT);
 
-The state of serial port monitor is judged in loop(), and the information processing will be carried out only when the data are received.
+En loop(), se evalúa el estado del monitor serie, y la información solo se procesa cuando se reciben datos.
 
 .. code-block:: arduino
 
     if (Serial.available() > 0){}
 
-Reads the input value in the serial port monitor and stores it to the variable incomingByte.
+Lee el valor ingresado en el monitor serie y lo almacena en la variable incomingByte.
 
 .. code-block:: arduino
 
     incomingByte = Serial.read();
 
-When the character '1' is obtained, the LED is lit; when ’0’ is obtained, the LED turns off.
+Cuando se obtiene el carácter '1', se enciende el LED; cuando se obtiene '0', el LED se apaga.
 
 .. code-block:: arduino
 
@@ -119,23 +116,21 @@ When the character '1' is obtained, the LED is lit; when ’0’ is obtained, th
         else if(incomingByte=='0'){digitalWrite(ledPin,LOW);}
 
 .. note::
-    Serial.read() takes the ASCII value in single character, which means that when you input '1', the obtained value is not the number '1', but the character '1' whose corresponding ASCII value is 49.
+    Serial.read() toma el valor ASCII de un solo carácter, lo que significa que cuando ingresas '1', el valor obtenido no es el número '1', sino el carácter '1' cuyo valor ASCII correspondiente es 49.
 
-※ ASCII chart
---------------
+※ Tabla ASCII
+-------------------
 
-The ASCII (American Standard Code for Information Interchange) encoding
-dates to the 1960's. It is the standard way that text is encoded
-numerically.
+El código ASCII (Código Estándar Americano para el Intercambio de Información) 
+data de la década de 1960. Es la forma estándar en que se codifica el texto numéricamente.
 
-Note that the first 32 characters (0-31) are non-printing characters,
-often called control characters. The more useful characters have been
-labeled.
+Cabe destacar que los primeros 32 caracteres (0-31) son caracteres no imprimibles, 
+comúnmente llamados caracteres de control. Los caracteres más útiles están etiquetados.
 
 .. image:: img/image409.png
 .. image:: img/image410.png
 
-Phenomenon Picture
-------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image36.jpeg

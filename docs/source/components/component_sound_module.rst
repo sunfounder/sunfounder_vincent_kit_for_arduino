@@ -1,40 +1,38 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_sound:
 
-Sound Sensor Module
-====================
+Módulo Sensor de Sonido
+==============================
 
 .. image:: img/image222.png
     :width: 500
     :align: center 
 
+Un sensor de sonido se define como un módulo que detecta ondas sonoras a través de su intensidad y las convierte en señales eléctricas.
 
+Este módulo se puede utilizar en aplicaciones de seguridad, interruptores y monitoreo. Su precisión se puede ajustar fácilmente para mayor comodidad en el uso.
 
-A sound sensor is defined as a module that detects sound waves through its intensity and converting it to electrical signals.
+Utiliza un micrófono que suministra la entrada a un amplificador, detector de picos y buffer. Cuando el sensor detecta un sonido, procesa una señal de voltaje de salida que se envía a un microcontrolador para realizar el procesamiento necesario.
 
-This module can be used for security, switch, and monitoring applications. Its accuracy can be easily adjusted for the convenience of usage.
+Este módulo tiene dos salidas:
 
-It uses a microphone which supplies the input to an amplifier, peak detector and buffer. When the sensor detects a sound, it processes an output signal voltage which is sent to a micro-controller then performs necessary processing.
+* **AO**: salida analógica, señal de voltaje de salida en tiempo real del micrófono.
+* **DO**: cuando la intensidad del sonido alcanza un cierto umbral, la salida es una señal de nivel alto o bajo. La sensibilidad del umbral se puede ajustar girando el potenciómetro.
 
-This module has two outputs:
+**Ejemplo**
 
-* **AO**: analog output, real-time output voltage signal of microphone.
-* **DO**: when the intensity of the sound reaches a certain threshold, the output is a high or low level signal. The threshold sensitivity can be achieved by adjusting the potentiometer.
-
-**Example**
-
-* :ref:`ar_sound` (Arduino Project)
-* :ref:`blow_ball` (Scratch Project)
+* :ref:`ar_sound` (Proyecto Arduino)
+* :ref:`blow_ball` (Proyecto Scratch)

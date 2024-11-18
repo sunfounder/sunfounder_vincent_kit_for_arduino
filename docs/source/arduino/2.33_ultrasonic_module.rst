@@ -1,28 +1,28 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_ultrasonic:
 
-2.33 Ultrasonic Module
-======================
+2.33 Módulo Ultrasónico
+========================
 
-Overview
-------------
+Descripción general
+----------------------
 
-In this lesson, you will learn how to use Ultrasonic module.
+En esta lección, aprenderás a utilizar el módulo ultrasónico.
 
-Components Required
+Componentes necesarios
 -------------------------
 
 .. image:: img/Part_two_33.png
@@ -31,53 +31,49 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_ultrasonic`
 
-Fritzing Circuit
+Circuito Fritzing
 ---------------------
 
-In this example, we directly connect the pins of Ultrasonic Module with
-the pins of Mega 2560 Board. And then we get VCC of the Ultrasonic
-Module connected to 5V, GND to GND, Trig to the digital pin 5, Echo to
-the digital pin 4.
+En este ejemplo, conectamos directamente los pines del módulo ultrasónico 
+con los pines de la placa Mega 2560. Conecta el VCC del módulo ultrasónico 
+a 5V, GND a GND, Trig al pin digital 5 y Echo al pin digital 4.
 
 .. image:: img/image246.png
    :align: center
 
-Schematic Diagram
+Diagrama esquemático
 ----------------------
 
 .. image:: img/image247.png
    :align: center
 
-Code
+Código
 ----------
 
 .. note::
 
-    * You can open the file ``2.33_ultrasonicModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.33_ultrasonicModule`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.33_ultrasonicModule.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.33_ultrasonicModule`` directamente.
+    * O copia este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/8254174a-93c8-4a72-a440-26f1ab63ca07/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, the serial monitor will
-display the distance of obstacles ahead that the ultrasonic sensor has
-detected.
+Después de cargar el código en la placa Mega2560, el monitor serial mostrará 
+la distancia de los obstáculos detectados por el sensor ultrasónico.
 
-Code Analysis
---------------------
+Análisis del Código
+----------------------
 
-About the application of ultrasonic sensor, we can directly check the
-subfunction.
+En cuanto a la aplicación del sensor ultrasónico, podemos revisar directamente 
+la subfunción.
 
 .. code-block:: arduino
 
     float readSensorData(){// ...}
 
-PING is triggered by a HIGH pulse of 2 or more microseconds. (Give a
-short LOW pulse beforehand to ensure a clean HIGH pulse.)
+PING se activa mediante un pulso HIGH de 2 o más microsegundos. (Proporciona 
+un pulso LOW corto antes para asegurar un pulso HIGH limpio.)
 
 .. code-block:: arduino
 
@@ -87,24 +83,24 @@ short LOW pulse beforehand to ensure a clean HIGH pulse.)
     delayMicroseconds(10);
     digitalWrite(trigPin, LOW); 
 
-The echo pin is used to read signal from PING, a HIGH pulse whose
-duration is the time (in microseconds) from the sending of the ping to
-the reception of echo of the object.
+El pin de eco se usa para leer la señal de PING, un pulso HIGH cuya duración 
+es el tiempo (en microsegundos) desde el envío del ping hasta la recepción del 
+eco del objeto.
 
 .. code-block:: arduino
 
     microsecond=pulseIn(echoPin, HIGH);
 
-The speed of sound is 340 m/s or 29 microseconds per centimeter.
+La velocidad del sonido es de 340 m/s o 29 microsegundos por centímetro.
 
-This gives the distance travelled by the ping, outbound and return, so
-we divide by 2 to get the distance of the obstacle.
+Esto da la distancia recorrida por el ping, ida y vuelta, por lo que dividimos 
+entre 2 para obtener la distancia del obstáculo.
 
 .. code-block:: arduino
 
     float distance = microsecond / 29.00 / 2;  
 
-Phenomenon Picture
+Imagen del Fenómeno
 ------------------------
 
 .. image:: img/image248.jpeg

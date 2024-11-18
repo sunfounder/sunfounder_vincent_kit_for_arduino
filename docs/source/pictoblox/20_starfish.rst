@@ -1,107 +1,107 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook. Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _starfish:
 
-2.20 Catching Starfish
-============================
+2.20 Juego - Atrapar Estrellas de Mar
+========================================
 
-Here, let's make a game to catch starfish. At the start of the script, a starfish is swimming comfortably on the stage, and a diver is also swimming to the right and left. You need to control the depth of the water level sensor module in the water in order to let the diver on the stage catch the starfish, and for each starfish caught, the count will be increased by 1.
+Aquí crearemos un juego para atrapar estrellas de mar. Al inicio del guion, una estrella de mar nada cómodamente en el escenario, y un buzo también nada hacia la derecha e izquierda. Debes controlar la profundidad del módulo sensor de nivel de agua para que el buzo en el escenario atrape la estrella de mar. Por cada estrella atrapada, la cuenta aumentará en 1.
 
 .. image:: img/21_starfish.png
 
 
-Build the Circuit
------------------------
+Construir el Circuito
+----------------------
 
-The Water Level Sensor module is an easy-to-use, compact and cost effective water level/drop detection sensor that measures the water level by a series of exposed parallel wire traces to determine the size of the water drop/volume.
+El módulo sensor de nivel de agua es un sensor compacto y fácil de usar que mide el nivel de agua mediante una serie de trazas paralelas expuestas para determinar el tamaño de la gota/volumen de agua.
 
-The more water the sensor is immersed in, the greater the value of the **S** pin output.
+Cuanto más se sumerja el sensor en el agua, mayor será el valor de salida del pin **S**.
 
-
-Now build the circuit according to the diagram below.
+Ahora construye el circuito según el siguiente diagrama:
 
 .. image:: img/circuit/water_circuit.png
 
 * :ref:`cpn_breadboard`
-* :ref:`cpn_water` 
+* :ref:`cpn_water`
 
-Programming
-------------------
+Programación
+---------------
 
-**1. Select sprites and backdrop**
+**1. Seleccionar sprites y fondo**
 
-Delete the default sprite, select the **Diver1** and **Starfish** sprite.
+Elimina el sprite predeterminado, selecciona los sprites **Diver1** y **Starfish**.
 
 .. image:: img/21_starfish1.png
 
-Go to **Diver1's Costumes** page and use the **Fill** tool to fill in the colors you like.
+Ve a la página de **Disfraces** de **Diver1** y utiliza la herramienta **Relleno** para llenar los colores que prefieras.
 
-.. Note:: 
+.. note:: 
 
-    You will need to fill both arms of Diver1 with a unique color that will not find the same on the stage.
+    Necesitarás llenar ambos brazos de Diver1 con un color único que no coincida con otros colores en el escenario.
 
 .. image:: img/21_starfish3.png
 
-Reduce the size of the **Starfish** sprite, you can also modify its color as you like.
+Reduce el tamaño del sprite **Starfish**, también puedes modificar su color como desees.
 
 .. image:: img/21_starfish4.png
 
-Select an **Underwater1** backdrop.
+Selecciona el fondo **Underwater1**.
 
 .. image:: img/21_starfish2.png
 
-**2. Scripting the Diver1 sprite**
+**2. Escribir guion para el sprite Diver1**
 
-Set the initial position of the **Diver1** sprite and have it swim back and forth across the stage.
+Configura la posición inicial del sprite **Diver1** y haz que nade de un lado a otro del escenario.
 
 .. image:: img/21_starfish5.png
 
-The deeper you put the water level sensor in, the greater the value you get as a way to determine the depth (y coordinate) that the **Diver1** sprite swims.
+Cuanto más profundo sumerjas el sensor de nivel de agua, mayor será el valor obtenido, lo que determina la profundidad (coordenada y) a la que nada el sprite **Diver1**.
 
-* Read A0 (the value of the water level sensor) and map its range to the y-coordinate of the stage as a way to get a new y-coordinate.
-* If **new_y** is greater than the current Y coordinate, let it move up to the **new_y** position.
-* If **new_y** is less than the current Y coordinate, let it move down to the **new_y** position
+* Lee A0 (el valor del sensor de nivel de agua) y mapea su rango a la coordenada y del escenario para obtener una nueva coordenada y.
+* Si **new_y** es mayor que la coordenada Y actual, haz que suba hasta la posición **new_y**.
+* Si **new_y** es menor que la coordenada Y actual, haz que baje hasta la posición **new_y**.
 
 .. image:: img/21_starfish6.png
     :width: 800
 
-**3. Scripting the Starfish sprite**
+**3. Escribir guion para el sprite Starfish**
 
-When the script starts, first hide **Starfish** sprite and then clone it.
+Cuando el guion comience, primero oculta el sprite **Starfish** y luego clónalo.
 
 .. image:: img/21_starfish7.png
 
-When appearing as a clone, set its movement effect.
+Cuando aparezca como un clon, configura su efecto de movimiento.
 
 .. image:: img/21_starfish8.png
 
-When it touches red (the color of **Diver1**'s two arms), which means it is caught by **Diver1** sprite, the following effect is made.
+Cuando toque el color rojo (los brazos de **Diver1**), lo que significa que es atrapado por el sprite **Diver1**, se realiza el siguiente efecto:
 
-* Adds 1 to the value of the variable **count**.
-* A score animation is displayed (shrinks by 20%, moves quickly to the position of the scoreboard and disappears).
-* At the same time, a new starfish is cloned and the game continues.
+* Se suma 1 al valor de la variable **count**.
+* Se muestra una animación de puntuación (se reduce un 20%, se mueve rápidamente a la posición del marcador y desaparece).
+* Al mismo tiempo, se clona una nueva estrella de mar y el juego continúa.
+
+
 
 .. image:: img/21_starfish9.png
 
-.. Note:: 
-    You need to click on the color area in the [Touch color] block, and then select the eyedropper tool to pick up the red color of the **Diver1** sprite on the stage. If you choose a color arbitrarily, this [Touch color] block will not work.
+
+.. note:: 
+    Debes hacer clic en el área de color en el bloque [Touch color] y luego seleccionar la herramienta cuentagotas para recoger el color rojo del sprite **Diver1** en el escenario. Si eliges un color arbitrario, este bloque no funcionará.
 
     .. image:: img/21_starfish10.png
 
-When the Starfish's clone swims to the far right, delete the clone and clone it again.
-
-
+Cuando el clon de **Starfish** nade hasta el extremo derecho, elimina el clon y vuelve a clonarlo.
 
 .. image:: img/21_starfish11.png

@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la Comunidad de Entusiastas de SunFounder para Raspberry Pi, Arduino y ESP32 en Facebook! Únete a otros entusiastas para profundizar en el mundo de Raspberry Pi, Arduino y ESP32.
 
-    **Why Join?**
+    **¿Por qué unirte?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte experto**: Resuelve problemas postventa y desafíos técnicos con la ayuda de nuestra comunidad y equipo.
+    - **Aprende y comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones festivas y sorteos**: Participa en sorteos y promociones especiales en días festivos.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _ar_water:
 
-2.29 Water Sensor Module
-=========================
+2.29 Módulo Sensor de Agua
+============================
 
-Overview
---------------
+Resumen
+---------
 
-In this lesson, you will learn how to use a water sensor module. A water
-sensor module is designed for water detection, which can be widely used
-in sensing the rainfall, water level, even the liquid leakage.
+En esta lección, aprenderás a utilizar un módulo sensor de agua. Este 
+módulo está diseñado para detectar agua y puede usarse ampliamente para 
+medir la lluvia, el nivel del agua e incluso fugas de líquidos.
 
-Components Required
---------------------------
+Componentes necesarios
+-------------------------
 
 .. image:: img/Part_two_29.png
 
@@ -33,47 +33,44 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_water`
 
-Fritzing Circuit
-------------------------
+Circuito Fritzing
+------------------
 
-In this example, we directly connect the pins of Water Sensor Module to
-pins of Mega 2560 Board. We use analog A0 to get the value of Water
-Sensor Module, and get the pin「S」of Water Sensor Module to A0, 「-」to
-GND, 「+」to 5V.
+En este ejemplo, conectamos directamente los pines del módulo sensor de agua 
+a los pines de la placa Mega 2560. Utilizamos el pin analógico A0 para leer el 
+valor del sensor, conectando el pin「S」del sensor a A0, 「-」a GND, y 「+」a 5V.
 
 .. image:: img/image227.png
    :align: center
 
-Schematic Diagram
------------------------
+Diagrama esquemático
+----------------------
 
 .. image:: img/image228.png
    :align: center
 
-Code
---------------
+Código
+--------
 
 .. note::
 
-    * You can open the file ``2.29_waterSensorModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.29_waterSensorModule`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puedes abrir el archivo ``2.29_waterSensorModule.ino`` en la ruta ``sunfounder_vincent_kit_for_arduino\code\2.29_waterSensorModule`` directamente.
+    * O copia este código en el IDE de Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/afccb53e-02c3-41ea-b365-c5c21c9a74b1/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, you can open the serial
-monitor to see the read value of the pin. As the water level rises, the
-readings increase. Readings vary within the range 「0」~「1023」, but
-influenced by the environmental condition and the characteristics of
-water level sensor, the actual reading range may be smaller than the
-theoretical range. Refer to Part 1-1.5 Analog Read to check the detail
-code explanation.
+Después de cargar el código en la placa Mega2560, puedes abrir el 
+monitor serial para ver el valor de lectura del pin. A medida que 
+sube el nivel de agua, los valores leídos aumentan. Las lecturas 
+varían en el rango de 「0」a「1023」, aunque, debido a las condiciones 
+ambientales y las características del sensor, el rango real de lectura 
+puede ser menor que el teórico. Consulta la Parte 1-1.5 Analog Read para 
+una explicación detallada del código.
 
-Phenomenon Picture
-------------------------
+Imagen del fenómeno
+----------------------
 
 .. image:: img/image229.jpeg
    :align: center

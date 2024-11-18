@@ -1,20 +1,20 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Hola, ¡bienvenido a la comunidad de entusiastas de SunFounder Raspberry Pi, Arduino y ESP32 en Facebook! Profundiza en Raspberry Pi, Arduino y ESP32 junto a otros entusiastas.
 
-    **Why Join?**
+    **¿Por qué unirse?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Soporte de expertos**: Resuelve problemas posventa y desafíos técnicos con ayuda de nuestra comunidad y equipo.
+    - **Aprende y Comparte**: Intercambia consejos y tutoriales para mejorar tus habilidades.
+    - **Avances exclusivos**: Accede anticipadamente a anuncios de nuevos productos y adelantos.
+    - **Descuentos especiales**: Disfruta de descuentos exclusivos en nuestros productos más recientes.
+    - **Promociones y sorteos festivos**: Participa en sorteos y promociones especiales por festividades.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 ¿Listo para explorar y crear con nosotros? Haz clic en [|link_sf_facebook|] y únete hoy mismo.
 
 .. _cpn_mega2560:
 
-SunFounder Mega Board
+Placa SunFounder Mega
 ==============================
 
 .. image:: img/mega2560.jpg
@@ -23,36 +23,36 @@ SunFounder Mega Board
 
 .. note::
 
-    The SunFounder Mega board is a mainboard with almost the same functions as the `Arduino Mega 2560 Rev3 <https://store-usa.arduino.cc/products/arduino-mega-2560-rev3?selectedStore=us>`_, and the two boards can be used interchangeably.
+    La placa SunFounder Mega es una placa principal con casi las mismas funciones que la `Arduino Mega 2560 Rev3 <https://store-usa.arduino.cc/products/arduino-mega-2560-rev3?selectedStore=us>`_, y ambas pueden usarse de manera intercambiable.
 
-The SunFounder Mega Board is a microcontroller board based on the ATmega2560 (`datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf>`_). It has 54 digital input/output pins (of which 15 can be used as PWM outputs), 16 analog inputs, 4 UARTs (hardware serial ports), a 16 MHz crystal oscillator, a USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. The SunFounder Mega Board board is compatible with most shields designed for the Uno and the former boards Duemilanove or Diecimila.
+La placa SunFounder Mega es una placa microcontroladora basada en el ATmega2560 (`datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf>`_). Cuenta con 54 pines de entrada/salida digitales (de los cuales 15 se pueden usar como salidas PWM), 16 entradas analógicas, 4 UARTs (puertos seriales por hardware), un oscilador de cristal de 16 MHz, una conexión USB, un conector de alimentación, un encabezado ICSP y un botón de reinicio. Contiene todo lo necesario para soportar el microcontrolador; simplemente conéctalo a una computadora con un cable USB o aliméntalo con un adaptador de CA a CC o una batería para comenzar. La placa SunFounder Mega es compatible con la mayoría de los shields diseñados para las placas Uno, Duemilanove o Diecimila anteriores.
 
-**Technical Parameters**
+**Parámetros Técnicos**
 
 .. image:: img/mega_pin.png
     :align: center
 
-* MICROCONTROLLER: ATmega2560
-* OPERATING VOLTAGE: 5V
-* INPUT VOLTAGE (RECOMMENDED): 7-12V
-* INPUT VOLTAGE (LIMIT): 6-20V
-* DIGITAL I/O PINS: 54 (0-53, of which 15 provide PWM output(2-13, 44-46))
-* ANALOG INPUT PINS: 16 (A0-A15)
-* DC CURRENT PER I/O PIN: 20 mA
-* DC CURRENT FOR 3.3V PIN: 50 mA
-* FLASH MEMORY: 256 KB of which 8 KB used by bootloader
+* MICROCONTROLADOR: ATmega2560
+* VOLTAJE DE OPERACIÓN: 5V
+* VOLTAJE DE ENTRADA (RECOMENDADO): 7-12V
+* VOLTAJE DE ENTRADA (LÍMITE): 6-20V
+* PINES DE ENTRADA/SALIDA DIGITALES: 54 (0-53, de los cuales 15 proporcionan salida PWM (2-13, 44-46))
+* PINES DE ENTRADA ANALÓGICA: 16 (A0-A15)
+* CORRIENTE DC POR PIN DE I/O: 20 mA
+* CORRIENTE DC PARA PIN DE 3.3V: 50 mA
+* MEMORIA FLASH: 256 KB, de los cuales 8 KB son utilizados por el bootloader
 * SRAM: 8 KB
 * EEPROM: 4 KB
-* CLOCK SPEED: 16 MHz
+* VELOCIDAD DEL RELOJ: 16 MHz
 * LED_BUILTIN: 13
-* LENGTH: 101.52 mm
-* WIDTH: 53.3 mm
-* WEIGHT: 37 g
-* I2C Port: A4(SDA), A5(SCL); 20(SDA), 21(SCL)
+* LONGITUD: 101.52 mm
+* ANCHO: 53.3 mm
+* PESO: 37 g
+* Puerto I2C: A4(SDA), A5(SCL); 20(SDA), 21(SCL)
 
-**What's More**
+**Más Información**
 
 * `Arduino IDE <https://www.arduino.cc/en/software>`_
-* `Arduino Programming Language Reference <https://www.arduino.cc/reference/en/>`_
+* `Referencia del Lenguaje de Programación Arduino <https://www.arduino.cc/reference/en/>`_
 * :ref:`get_started_ar`
-* `ATmega2560 Datasheet <http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf>`_
+* `Datasheet del ATmega2560 <http://ww1.microchip.com/downloads/en/DeviceDoc/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf>`_
