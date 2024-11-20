@@ -1,100 +1,97 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _balloon:
 
-2.14 GAME - Inflating the Balloon
+2.14 GIOCO - Gonfiare il Palloncino
 =========================================
 
-Here, we will play a game of ballooning.
+Qui giocheremo a un gioco di gonfiaggio del palloncino.
 
-After clicking the green flag, the balloon will become bigger and bigger. If the balloon is too big, it will be blown up; if the balloon is too small, it will fall down; you need to judge when to touch on the touch module to make it fly upwards.
+Dopo aver cliccato sulla bandiera verde, il palloncino diventerà sempre più grande. Se il palloncino è troppo grande, esploderà; se è troppo piccolo, cadrà; devi giudicare quando toccare il modulo touch per farlo volare verso l'alto.
 
 .. image:: img/13_balloon0.png
 
-You Will Learn
+Cosa Imparerai
 ---------------------
 
-- How the Touch module works and the angle range
-- Paint costume for the sprite
+- Come funziona il modulo touch e il range di angoli
+- Disegnare costumi per lo sprite
 
 
-Build the Circuit
+Costruire il Circuito
 -----------------------
 
-This module is a capacitive touch switch module based on a touch sensor IC (TTP223B). In the normal state, the module outputs a low level with low power consumption; when a finger touches the corresponding position, the module outputs a high level and becomes low level again after the finger is released.
+Questo modulo è un modulo touch capacitivo basato su un sensore touch IC (TTP223B). In stato normale, il modulo emette un livello basso con basso consumo energetico; quando un dito tocca la posizione corrispondente, il modulo emette un livello alto e ritorna a livello basso quando il dito viene rilasciato.
 
-Now build the circuit according to the diagram below.
+Ora costruisci il circuito seguendo il diagramma sottostante.
 
 .. image:: img/circuit/touch_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_touch` 
 
-Programming
-------------------
+Programmazione
+---------------
 
-**1. Add a sprite and a backdrop**
+**1. Aggiungere uno sprite e uno sfondo**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, then select the **Balloon1** sprite.
+Elimina lo sprite predefinito, clicca sul pulsante **Scegli uno Sprite** nell'angolo in basso a destra dell'area sprite, quindi seleziona lo sprite **Balloon1**.
 
 .. image:: img/13_balloon1.png
 
-Add a **Boardwalk** backdrop via the **Choose a backdrop** button, or other backbackdrops you like.
+Aggiungi uno sfondo **Boardwalk** tramite il pulsante **Scegli uno sfondo**, o altri sfondi che preferisci.
 
 .. image:: img/13_balloon2.png
 
-**2. Paint a costume for the Balloon1 sprite**
+**2. Disegnare un costume per lo sprite Balloon1**
 
-Now let's draw an exploding effect costume for the balloon sprite.
+Ora disegniamo un effetto esplosione per lo sprite palloncino.
 
-Go to the **Costumes** page for the **Balloon1** sprite, click the **Choose a Costume** button in the bottom left corner, and select **Paint** to bring up a blank **Costume**.
+Vai alla pagina **Costumi** dello sprite **Balloon1**, clicca sul pulsante **Scegli un Costume** nell'angolo in basso a sinistra e seleziona **Disegna** per creare un **Costume** vuoto.
 
 .. image:: img/13_balloon7.png
 
-Select a color and then use the **Brush** tool to draw a pattern.
+Seleziona un colore e usa lo strumento **Pennello** per disegnare un motivo.
 
 .. image:: img/13_balloon3.png
 
-Select a color again, click the Fill tool, and move the mouse inside the pattern to fill it with a color.
+Seleziona nuovamente un colore, clicca sullo strumento Riempimento e sposta il mouse all'interno del motivo per riempirlo con un colore.
 
 .. image:: img/13_balloon4.png
 
-Finally, write the text BOOM, so that an explosion effect costume is complete.
+Infine, scrivi il testo BOOM, così il costume dell'effetto esplosione è completo.
 
 .. image:: img/13_balloon5.png
 
-**3. Scripting the Balloon sprite**
+**3. Script dello sprite Balloon**
 
-Set the initial position and size of the **Balloon1** sprite.
+Imposta la posizione iniziale e la dimensione dello sprite **Balloon1**.
 
 .. image:: img/13_balloon6.png
 
-Then let the **Balloon** sprite slowly get bigger.
+Poi lascia che lo sprite **Balloon** cresca lentamente.
 
 .. image:: img/13_balloon8.png
 
-When the touch module is touched (value is 1), the size of the **Balloon1** sprite stops getting bigger.
+Quando il modulo touch viene toccato (valore uguale a 1), la dimensione dello sprite **Balloon1** smette di crescere.
 
-* When the size is less than 90, it will fall (y coordinate decreases).
-* When the size is bigger than 90 and smaller than 120, it will fly to the sky (y coordinate increases).
+* Quando la dimensione è inferiore a 90, cadrà (la coordinata y diminuisce).
+* Quando la dimensione è maggiore di 90 e inferiore a 120, volerà verso l'alto (la coordinata y aumenta).
 
 .. image:: img/13_balloon9.png
 
-If the touch module has not been touched, the balloon slowly gets bigger and when the size is bigger than 120, it will explode (switch to the explode effect costume).
+Se il modulo touch non viene toccato, il palloncino crescerà lentamente e quando la dimensione supera 120, esploderà (passando al costume dell'effetto esplosione).
 
 .. image:: img/13_balloon10.png
-
-
-

@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_passive_buzzer:
 
-2.11 Passive Buzzer
+2.11 Buzzer Passivo
 ===================
 
-Overview
---------
+Panoramica
+----------
 
-In this lesson, you will get to know about passive buzzer. As a type of
-electronic buzzer with an integrated structure, passive buzzer is
-supplied by DC power, widely used in computer, alarm, electronic toy,
-telephone, timer and other electronic products or voice devices.
+In questa lezione conoscerai il buzzer passivo. Come tipo di buzzer 
+elettronico con una struttura integrata, il buzzer passivo è alimentato 
+da corrente continua (DC) ed è ampiamente utilizzato in computer, allarmi, 
+giocattoli elettronici, telefoni, timer e altri dispositivi elettronici o vocali.
 
-Components Required
--------------------
+Componenti necessari
+---------------------
 
 .. image:: img/image451.png
 
@@ -35,92 +35,89 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_buzzer`
 
-
-Fritzing Circuit
-----------------
+Circuito Fritzing
+--------------------
 
 .. image:: img/image448.png
 
-In this example, what we use to drive the buzzer is the pin 9. We get the cathode of the Buzzer to GND, and the anode to the digital pin 9. 
+In questo esempio, utilizziamo il pin digitale 9 per pilotare il buzzer, collegando il catodo del buzzer a GND e l'anodo al pin digitale 9.
 
-Schematic Diagram
------------------
+Schema elettrico
+-------------------
 
 .. image:: img/image450.png
 
-Code
-----
+Codice
+--------
 
 .. note::
 
-    * You can open the file ``2.11_passiveBuzzer.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.11_passiveBuzzer`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.11_passiveBuzzer.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.11_passiveBuzzer``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/d6c0bde7-aa46-4900-9c11-0ca56832a962/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-At the time when you finish uploading the codes to the Mega2560 board, you can hear a melody containing seven notes. 
+Una volta caricato il codice sulla scheda Mega2560, sentirai una melodia composta da sette note.
 
-Code Analysis
--------------
+Analisi del codice
+---------------------
 
-There are two points needing your attention:
+Ci sono due punti che richiedono attenzione:
 
-1. ``tone()`` & ``noTone()``: This function is used to control the sound of the passive buzzer directly and its prototype is as follows: 
+1. ``tone()`` & ``noTone()``: Questa funzione viene utilizzata per controllare direttamente il suono del buzzer passivo e il suo prototipo è il seguente:
 
 .. code-block:: arduino
 
     void tone(int pin, unsigned int frequency)
     void tone(int pin, unsigned int frequency, unsigned long duration)
 
-Generates a square wave of the specified frequency (and 50% duty cycle) on a pin (so as to make the passive buzzer vibrate to make sound). A duration can be specified, otherwise the wave continues until a call to noTone(). The pin can be connected to a piezo buzzer or other speaker to play tones.
+Genera un'onda quadra con la frequenza specificata (e un ciclo di lavoro del 50%) su un pin (facendo vibrare il buzzer passivo per emettere un suono). È possibile specificare una durata, altrimenti l'onda continua fino a una chiamata a ``noTone()``. Il pin può essere collegato a un buzzer piezoelettrico o ad altri altoparlanti per riprodurre toni.
 
-Only one tone can be generated at a time. If a tone is already playing on a different pin, the call to tone() will have no effect. If the tone is playing on the same pin, the call will set its frequency.
+È possibile generare un solo tono alla volta. Se un tono è già in riproduzione su un altro pin, la chiamata a ``tone()`` non avrà effetto. Se il tono è in riproduzione sullo stesso pin, la chiamata ne imposterà la frequenza.
 
-Use of the ``tone()`` function will interfere with PWM output on pins 3 and 11 (on boards other than the Mega).
+L'uso della funzione ``tone()`` interferisce con l'output PWM sui pin 3 e 11 (su schede diverse dalla Mega).
 
-It is not possible to generate tones lower than 31Hz.
+Non è possibile generare toni inferiori a 31Hz.
 
-**pin**: The Arduino pin on which to generate the tone.
+**pin**: Il pin di Arduino su cui generare il tono.
 
-**frequency**: The frequency of the tone in hertz.
+**frequency**: La frequenza del tono in hertz.
 
-**duration**: The duration of the tone in milliseconds (optional)
+**duration**: La durata del tono in millisecondi (opzionale).
 
 .. code-block:: arduino
 
     void noTone(int pin)
 
-Stops the generation of a square wave triggered by ``tone()``. Has no effect if no tone is being generated.
+Interrompe la generazione di un'onda quadra attivata da ``tone()``. Non ha effetto se nessun tono è in riproduzione.
 
-**pin**: The Arduino pin on which to generate the tone.
+**pin**: Il pin di Arduino su cui generare il tono.
 
-Having known the two functions, you may grasp the codes—the installation of the array melody[] and the array noteDurations[] is the preparation of the subsequently several times of calling of the function ``tone()`` and the changing of tone and duration in the loop for better effect of music play.
+Conoscendo queste due funzioni, puoi comprendere meglio il codice—la configurazione degli array ``melody[]`` e ``noteDurations[]`` prepara le successive chiamate multiple della funzione ``tone()`` e il cambiamento di tono e durata nel ciclo per ottenere un effetto musicale migliore.
 
-2. ``pitches.h``: The code uses an extra file, ``pitches.h``. This file contains all the pitch values for typical notes. For example, NOTE_C4 is middle C. NOTE_FS4 is F sharp, and so forth. This note table was originally written by Brett Hagman, on whose work the ``tone()`` command was based. You may find it useful whenever you want to make musical notes.
+2. ``pitches.h``: Il codice utilizza un file aggiuntivo, ``pitches.h``. Questo file contiene tutti i valori di frequenza per le note tipiche. Ad esempio, NOTE_C4 è il Do centrale, NOTE_FS4 è il Fa diesis, e così via. Questa tabella delle note è stata originariamente scritta da Brett Hagman, il cui lavoro ha ispirato il comando ``tone()``. Può essere utile ogni volta che desideri creare note musicali.
 
 .. code-block:: arduino
 
     #include "pitches.h"
 
 .. note::
-    There is already a ``pitches.h`` file in this sample program. If we put it together with the main code in one folder, the successive steps of installing ``pitches.h`` can be omitted.
+    Questo programma di esempio include già un file ``pitches.h``. Se lo posizioniamo nella stessa cartella del codice principale, i passaggi successivi per installare ``pitches.h`` possono essere saltati.
 
 .. image:: img/image123.png
 
-After you open the code 2.11passiveBuzzer, if you cannot open the
-``pitches.h`` code, you can just install one manually. The steps are as
-follows:
+Se, aprendo il codice ``2.11_passiveBuzzer``, non riesci ad accedere a 
+``pitches.h``, puoi semplicemente installarlo manualmente seguendo questi 
+passaggi:
 
-To make the ``pitches.h`` file, either click on the button just below the
-serial monitor icon and choose "New Tab", or use Ctrl+Shift+N.
+Per creare il file ``pitches.h``, clicca sul pulsante appena sotto l'icona 
+del monitor seriale e scegli "New Tab", oppure usa Ctrl+Shift+N.
 
 .. image:: img/image124.png
 
-Then paste in the following code and save it as ``pitches.h``:
+Quindi incolla il seguente codice e salvalo come ``pitches.h``:
 
 .. code-block:: arduino
 
@@ -217,7 +214,7 @@ Then paste in the following code and save it as ``pitches.h``:
     #define NOTE_D8  4699
     #define NOTE_DS8 49
 
-Phenomenon Picture
-------------------
+Immagine del risultato
+--------------------------
 
 .. image:: img/image125.jpeg

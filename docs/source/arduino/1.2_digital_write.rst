@@ -1,31 +1,30 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Immergiti nel mondo affascinante di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_digital_write:
 
-1.2 Digital Write
-=================
+1.2 Scrittura Digitale (Digital Write)
+=======================================
 
-Overview
+Panoramica
 -----------
 
-The digitalWrite() statement here is used to write high level or low
-level to pins and to let LED and active buzzer 「work 」or 「stop」. In
-this lesson, we will take LED as an example to introduce the experiment
-phenomenon.
+L'istruzione digitalWrite() viene utilizzata per impostare un livello alto o basso 
+sui pin digitali e controllare se un LED o un buzzer attivo 「funzionano」 o 「si spengono」. 
+In questa lezione, utilizzeremo un LED come esempio per spiegare il fenomeno sperimentale.
 
-Components Required
+Componenti Necessari
 ----------------------
 
 .. image:: img/list_1.2.png
@@ -37,81 +36,77 @@ Components Required
 * :ref:`cpn_resistor`
 
 
-Fritzing Circuit
--------------------
+Circuito con Fritzing
+------------------------
 
-In this example, we use digital pin 9 to drive the LED. Attach one side
-of the resistor to the digital pin 9 and the longer pin (anode) of the
-LED to the other side of the resistor. Connect the shorter pin (cathode)
-of the LED to GND.
+In questo esempio, utilizziamo il pin digitale 9 per controllare il LED. Collega un'estremità 
+della resistenza al pin digitale 9 e il pin più lungo (anodo) del LED all'altra estremità della resistenza. 
+Collega il pin più corto (catodo) del LED al GND.
 
 .. image:: img/image30.png
 
 
-Schematic Diagram
--------------------
+Schema del Circuito
+---------------------
 
 .. image:: img/image401.png
 
 
-Code
-------
+Codice
+--------
 
-After finishing the circuit connection, connect the Mega2560 board to
-the computer. Run the Arduino software IDE and type in the following
-codes.
+Dopo aver completato il collegamento del circuito, collega la scheda Mega2560 al computer. 
+Apri il software Arduino IDE e inserisci il seguente codice.
 
 .. note::
 
-    * You can open the file ``1.2_digitalWrite.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.2_digitalWrite`` directly.
-    * Or copy this code into Arduino IDE.
+    * Puoi aprire direttamente il file ``1.2_digitalWrite.ino`` presente nel percorso ``sunfounder_vincent_kit_for_arduino\code\1.2_digitalWrite``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/014d0aec-693e-4246-b944-17105b28e818/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Upload the codes to the Mega2560 board, and you can see the blinking of LED.
+Carica il codice sulla scheda Mega2560 e potrai vedere il LED lampeggiare.
 
-Code Analysis
--------------
+Analisi del Codice
+------------------
 
-Here, we connect the LED to the digital pin 9, so we need to declare an
-int variable called ledpin at the beginning of the program and assign a
-value of 9.
+Colleghiamo il LED al pin digitale 9, quindi dobbiamo dichiarare 
+una variabile int chiamata ledPin all'inizio del programma e assegnarle 
+il valore 9.
 
 .. code-block:: arduino
 
     const int ledPin = 9;
 
-Now, initialize the pin in the setup() function, where you need to 
-initialize the pin to OUTPUT mode.
+Ora, inizializza il pin nella funzione setup(), configurandolo in modalità OUTPUT.
 
 .. code-block:: arduino
 
     pinMode(ledPin, OUTPUT);
 
-In loop(), digitalWrite() is used to provide 5V high level signal for 
-ledpin, which will cause voltage difference between LED pins and light LED up.
+In loop(), digitalWrite() viene utilizzato per fornire un segnale di livello alto a 5V 
+al ledPin, creando una differenza di tensione tra i pin del LED e accendendolo.
 
 .. code-block:: arduino
 
     digitalWrite(ledPin, HIGH);
 
-If the level signal is changed to LOW, the ledPin's signal will be returned to 0 V to turn LED off.
+Se il segnale viene impostato su LOW, il segnale del ledPin torna a 0V, spegnendo il LED.
 
 .. code-block:: arduino
 
     digitalWrite(ledPin, LOW);
 
-An interval between on and off is required to allow people to see the change, so 
-we use a delay(1000) code to let the controller do nothing for 1000 ms.
+È necessario un intervallo tra accensione e spegnimento per rendere visibile il cambiamento. 
+Usiamo il codice delay(1000) per mantenere il controller inattivo per 1000 ms.
 
 .. code-block:: arduino
 
     delay(1000);
 
-
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+------------------------
 
 .. image:: img/image36.jpeg

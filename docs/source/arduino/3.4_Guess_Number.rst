@@ -1,37 +1,37 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_guess_number:
 
-3.4 Guess Number
-==================
+3.4 Indovina il Numero
+========================
 
-Overview
-----------------
+Panoramica
+------------------
 
-Guessing Numbers is a fun party game where you and your friends take
-turns inputting a number (0~99). The range will be smaller with the
-inputting of the number till a player answers the riddle correctly. Then
-the player is defeated and punished. For example, if the lucky number is
-51 which the players cannot see, and the player 1 inputs 50, the prompt
-of number range changes to 50~99; if the player 2 inputs 70, the range
-of number can be 50~70; if the player 3 inputs 51, he or she is the
-unlucky one. Here, we use IR Remote Controller to input numbers and use
-LCD to output outcomes.
+"Indovina il Numero" è un divertente gioco di gruppo in cui i partecipanti 
+inseriscono a turno un numero (0~99). Il range numerico si restringe con 
+ogni inserimento finché un giocatore non indovina il numero fortunato. In 
+tal caso, il giocatore perde e subisce una "penitenza". Ad esempio, se il 
+numero fortunato è 51 (che i giocatori non possono vedere) e il giocatore 
+1 inserisce 50, l'intervallo numerico diventa 50~99; se il giocatore 2 inserisce 
+70, il range diventa 50~70; se il giocatore 3 inserisce 51, è lui o lei il 
+perdente. Per questo progetto, utilizzeremo un telecomando IR per inserire i 
+numeri e un display LCD per mostrare i risultati.
 
-Components Required
-------------------------
+Componenti necessari
+-------------------------
 
 .. image:: img/Part_three_4.png
     :align: center
@@ -42,70 +42,66 @@ Components Required
 * :ref:`cpn_i2c_lcd1602`
 * :ref:`cpn_receive`
 
+Circuito Fritzing
+-----------------------
 
-Fritzing Circuit
----------------------
-
-In this example, the wiring of LCD1602 and infrared receiving module is
-as follows.
+In questo esempio, il collegamento tra LCD1602 e il modulo di ricezione a 
+infrarossi è illustrato come segue.
 
 .. image:: img/image280.png
    :align: center
 
-Schematic Diagram
+Schema elettrico
 ----------------------
 
 .. image:: img/image281.png
    :align: center
 
-
-Code
+Codice
 --------------
 
 .. note::
 
-    * You can open the file ``3.4_guessNumber.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber`` directly.
-    * The ``LiquidCrystal I2C`` and ``IRremote`` libraries are used here, you can install them from the **Library Manager**.
-
+    * Puoi aprire direttamente il file ``3.4_guessNumber.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\3.4_guessNumber``.
+    * Sono utilizzate le librerie ``LiquidCrystal I2C`` e ``IRremote``, installabili dal **Library Manager**.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/7bfbecaf-8e6c-4868-95d2-ab09f8d818a7/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Example Explanation
----------------------------
+Spiegazione dell'Esempio
+-----------------------------
 
 .. image:: img/Part_three_4_Example_Explanation.png
     :align: center
 
-In order to make the number guessing game become vivid and funny, we
-need to achieve the following functions:
+Per rendere il gioco "Indovina il Numero" più vivace e divertente, dobbiamo 
+implementare le seguenti funzionalità:
 
-1. The lucky number will be displayed when we start and reset the game,
-   and the number range prompt is reset to 0 ~ 99.
+1. Alla partenza o al reset del gioco, il numero fortunato viene generato e 
+visualizzato, e l'intervallo numerico si reimposta a 0 ~ 99.
 
-2. LCD will display the number being input and the number range prompt.
+2. Il display LCD mostrerà il numero inserito e il relativo intervallo.
 
-3. After inputting two digits, there appears result judgment
-   automatically.
+3. Dopo l'inserimento di due cifre, viene effettuato automaticamente il 
+   confronto del risultato.
 
-4. If you input a single digit, you can press the CYCLE key (the key at
-   the center of the Controller) to start the result judgment.
+4. Se viene inserita una singola cifra, è possibile premere il tasto "CYCLE" 
+   (il tasto centrale del telecomando) per avviare il confronto.
 
-5. If the answer is not guessed, the new number range prompt will be
-   displayed (if the lucky number is 51 and you enter 50, the number
-   range prompt will change to 50~99).
+5. Se il numero non è indovinato, viene aggiornato il nuovo intervallo numerico 
+   (es. se il numero fortunato è 51 e si inserisce 50, l'intervallo diventa 50~99).
 
-6. The game is automatically reset after the lucky number is guessed, so
-   that the player can play a new round.
+6. Il gioco si resetta automaticamente quando il numero fortunato viene 
+   indovinato, permettendo ai giocatori di iniziare un nuovo round.
 
-7. The game can be reset by directly pressing the POWER button (the
-   button in the upper left corner).
+7. Il gioco può essere resettato manualmente premendo il pulsante "POWER" 
+   (il tasto in alto a sinistra).
 
-In conclusion, the work flow of the project is shown in the flow chart.
+In sintesi, il flusso di lavoro del progetto è mostrato nel diagramma di flusso.
 
-Phenomenon Picture
------------------------
+Immagine del Fenomeno
+------------------------
 
 .. image:: img/image283.jpeg
    :align: center

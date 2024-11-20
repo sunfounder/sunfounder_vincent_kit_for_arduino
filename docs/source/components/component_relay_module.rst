@@ -1,110 +1,103 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_relay:
 
-Relay Module
+Modulo Relè
 ==========================================
 
 .. image:: img/relay_module.png
     :width: 400
     :align: center
 
-The relay module is a module consisting of a relay and a simple circuit that can be used to control large voltage devices, such as household appliances, by outputting a low voltage such as 3.3V from the control board.
+Il modulo relè è un modulo composto da un relè e un circuito semplice che può essere utilizzato per controllare dispositivi a tensione elevata, come elettrodomestici, mediante l'uscita di una bassa tensione, come 3,3V, dalla scheda di controllo.
 
-FEATURES
+**CARATTERISTICHE**
 -----------------------
 
-* Output: 250VAC-10A, 125VAC-10A, 30VDC-10A, 28VDC-10A.
-* Operating voltage 5V, suction current about 70mA.
-* With signal indicator
-* Input high and the relay closes, input low and the relay opens.
-* Using 8050 transistor to drive the relay action
-* With mounting screw holes
-* PCB size: 1.8cm*4.0cm*1.9cm, weight 15g
+* Uscita: 250VAC-10A, 125VAC-10A, 30VDC-10A, 28VDC-10A.
+* Tensione operativa: 5V, corrente di assorbimento circa 70mA.
+* Con indicatore di segnale.
+* Ingresso alto: il relè si chiude; ingresso basso: il relè si apre.
+* Utilizzo del transistor 8050 per guidare l'azione del relè.
+* Con fori per viti di montaggio.
+* Dimensioni PCB: 1,8cm x 4,0cm x 1,9cm, peso 15g.
 
-PINS OUT
+**PIN OUT**
 ----------------
 
 .. image:: img/relay_pinout.jpg
 
-**INPUT**
+**INGRESSO**
 
-It has a 1×3 (2.54mm pitch) pin header for connecting power (5V and 0V), and for controlling the relay. The pins are marked on the PCB:
+Il modulo dispone di un'intestazione a 3 pin (passo 2,54mm) per collegare l'alimentazione (5V e 0V) e controllare il relè. I pin sono contrassegnati sul PCB:
 
 * **-**: GND
 * **+**: VCC
-* **S**: Signal pin, used to control this relay. Input high and the relay closes, input low and the relay opens.
+* **S**: Pin del segnale, utilizzato per controllare il relè. Ingresso alto: il relè si chiude; ingresso basso: il relè si apre.
 
-**OUTPUT**
+**USCITA**
 
-The 1 channel relay module could be considered like a series switches: 1 normally Open (NO), 1 normally closed (NC) and 1 common Pins (COM).
+Il modulo relè a 1 canale può essere considerato come una serie di interruttori: 1 normalmente aperto (NO), 1 normalmente chiuso (NC) e 1 pin comune (COM).
 
-* **COM** - Common pin
-* **NC** - Normally Closed, in which case NC is connected with COM when pin **S** is set low and disconnected when pin **S** is high.
-* **NO** - Normally Open, in which case NO is disconnected with COM when pin **S** is set low and connected when pin **S** is high.
+* **COM** - Pin comune.
+* **NC** - Normalmente chiuso, collegato a COM quando il pin **S** è impostato su basso e disconnesso quando **S** è alto.
+* **NO** - Normalmente aperto, scollegato da COM quando il pin **S** è impostato su basso e collegato quando **S** è alto.
 
 
-HOW RELAY WORKS?
------------------------
+COME FUNZIONA IL RELÈ?
+-----------------------------
 
-As we may know, relay is a device which is used to provide connection
-between two or more points or devices in response to the input signal
-applied. In other words, relays provide isolation between the controller
-and the device as devices may work on AC as well as on DC. However, they
-receive signals from a microcontroller which works on DC hence requiring
-a relay to bridge the gap. Relay is extremely useful when you need to
-control a large amount of current or voltage with small electrical
-signal.
+Come sappiamo, il relè è un dispositivo utilizzato per fornire connessione 
+tra due o più punti o dispositivi in risposta al segnale di ingresso applicato. 
+In altre parole, i relè forniscono isolamento tra il controller e il dispositivo, 
+poiché i dispositivi possono funzionare sia in corrente alternata (AC) sia in 
+corrente continua (DC). Tuttavia, ricevono segnali da un microcontrollore che 
+funziona in DC, richiedendo quindi un relè per colmare il divario. Il relè è 
+estremamente utile quando è necessario controllare una grande quantità di 
+corrente o tensione con un piccolo segnale elettrico.
 
-There are 5 parts in every relay:
+Ogni relè è composto da 5 parti:
 
 .. image:: img/relay142.jpeg
 
-**Electromagnet** - It consists of an iron core wounded by coil of
-wires. When electricity is passed through, it becomes magnetic.
-Therefore, it is called electromagnet.
+**Elettromagnete** - Consiste in un nucleo di ferro avvolto da una bobina di 
+fili. Quando l'elettricità passa, diventa magnetico, quindi chiamato elettromagnete.
 
-**Armature** - The movable magnetic strip is known as armature. When
-current flows through them, the coil is it energized thus producing a
-magnetic field which is used to make or break the normally open (N/O) or
-normally close (N/C) points. And the armature can be moved with direct
-current (DC) as well as alternating current (AC).
+**Armatura** - La striscia magnetica mobile è nota come armatura. Quando la corrente 
+fluisce, la bobina si energizza, producendo un campo magnetico che viene utilizzato 
+per aprire o chiudere i contatti normalmente aperti (N/O) o normalmente chiusi (N/C).
 
-**Spring** - When no currents flow through the coil on the
-electromagnet, the spring pulls the armature away so the circuit cannot
-be completed.
+**Molla** - Quando non c'è corrente attraverso la bobina, la molla tira indietro 
+l'armatura, impedendo il completamento del circuito.
 
-Set of electrical **contacts** - There are two contact points:
+**Set di contatti elettrici** - Ci sono due punti di contatto:
 
--  Normally open - connected when the relay is activated, and disconnected when it is inactive.
+- Normalmente aperto - Connesso quando il relè è attivato e disconnesso quando è inattivo.
+- Normalmente chiuso - Non connesso quando il relè è attivato e connesso quando è inattivo.
 
--  Normally close - not connected when the relay is activated, and connected when it is inactive.
+**Struttura incapsulata** - I relè sono coperti con plastica per protezione.
 
-**Molded frame** - Relays are covered with plastic for protection.
+Il principio di funzionamento del relè è semplice. Quando l'alimentazione viene 
+fornita al relè, la corrente inizia a fluire attraverso la bobina di controllo; 
+di conseguenza, l'elettromagnete si energizza. L'armatura viene quindi attratta 
+dalla bobina, collegando il contatto mobile con i contatti normalmente aperti. 
+Così il circuito con il carico si energizza. Interrompendo il circuito, il 
+contatto mobile torna ai contatti normalmente chiusi grazie alla forza della 
+molla. In questo modo, il relè può controllare lo stato di un circuito di carico.
 
-The working principle of relay is simple. When power is supplied to the
-relay, currents start flowing through the control coil; as a result, the
-electromagnet starts energizing. Then the armature is attracted to the
-coil, pulling down the moving contact together thus connecting with the
-normally open contacts. So the circuit with the load is energized. Then
-breaking the circuit would a similar case, as the moving contact will be
-pulled up to the normally closed contacts under the force of the spring.
-In this way, the switching on and off of the relay can control the state
-of a load circuit.
+**Esempio**
 
-**Example**
-
-* :ref:`ar_relay` (Arduino Project)
-* :ref:`ar_overheat_monitor` (Arduino Project)
+* :ref:`ar_relay` (Progetto Arduino)
+* :ref:`ar_overheat_monitor` (Progetto Arduino)

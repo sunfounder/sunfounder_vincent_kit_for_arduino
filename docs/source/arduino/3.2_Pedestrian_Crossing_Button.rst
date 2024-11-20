@@ -1,36 +1,35 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_pedestrian:
 
-3.2 Pedestrian Crossing Button
-================================
+3.2 Pulsante per l'Attraversamento Pedonale
+==============================================
 
-Overview
--------------
+Panoramica
+----------------
 
-When pedestrians cross the street, they just need to touch the button on
-the lamppost of the roadside signal lamp, and the green light above the
-traffic lane will turn into red then pedestrians can pass safely. Thus,
-the hard situation of citizens crossing the street is comprehensively
-resolved. At the same time, when there is no pedestrian to press, the
-light above the lane that is set for vehicles to pass will always be
-green, thus greatly improving the use efficiency of the road and traffic
-capacity.
+Quando i pedoni attraversano la strada, devono semplicemente toccare il 
+pulsante sul palo del semaforo stradale. Il semaforo verde sopra la corsia 
+di marcia si trasforma in rosso, consentendo ai pedoni di attraversare in 
+sicurezza. Questo sistema risolve efficacemente il problema dei cittadini 
+durante l'attraversamento delle strade. Inoltre, quando nessun pedone preme 
+il pulsante, il semaforo rimane verde per i veicoli, migliorando così 
+l'efficienza dell'uso della strada e la capacità del traffico.
 
-Components Required
-------------------------
+Componenti necessari
+-------------------------
 
 .. image:: img/Part_three_2.png
     :align: center
@@ -44,48 +43,47 @@ Components Required
 * :ref:`cpn_7_segment`
 * :ref:`cpn_touch`
 
-
-Fritzing Circuit
+Circuito Fritzing
 ----------------------
 
-In this example, 74hc595, 7-Segment, LED, touch sensor are to be
-connected according to the chart.
+In questo esempio, 74HC595, 7-Segment, LED e sensore touch devono essere
+collegati seguendo lo schema mostrato.
 
 .. image:: img/Part_three_2_Fritzing_Circuit.png
     :align: center
 
 .. image:: img/image269.png
-   :alt: 3.2 Pedestrian Crossing Button_bb
+   :alt: 3.2 Pulsante per Attraversamento Pedonale_bb
    :align: center
 
-Schematic Diagram
+Schema elettrico
 -----------------------
 
 .. image:: img/image270.png
    :align: center
 
-Code
+Codice
 --------------
 
 .. note::
 
-    * You can open the file ``3.2_pedestrianCrossingButton.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\3.2_pedestrianCrossingButton`` directly.
+    * Puoi aprire direttamente il file ``3.2_pedestrianCrossingButton.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\3.2_pedestrianCrossingButton``.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/16418135-17f6-48d6-8ddf-c7bcd9858dbe/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
 
-Example Explanation
--------------------------
+Spiegazione dell'Esempio
+--------------------------
 
-The workflow of the project is as shown in the flow chart.
-The function of number display of 7-Segment is realized by writing 8 bit
-data into 74HC595. When there is a need of displaying「0」, the pins
-abcdef of the segment display will be connected to the high level. The
-pins, g and dp need to be connected to low level to
-write「0x3f」(B00111111) in the codes. The complete codes for number
-display of 7-Segment are as follows.
+Il flusso operativo del progetto è illustrato nel diagramma di flusso.
+La funzione di visualizzazione dei numeri sul display a 7 segmenti è 
+realizzata scrivendo dati a 8 bit nel 74HC595. Per visualizzare il 
+numero 「0」, i pin abcdef del display a segmenti devono essere collegati 
+al livello alto, mentre i pin g e dp devono essere connessi al livello basso 
+per scrivere 「0x3f」 (B00111111) nel codice. I codici completi per la 
+visualizzazione dei numeri sono i seguenti.
 
 .. image:: img/Part_three_2_Example_Explanation.png
     :align: center
@@ -105,7 +103,7 @@ display of 7-Segment are as follows.
 9           01101111           0x6f
 =========== ================== ========
 
-Phenomenon Picture
+Immagine del Fenomeno
 -------------------------
 
 .. image:: img/image272.jpeg

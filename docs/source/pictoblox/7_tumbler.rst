@@ -1,42 +1,42 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _tumbler:
 
 2.7 Tumbler
 =============
 
-Now we use a tilt switch to control tumbler on the stage, so that the switch tilted, tumbler also tilted.
+Ora utilizziamo un interruttore di inclinazione per controllare il tumbler nello stage, in modo che quando l'interruttore è inclinato, anche il tumbler si inclini.
 
 .. Image:: img/8_tumbler.png
 
-You Will Learn
+Cosa Imparerai
 ---------------------
 
-- How the tilt switch works
-- [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_] block
-- Adding external sprite
+- Come funziona l'interruttore di inclinazione
+- Blocco [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_]
+- Aggiungere uno sprite esterno
 
-Build the circuit
+Costruire il circuito
 -----------------------
 
-The tilt switch used here is a ball with a metal ball inside. When it is upright, the 2 pins are connected together, and when it is tilted, they are separate.
+L'interruttore di inclinazione utilizzato qui è una sfera con una pallina di metallo all'interno. Quando è in posizione verticale, i 2 pin sono collegati insieme; quando è inclinato, sono separati.
 
-Build the circuit according to the following diagram:
+Costruisci il circuito seguendo il diagramma sottostante:
 
-* Connect one pin of the tilt switch to pin 12, which is connected to a pull-down resistor and a 0.1uF (104) capacitor (used to eliminate jitter and output a stable level when the tilt switch is operating).
-* Connect the other end of the resistor and capacitor to GND and the other pin of the tilt switch to 5V.
+* Collega un pin dell'interruttore di inclinazione al pin 12, che è collegato a un resistore pull-down e a un condensatore da 0,1uF (104) (utilizzato per eliminare il jitter e produrre un livello stabile quando l'interruttore di inclinazione è in funzione).
+* Collega l'altra estremità del resistore e del condensatore a GND e l'altro pin dell'interruttore di inclinazione a 5V.
 
 .. image:: img/circuit/tilt_circuit.png
 
@@ -45,28 +45,28 @@ Build the circuit according to the following diagram:
 * :ref:`cpn_resistor`
 * :ref:`cpn_capacitor`
 
-Programming
+Programmazione
 ------------------
 
-**1. Customize the sprite**
+**1. Personalizza lo sprite**
 
-Select the **Tobi** sprite and go to the **Costumes** page. Select the icon in the bottom left corner and then select **Upload Costume**.
+Seleziona lo sprite **Tobi** e vai alla pagina **Costumi**. Seleziona l'icona nell'angolo in basso a sinistra e poi seleziona **Carica Costume**.
 
 .. image:: img/8_upload.png
 
-Then open ``tumbler1.png`` and ``tumbler2.png`` in the ``sunfounder_vincent_kit_for_arduino\scratch\picture`` path and make sure you have downloaded the relevant material from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Quindi apri ``tumbler1.png`` e ``tumbler2.png`` nel percorso ``sunfounder_vincent_kit_for_arduino\scratch\picture`` e assicurati di aver scaricato il materiale necessario da `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
 .. image:: img/8_add_tumbler.png
 
-Remove the **Tobi** sprite related costume and change the name to **Tumbler**. Now that we have customized a new sprite Tumbler, we start scripting it.
+Rimuovi i costumi relativi allo sprite **Tobi** e rinomina lo sprite come **Tumbler**. Ora che abbiamo personalizzato un nuovo sprite Tumbler, possiamo iniziare a scrivere lo script.
 
 .. image:: img/8_rename.png
 
-**2. Tilt the switch**
+**2. Inclina l'interruttore**
 
-If the value of pin12 is read as 0 (the switch is tilted), switch the sprite costume to **tumbler2**, which is also in the tilted state. Otherwise, switch the sprite costume to **tumbler1**, upright.
+Se il valore del pin 12 letto è 0 (l'interruttore è inclinato), cambia il costume dello sprite in **tumbler2**, che rappresenta lo stato inclinato. Altrimenti, cambia il costume dello sprite in **tumbler1**, che rappresenta lo stato verticale.
 
-* [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_]: The block checks its boolean condition; if the condition is true, the code held inside the first C (space) will activate; if the if the condition is false, the code inside the second C will activate.
-* [=]: The block is used to compare the equality of the values on the 2 sides of the equal sign, from the **Operators** platette.
+* [`if then else <https://en.scratch-wiki.info/wiki/If_()_Then,_Else_(block)#:~:text=The%20if%20()%20then%2C%20else,the%20second%20C%20 20will%20activate.>`_]: Il blocco verifica la condizione booleana; se la condizione è vera, il codice contenuto nel primo spazio (C) sarà eseguito; se la condizione è falsa, verrà eseguito il codice contenuto nel secondo spazio (C).
+* [=]: Il blocco viene utilizzato per confrontare l'uguaglianza dei valori sui due lati del segno uguale, dal palette **Operatori**.
 
 .. image:: img/8_script.png

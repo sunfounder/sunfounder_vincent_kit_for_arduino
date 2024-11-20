@@ -1,187 +1,181 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    * Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci l'utilizzo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi i problemi post-vendita e le sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato agli annunci sui nuovi prodotti e alle anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _dragon:
 
-2.21 GAME - Kill Dragon
-============================
+2.21 GIOCO - Uccidi il Dragone
+=================================
 
-Here, we use the joystick to play a game of dragon killing.
+In questo progetto, utilizziamo un joystick per giocare a un gioco in cui bisogna sconfiggere un dragone.
 
-When clicking on green, the dragon will float up and down on the right side and blow fire intermittently. You need to use the joystick to control the movement of the magic wand and launch star attacks at the dragon, while avoiding the flames it shoots, and finally defeat it.
+Quando si preme il pulsante verde, il dragone si muoverà su e giù sul lato destro dello schermo e soffierà fuoco a intervalli. È necessario utilizzare il joystick per controllare il movimento della bacchetta magica e lanciare attacchi di stelle contro il dragone, evitando le fiamme che sputa, e infine sconfiggerlo.
 
 .. image:: img/19_dragon.png
 
-Build the Circuit
------------------------
+Costruzione del circuito
+----------------------------
 
-A joystick is an input device consisting of a stick that pivots on a base and reports its angle or direction to the device it is controlling. Joysticks are often used to control video games and robots.
+Un joystick è un dispositivo di input composto da una leva che ruota su una base e segnala il suo angolo o direzione al dispositivo che controlla. I joystick sono spesso utilizzati per controllare videogiochi e robot.
 
-In order to communicate a full range of motion to the computer, a joystick needs to measure the stick’s position on two axes – the X-axis (left to right) and the Y-axis (up and down).
+Per comunicare una gamma completa di movimenti al computer, un joystick deve misurare la posizione della leva su due assi: l’asse X (da sinistra a destra) e l’asse Y (dal basso verso l’alto).
 
-The motion coordinates of the joystick are shown in the following figure.
+Le coordinate di movimento del joystick sono illustrate nella figura seguente.
 
 .. note::
 
-    * The x coordinate is from left to right, the range is 0-1023.
-    * y coordinate is from top to bottom, range is 0-1023.
+    * La coordinata x va da sinistra a destra, con un intervallo compreso tra 0 e 1023.
+    * La coordinata y va dall’alto verso il basso, con un intervallo compreso tra 0 e 1023.
 
 .. image:: img/16_joystick.png
 
-
-Now build the circuit according to the following diagram.
+Ora costruisci il circuito seguendo il diagramma sottostante.
 
 .. image:: img/circuit/joystick_circuit.png
-
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_joystick`
 
-Programming
-------------------
+Programmazione
+--------------
 
-**1. Dragon**
+**1. Dragone**
 
-**Woods** backdrop added via the **Choose a Backdrop** button.
+* Aggiungi lo sfondo **Woods** tramite il pulsante **Scegli uno sfondo**.
 
 .. image:: img/19_dragon01.png
 
-* Delete the default sprite and add the **Dragon** sprite.
+* Elimina lo sprite predefinito e aggiungi lo sprite **Dragon**.
 
 .. image:: img/19_dragon0.png
 
-* Go to the **Costumes** page and flip the dragon-b and dragon-c horizontally.
+* Vai alla pagina **Costumi** e capovolgi orizzontalmente dragon-b e dragon-c.
 
 .. image:: img/19_dragon1.png
 
-* Set the size to 50%.
+* Imposta la dimensione su 50%.
 
 .. image:: img/19_dragon3.png
 
-* Now create a variable - **dragon** to record the dragon's life points, and set the initial value to 50.
+* Crea una variabile **dragon** per registrare i punti vita del dragone, impostandone il valore iniziale a 50.
 
 .. image:: img/19_dragon2.png
 
-* Next, switch the sprite costume to **dragon-b** and have the **Dragon** sprite up and down in a range.
+* Fai fluttuare lo sprite **Dragon** su e giù entro un intervallo.
 
 .. image:: img/19_dragon4.png
 
 
-* Add a **Lightning** sprite as the fire blown by the **Dragon** sprite. You need to rotate it 90° clockwise in the Costumes page, this is to make the **Lightning** sprite move in the right direction.
+* Aggiungi uno sprite **Lightning** come il fuoco sputato dallo sprite **Dragon**. È necessario ruotarlo di 90° in senso orario nella pagina Costumi, per far sì che lo sprite **Lightning** si muova nella direzione corretta.
 
 .. note::
-    When adjusting the **Lightning** sprite's costume, you may move it off-center, which must be avoided! The center point must be right in the middle of the sprite!
+    Durante la regolazione del costume dello sprite **Lightning**, potrebbe essere spostato fuori dal centro; questo deve essere evitato! Il punto centrale deve essere esattamente al centro dello sprite.
 
 .. image:: img/19_lightning1.png
 
 
 
-* Then adjust the **dragon-c** costume of the **Dragon** sprite so that its center point should be at the tail of the fire. This will make the positions of the **Dragon** sprite and the **Lightning** sprite correct, and prevent **Lightning** from launching from the dragon's feet. 
+* Regola il costume **dragon-c** dello sprite **Dragon** in modo che il suo punto centrale si trovi sulla coda del fuoco. Questo garantirà che le posizioni degli sprite **Dragon** e **Lightning** siano corrette, evitando che **Lightning** venga lanciato dai piedi del dragone.
 
 .. image:: img/19_dragon5.png
 
-* Correspondingly, **dragon-b** needs to make the head of the dragon coincide with the center point.
+* Allo stesso modo, il costume **dragon-b** deve far coincidere la testa del dragone con il punto centrale.
 
 .. image:: img/19_dragon5.png
 
-* Adjust the size and orientation of the **Lightning** sprite to make the image look more harmonious.
+* Regola la dimensione e l'orientamento dello sprite **Lightning** per rendere l'immagine più armoniosa.
 
 .. image:: img/19_lightning3.png
 
-* Now script the **Lightning** sprite. This is easy, just have it follow the **Dragon** sprite all the time. At this point, click on the green flag and you will see **Dragon** moving around with lightning in its mouth.
+* Ora crea uno script per lo sprite **Lightning**. È semplice: basta farlo seguire sempre lo sprite **Dragon**. A questo punto, clicca sulla bandiera verde e vedrai il **Dragon** muoversi con il fulmine nella bocca.
 
 .. image:: img/19_lightning4.png
 
-* Back to the **Dragon** sprite, now have it blow out fire, being careful not to let the fire in its mouth shoot out, but to create a clone for the **Lightning** sprite.
+* Torna allo sprite **Dragon** e fallo sputare fuoco, assicurandoti che il fuoco nella sua bocca non venga lanciato direttamente, ma che venga creato un clone per lo sprite **Lightning**.
 
 .. image:: img/19_dragon6.png
 
-* Click on the **Lightning** sprite and let the **Lightning** clone shoot out at a random angle, it will bounce off the wall and disappear after a certain amount of time.
+* Fai in modo che il clone dello sprite **Lightning** venga lanciato ad un angolo casuale, rimbalzi sulle pareti e scompaia dopo un certo periodo di tempo.
 
 .. image:: img/19_lightning5.png
 
-* In the **Lightning** sprite, hide its body and show the clone.
+* Nello sprite **Lightning**, nascondi il corpo principale e mostra il clone.
 
 .. image:: img/19_lightning6.png
 
-Now the dragon can move up and down and blow out fire.
+Ora il dragone può muoversi su e giù e sputare fuoco.
 
 
-**2.Wand**
+**2. Bacchetta Magica**
 
-* Create a **Wand** sprite and rotate its direction to 180 to point to the right.
+* Crea uno sprite **Wand** e ruotalo di 180° per puntare verso destra.
 
 .. image:: img/19_wand1.png
 
-* Now create a variable **hp** to record its life value, initially set to 3. Then read the Joystick's value, which is used to control the wand's movement.
+* Crea una variabile **hp** per registrare il valore di vita, inizialmente impostata a 3. Leggi poi il valore del Joystick, che verrà utilizzato per controllare il movimento della bacchetta.
 
 .. image:: img/19_wand2.png
 
-* The dragon has lightning, and the wand that crushes it has its "magic bullet"! Create a **Star** sprite, resize it, and script it to always follow the **Wand** sprite, and limit the number of stars to three.
+* Il dragone ha il fulmine, e la bacchetta che lo sconfiggerà ha il suo "proiettile magico"! Crea uno sprite **Star**, ridimensionalo e crea uno script per farlo seguire sempre la **Wand**, limitando il numero di stelle a tre.
 
 .. image:: img/19_star2.png
 
-* Make the **Wand** sprite shoot stars automatically. The **Wand** sprite shoots stars the same way the dragon blows fire -- by creating clones.
+* Fai in modo che lo sprite **Wand** spari automaticamente le stelle. Lo sprite **Wand** spara le stelle nello stesso modo in cui il dragone sputa fuoco: creando cloni.
 
 .. image:: img/19_wand3.png
 
-
-* Go back to the **Star** sprite and script its clone to spin and shoot to the right, disappear after going beyond the stage and restoring the number of stars. Same as **Lightning** sprite, hide the body and show the clone.
+* Torna allo sprite **Star** e crea uno script per il clone: deve ruotare, sparare verso destra, scomparire dopo aver superato il bordo dello stage e ripristinare il numero di stelle. Come per lo sprite **Lightning**, nascondi il corpo principale e mostra il clone.
 
 .. image:: img/19_star3.png
 
-Now we have a wand that shoots star bullets.
+Ora abbiamo una bacchetta che spara stelle.
 
-**3. Fight!**
+**3. Combattimento!**
 
-The wand and the dragon are currently still at odds with each other, and we're going to make them fight. The dragon is strong, and the wand is the brave man who crusades against the dragon. The interaction between them consists of the following parts.
-
-
-1. if the wand touches the dragon, it will be knocked back and lose life points.
-2. if lightning strikes the wand, the wand will lose life points.
-3. if the star bullet hits the dragon, the dragon will lose life points.
+La bacchetta e il dragone si scontreranno. Ecco le regole:
 
 
-Once that's sorted out, let's move on to changing the scripts for each sprite.
+1. Se la bacchetta tocca il dragone, sarà respinta e perderà punti vita.
+2. Se un fulmine colpisce la bacchetta, questa perderà punti vita.
+3. Se un proiettile di stella colpisce il dragone, questo perderà punti vita.
 
-* If the **Wand** hits the **Dragon**, it will be knocked back and lose life points.
+Ora aggiorniamo gli script di ogni sprite.
+
+* Se la **Wand** tocca il **Dragon**, sarà respinta e perderà punti vita.
 
 .. image:: img/19_wand4.png
 
-* If **Lightning** (a **Lightning** sprite clone) hits the **Wand** sprite, it will make a pop sound and disappear, and the **Wand** will lose life points.
+* Se un fulmine (clone dello sprite **Lightning**) colpisce la **Wand**, emetterà un suono e scomparirà, e la bacchetta perderà punti vita.
 
 .. image:: img/19_lightning7.png
 
-* If a **Star** (clone of the **Star** sprite) hits the **Dragon**, it will emit a collect sound and disappear, while restoring the **Star** count, and the **Dragon** will lose life points.
+* Se un proiettile di stella (clone dello sprite **Star**) colpisce il **Dragon**, emetterà un suono di raccolta, scomparirà, ripristinando il numero di stelle, e il dragone perderà punti vita.
 
 .. image:: img/19_star4.png
 
 
-**4. stage**
+**4. Stage**
 
-The battle between the **Wand** and the **Dragon** will eventually be divided into winners and losers, which we represent with the stage.
+La battaglia tra la **Wand** e il **Dragon** avrà un vincitore e un perdente, rappresentati dagli sfondi.
 
-* Add **Blue Sky** backgdrop, and write the character "WIN!" on it to represent that the dragon has been defeated and the dawn has come.
-
+* Aggiungi lo sfondo **Blue Sky** e scrivi la parola "WIN!" per rappresentare la vittoria sul dragone.
 
 .. image:: img/19_sky0.png
 
-* And modify the blank backdrop as follows, to represent that the game has failed and everything will be in darkness.
+* Modifica lo sfondo vuoto per rappresentare la sconfitta, con un tema scuro.
 
 .. image:: img/19_night.png
 
-* Now write a script to switch these backgdrops, when the green flag is clicked, switch to **Woods** backgdrop; if the dragon's life point is less than 1 , then the game succeeds and switch the backdrop to **Blue Sky**; if the life value point of the **Wand** is less than 1, then switch to **Night** backdrop and the game fails.
-
+* Scrivi uno script per cambiare gli sfondi: quando si clicca sulla bandiera verde, passa allo sfondo **Woods**; se i punti vita del dragone scendono sotto 1, il gioco è vinto e si passa allo sfondo **Blue Sky**; se i punti vita della bacchetta scendono sotto 1, il gioco è perso e si passa allo sfondo **Night**.
 
 .. image:: img/19_sky1.png

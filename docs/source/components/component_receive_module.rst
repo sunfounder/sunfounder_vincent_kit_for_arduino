@@ -1,60 +1,57 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_receive:
 
-IR Receiver Module
+Modulo Ricevitore IR
 ===========================
 
-**IR Receiver Module**
+**Modulo Ricevitore IR**
 
 .. image:: img/image185.png
 
-* S: Signal output
+* S: Uscita segnale
 * +：VCC
 * -: GND
 
-An infrared-receiver is a component which receives infrared signals and can independently receive infrared rays and output signals compatible with TTL level. It is similar with a normal plastic-packaged transistor in size and is suitable for all kinds of infrared remote control and infrared transmission.
+Un ricevitore a infrarossi è un componente che riceve segnali a infrarossi e può ricevere autonomamente raggi infrarossi e generare segnali compatibili con il livello TTL. È simile a un normale transistor in plastica in termini di dimensioni ed è adatto a tutti i tipi di telecomandi e trasmissioni a infrarossi.
 
-Infrared, or IR, communication is a popular, low-cost, easy-to-use wireless communication technology. Infrared light has a slightly longer wavelength than visible light, so it is imperceptible to the human eye - ideal for wireless communication. A common modulation scheme for infrared communication is 38KHz modulation.
+La comunicazione a infrarossi, o IR, è una tecnologia di comunicazione wireless popolare, a basso costo e facile da usare. La luce infrarossa ha una lunghezza d'onda leggermente superiore a quella della luce visibile, quindi è impercettibile all'occhio umano - ideale per la comunicazione wireless. Uno schema di modulazione comune per la comunicazione a infrarossi è la modulazione a 38KHz.
 
+* Adotta il sensore IR ricevitore HX1838, alta sensibilità
+* Può essere utilizzato per il controllo remoto
+* Alimentazione: 5V
+* Interfaccia: Digitale
+* Frequenza di modulazione: 38Khz
+* Definizioni dei pin: (1) Output (2) Vcc (3) GND
+* Dimensioni: 23,5mm x 21,5mm
 
-* Adopted HX1838 IR Receiver Sensor, high sensitivity
-* Can be used for remote control
-* Power Supply: 5V
-* Interface: Digital
-* Modulate Frequency: 38Khz
-* Pin Definitions: (1) Output (2) Vcc (3) GND
-* Size: 23.5mm x 21.5mm
-
-
-**Remote Control**
+**Telecomando**
 
 .. image:: img/image186.jpeg
     :width: 400
 
-This is a Mini thin infrared wireless remote control with 21 function buttons and a transmitting distance of up to 8 meters, which is suitable for operating a wide range of devices in a kid's room.
+Questo è un mini telecomando a infrarossi wireless sottile con 21 pulsanti funzionali e una distanza di trasmissione fino a 8 metri, adatto per operare su una vasta gamma di dispositivi, perfetto per la stanza dei bambini.
 
-* Size: 85x39x6mm
-* Remote control range: 8-10m
-* Battery: 3V button type lithium manganese battery
-* Infrared carrier frequency: 38KHz
-* Surface paste material: 0.125mm PET
-* Effective life: more than 20,000 times
+* Dimensioni: 85x39x6mm
+* Portata del telecomando: 8-10m
+* Batteria: Batteria al litio-manganese tipo bottone da 3V
+* Frequenza portante infrarossa: 38KHz
+* Materiale di superficie: PET da 0,125mm
+* Durata effettiva: più di 20.000 utilizzi
 
+**Esempio**
 
-**Example**
-
-* :ref:`ar_receive` (Arduino Project)
-* :ref:`ar_guess_number` (Arduino Project)
+* :ref:`ar_receive` (Progetto Arduino)
+* :ref:`ar_guess_number` (Progetto Arduino)

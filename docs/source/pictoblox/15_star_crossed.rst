@@ -1,109 +1,108 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _star_crossed:
 
-2.15 GAME - Star-Crossed
-==========================
+2.15 GIOCO - Stella e Razzo
+==============================
 
-In the next projects, we will play some fun mini-games in PictoBlox.
+Nei prossimi progetti giocheremo ad alcuni mini-giochi divertenti in PictoBlox.
 
-Here we use Joystick module to play a Star-Crossed game.
+Qui utilizziamo il modulo Joystick per giocare a un gioco di stelle e razzi.
 
-After the script is run, stars will appear randomly on the stage, you need to use Joystick to control Rocketship to avoid the stars, if you touch it, the game will be over.
+Dopo l'esecuzione dello script, le stelle appariranno casualmente sul palco, e dovrai usare il Joystick per controllare il Razzo ed evitare le stelle. Se le tocchi, il gioco terminerà.
 
 .. image:: img/16_rocket.png
 
-You Will Learn
----------------------
+Cosa Imparerai
+----------------------
 
-- How Joystick module works
-- Set the x and y coordinates of the sprite
+- Come funziona il modulo Joystick
+- Impostare le coordinate x e y dello sprite
 
-Build the Circuit
+Costruire il Circuito
 -----------------------
 
-A joystick is an input device consisting of a stick that pivots on a base and reports its angle or direction to the device it is controlling. Joysticks are often used to control video games and robots.
+Un joystick è un dispositivo di input costituito da una leva che si inclina su una base e comunica il suo angolo o direzione al dispositivo che controlla. I joystick sono spesso utilizzati per controllare videogiochi e robot.
 
-In order to communicate a full range of motion to the computer, a joystick needs to measure the stick’s position on two axes – the X-axis (left to right) and the Y-axis (up and down).
+Per comunicare un'intera gamma di movimenti al computer, un joystick deve misurare la posizione della leva su due assi: l'asse X (sinistra-destra) e l'asse Y (alto-basso).
 
-The motion coordinates of the joystick are shown in the following figure.
+Le coordinate di movimento del joystick sono illustrate nella figura seguente.
 
 .. note::
 
-    * The x coordinate is from left to right, the range is 0-1023.
-    * y coordinate is from top to bottom, range is 0-1023.
+    * La coordinata x va da sinistra a destra, con un intervallo di 0-1023.
+    * La coordinata y va dall'alto verso il basso, con un intervallo di 0-1023.
 
 .. image:: img/16_joystick.png
 
-
-Now build the circuit according to the following diagram.
+Ora costruisci il circuito seguendo il diagramma sottostante.
 
 .. image:: img/circuit/joystick_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_joystick`
 
-Programming
-------------------
-The whole script is to achieve the effect that when the green flag is clicked, the **Stars** sprite moves in a curve on the stage and you need to use the joystick to move the **Rocketship**, so that it will not be touched by the **Star** sprite.
+Programmazione
+-----------------
 
-**1. Add sprites and backdrops**
+Lo script che vogliamo creare consente di fare in modo che, quando si clicca sulla bandiera verde, lo sprite **Stella** si muova con una traiettoria curva sul palco e si utilizzi il joystick per muovere il **Razzo**, evitando che venga toccato dallo sprite **Stella**.
 
-Delete the default sprite, and use the **Choose a Sprite** button to add the **Rocketship** sprite and the **Star** sprite. Note that the **Rocket** sprite size is set to 50%.
+**1. Aggiungere sprite e sfondi**
+
+Elimina lo sprite predefinito e utilizza il pulsante **Scegli uno Sprite** per aggiungere gli sprite **Razzo** e **Stella**. Nota che la dimensione dello sprite **Razzo** deve essere impostata al 50%.
 
 .. image:: img/16_sprite.png
 
-Now add the **Stars** backdrop by **Choose a Backdrop**.
+Ora aggiungi lo sfondo **Stars** tramite il pulsante **Scegli uno Sfondo**.
 
 .. image:: img/16_sprite1.png
 
-**2. Scripting for Rocketship**
+**2. Script per il Razzo**
 
-The **Rocketship** sprite is to achieve the effect that it will appear at a random position and then be controlled by the joystick to move it up, down, left, and right.
+Lo sprite **Razzo** deve apparire in una posizione casuale e poi essere controllato dal joystick per muoversi su, giù, sinistra e destra.
 
-The workflow is as follows.
+Il flusso di lavoro è il seguente:
 
-* When the green flag is clicked, have the sprite go to a random location and create 2 variables **x** and **y**, which store the values read from A0 (VRX of Joystick) and A1 (VRY of Joystick), respectively. You can let the script run, toggling the joystick up and down, left and right, to see the range of values for x and y.
+* Quando si clicca sulla bandiera verde, fai andare lo sprite in una posizione casuale e crea 2 variabili **x** e **y**, che memorizzano i valori letti da A0 (VRX del joystick) e A1 (VRY del joystick), rispettivamente. Puoi far eseguire lo script, muovendo il joystick su e giù, sinistra e destra, per vedere l'intervallo di valori per x e y.
 
 .. image:: img/16_roc2.png
 
-* The value of A0 is in the range 0-1023 (the middle is about 512). Use ``x-512>200`` to determine if Joystick is toggling to the right, and if so, make the x coordinate of the sprite +30 (to move the sprite to the right).
+* Il valore di A0 è nell'intervallo 0-1023 (il centro è circa 512). Usa ``x-512>200`` per determinare se il joystick è spostato a destra e, in tal caso, incrementa la coordinata x dello sprite di 30 (per spostare lo sprite a destra).
 
 .. image:: img/16_roc3.png
 
-* If the Joystick is toggled to the left (``x-512<-200``), let the x coordinate of the sprite be -30 (let the sprite move to the left).
+* Se il joystick viene spostato a sinistra (``x-512<-200``), decrementa la coordinata x dello sprite di 30 (per spostare lo sprite a sinistra).
 
 .. image:: img/16_roc4.png
 
-* Since the Joystick's y coordinate is from up (0) to down (1023), and the sprite's y coordinate is from down to up. So in order to move the Joystick upwards and the sprite upwards, the y-coordinate must be -30 in the script.
+* Poiché la coordinata y del joystick va dall'alto (0) verso il basso (1023), mentre la coordinata y dello sprite va dal basso verso l'alto, per fare in modo che il joystick si muova verso l'alto e lo sprite vada verso l'alto, la coordinata y deve essere decrementata di 30 nello script.
 
 .. image:: img/16_roc5.png
 
-* If the joystick is flicked down, the y-coordinate of the sprite is +30.
-
+* Se il joystick viene spostato verso il basso, la coordinata y dello sprite viene incrementata di 30.
 
 .. image:: img/16_roc6.png
 
-**3. Scripting for Star**
+**3. Script per la Stella**
 
-The effect to be achieved by the **Star** sprite is to appear at a random location, and if it hits **Rocketship**, the script stops running and the game ends.
+Lo sprite **Stella** deve apparire in una posizione casuale e, se colpisce lo sprite **Razzo**, lo script si ferma e il gioco termina.
 
-* When the green flag is clicked and the sprite goes to a random location, the [turn degrees] block is to make the **Star** sprite move forward with a bit of an angle change so you can see that it is moving in a curve and if on edge, bounce.
+* Quando si clicca sulla bandiera verde, lo sprite va in una posizione casuale, e il blocco [ruota di gradi] fa muovere lo sprite **Stella** in avanti con una leggera variazione di angolo per simulare un movimento curvilineo, rimbalzando sui bordi.
 
 .. image:: img/16_star1.png
 
-* If the sprite touches the **Rocketship** sprite while it's moving, stop the script from running.
+* Se lo sprite tocca lo sprite **Razzo** durante il movimento, interrompe l'esecuzione dello script.
 
 .. image:: img/16_star2.png

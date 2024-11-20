@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _light_alarm:
 
-2.9 Light Alarm Clock
-======================
+2.9 Sveglia a Luce
+===================
 
-In life, there are various kinds of time alarm clocks. Now let's make a light-controlled alarm clock. When morning comes, the brightness of light increases and this light-controlled alarm clock will remind you that it's time to get up.
+Nella vita, esistono vari tipi di sveglie. Ora realizziamo una sveglia controllata dalla luce. Quando arriva il mattino e la luminosità aumenta, questa sveglia ti ricorderà che è ora di alzarti.
 
 .. image:: img/10_clock.png
 
-You Will Learn
+Cosa Imparerai
 ---------------------
 
-- Photoresistor working principle
-- Stopping sound playback and stopping scripts from running
+- Principio di funzionamento della fotoresistenza
+- Interruzione della riproduzione del suono e dei blocchi di script in esecuzione
 
 
 
-Build the Circuit
------------------------
+Costruire il Circuito
+------------------------
 
-A photoresistor or photocell is a light-controlled variable resistor. The resistance of a photoresistor decreases with increasing incident light intensity.
+Una fotoresistenza, o cellula fotoelettrica, è un resistore variabile controllato dalla luce. La resistenza di una fotoresistenza diminuisce con l'aumentare dell'intensità della luce incidente.
 
-Build the circuit according to the following diagram.
+Costruisci il circuito seguendo il diagramma sottostante.
 
-Connect one end of the photoresistor to 5V, the other end to A0, and connect a 10K resistor in series with GND at this end.
+Collega un'estremità della fotoresistenza a 5V, l'altra estremità ad A0, e collega un resistore da 10K in serie con GND a questa estremità.
 
-So when the light intensity increases, the resistance of a photoresistor decreases, the voltage division of the 10K resistor increases, and the value obtained by A0 becomes larger.
+Quindi, quando l'intensità della luce aumenta, la resistenza della fotoresistenza diminuisce, la tensione di divisione sul resistore da 10K aumenta e il valore ottenuto da A0 diventa maggiore.
 
 .. image:: img/circuit/photoresistor_circuit.png
 
@@ -46,36 +46,36 @@ So when the light intensity increases, the resistance of a photoresistor decreas
 * :ref:`cpn_photoresistor` 
 * :ref:`cpn_resistor`
 
-Programming
+Programmazione
 ------------------
 
-**1. Select a sprite**
+**1. Seleziona uno sprite**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **bell** in the search box, and then click to add it.
+Elimina lo sprite predefinito, clicca sul pulsante **Scegli uno Sprite** nell'angolo in basso a destra dell'area degli sprite, inserisci **bell** nella barra di ricerca e clicca per aggiungerlo.
 
 .. image:: img/10_sprite.png
 
-**2. Read the value of A0**
+**2. Leggi il valore di A0**
 
-Create two variables **before** and **current**. When green flag is clicked, read the value of A0 and store it in variable **before** as a reference value. In [forever], read the value of A0 again, store it in the variable **current**.
+Crea due variabili **prima** e **attuale**. Quando si clicca sulla bandiera verde, leggi il valore di A0 e memorizzalo nella variabile **prima** come valore di riferimento. Nel blocco [per sempre], leggi nuovamente il valore di A0 e memorizzalo nella variabile **attuale**.
 
 .. image:: img/10_reada0.png
 
-**3. Make a sound**
+**3. Fai suonare la sveglia**
 
-When the value of current A0 is greater than the previous 50, which represents the current light intensity is greater than the threshold, then let the sprite make a sound.
+Quando il valore attuale di A0 è maggiore di 50 rispetto al precedente, il che rappresenta un aumento dell'intensità della luce oltre la soglia, fai emettere un suono allo sprite.
 
 .. image:: img/10_sound.png
 
-**4. Turning the sprite**
+**4. Ruota lo sprite**
 
-Use [turn block] to make the **bell** sprite turn left and right to achieve the alarm effect.
+Utilizza il [blocco di rotazione] per far ruotare lo sprite **bell** a sinistra e a destra, ottenendo l'effetto sveglia.
 
 .. image:: img/10_turn.png
 
-**5. stop all**
+**5. Ferma tutto**
 
-Stops the alarm when it has been ringing for a while.
+Interrompi la sveglia dopo che ha suonato per un po' di tempo.
 
 .. image:: img/10_stop.png
 

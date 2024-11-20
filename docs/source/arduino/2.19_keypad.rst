@@ -1,31 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_keypad:
 
-2.19 Keypad
-============
+2.19 Tastierino Numerico
+==========================
 
-Overview
+Panoramica
 -------------
 
-In this lesson, you will learn to use Keypad. Keypad can be applied into
-various kinds of devices, including mobile phone, fax machine, microwave
-oven and so on. It is commonly used in user input.
+In questa lezione imparerai a utilizzare un tastierino numerico. Questo 
+dispositivo può essere applicato a una varietà di dispositivi, inclusi 
+telefoni cellulari, fax, forni a microonde e molti altri. È comunemente 
+usato per l'input utente.
 
-Components Required
--------------------------
+Componenti necessari
+----------------------
 
 .. image:: img/Part_two_19.png
 
@@ -33,28 +34,27 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_keypad`
 
-Fritzing Circuit
----------------------
+Circuito Fritzing
+--------------------
 
-In this example, we extend the pins 1~8 of Keypad to connect to the
-digital pins 2~9.
+In questo esempio, estendiamo i pin da 1 a 8 del tastierino per collegarli 
+ai pin digitali da 2 a 9.
 
 .. image:: img/image176.png
 
-Schematic Diagram
-----------------------
+Schema elettrico
+-------------------
 
 .. image:: img/image177.png
    :align: center
 
-Code
------------
-
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.19_keypad.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.19_keypad`` directly.
-    * The ``Keypad`` library is used here, you can install it from the **Library Manager**.
+    * Puoi aprire direttamente il file ``2.19_keypad.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.19_keypad``.
+    * Qui viene utilizzata la libreria ``Keypad``, che puoi installare tramite il **Library Manager**.
 
         .. image:: img/lib_keypad.png
             :align: center
@@ -63,38 +63,38 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/89e21aab-1a9c-4bf7-a0b3-a9b80f4d2d96/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, on the serial monitor,
-you can see the value of the key currently pressed on the Keypad.
+Dopo aver caricato il codice sulla scheda Mega2560, nel monitor seriale 
+potrai vedere il valore del tasto attualmente premuto sul tastierino numerico.
 
-Code Analysis
--------------------
+Analisi del codice
+----------------------
 
-By calling the Keypad.h library, you can easily use Keypad.
+Utilizzando la libreria Keypad.h, puoi facilmente utilizzare il tastierino numerico.
 
 .. code-block:: arduino
 
     #include <Keypad.h> 
 
-**Library Functions：**
+**Funzioni della libreria:**
 
 .. code-block:: arduino
 
     Keypad(char *userKeymap, byte *row, byte *col, byte numRows, byte numCols)
 
-Initializes the internal keymap to be equal to userKeymap.
+Inizializza la mappa interna dei tasti con la configurazione fornita da userKeymap.
 
-* ``userKeymap``: The symbols on the buttons of the keypads.
-* ``row, col``: Pin configuration.
-* ``numRows, numCols``: Keypad sizes.
+* ``userKeymap``: I simboli sui tasti del tastierino.
+* ``row, col``: Configurazione dei pin.
+* ``numRows, numCols``: Dimensioni del tastierino.
 
 .. code-block:: arduino
 
     char getKey()
 
-Returns the key that is pressed, if any. This function is non-blocking.
+Restituisce il tasto premuto, se presente. Questa funzione è non bloccante.
 
-Phenomenon Picture
-------------------------
+Immagine del risultato
+---------------------------
 
 .. image:: img/image178.jpeg
    :align: center

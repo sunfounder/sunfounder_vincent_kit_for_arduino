@@ -1,40 +1,40 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto Esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e Condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime Esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti Speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni Festive e Giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _colorful_ball:
 
-2.3 Colorful Balls
-=====================
+2.3 Palline Colorate
+========================
 
-In this project, we will make the RGB LEDs display different colors.
+In questo progetto faremo in modo che i LED RGB visualizzino colori diversi.
 
-Clicking on different colored balls on the stage area will cause the RGB LED to light up in different colors.
+Cliccando su diverse palline colorate nell'area dello stage, il LED RGB si illuminerà con colori diversi.
 
 .. image:: img/4_color.png
 
-You Will Learn
----------------------
+Imparerai
+-----------------------
 
-- The principle of RGB LED
-- Copy sprites and select different costumes
-- Three primary colors superimposed
+- Il principio del LED RGB
+- Copiare sprite e selezionare costumi diversi
+- Sovrapposizione dei tre colori primari
 
 
-Build the Circuit
----------------------
+Costruire il Circuito
+-----------------------
 
-An RGB LED packages three LEDs of red, green, and blue into a transparent or semitransparent plastic shell. It can display various colors by changing the input voltage of the three pins and superimpose them, which, according to statistics, can create 16,777,216 different colors.
+Un LED RGB racchiude tre LED (rosso, verde e blu) in un involucro di plastica trasparente o semi-trasparente. Può visualizzare vari colori modificando la tensione di ingresso sui tre pin e sovrapponendoli. Secondo le statistiche, è possibile creare fino a 16.777.216 colori diversi.
 
 .. image:: img/4_rgb.png
     :width: 300
@@ -46,64 +46,60 @@ An RGB LED packages three LEDs of red, green, and blue into a transparent or sem
 * :ref:`cpn_resistor`
 
 
-Programming
+Programmazione
 ------------------
 
-**1. Select sprite**
+**1. Selezionare lo sprite**
 
-
-Delete the default sprite, then choose the **Ball** sprite.
+Elimina lo sprite predefinito, quindi scegli lo sprite **Ball**.
 
 .. image:: img/4_ball.png
 
-And duplicate it 5 times.
+E duplicalo 5 volte.
 
 .. image:: img/4_duplicate_ball.png
 
-Choose different costumes for these 5 **Ball** sprites and move them to the corresponding positions.
+Scegli costumi diversi per questi 5 sprite **Ball** e posizionali nelle posizioni corrispondenti.
 
 .. note::
 
-    **Ball3** sprite costume color needs to be manually changed to red.
+    **Ball3**: il colore del costume deve essere cambiato manualmente in rosso.
 
 .. image:: img/4_rgb1.png
     :width: 800
 
-**2. Make RGB LEDs light up in the appropriate color**
+**2. Fare in modo che i LED RGB si illuminino con il colore appropriato**
 
-Before understanding the code, we need to understand the `RGB color model <https://en.wikipedia.org/wiki/RGB_color_model>`_.
+Prima di comprendere il codice, dobbiamo capire il `modello di colore RGB <https://en.wikipedia.org/wiki/RGB_color_model>`_.
 
-The RGB color model is an additive color model in which red, green, and blue light are added together in various ways to reproduce a broad array of colors. 
+Il modello di colore RGB è un modello additivo in cui le luci rosse, verdi e blu vengono combinate in vari modi per riprodurre un'ampia gamma di colori.
 
-Additive color mixing: adding red to green yields yellow; adding green to blue yields cyan; adding blue to red yields magenta; adding all three primary colors together yields white.
+Mescolanza di colori additivi: aggiungendo il rosso al verde si ottiene il giallo; aggiungendo il verde al blu si ottiene il ciano; aggiungendo il blu al rosso si ottiene il magenta; combinando tutti e tre i colori primari si ottiene il bianco.
 
 .. image:: img/4_rgb_addition.png
   :width: 400
 
-So the code to make the RGB LED light yellow is as follows.
+Quindi, il codice per fare in modo che il LED RGB si illumini di giallo è il seguente.
 
 .. image:: img/4_yellow.png
 
 
-When the Ball sprite (yellow ball) is clicked, we set pin 11 high (red LED on), pin 10 high (green LED on) and pin 9 low (blue LED off) so that the RGB LED will light yellow.
+Quando lo sprite Ball (pallina gialla) viene cliccato, impostiamo il pin 11 su HIGH (LED rosso acceso), il pin 10 su HIGH (LED verde acceso) e il pin 9 su LOW (LED blu spento) in modo che il LED RGB si illumini di giallo.
 
-You can write codes to other sprites in the same way to make the RGB LEDs light up in the corresponding colors.
+Puoi scrivere i codici per gli altri sprite allo stesso modo per fare in modo che i LED RGB si illuminino con i colori corrispondenti.
 
-**3. Ball2 sprite (light blue)**
+**3. Sprite Ball2 (azzurro)**
 
 .. image:: img/4_blue.png
 
-**4. Ball3 sprite (red)**
+**4. Sprite Ball3 (rosso)**
 
 .. image:: img/4_red.png
 
-**5. Ball4 sprite (green)**
+**5. Sprite Ball4 (verde)**
 
 .. image:: img/4_green.png
 
-**6. Ball5 sprite (purple)**
+**6. Sprite Ball5 (viola)**
 
 .. image:: img/4_purple.png
-
-
-

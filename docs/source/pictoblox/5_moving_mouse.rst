@@ -1,91 +1,90 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _moving_mouse:
 
-2.5 Moving Mouse
-===================
+2.5 Mouse in Movimento
+===========================
 
-Today we are going to make a mouse toy controlled by a potentiometer.
+Oggi realizzeremo un giocattolo a forma di mouse controllato da un potenziometro.
 
-When the green flag is clicked, the mouse on the stage moves forward, and when you rotate the potentiometer, the mouse will change the direction of movement.
+Quando si clicca sulla bandiera verde, il mouse nello stage si muove in avanti e, ruotando il potenziometro, il mouse cambierà direzione.
 
 .. image:: img/6_mouse.png
 
-You Will Learn
+Cosa Imparerai
 ---------------------
 
-- Potentiometer principle
-- Read analog pin and ranges
-- Mapping one range to another
-- Moving and changing the direction of sprite
+- Principio del potenziometro
+- Leggere il pin analogico e i relativi intervalli
+- Mappare un intervallo su un altro
+- Muovere e cambiare direzione dello sprite
 
-Build the Circuit
+Costruire il Circuito
 -----------------------
 
-The potentiometer is a resistive element with 3 terminals, the 2 side pins are connected to 5V and GND, and the middle pin is connected to A0. After conversion by the ADC converter of the Arduino board, the value range is 0-1023.
+Il potenziometro è un elemento resistivo con 3 terminali, i due pin laterali sono collegati a 5V e GND, mentre il pin centrale è collegato ad A0. Dopo la conversione effettuata dall'ADC dell'Arduino, l'intervallo di valori è 0-1023.
 
 .. image:: img/circuit/potentiometer_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_potentiometer`
 
-
-Programming
+Programmazione
 ------------------
 
-**1. Choose a sprite**
+**1. Scegliere uno sprite**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **mouse** in the search box, and then click to add it.
+Elimina lo sprite predefinito, clicca su **Scegli uno Sprite** nell'angolo in basso a destra dell'area sprite, inserisci **mouse** nella barra di ricerca e clicca per aggiungerlo.
 
 .. image:: img/6_sprite.png
 
-**2. Creating a variable**.
+**2. Creare una variabile**
 
-Create a variable called **value** to store the value of the potentiometer read.
+Crea una variabile chiamata **value** per memorizzare il valore letto dal potenziometro.
 
-Once created, you will see **value** appear inside the **Variables** palette and in the checked state, which means this variable will appear on the stage.
+Una volta creata, vedrai **value** apparire nel palette **Variabili** e in stato selezionato, il che significa che questa variabile apparirà nello stage.
 
 .. image:: img/6_value.png
 
-**3. Read the value of A0**
+**3. Leggere il valore di A0**
 
-Store the value of A0 read into the variable **value**.
+Memorizza il valore letto da A0 nella variabile **value**.
 
-* [set my variable to 0]: Set the value of the variable.
-* [read analog pin A0]: Read the value of A0~A5 in the range of 0-1023.
+* [set my variable to 0]: Imposta il valore della variabile.
+* [read analog pin A0]: Legge il valore di A0~A5 nell'intervallo 0-1023.
 
 .. image:: img/6_read_a0.png
 
-To be able to read all the way through, you need to use the [forever] block. Click on this script to run it, rotate the potentiometer in both directions, and you will see that the value range is 0-1023.
+Per leggere in modo continuo, utilizza il blocco [forever]. Clicca su questo script per eseguirlo, ruota il potenziometro in entrambe le direzioni e noterai che l'intervallo di valori è 0-1023.
 
 .. image:: img/6_1023.png
 
-**4. Move the sprite**
+**4. Muovere lo sprite**
 
-Use the [move steps] block to move the sprite, run the script and you will see the sprite move from the middle to the right.
+Usa il blocco [move steps] per muovere lo sprite, esegui lo script e vedrai lo sprite muoversi dal centro verso destra.
 
 .. image:: img/6_move.png
 
-**5. Changing the sprite's direction**
+**5. Cambiare la direzione dello sprite**
 
-Now change the direction of the sprite's movement by the value of A0. Since the value of A0 ranges from 0-1023, but the sprite's rotation direction is -180~180, a [map] block needs to be used.
+Ora modifica la direzione di movimento dello sprite in base al valore di A0. Poiché il valore di A0 varia tra 0-1023, mentre la direzione di rotazione dello sprite è compresa tra -180~180, è necessario utilizzare un blocco [map].
 
-Also add [when green flag clicked] at the beginning to start the script.
+Aggiungi anche [when green flag clicked] all'inizio per avviare lo script.
 
-* [`point in direction <https://en.scratch-wiki.info/wiki/Point_in_Direction_()_(block)>`_]: Set the steering angle of the sprite, from **Motion** palette.
-* [map from to]: Map a range to another range.
+* [`point in direction <https://en.scratch-wiki.info/wiki/Point_in_Direction_()_(block)>`_]: Imposta l'angolo di direzione dello sprite, dal palette **Movimento**.
+* [map from to]: Mappa un intervallo su un altro intervallo.
 
 .. image:: img/6_direction.png
 

@@ -1,29 +1,29 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_7_segment:
 
-2.5 7-Segment Display
-======================
+2.5 Display a 7 Segmenti
+===========================
 
-Overview
---------
+Panoramica
+------------
 
-In this lesson, you will learn something about 7-Segment Display. 7-Segment Display has so many advantages that it is widely used in electrical equipments, especially in household appliances that display numerical information, such as display, air conditioner, water heater, refrigerator and so on. LEDs on the 7-Segment Display emit light by the input of different electrical signals to the different pins of it. The numerical information it can display includes time, date, temperature and so on.
+In questa lezione, imparerai a conoscere il Display a 7 Segmenti. Grazie ai suoi numerosi vantaggi, questo dispositivo è ampiamente utilizzato in apparecchiature elettriche, in particolare negli elettrodomestici che mostrano informazioni numeriche, come display, condizionatori d’aria, scaldabagni, frigoriferi e così via. I LED del Display a 7 Segmenti emettono luce in base ai segnali elettrici inviati ai vari pin. Può visualizzare informazioni numeriche come orari, date, temperature e altro ancora.
 
-Components Required
--------------------
+Componenti Necessari
+----------------------
 
 .. image:: img/list_2.5.png
 
@@ -33,72 +33,69 @@ Components Required
 * :ref:`cpn_7_segment`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-------------------
+Circuito con Fritzing
+------------------------
 
 .. image:: img/image429.png
 
-Connect each of pin a-g of the 7-Segment Display to one
-220ohm current limiting resistor respectively and then to pin 4–11. GND
-connects to GND.
+Collega ciascun pin da a a g del Display a 7 Segmenti a una resistenza 
+limitatrice di corrente da 220 ohm e poi ai pin digitali 4–11. Collega GND a GND.
 
-The wiring between the 7-segment display and the Mega2560 board as shown
-below :
+Il cablaggio tra il display a 7 segmenti e la scheda Mega2560 è mostrato di 
+seguito:
 
 .. image:: img/image430.png
 
-Schematic Diagram
------------------
+Schema del Circuito
+-----------------------
 
 .. image:: img/image431.png
 
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.5_7segment.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.5_7segment`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.5_7segment.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\2.5_7segment``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c8b782c0-162e-447a-8406-c32a1378cc59/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Once upload the codes, you can see the 7-segment display displaying 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F in sequence. 
+Una volta caricato il codice, vedrai il display a 7 segmenti mostrare in sequenza 1, 2, 3, 4, 5, 6, 7, 8, 9, A, b, C, d, E, F.
 
-Code Analysis
--------------
+Analisi del Codice
+----------------------
 
-Take the pin numbers on 7-segment as names, and declare the pins on the Mega2560 board.  
+Associa i numeri dei pin sul display a 7 segmenti ai pin della scheda Mega2560, dichiarandoli come segue:
 
 .. code-block:: arduino
 
-    const int a=7; //a of 7-segment attach to digital pin 7
-    const int b=6; //b of 7-segment attach to digital pin 6
-    const int c=5; //c of 7-segment attach to digital pin 5
-    const int d=11;//d of 7-segment attach to digital pin 11
-    const int e=10;//e of 7-segment attach to digital pin 10
-    const int f=8;//f of 7-segment attach to digital pin 8
-    const int g=9;//g of 7-segment attach to digital pin 9
-    const int dp=4;//dp of 7-segment attach to digital pin 4
+    const int a=7; // il segmento "a" del display è collegato al pin digitale 7
+    const int b=6; // il segmento "b" del display è collegato al pin digitale 6
+    const int c=5; // il segmento "c" del display è collegato al pin digitale 5
+    const int d=11; // il segmento "d" del display è collegato al pin digitale 11
+    const int e=10; // il segmento "e" del display è collegato al pin digitale 10
+    const int f=8; // il segmento "f" del display è collegato al pin digitale 8
+    const int g=9; // il segmento "g" del display è collegato al pin digitale 9
+    const int dp=4; // il punto decimale del display è collegato al pin digitale 4
 
-Install a series of subfunctions to package the level state at each
-block during the number display of the 7-segment. For example, when the
-character 「2」 is displayed, the block F and the block c are turn off;
-the other blocks are lit up.
+Crea una serie di sottofunzioni per gestire lo stato dei segmenti durante la 
+visualizzazione di numeri o lettere. Ad esempio, per visualizzare il numero 
+"2", i segmenti F e C sono spenti, mentre gli altri sono accesi.
 
 .. image:: img/image89.jpeg
 
-First, we need to understand how the numeral **2** appears on the 7-Segment display. It is achieved by powering on segments a, b, d, e, and g. In programming, pins connected to these segments are set to a High level while c and f are set to Low level. We start by using the function ``turnOffAllSegments()`` to turn off all segments and then light up the required ones.
-
-After running this part, the 7-segment will display **2**. Similarly, the display of other characters are the same. Since the letters b and d in upper case, namely **B** and **D**, would look the same with **8** and **0** on the display, they are displayed in lower case instead.
+Per prima cosa, è importante capire come il numero **2** viene mostrato sul 
+display. Si accendono i segmenti a, b, d, e, e g impostando i pin corrispondenti 
+su HIGH, mentre i pin collegati a c e f rimangono su LOW. Si utilizza la funzione ``turnOffAllSegments()`` 
+per spegnere tutti i segmenti prima di accendere solo quelli necessari.
 
 .. code-block:: arduino
 
    ...
-   void digital_2()  //diaplay 2 to the 7-segment
+   void digital_2()  // mostra "2" sul display a 7 segmenti
    {
      turnOffAllSegments();
      digitalWrite(a, HIGH);
@@ -109,21 +106,21 @@ After running this part, the 7-segment will display **2**. Similarly, the displa
    }
    ... 
 
-In loop(), call the function that displays the number.
+Nel loop(), richiama la funzione che visualizza il numero.
 
 .. code-block:: arduino
 
     void loop()
     {
-    digital_1();//diaplay 1 to the 7-segment
-    delay(1000);//wait for a second
-    digital_2();//diaplay 2 to the 7-segment
-    delay(1000); //wait for a second
-    digital_3();//diaplay 3 to the 7-segment
+    digital_1(); // mostra "1" sul display
+    delay(1000); // attesa di 1 secondo
+    digital_2(); // mostra "2" sul display
+    delay(1000); // attesa di 1 secondo
+    digital_3(); // mostra "3" sul display
     //... 
     }
 
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+-----------------------
 
 .. image:: img/image90.jpeg

@@ -1,123 +1,121 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _breakout_clone:
 
-2.18 GAME - Breakout Clone
-============================
+2.18 GIOCO - Clone di Breakout
+==================================
 
-Here we use the potentiometer to play a Breakout Clone game.
+In questo progetto utilizziamo il potenziometro per giocare a un clone di Breakout.
 
-After clicking the green flag, you need to use the potentiometer to control the paddle on the stage to catch the ball so that it can go up and hit the bricks, all the bricks disappear then the game is won, if you don't catch the ball, the game is lost.
+Dopo aver cliccato sulla bandiera verde, devi utilizzare il potenziometro per controllare la paletta sul palco e colpire la palla affinché rimbalzi sui mattoncini. Quando tutti i mattoncini saranno spariti, il gioco sarà vinto; se non riesci a prendere la palla, il gioco sarà perso.
 
 .. image:: img/17_brick.png
 
 
-Build the Circuit
------------------------
+Costruire il Circuito
+-------------------------
 
-The potentiometer is a resistive element with 3 terminals, the 2 side pins are connected to 5V and GND, and the middle pin is connected to A0. After the conversion by the ADC converter of the Arduino board, the value range is 0-1023.
+Il potenziometro è un elemento resistivo con 3 terminali: i due pin laterali sono collegati a 5V e GND, mentre il pin centrale è collegato ad A0. Dopo la conversione tramite l’ADC della scheda Arduino, il valore varia da 0 a 1023.
 
 .. image:: img/circuit/potentiometer_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_potentiometer`
 
-Programming
-------------------
+Programmazione
+----------------
 
-There are 3 sprites on the stage.
+Sul palco ci sono 3 sprite.
 
-**1. Paddle sprite**
+**1. Sprite Paletta**
 
-The effect to be achieved by the **Paddle** is that the initial position is in the middle of the bottom of the stage, and it is controlled by a potentiometer to move it to the left or to the right.
+La **Paletta** deve iniziare nella posizione centrale in basso sul palco e deve essere controllata da un potenziometro per muoversi a sinistra o a destra.
 
-* Delete the default sprite, use the **Choose a Sprite** button to add the **Paddle** sprite, and set its x and y to (0, -140).
+* Elimina lo sprite predefinito, utilizza il pulsante **Scegli uno Sprite** per aggiungere lo sprite **Paletta**, e imposta le coordinate x e y su (0, -140).
 
 .. image:: img/17_padd1.png
 
-* Go to the **Costumes** page, remove the Outline and change its color to dark gray.
+* Vai alla pagina **Costumi**, rimuovi il contorno e cambia il colore in grigio scuro.
 
 .. image:: img/17_padd3.png
 
-
-* Now script the **Paddle** sprite to set its initial position to (0, -140) when the green flag is clicked, and read the value of A0 (potentiometer) into the variable **a0**. Since the **Paddle** sprite moves from left to right on the stage at x-coordinates -195~195, you need to use the [map] block to map the variable **a0** range 0~1023 to -195~195. 
+* Ora scrivi lo script per la **Paletta**: imposta la sua posizione iniziale su (0, -140) quando si clicca sulla bandiera verde e leggi il valore di A0 (potenziometro) nella variabile **a0**. Poiché la **Paletta** si muove da sinistra a destra sul palco con coordinate x tra -195 e 195, utilizza il blocco [mappa] per mappare il range 0~1023 della variabile **a0** a -195~195.
 
 .. image:: img/17_padd2.png
 
-* Now you can rotate the potentiometer to see if the **Paddle** can move left and right on the stage.
+* Ora puoi ruotare il potenziometro per vedere se la **Paletta** si muove a sinistra e a destra sul palco.
 
-**2. Ball sprite**
+**2. Sprite Palla**
 
-The effect of the ball sprite is that it moves around the stage and bounces when it touches the edge; it bounces down if it touches the block above the stage; it bounces up if it touches the Paddle sprite during its fall; if it doesn't, the script stops running and the game ends.
+La **Palla** deve muoversi sul palco, rimbalzare quando tocca il bordo, rimbalzare verso l’alto se colpisce la **Paletta** durante la caduta, e terminare il gioco se non viene presa.
 
-
-* Add **Ball** sprite.
+* Aggiungi lo sprite **Palla**.
 
 .. image:: img/17_ball1.png
 
-* When the green flag is clicked, set the angle of the **Ball** sprite to 45° and set the initial position to (0, -120).
+* Quando si clicca sulla bandiera verde, imposta l’angolo della **Palla** a 45° e la posizione iniziale su (0, -120).
 
 .. image:: img/17_ball2.png
 
-* Now let the **Ball** sprite move around the stage and bounce when it touches the edge, and you can click on the green flag to see the effect.
+* Ora fai muovere la **Palla** sul palco e falle rimbalzare sui bordi. Clicca sulla bandiera verde per verificare l’effetto.
 
 .. image:: img/17_ball3.png
 
-* When the **Ball** sprite touches the **Paddle** sprite, do a reflection. The easy way to do this is to let the angle be directly inverted, but then you'll find that the path of the ball is completely fixed, which is too boring. Therefore, we use the center of the two sprites to calculate and make the ball bounce in the opposite direction of the center of the baffle.
+* Quando la **Palla** tocca la **Paletta**, calcola un riflesso basato sulla posizione centrale dei due sprite per rendere il movimento meno prevedibile.
 
 .. image:: img/17_ball4.png
 
 .. image:: img/17_ball6.png
 
-* When the **Ball** sprite falls to the edge of the stage, the script stops running and the game ends.
+* Quando la **Palla** cade fuori dal palco, il gioco termina e lo script si interrompe.
 
 .. image:: img/17_ball5.png
 
 
-**3. Block1 sprite**
+**3. Sprite Mattoncino1**
 
-The **Block1** sprite is to appear with the effect of cloning 4x8 of itself above the stage in a random color, and deleting a clone if it is touched by the **Ball** sprite.
+Il **Mattoncino1** deve clonare se stesso per apparire in una griglia 4x8 sopra il palco con colori casuali e deve eliminarsi quando viene colpito dalla **Palla**.
 
-The **Block1** sprite is not available in the **PictoBlox** library, you need to draw it yourself or modify it with an existing sprite. Here we are going to modify it with the **Button3** sprite.
+* Il **Mattoncino1** non è disponibile nella libreria di **PictoBlox**, quindi devi disegnarlo o modificarne uno esistente. Qui modifichiamo lo sprite **Button3**.
 
-* After adding the **Button3** sprite, go to the **Costumes** page. Now delete **button-a** first, then reduce both the width and height of **button-b**, and change the sprite name to **Block1**, as shown in the following image.
+* Dopo aver aggiunto lo sprite **Button3**, vai alla pagina **Costumi**. Elimina **button-a**, ridimensiona **button-b**, e rinomina lo sprite in **Mattoncino1**.
 
 .. note::
 
-    * For the width of **Block1**, you can probably simulate it on the screen to see if you can put down 8 in a row, if not, then reduce the width appropriately.
-    * In the process of shrinking the **Block1** sprite, you need to keep the center point in the middle of the sprite.
+    * Per la larghezza di **Block1**, puoi provare a simularla sullo schermo per verificare se riesci a disporne 8 in una fila; in caso contrario, riduci opportunamente la larghezza.
+    * Durante il ridimensionamento dello sprite **Block1**, assicurati di mantenere il punto centrale al centro dello sprite.
 
 .. image:: img/17_bri2.png
 
-* Now create 2 variables first, **block** to store the number of blocks and **roll** to store the number of rows.
+* Crea 2 variabili: **mattoncini** per il numero di blocchi e **righe** per il numero di righe.
 
 .. image:: img/17_bri3.png
 
-* We need to make a clone of the **Block1** sprite, so that it displays from left to right, top to bottom, one by one, 4x8 in total, with random colors.
+* Clona lo sprite **Mattoncino1** per disporlo in una griglia 4x8 con colori casuali.
 
 .. image:: img/17_bri4.png
 
-* After the script is written, click on the green flag and look at the display on the stage, if it is too compact or too small, you can change the size.
+* Dopo aver scritto lo script, clicca sulla bandiera verde per vedere i mattoncini disposti sul palco. Modifica la dimensione se necessario.
 
 .. image:: img/17_bri5.png
 
-* Now write the trigger event. If the cloned **Block1** sprite touches the **Ball** sprite, delete the clone and broadcast the message **crush**.
+* Ora scrivi l’evento trigger. Se il clone di **Mattoncino1** tocca la **Palla**, elimina il clone e trasmetti il messaggio **crush**.
 
 .. image:: img/17_bri6.png
 
-* Back to the **Ball** sprite, when the broadcast **crush** is received (the **Ball** sprite touches the clone of **Block1** sprite), the **Ball** is popped from the opposite direction.
+* Torna allo sprite **Palla**: quando riceve il messaggio **crush**, la **Palla** rimbalza nella direzione opposta.
 
 .. image:: img/17_ball7.png
 

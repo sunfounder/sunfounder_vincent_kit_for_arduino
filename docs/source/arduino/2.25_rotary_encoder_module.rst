@@ -1,32 +1,33 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_rotary_encoder:
 
-2.25 Rotary Encoder Module
-===========================
+2.25 Modulo Encoder Rotativo
+==============================
 
-Overview
---------------
+Panoramica
+------------------
 
-In this lesson, you will learn about Rotary Encoder. A rotary encoder is
-an electronic switch with a set of regular pulses in strictly timing
-sequence. When used with IC, it can achieve increment, decrement, page
-turning and other operations such as mouse scrolling, menu selection,
-and so on.
+In questa lezione imparerai a utilizzare l'Encoder Rotativo. Un encoder 
+rotativo è un interruttore elettronico che genera una sequenza regolare 
+di impulsi temporizzati con precisione. Quando viene utilizzato con un 
+circuito integrato (IC), può consentire operazioni come incremento, 
+decremento, cambio pagina e altre funzioni come lo scorrimento del mouse 
+o la selezione di menu.
 
-Components Required
+Componenti necessari
 ------------------------
 
 .. image:: img/Part_two_25.png
@@ -35,66 +36,61 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_rotary`
 
-
-Fritzing Circuit
+Circuito Fritzing
 -----------------------
 
-In this example, we can connect the Rotary Encoder pin directly to the
-Mega 2560 Board pin, connect the GND of the Rotary Encoder to GND, 「+」
-to 5V, SW to digital pin 4, DT to digital pin 3, and CLK to digital pin
-2.
+In questo esempio, possiamo collegare direttamente il pin dell'Encoder 
+Rotativo alla scheda Mega 2560. Collega il GND dell'Encoder Rotativo al 
+GND, 「+」 a 5V, SW al pin digitale 4, DT al pin digitale 3 e CLK al pin 
+digitale 2.
 
 .. image:: img/image207.png
    :align: center
 
-Schematic Diagram
+Schema elettrico
 ------------------------
 
 .. image:: img/image208.png
    :align: center
 
-Code
+Codice
 ------------
 
 .. note::
 
-    * You can open the file ``2.25_rotaryEncoder.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.25_rotaryEncoder`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.25_rotaryEncoder.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.25_rotaryEncoder``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b54bd8df-96a1-40e5-a091-13e24c7179e4/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-You will see the angular displacement of the rotary encoder
-printed on Serial Monitor. When you turn the rotary encoder clockwise,
-the angular displacement is increased; when turn it counterclockwise,
-the displacement is decreased. If you press the switch on the rotary
-encoder, the readings will return to zero.
+Sul Monitor Seriale vedrai stampato lo spostamento angolare dell'encoder 
+rotativo. Quando ruoti l'encoder in senso orario, lo spostamento angolare 
+aumenta; ruotandolo in senso antiorario, lo spostamento diminuisce. Se premi 
+l'interruttore sull'encoder rotativo, le letture torneranno a zero.
 
-Code Analysis
-------------------
+Analisi del codice
+---------------------
 
-When Rotary Encoder is used, the following situations of pin level will
-occur.
+Quando si utilizza l'Encoder Rotativo, si verificheranno le seguenti situazioni 
+di livello dei pin:
 
-1. When rotating the shaft, dtPin will go from high level to low level.
+1. Durante la rotazione dell'asse, dtPin passa da livello alto a livello basso.
 
-2. clkPin will remain high level when the shaft rotates clockwise,
-otherwise it goes low level.
+2. clkPin rimarrà a livello alto quando l'asse ruota in senso orario; 
+   altrimenti passa a livello basso.
 
-3. When the shaft is pressed, swPin will have low level.
+3. Quando l'asse viene premuto, swPin assume un livello basso.
 
-From this, the program flow is shown on the right.
+Da queste informazioni, il flusso del programma è illustrato nella figura a destra.
 
-For detailed analysis of potential state change judgment, please refer
-to :ref:`ar_state_change`.
+Per un'analisi dettagliata dei cambiamenti di stato potenziali, consulta :ref:`ar_state_change`.
 
 .. image:: img/image209.png
    :align: center
 
-Phenomenon Picture
+Immagine del fenomeno
 -------------------------
 
 .. image:: img/image210.jpeg

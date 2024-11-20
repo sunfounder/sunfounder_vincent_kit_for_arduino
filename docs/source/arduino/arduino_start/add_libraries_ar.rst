@@ -1,73 +1,70 @@
+.. note::  
 
-.. note::
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Immergiti nel mondo affascinante di Raspberry Pi, Arduino e ESP32 insieme ad altri appassionati.
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    **Perché unirti a noi?**
 
-    **Why Join?**
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
-
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _add_libraries_ar:
 
-Install libraries (Important)
-======================================
+Installare le librerie (Importante)
+====================================
 
-A library is a collection of pre-written code or functions that extend the capabilities of the Arduino IDE. Libraries provide ready-to-use code for various functionalities, allowing you to save time and effort in coding complex features.
+Una libreria è una raccolta di codice o funzioni predefinite che ampliano le funzionalità dell'IDE di Arduino. Le librerie offrono codice pronto all'uso per varie funzionalità, consentendoti di risparmiare tempo e fatica nella programmazione di funzioni complesse.
 
-There are two main ways to install libraries:
+Ci sono due metodi principali per installare le librerie:
 
-Install from Library Manager
-------------------------------------
+Installare dal Gestore delle Librerie
+--------------------------------------
 
-Many libraries are available directly through the Arduino Library Manager. You can access the Library Manager by following these steps:
+Molte librerie sono disponibili direttamente tramite il Gestore delle Librerie di Arduino. Puoi accedervi seguendo questi passaggi:
 
-#. In the **Library Manager**, you can search for the desired library by name or browse through different categories.
+#. Nel **Gestore delle Librerie**, puoi cercare la libreria desiderata per nome o esplorare le diverse categorie.
 
    .. note::
 
-      In projects where library installation is required, there will be prompts indicating which libraries to install. Follow the instructions provided, such as "The DHT sensor library library is used here, you can install it from the Library Manager." Simply install the recommended libraries as prompted.
+      Nei progetti in cui è necessario installare librerie, verranno mostrati suggerimenti su quali librerie installare. Segui le istruzioni fornite, come ad esempio: "Qui viene utilizzata la libreria del sensore DHT, puoi installarla dal Gestore delle Librerie." Installa semplicemente le librerie raccomandate come indicato.
 
    .. image:: img/install_lib3.png
 
-#. Once you find the library you want to install, click on it and then click the **Install** button.
+#. Una volta trovata la libreria che desideri installare, fai clic su di essa e poi sul pulsante **Installa**.
 
    .. image:: img/install_lib2.png
 
-#. The Arduino IDE will automatically download and install the library for you.
+#. L'IDE di Arduino scaricherà e installerà automaticamente la libreria per te.
 
 .. _install_lib_man:
 
-Manual Installation
---------------------------
+Installazione manuale
+-----------------------
 
-Some libraries are not available through the **Library Manager** and need to be manually installed. To install these libraries, follow these steps:
+Alcune librerie non sono disponibili tramite il **Gestore delle Librerie** e devono essere installate manualmente. Per installare queste librerie, segui questi passaggi:
 
-
-#. Open the Arduino IDE and go to **Sketch** -> **Include Library** -> **Add .ZIP Library**.
+#. Apri l'IDE di Arduino e vai su **Sketch** -> **Include Library** -> **Add .ZIP Library**.
 
    .. image:: img/a2dp_add_zip.png
 
-#. Navigate to the directory where the library files are located, such as the ``sunfounder_vincent_kit_for_arduino/library/`` folder, and select the library file and click **Open**.
+#. Naviga fino alla directory in cui si trovano i file della libreria, come la cartella ``sunfounder_vincent_kit_for_arduino/library/``, seleziona il file della libreria e fai clic su **Open**.
 
    .. image:: img/rfid_choose.png
 
-#. After a short while, you will receive a notification indicating a successful installation.
+#. Dopo alcuni istanti, riceverai una notifica che indica che l'installazione è avvenuta con successo.
 
    .. image:: img/rfid_success.png
 
-#. Repeat the same process to add other libraries.
-
+#. Ripeti lo stesso processo per aggiungere altre librerie.
 
 .. note::
 
-   The libraries installed using either of the above methods can be found in the default library directory of the Arduino IDE, which is usually located at ``C:\Users\xxx\Documents\Arduino\libraries``.
+   Le librerie installate tramite uno dei metodi sopra indicati si troveranno nella directory predefinita delle librerie dell'IDE di Arduino, che solitamente è ``C:\Users\xxx\Documents\Arduino\libraries``.
 
-   If your library directory is different, you can check it by going to **File** -> **Preferences**.
+   Se la tua directory delle librerie è diversa, puoi verificarla andando su **File** -> **Preferences**.
 
       .. image:: img/install_lib1.png

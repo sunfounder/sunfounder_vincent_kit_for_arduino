@@ -1,44 +1,44 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _low_temperature:
 
-2.8 Low Temperature Alarm
-=========================
+2.8 Allarme Bassa Temperatura
+================================
 
-In this project, we will make a low temperature alarm system, when the temperature is below the threshold, the **Snowflake** sprite will appear on the stage.
+In questo progetto, realizzeremo un sistema di allarme per basse temperature. Quando la temperatura scende al di sotto della soglia, lo sprite **Snowflake** apparirà sullo stage.
 
 .. image:: img/9_tem.png
 
-You Will Learn
----------------------
+Cosa Imparerai
+----------------------
 
-- Thermistor working principle
-- Multivariable and Subtractive Operations
+- Principio di funzionamento del termistore
+- Operazioni multivariable e sottrattive
 
 
 
-Build the Circuit
------------------------
+Costruire il Circuito
+------------------------
 
-A thermistor is a type of resistor whose resistance is strongly dependent on temperature, more so than in standard resistors, and there are two types of resistors, PTC (resistance increases as temperature increases) and PTC (resistance decreases as temperature increases).
+Un termistore è un tipo di resistore la cui resistenza dipende fortemente dalla temperatura, più che nei resistori standard. Esistono due tipi di termistori: PTC (la resistenza aumenta all’aumentare della temperatura) e NTC (la resistenza diminuisce all’aumentare della temperatura).
 
-Build the circuit according to the following diagram.
+Costruisci il circuito seguendo il diagramma sottostante.
 
-One end of the thermistor is connected to GND, the other end is connected to A0, and a 10K resistor is connected in series to 5V.
+Un’estremità del termistore è collegata a GND, l’altra estremità è collegata ad A0, e un resistore da 10K è collegato in serie a 5V.
 
-The NTC thermistor is used here, so when the temperature rises, the resistance of the thermistor decreases, the voltage division of A0 decreases, and the value obtained from A0 decreases, and vice versa increases.
+Qui utilizziamo un termistore NTC, quindi quando la temperatura aumenta, la resistenza del termistore diminuisce, la tensione di divisione su A0 diminuisce e il valore ottenuto da A0 diminuisce, e viceversa aumenta.
 
 .. image:: img/circuit/thermistor_circuit.png
 
@@ -46,37 +46,37 @@ The NTC thermistor is used here, so when the temperature rises, the resistance o
 * :ref:`cpn_thermistor` 
 * :ref:`cpn_resistor`
 
-Programming
-------------------
+Programmazione
+--------------------
 
-**1. Select a sprite**
+**1. Seleziona uno sprite**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **Snowflake** in the search box, and then click to add it.
+Elimina lo sprite predefinito, clicca sul pulsante **Scegli uno Sprite** nell'angolo in basso a destra dell'area degli sprite, inserisci **Snowflake** nella barra di ricerca e clicca per aggiungerlo.
 
 .. image:: img/9_snow.png
 
-**2. Create 2 variables**
+**2. Crea 2 variabili**
 
-Create two variables, **before** and **current**, to store the value of A0 in different cases.
+Crea due variabili, **prima** e **attuale**, per memorizzare il valore di A0 in diverse condizioni.
 
 .. image:: img/9_va.png
 
-**3. Read the value of A0**
+**3. Leggi il valore di A0**
 
-When the green flag is clicked, the value of A0 is read and stored in the variable **before**.
+Quando si clicca sulla bandiera verde, il valore di A0 viene letto e memorizzato nella variabile **prima**.
 
 .. image:: img/9_before.png
 
-**4. Read the value of A0 again**
+**4. Leggi nuovamente il valore di A0**
 
-In [forever], read the value of A0 again and store it in the variable **current**.
+Nel blocco [per sempre], leggi nuovamente il valore di A0 e memorizzalo nella variabile **attuale**.
 
 .. image:: img/9_current.png
 
-**5. Determining temperature changes**
+**5. Determina le variazioni di temperatura**
 
-Using the [if else] block, determine if the current value of A0 is 50 greater than before, which represents a decrease in temperature. At this point let **Snowflake** sprite show, otherwise hide.
+Utilizzando il blocco [se altrimenti], determina se il valore attuale di A0 è maggiore di 50 rispetto a quello precedente, il che rappresenta una diminuzione della temperatura. A questo punto, fai apparire lo sprite **Snowflake**, altrimenti nascondilo.
 
-* [-] & [>]: subtraction and comparison operators from **Operators** platette.
+* [-] & [>]: operatori di sottrazione e confronto dal palette **Operatori**.
 
 .. image:: img/9_show.png

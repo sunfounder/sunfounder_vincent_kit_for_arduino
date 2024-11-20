@@ -1,34 +1,34 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_slide:
 
-2.16 Slide Switch
-==================
+2.16 Interruttore a Scorrimento
+=================================
 
-Overview
-------------
+Panoramica
+-------------
 
-In this lesson, you will get to know something about Switch. A slide
-switch, just as its name implies, is to slide the switch bar to connect
-or break the circuit, and further switch circuits. The slide switch is
-commonly used in low-voltage circuit. It has the features of flexibility
-and stability, and applies in electric instruments and electric toys
-widely.
+In questa lezione conoscerai l'interruttore a scorrimento. Come suggerisce 
+il nome, l'interruttore a scorrimento si utilizza spostando la levetta per 
+collegare o interrompere il circuito e, quindi, per commutare i circuiti. 
+Questo tipo di interruttore è comunemente usato in circuiti a bassa tensione. 
+Grazie alla sua flessibilità e stabilità, trova largo impiego in strumenti 
+elettrici e giocattoli elettronici.
 
-Components Required
-------------------------
+Componenti necessari
+-----------------------
 
 .. image:: img/Part_two_16.png
 
@@ -39,45 +39,44 @@ Components Required
 * :ref:`cpn_slide`
 * :ref:`cpn_capacitor`
 
-Fritzing Circuit
+Circuito Fritzing
 ---------------------
 
-In this example, digital pin 2 is used to read the signal of Switch. In
-addition, you need to connect a 10 kΩ resistor and a 104 capacitor in
-parallel to form a RC circuit (Resistor - Capacitance circuit) which is
-set between pin 2 and GND to realize debounce that may arise from your 
-toggle of switch.
+In questo esempio, utilizziamo il pin digitale 2 per leggere il segnale 
+dell'interruttore. Inoltre, è necessario collegare in parallelo un resistore 
+da 10 kΩ e un condensatore da 104 per formare un circuito RC (Resistenza - Capacità), 
+posizionato tra il pin 2 e GND, per ridurre i rimbalzi del segnale che possono 
+verificarsi durante l'azionamento dell'interruttore.
 
 .. image:: img/image160.png
    :align: center
 
-Schematic Diagram
+Schema elettrico
+---------------------
 
 .. image:: img/image161.png
    :align: center
 
-Code
+Codice
 ---------
 
 .. note::
 
-    * You can open the file ``2.16_switch.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.16_switch`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.16_switch.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.16_switch``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
    <iframe src=https://create.arduino.cc/editor/sunfounder01/952c55eb-b08b-4c4a-8107-07a946183457/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, you can open the
-serial monitor to check the readings of the pin. When the Switch toggles
-to the left, the serial monitor displays 「1」; when toggles to the
-right, the serial monitor displays「0」. Refer to :ref:`ar_digital_read` to check the code explanation.
+Dopo aver caricato il codice sulla scheda Mega2560, puoi aprire il monitor 
+seriale per verificare le letture del pin. Quando l'interruttore viene 
+spostato a sinistra, il monitor seriale visualizza 「1」; quando viene spostato 
+a destra, visualizza 「0」. Consulta :ref:`ar_digital_read` per l'analisi del codice.
 
 
 
-Phenomenon Picture
-------------------------
+Immagine del risultato
+--------------------------
 
 .. image:: img/image162.jpeg

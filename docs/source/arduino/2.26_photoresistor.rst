@@ -1,32 +1,34 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_photoresistor:
 
-2.26 Photoresistor
-===================
+2.26 Fotoresistenza
+=====================
 
-Overview
----------------
+Panoramica
+------------------
 
-In this lesson, you will learn about Photoresistor. Photoresistor is applied in 
-many electronic goods, such as the camera meter, clock radio, alarm device (as beam detector), 
-small night lights, outdoor clock, solar street lamps and etc. Photoresistor is placed in a 
-street lamp to control when the light is turned on. Ambient light falling on the photoresistor 
-causes street lamps to turn on or off.
+In questa lezione imparerai a utilizzare la Fotoresistenza. La fotoresistenza 
+è applicata in molti dispositivi elettronici, come misuratori delle fotocamere, 
+radio sveglie, dispositivi d'allarme (come rivelatori a fascio), piccole luci 
+notturne, orologi esterni, lampioni solari, ecc. Una fotoresistenza può essere 
+inserita in un lampione stradale per controllare l'accensione della luce. La 
+luce ambientale che colpisce la fotoresistenza causa l'accensione o lo spegni0mento 
+delle luci stradali.
 
-Components Required
+Componenti necessari
 -------------------------
 
 .. image:: img/Part_two_26.png
@@ -37,48 +39,45 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_photoresistor`
 
-Fritzing Circuit
+Circuito Fritzing
 ----------------------
 
-In this example, we use analog pin ( A0 ) to read the value of photoresistor. One
-pin of photoresistor is connected to 5V, the other is wired up to A0.
-Besides, a 10kΩ resistor is needed before the other pin is connected to
-GND.
+In questo esempio, utilizziamo il pin analogico (A0) per leggere il valore 
+della fotoresistenza. Un terminale della fotoresistenza è collegato a 5V, 
+l'altro è connesso ad A0. Inoltre, è necessario un resistore da 10kΩ prima 
+che l'altro terminale venga connesso a GND.
 
 .. image:: img/image213.png
     :align: center
 
-Schematic Diagram
+Schema elettrico
 -----------------------
 
 .. image:: img/image214.png
     :align: center
 
-Code
+Codice
 ---------------
-
 
 .. note::
 
-    * You can open the file ``2.26_photoresistor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.26_photoresistor`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.26_photoresistor.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.26_photoresistor``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/c04e97d3-635a-4be6-9d35-9dae005331ae/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you can open the serial
-monitor to see the read value of the pin. When the ambient light becomes
-stronger, the reading will increase correspondingly, and the pin reading
-range is 「0」~「1023」. However, according to the environmental
-conditions and the characteristics of the photoresistor, the actual
-reading range may be smaller than the theoretical range. For a detailed
-explanation of the code, refer to :ref:`ar_analog_read`.
+Dopo aver caricato il codice sulla scheda Mega2560, puoi aprire il monitor 
+seriale per visualizzare i valori letti dal pin. Quando la luce ambientale 
+diventa più forte, la lettura aumenterà di conseguenza e il range di lettura 
+del pin sarà tra 「0」~「1023」. Tuttavia, in base alle condizioni ambientali 
+e alle caratteristiche della fotoresistenza, il range effettivo potrebbe essere 
+inferiore a quello teorico. Per una spiegazione dettagliata del codice, fai 
+riferimento a :ref:`ar_analog_read`.
 
-Phenomenon Picture
-------------------------
+Immagine del fenomeno
+--------------------------
 
 .. image:: img/image215.jpeg
    :align: center

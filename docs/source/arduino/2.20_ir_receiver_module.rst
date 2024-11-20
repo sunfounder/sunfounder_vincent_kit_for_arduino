@@ -1,34 +1,35 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_receive:
 
-2.20 IR Receiver Module
-=========================
+2.20 Modulo Ricevitore IR
+============================
 
-Overview
+Panoramica
 -------------
 
-In this lesson, you will learn to use IR Receiver Module. IR Receiver is
-a component with photocell that is tuned to receive to infrared light.
-It is almost always used for remote control detection - every TV and DVD
-player has one of these in the front to receive for the IR signal from
-the clicker. Inside the remote control is a matching IR LED, which emits
-IR pulses to tell the TV to turn on, off or change channels.
+In questa lezione imparerai a utilizzare il modulo ricevitore IR. 
+Il ricevitore IR è un componente dotato di fotocellula sintonizzata 
+per ricevere la luce a infrarossi. Viene utilizzato quasi sempre per 
+il rilevamento dei comandi remoti: ogni televisore e lettore DVD ha 
+un ricevitore IR nella parte anteriore per ricevere il segnale infrarosso 
+del telecomando. All'interno del telecomando si trova un LED IR corrispondente, 
+che emette impulsi IR per indicare alla TV di accendersi, spegnersi o cambiare canale.
 
-Components Required
---------------------------
+Componenti necessari
+-----------------------
 
 .. image:: img/Part_two_20.png
 
@@ -36,29 +37,28 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_receive`
 
-Schematic Diagram
----------------------------
+Schema elettrico
+-------------------
 
 .. image:: img/image182.png
    :align: center
 
-Fritzing Circuit
----------------------
+Circuito Fritzing
+--------------------
 
-In this example, we wire up the left pin (-) of IR Receiver Module to
-GND, the middle pin to 5V, and the right pin (S) to pin 11.
+In questo esempio, colleghiamo il pin sinistro (-) del modulo ricevitore IR a 
+GND, il pin centrale a 5V e il pin destro (S) al pin 11.
 
 .. image:: img/image183.png
    :align: center
 
-Code
-----------
-
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.20_irReceiver.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.20_irReceiver`` directly.
-    * The ``IRremote`` library is used here, you can install it from the **Library Manager**.
+    * Puoi aprire direttamente il file ``2.20_irReceiver.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.20_irReceiver``.
+    * Qui viene utilizzata la libreria ``IRremote``, che puoi installare tramite il **Library Manager**.
 
         .. image:: img/lib_irremote.png
             :align: center
@@ -67,38 +67,37 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/b1f07663-c4d5-4b0e-b0a7-b10ff96ee2ee/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you can see that the
-current value of the pressed button of IR Remote Controller displays on
-the serial monitor.
+Dopo aver caricato il codice sulla scheda Mega2560, potrai vedere sul monitor 
+seriale il valore corrente del tasto premuto sul telecomando IR.
 
-Code Analysis
----------------------
+Analisi del codice
+--------------------
 
-This code is designed to work with an infrared (IR) remote control using the ``IRremote`` library. Here's the breakdown:
+Questo codice è progettato per funzionare con un telecomando a infrarossi (IR) utilizzando la libreria ``IRremote``. Ecco la spiegazione:
 
-#. Include Libraries: This includes the IRremote library, which provides functions to work with IR remote controls.
+#. **Inclusione delle librerie**: Include la libreria IRremote, che fornisce funzioni per lavorare con i telecomandi IR.
 
     .. code-block:: arduino
 
         #include <IRremote.h>
 
-#. Defines the Arduino pin to which the IR sensor's signal pin is connected and declares a variable to store the last decoded IR value.
+#. **Definizione del pin e variabili**: Definisce il pin Arduino a cui è collegato il pin del segnale del sensore IR e dichiara una variabile per memorizzare l'ultimo valore IR decodificato.
 
     .. code-block:: arduino
 
-        const int IR_RECEIVE_PIN = 11;  // Define the pin number for the IR Sensor
-        String lastDecodedValue = "";  // Variable to store the last decoded value
+        const int IR_RECEIVE_PIN = 11;  // Definisce il numero del pin per il sensore IR
+        String lastDecodedValue = "";  // Variabile per memorizzare l'ultimo valore decodificato
 
-#. Initializes serial communication at a baud rate of 9600. Initializes the IR receiver on the specified pin (``IR_RECEIVE_PIN``) and enables LED feedback (if applicable).
+#. **Configurazione iniziale**: Inizializza la comunicazione seriale a un baud rate di 9600. Avvia il ricevitore IR sul pin specificato (``IR_RECEIVE_PIN``) e abilita il feedback LED (se applicabile).
 
     .. code-block:: arduino
 
         void setup() {
-            Serial.begin(9600);                                     // Start serial communication at 9600 baud rate
-            IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Start the IR receiver
+            Serial.begin(9600);                                     // Avvia la comunicazione seriale a 9600 baud
+            IrReceiver.begin(IR_RECEIVE_PIN, ENABLE_LED_FEEDBACK);  // Avvia il ricevitore IR
         }
 
-#. The loop runs continuously to process incoming IR remote signals.
+#. **Loop principale**: Il ciclo verifica continuamente i segnali IR in arrivo.
 
     .. code-block:: arduino
 
@@ -107,22 +106,21 @@ This code is designed to work with an infrared (IR) remote control using the ``I
                 String decodedValue = decodeKeyValue(IrReceiver.decodedIRData.command);
                 if (decodedValue != "ERROR" && decodedValue != lastDecodedValue) {
                     Serial.println(decodedValue);
-                    lastDecodedValue = decodedValue;  // Update the last decoded value
+                    lastDecodedValue = decodedValue;  // Aggiorna l'ultimo valore decodificato
                 }
-                IrReceiver.resume();  // Enable receiving of the next value
+                IrReceiver.resume();  // Abilita la ricezione del prossimo valore
             }
         }
     
-    * Checks if an IR signal is received and successfully decoded.
-    * Decodes the IR command and stores it in ``decodedValue`` using a custom ``decodeKeyValue()`` function.
-    * Checks if the decoded value is not an error and is different from the last decoded value.
-    * Prints the decoded IR value to the serial monitor.
-    * Updates the ``lastDecodedValue`` with the new decoded value.
-    * Resumes IR signal reception for the next signal.
+    * Controlla se un segnale IR viene ricevuto e decodificato correttamente.
+    * Decodifica il comando IR e lo memorizza in ``decodedValue`` utilizzando una funzione personalizzata ``decodeKeyValue()``.
+    * Stampa il valore decodificato sul monitor seriale se è diverso dall'ultimo valore memorizzato.
+    * Aggiorna ``lastDecodedValue`` con il nuovo valore decodificato.
+    * Riprende la ricezione dei segnali IR per il prossimo segnale.
 
 
-Phenomenon Picture
-------------------------
+Immagine del risultato
+--------------------------
 
 .. image:: img/image184.jpeg
    :align: center

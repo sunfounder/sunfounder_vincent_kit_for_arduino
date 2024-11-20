@@ -1,32 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_humiture:
 
-2.32 DHT11 Module
-==================
+2.32 Modulo DHT11
+====================
 
-Overview
---------------
+Panoramica
+----------------
 
-In this lesson, you will learn how to use DHT11 Module. The DHT11 is a
-basic, ultra low-cost digital temperature and humidity sensor. It uses a
-capacitive humidity sensor and a thermistor to measure the surrounding
-air, and spits out a digital signal on the data pin (no analog input
-pins are needed).
+In questa lezione imparerai a utilizzare il Modulo DHT11. Il DHT11 è un 
+sensore digitale di temperatura e umidità economico e basilare. Utilizza 
+un sensore capacitivo di umidità e un termistore per misurare l'aria circostante, 
+emettendo un segnale digitale sul pin dati (non sono necessari pin di input 
+analogico).
 
-Components Required
+Componenti necessari
 -----------------------
 
 .. image:: img/Part_two_32.png
@@ -35,30 +35,30 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_humiture`
 
-Fritzing Circuit
+Circuito Fritzing
 ----------------------
 
-In this example, we can directly connect the pins of DHT11
-Module to the pins of Mega 2560 Board, and we use pin 4 to read the
-signal of DHT11 Module. Connect the pin「+」of DHT11 Module to 5V, the
-pin「-」 to GND, and the pin OUT to pin 4.
+In questo esempio, possiamo collegare direttamente i pin del Modulo DHT11 ai 
+pin della scheda Mega 2560 e utilizzare il pin 4 per leggere il segnale del 
+Modulo DHT11. Collega il pin「+」del Modulo DHT11 al 5V, il pin「-」al GND e 
+il pin OUT al pin 4.
 
 .. image:: img/image241.png
     :align: center
 
-**Wiring Diagram**
---------------------
+**Schema di cablaggio**
+------------------------
 
 .. image:: img/image242.png
     :align: center
 
-Code
+Codice
 ----------
 
 .. note::
 
-    * You can open the file ``2.32_dhtModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.32_dhtModule`` directly.
-    * The ``DHT sensor library`` library is used here, you can install it from the **Library Manager**.
+    * Puoi aprire direttamente il file ``2.32_dhtModule.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.32_dhtModule``.
+    * La libreria ``DHT sensor library`` è utilizzata qui, puoi installarla dal **Library Manager**.
 
         .. image:: img/lib_dht11.png
             :align: center
@@ -67,25 +67,24 @@ Code
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f8605323-827f-4741-b414-10241e4c9afa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded to the Mega2560 board, the serial monitor
-will continue to output the current temperature and humidity values of
-the environment.
+Dopo aver caricato il codice sulla scheda Mega2560, il monitor seriale 
+continuerà a mostrare i valori correnti di temperatura e umidità dell'ambiente.
 
-Code Analysis
--------------------
+Analisi del codice
+---------------------
 
-#.  Includes the ``DHT.h`` library, which provides functions to interact with the DHT sensors. Then, set the pin and type for the DHT sensor.
+#. Include la libreria ``DHT.h``, che fornisce funzioni per interagire con i sensori DHT. Successivamente, definisce il pin e il tipo di sensore DHT.
 
     .. code-block:: arduino
 
         #include "DHT.h"
 
-        #define DHTPIN 4  // Set the pin connected to the DHT11 data pin
+        #define DHTPIN 4  // Imposta il pin collegato al pin dati del DHT11
         #define DHTTYPE DHT11 // DHT 11 
 
         DHT dht(DHTPIN, DHTTYPE);
 
-#. Initializes serial communication at a baud rate of 115200 and initializes the DHT sensor.
+#. Inizializza la comunicazione seriale con una velocità di trasmissione di 115200 baud e il sensore DHT.
 
     .. code-block:: arduino
 
@@ -95,26 +94,26 @@ Code Analysis
             dht.begin();
         }
 
-#. In the ``loop()`` function, read temperature and humidity values from the DHT11 sensor, and print them to the serial monitor.
+#. Nella funzione ``loop()``, legge i valori di temperatura e umidità dal sensore DHT11 e li stampa sul monitor seriale.
 
     .. code-block:: arduino
 
         void loop() {
-            // Wait a few seconds between measurements.
+            // Aspetta alcuni secondi tra una misurazione e l'altra.
             delay(2000);
 
-            // Reading temperature or humidity takes about 250 milliseconds!
-            // Sensor readings may also be up to 2 seconds 'old' (it's a very slow sensor)
+            // La lettura della temperatura o dell'umidità richiede circa 250 millisecondi!
+            // Le letture del sensore possono essere 'vecchie' fino a 2 secondi (è un sensore molto lento)
             float humidity = dht.readHumidity();
-            // Read temperature as Celsius (the default)
+            // Legge la temperatura in gradi Celsius (impostazione predefinita)
             float temperture = dht.readTemperature();
 
-            // Check if any reads failed and exit early (to try again).
+            // Controlla se le letture non sono valide ed esce immediatamente (per riprovare).
             if (isnan(humidity) || isnan(temperture)) {
                 Serial.println("Failed to read from DHT sensor!");
                 return;
             }
-            // Print the humidity and temperature
+            // Stampa l'umidità e la temperatura
             Serial.print("Humidity: "); 
             Serial.print(humidity);
             Serial.print(" %\t");
@@ -123,12 +122,12 @@ Code Analysis
             Serial.println(" *C");
         }
 
-    * The ``dht.readHumidity()`` function is called to read the humidity value from the DHT sensor.
-    * The ``dht.readTemperature()`` function is called to read the temperature value from the DHT sensor.
-    * The ``isnan()`` function is used to check if the readings are valid. If either the humidity or temperature value is NaN (not a number), it indicates a failed reading from the sensor, and an error message is printed.
+    * La funzione ``dht.readHumidity()`` è chiamata per leggere il valore di umidità dal sensore DHT.
+    * La funzione ``dht.readTemperature()`` è chiamata per leggere il valore di temperatura dal sensore DHT.
+    * La funzione ``isnan()`` viene utilizzata per verificare se le letture sono valide. Se il valore di umidità o temperatura è NaN (non un numero), indica una lettura non riuscita dal sensore, e viene stampato un messaggio di errore.
 
-Phenomenon Picture
------------------------
+Immagine del fenomeno
+------------------------
 
 .. image:: img/image243.jpeg
    :align: center

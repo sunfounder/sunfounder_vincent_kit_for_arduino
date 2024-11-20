@@ -1,30 +1,30 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_stepper_motor:
 
-2.14 Stepper Motor
-==================
+2.14 Motore Passo-Passo
+=========================
 
 
-Overview
---------
+Panoramica
+-------------
 
-In this lesson, you will learn about Stepper Motor.
+In questa lezione imparerai a conoscere il motore passo-passo.
 
-Components Required
--------------------
+Componenti necessari
+-----------------------
 
 .. image:: img/list_2.14.png
 
@@ -34,84 +34,81 @@ Components Required
 * :ref:`cpn_stepper_motor`
 * :ref:`cpn_power_module`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+---------------------
 
-Power Supply Module is used to power the stepper motor. Get the GND of
-Mega 2560 Board and GND of ULN2003 connected to the cathode of the
-breadboard, and connect the VCC of ULN2003 to 5V OUTPUT of Power Supply.
+Il modulo di alimentazione viene utilizzato per alimentare il motore 
+passo-passo. Collega il GND della scheda Mega 2560 e il GND dell'ULN2003 
+al catodo della breadboard, e collega il VCC dell'ULN2003 all'uscita 5V 
+del modulo di alimentazione.
 
-The wiring of ULN2003 and Mega2560 is shown as follows:
+Il cablaggio tra ULN2003 e Mega2560 è mostrato di seguito:
 
 .. image:: img/image149.png
 
-
-Schematic Diagram
------------------
+Schema elettrico
+--------------------
 
 .. image:: img/image462.png
 
-
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.14_stepperMotor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.14_stepperMotor`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.14_stepperMotor.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.14_stepperMotor``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/1ea1cc56-83ef-45c3-8140-2c7378ad8efa/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you will be able to see that the stepper motor rotates one circle with an interval of a second and each circle takes 3.75s.
+Dopo aver caricato il codice sulla scheda Mega2560, potrai osservare il motore passo-passo ruotare di un giro con un intervallo di un secondo, completando ogni giro in 3,75 secondi.
 
-Code Analysis
--------------
+Analisi del codice
+---------------------
 
-By calling the library Stepper.h, you can easily drive the stepper motor. 
+Utilizzando la libreria Stepper.h, puoi controllare facilmente il motore passo-passo.
 
 .. code-block:: arduino
 
     #include <Stepper.h> 
 
-**Library Functions：**
+**Funzioni della libreria:**
 
 .. code-block:: arduino
 
     Stepper(steps, pin1, pin2, pin3, pin4)
 
-Creates a new instance of the Stepper class that represents a particular stepper motor attached to your Arduino board.
+Crea una nuova istanza della classe Stepper per rappresentare un particolare motore passo-passo collegato alla tua scheda Arduino.
 
-* ``steps``: the number of steps in one revolution of your motor. If your motor gives the number of degrees per step, divide that number into 360 to get the number of steps (e.g. 360 / 3.6 gives 100 steps). (int)
+* ``steps``: il numero di passi necessari per completare una rivoluzione del motore. Se il motore indica il numero di gradi per passo, dividi 360 per quel valore per ottenere il numero di passi (es. 360 / 3,6 = 100 passi). (int)
 
 .. note::
-    Every circle of the stepper motor takes 2048 steps.
+    Ogni giro completo del motore passo-passo richiede 2048 passi.
 
 .. code-block:: arduino
 
     setSpeed(rpm)
 
-Sets the motor speed in rotations per minute. This function doesn't make the motor turn, just sets the speed at which it will when you call step().
+Imposta la velocità del motore in rotazioni per minuto. Questa funzione non fa ruotare il motore, ma definisce la velocità a cui ruoterà quando viene chiamata la funzione step().
 
-* ``rpm``: the speed at which the motor should turn in rotations per minute - a positive number. (long)
+* ``rpm``: la velocità di rotazione del motore in rotazioni per minuto - deve essere un numero positivo. (long)
 
 .. note::
-    The stepper motor we use here rotates 17 circles a minute at most.
+    Il motore passo-passo che utilizziamo qui può ruotare al massimo 17 giri al minuto.
 
 .. code-block:: arduino
 
     step(steps)
 
-Turns the motor a specific number of steps, at a speed determined by the most recent call to setSpeed(). 
+Fa ruotare il motore di un numero specifico di passi, a una velocità determinata dall'ultima chiamata a setSpeed().
 
-This function is blocking; that is, it will wait until the motor has finished moving to pass control to the next line in your sketch. For example, if you set the speed to, say, 1 RPM and called step(2048) on a 2048-step motor, this function would take a full minute to run. For better control, keep the speed high and only go a few steps with each call to step().
+Questa funzione è bloccante; cioè, aspetta che il motore termini il movimento prima di passare il controllo alla riga successiva del tuo sketch. Ad esempio, se imposti la velocità a 1 RPM e chiami step(2048) su un motore da 2048 passi, questa funzione impiegherà un minuto intero per completare. Per un controllo migliore, mantieni la velocità alta e utilizza pochi passi per ogni chiamata a step().
 
-* ``steps``: the number of steps to turn the motor - positive to turn one direction, negative to turn the other. (int)
+* ``steps``: il numero di passi per far ruotare il motore - positivo per una direzione, negativo per l'altra. (int)
 
-Phenomenon Picture
-------------------
+Immagine del risultato
+------------------------
 
 .. image:: img/image151.jpeg

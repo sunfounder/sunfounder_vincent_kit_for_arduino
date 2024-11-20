@@ -1,61 +1,58 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_potentiometer:
 
-Potentiometer
+Potenziometro
 ===============
 
 .. image:: img/potentiometer.png
     :align: center
     :width: 150
 
-Potentiometer is also a resistance component with 3 terminals and its resistance value can be adjusted according to some regular variation. 
+Il potenziometro è un componente resistivo a 3 terminali il cui valore di resistenza può essere regolato secondo una variazione regolare.
 
-Potentiometers come in various shapes, sizes, and values, but they all have the following things in common:
+I potenziometri sono disponibili in diverse forme, dimensioni e valori, ma hanno tutti le seguenti caratteristiche in comune:
 
-* They have three terminals (or connection points).
-* They have a knob, screw, or slider that can be moved to vary the resistance between the middle terminal and either one of the outer terminals.
-* The resistance between the middle terminal and either one of the outer terminals varies from 0 Ω to the maximum resistance of the pot as the knob, screw, or slider is moved.
+* Hanno tre terminali (o punti di connessione).
+* Dispongono di una manopola, vite o cursore che può essere spostato per variare la resistenza tra il terminale centrale e uno dei terminali esterni.
+* La resistenza tra il terminale centrale e uno dei terminali esterni varia da 0 Ω alla resistenza massima del potenziometro man mano che la manopola, la vite o il cursore viene spostato.
 
-Here is the circuit symbol of potentiometer. 
+Ecco il simbolo del circuito del potenziometro.
 
 .. image:: img/potentiometer_symbol.png
     :align: center
     :width: 400
 
+Le funzioni del potenziometro nel circuito sono le seguenti:
 
-The functions of the potentiometer in the circuit are as follows: 
+#. Funzione di divisore di tensione
 
-#. Serving as a voltage divider
+    Il potenziometro è una resistenza regolabile in modo continuo. Quando si regola l'albero o il cursore del potenziometro, il contatto mobile scivola sulla resistenza. In questo modo, può essere emessa una tensione in base alla tensione applicata al potenziometro e all'angolo di rotazione del braccio mobile o alla corsa effettuata.
 
-    Potentiometer is a continuously adjustable resistor. When you adjust the shaft or sliding handle of the potentiometer, the movable contact will slide on the resistor.  At this point, a voltage can be output depending on the voltage applied onto the potentiometer and the angle the movable arm has rotated to or the travel it has made. 
+#. Funzione di reostato
 
-#. Serving as a rheostat
+    Quando il potenziometro viene utilizzato come reostato, collega il terminale centrale e uno degli altri due terminali nel circuito. Così si può ottenere un valore di resistenza che cambia gradualmente e continuamente all'interno della corsa del contatto mobile.
 
-    When the potentiometer is used as a rheostat, connect the middle pin and one of the other 2 pins in the circuit. Thus you can get a smoothly and continuously changed resistance value within the travel of the moving contact. 
+#. Funzione di controllo della corrente
 
-#. Serving as a current controller
+    Quando il potenziometro agisce come controllore di corrente, il terminale del contatto scorrevole deve essere collegato come uno dei terminali di uscita.
 
-    When the potentiometer acts as a current controller, the sliding contact terminal must be connected as one of the output terminals.
+Se desideri approfondire il funzionamento del potenziometro, consulta: `Potenziometro - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
 
-If you want to know more about potentiometer, refer to: `Potentiometer - Wikipedia <https://en.wikipedia.org/wiki/Potentiometer.>`_
+**Esempio**
 
-**Example**
-
-* :ref:`ar_potentiometer` (Arduino Project)
-* :ref:`moving_mouse` (Scratch Project)
-* :ref:`breakout_clone` (Scratch Project)
-
-
+* :ref:`ar_potentiometer` (Progetto Arduino)
+* :ref:`moving_mouse` (Progetto Scratch)
+* :ref:`breakout_clone` (Progetto Scratch)

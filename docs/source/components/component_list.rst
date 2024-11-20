@@ -1,29 +1,29 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi, Arduino ed ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Components List and Introduction
+Lista Componenti e Introduzione
 ====================================
 
 
-After opening the package, please check whether the quantity of components is compliance with product description and whether all components are in good condition.
+Dopo aver aperto il pacchetto, controlla se la quantità dei componenti corrisponde alla descrizione del prodotto e se tutti i componenti sono in buone condizioni.
 
-* :download:`Vincent Kit Components List <https://github.com/sunfounder/sf-pdf/raw/master/components_list/a0000242-vincent-kit.pdf>`
+* :download:`Lista Componenti Kit Vincent <https://github.com/sunfounder/sf-pdf/raw/master/components_list/a0000242-vincent-kit.pdf>`
 
 
-Below is the introduction to each component, which contains the operating principle of the component and the corresponding projects.
+Di seguito trovi l'introduzione di ciascun componente, che include il principio di funzionamento del componente e i relativi progetti.
 
-**Control Board**
+**Scheda di Controllo**
 
 .. toctree::
     :maxdepth: 1
@@ -31,8 +31,7 @@ Below is the introduction to each component, which contains the operating princi
     component_mega2560
     component_mega_proto_shield
 
-
-**Basic**
+**Base**
 
 .. toctree::
     :maxdepth: 1
@@ -67,8 +66,7 @@ Below is the introduction to each component, which contains the operating princi
     component_dot_matrix_module
     component_i2c_lcd
 
-
-**Sound**
+**Suono**
 
 .. toctree::
     :maxdepth: 1
@@ -101,9 +99,7 @@ Below is the introduction to each component, which contains the operating princi
     component_receive_module
     component_mpr121_module
 
-
-
-**Sensor**
+**Sensori**
 
 .. toctree::
     :maxdepth: 1

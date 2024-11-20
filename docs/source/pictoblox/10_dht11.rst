@@ -1,86 +1,84 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _humiture:
 
-2.10 Read Temperature and Humidity
-=================================================
+2.10 Lettura di Temperatura e Umidità
+========================================
 
-Previous projects have been using stage mode, but some functions are only available in upload mode, such as serial communication function. 
-In this project, we will print the temperature and humidity of the DHT11 using the Serial Monitor in :ref:`Upload Mode`.
+I progetti precedenti hanno utilizzato la modalità **Stage**, ma alcune funzioni sono disponibili solo in modalità **Upload**, come la funzione di comunicazione seriale. 
+In questo progetto stamperemo la temperatura e l'umidità del modulo DHT11 utilizzando il Monitor Seriale in modalità :ref:`Modalità Upload`.
 
 .. image:: img/11_serial.png
 
-You Will Learn
----------------------
+Cosa Imparerai
+----------------------
 
-- Get the temperature and humidity from the DHT11 module
-- Serial Monitor for :ref:`Upload Mode`
-- Add extension
+- Ottenere temperatura e umidità dal modulo DHT11
+- Monitor Seriale per la modalità :ref:`Modalità Upload`
+- Aggiungere un'estensione
 
-Build the Circuit
+Costruire il Circuito
 -----------------------
 
-The digital temperature and humidity sensor DHT11 is a composite sensor that contains a calibrated digital signal output of temperature and humidity.
+Il sensore digitale di temperatura e umidità DHT11 è un sensore composito che contiene un'uscita di segnale digitale calibrata di temperatura e umidità.
 
-Now build the circuit according to the following diagram.
+Ora costruisci il circuito seguendo il diagramma sottostante.
 
 .. image:: img/circuit/dht11_circuit.png
 
 * :ref:`cpn_breadboard`
 * :ref:`cpn_humiture` 
 
-Programming
+Programmazione
 ------------------
 
-**1. Adding Extensions**
+**1. Aggiungere Estensioni**
 
-Switch to **Upload** mode, click the **Add Extension** button in the bottom left corner, then select **Communication** to add it, and it will appear at the end of the palette area.
+Passa alla modalità **Upload**, clicca sul pulsante **Add Extension** nell'angolo in basso a sinistra, quindi seleziona **Communication** per aggiungerla. L'estensione apparirà alla fine dell'area della palette.
 
 .. image:: img/11_addcom.png
 
-**2. Initializing the Arduino Mega and Serial Monitor**
+**2. Inizializzare Arduino Mega e il Monitor Seriale**
 
-In **Upload** mode, start Arduino Mega and then set the serial port baud rate.
+In modalità **Upload**, avvia Arduino Mega e imposta il baud rate della porta seriale.
 
-* [when Arduino Starts up]: In **Upload** mode, start Arduino Mega.
-* [set serial baud rate to]: From the **Communications** palette, used to set the baud rate of serial port 0, default is 115200. If you are using Mega2560, then you can choose to set baud rate in serial port 0~3.
+* [when Arduino Starts up]: In modalità **Upload**, avvia Arduino Mega.
+* [set serial baud rate to]: Dalla palette **Communications**, usato per impostare il baud rate della porta seriale 0, il valore predefinito è 115200. Se stai utilizzando Mega2560, puoi scegliere di impostare il baud rate per le porte seriali da 0 a 3.
 
 .. image:: img/11_init.png
 
-**3. Read temperature and humidity**
+**3. Leggere temperatura e umidità**
 
-Create 2 variables **tem** and **humi** to store the temperature and humidity respectively, the code will appear on the right side while you drag and drop the block.
+Crea due variabili **tem** e **humi** per memorizzare rispettivamente temperatura e umidità. Il codice apparirà sul lato destro mentre trascini i blocchi.
 
 .. image:: img/11_readtem.png
 
-**4. Print them on the Serial Monitor**
+**4. Stampare i dati sul Monitor Seriale**
 
-Write the read temperature and humidity to the Serial Monitor. To avoid transferring too fast and causing PictoBlox to jam, use the [wait seconds] block, to add some time interval for the next print.
+Scrivi i valori di temperatura e umidità letti nel Monitor Seriale. Per evitare trasferimenti troppo rapidi che potrebbero bloccare PictoBlox, usa il blocco [wait seconds] per aggiungere un intervallo di tempo prima della prossima stampa.
 
 .. image:: img/11_writeserial.png
 
-**5. Uploading code**
+**5. Caricare il codice**
 
-Unlike the **Stage** mode, the code in **Upload** mode needs to be uploaded to the Arduino board using the **Upload Code** button to see the effect. This also allows you to unplug the USB cable and still have the program running.
+A differenza della modalità **Stage**, il codice in modalità **Upload** deve essere caricato sulla scheda Arduino utilizzando il pulsante **Upload Code** per vedere l'effetto. Questo ti permette anche di scollegare il cavo USB mantenendo il programma in esecuzione.
 
 .. image:: img/11_upload.png
 
-**6. Turn on the serial monitor**
+**6. Accendere il Monitor Seriale**
 
-Now open the **Serial Monitor** to see the temperature and humidity.
+Ora apri il **Monitor Seriale** per visualizzare temperatura e umidità.
 
 .. image:: img/11_serial.png
-
-

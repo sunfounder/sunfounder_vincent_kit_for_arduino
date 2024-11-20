@@ -1,32 +1,32 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_bar_graph:
 
-2.4 LED Bar Graph
-==================
+2.4 Grafico a Barre LED
+==========================
 
-Overview
---------
+Panoramica
+-------------
 
-In this lesson, you will learn something about LED Bar Graph. Generally,
-LED Bar Graph works as a battery level indicator, Audio equipment,
-industrial control panel. If we want, we can also find its other
-application.
+In questa lezione imparerai a conoscere il Grafico a Barre LED. Generalmente, 
+un Grafico a Barre LED è utilizzato come indicatore del livello della batteria, 
+in apparecchiature audio o in pannelli di controllo industriale. Se necessario, 
+può essere adattato anche per altre applicazioni.
 
-Components Required
--------------------
+Componenti Necessari
+-----------------------
 
 .. image:: img/list_2.4.png
 
@@ -36,42 +36,42 @@ Components Required
 * :ref:`cpn_bar_graph`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Circuito con Fritzing
+------------------------
 
-In this example, we use digital pins 2~11 to drive the LED Bar Graph.
-LED Bar Graph has ten separate LEDs inside and each LED has two pins.
-The left pins 1~10 of LED Bar Graph are connected with the digital pins
-2~11 respectively; the right side pins 11~20 are separately extended to
-same side of these 220ohm resistors whose other sides are identically
-connected to GND.
+In questo esempio, utilizziamo i pin digitali da 2 a 11 per controllare 
+il Grafico a Barre LED. Il Grafico a Barre LED contiene dieci LED separati, 
+ciascuno con due pin. I pin da 1 a 10 sul lato sinistro del Grafico a Barre 
+LED sono collegati rispettivamente ai pin digitali da 2 a 11; i pin sul lato 
+destro (da 11 a 20) sono collegati ciascuno a una resistenza da 220 ohm, con 
+il lato opposto delle resistenze collegato a GND.
 
 .. image:: img/image82.png
 
-Schematic Diagram
------------------
+Schema del Circuito
+-------------------
 
 .. image:: img/image427.png
 
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.4_ledBarGraph.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.4_ledBarGraph`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.4_ledBarGraph.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\2.4_ledBarGraph``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/0614541f-58d0-4f5c-b7c9-c3b893178fda/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see that the LEDs on the LED Bar Graph flash in sequence.
+Dopo aver caricato il codice sulla scheda Mega2560, vedrai i LED sul Grafico a Barre LED accendersi in sequenza.
 
-Code Analysis
--------------
-The codes in setup() use the for loop to initialize pins 2~11 to output mode in turn.  
+
+Analisi del Codice
+----------------------
+
+Nel codice della funzione setup(), utilizziamo un ciclo for per inizializzare i pin da 2 a 11 in modalità OUTPUT uno alla volta.  
 
 .. code-block:: arduino
 
@@ -80,7 +80,7 @@ The codes in setup() use the for loop to initialize pins 2~11 to output mode in 
         pinMode(i,OUTPUT);
     }
 
-The for loop is used in loop() to make the LED flash(turn on 0.5s, then turn off 0.5s) in sequence.
+Nel loop(), un ciclo for viene utilizzato per far lampeggiare i LED in sequenza (accensione per 0,5s, spegnimento per 0,5s).
 
 .. code-block:: arduino
 
@@ -88,15 +88,15 @@ The for loop is used in loop() to make the LED flash(turn on 0.5s, then turn off
     {
         digitalWrite(i,HIGH);
         delay(500);
-    digitalWrite(i,LOW);
+        digitalWrite(i,LOW);
         delay(500);
     }
 
-Refer to **Part 1-1.2 Digital Write** for more details about controlling the LED by using digital pins. 
+Consulta **Parte 1-1.2 Digital Write** per ulteriori dettagli sul controllo dei LED utilizzando i pin digitali. 
 
 :ref:`ar_digital_write`
 
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+------------------------
 
 .. image:: img/image84.jpeg

@@ -1,35 +1,36 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Immergiti nel mondo affascinante di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_digital_input_output:
 
-1.6 Digital Input Control Output
-================================
+1.6 Controllo dell'Uscita con Ingresso Digitale
+================================================
 
-Overview
----------
+Panoramica
+-----------
 
-With the understanding of digitalWrite() and digitalRead(), we can build
-a complete I / O system to control the output device by obtaining the
-data from the input device. We can use this method to enable digital
-input components such as Button, Touch sensor, Infrared motion sensor to
-control digital output devices such as LED, active buzzer. This lesson
-will take Button and LED as examples to realize button control LED with
-the condition (if-else).
+Grazie alla conoscenza di digitalWrite() e digitalRead(), possiamo costruire 
+un sistema completo di I/O (input/output) per controllare un dispositivo di 
+uscita leggendo i dati da un dispositivo di ingresso. Questo metodo consente 
+di utilizzare componenti di ingresso digitale, come pulsanti, sensori tattili 
+e sensori di movimento a infrarossi, per controllare dispositivi di uscita 
+digitale come LED o cicalini attivi. In questa lezione utilizzeremo un pulsante 
+e un LED come esempio per implementare il controllo del LED utilizzando un pulsante 
+e la condizione (if-else).
 
-Components Required
--------------------
+Componenti Necessari
+-----------------------
 
 .. image:: img/list_1.6.png
 
@@ -39,44 +40,40 @@ Components Required
 * :ref:`cpn_button`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Circuito con Fritzing
+-------------------------
 
-In this example, we use pin 9 to drive LED. Use digital pin 2 to read
-the signal of Button. When the button is pressed, the LED lights up.
+In questo esempio utilizziamo il pin 9 per controllare il LED e il pin digitale 
+2 per leggere il segnale del pulsante. Quando il pulsante viene premuto, il LED si accende.
 
 .. image:: img/image48.png
 
 
-Schematic Diagram
------------------
+Schema del Circuito
+---------------------
 
 .. image:: img/image407.png
 
-
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``1.6_digitalInputControlOutput.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.6_digitalInputControlOutput`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puoi aprire direttamente il file ``1.6_digitalInputControlOutput.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\1.6_digitalInputControlOutput``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/e018645f-5a3e-4c36-be7a-d786fe8f3601/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the code to the Mega2560 board, you can hold down Button
-to lighten the LED.
+Dopo aver caricato il codice sulla scheda Mega2560, puoi premere e tenere 
+premuto il pulsante per accendere il LED.
 
-Code Analysis
---------------
+Analisi del Codice
+---------------------
 
-Declare the pins of LED and Button and declare a variable to store the
-state of button.
+Dichiara i pin del LED e del pulsante, oltre a una variabile per memorizzare 
+lo stato del pulsante.
 
 .. code-block:: arduino
 
@@ -84,20 +81,20 @@ state of button.
     const int ledPin =  9;  
     int buttonState = 0;
 
-Initialize the pin mode in setup().
+Inizializza la modalità dei pin in setup().
 
 .. code-block:: arduino
 
     pinMode(ledPin, OUTPUT);
     pinMode(buttonPin, INPUT);
 
-Read the status of the Button in loop() and assign it to the variable buttonState.
+Leggi lo stato del pulsante in loop() e assegnalo alla variabile buttonState.
 
 .. code-block:: arduino
 
     buttonState = digitalRead(buttonPin);
 
-Use if condition to judge: if you get high level from a button, light up the LED.
+Utilizza una condizione if per verificare: se lo stato del pulsante è HIGH, accendi il LED.
 
 .. code-block:: arduino
 
@@ -105,15 +102,15 @@ Use if condition to judge: if you get high level from a button, light up the LED
         digitalWrite(ledPin, HIGH);
     } 
 
-Otherwise, turn off the LED.
+Altrimenti, spegni il LED.
 
 .. code-block:: arduino
 
     else {
-    digitalWrite(ledPin, LOW);
+        digitalWrite(ledPin, LOW);
     }
 
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+------------------------
 
 .. image:: img/image49.jpeg

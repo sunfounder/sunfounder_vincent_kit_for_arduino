@@ -1,53 +1,53 @@
-.. note::
+.. note::  
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Immergiti nel mondo affascinante di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_interval:
 
-1.11 Interval
-=============
+1.11 Intervallo
+=================
 
-Overview
---------
+Panoramica
+-------------
 
-Sometimes you need to do two things at once. For example you might want
-to blink an LED while reading a button press. In this case, you can't
-use delay(), because Arduino pauses your program during the delay(). If
-the button is pressed while Arduino is paused waiting for the delay() to
-pass, your program will miss the button press.
+A volte è necessario eseguire due operazioni contemporaneamente. Ad esempio, 
+potresti voler far lampeggiare un LED mentre leggi la pressione di un pulsante. 
+In questo caso, non puoi utilizzare delay(), poiché Arduino mette in pausa il 
+tuo programma durante l'esecuzione di delay(). Se il pulsante viene premuto 
+mentre Arduino è in pausa, il tuo programma non rileverà la pressione.
 
-This sketch demonstrates how to blink an LED without using delay(). It
-turns the LED on and then makes note of the time. Then, each time
-through loop(), it checks to see if the desired blink time has passed.
-If it has, it toggles the LED on or off and makes note of the new time.
-In this way the LED blinks continuously while the sketch execution never
-lags on a single instruction.
+Questo esempio dimostra come far lampeggiare un LED senza utilizzare delay(). 
+Il LED si accende e viene registrato il tempo. Poi, a ogni iterazione di loop(), 
+verifica se il tempo impostato per il lampeggio è trascorso. Se sì, cambia lo 
+stato del LED (acceso o spento) e aggiorna il tempo. In questo modo, il LED 
+lampeggia continuamente senza che l'esecuzione del programma si fermi su una 
+singola istruzione.
 
-An analogy would be warming up a pizza in your microwave, and also
-waiting some important email. You put the pizza in the microwave and set
-it for 10 minutes. The analogy to using delay() would be to sit in front
-of the microwave watching the timer count down from 10 minutes until the
-timer reaches zero. If the important email arrives during this time you
-will miss it.
-
-What you would do in real life would be to turn on the pizza, and then
-check your email, and then maybe do something else (that doesn't take
-too long!) and every so often you will come back to the microwave to see
-if the timer has reached zero, indicating that your pizza is done.
+Un'analogia potrebbe essere riscaldare una pizza nel microonde mentre attendi 
+un'e-mail importante. Configuri il microonde per 10 minuti. Utilizzare delay() 
+sarebbe come sederti davanti al microonde osservando il timer fino a quando 
+raggiunge lo zero, perdendo l'opportunità di leggere l'e-mail. Nella vita reale, 
+accenderesti il microonde e controlleresti la posta mentre aspetti, tornando al 
+microonde di tanto in tanto per verificare se la pizza è pronta.
 
 
-Components Required
--------------------
+
+
+
+
+
+Componenti Necessari
+-----------------------
 
 .. image:: img/list_1.11.png
 
@@ -57,90 +57,85 @@ Components Required
 * :ref:`cpn_led`
 * :ref:`cpn_resistor`
 
-Fritzing Circuit
-----------------
+Circuito con Fritzing
+------------------------
 
-In this example, we use digital pin 9 to drive the LED, and we attach
-one side of the resistor to the corresponding digital pins. The longer
-pin of LED (a positive electrode, referred to as anode) is connected to
-the other side of the resistor. The shorter pin (a negative electrode,
-referred to as cathode) of LED is attached to GND.
+In questo esempio, utilizziamo il pin digitale 9 per controllare il LED. 
+Collega un lato della resistenza al pin digitale corrispondente. Il pin 
+lungo del LED (anodo) va collegato all'altro lato della resistenza, mentre 
+il pin corto (catodo) si collega a GND.
 
 .. image:: img/image30.png
 
-Schematic Diagram
------------------
+Schema del Circuito
+----------------------
 
 .. image:: img/image466.png
 
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``1.11_interval.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.11_interval`` directly.
-    * Or copy this code into Arduino IDE 1/2.
-
-
-
+    * Puoi aprire direttamente il file ``1.11_interval.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\1.11_interval``.
+    * Oppure copia questo codice nell'Arduino IDE 1/2.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/9aa795a1-fcb1-4773-98bc-a353d3d21750/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-When you finish uploading the codes to the Mega2560 board, you can see the LED uploading. 
+Dopo aver caricato il codice sulla scheda Mega2560, vedrai il LED lampeggiare.
 
 
-Code Analysis
--------------
+Analisi del Codice
+--------------------
 
-
-Declare the digital pin 9 as ledPin.
+Dichiara il pin digitale 9 come ledPin.
 
 .. code-block:: arduino
 
     const int ledPin = 9;
 
-Set the state of ledState to LOW to turn off the LED.
+Imposta lo stato iniziale di ledState su LOW per spegnere il LED.
 
 .. code-block:: arduino
 
     int ledState = LOW;
 
-Initial a variable named previousMillis to store previous operating time of microcontroller.
+Inizializza una variabile chiamata previousMillis per memorizzare il tempo precedente.
 
 .. code-block:: arduino
 
     unsigned long previousMillis = 0;     
 
-Set the interval time to 1000ms (milliseconds).
+Imposta l'intervallo di tempo su 1000 ms (millisecondi).
 
 .. code-block:: arduino
 
     const long interval = 1000; 
 
-Set ledPin to OUTPUT mode.
+Configura ledPin in modalità OUTPUT.
 
 .. code-block:: arduino
 
     pinMode(ledPin, OUTPUT);
 
-In loop(), declare currentMillis to store the current time.
+In loop(), dichiara currentMillis per memorizzare il tempo attuale.
 
 .. code-block:: arduino
 
     unsigned long currentMillis = millis();
 
-When the interval between the current operating time and last updating time is larger than 1000ms, certain functions are triggered. Meanwhile, update the previousMillis to the current time for the next triggering that is to happen 1 second latter.  
+Quando l'intervallo tra il tempo attuale e l'ultimo tempo registrato supera i 1000 ms, vengono attivate alcune funzioni. Contemporaneamente, aggiorna previousMillis al tempo attuale per la prossima attivazione che avverrà 1 secondo dopo.
 
 .. code-block:: arduino
 
     if (currentMillis - previousMillis >= interval) {
-        previousMillis = currentMillis;// save the last time you blinked the LED
+        previousMillis = currentMillis; // salva l'ultimo tempo in cui il LED è stato lampeggiato
     //...
     }
 
-Here, certain functions executed at intervals are to change the state of LED. 
+Qui, le funzioni eseguite a intervalli servono per cambiare lo stato del LED.
 
 .. code-block:: arduino
 
@@ -150,7 +145,7 @@ Here, certain functions executed at intervals are to change the state of LED.
     {ledState = LOW;}
     digitalWrite(ledPin, ledState);
 
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+-----------------------
 
 .. image:: img/image36.jpeg

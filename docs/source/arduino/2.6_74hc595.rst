@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci il mondo di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_74hc595:
 
 2.6 74HC595
 =============================
 
-Overview
+Panoramica
 -----------------
 
-In this lesson, you will learn how to use 74HC595. 74HC595 consists of
-an 8−bit shift register and a storage register with three−state parallel
-outputs. It converts serial input into parallel output so you can save
-IO ports of an MCU.
+In questa lezione, imparerai come utilizzare il 74HC595. Il 74HC595 è composto
+da un registro a scorrimento a 8 bit e un registro di memoria con uscite
+parallele a tre stati. Converte l'input seriale in output parallelo, consentendo
+di risparmiare porte IO di un microcontrollore.
 
-Components Required
+Componenti Necessari
 --------------------------------
 
 .. image:: img/list_2.6.png
@@ -37,68 +37,65 @@ Components Required
 * :ref:`cpn_resistor`
 * :ref:`cpn_74hc595`
 
-Fritzing Circuit
+Circuito con Fritzing
 --------------------------
 
 .. image:: img/image433.png
 
-In this example, we use 74HC595 to control LED. Give each data output
-pin（Q0-Q7）a 220 ohm resistor then connect them to LED. The wiring
-diagram is as follows:
+In questo esempio, utilizziamo il 74HC595 per controllare i LED. Collega a ogni
+uscita dati (Q0-Q7) una resistenza da 220 ohm e poi al LED. Il diagramma dei collegamenti è il seguente:
 
 .. image:: img/image434.png
 
-Schematic Diagram
+Schema del Circuito
 ---------------------------
 
 .. image:: img/image435.png
 
-Code
+Codice
 ---------------
 
 .. note::
 
-    * You can open the file ``2.6_74HC595.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.6_74HC595`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.6_74HC595.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\2.6_74HC595``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/05372471-c560-489b-9ef4-dba100c47038/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-When you finish uploading the codes to the Mega2560 board, you can see the LEDs turning on one after another.
+Dopo aver caricato il codice sulla scheda Mega2560, vedrai i LED accendersi uno dopo l'altro.
 
-Code Analysis
+Analisi del Codice
 --------------------
 
-Declare an array, store several 8 bit binary numbers that are used to change the working state of the eight LEDs controlled by 74HC595. 
+Dichiara un array per memorizzare diversi numeri binari a 8 bit che servono a cambiare lo stato operativo degli otto LED controllati dal 74HC595.
 
 .. code-block:: arduino
 
     int datArray[] = {B00000000, B00000001, B00000011, B00000111, B00001111, B00011111, B00111111, B01111111, B11111111};
 
-Set STcp to low level first and then high level. It will generate a rising edge pulse of STcp.
+Imposta STcp a livello basso prima e poi a livello alto. Questo genera un impulso sul fronte di salita di STcp.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,LOW); 
 
-shiftOut() is used to shift out a byte of data one bit at a time, which means to shift a byte of data in datArray[num] to the shifting register with the DS pin. MSBFIRST means to move from high bits.
+Usa shiftOut() per inviare un byte di dati un bit alla volta, cioè per trasferire un byte di dati in datArray[num] al registro di scorrimento tramite il pin DS. MSBFIRST indica che i bit più significativi vengono inviati per primi.
 
 .. code-block:: arduino
 
     shiftOut(DS,SHcp,MSBFIRST,datArray[num]);
 
-After digitalWrite(STcp,HIGH) is run, the STcp will be at the rising edge. At this time, the data in the shift register will be moved to the memory register. 
+Dopo aver eseguito digitalWrite(STcp,HIGH), STcp sarà sul fronte di salita. In questo momento, i dati nel registro di scorrimento vengono trasferiti al registro di memoria.
 
 .. code-block:: arduino
 
     digitalWrite(STcp,HIGH);
 
-A byte of data will be transferred into the memory register after 8 times. Then the data of memory register are output to the bus (Q0-Q7). For example, shiftout「B00000001」will light up the LED controlled by Q0 and turn off the LED controlled by Q1~Q7. 
+Un byte di dati verrà trasferito nel registro di memoria dopo 8 cicli. Poi i dati del registro di memoria verranno inviati al bus (Q0-Q7). Ad esempio, shiftOut「B00000001」accenderà il LED controllato da Q0 e spegnerà i LED controllati da Q1~Q7.
 
-Phenomenon Picture
+Immagine del Fenomeno
 ----------------------------
 
 .. image:: img/image95.jpeg

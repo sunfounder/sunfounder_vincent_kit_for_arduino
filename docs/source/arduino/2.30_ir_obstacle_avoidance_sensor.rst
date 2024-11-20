@@ -1,31 +1,31 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_avoid:
 
-2.30 IR Obstacle Avoidance Sensor
-===================================
+2.30 Sensore IR di Evitamento Ostacoli
+========================================
 
-Overview
-----------------
+Panoramica
+-----------------
 
-In this lesson, you will learn how to use IR Obstacle Avoidance Sensor.
-This module is commonly installed on the car and robot to judge the
-existence of the obstacles ahead. Also it is widely used in hand held
-device, water faucet and so on.
+In questa lezione imparerai a utilizzare il Sensore IR di Evitamento Ostacoli. 
+Questo modulo è comunemente installato su auto e robot per rilevare la presenza 
+di ostacoli davanti. È inoltre ampiamente utilizzato in dispositivi portatili, 
+rubinetti automatici e altro.
 
-Components Required
+Componenti necessari
 ------------------------
 
 .. image:: img/Part_two_30.png
@@ -34,43 +34,42 @@ Components Required
 * :ref:`cpn_wires`
 * :ref:`cpn_avoid`
 
-Fritzing Circuit
+Circuito Fritzing
 -------------------------
-We can directly connect the pins of IR Obstacle Sensor Module
-with the pins of Mega 2560 Board. The digital pin 2 is used to read the
-signal of IR Obstacle Avoidance Sensor Module. We get the VCC of IR
-Sensor Module connected to 5V, GND to GND, OUT to digital pin 2.
+
+Possiamo collegare direttamente i pin del modulo sensore IR di evitamento 
+ostacoli ai pin della scheda Mega 2560. Il pin digitale 2 è utilizzato per 
+leggere il segnale del modulo. Colleghiamo il VCC del modulo sensore IR al 
+pin 5V, il GND al GND e il pin OUT al pin digitale 2.
 
 .. image:: img/image231.png
    :align: center
 
-Schematic Diagram
+Schema elettrico
 ------------------------
 
 .. image:: img/image232.png
    :align: center
 
-Code
+Codice
 -----------
 
 .. note::
 
-    * You can open the file ``2.30_irSensorModule.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.30_irSensorModule`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.30_irSensorModule.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.30_irSensorModule``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/918a1cfa-eade-48f4-b998-542765ff65cd/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-Uploaded the codes to the Mega2560 board, you can see the readings of
-pins on the serial monitor. When IR Obstacle Avoidance Sensor Module
-detects there is something covering ahead, there appears 「0」on the
-serial monitor; otherwise,「1」is displayed. Refer to:ref:`ar_digital_read` 
-to check the detail code explanation.
+Dopo aver caricato il codice sulla scheda Mega2560, puoi aprire il monitor 
+seriale per visualizzare le letture dei pin. Quando il modulo sensore IR rileva 
+la presenza di un ostacolo davanti, il monitor seriale mostrerà 「0」; altrimenti, 
+verrà visualizzato 「1」. Consulta :ref:`ar_digital_read` per un'analisi dettagliata 
+del codice.
 
-Phenomenon Picture
+Immagine del fenomeno
 -----------------------
 
 .. image:: img/image233.jpeg

@@ -1,32 +1,32 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Esplora più a fondo Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche grazie al supporto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni l'accesso anticipato a nuovi annunci di prodotto e anteprime.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e omaggi**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _ar_motor:
 
-2.13 Motor
-==========
+2.13 Motore
+=============
 
-Overview
---------
+Panoramica
+-------------
 
-In this lesson, you will learn how to use Motor, the working principle
-of which is that the energized coil is forced to rotate in the magnetic
-field then the rotor of the motor rotates accordingly on which the
-pinion gear drives the engine flywheel to rotate.
+In questa lezione imparerai a utilizzare un motore, il cui principio di 
+funzionamento si basa su una bobina energizzata che è costretta a ruotare 
+in un campo magnetico. Questo movimento fa sì che il rotore del motore ruoti 
+e il pignone trasmetta il movimento al volano del motore.
 
-Components Required
--------------------
+Componenti necessari
+----------------------
 
 .. image:: img/list_2.13.png
 
@@ -37,43 +37,40 @@ Components Required
 * :ref:`cpn_motor`
 * :ref:`cpn_power_module`
 
-Fritzing Circuit
-----------------
+Circuito Fritzing
+--------------------
 
-In this example, we use Power Supply Module to power the anode and
-cathode of breadboard. GND of Mega 2560 Board is connected to the
-cathode.
+In questo esempio utilizziamo un modulo di alimentazione per fornire 
+energia al catodo e all'anodo della breadboard. Il GND della scheda 
+Mega 2560 è collegato al catodo.
 
 .. image:: img/image141.png
 
-Schematic Diagram
------------------
+Schema elettrico
+-------------------
 
 .. image:: img/image459.png
 
-Code
-----
+Codice
+---------
 
 .. note::
 
-    * You can open the file ``2.13_motor.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\2.13_motor`` directly.
-    * Or copy this code into Arduino IDE.
-
-
+    * Puoi aprire direttamente il file ``2.13_motor.ino`` nella cartella ``sunfounder_vincent_kit_for_arduino\code\2.13_motor``.
+    * Oppure copia questo codice nell'IDE di Arduino.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/97ab73d2-6658-43e3-b741-c95f5040c15f/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After uploading the codes to the Mega2560 board, you can select the rotating direction of motor by typing 「A」 or 「B」 in the serial monitor.
+Dopo aver caricato il codice sulla scheda Mega2560, puoi selezionare la direzione di rotazione del motore digitando 「A」 o 「B」 nel monitor seriale.
+
+Analisi del codice
+-------------------
 
 
-Code Analysis
--------------
-
-
-The motor can be driven by providing a voltage difference between the copper sheets at both sides of the motor. 
-Therefore, you only need to write 0 for the voltage of one side of the copper sheet and 5V for the other side. Modify the written analog signal value to adjust the direction and speed.
+Il motore può essere azionato fornendo una differenza di tensione tra le lamine di rame su entrambi i lati del motore. 
+Pertanto, è sufficiente impostare 0V su un lato della lamina di rame e 5V sull'altro lato. Modificando il valore del segnale analogico scritto, è possibile regolare la direzione e la velocità.
 
 .. code-block:: arduino
 
@@ -89,10 +86,10 @@ Therefore, you only need to write 0 for the voltage of one side of the copper sh
     analogWrite(motor2A,0);
     }
 
-In this example, Serial.Read() is used to control the direction of motor. 
+In questo esempio, la funzione Serial.Read() viene utilizzata per controllare la direzione del motore. 
 
-When you type \'A\' in serial monitor, there calls the clockwise (255) function to make the motor rotate with the speed of 255.
-Input \'B\', and the motor will rotate in reverse direction.
+Quando digiti 'A' nel monitor seriale, viene chiamata la funzione clockwise(255) per far ruotare il motore alla velocità di 255.
+Digitando 'B', il motore ruoterà in direzione opposta.
 
 .. code-block:: arduino
 
@@ -114,7 +111,7 @@ Input \'B\', and the motor will rotate in reverse direction.
     stopMotor();
     }
 
-Phenomenon Picture
-------------------
+Immagine del risultato
+---------------------------
 
 .. image:: img/image143.jpeg

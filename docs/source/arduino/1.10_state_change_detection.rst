@@ -1,39 +1,37 @@
-.. note::
+.. note::   
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella comunità di appassionati di SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Immergiti nel mondo affascinante di Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Ottieni accesso anticipato a nuovi annunci di prodotti e contenuti esclusivi.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e concorsi**: Partecipa a concorsi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Sei pronto a esplorare e creare con noi? Clicca su [|link_sf_facebook|] e unisciti oggi!
 
 .. _ar_state_change:
 
+1.10 Rilevamento del Cambio di Stato
+=======================================
 
-1.10 State Change Detection
-===========================
+Panoramica
+------------
 
-Overview
---------
+Quando utilizzi un pulsante, non solo puoi premerlo per accendere il LED e 
+rilasciarlo per spegnerlo, ma puoi anche alternare lo stato di funzionamento 
+del LED ogni volta che viene premuto. Per ottenere questo effetto, è necessario 
+rilevare quando lo stato del pulsante cambia da **spento** a **acceso**, un 
+processo noto come "rilevamento del cambio di stato". In questa lezione, 
+mostreremo i risultati del rilevamento del cambio di stato del pulsante nel 
+monitor seriale.
 
-When you use button, you can not only press down the button, light on
-the LED, release the button, turn off the LED, but also can switch the
-working state of the LED every time the button is pressed. In order to
-achieve this effect, you need to know when the state of the button
-changes from **off** to **on**, that is, "state change detection". In
-this lesson, we will print the results of state change detection of the
-button in the serial monitor.
-
-Components Required
--------------------
+Componenti Necessari
+------------------------
 
 .. image:: img/list_1.10.png
-
 
 * :ref:`cpn_mega2560`
 * :ref:`cpn_breadboard`
@@ -42,74 +40,69 @@ Components Required
 * :ref:`cpn_resistor`
 
 
-Fritzing Circuit
-----------------
+Circuito con Fritzing
+------------------------
 
-In this example, we use pin 2 to read the signal of the button.
+In questo esempio, utilizziamo il pin 2 per leggere il segnale del pulsante.
 
 .. image:: img/image40.png
 
 
-Schematic Diagram
-------------------
+Schema del Circuito
+-----------------------
 
 .. image:: img/image412.png
 
-
-Code
-----
-
+Codice
+--------
 
 .. note::
 
-    * You can open the file ``1.10_stateChangeDetection.ino`` under the path of ``sunfounder_vincent_kit_for_arduino\code\1.10_stateChangeDetection`` directly.
-    * Or copy this code into Arduino IDE.
-
-
-
+    * Puoi aprire direttamente il file ``1.10_stateChangeDetection.ino`` che si trova nel percorso ``sunfounder_vincent_kit_for_arduino\code\1.10_stateChangeDetection``.
+    * Oppure copia questo codice nell'Arduino IDE.
 
 .. raw:: html
 
     <iframe src=https://create.arduino.cc/editor/sunfounder01/f15c5e05-b038-413e-9009-4d08fb9722fd/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
 
-After the codes are uploaded into the Mega2560 board, the output number will switch between 0 and 1 every time you press the button.
+Dopo aver caricato il codice sulla scheda Mega2560, il numero di uscita cambierà tra 0 e 1 ogni volta che premi il pulsante.
 
-Code Analysis
---------------
+Analisi del Codice
+--------------------
 
-Declare a pin connected to Button.
+Dichiara un pin collegato al pulsante.
 
 .. code-block:: arduino
 
     const int  buttonPin = 2;  
 
-Declare a variable called 「detectionState」to record every state of state change detection.
+Dichiara una variabile chiamata 「detectionState」 per registrare ogni stato rilevato.
 
 .. code-block:: arduino
 
     int detectionState = 0;   
 
-Declare two variables to read the state of the button for state change detection.
+Dichiara due variabili per leggere lo stato del pulsante durante il rilevamento del cambio di stato.
 
 .. code-block:: arduino
 
     int buttonState = 0;         
     int lastButtonState = 0;   
 
-In setup(), initialize the pins and then start up the serial monitor.
+In setup(), inizializza i pin e avvia il monitor seriale.
 
 .. code-block:: arduino
 
     pinMode(buttonPin, INPUT);
     Serial.begin(9600);
 
-In loop(), read the value of buttonPin and then assign to the variable buttonState. 
+In loop(), leggi il valore di buttonPin e assegnalo alla variabile buttonState. 
 
 .. code-block:: arduino
 
     buttonState = digitalRead(buttonPin);
 
-Compare buttonState with lastButtonState, if they are not equal, it indicates that the state is changed. A delay(50) is needed to realize debouncing during the changing detection. After comparison, assign the buttonState to lastButtonState to make the next round of judgment.
+Confronta buttonState con lastButtonState; se non sono uguali, indica che lo stato è cambiato. È necessario un delay(50) per effettuare il debounce durante il rilevamento. Dopo il confronto, assegna buttonState a lastButtonState per la prossima valutazione.
 
 .. code-block:: arduino
 
@@ -119,8 +112,8 @@ Compare buttonState with lastButtonState, if they are not equal, it indicates th
     }
     lastButtonState = buttonState;
 
-The state change judgment installed (buttonState != lastButtonState), the further judgment is made to get the 
-condition「Press the button」.
+Dopo aver rilevato un cambio di stato (buttonState != lastButtonState), 
+esegui un ulteriore controllo per determinare la condizione 「Pulsante premuto」.
 
 .. code-block:: arduino
 
@@ -128,8 +121,8 @@ condition「Press the button」.
     ...
         } 
 
-Under the state「Press the button」, detectionState is being operated and it switches between 1 and 0. 
-Meanwhile, the value of detectionState is printed.
+In stato 「Pulsante premuto」, detectionState viene alternato tra 1 e 0. 
+Contemporaneamente, il valore di detectionState viene stampato.
 
 .. code-block:: arduino
 
@@ -137,7 +130,7 @@ Meanwhile, the value of detectionState is printed.
         Serial.print("The detection state is:");
         Serial.println(detectionState);
 
-Phenomenon Picture
-------------------
+Immagine del Fenomeno
+-------------------------
 
 .. image:: img/image413.png

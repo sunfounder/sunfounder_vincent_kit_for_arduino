@@ -1,36 +1,36 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella Community di SunFounder per appassionati di Raspberry Pi, Arduino e ESP32 su Facebook! Approfondisci le tue conoscenze su Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirti a noi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti e anticipazioni.
+    - **Sconti speciali**: Goditi sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
-Play with Scratch
+Gioca con Scratch
 ========================
 
-Besides programming on the Arduino IDE with Uno/Mega2560 boards, we can also use them for graphical programming.
+Oltre a programmare su Arduino IDE con le schede Uno/Mega2560, possiamo utilizzarle anche per la programmazione grafica.
 
-Here we recommend programming with Scratch, but the official Scratch is currently only compatible with Raspberry Pi, so we have partnered with a company, STEMPedia, who has developed a Scratch 3 based graphical programming software for Arduino boards (Uno, Mega2560 and Nano) - `PictoBlox <https://thestempedia.com/product/pictoblox/>`_.
+Ti consigliamo di utilizzare Scratch per programmare, ma la versione ufficiale di Scratch è attualmente compatibile solo con Raspberry Pi. Per questo motivo, abbiamo collaborato con un'azienda, STEMPedia, che ha sviluppato un software di programmazione grafica basato su Scratch 3 per schede Arduino (Uno, Mega2560 e Nano): `PictoBlox <https://thestempedia.com/product/pictoblox/>`_.
 
 .. image:: img/1_pictoblox.png
 
-It keeps the basic functions of Scratch 3, but also adds control boards, such as Arduino Uno, Mega, Nano, ESP32, Microbit and STEAMPedia homemade main boards, which can use external sensors, robots to control the sprites on the stage, with strong hardware interaction capabilities.
+Mantiene le funzioni base di Scratch 3, ma aggiunge il supporto per schede di controllo come Arduino Uno, Mega, Nano, ESP32, Microbit e schede personalizzate di STEMPedia. È possibile utilizzare sensori esterni e robot per controllare gli sprite sullo stage, offrendo una forte capacità di interazione hardware.
 
-In addition, it has AI and machine learning, even if you do not have much programming foundation, you can learn and use these popular and high-tech.
+Inoltre, include funzionalità di intelligenza artificiale e apprendimento automatico, che ti permettono di imparare e utilizzare queste tecnologie avanzate anche senza una solida base di programmazione.
 
-Just drag and drop the Scratch coding blocks and make cool games, animations, interactive projects, and even control robots the way you want!
+Basta trascinare e rilasciare i blocchi di codice Scratch per creare fantastici giochi, animazioni, progetti interattivi e persino controllare robot a tuo piacimento!
 
 
-Now let's start the journey of discovery!
+Iniziamo il viaggio della scoperta!
 
-**1. Get Started**
+**1. Inizia**
 
 .. toctree::
     :maxdepth: 2
@@ -38,21 +38,20 @@ Now let's start the journey of discovery!
     pictoblox_start/1_install
     pictoblox_start/2_introduce
     pictoblox_start/3_quick_guide
-
     
 
-**2. Projects**
 
-The following projects are written in order of programming difficulty, so we recommend reading them in order.
+**2. Progetti**
 
-In each project, there are very detailed steps to teach you how to build the circuit and how to program it step by step to achieve the final result.
+I seguenti progetti sono organizzati in base al livello di difficoltà della programmazione, quindi ti consigliamo di seguirli nell'ordine indicato.
 
-Of course, you can also open the script directly to run it, but you need to make sure you have downloaded the relevant material from `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
+Ogni progetto include passaggi dettagliati per costruire il circuito e programmare passo dopo passo per raggiungere il risultato finale.
 
-Once the download is complete, unzip it. Refer to :ref:`Stage Mode` to run individual scripts directly.
+Naturalmente, puoi anche aprire direttamente gli script per eseguirli, ma devi assicurarti di aver scaricato i materiali pertinenti da `github <https://github.com/sunfounder/sunfounder_vincent_kit_for_arduino/archive/refs/heads/master.zip>`_.
 
-But the :ref:`humiture` is used the :ref:`Upload Mode`.
+Una volta completato il download, decomprimi i file. Fai riferimento a :ref:`Modalità Stage` per eseguire direttamente gli script individuali.
 
+Tuttavia, il progetto :ref:`humiture` utilizza la modalità :ref:`Modalità Upload`.
 
 .. toctree::
     :maxdepth: 1

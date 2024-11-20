@@ -1,49 +1,48 @@
 .. note::
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 con altri appassionati.
 
-    **Why Join?**
+    **Perché unirti?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra comunità e del nostro team.
+    - **Impara e condividi**: Scambia consigli e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni festive e giveaway**: Partecipa a giveaway e promozioni festive.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto a esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi!
 
 .. _doorbell:
 
-2.6 Doorbell
+2.6 Campanello
 ======================
 
-Here, we will use the button and the bell on the stage to make a doorbell.
+Qui utilizzeremo il pulsante e la campana nello stage per creare un campanello.
 
-
-When the green flag is clicked, you can press the button and the bell on the stage will make a sound.
+Quando si clicca sulla bandiera verde, è possibile premere il pulsante e la campana nello stage emetterà un suono.
 
 .. image:: img/7_doorbell.png
 
-You Will Learn
+Cosa Imparerai
 ---------------------
 
-- How the button work
-- Reading digital pin and ranges
-- Creating a conditional loop
-- Adding a backdrop
-- Playing sound
+- Come funziona il pulsante
+- Lettura del pin digitale e relativi intervalli
+- Creazione di un ciclo condizionale
+- Aggiunta di uno sfondo
+- Riproduzione di un suono
 
-Build the Circuit
+Costruire il Circuito
 -----------------------
 
-The button is a 4-pin device, since the pin 1 is connected to pin 2, and pin 3 to pin 4, when the button is pressed, the 4 pins are connected, thus closing the circuit.
+Il pulsante è un dispositivo a 4 pin. Poiché il pin 1 è collegato al pin 2 e il pin 3 al pin 4, quando si preme il pulsante, i 4 pin si connettono, chiudendo così il circuito.
 
 .. image:: img/5_buttonc.png
 
-Build the circuit according to the following diagram.
+Costruisci il circuito seguendo il diagramma sottostante.
 
-* Connect one of the pins on the left side of the button to pin 12, which is connected to a pull-down resistor and a 0.1uF (104) capacitor (to eliminate jitter and output a stable level when the button is working).
-* Connect the other end of the resistor and capacitor to GND, and one of the pins on the right side of the button to 5V.
+* Collega uno dei pin sul lato sinistro del pulsante al pin 12, che è collegato a un resistore pull-down e a un condensatore da 0.1uF (104) per eliminare il jitter e produrre un livello stabile quando il pulsante funziona.
+* Collega l'altro capo del resistore e del condensatore a GND, e uno dei pin sul lato destro del pulsante a 5V.
 
 .. image:: img/circuit/button_circuit.png
 
@@ -52,36 +51,35 @@ Build the circuit according to the following diagram.
 * :ref:`cpn_resistor`
 * :ref:`cpn_capacitor`
 
-Programming
+Programmazione
 ------------------
 
-**1. Add a Backdrop**
+**1. Aggiungere uno Sfondo**
 
-Click the **Choose a Backdrop** button in the lower right corner.
+Clicca sul pulsante **Scegli uno Sfondo** nell'angolo in basso a destra.
 
 .. image:: img/7_backdrop.png
 
-Choose **Bedroom 1**.
+Scegli **Camera da letto 1**.
 
 .. image:: img/7_bedroom2.png
 
-**2. Select the sprite**
+**2. Selezionare lo sprite**
 
-Delete the default sprite, click the **Choose a Sprite** button in the lower right corner of the sprite area, enter **bell** in the search box, and then click to add it.
+Elimina lo sprite predefinito, clicca sul pulsante **Scegli uno Sprite** nell'angolo in basso a destra dell'area sprite, inserisci **campana** nella barra di ricerca e clicca per aggiungerlo.
 
 .. image:: img/7_sprite.png
 
-Then select the **bell** sprite on the stage and move it to the right position.
+Quindi seleziona lo sprite **campana** nello stage e posizionalo nella posizione corretta.
 
 .. image:: img/7_doorbell.png
 
-**3. Press the button and the bell makes a sound**
+**3. Premere il pulsante e far suonare la campana**
 
+Usa [if then] per creare un'istruzione condizionale in modo che quando il valore letto dal pin 12 è uguale a 1 (il pulsante è premuto), venga riprodotto il suono **xylo1**.
 
-Use [if then] to make a conditional statement that when the value of the pin12 read is equal to 1 (the key is pressed), the sound **xylo1** will be played.
-
-* [read status of digital pin]: This block is from the **Arduino Mega** palette and used to read the value of a digital pin, the result is 0 or 1.
-* [`if then <https://en.scratch-wiki.info/wiki/If_()_Then_(block)>`_]: This block is a control block and from **Control** palette. If its boolean condition is true, the blocks held inside it will run, and then the script involved will continue. If the condition is false, the scripts inside the block will be ignored. The condition is only checked once; if the condition turns to false while the script inside the block is running, it will keep running until it has finished.
-* [play sound until done]: from the Sound palette, used to play specific sounds.
+* [read status of digital pin]: Questo blocco è nel palette **Arduino Mega** e serve per leggere il valore di un pin digitale; il risultato è 0 o 1.
+* [`if then <https://en.scratch-wiki.info/wiki/If_()_Then_(block)>`_]: Questo blocco è un blocco di controllo del palette **Controllo**. Se la sua condizione booleana è vera, i blocchi al suo interno verranno eseguiti e lo script proseguirà. Se la condizione è falsa, i blocchi al suo interno saranno ignorati.
+* [play sound until done]: Dal palette Suono, usato per riprodurre suoni specifici.
 
 .. image:: img/7_bell.png

@@ -1,45 +1,43 @@
-.. note::
+.. note:: 
 
-    Hello, welcome to the SunFounder Raspberry Pi & Arduino & ESP32 Enthusiasts Community on Facebook! Dive deeper into Raspberry Pi, Arduino, and ESP32 with fellow enthusiasts.
+    Ciao, benvenuto nella community SunFounder Raspberry Pi & Arduino & ESP32 su Facebook! Approfondisci Raspberry Pi, Arduino ed ESP32 insieme ad altri appassionati.
 
-    **Why Join?**
+    **Perché unirsi?**
 
-    - **Expert Support**: Solve post-sale issues and technical challenges with help from our community and team.
-    - **Learn & Share**: Exchange tips and tutorials to enhance your skills.
-    - **Exclusive Previews**: Get early access to new product announcements and sneak peeks.
-    - **Special Discounts**: Enjoy exclusive discounts on our newest products.
-    - **Festive Promotions and Giveaways**: Take part in giveaways and holiday promotions.
+    - **Supporto esperto**: Risolvi problemi post-vendita e sfide tecniche con l'aiuto della nostra community e del nostro team.
+    - **Impara e condividi**: Scambia suggerimenti e tutorial per migliorare le tue competenze.
+    - **Anteprime esclusive**: Accedi in anteprima agli annunci di nuovi prodotti.
+    - **Sconti speciali**: Approfitta di sconti esclusivi sui nostri prodotti più recenti.
+    - **Promozioni e omaggi festivi**: Partecipa a omaggi e promozioni speciali durante le festività.
 
-    👉 Ready to explore and create with us? Click [|link_sf_facebook|] and join today!
+    👉 Pronto per esplorare e creare con noi? Clicca [|link_sf_facebook|] e unisciti oggi stesso!
 
 .. _cpn_buzzer:
 
-Buzzer
-=======
+Cicalino (Buzzer)
+==================
 
 .. image:: img/buzzer.png
     :width: 600
 
-As a type of electronic buzzer with an integrated structure, buzzers, which are supplied by DC power, are widely used in computers, printers, photocopiers, alarms, electronic toys, automotive electronic devices, telephones, timers and other electronic products or voice devices. 
+Il cicalino è un tipo di dispositivo elettronico con una struttura integrata, alimentato da corrente continua (DC). È ampiamente utilizzato in computer, stampanti, fotocopiatrici, allarmi, giocattoli elettronici, dispositivi elettronici automobilistici, telefoni, timer e altri prodotti elettronici o dispositivi audio.
 
-Buzzers can be categorized as active and passive ones (see the following picture). Turn the buzzer so that its pins are facing up, and the buzzer with a green circuit board is a passive buzzer, while the one enclosed with a black tape is an active one.
+I cicalini possono essere classificati in attivi e passivi (vedi immagine seguente). Posizionando il cicalino con i pin rivolti verso l'alto, quello con una scheda verde è un cicalino passivo, mentre quello avvolto da un nastro nero è un cicalino attivo.
 
-The difference between an active buzzer and a passive buzzer: 
+Differenza tra cicalino attivo e passivo:
 
-An active buzzer has a built-in oscillating source, so it will make sounds when electrified. But a passive buzzer does not have such source, so it will not beep if DC signals are used; instead, you need to use square waves whose frequency is between 2K and 5K to drive it. The active buzzer is often more expensive than the passive one because of multiple built-in oscillating circuits.
+Un cicalino attivo ha una sorgente oscillante integrata, quindi emette suoni quando alimentato. Un cicalino passivo, invece, non dispone di questa sorgente, quindi non emetterà suoni se alimentato con segnali DC; è necessario utilizzare onde quadre con una frequenza compresa tra 2K e 5K per farlo funzionare. A causa dei circuiti oscillanti integrati, il cicalino attivo è generalmente più costoso rispetto a quello passivo.
 
-The following is the electrical symbol of a buzzer. It has two pins with positive and negative poles. With a + in the surface represents the anode and the other is the cathode. 
+Di seguito è riportato il simbolo elettrico del cicalino. Ha due pin con poli positivo e negativo. Il lato con il segno "+" rappresenta l'anodo, mentre l'altro è il catodo.
 
 .. image:: img/buzzer_symbol.png
     :width: 150
 
-You can check the pins of the buzzer, the longer one is the anode and the shorter one is the cathode. Please don’t mix them up when connecting, otherwise the buzzer will not make sound. 
+Puoi controllare i pin del cicalino: quello più lungo è l'anodo, mentre quello più corto è il catodo. È importante non invertirli durante il collegamento, altrimenti il cicalino non emetterà alcun suono.
 
-`Buzzer - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
+`Cicalino - Wikipedia <https://en.wikipedia.org/wiki/Buzzer>`_
 
-**Example**
+**Esempi**
 
-* :ref:`ar_active_buzzer` (Arduino Project)
-* :ref:`ar_passive_buzzer` (Arduino Project)
-
-
+* :ref:`ar_active_buzzer` (Progetto Arduino)
+* :ref:`ar_passive_buzzer` (Progetto Arduino)
