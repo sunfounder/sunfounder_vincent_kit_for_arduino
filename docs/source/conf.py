@@ -30,8 +30,16 @@ author = 'www.sunfounder.com'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autosectionlabel'
+extensions = [
+    'sphinx.ext.autosectionlabel',
+    'sphinx_copybutton',
+    'sphinx_rtd_theme',
 ]
+
+# -- sphinx_rtd_theme Theme options -----------------------------------------------------
+html_theme_options = {
+    'flyout_display': 'attached'
+}
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -110,6 +118,18 @@ rst_epilog = """
 .. |link_en_tutorials| raw:: html
 
     <a href="https://docs.sunfounder.com/projects/vincent-kit/en/latest/" target="_blank">English Online-tutorials</a>
+
+.. |link_fr_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+
+.. |link_es_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
+
+.. |link_it_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
 
 .. |link_Vincent_Ultimate_Kit| raw:: html
 
