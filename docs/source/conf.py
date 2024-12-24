@@ -105,7 +105,7 @@ rst_epilog = """
 
 .. |link_sf_facebook| raw:: html
 
-    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+    <a href="https://bit.ly/raphaelkit" target="_blank">Ici</a>
 
 .. |link_download_arduino| raw:: html
 
@@ -133,7 +133,7 @@ rst_epilog = """
 
 .. |link_Vincent_Ultimate_Kit| raw:: html
 
-    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Purchase Link for Vincent Ultimate Kit</a>
+    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Lien d'achat pour Vincent Ultimate Kit</a>
 
 .. |link_Vincent_Kit| raw:: html
 
