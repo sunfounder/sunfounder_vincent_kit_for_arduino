@@ -103,8 +103,40 @@ gettext_compact = False # Support for generating the contents of the folders ins
 
 rst_epilog = """
 
+.. |link_sf_facebook| raw:: html
+
+    <a href="https://bit.ly/raphaelkit" target="_blank">here</a>
+
 .. |link_download_arduino| raw:: html
 
     <a href="https://www.arduino.cc/en/software#future-version-of-the-arduino-ide" target="_blank">Arduino IDE 2.0.0 Page</a>
+
+.. |link_german_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit-de/de/latest/" target="_blank">Deutsch Online-Kurs</a>
+
+.. |link_en_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/en/latest/" target="_blank">English Online-tutorials</a>
+
+.. |link_fr_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/fr/latest/" target="_blank">Didacticiels en ligne en français</a>
+
+.. |link_es_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/es/latest/" target="_blank">Tutoriales en línea en español</a>
+
+.. |link_it_tutorials| raw:: html
+
+    <a href="https://docs.sunfounder.com/projects/vincent-kit/it/latest/" target="_blank">Tutorial online in italiano</a>
+
+.. |link_Vincent_Ultimate_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Purchase Link for Vincent Ultimate Kit</a>
+
+.. |link_Vincent_Kit| raw:: html
+
+    <a href="https://www.sunfounder.com/products/mega2560-starter-kit-for-arduino?_pos=1&_sid=96aae5638&_ss=r" target="_blank">Vincent Ultimate Kit</a>
 
 """
