@@ -31,10 +31,63 @@ Wenn beispielsweise „1234“ auf dem Display angezeigt wird, wird „1“ im e
 
 **Codes anzeigen**
 
-Damit Sie wissen, wie 7-Segment-Anzeigen (gemeinsame Anode) Zahlen anzeigen, haben wir die folgende Tabelle gezeichnet. Zahlen sind die Zahlen 0-F, die auf der 7-Segment-Anzeige angezeigt werden; (DP) GFEDCBA bezieht sich auf die entsprechende LED auf 0 oder 1 gesetzt. Beispielsweise bedeutet 11000000, dass DP und G auf 1 gesetzt sind, während andere auf 0 gesetzt sind. Daher wird die Zahl 0 auf der 7-Segment-Anzeige angezeigt. während der HEX-Code der Hexadezimalzahl entspricht.
+Um Ihnen zu zeigen, wie 7-Segment-Anzeigen (Common Cathode) Zahlen darstellen, haben wir die folgende Tabelle erstellt. Zahlen sind die Zahlen 0-F, die auf der 7-Segment-Anzeige angezeigt werden; (DP) GFEDCBA bezieht sich auf die entsprechende LED, die auf 0 oder 1 gesetzt ist. Zum Beispiel bedeutet 00111111, dass DP und G auf 0 gesetzt sind, während andere auf 1 gesetzt sind. Daher wird die Zahl 0 auf der 7-Segment-Anzeige angezeigt, während der HEX-Code der hexadezimalen Zahl entspricht.
 
+.. list-table:: Glyph Code
+    :widths: 20 20 20
+    :header-rows: 1
 
-.. image:: img/common_anode.png
+    *   - Numbers	
+        - Binary Code
+        - Hex Code  
+    *   - 0	
+        - 00111111	
+        - 0x3f
+    *   - 1	
+        - 00000110	
+        - 0x06
+    *   - 2	
+        - 01011011	
+        - 0x5b
+    *   - 3	
+        - 01001111	
+        - 0x4f
+    *   - 4	
+        - 01100110	
+        - 0x66
+    *   - 5	
+        - 01101101	
+        - 0x6d
+    *   - 6	
+        - 01111101	
+        - 0x7d
+    *   - 7	
+        - 00000111	
+        - 0x07
+    *   - 8	
+        - 01111111	
+        - 0x7f
+    *   - 9	
+        - 01101111	
+        - 0x6f
+    *   - A	
+        - 01110111	
+        - 0x77
+    *   - B
+        - 01111100	
+        - 0x7c
+    *   - C	
+        - 00111001	
+        - 0x39
+    *   - D	
+        - 01011110	
+        - 0x5e
+    *   - E	
+        - 01111001	
+        - 0x79
+    *   - F	
+        - 01110001	
+        - 0x71
 
 **Beispiel**
 
